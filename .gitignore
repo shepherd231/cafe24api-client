@@ -1,0 +1,13 @@
+# Node Modules
+node_modules/
+
+# Logs
+*.log
+
+# Artifacts
+dist/
+lib/
+build/
+
+# Nx
+.nx
