@@ -17,3 +17,5 @@ build/
 
 # Cache
 .rollup.cache
+.tsbuildinfo
+

@@ -10,9 +10,17 @@ import { getEndpointInfo } from './endpoint';
  * Note that this script runs on browser execution context
  */
 export const run = () => {
-  return pipe(
-    document.documentElement,
-    getEndpointSectionsList,
-    map(getEndpointInfo),
-  );
+  try {
+    return pipe(
+      document.documentElement,
+      getEndpointSectionsList,
+      map(getEndpointInfo),
+    );
+  } catch (error) {
+    console.error(error);
+    if (process.env.NODE_ENV === 'development') {
+      // eslint-disable-next-line no-debugger
+      debugger;
+    }
+  }
 };

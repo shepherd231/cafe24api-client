@@ -22,12 +22,15 @@ export interface EndpointInfo {
    * @description
    * Description of the endpoint.
    */
-  description?: string;
+  description?: string | null;
   /**
    * @description
    * Schema of the entity the endpoint is related to.
+   *
+   * In some cases, there exist endpoints that are not directly related to any entity.
+   * (e.g. https://developers.cafe24.com/docs/ko/api/admin/#products-hits)
    */
-  schema: SchemaInfo;
+  schema: SchemaInfo | null;
   /**
    * @description
    * Available methods for the endpoint.
@@ -60,7 +63,17 @@ export const getEndpointInfo = (
     ),
   );
 
-  const schema = getSchemaInfo(schemaSection);
+  const isEmpty = (element: HTMLElement) => element.children.length === 0;
+
+  const schema: SchemaInfo | null = pipe(
+    schemaSection,
+    (element) =>
+      isEmpty(element.querySelector('.description')) ? none : some(element),
+    match(
+      () => null,
+      (element) => getSchemaInfo(element),
+    ),
+  );
 
   const methods = methodSections.map(getMethodInfo);
 

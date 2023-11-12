@@ -7,28 +7,38 @@
     "clean": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "rimraf dist .rollup.cache"
+        "command": "pnpm rimraf dist .rollup.cache .tsbuildinfo ../../dist",
+        "cwd": "packages/cafe24api-schema-scraper"
       }
     },
     "typecheck": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "tsc"
+        "command": "pnpm tsc",
+        "cwd": "packages/cafe24api-schema-scraper"
       }
     },
     "build": {
       "executor": "nx:run-commands",
+      "dependsOn": [
+        "clean"
+      ],
       "options": {
         "commands": [
-          "tsc --project tsconfig.build.json",
-          "rollup -i dist/compiled/run.js -o dist/index.js --config rollup.config.js"
-        ]
+          "pnpm tsc --project tsconfig.build.json",
+          "pnpm rollup -i dist/compiled/scripts/run.js -o dist/index.js --config rollup.config.js"
+        ],
+        "cwd": "packages/cafe24api-schema-scraper"
       }
     },
     "start": {
       "executor": "nx:run-commands",
+      "dependsOn": [
+        "build"
+      ],
       "options": {
-        "command": "node bin/run/index.js"
+        "command": "node bin/run/index.js",
+        "cwd": "packages/cafe24api-schema-scraper"
       }
     },
     "test": {

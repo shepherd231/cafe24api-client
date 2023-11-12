@@ -18,6 +18,7 @@ const inferType = (value: unknown): string => {
     if (isCafe24Datetime(value)) return 'datetime';
     if (isCafe24Boolean(value)) return 'boolean';
   }
+  if (value === null) return 'primitive';
   return typeof value;
 };
 

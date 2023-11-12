@@ -36,7 +36,7 @@ export const getEndpointSectionsList = (
 ): EndpointSections[] => {
   return pipe(
     root.querySelectorAll('section.endpoint').values() as Iterable<HTMLElement>,
-    Array.from,
+    (elements) => Array.from(elements),
     // Group sections considering title sections as separators
     groupByPredicate(isTitle),
   );

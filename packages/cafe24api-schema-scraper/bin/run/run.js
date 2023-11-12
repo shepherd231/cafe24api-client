@@ -1,15 +1,35 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 
-const { openPage, clickEveryShowButtons } = require('./browser');
+const puppeteer = require('puppeteer');
+const {
+  openPage,
+  waitForLastElement,
+  clickEveryShowButtons,
+} = require('./browser');
+
+const isDev = process.env.NODE_ENV === 'development';
 
 /**
  * @description
  * Main run script
+ *
+ * @param {({
+ *   url: string,
+ * })} options
+ * @param {string} callback
  */
 const run = async (options, callback) => {
-  const page = await openPage(options);
+  const browser = await puppeteer.launch({
+    headless: isDev ? false : 'new',
+    devtools: isDev,
+  });
+  const page = await openPage(browser, options);
+  await waitForLastElement(page);
   await clickEveryShowButtons(page);
-  return page.evaluate(callback);
+  const result = await page.evaluate(callback);
+  await page.close();
+  await browser.close();
+  return result;
 };
 
 module.exports = {

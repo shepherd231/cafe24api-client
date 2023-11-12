@@ -3,6 +3,7 @@
   "include": [
     "./rollup.config.js",
     "./bin/**/*",
+    "./scripts/**/*",
     "./src/**/*",
     "./tests/**/*",
   ],

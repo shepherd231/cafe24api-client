@@ -1,5 +1,6 @@
 import { pipe } from 'fp-ts/function';
 import { map } from 'fp-ts/Array';
+import { some, none, match } from 'fp-ts/Option';
 import { split } from 'fp-ts/string';
 import { Property } from '../model';
 import { parseTableEntries } from '../utils/table';
@@ -60,6 +61,8 @@ export const getMethodInfo = (methodSection: HTMLElement): MethodInfo => {
     getAttributes(['id', 'data-text']),
   );
 
+  console.log(id);
+
   const [httpVerb, path] = pipe(
     methodSection.querySelector(
       '.description > .endpoint-desc > p.link',
@@ -81,7 +84,8 @@ export const getMethodInfo = (methodSection: HTMLElement): MethodInfo => {
 
   const scope = pipe(
     methodSection.querySelector(
-      '.description > .table-area:first-of-type > table',
+      // h4.innerText = "기본스펙"
+      '.description > h4:nth-of-type(1) + .table-area > table',
     ) as HTMLTableElement,
     parseTableEntries({ omitHeaders: true }),
     (properties) => properties.filter((property) => property.name === 'SCOPE'),
@@ -90,9 +94,15 @@ export const getMethodInfo = (methodSection: HTMLElement): MethodInfo => {
 
   const requestProperties = pipe(
     methodSection.querySelector(
-      '.description > .table-area:last-of-type > table',
-    ) as HTMLTableElement,
-    parseTableEntries(),
+      // h4.innerText = "요청사양"
+      // NOTE: 요청사양은 존재하지 않을 수 있습니다.
+      '.description > h4:nth-of-type(2) + .table-area > table',
+    ) as HTMLTableElement | null,
+    (element) => (element ? some(element) : none),
+    match(
+      () => [],
+      (table) => parseTableEntries()(table),
+    ),
     map(relocatePropertyContents),
   );
 

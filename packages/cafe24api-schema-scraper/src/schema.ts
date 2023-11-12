@@ -1,4 +1,5 @@
 import { pipe } from 'fp-ts/function';
+import { replace } from 'fp-ts/String';
 import { Property } from './model';
 import { parseTableEntries } from './utils/table';
 import { getAttribute } from './utils/attribute';
@@ -30,6 +31,7 @@ export const getSchemaInfo = (schemaSection: HTMLElement): SchemaInfo => {
   const title = pipe(
     schemaSection.querySelector('.description > h3') as HTMLHeadingElement,
     getAttribute('data-text'),
+    replace(' properties', ''),
   );
 
   // Schema properties are listed in a table

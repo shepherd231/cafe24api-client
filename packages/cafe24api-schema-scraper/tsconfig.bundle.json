@@ -1,20 +1,16 @@
 {
   "extends": [
     "./tsconfig.json",
-    "../../tsconfig.build.json"
   ],
   "compilerOptions": {
-    "rootDirs": [
-      "src",
-      "scripts"
-    ],
-    "outDir": "dist/compiled",
     "checkJs": true,
-    "tsBuildInfoFile": ".tsbuildinfo"
+    "declaration": true,
+    "declarationDir": "dist/compiled/types",
   },
   "include": [
     "./src/**/*",
     "./scripts/**/*",
+    "./dist/compiled/**/*"
   ],
   "exclude": [
     "./tests/**/*",
