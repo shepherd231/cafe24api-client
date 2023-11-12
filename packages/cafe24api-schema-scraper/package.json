@@ -1,0 +1,33 @@
+{
+  "name": "cafe24api-schema-scraper",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "bin": {
+    "run": "./bin/run/index.js"
+  },
+  "scripts": {
+    "clean": "nx run clean",
+    "typecheck": "nx run typecheck",
+    "build": "nx run build",
+    "start": "nx run start",
+    "test": "nx run test"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.5",
+    "commander": "^11.1.0",
+    "puppeteer": "^21.5.1",
+    "rollup": "^4.4.0",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "class-validator": "^0.14.0",
+    "dayjs": "^1.11.10",
+    "dotenv": "^16.3.1",
+    "fp-ts": "^2.16.1",
+    "merge": "^2.1.1"
+  }
+}

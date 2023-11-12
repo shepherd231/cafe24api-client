@@ -1,0 +1,1 @@
+const variable = "cafe24api-client";

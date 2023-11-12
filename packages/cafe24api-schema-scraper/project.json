@@ -1,0 +1,42 @@
+{
+  "name": "cafe24api-schema-scraper",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/cafe24api-schema-scraper/src",
+  "targets": {
+    "clean": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "rimraf dist .rollup.cache"
+      }
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsc"
+      }
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "tsc --project tsconfig.build.json",
+          "rollup -i dist/compiled/run.js -o dist/index.js --config rollup.config.js"
+        ]
+      }
+    },
+    "start": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node bin/run/index.js"
+      }
+    },
+    "test": {
+      "executor": "nx:jest",
+      "options": {
+        "jestConfig": "../../jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

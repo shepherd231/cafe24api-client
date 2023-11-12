@@ -1,0 +1,20 @@
+{
+  "extends": [
+    "./tsconfig.json",
+    "../../tsconfig.build.json"
+  ],
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist",
+    "checkJs": true,
+    "declaration": false,
+  },
+  "include": [
+    "./src/**/*"
+  ],
+  "exclude": [
+    "./rollup.config.js",
+    "./tests/**/*",
+    "./bin/**/*",
+  ]
+}

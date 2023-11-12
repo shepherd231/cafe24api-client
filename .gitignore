@@ -11,3 +11,9 @@ build/
 
 # Nx
 .nx
+
+# Environment Variables
+.env
+
+# Cache
+.rollup.cache

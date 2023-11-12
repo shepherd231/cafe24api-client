@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.json",
+  "include": [
+    "./rollup.config.js",
+    "./bin/**/*",
+    "./src/**/*",
+    "./tests/**/*",
+  ],
+  "compilerOptions": {
+    "checkJs": false
+  }
+}
