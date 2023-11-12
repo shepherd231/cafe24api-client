@@ -7,13 +7,11 @@ import { IterateTableEntriesOptions, iterateTableEntries } from './iterate';
 import { hasSubElements } from './predicates';
 
 const parseTableEntry = (entry: HTMLTableRowElement): Property => {
-  console.log(entry);
   const [name, description] = pipe(
     entry.querySelectorAll('td').values() as Iterable<HTMLTableRowElement>,
     (elements) => Array.from(elements),
     map(getInnerText),
   );
-  console.log({ name, description });
 
   return { name, description };
 };

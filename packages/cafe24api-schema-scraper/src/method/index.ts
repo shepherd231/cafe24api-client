@@ -61,8 +61,6 @@ export const getMethodInfo = (methodSection: HTMLElement): MethodInfo => {
     getAttributes(['id', 'data-text']),
   );
 
-  console.log(id);
-
   const [httpVerb, path] = pipe(
     methodSection.querySelector(
       '.description > .endpoint-desc > p.link',
