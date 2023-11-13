@@ -2,11 +2,10 @@ import { pipe } from 'fp-ts/function';
 import { map } from 'fp-ts/Array';
 import { some, none, match } from 'fp-ts/Option';
 import { split } from 'fp-ts/string';
-import { Property } from '../model';
 import { parseTableEntries } from '../utils/table';
-import { relocatePropertyContents } from './request';
+import { RequestInfo, repositionRequestPropertyContents } from './request';
 import { getAttributes, getInnerText } from '../utils/attribute';
-import { parseExampleJSONToProperties } from './response';
+import { ResponseInfo, parseExampleJSONToProperties } from './response';
 
 type HttpVerb = 'GET' | 'POST' | 'PUT' | 'DELETE';
 
@@ -37,12 +36,12 @@ export interface MethodInfo {
    * @description
    * Request parameters.
    */
-  request: Property[];
+  request: RequestInfo;
   /**
    * @description
    * Response parameters.
    */
-  response: Property[];
+  response: ResponseInfo;
 }
 
 /**
@@ -101,17 +100,30 @@ export const getMethodInfo = (methodSection: HTMLElement): MethodInfo => {
       () => [],
       (table) => parseTableEntries()(table),
     ),
-    map(relocatePropertyContents),
+    map(repositionRequestPropertyContents),
   );
 
-  const responseProperties = pipe(
+  const request: RequestInfo = {
+    properties: requestProperties,
+  };
+
+  const responseJSONString = pipe(
     methodSection.querySelector(
       '.code-block .code-data.response > pre',
     ) as HTMLPreElement,
     getInnerText,
+  );
+
+  const responseProperties = pipe(
+    responseJSONString,
     JSON.parse,
     parseExampleJSONToProperties,
   );
+
+  const response: ResponseInfo = {
+    properties: responseProperties,
+    example: responseJSONString,
+  };
 
   return {
     id,
@@ -120,7 +132,7 @@ export const getMethodInfo = (methodSection: HTMLElement): MethodInfo => {
     httpVerb,
     description,
     scope,
-    request: requestProperties,
-    response: responseProperties,
+    request,
+    response,
   };
 };

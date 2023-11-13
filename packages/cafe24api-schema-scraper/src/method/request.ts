@@ -1,18 +1,37 @@
 import { Property } from '../model';
 
+export interface RequestInfo {
+  /**
+   * @description
+   * Request parameters.
+   */
+  properties: Property[];
+  /**
+   * @description
+   * Example request body.
+   */
+  example?: string;
+}
+
 /**
  * @description
- * Relocate contents of given property
+ * Reposition contents of given property
  * from request parameter table
  * which is in raw form just after scraping
  * to the appropriate fields.
  */
-export const relocatePropertyContents = (property: Property): Property => {
+export const repositionRequestPropertyContents = (
+  property: Property,
+): Property => {
   // `name` corresponds to `Parameter` column
   // in the documentation, and it often contains
   // additional information other than actual parameter name,
   // here we call it `metadata`.
-  const [name, ...metadata] = property.name.split('\n').map((s) => s.trim());
+  const [name, ...metadata] = property.name
+    // Annotate embed properties with `@embed` string
+    .replace('embed', '@embed')
+    .split('\n')
+    .map((s) => s.trim());
 
   // `metadata` contains "Required" string
   // if the parameter is required.
@@ -27,10 +46,16 @@ export const relocatePropertyContents = (property: Property): Property => {
     .replace('DEFAULT', '@default')
     .concat('\n\n', metadata.filter((s) => s !== 'Required').join('\n'));
 
+  // Recurse on subproperties if needed.
+  const subproperties = property.subproperties?.map(
+    repositionRequestPropertyContents,
+  );
+
   return {
     ...property,
     name,
     required,
     description,
+    subproperties,
   };
 };

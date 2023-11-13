@@ -14,7 +14,7 @@ export interface SchemaInfo {
    * @description
    * List of properties of the schema.
    */
-  schema: Property[];
+  properties: Property[];
 }
 
 /**
@@ -42,5 +42,5 @@ export const getSchemaInfo = (schemaSection: HTMLElement): SchemaInfo => {
     parseTableEntries({ omitHeaders: true }),
   );
 
-  return { name: title, schema: properties };
+  return { name: title, properties: properties };
 };
