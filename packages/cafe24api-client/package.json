@@ -3,7 +3,18 @@
   "version": "0.0.0",
   "description": "",
   "license": "ISC",
+  "main": "cafe24api-client.min.js",
   "types": "index.d.ts",
+  "files": [
+    "cafe24api-client.min.js",
+    "index.d.ts",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md",
+    "package.json",
+    "admin/**/*",
+    "front/**/*"
+  ],
   "scripts": {
     "clean": "nx run clean",
     "typecheck": "nx run typecheck",
