@@ -1,54 +1,61 @@
+#!/usr/bin/env node
+
 /* eslint-disable @typescript-eslint/no-var-requires */
 
 const fs = require('fs');
 const path = require('path');
-const dotenv = require('dotenv');
-const { program } = require('commander');
-const { version } = require('../../package.json');
-const { recursive: merge } = require('merge');
-const { loadOptionsFromEnv } = require('./env');
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const commander = require('commander');
+const { configureOptions } = require('./options');
 const { run } = require('./run');
 
-dotenv.config();
+/**
+ * @description Register the `run` command to the program
+ *
+ * @param {commander.Command} program
+ * @returns {void}
+ */
+const register = (program) => {
+  program
+    .command('run')
+    .option('--url <url>', 'url to Cafe24 API Docuemntation page to scrape')
+    .option(
+      '--output <output>',
+      'output file path. If not specified, print to stdout',
+    )
+    .action(async (options) => {
+      // Configure options
+      options = configureOptions(options);
 
-program
-  .name('cafe24api-schema-scraper')
-  .version(version)
-  .description('Cafe24 API Schema Scraper');
+      // Load scripts to run in the browser
+      // Note that this script assigns the result to `window.__result`
+      // as a workaround to return the result from the browser
+      const scripts = fs.readFileSync(
+        path.resolve(__dirname, '../../dist/index.js'),
+        { encoding: 'utf-8' },
+      );
 
-program
-  .option('--url <url>', 'url to Cafe24 API Docuemntation page to scrape')
-  .option(
-    '--output <output>',
-    'output file path. If not specified, print to stdout',
-  )
-  .action(async (options) => {
-    // Configure options
-    options = merge(true, loadOptionsFromEnv(), options);
-
-    // Load scripts to run in the browser
-    // Note that this script assigns the result to `window.__result`
-    // as a workaround to return the result from the browser
-    const scripts = fs.readFileSync(
-      path.resolve(__dirname, '../../dist/index.js'),
-      { encoding: 'utf-8' },
-    );
-
-    const result = await run(
-      options,
-      `
+      const result = await run(
+        options,
+        `
       (() => {
         ${scripts}
         return window.__result;
       })()
     `,
-    );
+      );
 
-    if (options.output) {
-      fs.writeFileSync(options.output, JSON.stringify(result, null, 2));
-    } else {
-      console.log(JSON.stringify(result, null, 2));
-    }
-  });
+      if (options.output) {
+        const output = path.isAbsolute(options.output)
+          ? options.output
+          : path.resolve(process.cwd(), options.output);
+        fs.writeFileSync(output, JSON.stringify(result, null, 2));
+      } else {
+        console.log(JSON.stringify(result, null, 2));
+      }
+    });
+};
 
-program.parse(process.argv);
+module.exports = {
+  register,
+};

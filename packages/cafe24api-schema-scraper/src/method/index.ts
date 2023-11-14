@@ -1,11 +1,12 @@
 import { pipe } from 'fp-ts/function';
-import { map } from 'fp-ts/Array';
+import { map, filter } from 'fp-ts/Array';
 import { some, none, match } from 'fp-ts/Option';
-import { split } from 'fp-ts/string';
+import { split, slice } from 'fp-ts/string';
 import { parseTableEntries } from '../utils/table';
 import { RequestInfo, repositionRequestPropertyContents } from './request';
 import { getAttributes, getInnerText } from '../utils/attribute';
 import { ResponseInfo, parseExampleJSONToProperties } from './response';
+import { Property } from '../model';
 
 type HttpVerb = 'GET' | 'POST' | 'PUT' | 'DELETE';
 
@@ -25,6 +26,7 @@ export interface MethodInfo {
    * API endpoint path.
    */
   path: string;
+  urlParams: Property[];
   httpVerb: HttpVerb;
   description: string;
   /**
@@ -68,6 +70,16 @@ export const getMethodInfo = (methodSection: HTMLElement): MethodInfo => {
     split('/'),
     ([httpMethod, ...paths]) =>
       [httpMethod, '/'.concat(paths.join('/'))] as [HttpVerb, string],
+  );
+
+  const isUrlParam = (subpath: string) =>
+    subpath.startsWith('{') && subpath.endsWith('}');
+
+  const urlParams = pipe(
+    path.split('/'),
+    filter(isUrlParam),
+    map(slice(1, -1)),
+    map((paramName) => ({ name: paramName, type: 'string' }) as Property),
   );
 
   const description = pipe(
@@ -130,6 +142,7 @@ export const getMethodInfo = (methodSection: HTMLElement): MethodInfo => {
     name,
     path,
     httpVerb,
+    urlParams,
     description,
     scope,
     request,

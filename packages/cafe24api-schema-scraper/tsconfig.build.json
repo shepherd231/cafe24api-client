@@ -10,7 +10,8 @@
     ],
     "outDir": "dist/compiled",
     "checkJs": true,
-    "tsBuildInfoFile": ".tsbuildinfo"
+    "tsBuildInfoFile": ".tsbuildinfo",
+    "removeComments": false,
   },
   "include": [
     "./src/**/*",

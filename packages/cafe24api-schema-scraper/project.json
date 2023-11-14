@@ -40,13 +40,6 @@
         "command": "node bin/run/index.js",
         "cwd": "packages/cafe24api-schema-scraper"
       }
-    },
-    "test": {
-      "executor": "nx:jest",
-      "options": {
-        "jestConfig": "../../jest.config.ts",
-        "passWithNoTests": true
-      }
     }
   }
 }

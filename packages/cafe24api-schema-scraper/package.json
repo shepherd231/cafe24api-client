@@ -4,8 +4,16 @@
   "private": true,
   "license": "MIT",
   "bin": {
-    "run": "./bin/run/index.js"
+    "cafe24api-schema-scraper": "./bin/index.js"
   },
+  "main": "dist/compiled/src/index.js",
+  "types": "dist/compiled/types/src/index.d.ts",
+  "files": [
+    "dist/bin/**/*",
+    "dist/compiled/**/*",
+    "README.md",
+    "package.json"
+  ],
   "scripts": {
     "clean": "nx run clean",
     "typecheck": "nx run typecheck",

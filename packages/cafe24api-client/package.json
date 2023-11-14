@@ -3,23 +3,33 @@
   "version": "0.0.0",
   "description": "",
   "license": "ISC",
-  "main": "dist/index.js",
-  "module": "src/index.ts",
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist/**/*",
-    "README.md",
-    "package.json"
-  ],
+  "types": "index.d.ts",
   "scripts": {
-    "clean": "rimraf dist",
-    "typecheck": "tsc",
-    "build": "tsc -p tsconfig.build.json",
-    "dev": "pnpm watch",
-    "watch": "tsc -p tsconfig.build.json --watch",
-    "test": "jest"
+    "clean": "nx run clean",
+    "typecheck": "nx run typecheck",
+    "generate-endpoints": "nx run generate-endpoints",
+    "build": "nx run build",
+    "test": "nx run test"
   },
   "dependencies": {
-    "axios": "^1.6.1"
+    "abab": "^2.0.6",
+    "axios": "^1.6.1",
+    "change-case": "^5.1.2",
+    "url-join": "^5.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.23.0",
+    "@babel/core": "^7.23.3",
+    "@babel/preset-env": "^7.23.3",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@types/shelljs": "^0.8.15",
+    "babel-jest": "^29.7.0",
+    "cafe24api-schema-scraper": "workspace:*",
+    "cross-env": "^7.0.3",
+    "jest": "^29.7.0",
+    "ncp": "^2.0.0",
+    "rollup": "^4.4.0",
+    "shelljs": "^0.8.5"
   }
 }
