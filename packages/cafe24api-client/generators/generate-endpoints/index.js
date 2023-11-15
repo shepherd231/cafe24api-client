@@ -29,7 +29,7 @@ const generateFromTemplate = async (endpoint, ext, outputPrefix, template) => {
 
 const generate = async (target) => {
   if (!fs.existsSync(target.endpointsJSONPath)) {
-    fs.mkdirSync(target.endpointsJSONPath, { recursive: true });
+    fs.mkdirSync(path.dirname(target.endpointsJSONPath), { recursive: true });
     const execution = shell.exec(
       `pnpm cafe24api-schema-scraper run --url ${target.docsUrl} --output ${target.endpointsJSONPath}`,
     );
