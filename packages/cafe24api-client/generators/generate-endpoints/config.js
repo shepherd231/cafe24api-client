@@ -5,16 +5,14 @@ const path = require('path');
 
 const sourcePath = path.resolve(__dirname, '../../src');
 const typedefPath = path.resolve(__dirname, '../../types');
+const templatesPath = path.resolve(__dirname, 'templates');
 
 const readTemplate = (templatePath) =>
-  fs.readFileSync(path.resolve(__dirname, 'templates', templatePath), 'utf-8');
+  fs.readFileSync(path.resolve(templatesPath, templatePath), 'utf-8');
 
 const snakeCaseImplTemplate = readTemplate('endpoint.impl.ejs');
 const camelCaseImplTemplate = readTemplate('endpoint.camel-case.impl.ejs');
-const snakeCaseTypedefTemplate = readTemplate('endpoint.typedef.ejs');
-const camelCaseTypedefTemplate = readTemplate(
-  'endpoint.camel-case.typedef.ejs',
-);
+const typedefTemplate = readTemplate('endpoint.typedef.ejs');
 
 const targets = [
   {
@@ -24,7 +22,10 @@ const targets = [
     implOutputPath: path.resolve(sourcePath, 'admin/endpoints'),
     typedefOutputPath: path.resolve(typedefPath, 'admin/endpoints'),
     implTemplate: snakeCaseImplTemplate,
-    typedefTemplate: snakeCaseTypedefTemplate,
+    typedefTemplate,
+    templateContext: {
+      useCamelCase: false,
+    },
   },
   {
     id: 'admin-camel-case',
@@ -33,7 +34,10 @@ const targets = [
     implOutputPath: path.resolve(sourcePath, 'admin/endpoints/camel-case'),
     typedefOutputPath: path.resolve(typedefPath, 'admin/endpoints/camel-case'),
     implTemplate: camelCaseImplTemplate,
-    typedefPath: camelCaseTypedefTemplate,
+    typedefTemplate,
+    templateContext: {
+      useCamelCase: true,
+    },
   },
   {
     id: 'front',
@@ -42,7 +46,10 @@ const targets = [
     implOutputPath: path.resolve(sourcePath, 'front/endpoints'),
     typedefOutputPath: path.resolve(typedefPath, 'front/endpoints'),
     implTemplate: snakeCaseImplTemplate,
-    typedefTemplate: snakeCaseTypedefTemplate,
+    typedefTemplate,
+    templateContext: {
+      useCamelCase: false,
+    },
   },
   {
     id: 'front-camel-case',
@@ -51,10 +58,16 @@ const targets = [
     implOutputPath: path.resolve(sourcePath, 'front/endpoints/camel-case'),
     typedefOutputPath: path.resolve(typedefPath, 'front/endpoints/camel-case'),
     implTemplate: camelCaseImplTemplate,
-    typedefTemplate: camelCaseTypedefTemplate,
+    typedefTemplate,
+    templateContext: {
+      useCamelCase: true,
+    },
   },
 ];
 
 module.exports = {
+  sourcePath,
+  typedefPath,
+  templatesPath,
   targets,
 };

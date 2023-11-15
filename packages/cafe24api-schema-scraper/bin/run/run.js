@@ -3,8 +3,10 @@
 const puppeteer = require('puppeteer');
 const {
   openPage,
+  waitForPageLoad,
   waitForLastElement,
   clickEveryShowButtons,
+  clickEveryToggleButtons,
 } = require('./browser');
 
 const isDev = process.env.NODE_ENV === 'development';
@@ -24,8 +26,10 @@ const run = async (options, callback) => {
     devtools: isDev,
   });
   const page = await openPage(browser, options);
-  await waitForLastElement(page);
+  await waitForPageLoad(page);
   await clickEveryShowButtons(page);
+  await clickEveryToggleButtons(page);
+  await waitForLastElement(page);
   const result = await page.evaluate(callback);
   await page.close();
   await browser.close();

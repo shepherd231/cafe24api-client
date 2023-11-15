@@ -1,18 +1,18 @@
 
 export default (cls) => {
-  <% for(const method of endpoint.methods) { %>
-    cls.prototype.<%= camelCase(method.name) %> = async function (input, options) {
-      return this.createRequest(
-        '<%= method.httpVerb %>',
-        `<%= method.path.replace('/{', "/${input['").replace('}/', "']}/") %>`,
-        {
-        <% for(const property of method.request.properties) { %>
-          <%= property.name %>: input['<%= property.name %>'],
-        <% } %>
-        },
-        options,
-      );
-    };
+<% for(const method of endpoint.methods) { -%>
+  cls.prototype.<%= camelCase(method.name) %> = async function (input, options) {
+    return this.createRequest(
+      '<%= method.httpVerb %>',
+      `<%- method.path.replace('{', "${input[\'").replace('}', "\']}") %>`,
+      {
+<% for(const property of method.request.properties) { -%>
+        <%= property.name %>: input['<%= property.name %>'],
+<% } -%>
+      },
+      options,
+    );
+  };
 
- <% } %>
+<% } -%>
 };

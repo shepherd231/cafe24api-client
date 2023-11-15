@@ -20,9 +20,6 @@
     },
     "build": {
       "executor": "nx:run-commands",
-      "dependsOn": [
-        "clean"
-      ],
       "options": {
         "commands": [
           "pnpm tsc --project tsconfig.build.json",
@@ -33,11 +30,8 @@
     },
     "start": {
       "executor": "nx:run-commands",
-      "dependsOn": [
-        "build"
-      ],
       "options": {
-        "command": "node bin/run/index.js",
+        "command": "node ./bin/index.js run",
         "cwd": "packages/cafe24api-schema-scraper"
       }
     }

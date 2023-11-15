@@ -26,16 +26,6 @@ type Primitive =
   | 'Cafe24Datetime'
   | 'primitive';
 
-/**
- * @description
- * Represents a non-primitive type.
- *
- * - object: {@link Record<string, any>}
- * - array: {@link Array}
- * - non-primitive: This type is like any, and used when the type cannot be inferred.
- */
-type NonPrimitive = 'array' | 'object' | 'non-primitive';
-
 export const isPrimitive = (type: string): type is Primitive =>
   [
     'string',
@@ -88,6 +78,6 @@ export class PrimitiveProperty extends Property {
 }
 
 export class NonPrimitiveProperty extends Property {
-  type: NonPrimitive;
+  type: string;
   subproperties: Property[];
 }

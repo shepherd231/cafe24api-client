@@ -1,8 +1,10 @@
 import { pipe } from 'fp-ts/function';
+import { map } from 'fp-ts/array';
 import { replace } from 'fp-ts/String';
 import { Property } from './model';
 import { parseTableEntries } from './utils/table';
 import { getAttribute } from './utils/attribute';
+import { repositionPropertyContents } from './utils/property';
 
 export interface SchemaInfo {
   /**
@@ -40,6 +42,8 @@ export const getSchemaInfo = (schemaSection: HTMLElement): SchemaInfo => {
       '.description > .table-area > table',
     ) as HTMLTableElement,
     parseTableEntries({ omitHeaders: true }),
+    map(repositionPropertyContents),
+    map((property) => ({ ...property, required: true })),
   );
 
   return { name: title, properties: properties };

@@ -4,26 +4,41 @@ const fs = require('fs');
 const path = require('path');
 const shell = require('shelljs');
 const ejs = require('ejs');
-const { targets } = require('./config');
+const { targets, templatesPath } = require('./config');
 const { replaceAllMatches } = require('./utils');
 
 let camelCase;
 let pascalCase;
 
-const generateFromTemplate = async (endpoint, ext, outputPrefix, template) => {
-  const endpointImplPath = path.resolve(
-    outputPrefix,
-    endpoint.id,
-    `index.${ext}`,
-  );
+const generateFromTemplate = async (
+  docsUrl,
+  endpoint,
+  template,
+  templateContext,
+  outputPrefix,
+  filepath,
+) => {
+  const filePath = path.resolve(outputPrefix, filepath);
+  console.log(`Generating ${filePath}`);
+  if (!fs.existsSync(path.dirname(filePath))) {
+    fs.mkdirSync(path.dirname(filePath), { recursive: true });
+  }
   fs.writeFileSync(
-    endpointImplPath,
-    ejs.render(template, {
-      endpoint,
-      camelCase,
-      pascalCase,
-      replaceAllMatches,
-    }),
+    filePath,
+    ejs.render(
+      template,
+      {
+        docsUrl,
+        endpoint,
+        camelCase,
+        pascalCase,
+        replaceAllMatches,
+        ...templateContext,
+      },
+      {
+        root: templatesPath,
+      },
+    ),
   );
 };
 
@@ -45,16 +60,20 @@ const generate = async (target) => {
 
   for (const endpoint of endpoints) {
     await generateFromTemplate(
+      target.docsUrl,
       endpoint,
-      'js',
-      target.implOutputPath,
       target.implTemplate,
+      target.templateContext,
+      target.implOutputPath,
+      `${endpoint.id}/index.js`,
     );
     await generateFromTemplate(
+      target.docsUrl,
       endpoint,
-      'd.ts',
-      target.typedefOutputPath,
       target.typedefTemplate,
+      target.templateContext,
+      target.typedefOutputPath,
+      `${endpoint.id}.d.ts`,
     );
   }
 };

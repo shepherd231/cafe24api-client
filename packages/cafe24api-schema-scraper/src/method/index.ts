@@ -3,10 +3,11 @@ import { map, filter } from 'fp-ts/Array';
 import { some, none, match } from 'fp-ts/Option';
 import { split, slice } from 'fp-ts/string';
 import { parseTableEntries } from '../utils/table';
-import { RequestInfo, repositionRequestPropertyContents } from './request';
+import { RequestInfo } from './request';
 import { getAttributes, getInnerText } from '../utils/attribute';
 import { ResponseInfo, parseExampleJSONToProperties } from './response';
 import { Property } from '../model';
+import { repositionPropertyContents } from '../utils/property';
 
 type HttpVerb = 'GET' | 'POST' | 'PUT' | 'DELETE';
 
@@ -112,7 +113,7 @@ export const getMethodInfo = (methodSection: HTMLElement): MethodInfo => {
       () => [],
       (table) => parseTableEntries()(table),
     ),
-    map(repositionRequestPropertyContents),
+    map(repositionPropertyContents),
   );
 
   const request: RequestInfo = {

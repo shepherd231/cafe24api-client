@@ -21,17 +21,38 @@ const openPage = async (browser, options) => {
   return page;
 };
 
-const LAST_ELEMENT_SELECTOR = '#retrieve-a-count-of-dailyvisits';
+/**
+ * @description
+ * Waits until page is loaded
+ */
+const waitForPageLoad = async (page) => {
+  await page.waitForSelector('.page-wrapper > .content');
+};
+
+const LAST_CODE_BLOCK_SELECTOR =
+  '.page-wrapper > .content > section:last-of-type .code-data.response pre';
 
 /**
  * @description
- * Waits until last element appears.
+ * Waits until last element (code block) is loaded
  *
  * @param {puppeteer.Page} page
  * @returns {void}
  */
 const waitForLastElement = async (page) => {
-  await page.waitForSelector(LAST_ELEMENT_SELECTOR);
+  await page.waitForSelector(LAST_CODE_BLOCK_SELECTOR);
+  return new Promise((resolve) => {
+    const interval = setInterval(async () => {
+      const codeLength = await page.evaluate((lastCodeBlockSelector) => {
+        // eslint-disable-next-line no-undef
+        return document.querySelector(lastCodeBlockSelector).innerText.length;
+      }, LAST_CODE_BLOCK_SELECTOR);
+      if (codeLength > 0) {
+        clearInterval(interval);
+        resolve();
+      }
+    }, 200);
+  });
 };
 
 /**
@@ -42,18 +63,47 @@ const waitForLastElement = async (page) => {
  * @returns {void}
  */
 const clickEveryShowButtons = async (page) => {
-  // Get documentation body
-  const content = await page.$('.page-wrapper > .content');
+  await page.evaluate(() => {
+    // eslint-disable-next-line no-undef
+    const content = document.querySelector('.page-wrapper > .content');
+    const showButtons = content.querySelectorAll('.endpoint-btn > button');
+    showButtons.forEach((button) => button.click());
+  });
+};
 
-  // Click every "Show" button
-  const showButtons = await content.$$('.endpoint-btn > button');
-  for (const button of showButtons) {
-    await button.click();
-  }
+/**
+ * @description
+ * Click every button with selector `button.btn.collapsed`
+ * in the page
+ *
+ * @param {puppeteer.Page} page
+ * @returns {void}
+ */
+const clickEveryToggleButtons = async (page) => {
+  await page.evaluate(async () => {
+    // eslint-disable-next-line no-undef
+    const content = document.querySelector('.page-wrapper > .content');
+    const toggleButtons = content.querySelectorAll(
+      'section.endpoint.method .table-area tbody tr[colspan="2"] button',
+    );
+    const lastToggleButton = toggleButtons.item(toggleButtons.length - 1);
+    await new Promise((resolve) => {
+      if (!lastToggleButton) resolve();
+      const interval = setInterval(() => {
+        if (lastToggleButton.hasAttribute('data-target')) {
+          clearInterval(interval);
+          resolve();
+        }
+      });
+    });
+    toggleButtons.forEach((button) => button.click());
+  });
 };
 
 module.exports = {
   openPage,
+  waitForPageLoad,
   waitForLastElement,
   clickEveryShowButtons,
+  clickEveryToggleButtons,
 };

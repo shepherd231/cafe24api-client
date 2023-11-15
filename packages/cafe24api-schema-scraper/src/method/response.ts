@@ -27,13 +27,18 @@ export interface ResponseInfo {
  * Infers type from the given example value.
  */
 const inferType = (value: unknown): string => {
-  if (Array.isArray(value)) return 'array';
-  if (typeof value === 'string') {
-    if (isCafe24Date(value)) return 'date';
-    if (isCafe24Datetime(value)) return 'datetime';
-    if (isCafe24Enum(value)) return 'enum';
+  if (Array.isArray(value)) {
+    const elementType = value.filter(Boolean).at(0);
+    const inferredType = inferType(elementType);
+    if (isPrimitive(inferredType)) return `${inferredType}[]`;
+    return 'array';
   }
-  if (value === null) return 'primitive';
+  if (typeof value === 'string') {
+    if (isCafe24Date(value)) return 'Cafe24Date';
+    if (isCafe24Datetime(value)) return 'Cafe24Datetime';
+    if (isCafe24Enum(value)) return 'Cafe24Enum';
+  }
+  if (value === null || value === undefined) return 'primitive';
   return typeof value;
 };
 
@@ -42,18 +47,18 @@ const inferType = (value: unknown): string => {
  * Parses example JSON shown as a response in Cafe24 API documentation,
  * and converts it to a list of properties.
  */
-export const parseExampleJSONToProperties = (
-  json: Record<string, any>,
-): Property[] => {
+export const parseExampleJSONToProperties = (json: any): Property[] => {
+  if (typeof json !== 'object') return null;
+  if (!json) return null;
+  if (Array.isArray(json) && isPrimitive(inferType(json.at(0)))) return null;
   return pipe(
-    json,
+    Array.isArray(json) ? json.at(0) : json,
     Object.entries,
     map(([key, value]) => ({
       name: key,
       type: inferType(value),
-      subproperties: !isPrimitive(inferType(value))
-        ? parseExampleJSONToProperties(value)
-        : undefined,
+      required: true,
+      subproperties: parseExampleJSONToProperties(value),
     })),
   );
 };

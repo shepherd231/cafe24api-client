@@ -1,0 +1,11 @@
+<% for(const property of properties) { -%>
+<% if (property.description) { -%>
+    /**
+      * @description
+<% for(const descline of property.description.split('\n')) { -%>
+      * <%= descline %>
+<% } -%>
+      */ 
+<% } -%>
+    <%= camelCase ? camelCase(property.name) : property.name %><%= property.required ? '' : '?'%>: <%- !property.subproperties ? property.type?.replace('non-primitive', 'any')?.replace('primitive', 'any') ?? 'any' : `{ \n${include('/recursive-prop-decl.ejs', { properties: property.subproperties, camelCase, })}${property.type === 'array' ? '    }[]' : '    }'}` -%>;
+<% } -%>

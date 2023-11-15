@@ -7,7 +7,7 @@
     "clean": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "pnpm rimraf dist ./generators/**/gen",
+        "command": "pnpm rimraf dist ../../dist ./generators/**/gen",
         "cwd": "packages/cafe24api-client"
       }
     },
@@ -49,6 +49,13 @@
           "nx run cafe24api-client:build:cjs",
           "nx run cafe24api-client:build:esm"
         ],
+        "cwd": "packages/cafe24api-client"
+      }
+    },
+    "format": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "pnpm prettier --write \"src/**/*.js\" \"types/**/*.d.ts\" --ignore-path .prettierignore",
         "cwd": "packages/cafe24api-client"
       }
     },

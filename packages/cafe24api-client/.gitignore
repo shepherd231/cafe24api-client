@@ -1,1 +1,14 @@
+# Exclude build script
 !build
+
+# Include all files in the root of the endpoints directory
+src/admin/endpoints
+types/admin/endpoints
+src/front/endpoints
+types/front/endpoints
+
+# Exclude hardcoded auth endpoints
+!src/admin/endpoints/auth
+!src/admin/endpoints/camel-case/auth
+!types/admin/endpoints/auth.d.ts
+!types/admin/endpoints/camel-case/auth.d.ts

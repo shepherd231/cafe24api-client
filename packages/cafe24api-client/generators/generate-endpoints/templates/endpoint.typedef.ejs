@@ -6,85 +6,53 @@ export = endpoint;
 
 declare module 'cafe24api-client' {
 
-  <% if (endpoint.description) { %>
+<% if (endpoint.description) { -%>
   /**
-  * @description
-  <% for(const descline of endpoint.description.split('\n')) { %>
-  * <%= descline %>
-  <% } %>
-  */
-  <% } %>
+   * @description
+<% for(const descline of endpoint.description.split('\n')) { -%>
+   * <%= descline %>
+<% } -%>
+   */
+<% } -%>
   export interface <%= pascalCase(endpoint.id) %> {
-    <% for(const property of endpoint.schema.properties) { %>
-    <% if (property.description) { %>
-    /**
-    * @description
-    <% for(const descline of property.description.split('\n')) { %>
-    * <%= descline %>
-    <% } %>
-    */
-    <% } %>
-    <%= property.name %>: <%= property.type.replace('non-primitive', 'any').replace('primitive', 'any') %>;
-    <% } %>
+<%- include('/recursive-prop-decl.ejs', { properties: endpoint.schema?.properties ?? [], camelCase: useCamelCase ? camelCase : null }) -%>
   }
 
-  <% for(const method of endpoint.methods) { %>
-
+<% for(const method of endpoint.methods) { -%>
   export interface <%= pascalCase(method.id) %>Input {
-    <% for(const property of method.request.properties) { %>
-    <% if (property.description) { %>
-    /**
-    * @description
-    <% for(const descline of property.description.split('\n')) { %>
-    * <%= descline %>
-    <% } %>
-    */
-    <% } %>
-    <%= property.name %>: <%= property.type.replace('non-primitive', 'any').replace('primitive', 'any') %>;
-    <% } %>
+<%- include('/recursive-prop-decl.ejs', { properties: method.request.properties, camelCase: useCamelCase ? camelCase : null }) -%>
   }
 
   export interface <%= pascalCase(method.id) %>Output {
-    <% for(const property of method.response.properties) { %>
-    <% if (property.description) { %>
-    /**
-    * @description
-    <% for(const descline of property.description.split('\n')) { %>
-    * <%= descline %>
-    <% } %>
-    */
-    <% } %>
-    <%= property.name %>: <%= property.type.replace('non-primitive', 'any').replace('primitive', 'any') %>;
-    <% } %>
+<%- include('/recursive-prop-decl.ejs', { properties: method.response.properties, camelCase: useCamelCase ? camelCase : null }) -%>
   }
-
-  <% } %>
+<% } -%>
 
   interface Cafe24AdminAPIClient {
-  <% for(const method of endpoint.methods) { %>
+<% for(const method of endpoint.methods) { -%>
     /**
-    <% if (method.description) { %>
+<% if (method.description) { -%>
      * @description
-     <% for(const descline of method.description.split('\n')) { %>
+<% for(const descline of method.description.split('\n')) { -%>
      * <%= descline %>
-     <% } %>
+<% } -%>
      *
-    <% } %>
-     * @see https://developers.cafe24.com/docs/api/admin/#<%= method.id %>
-    <% if (method.response.example) { %>
+<% } -%>
+     * @see <%= docsUrl %>#<%= method.id %>
+<% if (method.response.example) { -%>
      *
      * @example 응답 예시
      * ```json
-     <% for(const exline of method.response.example.split('\n')) { %>
-     * <%= exline %>
-     <% } %>
+<% for(const exline of useCamelCase ? replaceAllMatches(method.response.example, / ([a-z0-9]+[a-z0-9_]+):/g, ([, propname]) => ` ${camelCase(propname)}:`).split('\n') : method.response.example.split('\n')) { -%>
+     * <%- exline %>
+<% } -%>
      * ```
-    <% } %>
+<% } -%>
      */
-    <%= camelCase(method.id) %> (
+    <%= camelCase(method.id) %>(
       input: <%= pascalCase(method.id) %>Input,
       options?: RequestOptions<<%= pascalCase(method.id) %>Input>,
-    ) => Promise<AxiosResponse<<%= pascalCase(method.id) %>Output>>;
-  <% } %>
+    ): Promise<AxiosResponse<<%= pascalCase(method.id) %>Output>>;
+<% } -%>
   }
 }

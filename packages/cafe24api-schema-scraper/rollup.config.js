@@ -29,7 +29,7 @@ const plugins = () => {
     injectProcessEnv({
       NODE_ENV: process.env.NODE_ENV,
     }),
-    isDev && terser(),
+    !isDev && terser(),
   ].filter((plugin) => typeof plugin === 'object');
 };
 

@@ -23,6 +23,10 @@ const register = (program) => {
       '--output <output>',
       'output file path. If not specified, print to stdout',
     )
+    .option(
+      '--noout',
+      'do not output the result. This flag has lower priority than --output',
+    )
     .action(async (options) => {
       // Configure options
       options = configureOptions(options);
@@ -45,12 +49,20 @@ const register = (program) => {
     `,
       );
 
+      if (!result) {
+        console.error('Error occured on the browser side');
+        process.exit(1);
+      }
+
       if (options.output) {
         const output = path.isAbsolute(options.output)
           ? options.output
           : path.resolve(process.cwd(), options.output);
         fs.writeFileSync(output, JSON.stringify(result, null, 2));
-      } else {
+        process.exit(0);
+      }
+
+      if (!options.noout) {
         console.log(JSON.stringify(result, null, 2));
       }
     });
