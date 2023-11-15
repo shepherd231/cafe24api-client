@@ -1,6 +1,6 @@
 {
   "name": "cafe24api-client",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Unofficial [Cafe24](https://www.cafe24.com/) API client implemented in javascript/typescript.",
   "license": "MIT",
   "main": "index.js",
