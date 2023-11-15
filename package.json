@@ -1,7 +1,7 @@
 {
   "name": "cafe24api-client-project",
   "version": "0.0.0",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@commitlint/cli": "^17.7.1",
     "@commitlint/config-conventional": "^17.7.0",

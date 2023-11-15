@@ -2,7 +2,7 @@
   "name": "cafe24api-client",
   "version": "0.0.0",
   "description": "Unofficial [Cafe24](https://www.cafe24.com/) API client implemented in javascript/typescript.",
-  "license": "ISC",
+  "license": "MIT",
   "main": "index.js",
   "types": "index.d.ts",
   "files": [
@@ -15,6 +15,10 @@
     "admin/**/*",
     "front/**/*"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shepherd231/cafe24api-client"
+  },
   "dependencies": {
     "abab": "^2.0.6",
     "axios": "^1.6.1",
