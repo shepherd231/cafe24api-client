@@ -1,11 +1,11 @@
-name: Build and Publish Acacia ML
+name: Build and Publish
 
 on:
   workflow_call:
 
 jobs:
-  build_and_publish_aml:
-    name: Build and Publish Acacia ML
+  build_and_publish:
+    name: Build and Publish
     runs-on: ubuntu-latest
     steps:
       # Check-out the repository

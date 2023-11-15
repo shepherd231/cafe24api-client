@@ -14,13 +14,6 @@
     "README.md",
     "package.json"
   ],
-  "scripts": {
-    "clean": "nx run clean",
-    "typecheck": "nx run typecheck",
-    "build": "nx run build",
-    "start": "nx run start",
-    "test": "nx run test"
-  },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",

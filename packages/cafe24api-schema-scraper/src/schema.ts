@@ -1,6 +1,6 @@
 import { pipe } from 'fp-ts/function';
-import { map } from 'fp-ts/array';
-import { replace } from 'fp-ts/String';
+import { map } from 'fp-ts/Array';
+import { replace } from 'fp-ts/string';
 import { Property } from './model';
 import { parseTableEntries } from './utils/table';
 import { getAttribute } from './utils/attribute';
