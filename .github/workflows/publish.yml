@@ -2,18 +2,6 @@ name: Build and Publish Acacia ML
 
 on:
   workflow_call:
-    inputs:
-      registry:
-        description: 'Registry to publish to'
-        required: true
-        type: string
-    secrets:
-      username:
-        description: 'Username for registry'
-        required: true
-      password:
-        description: 'Password for registry'
-        required: true
 
 jobs:
   build_and_publish_aml:
