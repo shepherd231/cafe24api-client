@@ -1,0 +1,26 @@
+import register from '../../<%= endpoint.id %>/index';
+import {
+  convertToCamelCase,
+  convertToSnakeCase,
+  optionsToSnakeCase,
+} from '../../../../utils/index';
+
+export default (cls) => {
+  register(cls);
+
+  <% for(const method of endpoint.methods) { %>
+    const <%= camelCase(method.id) %> = cls.prototype.<%= camelCase(method.id) %>;
+    cls.prototype.<%= camelCase(method.id) %> = async function (input, options) {
+      const response = await <%= camelCase(method.id) %>.call(
+        this,
+        convertToSnakeCase(input),
+        optionsToSnakeCase(options),
+      );
+      return {
+        ...response,
+        data: convertToCamelCase(response.data),
+      };
+    };
+
+ <% } %>
+};

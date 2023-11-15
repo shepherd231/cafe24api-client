@@ -11,19 +11,19 @@ import {
  *
  * - string: {@link String}
  * - number: {@link Number}
- * - boolean: {@link Cafe24Boolean}
- * - enum: {@link Cafe24Enum}
- * - date: {@link Cafe24Date}
- * - datetime: {@link Cafe24Datetime}
+ * - Cafe24Boolean: {@link Cafe24Boolean}
+ * - Cafe24Enum: {@link Cafe24Enum}
+ * - Cafe24Date: {@link Cafe24Date}
+ * - Cafe24Datetime: {@link Cafe24Datetime}
  * - primitive: This type is like any, and used when the type cannot be inferred.
  */
 type Primitive =
   | 'string'
   | 'number'
-  | 'boolean'
-  | 'enum'
-  | 'date'
-  | 'datetime'
+  | 'Cafe24Boolean'
+  | 'Cafe24Enum'
+  | 'Cafe24Date'
+  | 'Cafe24Datetime'
   | 'primitive';
 
 /**
@@ -40,10 +40,10 @@ export const isPrimitive = (type: string): type is Primitive =>
   [
     'string',
     'number',
-    'boolean',
-    'enum',
-    'date',
-    'datetime',
+    'Cafe24Boolean',
+    'Cafe24Enum',
+    'Cafe24Date',
+    'Cafe24Datetime',
     'primitive',
   ].includes(type);
 
