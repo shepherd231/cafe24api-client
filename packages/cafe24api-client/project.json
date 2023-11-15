@@ -39,6 +39,7 @@
           "cross-env BABEL_ENV=build babel src --out-dir dist/esm --copy-files",
           "node build/esm"
         ],
+        "parallel": false,
         "cwd": "packages/cafe24api-client"
       }
     },
@@ -49,6 +50,7 @@
           "nx run cafe24api-client:build:cjs",
           "nx run cafe24api-client:build:esm"
         ],
+        "parallel": false,
         "cwd": "packages/cafe24api-client"
       }
     },
@@ -71,7 +73,8 @@
           "# See `package.json` for this package's configuration",
           "mv dist/* ."
         ],
-        "cwd": "packages/cafe24api-client"
+        "cwd": "packages/cafe24api-client",
+        "parallel": false
       }
     },
     "publish": {

@@ -25,7 +25,8 @@
           "pnpm tsc --project tsconfig.build.json",
           "pnpm rollup -i dist/compiled/scripts/run.js -o dist/index.js --config rollup.config.js"
         ],
-        "cwd": "packages/cafe24api-schema-scraper"
+        "cwd": "packages/cafe24api-schema-scraper",
+        "parallel": false
       }
     },
     "start": {
