@@ -1,52 +1,62 @@
+/**
+ * @fileoverview
+ * Post build (`babel src --out-dir dist/esm --copy-files`)
+ * script for cafe24api-client esm.
+ *
+ * Adapted from dayjs build script.
+ *
+ * @see https://github.com/iamkun/dayjs/blob/HEAD/build/esm.js
+ */
+
 const fs = require('fs');
+const { DESTINATION, TYPES } = require('./values');
 const path = require('path');
+const join = path.join;
 const util = require('util');
 const { ncp } = require('ncp');
 
 const { promisify } = util;
 
+const promisifyReadDir = promisify(fs.readdir);
+const promisifyRename = promisify(fs.rename);
+
 const typeFileExt = '.d.ts';
-const localeDir = path.join(process.env.PWD, 'esm/locale');
-const pluginDir = path.join(process.env.PWD, 'esm/plugin');
-const localeTypePath = path.join(
-  process.env.PWD,
-  'esm/locale',
-  `index${typeFileExt}`,
-);
+
+const moveTypeFileOfEndpoint = async (prefix, endpoint) => {
+  const typeFilePath = join(DESTINATION, prefix, `${endpoint}${typeFileExt}`);
+  const targetPath = join(DESTINATION, prefix, endpoint, `index${typeFileExt}`);
+  await promisifyRename(typeFilePath, targetPath);
+};
+
+const moveTypeFileOfEndpoints = async (prefix, excludes = []) => {
+  let endpoints = await promisifyReadDir(join(DESTINATION, prefix));
+  endpoints = endpoints.filter((directory) => !excludes.includes(directory));
+  await Promise.all(
+    endpoints.map((endpoint) => moveTypeFileOfEndpoint(prefix, endpoint)),
+  );
+};
 
 (async () => {
   try {
-    const readLocaleDir = await promisify(fs.readdir)(localeDir);
-    readLocaleDir.forEach(async (l) => {
-      const filePath = path.join(localeDir, l);
-      const readFile = await promisify(fs.readFile)(filePath, 'utf8');
-      const result = readFile.replace("'dayjs'", "'../index'");
-      await promisify(fs.writeFile)(filePath, result, 'utf8');
-    });
+    // Copy type definition files recursively
+    await promisify(ncp)(TYPES, join(DESTINATION, 'esm'));
 
-    await promisify(ncp)('./types/', './esm');
-
-    const readLocaleFile = await promisify(fs.readFile)(localeTypePath, 'utf8');
-    const localResult = readLocaleFile.replace("'dayjs", "'dayjs/esm");
-    await promisify(fs.writeFile)(localeTypePath, localResult, 'utf8');
-
-    const readPluginDir = await promisify(fs.readdir)(pluginDir);
-    readPluginDir.forEach(async (p) => {
-      if (p.includes(typeFileExt)) {
-        const pluginName = p.replace(typeFileExt, '');
-        const filePath = path.join(pluginDir, p);
-        const targetPath = path.join(
-          pluginDir,
-          pluginName,
-          `index${typeFileExt}`,
-        );
-        const readFile = await promisify(fs.readFile)(filePath, 'utf8');
-        const result = readFile.replace(/'dayjs'/g, "'dayjs/esm'");
-        await promisify(fs.writeFile)(targetPath, result, 'utf8');
-        await promisify(fs.unlink)(filePath);
-      }
-    });
+    // As folder structure of `types` differ from that of `src`
+    // in a way that each endpoint is a file of that endpoint name in
+    // types but same is a folder containing `index.js` in src
+    // which lefts type definition files of endpoints in wrong places:
+    // type definition files of endpoints are placed at the same level
+    // with corresponding folders containing `index.js`.
+    //
+    // To fix this, this script moves type definition files of endpoints
+    // to corresponding folders containing `index.js` so that it locates
+    // same level with `index.js`.
+    await moveTypeFileOfEndpoints('esm/admin/endpoints', ['camel-case']);
+    await moveTypeFileOfEndpoints('esm/admin/endpoints/camel-case');
+    await moveTypeFileOfEndpoints('esm/front/endpoints', ['camel-case']);
+    await moveTypeFileOfEndpoints('esm/front/endpoints/camel-case');
   } catch (e) {
     console.error(e); // eslint-disable-line no-console
+    process.exit(1);
   }
 })();

@@ -13,13 +13,11 @@ export class Cafe24FrontAPIClient extends Cafe24APIClient {
   /**
    * @protected
    */
-  createHeaders(options) {
-    if (!this.clientId) {
-      throw new Error('[Cafe24FrontAPIClient] clientId is required');
-    }
+  createHeaders(headers) {
     return {
-      'Content-Type': options?.contentType || 'application/json',
+      'Content-Type': 'application/json',
       'X-Cafe24-Client-Id': this.clientId,
+      ...headers,
     };
   }
 

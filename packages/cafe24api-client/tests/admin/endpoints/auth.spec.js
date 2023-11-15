@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { snakeCase } from 'change-case';
-import { Cafe24AdminAPIClient } from '../../../src/admin-client';
+import { MockAPICall } from './mocks/auth.mock';
+import { Cafe24AdminAPIClient } from '../../../src/client/index';
 import Auth from '../../../src/admin/endpoints/auth/index';
 
 // https://stackoverflow.com/questions/45016033/how-do-i-test-axios-in-jest
@@ -26,14 +27,7 @@ describe('Auth', () => {
 
   describe('getAuthenticationCode', () => {
     it('should return redirect response', async () => {
-      axios.get.mockImplementationOnce(() =>
-        Promise.resolve({
-          status: 302,
-          headers: {
-            location: '{redirect_uri}?code={authorize_code}&state={state}',
-          },
-        }),
-      );
+      axios.get.mockImplementationOnce(MockAPICall.getAuthenticationCode);
       const response = await client.getAuthenticationCode({
         client_id: 'test-client-id',
         redirect_uri: 'https://test.com',
@@ -46,27 +40,7 @@ describe('Auth', () => {
 
   describe('getAccessToken', () => {
     it('should return 200 (with options.fields)', async () => {
-      axios.post.mockImplementationOnce(() =>
-        Promise.resolve({
-          status: 200,
-          data: {
-            access_token: '21EZes0dGSfN..........',
-            expires_at: '2021-03-01T15:50:00.000',
-            refresh_token: 'xLlhWztQHBik............',
-            refresh_token_expires_at: '2021-03-15T13:50:00.000',
-            client_id: 'BrIfqEKoPxeE..........',
-            mall_id: 'yourmall',
-            user_id: 'test',
-            scopes: [
-              'mall.read_order',
-              'mall.read_product',
-              'mall.read_store',
-              '...etc...',
-            ],
-            issued_at: '2021-03-01T13:50:00.000',
-          },
-        }),
-      );
+      axios.post.mockImplementationOnce(MockAPICall.getAccessToken);
       const response = await client.getAccessToken(
         {
           client_id: 'test-client-id',
@@ -85,26 +59,8 @@ describe('Auth', () => {
 
   describe('getAccessTokenUsingRefreshToken', () => {
     it('should return 200', async () => {
-      axios.post.mockImplementationOnce(() =>
-        Promise.resolve({
-          status: 200,
-          data: {
-            access_token: '21EZes0dGSfN..........',
-            expires_at: '2021-03-01T15:50:00.000',
-            refresh_token: 'xLlhWztQHBik............',
-            refresh_token_expires_at: '2021-03-15T13:50:00.000',
-            client_id: 'BrIfqEKoPxeE..........',
-            mall_id: 'yourmall',
-            user_id: 'test',
-            scopes: [
-              'mall.read_order',
-              'mall.read_product',
-              'mall.read_store',
-              '...etc...',
-            ],
-            issued_at: '2021-03-01T13:50:00.000',
-          },
-        }),
+      axios.post.mockImplementationOnce(
+        MockAPICall.getAccessTokenUsingRefreshToken,
       );
       const response = await client.getAccessTokenUsingRefreshToken({
         client_id: 'test-client-id',

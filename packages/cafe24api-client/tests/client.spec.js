@@ -1,6 +1,33 @@
-import { Cafe24APIClient } from '../src/client';
-import { Cafe24AdminAPIClient } from '../src/admin-client';
-import { Cafe24FrontAPIClient } from '../src/front-client';
+import axios from 'axios';
+import deepcopy from 'deepcopy';
+import {
+  Cafe24APIClient,
+  Cafe24AdminAPIClient,
+  Cafe24FrontAPIClient,
+} from '../src/client/index';
+
+jest.mock('axios');
+
+const data = { foo: 'bar' };
+const fields = ['foo', 'bar'];
+const options = {
+  fields,
+  headers: { 'Content-Type': 'application/json' },
+};
+const response = { data };
+
+const expectedUrl = 'https://test.cafe24api.com/test';
+const expectedParams = {
+  foo: 'bar',
+  fields: 'foo,bar',
+};
+const expectedBody = {
+  shop_no: 1,
+  fields: 'foo,bar',
+  request: {
+    foo: 'bar',
+  },
+};
 
 describe('Cafe24APIClient', () => {
   describe('constructor', () => {
@@ -25,25 +52,21 @@ describe('Cafe24APIClient', () => {
   describe('createBody', () => {
     it('should create body with default shop_no', () => {
       const client = new Cafe24APIClient({ mallId: 'test' });
-      const body = client.createBody({ foo: 'bar' }, ['foo']);
+      const body = client.createBody(data, fields);
       expect(body).toEqual({
         shop_no: 1,
-        fields: ['foo'],
-        request: {
-          foo: 'bar',
-        },
+        fields: deepcopy(fields),
+        request: deepcopy(data),
       });
     });
 
     it('should create body with custom shop_no', () => {
       const client = new Cafe24APIClient({ mallId: 'test' });
-      const body = client.createBody({ foo: 'bar', shop_no: 2 }, ['foo']);
+      const body = client.createBody({ foo: 'bar', shop_no: 2 }, fields);
       expect(body).toEqual({
         shop_no: 2,
-        fields: ['foo'],
-        request: {
-          foo: 'bar',
-        },
+        fields: deepcopy(fields),
+        request: deepcopy(data),
       });
     });
   });
@@ -51,10 +74,10 @@ describe('Cafe24APIClient', () => {
   describe('createParams', () => {
     it('should create params', () => {
       const client = new Cafe24APIClient({ mallId: 'test' });
-      const params = client.createParams({ foo: 'bar' }, ['foo']);
+      const params = client.createParams(data, fields);
       expect(params).toEqual({
-        foo: 'bar',
-        fields: ['foo'],
+        ...deepcopy(data),
+        fields: deepcopy(fields),
       });
     });
   });
@@ -63,6 +86,63 @@ describe('Cafe24APIClient', () => {
     it('should throw error', () => {
       const client = new Cafe24APIClient({ mallId: 'test' });
       expect(() => client.createHeaders()).toThrow('Not implemented');
+    });
+  });
+
+  describe('createRequest', () => {
+    it('should create request with GET method', async () => {
+      const client = new Cafe24APIClient({ mallId: 'test' });
+      axios.get.mockResolvedValue(response);
+      const result = await client.createRequest('GET', '/test', data, options);
+      expect(result).toEqual(deepcopy(response));
+      expect(axios.get).toHaveBeenCalledWith(expectedUrl, {
+        params: deepcopy(expectedParams),
+        headers: deepcopy(options.headers),
+      });
+    });
+
+    it('should create request with DELETE method', async () => {
+      const client = new Cafe24APIClient({ mallId: 'test' });
+      axios.delete.mockResolvedValue(response);
+      const result = await client.createRequest(
+        'DELETE',
+        '/test',
+        data,
+        options,
+      );
+      expect(result).toEqual(deepcopy(response));
+      expect(axios.delete).toHaveBeenCalledWith(expectedUrl, {
+        params: deepcopy(expectedParams),
+        headers: deepcopy(options.headers),
+      });
+    });
+
+    it('should create request with POST method', async () => {
+      const client = new Cafe24APIClient({ mallId: 'test' });
+      axios.post.mockResolvedValue(response);
+      const result = await client.createRequest('POST', '/test', data, options);
+      expect(result).toEqual(deepcopy(response));
+      expect(axios.post).toHaveBeenCalledWith(
+        expectedUrl,
+        deepcopy(expectedBody),
+        {
+          headers: deepcopy(options.headers),
+        },
+      );
+    });
+
+    it('should create request with PUT method', async () => {
+      const client = new Cafe24APIClient({ mallId: 'test' });
+      axios.put.mockResolvedValue(response);
+      const result = await client.createRequest('PUT', '/test', data, options);
+      expect(result).toEqual(deepcopy(response));
+      expect(axios.put).toHaveBeenCalledWith(
+        expectedUrl,
+        deepcopy(expectedBody),
+        {
+          headers: deepcopy(options.headers),
+        },
+      );
     });
   });
 });
@@ -101,19 +181,12 @@ describe('Cafe24AdminAPIClient', () => {
 
     it('should create headers with authorization', () => {
       const client = new Cafe24AdminAPIClient({ mallId: 'test' });
-      const authorization = 'test-auth';
-      const headers = client.createHeaders({ authorization });
+      const auth = 'test-auth';
+      const headers = client.createHeaders({ Authorization: auth });
       expect(headers).toEqual({
         'Content-Type': 'application/json',
-        Authorization: authorization,
+        Authorization: auth,
       });
-    });
-
-    it('should throw error if no accessToken is set', () => {
-      const client = new Cafe24AdminAPIClient({ mallId: 'test' });
-      expect(() => client.createHeaders()).toThrow(
-        '[Cafe24AdminAPIClient] accessToken is required',
-      );
     });
   });
 });
@@ -156,13 +229,6 @@ describe('Cafe24FrontAPIClient', () => {
         'Content-Type': 'application/json',
         'X-Cafe24-Client-Id': 'test-client-id',
       });
-    });
-
-    it('should throw error if no clientId is set', () => {
-      const client = new Cafe24FrontAPIClient({ mallId: 'test' });
-      expect(() => client.createHeaders()).toThrow(
-        '[Cafe24FrontAPIClient] clientId is required',
-      );
     });
   });
 });

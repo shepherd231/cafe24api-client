@@ -1,74 +1,68 @@
-import axios from 'axios';
-import urlJoin from 'url-join';
 import { btoa } from 'abab';
 
 export default (cls) => {
-  cls.prototype.getAuthenticationCode = async function (input, options) {
-    const url = urlJoin(this.url, '/api/v2/oauth/authorize');
-    const fields = options?.fields?.join(',');
-    return axios.get(url, {
-      params: this.createParams(
-        {
-          client_id: input['client_id'],
-          redirect_uri: input['redirect_uri'],
-          response_type: 'code',
-          state: input['state'],
-          scope: input['scope'],
-        },
-        fields,
-      ),
-      // We don't need any authorization header for this request.
-      headers: {
-        'Content-Type': 'application/json',
+  cls.prototype.getAuthenticationCode = async function (input, options = {}) {
+    // We don't need any authorization header for this request.
+    options.headers ??= {
+      'Content-Type': 'application/json',
+    };
+
+    // Create a request to get the authentication code.
+    return this.createRequest(
+      'GET',
+      '/api/v2/oauth/authorize',
+      {
+        client_id: input['client_id'],
+        redirect_uri: input['redirect_uri'],
+        response_type: 'code',
+        state: input['state'],
+        scope: input['scope'],
       },
-    });
+      options,
+    );
   };
 
-  cls.prototype.getAccessToken = async function (input, options) {
-    const url = urlJoin(this.url, '/api/v2/oauth/token');
-    const fields = options?.fields?.join(',');
+  cls.prototype.getAccessToken = async function (input, options = {}) {
+    // Need authorization header for this request.
     const password = btoa(`${input['client_id']}:${input['client_secret']}`);
-    return axios.post(
-      url,
-      this.createBody(
-        {
-          grant_type: 'authorization_code',
-          code: input['code'],
-          redirect_uri: input['redirect_uri'],
-        },
-        fields,
-      ),
+    options.headers ??= this.createHeaders({
+      contentType: 'application/x-www-form-urlencoded',
+      authorization: `Basic ${password}`,
+    });
+
+    // Create a request to get the access token.
+    return this.createRequest(
+      'POST',
+      '/api/v2/oauth/token',
       {
-        headers: this.createHeaders({
-          contentType: 'application/x-www-form-urlencoded',
-          authorization: `Basic ${password}`,
-        }),
+        grant_type: 'authorization_code',
+        code: input['code'],
+        redirect_uri: input['redirect_uri'],
       },
+      options,
     );
   };
 
   cls.prototype.getAccessTokenUsingRefreshToken = async function (
     input,
-    options,
+    options = {},
   ) {
-    const url = urlJoin(this.url, '/api/v2/oauth/token');
-    const fields = options?.fields?.join(',');
+    // Need authorization header for this request.
     const password = btoa(`${input['client_id']}:${input['client_secret']}`);
-    return axios.post(
-      url,
-      this.createBody(
-        {
-          grant_type: 'authorization_code',
-          refresh_token: input['refresh_token'],
-        },
-        fields,
-      ),
+    options.headers ??= this.createHeaders({
+      contentType: 'application/x-www-form-urlencoded',
+      authorization: `Basic ${password}`,
+    });
+
+    // Create a request to get the access token.
+    return this.createRequest(
+      'POST',
+      '/api/v2/oauth/token',
       {
-        headers: this.createHeaders({
-          contentType: 'application/x-www-form-urlencoded',
-          authorization: `Basic ${password}`,
-        }),
+        grant_type: 'refresh_token',
+        refresh_token: input['refresh_token'],
       },
+      options,
     );
   };
 };

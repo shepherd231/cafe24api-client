@@ -136,6 +136,12 @@ importers:
       cross-env:
         specifier: ^7.0.3
         version: 7.0.3
+      deepcopy:
+        specifier: ^2.1.0
+        version: 2.1.0
+      ejs:
+        specifier: ^3.1.9
+        version: 3.1.9
       jest:
         specifier: ^29.7.0
         version: 29.7.0(@types/node@20.9.0)(ts-node@10.9.1)
@@ -4740,6 +4746,12 @@ packages:
 
   /deep-is@0.1.4:
     resolution: {integrity: sha512-oIPzksmTg4/MriiaYGO+okXDT7ztn/w3Eptv/+gSIdMdKsJo0u4CfYNFJPy+4SKMuCqGw2wxnA+URMg3t8a/bQ==}
+    dev: true
+
+  /deepcopy@2.1.0:
+    resolution: {integrity: sha512-8cZeTb1ZKC3bdSCP6XOM1IsTczIO73fdqtwa2B0N15eAz7gmyhQo+mc5gnFuulsgN3vIQYmTgbmQVKalH1dKvQ==}
+    dependencies:
+      type-detect: 4.0.8
     dev: true
 
   /deepmerge@4.3.1:

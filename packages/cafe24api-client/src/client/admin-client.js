@@ -13,13 +13,11 @@ export class Cafe24AdminAPIClient extends Cafe24APIClient {
   /**
    * @protected
    */
-  createHeaders(options) {
-    if (!this.accessToken && options?.authorization === undefined) {
-      throw new Error('[Cafe24AdminAPIClient] accessToken is required');
-    }
+  createHeaders(headers) {
     return {
-      'Content-Type': options?.contentType || 'application/json',
-      Authorization: options?.authorization || `Bearer ${this.accessToken}`,
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${this.accessToken}`,
+      ...headers,
     };
   }
 

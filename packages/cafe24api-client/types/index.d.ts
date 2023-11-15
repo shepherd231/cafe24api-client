@@ -1,6 +1,8 @@
-import { RawAxiosRequestHeaders } from 'axios';
+import { AxiosResponse, RawAxiosRequestHeaders } from 'axios';
 
 declare module 'cafe24api-client' {
+  type HTTPVerb = 'GET' | 'POST' | 'PUT' | 'DELETE';
+
   declare abstract class Cafe24APIClient {
     private mallId: string;
     private url: string;
@@ -32,8 +34,15 @@ declare module 'cafe24api-client' {
      * Create a request headers for API requests.
      */
     protected abstract createHeaders(
-      options: HeaderOptions,
+      headers?: RawAxiosRequestHeaders,
     ): RawAxiosRequestHeaders;
+
+    protected async createRequest<T extends Record<string, any>>(
+      method: HTTPVerb,
+      path: string,
+      payload: Record<string, any>,
+      options: RequestOptions<T>,
+    ): Promise<AxiosResponse<T>>;
   }
 
   export class Cafe24AdminAPIClient extends Cafe24APIClient {
@@ -43,7 +52,9 @@ declare module 'cafe24api-client' {
 
     public setAccessToken(accessToken: string): void;
 
-    protected createHeaders(options: HeaderOptions): RawAxiosRequestHeaders;
+    protected createHeaders(
+      headers?: RawAxiosRequestHeaders,
+    ): RawAxiosRequestHeaders;
 
     static use(endpoint: Endpoint): void;
   }
@@ -55,7 +66,9 @@ declare module 'cafe24api-client' {
 
     public setClientId(clientId: string): void;
 
-    protected createHeaders(options: HeaderOptions): RawAxiosRequestHeaders;
+    protected createHeaders(
+      headers?: RawAxiosRequestHeaders,
+    ): RawAxiosRequestHeaders;
 
     static use(endpoint: Endpoint): void;
   }
@@ -64,17 +77,13 @@ declare module 'cafe24api-client' {
     $i?: boolean;
   };
 
-  export interface HeaderOptions {
-    contentType?: string;
-    authorization?: string;
-  }
-
   export interface ClientOptions {
     mallId: string;
   }
 
   export interface RequestOptions<Input extends Record<string, any>> {
     fields?: (keyof Input)[];
+    headers?: RawAxiosRequestHeaders;
   }
 
   export namespace Admin {

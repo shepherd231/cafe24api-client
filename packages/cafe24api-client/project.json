@@ -25,10 +25,45 @@
         "cwd": "packages/cafe24api-client"
       }
     },
+    "build:cjs": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "cross-env BABEL_ENV=build node build",
+        "cwd": "packages/cafe24api-client"
+      }
+    },
+    "build:esm": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "cross-env BABEL_ENV=build babel src --out-dir dist/esm --copy-files",
+          "node build/esm"
+        ],
+        "cwd": "packages/cafe24api-client"
+      }
+    },
     "build": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "node build",
+        "commands": [
+          "nx run cafe24api-client:build:cjs",
+          "nx run cafe24api-client:build:esm"
+        ],
+        "cwd": "packages/cafe24api-client"
+      }
+    },
+    "build:production": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "nx run cafe24api-client:build",
+          "# ",
+          "# We shallow copy every file in `dist` directory to project root directory",
+          "# as this package's actual entrypoint should locate at the project root directory.",
+          "# ",
+          "# See `package.json` for this package's configuration",
+          "mv dist/* ."
+        ],
         "cwd": "packages/cafe24api-client"
       }
     },

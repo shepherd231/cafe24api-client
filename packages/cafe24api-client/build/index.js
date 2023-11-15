@@ -8,6 +8,7 @@
 
 const rollup = require('rollup');
 const configFactory = require('./rollup.config');
+const { SOURCE, DESTINATION, TYPES } = require('./values');
 const fs = require('fs');
 const util = require('util');
 const path = require('path');
@@ -18,25 +19,23 @@ const { promisify } = util;
 
 const promisifyReadDir = promisify(fs.readdir);
 
-async function build(option) {
+const build = async (option) => {
   const bundle = await rollup.rollup(option.input);
   await bundle.write(option.output);
-}
-
-const DESTINATION = 'dist';
+};
 
 const buildEndpoint = async (prefix, endpoint) => {
   await build(
     configFactory({
-      input: join(__dirname, '../src', prefix, endpoint, 'index'),
-      fileName: join(__dirname, `../${DESTINATION}`, prefix, `${endpoint}.js`),
+      input: join(SOURCE, prefix, endpoint, 'index'),
+      fileName: join(DESTINATION, prefix, `${endpoint}.js`),
       name: `cafe24api-client-endpoint-${endpoint}`,
     }),
   );
 };
 
 const buildEndpoints = async (prefix, excludes = []) => {
-  let endpoints = await promisifyReadDir(join(__dirname, '../src', prefix));
+  let endpoints = await promisifyReadDir(join(SOURCE, prefix));
   endpoints = endpoints.filter((directory) => !excludes.includes(directory));
   await Promise.all(
     endpoints.map((endpoint) => buildEndpoint(prefix, endpoint)),
@@ -45,22 +44,22 @@ const buildEndpoints = async (prefix, excludes = []) => {
 
 (async () => {
   try {
+    // Build endpoints seperately
     await buildEndpoints('admin/endpoints', ['camel-case']);
     await buildEndpoints('admin/endpoints/camel-case');
     await buildEndpoints('front/endpoints', ['camel-case']);
     await buildEndpoints('front/endpoints/camel-case');
 
+    // Build main entry point
     await build(
       configFactory({
-        input: join(__dirname, '../src/index.js'),
-        fileName: join(__dirname, `../${DESTINATION}/cafe24api-client.min.js`),
+        input: join(SOURCE, 'index.js'),
+        fileName: join(DESTINATION, 'index.js'),
       }),
     );
 
-    await promisify(ncp)(
-      join(__dirname, '../types/'),
-      join(__dirname, `../${DESTINATION}`),
-    );
+    // Copy type definition files recursively
+    await promisify(ncp)(TYPES, DESTINATION);
   } catch (e) {
     console.error(e); // eslint-disable-line no-console
     process.exit(1);
