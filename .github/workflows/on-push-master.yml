@@ -8,13 +8,13 @@ on:
 jobs:
   # >>>>>>>>>> Start of versioning processes >>>>>>>>>>
   bump_version:
-    uses: ./.github/workflows/bump-version.yaml
+    uses: ./.github/workflows/bump-version.yml
   # <<<<<<<<<< End of versioning processes <<<<<<<<<<
 
   # >>>>>>>>>> Start of building & publishing processes >>>>>>>>>>
   publish:
     needs: [bump_version]
-    uses: ./.github/workflows/publish.yaml
+    uses: ./.github/workflows/publish.yml
     secrets: inherit
   # <<<<<<<<<< End of building & publishing processes <<<<<<<<<<
 
@@ -30,7 +30,7 @@ jobs:
     strategy:
       matrix:
         tag: ${{ fromJson(needs.bump_version.outputs.tags) }}
-    uses: ./.github/workflows/release-tag.yaml
+    uses: ./.github/workflows/release-tag.yml
     secrets: inherit
     with:
       tag: ${{ matrix.tag }}
@@ -43,7 +43,7 @@ jobs:
     # processes above fails.
     needs: [bump_version, publish, release_tags]
     if: ${{ always() }}
-    uses: ./.github/workflows/remove-tags.yaml
+    uses: ./.github/workflows/remove-tags.yml
     with:
       # https://docs.github.com/en/actions/learn-github-actions/expressions#object-filters
       results: ${{ toJson(needs.*.result) }}
