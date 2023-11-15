@@ -74,6 +74,13 @@
         "cwd": "packages/cafe24api-client"
       }
     },
+    "publish": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "pnpm publish --access public",
+        "cwd": "packages/cafe24api-client"
+      }
+    },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": [

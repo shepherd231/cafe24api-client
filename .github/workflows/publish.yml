@@ -1,0 +1,60 @@
+name: Build and Publish Acacia ML
+
+on:
+  workflow_call:
+    inputs:
+      registry:
+        description: 'Registry to publish to'
+        required: true
+        type: string
+    secrets:
+      username:
+        description: 'Username for registry'
+        required: true
+      password:
+        description: 'Password for registry'
+        required: true
+
+jobs:
+  build_and_publish_aml:
+    name: Build and Publish Acacia ML
+    runs-on: ubuntu-latest
+    steps:
+      # Check-out the repository
+      - uses: actions/checkout@v4
+
+      # Set-up git user
+      - name: Set-up git user
+        run: |
+          set -e
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      # Sync the source to the latest commit
+      - name: Sync source
+        run: |
+          set -e
+          git fetch --unshallow
+          git pull
+
+      # Setup pnpm
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      # Setup node
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'pnpm'
+
+      # Install dependencies
+      - run: pnpm install
+
+      # Build package
+      - run: nx run cafe24api-client:build:production
+
+      # Publish package
+      - run: nx run cafe24api-client:publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

@@ -21,3 +21,6 @@ lib/
 
 # Coverage
 coverage/
+
+# Secrets
+.secrets

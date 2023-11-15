@@ -1,7 +1,7 @@
 {
   "name": "cafe24api-client",
   "version": "0.0.0",
-  "description": "",
+  "description": "Unofficial [Cafe24](https://www.cafe24.com/) API client implemented in javascript/typescript.",
   "license": "ISC",
   "main": "index.js",
   "types": "index.d.ts",
@@ -15,13 +15,6 @@
     "admin/**/*",
     "front/**/*"
   ],
-  "scripts": {
-    "clean": "nx run clean",
-    "typecheck": "nx run typecheck",
-    "generate-endpoints": "nx run generate-endpoints",
-    "build": "nx run build",
-    "test": "nx run test"
-  },
   "dependencies": {
     "abab": "^2.0.6",
     "axios": "^1.6.1",
