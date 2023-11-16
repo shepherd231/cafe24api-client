@@ -33,7 +33,7 @@ const moveTypeFileOfEndpoints = async (prefix, excludes = []) => {
     withFileTypes: true,
   });
   endpoints = endpoints
-    .filter((directory) => directory.isFile())
+    .filter((directory) => directory.isDirectory())
     .map(({ name }) => name)
     .filter((dirname) => !excludes.includes(dirname));
   await Promise.all(
