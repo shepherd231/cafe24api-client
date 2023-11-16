@@ -1,13 +1,14 @@
 {
-  "name": "cafe24api-schema-scraper",
-  "version": "0.1.0",
+  "name": "cafe24-webhook-schema-generator",
   "private": true,
+  "version": "0.0.0",
+  "description": "",
   "license": "MIT",
   "bin": {
-    "cafe24api-schema-scraper": "./bin/index.js"
+    "cafe24-webhook-schema-generator": "./bin/index.js"
   },
   "main": "dist/compiled/src/index.js",
-  "types": "dist/compiled/src/index.d.ts",
+  "types": "dist/compiled/types/src/index.d.ts",
   "files": [
     "dist/bin/**/*",
     "dist/compiled/**/*",
@@ -29,6 +30,7 @@
     "dayjs": "^1.11.10",
     "dotenv": "^16.3.1",
     "fp-ts": "^2.16.1",
-    "merge": "^2.1.1"
+    "merge": "^2.1.1",
+    "cafe24api-schema-scraper": "workspace:^"
   }
 }

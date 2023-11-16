@@ -40,9 +40,9 @@ jobs:
       - run: pnpm install
 
       # Build package
-      - run: pnpm nx run cafe24api-client:build:production
+      - run: pnpm nx run-many -t build:production -p cafe24api-client cafe24-webhook-utils
 
       # Publish package
-      - run: pnpm nx run cafe24api-client:publish
+      - run: pnpm nx run-many -t publish -p cafe24api-client cafe24-webhook-utils || true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

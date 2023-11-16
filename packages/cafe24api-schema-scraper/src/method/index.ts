@@ -5,9 +5,10 @@ import { split, slice } from 'fp-ts/string';
 import { parseTableEntries } from '../utils/table';
 import { RequestInfo } from './request';
 import { getAttributes, getInnerText } from '../utils/attribute';
-import { ResponseInfo, parseExampleJSONToProperties } from './response';
+import { ResponseInfo } from './response';
 import { Property } from '../model';
 import { repositionPropertyContents } from '../utils/property';
+import { parseExampleJSONToProperties } from '../utils/json';
 
 type HttpVerb = 'GET' | 'POST' | 'PUT' | 'DELETE';
 
