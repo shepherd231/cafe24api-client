@@ -1,7 +1,7 @@
 {
   "name": "cafe24-webhook-schema-generator",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.0.0",
   "description": "",
   "license": "MIT",
   "bin": {
@@ -25,12 +25,12 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
-    "cafe24api-schema-scraper": "workspace:^",
     "commander": "^11.1.0",
+    "puppeteer": "^21.5.1",
     "dayjs": "^1.11.10",
     "dotenv": "^16.3.1",
     "fp-ts": "^2.16.1",
     "merge": "^2.1.1",
-    "puppeteer": "^21.5.1"
+    "cafe24api-schema-scraper": "workspace:^"
   }
 }

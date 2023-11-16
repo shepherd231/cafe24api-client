@@ -3,12 +3,6 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [0.1.3](https://github.com/shepherd231/cafe24api-client/compare/cafe24api-client@0.1.2...cafe24api-client@0.1.3) (2023-11-16)
-
-### :mega: Other
-
-- remove change case file ([8454f82](https://github.com/shepherd231/cafe24api-client/commit/8454f821827e9bcbcc611d50381a042f44ad96b4))
-
 ## [0.1.2](https://github.com/shepherd231/cafe24api-client/compare/cafe24api-client@0.1.1...cafe24api-client@0.1.2) (2023-11-16)
 
 ### :bug: Bug Fix
