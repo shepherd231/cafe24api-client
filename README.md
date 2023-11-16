@@ -1,4 +1,4 @@
-# cafe24api-client; [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./.github/CONTRIBUTING.md)
+# cafe24api-client [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./.github/CONTRIBUTING.md)
 
 Unofficial [Cafe24](https://www.cafe24.com/) API client implemented in javascript/typescript.
 
