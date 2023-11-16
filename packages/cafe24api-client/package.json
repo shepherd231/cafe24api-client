@@ -13,7 +13,8 @@
     "CHANGELOG.md",
     "package.json",
     "admin/**/*",
-    "front/**/*"
+    "front/**/*",
+    "esm/**/*"
   ],
   "repository": {
     "type": "git",
