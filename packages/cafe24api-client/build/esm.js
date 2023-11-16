@@ -29,8 +29,13 @@ const moveTypeFileOfEndpoint = async (prefix, endpoint) => {
 };
 
 const moveTypeFileOfEndpoints = async (prefix, excludes = []) => {
-  let endpoints = await promisifyReadDir(join(DESTINATION, prefix));
-  endpoints = endpoints.filter((directory) => !excludes.includes(directory));
+  let endpoints = await promisifyReadDir(join(DESTINATION, prefix), {
+    withFileTypes: true,
+  });
+  endpoints = endpoints
+    .filter((directory) => directory.isFile())
+    .map(({ name }) => name)
+    .filter((dirname) => !excludes.includes(dirname));
   await Promise.all(
     endpoints.map((endpoint) => moveTypeFileOfEndpoint(prefix, endpoint)),
   );

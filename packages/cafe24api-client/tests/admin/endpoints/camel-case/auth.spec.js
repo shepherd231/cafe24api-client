@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { camelCase } from 'change-case';
+import Case from 'case';
 import { Cafe24AdminAPIClient } from '../../../../src/client/index';
 import Auth from '../../../../src/admin/endpoints/camel-case/auth/index';
 import { MockAPICall } from '../mocks/auth.mock';
@@ -52,7 +52,7 @@ describe('Auth (camelCased I/O fields)', () => {
       );
       expect(response.status).toEqual(200);
       Object.keys(response.data).forEach((key) => {
-        expect(key).toEqual(camelCase(key));
+        expect(key).toEqual(Case.camel(key));
       });
     });
   });
@@ -69,7 +69,7 @@ describe('Auth (camelCased I/O fields)', () => {
       });
       expect(response.status).toEqual(200);
       Object.keys(response.data).forEach((key) => {
-        expect(key).toEqual(camelCase(key));
+        expect(key).toEqual(Case.camel(key));
       });
     });
   });

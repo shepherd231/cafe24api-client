@@ -36,6 +36,7 @@ const buildEndpoint = async (prefix, endpoint) => {
 
 const buildEndpoints = async (prefix, excludes = []) => {
   let endpoints = await promisifyReadDir(join(SOURCE, prefix));
+  // Note that we expect only directories, not files in `join(SOURCE, prefix)`
   endpoints = endpoints.filter((directory) => !excludes.includes(directory));
   await Promise.all(
     endpoints.map((endpoint) => buildEndpoint(prefix, endpoint)),

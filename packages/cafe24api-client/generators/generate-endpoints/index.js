@@ -4,11 +4,9 @@ const fs = require('fs');
 const path = require('path');
 const shell = require('shelljs');
 const ejs = require('ejs');
+const Case = require('case');
 const { targets, templatesPath } = require('./config');
 const { replaceAllMatches } = require('./utils');
-
-let camelCase;
-let pascalCase;
 
 const generateFromTemplate = async (
   docsUrl,
@@ -30,8 +28,8 @@ const generateFromTemplate = async (
       {
         docsUrl,
         endpoint,
-        camelCase,
-        pascalCase,
+        camelCase: Case.camel,
+        pascalCase: Case.pascal,
         replaceAllMatches,
         ...templateContext,
       },
@@ -80,9 +78,6 @@ const generate = async (target) => {
 
 (async () => {
   try {
-    const changeCase = await import('change-case');
-    camelCase = changeCase.camelCase;
-    pascalCase = changeCase.pascalCase;
     for (const target of targets) {
       await generate(target);
     }

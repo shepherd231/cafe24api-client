@@ -1,6 +1,6 @@
 import axios from 'axios';
-import { snakeCase } from 'change-case';
 import { MockAPICall } from './mocks/auth.mock';
+import Case from 'case';
 import { Cafe24AdminAPIClient } from '../../../src/client/index';
 import Auth from '../../../src/admin/endpoints/auth/index';
 
@@ -52,7 +52,7 @@ describe('Auth', () => {
       );
       expect(response.status).toEqual(200);
       Object.keys(response.data).forEach((key) => {
-        expect(key).toEqual(snakeCase(key));
+        expect(key).toEqual(Case.snake(key));
       });
     });
   });
@@ -69,7 +69,7 @@ describe('Auth', () => {
       });
       expect(response.status).toEqual(200);
       Object.keys(response.data).forEach((key) => {
-        expect(key).toEqual(snakeCase(key));
+        expect(key).toEqual(Case.snake(key));
       });
     });
   });

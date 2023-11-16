@@ -1,4 +1,4 @@
-import { camelCase, snakeCase } from 'change-case';
+import Case from 'case';
 
 const typeOf = (value) => {
   if (Array.isArray(value)) return 'array';
@@ -26,5 +26,5 @@ const convertToCase = (caseConverter) => {
   return objectConverter;
 };
 
-export const convertToCamelCase = convertToCase(camelCase);
-export const convertToSnakeCase = convertToCase(snakeCase);
+export const convertToCamelCase = convertToCase(Case.camel);
+export const convertToSnakeCase = convertToCase(Case.snake);

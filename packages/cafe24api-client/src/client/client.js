@@ -1,5 +1,5 @@
 import axios from 'axios';
-import urlJoin from 'url-join';
+import urlJoin from '../utils/url-join';
 
 /**
  * @abstract
