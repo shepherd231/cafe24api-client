@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.1](https://github.com/shepherd231/cafe24api-client/compare/cafe24api-client@0.1.0...cafe24api-client@0.1.1) (2023-11-16)
+
+### :bug: Bug Fix
+
+- functions are typed as functions ([6900b4d](https://github.com/shepherd231/cafe24api-client/commit/6900b4dc6f1e56158630388b0b4854ccfe4ecaa4))
+
 ## 0.1.0 (2023-11-16)
 
 ### :rocket: New Features
