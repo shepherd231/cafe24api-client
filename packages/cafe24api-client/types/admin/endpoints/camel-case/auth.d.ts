@@ -80,7 +80,7 @@ declare module 'cafe24api-client' {
     refreshToken: string;
   }
 
-  export interface GetAccessTokenUsingRefreshTokenInput
+  export interface GetAccessTokenUsingRefreshTokenOutput
     extends GetAccessTokenOutput {}
 
   interface Cafe24AdminAPIClient {
