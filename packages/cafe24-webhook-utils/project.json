@@ -1,0 +1,66 @@
+{
+  "name": "cafe24-webhook-utils",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/cafe24-webhook-utils/src",
+  "targets": {
+    "clean": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "pnpm rimraf dist ../../dist ./generators/**/gen",
+        "cwd": "packages/cafe24-webhook-utils"
+      }
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "pnpm tsc",
+        "cwd": "packages/cafe24-webhook-utils"
+      }
+    },
+    "generate-interfaces": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node generators/generate-interfaces/index.js",
+        "cwd": "packages/cafe24-webhook-utils"
+      }
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": "pnpm tsc --project tsconfig.build.json",
+        "cwd": "packages/cafe24-webhook-utils"
+      }
+    },
+    "build:production": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": "nx run cafe24-webhook-utils:build",
+        "cwd": "packages/cafe24-webhook-utils"
+      }
+    },
+    "format": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "pnpm prettier --write \"src/**/*.ts\" --ignore-path .prettierignore",
+        "cwd": "packages/cafe24-webhook-utils"
+      }
+    },
+    "publish": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "pnpm publish --access public --no-git-checks",
+        "cwd": "packages/cafe24-webhook-utils"
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
+      "options": {
+        "jestConfig": "packages/cafe24-webhook-utils/jest.config.js"
+      }
+    }
+  }
+}

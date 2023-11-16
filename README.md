@@ -1,8 +1,6 @@
-# cafe24api-client [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./.github/CONTRIBUTING.md)
+# cafe24api-client [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/shepherd231/cafe24api-client/blob/master/.github/CONTRIBUTING.md)
 
 Unofficial [Cafe24](https://www.cafe24.com/) API client implemented in javascript/typescript.
-
-This repository also contains set of tools to help you develop a service with Cafe24 API.
 
 ## Installation
 
@@ -158,10 +156,20 @@ client.setAccessToken(accessToken);
   - or fully scraped subproperties exceeding 2 levels deep (for `interface <schema>` and `interface <method>Input`).
 - This is because code generator [cafe24api-schema-scraper](./packages/cafe24api-schema-scraper/README.md) constructs property info for schema, input, and output seperately, and logic to merge them is not implemented yet. If you're interested in contributing, please check out [Contributing](#contributing) section below.
 
+## Extras
+
+This repository also contains set of tools to help you develop a service with Cafe24 API.
+
+Check out the list below for other available packages.
+
+- [cafe24-webhook-utils](./packages/cafe24-webhook-utils/README.md)
+- [cafe24api-schema-scraper (not published)](./packages/cafe24api-schema-scraper/README.md)
+- [cafe24-webhook-schema-generator (not published)](./packages/cafe24-webhook-schema-generator/README.md)
+
 ## Contributing
 
-Any contribution is welcome! Check out [CONTRIBUTING.md](./.github/CONTRIBUTING.md) and [CODE_OF_CONDUCT.md](./.github/CODE_OF_CONDUCT.md) for more information on how to get started.
+Any contribution is welcome! Check out [CONTRIBUTING.md](https://github.com/shepherd231/cafe24api-client/blob/master/.github/CONTRIBUTING.md) and [CODE_OF_CONDUCT.md](https://github.com/shepherd231/cafe24api-client/blob/master/.github/CODE_OF_CONDUCT.md) for more information on how to get started.
 
 ## License
 
-`cafe24api-client` is licensed under a [MIT License](./LICENSE).
+`cafe24api-client` is licensed under a [MIT License](https://github.com/shepherd231/cafe24api-client/blob/master/LICENSE).

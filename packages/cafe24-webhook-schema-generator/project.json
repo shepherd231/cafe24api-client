@@ -1,0 +1,40 @@
+{
+  "name": "cafe24-webhook-schema-generator",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/cafe24-webhook-schema-generator/src",
+  "targets": {
+    "clean": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "pnpm rimraf dist .rollup.cache .tsbuildinfo ../../dist",
+        "cwd": "packages/cafe24-webhook-schema-generator"
+      }
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "pnpm tsc",
+        "cwd": "packages/cafe24-webhook-schema-generator"
+      }
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "pnpm tsc --project tsconfig.build.json",
+          "pnpm rollup -i dist/compiled/scripts/run.js -o dist/index.js --config rollup.config.js"
+        ],
+        "cwd": "packages/cafe24-webhook-schema-generator",
+        "parallel": false
+      }
+    },
+    "start": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node ./bin/index.js run",
+        "cwd": "packages/cafe24-webhook-schema-generator"
+      }
+    }
+  }
+}

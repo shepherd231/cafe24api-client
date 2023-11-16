@@ -1,0 +1,24 @@
+{
+  "extends": [
+    "./tsconfig.json",
+    "../../tsconfig.build.json"
+  ],
+  "compilerOptions": {
+    "rootDirs": [
+      "src",
+      "scripts"
+    ],
+    "outDir": "dist/compiled",
+    "checkJs": true,
+    "tsBuildInfoFile": ".tsbuildinfo",
+    "removeComments": false,
+  },
+  "include": [
+    "./src/**/*",
+    "./scripts/**/*",
+  ],
+  "exclude": [
+    "./tests/**/*",
+    "./bin/**/*",
+  ]
+}
