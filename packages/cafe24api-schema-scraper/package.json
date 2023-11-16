@@ -1,6 +1,6 @@
 {
   "name": "cafe24api-schema-scraper",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "license": "MIT",
   "bin": {
@@ -25,10 +25,10 @@
   },
   "dependencies": {
     "commander": "^11.1.0",
-    "puppeteer": "^21.5.1",
     "dayjs": "^1.11.10",
     "dotenv": "^16.3.1",
     "fp-ts": "^2.16.1",
-    "merge": "^2.1.1"
+    "merge": "^2.1.1",
+    "puppeteer": "^21.5.1"
   }
 }
