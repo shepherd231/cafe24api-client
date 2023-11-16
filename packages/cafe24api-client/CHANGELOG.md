@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.2](https://github.com/shepherd231/cafe24api-client/compare/cafe24api-client@0.1.1...cafe24api-client@0.1.2) (2023-11-16)
+
+### :bug: Bug Fix
+
+- **cafe24api-client:** type typo at auth endpoint group ([d6e5cc6](https://github.com/shepherd231/cafe24api-client/commit/d6e5cc6ab957d7984fab77763d209eff1ac99239))
+
 ## [0.1.1](https://github.com/shepherd231/cafe24api-client/compare/cafe24api-client@0.1.0...cafe24api-client@0.1.1) (2023-11-16)
 
 ### :bug: Bug Fix
