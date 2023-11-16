@@ -150,6 +150,14 @@ const accessToken = data.access_token;
 client.setAccessToken(accessToken);
 ```
 
+## Limitations
+
+- Typescript interfaces provided by this library (e.g. `interface <method>Input`, `interface <method>Output`) are 
+  - not fully typed (for `interface <method>Input` and `interface <schema>`), 
+  - or fully documented with JSDoc (for `interface <method>Output`), 
+  - or fully scraped subproperties exceeding 2 levels deep (for `interface <schema>` and `interface <method>Input`).
+- This is because code generator [cafe24api-schema-scraper](./packages/cafe24api-schema-scraper/README.md) constructs property info for schema, input, and output seperately, and logic to merge them is not implemented yet. If you're interested in contributing, please check out [Contributing](#contributing) section below.
+
 ## Contributing
 
 Any contribution is welcome! Check out [CONTRIBUTING.md](./.github/CONTRIBUTING.md) and [CODE_OF_CONDUCT.md](./.github/CODE_OF_CONDUCT.md) for more information on how to get started.
