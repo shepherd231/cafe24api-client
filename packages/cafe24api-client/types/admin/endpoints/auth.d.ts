@@ -99,10 +99,10 @@ declare module 'cafe24api-client' {
      * Location: {redirect_uri}?code={authorize_code}&state={state}
      * ```
      */
-    getAuthenticationCode: (
+    getAuthenticationCode(
       input: GetAuthenticationCodeInput,
       options?: RequestOptions<GetAuthenticationCodeInput>,
-    ) => Promise<AxiosResponse>;
+    ): Promise<AxiosResponse>;
 
     /**
      * @description
@@ -131,10 +131,10 @@ declare module 'cafe24api-client' {
      * }
      * ```
      */
-    getAccessToken: (
+    getAccessToken(
       input: GetAccessTokenInput,
       options?: RequestOptions<GetAccessTokenInput>,
-    ) => Promise<AxiosResponse<GetAccessTokenOutput>>;
+    ): Promise<AxiosResponse<GetAccessTokenOutput>>;
 
     /**
      * @description
@@ -171,9 +171,9 @@ declare module 'cafe24api-client' {
      * }
      * ```
      */
-    getAccessTokenUsingRefreshToken: (
+    getAccessTokenUsingRefreshToken(
       input: GetAccessTokenUsingRefreshTokenInput,
       options?: RequestOptions<GetAccessTokenUsingRefreshTokenInput>,
-    ) => Promise<AxiosResponse<GetAccessTokenUsingRefreshTokenOutput>>;
+    ): Promise<AxiosResponse<GetAccessTokenUsingRefreshTokenOutput>>;
   }
 }

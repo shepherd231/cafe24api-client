@@ -7,7 +7,7 @@ declare module 'cafe24api-client' {
     private mallId: string;
     private url: string;
 
-    constructor(options: ClientOptions);
+    constructor(options: Client.ClientOptions);
 
     /**
      * @description
@@ -77,23 +77,25 @@ declare module 'cafe24api-client' {
     $i?: boolean;
   };
 
-  export interface ClientOptions {
-    mallId: string;
-  }
-
   export interface RequestOptions<Input extends Record<string, any>> {
     fields?: (keyof Input)[];
     headers?: RawAxiosRequestHeaders;
   }
 
+  namespace Client {
+    export interface ClientOptions {
+      mallId: string;
+    }
+  }
+
   export namespace Admin {
-    export interface ClientOptions extends ClientOptions {
+    export interface ClientOptions extends Client.ClientOptions {
       accessToken?: string;
     }
   }
 
   export namespace Front {
-    export interface ClientOptions extends ClientOptions {
+    export interface ClientOptions extends Client.ClientOptions {
       clientId?: string;
     }
   }
