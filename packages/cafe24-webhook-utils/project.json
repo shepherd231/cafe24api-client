@@ -28,14 +28,14 @@
     "build": {
       "executor": "nx:run-commands",
       "options": {
-        "commands": "pnpm tsc --project tsconfig.build.json",
+        "command": "pnpm tsc --project tsconfig.build.json",
         "cwd": "packages/cafe24-webhook-utils"
       }
     },
     "build:production": {
       "executor": "nx:run-commands",
       "options": {
-        "commands": "nx run cafe24-webhook-utils:build",
+        "command": "nx run cafe24-webhook-utils:build",
         "cwd": "packages/cafe24-webhook-utils"
       }
     },
