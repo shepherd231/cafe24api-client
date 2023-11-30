@@ -51,7 +51,7 @@
       "options": {
         "commands": [
           "# Check if we need to publish this package",
-          "_PUBLISH=$(node ../../ci/publish-is-needed.js ./package.json)",
+          "_PUBLISH=$(node ../../ci/publish-is-needed.js ./package.json | tail -n 1)",
           "# ",
           "# If we don't need to publish, exit",
           "if [ \"$_PUBLISH\" = \"false\" ]; then",
