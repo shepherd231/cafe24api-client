@@ -49,21 +49,8 @@
     "publish": {
       "executor": "nx:run-commands",
       "options": {
-        "commands": [
-          "# Check if we need to publish this package",
-          "_PUBLISH=$(node ../../ci/publish-is-needed.js ./package.json | tail -n 1)",
-          "# ",
-          "# If we don't need to publish, exit",
-          "if [ \"$_PUBLISH\" = \"false\" ]; then",
-          "  echo \"No need to publish.\"",
-          "  exit 0",
-          "fi",
-          "# ",
-          "# If we need to publish, publish",
-          "pnpm publish --access public --no-git-checks"
-        ],
-        "cwd": "packages/cafe24-webhook-utils",
-        "parallel": false
+        "command": "pnpm publish --access public --no-git-checks || echo 'Already published: cafe24-webhook-utils'",
+        "cwd": "packages/cafe24-webhook-utils"
       }
     },
     "test": {

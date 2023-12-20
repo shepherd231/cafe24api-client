@@ -17,7 +17,7 @@ lib/
 
 # Cache
 .rollup.cache
-.tsbuildinfo
+*.tsbuildinfo
 
 # Coverage
 coverage/

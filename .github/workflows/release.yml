@@ -1,0 +1,54 @@
+on:
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: write
+  pull-requests: write
+
+name: Release and publish
+
+jobs:
+  release-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: google-github-actions/release-please-action@v4
+        id: release
+        with:
+          token: ${{ secrets.GH_PAT }}
+          config-file: release-please-config.json
+          manifest-file: .release-please-manifest.json
+
+      # Checkout the repository
+      - uses: actions/checkout@v4
+        if: ${{ steps.release.outputs.releases_created == 'true' }}
+        with:
+          ref: ${{ github.event.after }}
+
+      # Setup pnpm
+      - uses: pnpm/action-setup@v2
+        if: ${{ steps.release.outputs.releases_created == 'true' }}
+        with:
+          version: 8
+
+      # Setup node
+      - uses: actions/setup-node@v3
+        if: ${{ steps.release.outputs.releases_created == 'true' }}
+        with:
+          node-version: 16
+          cache: 'pnpm'
+
+      # Install dependencies
+      - run: pnpm install
+        if: ${{ steps.release.outputs.releases_created == 'true' }}
+
+      # Build package
+      - run: pnpm nx run-many -t build:production -p cafe24api-client cafe24-webhook-utils
+        if: ${{ steps.release.outputs.releases_created == 'true' }}
+
+      # Publish package
+      - run: pnpm nx run-many -t publish -p cafe24api-client cafe24-webhook-utils
+        if: ${{ steps.release.outputs.releases_created == 'true' }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
