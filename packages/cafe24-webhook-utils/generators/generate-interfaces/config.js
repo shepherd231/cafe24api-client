@@ -20,6 +20,12 @@ const targets = [
     fileOutputPath: path.resolve(sourcePath, 'event'),
     fileTemplate: eventTemplate,
   },
+  {
+    id: 'extra-webhook-data',
+    endpointsJSONPath: path.resolve(__dirname, 'gen/extra-webhook-info.json'),
+    fileOutputPath: path.resolve(sourcePath, 'event'),
+    fileTemplate: eventTemplate,
+  },
 ];
 
 module.exports = {

@@ -1,0 +1,212 @@
+[
+  {
+    "eventId": 90031,
+    "name": "OnProductAddedToOrder",
+    "description": "쇼핑몰에 접수된 주문에 상품을 추가한 경우\n\nRequired permissions:\n- mall.read_category\n- mall.read_collection\n- mall.read_customer\n- mall.read_order\n- mall.read_product\n- mall.read_promotion\n- mall.read_supply",
+    "properties": [
+      {
+        "name": "event_no",
+        "type": "number",
+        "required": true,
+        "description": "이벤트 구분(타입)"
+      },
+      {
+        "name": "resource",
+        "type": "object",
+        "required": true,
+        "subproperties": [
+          {
+            "name": "mall_id",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "event_shop_no",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "order_id",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "payment_gateway_name",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "currency",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "order_date",
+            "type": "Cafe24Datetime",
+            "required": true
+          },
+          {
+            "name": "order_place_name",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "member_id",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "member_authentication",
+            "type": "Cafe24Enum",
+            "required": true
+          },
+          {
+            "name": "buyer_name",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "buyer_email",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "buyer_phone",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "buyer_cellphone",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "group_no_when_ordering",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "first_order",
+            "type": "Cafe24Enum",
+            "required": true
+          },
+          {
+            "name": "order_from_mobile",
+            "type": "Cafe24Enum",
+            "required": true
+          },
+          {
+            "name": "paid",
+            "type": "Cafe24Enum",
+            "required": true
+          },
+          {
+            "name": "payment_date",
+            "type": "Cafe24Datetime",
+            "required": true
+          },
+          {
+            "name": "billing_name",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "bank_code",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "payment_method",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "easypay_name",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "use_escrow",
+            "type": "Cafe24Enum",
+            "required": true
+          },
+          {
+            "name": "bank_account_no",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "order_price_amount",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "membership_discount_amount",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "actual_payment_amount",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "mileage_spent_amount",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "cancel_date",
+            "type": "any",
+            "required": true
+          },
+          {
+            "name": "shipping_fee",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "shipping_type",
+            "type": "Cafe24Enum",
+            "required": true
+          },
+          {
+            "name": "shipping_status",
+            "type": "Cafe24Enum",
+            "required": true
+          },
+          {
+            "name": "wished_delivery_date",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "wished_delivery_time",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "shipping_message",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "order_place_id",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "ordering_product_code",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "ordering_product_name",
+            "type": "string",
+            "required": true
+          }
+        ]
+      }
+    ]
+  }
+]

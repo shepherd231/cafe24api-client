@@ -46,13 +46,36 @@ export class Cafe24APIClient {
     const fields = options?.fields?.join(',');
     const headers = options?.headers ?? this.createHeaders();
     if (['GET', 'DELETE'].includes(method)) {
-      const fetcher = method === 'GET' ? axios.get : axios.delete;
+      let fetcher;
+      switch (method) {
+        case 'GET':
+          fetcher = axios.get;
+          break;
+        case 'DELETE':
+          fetcher = axios.delete;
+          break;
+        default:
+          throw new Error(`Unknown method: ${method}`);
+      }
       return fetcher(url, {
         params: this.createParams(payload, fields),
         headers,
       });
     } else {
-      const fetcher = method === 'POST' ? axios.post : axios.put;
+      let fetcher;
+      switch (method) {
+        case 'POST':
+          fetcher = axios.post;
+          break;
+        case 'PUT':
+          fetcher = axios.put;
+          break;
+        case 'PATCH':
+          fetcher = axios.patch;
+          break;
+        default:
+          throw new Error(`Unknown method: ${method}`);
+      }
       return fetcher(url, this.createBody(payload, fields), {
         headers,
       });

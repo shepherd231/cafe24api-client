@@ -36,6 +36,7 @@ const generateFromTemplate = async (
 };
 
 const generate = async (target) => {
+  // Generate intermediate json file from docs
   if (!fs.existsSync(target.endpointsJSONPath)) {
     fs.mkdirSync(path.dirname(target.endpointsJSONPath), { recursive: true });
     const execution = shell.exec(
@@ -46,11 +47,11 @@ const generate = async (target) => {
     }
   }
 
+  // Generate files from event list json file
   /**
    * @type {import('cafe24-webhook-schema-generator').WebhookInfo[]}
    */
   const events = require(target.endpointsJSONPath);
-
   for (const event of events) {
     await generateFromTemplate(
       event,
@@ -61,8 +62,9 @@ const generate = async (target) => {
     );
   }
 
+  // Append exports for all event interfaces
   const filePath = path.resolve(target.fileOutputPath, 'index.ts');
-  fs.writeFileSync(
+  fs.appendFileSync(
     filePath,
     events
       .map((event) => `export * from './${Case.kebab(event.name)}';`)
@@ -72,6 +74,11 @@ const generate = async (target) => {
 
 (async () => {
   try {
+    // Generate index file for export all event interfaces
+    const indexFilePath = path.resolve(sourcePath, 'event/index.ts');
+    fs.writeFileSync(indexFilePath, '');
+
+    // Generate event interfaces
     for (const target of targets) {
       await generate(target);
     }
