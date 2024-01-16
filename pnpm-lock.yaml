@@ -172,9 +172,6 @@ importers:
       case:
         specifier: ^1.6.3
         version: 1.6.3
-      merge:
-        specifier: ^2.1.1
-        version: 2.1.1
     devDependencies:
       '@babel/cli':
         specifier: ^7.23.0
