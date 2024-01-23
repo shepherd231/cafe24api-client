@@ -1,12 +1,12 @@
-export const MockAPICall = {
-  getAuthenticationCode: () =>
+export namespace MockAPICall {
+  export const getAuthenticationCode = () =>
     Promise.resolve({
       status: 302,
       headers: {
         location: '{redirect_uri}?code={authorize_code}&state={state}',
       },
-    }),
-  getAccessToken: () =>
+    });
+  export const getAccessToken = () =>
     Promise.resolve({
       status: 200,
       data: {
@@ -25,8 +25,8 @@ export const MockAPICall = {
         ],
         issued_at: '2021-03-01T13:50:00.000',
       },
-    }),
-  getAccessTokenUsingRefreshToken: () =>
+    });
+  export const getAccessTokenUsingRefreshToken = () =>
     Promise.resolve({
       status: 200,
       data: {
@@ -45,5 +45,5 @@ export const MockAPICall = {
         ],
         issued_at: '2021-03-01T13:50:00.000',
       },
-    }),
-};
+    });
+}

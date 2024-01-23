@@ -5,45 +5,29 @@ import axios, {
 } from 'axios';
 import { merge } from 'merge';
 import urlJoin from 'url-join';
-
-type HTTPVerb = 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH';
-
-interface FetchOptions<D = any> {
-  url: string;
-  payload: D;
-  fields: string;
-  headers: RawAxiosRequestHeaders;
-  options?: AxiosRequestConfig<D>;
-}
-
-type Fetcher = <T = any, R = AxiosResponse<T>, D = any>(
-  options: FetchOptions<D>,
-) => Promise<R>;
-
-// eslint-disable-next-line @typescript-eslint/ban-types
-export type Endpoint = ((cls: Function) => void) & {
-  $i?: boolean;
-};
-
-export interface RequestOptions<Input extends Record<string, any>> {
-  fields?: (keyof Input)[];
-  headers?: RawAxiosRequestHeaders;
-}
-
-export interface RequestLimiter {}
+import { TaskQueue, TaskQueueOptions } from '../task-queue';
 
 export interface Cafe24APIClientOptions {
   mallId: string;
-  requestLimiter?: RequestLimiter | boolean;
+  taskQueue?: TaskQueueOptions;
 }
 
 export abstract class Cafe24APIClient {
   private readonly mallId: string;
   private readonly url: string;
+  private readonly taskQueue?: TaskQueue;
 
   constructor(options: Cafe24APIClientOptions) {
     this.mallId = options.mallId;
     this.url = `https://${this.mallId}.cafe24api.com`;
+
+    const taskQueueOptions = options?.taskQueue;
+    this.taskQueue = taskQueueOptions && new TaskQueue(taskQueueOptions);
+    this.taskQueue?.startRunning();
+  }
+
+  protected get taskQueueEnabled(): boolean {
+    return !!this.taskQueue;
   }
 
   /**
@@ -98,9 +82,32 @@ export abstract class Cafe24APIClient {
     payload: Record<string, any>,
     options: RequestOptions<T>,
   ): Promise<AxiosResponse<T>> {
-    const url = urlJoin(this.url, path);
-    const fields = options?.fields?.join(',');
-    const headers = options?.headers ?? this.createHeaders();
+    // Get the fetcher for the given method
+    const fetcher = this.createFetcher(method);
+
+    // If the task queue is not enabled, just fetch
+    if (!this.taskQueueEnabled) {
+      return fetcher({
+        url: urlJoin(this.url, path),
+        payload,
+        fields: options?.fields?.join(','),
+        headers: options?.headers ?? this.createHeaders(),
+      });
+    }
+
+    // If the task queue is enabled, add the task to the queue
+    // and wait for the task to be executed
+    return this.taskQueue.enqueue(() =>
+      fetcher({
+        url: urlJoin(this.url, path),
+        payload,
+        fields: options?.fields?.join(','),
+        headers: options?.headers ?? this.createHeaders(),
+      }),
+    );
+  }
+
+  protected createFetcher(method: HTTPVerb): Fetcher {
     let fetcher: Fetcher;
     switch (method) {
       case 'GET':
@@ -152,11 +159,30 @@ export abstract class Cafe24APIClient {
       default:
         throw new Error(`Unknown method: ${method}`);
     }
-    return fetcher({
-      url,
-      payload,
-      fields,
-      headers,
-    });
+    return fetcher;
   }
+}
+
+export type HTTPVerb = 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH';
+
+interface FetchOptions<D = any> {
+  url: string;
+  payload: D;
+  fields: string;
+  headers: RawAxiosRequestHeaders;
+  options?: AxiosRequestConfig<D>;
+}
+
+type Fetcher = <T = any, R = AxiosResponse<T>, D = any>(
+  options: FetchOptions<D>,
+) => Promise<R>;
+
+// eslint-disable-next-line @typescript-eslint/ban-types
+export type Endpoint = ((cls: Function) => void) & {
+  $i?: boolean;
+};
+
+export interface RequestOptions<Input extends Record<string, any>> {
+  fields?: (keyof Input)[];
+  headers?: RawAxiosRequestHeaders;
 }
