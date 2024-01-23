@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.0](https://github.com/shepherd231/cafe24api-client/compare/cafe24api-client@0.1.3...cafe24api-client-v0.2.0) (2024-01-23)
+
+
+### Features
+
+* client registry ([7fee3ec](https://github.com/shepherd231/cafe24api-client/commit/7fee3ecbb7ea8d58b63927ed3a4dc5ae2f439dbc))
+* task queue ([a04c100](https://github.com/shepherd231/cafe24api-client/commit/a04c100c48ec0a3e37452b9f7e4ec1dc8a6d6481))
+* ts build system and protected methods for extensino ([f033c5c](https://github.com/shepherd231/cafe24api-client/commit/f033c5c15e834b040365853195181f5a95eb43d2))
+
 ## [0.1.3](https://github.com/shepherd231/cafe24api-client/compare/cafe24api-client@0.1.2...cafe24api-client@0.1.3) (2023-11-16)
 
 ### :mega: Other
