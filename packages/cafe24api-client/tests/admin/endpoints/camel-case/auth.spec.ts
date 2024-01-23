@@ -1,13 +1,13 @@
 import axios from 'axios';
-import { MockAPICall } from './mocks/auth.mock';
 import Case from 'case';
-import { Cafe24AdminAPIClient } from '../../../src/client/index';
-import Auth from '../../../src/admin/endpoints/auth/index';
+import { Cafe24AdminAPIClient } from '../../../../src/client/index';
+import Auth from '../../../../src/admin/endpoints/camel-case/auth/index';
+import { MockAPICall } from '../mocks/auth.mock';
 
 // https://stackoverflow.com/questions/45016033/how-do-i-test-axios-in-jest
 jest.mock('axios');
 
-describe('Auth', () => {
+describe('Auth (camelCased I/O fields)', () => {
   /**
    * @type {Cafe24AdminAPIClient}
    */
@@ -27,10 +27,11 @@ describe('Auth', () => {
 
   describe('getAuthenticationCode', () => {
     it('should return redirect response', async () => {
+      // @ts-ignore
       axios.get.mockImplementationOnce(MockAPICall.getAuthenticationCode);
       const response = await client.getAuthenticationCode({
-        client_id: 'test-client-id',
-        redirect_uri: 'https://test.com',
+        cliendId: 'test-client-id',
+        redirectUri: 'https://test.com',
         state: 'test-state',
         scope: 'mall.read_product',
       });
@@ -40,36 +41,38 @@ describe('Auth', () => {
 
   describe('getAccessToken', () => {
     it('should return 200 (with options.fields)', async () => {
+      // @ts-ignore
       axios.post.mockImplementationOnce(MockAPICall.getAccessToken);
       const response = await client.getAccessToken(
         {
-          client_id: 'test-client-id',
-          client_secret: 'test-client-secret',
+          clientId: 'test-client-id',
+          clientSecret: 'test-client-secret',
           code: 'test-code',
-          redirect_uri: 'https://test.com',
+          redirectUri: 'https://test.com',
         },
-        { fields: ['mall_id', 'access_token', 'refresh_token'] },
+        { fields: ['mallId', 'accessToken', 'refreshToken'] },
       );
       expect(response.status).toEqual(200);
       Object.keys(response.data).forEach((key) => {
-        expect(key).toEqual(Case.snake(key));
+        expect(key).toEqual(Case.camel(key));
       });
     });
   });
 
   describe('getAccessTokenUsingRefreshToken', () => {
     it('should return 200', async () => {
+      // @ts-ignore
       axios.post.mockImplementationOnce(
         MockAPICall.getAccessTokenUsingRefreshToken,
       );
       const response = await client.getAccessTokenUsingRefreshToken({
-        client_id: 'test-client-id',
-        client_secret: 'test-client-secret',
-        refresh_token: 'test-refresh-token',
+        clientId: 'test-client-id',
+        clientSecret: 'test-client-secret',
+        refreshToken: 'test-refresh-token',
       });
       expect(response.status).toEqual(200);
       Object.keys(response.data).forEach((key) => {
-        expect(key).toEqual(Case.snake(key));
+        expect(key).toEqual(Case.camel(key));
       });
     });
   });

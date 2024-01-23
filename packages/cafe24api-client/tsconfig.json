@@ -4,6 +4,7 @@
     "./src/**/*",
     "./types/**/*",
     "./generators/**/*",
+    "./tests/**/*",
   ],
   "compilerOptions": {
     "checkJs": true,

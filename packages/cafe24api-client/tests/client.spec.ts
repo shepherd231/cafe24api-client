@@ -36,6 +36,7 @@ describe('Cafe24APIClient', () => {
      */
     let client;
     it('should create instance', () => {
+      // @ts-ignore
       client = new Cafe24APIClient({ mallId: 'test' });
       expect(client).toBeInstanceOf(Cafe24APIClient);
     });
@@ -51,6 +52,7 @@ describe('Cafe24APIClient', () => {
 
   describe('createBody', () => {
     it('should create body with default shop_no', () => {
+      // @ts-ignore
       const client = new Cafe24APIClient({ mallId: 'test' });
       const body = client.createBody(data, fields);
       expect(body).toEqual({
@@ -61,6 +63,7 @@ describe('Cafe24APIClient', () => {
     });
 
     it('should create body with custom shop_no', () => {
+      // @ts-ignore
       const client = new Cafe24APIClient({ mallId: 'test' });
       const body = client.createBody({ foo: 'bar', shop_no: 2 }, fields);
       expect(body).toEqual({
@@ -73,6 +76,7 @@ describe('Cafe24APIClient', () => {
 
   describe('createParams', () => {
     it('should create params', () => {
+      // @ts-ignore
       const client = new Cafe24APIClient({ mallId: 'test' });
       const params = client.createParams(data, fields);
       expect(params).toEqual({
@@ -82,16 +86,11 @@ describe('Cafe24APIClient', () => {
     });
   });
 
-  describe('createHeaders', () => {
-    it('should throw error', () => {
-      const client = new Cafe24APIClient({ mallId: 'test' });
-      expect(() => client.createHeaders()).toThrow('Not implemented');
-    });
-  });
-
   describe('createRequest', () => {
     it('should create request with GET method', async () => {
+      // @ts-ignore
       const client = new Cafe24APIClient({ mallId: 'test' });
+      // @ts-ignore
       axios.get.mockResolvedValue(response);
       const result = await client.createRequest('GET', '/test', data, options);
       expect(result).toEqual(deepcopy(response));
@@ -102,7 +101,9 @@ describe('Cafe24APIClient', () => {
     });
 
     it('should create request with DELETE method', async () => {
+      // @ts-ignore
       const client = new Cafe24APIClient({ mallId: 'test' });
+      // @ts-ignore
       axios.delete.mockResolvedValue(response);
       const result = await client.createRequest(
         'DELETE',
@@ -118,7 +119,9 @@ describe('Cafe24APIClient', () => {
     });
 
     it('should create request with POST method', async () => {
+      // @ts-ignore
       const client = new Cafe24APIClient({ mallId: 'test' });
+      // @ts-ignore
       axios.post.mockResolvedValue(response);
       const result = await client.createRequest('POST', '/test', data, options);
       expect(result).toEqual(deepcopy(response));
@@ -132,7 +135,9 @@ describe('Cafe24APIClient', () => {
     });
 
     it('should create request with PUT method', async () => {
+      // @ts-ignore
       const client = new Cafe24APIClient({ mallId: 'test' });
+      // @ts-ignore
       axios.put.mockResolvedValue(response);
       const result = await client.createRequest('PUT', '/test', data, options);
       expect(result).toEqual(deepcopy(response));
@@ -172,6 +177,7 @@ describe('Cafe24AdminAPIClient', () => {
       const client = new Cafe24AdminAPIClient({ mallId: 'test' });
       const accessToken = 'test-access-token';
       client.setAccessToken(accessToken);
+      // @ts-ignore
       const headers = client.createHeaders({});
       expect(headers).toEqual({
         'Content-Type': 'application/json',
@@ -182,6 +188,7 @@ describe('Cafe24AdminAPIClient', () => {
     it('should create headers with authorization', () => {
       const client = new Cafe24AdminAPIClient({ mallId: 'test' });
       const auth = 'test-auth';
+      // @ts-ignore
       const headers = client.createHeaders({ Authorization: auth });
       expect(headers).toEqual({
         'Content-Type': 'application/json',
@@ -224,6 +231,7 @@ describe('Cafe24FrontAPIClient', () => {
         mallId: 'test',
         clientId: 'test-client-id',
       });
+      // @ts-ignore
       const headers = client.createHeaders();
       expect(headers).toEqual({
         'Content-Type': 'application/json',

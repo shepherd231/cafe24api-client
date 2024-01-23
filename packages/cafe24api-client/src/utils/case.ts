@@ -6,7 +6,7 @@ const typeOf = (value) => {
   return typeof value;
 };
 
-const convertToCase = (caseConverter) => {
+const convertToCase = (caseConverter: (value: string) => string) => {
   function objectConverter(value) {
     switch (typeOf(value)) {
       case 'object':

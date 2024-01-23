@@ -8,17 +8,18 @@
  * @see https://github.com/iamkun/dayjs/blob/HEAD/build/esm.js
  */
 
-const fs = require('fs');
+const { readdir, rename, copyFileSync } = require('fs');
 const { DESTINATION, TYPES } = require('./values');
 const path = require('path');
 const join = path.join;
 const util = require('util');
 const { ncp } = require('ncp');
+const { execSync } = require('child_process');
 
 const { promisify } = util;
 
-const promisifyReadDir = promisify(fs.readdir);
-const promisifyRename = promisify(fs.rename);
+const promisifyReadDir = promisify(readdir);
+const promisifyRename = promisify(rename);
 
 const typeFileExt = '.d.ts';
 
@@ -43,6 +44,21 @@ const moveTypeFileOfEndpoints = async (prefix, excludes = []) => {
 
 (async () => {
   try {
+    // Copy source files to dist/esm
+    execSync(
+      `babel src \
+        --out-dir dist/esm \
+        --copy-files \
+        --extensions .ts,.js,.tsx,.jsx,.cjs,.mjs`,
+      { stdio: 'inherit' },
+    );
+
+    // Copy `index.d.ts` to `dist/esm`
+    copyFileSync(
+      join(DESTINATION, 'index.d.ts'),
+      join(DESTINATION, 'esm', 'index.d.ts'),
+    );
+
     // Copy type definition files recursively
     await promisify(ncp)(TYPES, join(DESTINATION, 'esm'));
 

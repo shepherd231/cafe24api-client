@@ -1,14 +1,35 @@
 const { default: babel } = require('@rollup/plugin-babel');
 const { default: terser } = require('@rollup/plugin-terser');
+const { default: resolve } = require('@rollup/plugin-node-resolve');
+const { default: commonjs } = require('@rollup/plugin-commonjs');
+const { default: json } = require('@rollup/plugin-json');
+const peerDepsExternal = require('rollup-plugin-peer-deps-external');
+const { dts } = require('rollup-plugin-dts');
 
-module.exports = (config) => {
+const extensions = ['.ts', '.mjs', '.js', '.json', '.node'];
+
+const configFactory = (config) => {
   const { input, fileName, name } = config;
   return {
     input: {
       input,
       external: ['cafe24api-client'],
       plugins: [
+        peerDepsExternal({
+          includeDependencies: true,
+        }),
+        resolve({
+          extensions,
+          preferBuiltins: true,
+          browser: true,
+        }),
+        json(),
+        commonjs({
+          exclude: 'node_modules/**',
+          ignoreGlobal: true,
+        }),
         babel({
+          extensions,
           exclude: 'node_modules/**',
           babelHelpers: 'bundled',
         }),
@@ -22,4 +43,24 @@ module.exports = (config) => {
       compact: true,
     },
   };
+};
+
+const dtsFactory = (config) => {
+  const { input, fileName, name } = config;
+  return {
+    input: {
+      input,
+      plugins: [dts()],
+    },
+    output: {
+      file: fileName,
+      format: 'es',
+      name: name || 'cafe24api-client',
+    },
+  };
+};
+
+module.exports = {
+  source: configFactory,
+  dts: dtsFactory,
 };

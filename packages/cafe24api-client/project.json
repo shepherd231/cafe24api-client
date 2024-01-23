@@ -29,16 +29,14 @@
       "executor": "nx:run-commands",
       "options": {
         "command": "cross-env BABEL_ENV=build node build",
-        "cwd": "packages/cafe24api-client"
+        "cwd": "packages/cafe24api-client",
+        "parallel": false
       }
     },
     "build:esm": {
       "executor": "nx:run-commands",
       "options": {
-        "commands": [
-          "cross-env BABEL_ENV=build babel src --out-dir dist/esm --copy-files",
-          "node build/esm"
-        ],
+        "command": "cross-env BABEL_ENV=build node build/esm",
         "parallel": false,
         "cwd": "packages/cafe24api-client"
       }
