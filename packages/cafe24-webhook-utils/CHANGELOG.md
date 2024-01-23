@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.0](https://github.com/shepherd231/cafe24api-client/compare/cafe24-webhook-utils@0.1.1...cafe24-webhook-utils-v0.2.0) (2024-01-23)
+
+
+### Features
+
+* ts build system and protected methods for extensino ([f033c5c](https://github.com/shepherd231/cafe24api-client/commit/f033c5c15e834b040365853195181f5a95eb43d2))
+
 ## [0.1.1](https://github.com/shepherd231/cafe24api-client/compare/cafe24-webhook-utils@0.1.0...cafe24-webhook-utils@0.1.1) (2023-11-16)
 
 ### :bug: Bug Fix
