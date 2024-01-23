@@ -172,6 +172,9 @@ importers:
       case:
         specifier: ^1.6.3
         version: 1.6.3
+      merge:
+        specifier: ^2.1.1
+        version: 2.1.1
       url-join:
         specifier: ^5.0.0
         version: 5.0.0

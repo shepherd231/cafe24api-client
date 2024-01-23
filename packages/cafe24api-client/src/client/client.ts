@@ -1,7 +1,24 @@
-import axios, { AxiosResponse, RawAxiosRequestHeaders } from 'axios';
+import axios, {
+  AxiosRequestConfig,
+  AxiosResponse,
+  RawAxiosRequestHeaders,
+} from 'axios';
+import { merge } from 'merge';
 import urlJoin from 'url-join';
 
 type HTTPVerb = 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH';
+
+interface FetchOptions<D = any> {
+  url: string;
+  payload: D;
+  fields: string;
+  headers: RawAxiosRequestHeaders;
+  options?: AxiosRequestConfig<D>;
+}
+
+type Fetcher = <T = any, R = AxiosResponse<T>, D = any>(
+  options: FetchOptions<D>,
+) => Promise<R>;
 
 // eslint-disable-next-line @typescript-eslint/ban-types
 export type Endpoint = ((cls: Function) => void) & {
@@ -13,8 +30,11 @@ export interface RequestOptions<Input extends Record<string, any>> {
   headers?: RawAxiosRequestHeaders;
 }
 
+export interface RequestLimiter {}
+
 export interface Cafe24APIClientOptions {
   mallId: string;
+  requestLimiter?: RequestLimiter | boolean;
 }
 
 export abstract class Cafe24APIClient {
@@ -81,40 +101,62 @@ export abstract class Cafe24APIClient {
     const url = urlJoin(this.url, path);
     const fields = options?.fields?.join(',');
     const headers = options?.headers ?? this.createHeaders();
-    if (['GET', 'DELETE'].includes(method)) {
-      let fetcher;
-      switch (method) {
-        case 'GET':
-          fetcher = axios.get;
-          break;
-        case 'DELETE':
-          fetcher = axios.delete;
-          break;
-        default:
-          throw new Error(`Unknown method: ${method}`);
-      }
-      return fetcher(url, {
-        params: this.createParams(payload, fields),
-        headers,
-      });
-    } else {
-      let fetcher;
-      switch (method) {
-        case 'POST':
-          fetcher = axios.post;
-          break;
-        case 'PUT':
-          fetcher = axios.put;
-          break;
-        case 'PATCH':
-          fetcher = axios.patch;
-          break;
-        default:
-          throw new Error(`Unknown method: ${method}`);
-      }
-      return fetcher(url, this.createBody(payload, fields), {
-        headers,
-      });
+    let fetcher: Fetcher;
+    switch (method) {
+      case 'GET':
+        fetcher = ({ url, payload, fields, headers, options }) =>
+          axios.get(
+            url,
+            merge(
+              true,
+              { params: this.createParams(payload, fields), headers },
+              options,
+            ),
+          );
+        break;
+      case 'DELETE':
+        fetcher = ({ url, payload, fields, headers, options }) =>
+          axios.delete(
+            url,
+            merge(
+              true,
+              { params: this.createParams(payload, fields), headers },
+              options,
+            ),
+          );
+        break;
+      case 'POST':
+        fetcher = ({ url, payload, fields, headers, options }) =>
+          axios.post(
+            url,
+            this.createBody(payload, fields),
+            merge(true, { headers }, options),
+          );
+        break;
+      case 'PUT':
+        fetcher = ({ url, payload, fields, headers, options }) =>
+          axios.put(
+            url,
+            this.createBody(payload, fields),
+            merge(true, { headers }, options),
+          );
+        break;
+      case 'PATCH':
+        fetcher = ({ url, payload, fields, headers, options }) =>
+          axios.patch(
+            url,
+            this.createBody(payload, fields),
+            merge(true, { headers }, options),
+          );
+        break;
+      default:
+        throw new Error(`Unknown method: ${method}`);
     }
+    return fetcher({
+      url,
+      payload,
+      fields,
+      headers,
+    });
   }
 }
