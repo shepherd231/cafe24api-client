@@ -1,4 +1,4 @@
-import { Cafe24AdminAPIClient } from '../../src/client/index';
+import { Cafe24AdminAPIClient } from '../index';
 
 describe('Cafe24AdminAPIClient', () => {
   describe('constructor', () => {

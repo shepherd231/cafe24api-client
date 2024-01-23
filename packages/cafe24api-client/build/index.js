@@ -56,7 +56,11 @@ const wrapDefsAsModule = (option) => {
     ...imports,
     '',
     `declare module '${packageName}' {`,
-    ...others.map((line) => `    ${line}`),
+    ...others
+      .map((line) =>
+        line.startsWith('declare ') ? line.replace('declare ', '') : line,
+      )
+      .map((line) => `    ${line}`),
     '}',
   ];
 
@@ -80,6 +84,8 @@ const wrapDefsAsModule = (option) => {
         --declaration \
         --emitDeclarationOnly \
         --esModuleInterop \
+        --target esnext \
+        --module commonjs \
         --outDir dist/types`,
       { stdio: 'inherit' },
     );

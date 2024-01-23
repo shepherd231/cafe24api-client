@@ -1,6 +1,7 @@
 import { wait } from '../utils';
+import dayjs from 'dayjs';
 
-export type Task<D = any> = {
+type Task<D = any> = {
   executor: () => Promise<D>;
   callback: (error?: any, result?: D) => void;
 };
@@ -31,6 +32,13 @@ export interface TaskQueueOptions {
    * @default [429, 503]
    */
   maxRetryIgnoreStatus?: number[];
+  /**
+   * @description Maximum time span of the task queue in milliseconds.
+   *              If the task queue is running for a long time,
+   *              it will be stopped automatically after this time.
+   * @default 1000 * 60 * 60 * 24 * 7 (7 days)
+   */
+  maxTimeSpan?: number;
 }
 
 export class TaskQueue {
@@ -38,6 +46,8 @@ export class TaskQueue {
   private backoff: number;
   private maxRetry: number;
   private maxRetryIgnoreStatus: number[];
+  private maxTimeSpan?: number;
+  private timeoutStopAt?: dayjs.Dayjs;
 
   private queue: Task[];
   private shouldStop: boolean;
@@ -48,6 +58,8 @@ export class TaskQueue {
     this.backoff = options?.backoff ?? 10000;
     this.maxRetry = options?.maxRetry ?? 3;
     this.maxRetryIgnoreStatus = options?.maxRetryIgnoreStatus ?? [429, 503];
+    this.maxTimeSpan = options?.maxTimeSpan ?? 1000 * 60 * 60 * 24 * 7;
+    this.timeoutStopAt = dayjs().add(this.maxTimeSpan, 'millisecond');
 
     this.queue = [];
     this.shouldStop = true;
@@ -84,6 +96,13 @@ export class TaskQueue {
 
       // If we should stop, stop
       if (this.shouldStop) return;
+
+      // If the task queue is running for a long time,
+      // stop executing the task and throw an error
+      if (dayjs().isAfter(this.timeoutStopAt)) {
+        this.stopRunning();
+        throw new Error('Task queue timeout');
+      }
 
       // Wait for a while and try again
       await wait(this.interval);

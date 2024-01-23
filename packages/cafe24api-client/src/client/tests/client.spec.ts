@@ -1,6 +1,6 @@
 import axios from 'axios';
 import deepcopy from 'deepcopy';
-import { Cafe24APIClient } from '../../src/client/index';
+import { Cafe24APIClient } from '../index';
 import { ClientTestFixtures } from './fixtures';
 
 const {
@@ -75,7 +75,7 @@ describe('Cafe24APIClient', () => {
   describe('createRequest', () => {
     it('should create request with GET method', async () => {
       // @ts-ignore
-      const client = new Cafe24APIClient({ mallId: 'test', taskQueue: null });
+      const client = new Cafe24APIClient({ mallId: 'test', taskQueue: {} });
       // @ts-ignore
       axios.get.mockResolvedValue(response);
       const result = await client.createRequest('GET', '/test', data, options);
@@ -88,7 +88,7 @@ describe('Cafe24APIClient', () => {
 
     it('should create request with DELETE method', async () => {
       // @ts-ignore
-      const client = new Cafe24APIClient({ mallId: 'test', taskQueue: null });
+      const client = new Cafe24APIClient({ mallId: 'test', taskQueue: {} });
       // @ts-ignore
       axios.delete.mockResolvedValue(response);
       const result = await client.createRequest(
@@ -106,7 +106,7 @@ describe('Cafe24APIClient', () => {
 
     it('should create request with POST method', async () => {
       // @ts-ignore
-      const client = new Cafe24APIClient({ mallId: 'test', taskQueue: null });
+      const client = new Cafe24APIClient({ mallId: 'test', taskQueue: {} });
       // @ts-ignore
       axios.post.mockResolvedValue(response);
       const result = await client.createRequest('POST', '/test', data, options);
@@ -122,7 +122,7 @@ describe('Cafe24APIClient', () => {
 
     it('should create request with PUT method', async () => {
       // @ts-ignore
-      const client = new Cafe24APIClient({ mallId: 'test', taskQueue: null });
+      const client = new Cafe24APIClient({ mallId: 'test', taskQueue: {} });
       // @ts-ignore
       axios.put.mockResolvedValue(response);
       const result = await client.createRequest('PUT', '/test', data, options);

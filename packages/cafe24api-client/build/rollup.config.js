@@ -7,6 +7,7 @@ const peerDepsExternal = require('rollup-plugin-peer-deps-external');
 const { dts } = require('rollup-plugin-dts');
 
 const extensions = ['.ts', '.mjs', '.js', '.json', '.node'];
+const exclude = ['node_modules/**', '**/tests/**'];
 
 const configFactory = (config) => {
   const { input, fileName, name } = config;
@@ -25,12 +26,12 @@ const configFactory = (config) => {
         }),
         json(),
         commonjs({
-          exclude: 'node_modules/**',
+          exclude,
           ignoreGlobal: true,
         }),
         babel({
           extensions,
-          exclude: 'node_modules/**',
+          exclude,
           babelHelpers: 'bundled',
         }),
         terser(),

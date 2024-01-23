@@ -1,4 +1,4 @@
-import { convertToCamelCase, convertToSnakeCase } from '../../src/utils/case';
+import { convertToCamelCase, convertToSnakeCase } from '../case';
 
 describe('convertToCamelCase', () => {
   it('should convert object to camelCase', () => {

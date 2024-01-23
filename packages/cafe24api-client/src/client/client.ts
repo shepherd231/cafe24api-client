@@ -13,9 +13,10 @@ export interface Cafe24APIClientOptions {
 }
 
 export abstract class Cafe24APIClient {
-  private readonly mallId: string;
-  private readonly url: string;
+  public readonly mallId: string;
+  public readonly url: string;
   private readonly taskQueue?: TaskQueue;
+  private isDisposed: boolean;
 
   constructor(options: Cafe24APIClientOptions) {
     this.mallId = options.mallId;
@@ -24,10 +25,21 @@ export abstract class Cafe24APIClient {
     const taskQueueOptions = options?.taskQueue;
     this.taskQueue = taskQueueOptions && new TaskQueue(taskQueueOptions);
     this.taskQueue?.startRunning();
+
+    this.isDisposed = false;
   }
 
-  protected get taskQueueEnabled(): boolean {
+  public get taskQueueEnabled(): boolean {
     return !!this.taskQueue;
+  }
+
+  public get disposed(): boolean {
+    return this.isDisposed;
+  }
+
+  public dispose(): void {
+    this.taskQueue?.stopRunning();
+    this.isDisposed = true;
   }
 
   /**
@@ -82,6 +94,11 @@ export abstract class Cafe24APIClient {
     payload: Record<string, any>,
     options: RequestOptions<T>,
   ): Promise<AxiosResponse<T>> {
+    // If the client is disposed, throw an error
+    if (this.isDisposed) {
+      throw new Error('The client is disposed. Create a new client for use.');
+    }
+
     // Get the fetcher for the given method
     const fetcher = this.createFetcher(method);
 

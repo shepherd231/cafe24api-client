@@ -1,4 +1,4 @@
-import { TaskQueue } from '../../src/task-queue/task-queue';
+import { TaskQueue } from '../task-queue';
 
 jest.setTimeout(10000);
 
