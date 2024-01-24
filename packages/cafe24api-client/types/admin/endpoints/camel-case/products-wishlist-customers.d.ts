@@ -5,72 +5,73 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   /**
    * @description
-   *
-   *
+   * 
+   * 
    * 상품을 관심상품으로 담은 회원(Products wishlist customers)은 상품을 관심상품으로 담은 회원을 조회할 수 있는 리소스입니다.
    */
   export interface ProductsWishlistCustomers {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 
+      */ 
     shopNo: any;
     /**
-     * @description
-     * 회원아이디
-     *
-     *
-     */
+      * @description
+      * 회원아이디
+      * 
+      * 
+      */ 
     memberId: any;
   }
 
   export interface RetrieveAListOfCustomersWithAProductInWishlistInput {
     /**
-     * @description
-     * 상품번호
-     *
-     * 상품의 고유한 일련 번호. 해당 쇼핑몰 내에서 상품 번호는 중복되지 않음.
-     *
-     * @required
-     */
+      * @description
+      * 상품번호
+      * 
+      * 상품의 고유한 일련 번호. 해당 쇼핑몰 내에서 상품 번호는 중복되지 않음.
+      * 
+      * @required
+      */ 
     productNo: any;
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shopNo?: any;
   }
 
   export interface RetrieveAListOfCustomersWithAProductInWishlistOutput {
-    customers: {
-      shopNo: number;
-      memberId: string;
+    customers: { 
+    shopNo: number;
+    memberId: string;
     }[];
   }
   export interface RetrieveACountOfCustomersWithAProductInWishlistInput {
     /**
-     * @description
-     * 상품번호
-     *
-     * @required
-     */
+      * @description
+      * 상품번호
+      * 
+      * @required
+      */ 
     productNo: any;
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shopNo?: any;
   }
 
@@ -103,10 +104,8 @@ declare module 'cafe24api-client' {
      */
     retrieveAListOfCustomersWithAProductInWishlist(
       input: RetrieveAListOfCustomersWithAProductInWishlistInput,
-      options?: RequestOptions<RetrieveAListOfCustomersWithAProductInWishlistInput>,
-    ): Promise<
-      AxiosResponse<RetrieveAListOfCustomersWithAProductInWishlistOutput>
-    >;
+      options?: RequestOptions<RetrieveAListOfCustomersWithAProductInWishlistOutput['customers'][number]>,
+    ): Promise<AxiosResponse<RetrieveAListOfCustomersWithAProductInWishlistOutput>>;
     /**
      * @description
      * 특정 상품을 관심상품에 담은 회원 수를 조회할 수 있습니다.
@@ -122,9 +121,7 @@ declare module 'cafe24api-client' {
      */
     retrieveACountOfCustomersWithAProductInWishlist(
       input: RetrieveACountOfCustomersWithAProductInWishlistInput,
-      options?: RequestOptions<RetrieveACountOfCustomersWithAProductInWishlistInput>,
-    ): Promise<
-      AxiosResponse<RetrieveACountOfCustomersWithAProductInWishlistOutput>
-    >;
+      options?: RequestOptions<RetrieveACountOfCustomersWithAProductInWishlistOutput['count']>,
+    ): Promise<AxiosResponse<RetrieveACountOfCustomersWithAProductInWishlistOutput>>;
   }
 }

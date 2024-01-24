@@ -8,16 +8,19 @@ import {
 export default (cls) => {
   register(cls);
 
-  const retrieveAnUrgentInquiryPost = cls.prototype.retrieveAnUrgentInquiryPost;
-  cls.prototype.retrieveAnUrgentInquiryPost = async function (input, options) {
-    const response = await retrieveAnUrgentInquiryPost.call(
-      this,
-      convertToSnakeCase(input),
-      optionsToSnakeCase(options),
-    );
-    return {
-      ...response,
-      data: convertToCamelCase(response.data),
+  
+    const retrieveAnUrgentInquiryPost = cls.prototype.retrieveAnUrgentInquiryPost;
+    cls.prototype.retrieveAnUrgentInquiryPost = async function (input, options) {
+      const response = await retrieveAnUrgentInquiryPost.call(
+        this,
+        convertToSnakeCase(input),
+        optionsToSnakeCase(options),
+      );
+      return {
+        ...response,
+        data: convertToCamelCase(response.data),
+      };
     };
-  };
+
+ 
 };

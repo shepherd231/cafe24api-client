@@ -1,3 +1,4 @@
+
 export default (cls) => {
   cls.prototype.retrieveOrderLabels = async function (input, options) {
     return this.createRequest(
@@ -23,4 +24,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

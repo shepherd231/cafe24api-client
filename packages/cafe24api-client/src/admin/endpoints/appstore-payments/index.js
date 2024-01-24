@@ -1,8 +1,6 @@
+
 export default (cls) => {
-  cls.prototype.retrieveAListOfCafe24StorePayments = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.retrieveAListOfCafe24StorePayments = async function (input, options) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/appstore/payments`,
@@ -18,10 +16,7 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.retrieveACountOfCafe24StorePayments = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.retrieveACountOfCafe24StorePayments = async function (input, options) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/appstore/payments/count`,
@@ -34,4 +29,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

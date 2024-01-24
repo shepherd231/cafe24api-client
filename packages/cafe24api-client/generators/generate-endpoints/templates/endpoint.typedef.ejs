@@ -15,16 +15,31 @@ declare module 'cafe24api-client' {
    */
 <% } -%>
   export interface <%= pascalCase(endpoint.id) %> {
-<%- include('/recursive-prop-decl.ejs', { properties: endpoint.schema?.properties ?? [], camelCase: useCamelCase ? camelCase : null }) -%>
+<%- include('/recursive-prop-decl.ejs', { 
+  properties: endpoint.schema?.properties ?? [], 
+  formatName: useCamelCase ? camelCase : (name) => name,
+  formatPropertyType: formatPropertyType,
+  writeIf: writeIf,
+}) -%>
   }
 
 <% for(const method of endpoint.methods) { -%>
   export interface <%= pascalCase(method.id) %>Input {
-<%- include('/recursive-prop-decl.ejs', { properties: method.request.properties, camelCase: useCamelCase ? camelCase : null }) -%>
+<%- include('/recursive-prop-decl.ejs', { 
+  properties: method.request.properties, 
+  formatName: useCamelCase ? camelCase : (name) => name,
+  formatPropertyType: formatPropertyType,
+  writeIf: writeIf,
+}) -%>
   }
 
   export interface <%= pascalCase(method.id) %>Output {
-<%- include('/recursive-prop-decl.ejs', { properties: method.response.properties, camelCase: useCamelCase ? camelCase : null }) -%>
+<%- include('/recursive-prop-decl.ejs', { 
+  properties: method.response.properties, 
+  formatName: useCamelCase ? camelCase : (name) => name,
+  formatPropertyType: formatPropertyType,
+  writeIf: writeIf,
+}) -%>
   }
 <% } -%>
 
@@ -43,15 +58,15 @@ declare module 'cafe24api-client' {
      *
      * @example 응답 예시
      * ```json
-<% for(const exline of useCamelCase ? replaceAllMatches(method.response.example, / ([a-z0-9]+[a-z0-9_]+):/g, ([, propname]) => ` ${camelCase(propname)}:`).split('\n') : method.response.example.split('\n')) { -%>
+<% for(const exline of formatExampleString(method.response.example)) { -%>
      * <%- exline %>
 <% } -%>
      * ```
 <% } -%>
      */
     <%= camelCase(method.id) %>(
-      input: <%= pascalCase(method.id) %>Input,
-      options?: RequestOptions<<%= pascalCase(method.id) %>Input>,
+      input<%= writeIf(method.request.properties.length === 0, '?') %>: <%= pascalCase(method.id) %>Input,
+      options?: RequestOptions<<%- inferEffectiveOutputSchemaType(method) %>>,
     ): Promise<AxiosResponse<<%= pascalCase(method.id) %>Output>>;
 <% } -%>
   }

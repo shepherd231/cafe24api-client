@@ -1,8 +1,6 @@
+
 export default (cls) => {
-  cls.prototype.retrieveAListOfProductsInMainCategory = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.retrieveAListOfProductsInMainCategory = async function (input, options) {
     return this.createRequest(
       'GET',
       `/api/v2/mains/${input['display_group']}/products`,
@@ -16,4 +14,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

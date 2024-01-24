@@ -1,3 +1,4 @@
+
 export default (cls) => {
   cls.prototype.retrieveACountOfCoupons = async function (input, options) {
     return this.createRequest(
@@ -85,8 +86,7 @@ export default (cls) => {
         available_category: input['available_category'],
         available_category_list: input['available_category_list'],
         available_amount_type: input['available_amount_type'],
-        available_coupon_count_by_order:
-          input['available_coupon_count_by_order'],
+        available_coupon_count_by_order: input['available_coupon_count_by_order'],
         available_price_type: input['available_price_type'],
         available_order_price_type: input['available_order_price_type'],
         available_min_price: input['available_min_price'],
@@ -96,4 +96,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

@@ -1,8 +1,6 @@
+
 export default (cls) => {
-  cls.prototype.retrieveAListOfProvidersByPaymentMethod = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.retrieveAListOfProvidersByPaymentMethod = async function (input, options) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/paymentmethods/${input['code']}/paymentproviders`,
@@ -16,10 +14,7 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.updateTheDisplayStatusOfAPaymentMethod = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.updateTheDisplayStatusOfAPaymentMethod = async function (input, options) {
     return this.createRequest(
       'PUT',
       `/api/v2/admin/paymentmethods/${input['code']}/paymentproviders/{name}`,
@@ -32,4 +27,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

@@ -1,5 +1,6 @@
+
 export default (cls) => {
-  cls.prototype.retrieveAProductSSeoSettings = async function (input, options) {
+  cls.prototype.retrieveAProductsSEOSettings = async function (input, options) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/products/${input['product_no']}/seo`,
@@ -11,7 +12,7 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.updateProductSeoSettings = async function (input, options) {
+  cls.prototype.updateProductSEOSettings = async function (input, options) {
     return this.createRequest(
       'PUT',
       `/api/v2/admin/products/${input['product_no']}/seo`,
@@ -28,4 +29,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

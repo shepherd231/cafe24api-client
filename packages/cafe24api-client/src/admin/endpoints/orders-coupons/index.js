@@ -1,8 +1,6 @@
+
 export default (cls) => {
-  cls.prototype.retrieveAListOfCouponsAppliedToAnOrder = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.retrieveAListOfCouponsAppliedToAnOrder = async function (input, options) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/orders/coupons`,
@@ -15,4 +13,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

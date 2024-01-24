@@ -1,8 +1,6 @@
+
 export default (cls) => {
-  cls.prototype.retrieveAListOfCustomCategories = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.retrieveAListOfCustomCategories = async function (input, options) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/classifications`,
@@ -18,10 +16,7 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.retrieveACountOfCustomCategories = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.retrieveACountOfCustomCategories = async function (input, options) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/classifications/count`,
@@ -34,4 +29,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

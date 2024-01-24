@@ -1,8 +1,6 @@
+
 export default (cls) => {
-  cls.prototype.retrieveDistributionGroupList = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.retrieveDistributionGroupList = async function (input, options) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/recipientgroups`,
@@ -15,10 +13,7 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.retrieveDistributionGroupDetails = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.retrieveDistributionGroupDetails = async function (input, options) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/recipientgroups/${input['group_no']}`,
@@ -106,4 +101,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

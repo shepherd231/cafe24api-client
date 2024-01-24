@@ -5,448 +5,449 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   /**
    * @description
    * SEO 설정(Seo setting)은 검색결과 상위에 쇼핑몰이 노출되고 방문자가 증가하도록 하는 검색엔진 최적화(SEO) 작업입니다.
    */
   export interface SeoSetting {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     * 최소값: [1]
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 최소값: [1]
+      */ 
     shop_no: any;
     /**
-     * @description
-     * 공통페이지 title 태그
-     *
-     *
-     */
+      * @description
+      * 공통페이지 title 태그
+      * 
+      * 
+      */ 
     common_page_title: any;
     /**
-     * @description
-     * 공통페이지 description 태그
-     *
-     *
-     */
+      * @description
+      * 공통페이지 description 태그
+      * 
+      * 
+      */ 
     common_page_meta_description: any;
     /**
-     * @description
-     * 파비콘
-     *
-     * URL
-     */
+      * @description
+      * 파비콘
+      * 
+      * URL
+      */ 
     favicon: any;
     /**
-     * @description
-     * 구글 서치 콘솔 사용여부
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 구글 서치 콘솔 사용여부
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     use_google_search_console: any;
     /**
-     * @description
-     * 구글 서치 콘솔
-     *
-     *
-     */
+      * @description
+      * 구글 서치 콘솔
+      * 
+      * 
+      */ 
     google_search_console: any;
     /**
-     * @description
-     * 네이버 서치 어드바이저 사용여부
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 네이버 서치 어드바이저 사용여부
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     use_naver_search_advisor: any;
     /**
-     * @description
-     * 네이버 서치 어드바이저
-     *
-     *
-     */
+      * @description
+      * 네이버 서치 어드바이저
+      * 
+      * 
+      */ 
     naver_search_advisor: any;
     /**
-     * @description
-     * SNS 공유 이미지
-     *
-     * URL
-     */
+      * @description
+      * SNS 공유 이미지
+      * 
+      * URL
+      */ 
     sns_share_image: any;
     /**
-     * @description
-     * 트위터 카드 사용여부
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 트위터 카드 사용여부
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     use_twitter_card: any;
     /**
-     * @description
-     * 검색로봇 접근 제어(PC)
-     *
-     *
-     */
+      * @description
+      * 검색로봇 접근 제어(PC)
+      * 
+      * 
+      */ 
     robots_text: any;
     /**
-     * @description
-     * 검색로봇 접근 제어(모바일)
-     *
-     *
-     */
+      * @description
+      * 검색로봇 접근 제어(모바일)
+      * 
+      * 
+      */ 
     mobile_robots_text: any;
     /**
-     * @description
-     * 없는 페이지 연결 리다이렉션 여부(PC)
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 없는 페이지 연결 리다이렉션 여부(PC)
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     use_missing_page_redirect: any;
     /**
-     * @description
-     * 없는 페이지 연결 리다이렉션 연결 경로(PC)
-     *
-     *
-     */
+      * @description
+      * 없는 페이지 연결 리다이렉션 연결 경로(PC)
+      * 
+      * 
+      */ 
     missing_page_redirect_url: any;
     /**
-     * @description
-     * 없는 페이지 연결 리다이렉션 여부(모바일)
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 없는 페이지 연결 리다이렉션 여부(모바일)
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     mobile_use_missing_page_redirect: any;
     /**
-     * @description
-     * 없는 페이지 연결 리다이렉션 연결 경로(모바일)
-     *
-     *
-     */
+      * @description
+      * 없는 페이지 연결 리다이렉션 연결 경로(모바일)
+      * 
+      * 
+      */ 
     mobile_missing_page_redirect_url: any;
     /**
-     * @description
-     * 사이트맵 사용여부
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 사이트맵 사용여부
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     use_sitemap_auto_update: any;
     /**
-     * @description
-     * RSS 피드 사용여부
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * RSS 피드 사용여부
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     use_rss: any;
     /**
-     * @description
-     * 메인분류 명
-     *
-     *
-     */
+      * @description
+      * 메인분류 명
+      * 
+      * 
+      */ 
     display_group: any;
     /**
-     * @description
-     * Head HTML(PC)
-     *
-     *
-     */
+      * @description
+      * Head HTML(PC)
+      * 
+      * 
+      */ 
     header_tag: any;
     /**
-     * @description
-     * Body HTML(PC)
-     *
-     *
-     */
+      * @description
+      * Body HTML(PC)
+      * 
+      * 
+      */ 
     footer_tag: any;
     /**
-     * @description
-     * Head HTML(모바일)
-     *
-     *
-     */
+      * @description
+      * Head HTML(모바일)
+      * 
+      * 
+      */ 
     mobile_header_tag: any;
     /**
-     * @description
-     * Body HTML(모바일)
-     *
-     *
-     */
+      * @description
+      * Body HTML(모바일)
+      * 
+      * 
+      */ 
     mobile_footer_tag: any;
   }
 
   export interface RetrieveSeoSettingsInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     * 최소값: [1]
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 최소값: [1]
+      */ 
     shop_no?: any;
   }
 
   export interface RetrieveSeoSettingsOutput {
-    seo: {
-      shop_no: number;
-      common_page_title: string;
-      common_page_meta_description: string;
-      favicon: string;
-      use_google_search_console: Cafe24Enum;
-      google_search_console: string;
-      use_naver_search_advisor: Cafe24Enum;
-      naver_search_advisor: string;
-      sns_share_image: string;
-      use_twitter_card: Cafe24Enum;
-      robots_text: Cafe24Datetime;
-      mobile_robots_text: Cafe24Datetime;
-      use_missing_page_redirect: Cafe24Enum;
-      missing_page_redirect_url: Cafe24Enum;
-      mobile_use_missing_page_redirect: Cafe24Enum;
-      mobile_missing_page_redirect_url: Cafe24Enum;
-      use_sitemap_auto_update: Cafe24Enum;
-      use_rss: Cafe24Enum;
-      display_group: number;
-      header_tag: string;
-      footer_tag: string;
-      mobile_header_tag: string;
-      mobile_footer_tag: string;
+    seo: { 
+    shop_no: number;
+    common_page_title: string;
+    common_page_meta_description: string;
+    favicon: string;
+    use_google_search_console: Cafe24Enum;
+    google_search_console: string;
+    use_naver_search_advisor: Cafe24Enum;
+    naver_search_advisor: string;
+    sns_share_image: string;
+    use_twitter_card: Cafe24Enum;
+    robots_text: Cafe24Datetime;
+    mobile_robots_text: Cafe24Datetime;
+    use_missing_page_redirect: Cafe24Enum;
+    missing_page_redirect_url: Cafe24Enum;
+    mobile_use_missing_page_redirect: Cafe24Enum;
+    mobile_missing_page_redirect_url: Cafe24Enum;
+    use_sitemap_auto_update: Cafe24Enum;
+    use_rss: Cafe24Enum;
+    display_group: number;
+    header_tag: string;
+    footer_tag: string;
+    mobile_header_tag: string;
+    mobile_footer_tag: string;
     };
   }
   export interface UpdateStoreSeoSettingsInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     * 최소값: [1]
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 최소값: [1]
+      */ 
     shop_no?: any;
     /**
-     * @description
-     * 공통페이지 title 태그
-     *
-     *
-     */
+      * @description
+      * 공통페이지 title 태그
+      * 
+      * 
+      */ 
     common_page_title?: any;
     /**
-     * @description
-     * 공통페이지 description 태그
-     *
-     *
-     */
+      * @description
+      * 공통페이지 description 태그
+      * 
+      * 
+      */ 
     common_page_meta_description?: any;
     /**
-     * @description
-     * 파비콘
-     *
-     * URL
-     */
+      * @description
+      * 파비콘
+      * 
+      * URL
+      */ 
     favicon?: any;
     /**
-     * @description
-     * 구글 서치 콘솔 사용여부
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 구글 서치 콘솔 사용여부
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     use_google_search_console?: any;
     /**
-     * @description
-     * 구글 서치 콘솔
-     *
-     *
-     */
+      * @description
+      * 구글 서치 콘솔
+      * 
+      * 
+      */ 
     google_search_console?: any;
     /**
-     * @description
-     * 네이버 서치 어드바이저 사용여부
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 네이버 서치 어드바이저 사용여부
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     use_naver_search_advisor?: any;
     /**
-     * @description
-     * 네이버 서치 어드바이저
-     *
-     *
-     */
+      * @description
+      * 네이버 서치 어드바이저
+      * 
+      * 
+      */ 
     naver_search_advisor?: any;
     /**
-     * @description
-     * SNS 공유 이미지
-     *
-     * URL
-     */
+      * @description
+      * SNS 공유 이미지
+      * 
+      * URL
+      */ 
     sns_share_image?: any;
     /**
-     * @description
-     * 트위터 카드 사용여부
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 트위터 카드 사용여부
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     use_twitter_card?: any;
     /**
-     * @description
-     * 검색로봇 접근 제어(PC)
-     *
-     *
-     */
+      * @description
+      * 검색로봇 접근 제어(PC)
+      * 
+      * 
+      */ 
     robots_text?: any;
     /**
-     * @description
-     * 검색로봇 접근 제어(모바일)
-     *
-     *
-     */
+      * @description
+      * 검색로봇 접근 제어(모바일)
+      * 
+      * 
+      */ 
     mobile_robots_text?: any;
     /**
-     * @description
-     * 없는 페이지 연결 리다이렉션 여부(PC)
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 없는 페이지 연결 리다이렉션 여부(PC)
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     use_missing_page_redirect?: any;
     /**
-     * @description
-     * 없는 페이지 연결 리다이렉션 연결 경로(PC)
-     *
-     *
-     */
+      * @description
+      * 없는 페이지 연결 리다이렉션 연결 경로(PC)
+      * 
+      * 
+      */ 
     missing_page_redirect_url?: any;
     /**
-     * @description
-     * 없는 페이지 연결 리다이렉션 여부(모바일)
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 없는 페이지 연결 리다이렉션 여부(모바일)
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     mobile_use_missing_page_redirect?: any;
     /**
-     * @description
-     * 없는 페이지 연결 리다이렉션 연결 경로(모바일)
-     *
-     *
-     */
+      * @description
+      * 없는 페이지 연결 리다이렉션 연결 경로(모바일)
+      * 
+      * 
+      */ 
     mobile_missing_page_redirect_url?: any;
     /**
-     * @description
-     * 사이트맵 사용여부
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 사이트맵 사용여부
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     use_sitemap_auto_update?: any;
     /**
-     * @description
-     * RSS 피드 사용여부
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * RSS 피드 사용여부
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     use_rss?: any;
     /**
-     * @description
-     * 메인분류 명
-     *
-     *
-     */
+      * @description
+      * 메인분류 명
+      * 
+      * 
+      */ 
     display_group?: any;
     /**
-     * @description
-     * Head HTML(PC)
-     *
-     *
-     */
+      * @description
+      * Head HTML(PC)
+      * 
+      * 
+      */ 
     header_tag?: any;
     /**
-     * @description
-     * Body HTML(PC)
-     *
-     *
-     */
+      * @description
+      * Body HTML(PC)
+      * 
+      * 
+      */ 
     footer_tag?: any;
     /**
-     * @description
-     * Head HTML(모바일)
-     *
-     *
-     */
+      * @description
+      * Head HTML(모바일)
+      * 
+      * 
+      */ 
     mobile_header_tag?: any;
     /**
-     * @description
-     * Body HTML(모바일)
-     *
-     *
-     */
+      * @description
+      * Body HTML(모바일)
+      * 
+      * 
+      */ 
     mobile_footer_tag?: any;
   }
 
   export interface UpdateStoreSeoSettingsOutput {
-    seo: {
-      shop_no: number;
-      common_page_title: string;
-      common_page_meta_description: string;
-      favicon: string;
-      use_google_search_console: Cafe24Enum;
-      google_search_console: string;
-      use_naver_search_advisor: Cafe24Enum;
-      naver_search_advisor: string;
-      sns_share_image: string;
-      use_twitter_card: Cafe24Enum;
-      robots_text: Cafe24Datetime;
-      mobile_robots_text: Cafe24Datetime;
-      use_missing_page_redirect: Cafe24Enum;
-      missing_page_redirect_url: Cafe24Enum;
-      mobile_use_missing_page_redirect: Cafe24Enum;
-      mobile_missing_page_redirect_url: Cafe24Enum;
-      use_sitemap_auto_update: Cafe24Enum;
-      use_rss: Cafe24Enum;
-      display_group: number;
-      header_tag: string;
-      footer_tag: string;
-      mobile_header_tag: string;
-      mobile_footer_tag: string;
+    seo: { 
+    shop_no: number;
+    common_page_title: string;
+    common_page_meta_description: string;
+    favicon: string;
+    use_google_search_console: Cafe24Enum;
+    google_search_console: string;
+    use_naver_search_advisor: Cafe24Enum;
+    naver_search_advisor: string;
+    sns_share_image: string;
+    use_twitter_card: Cafe24Enum;
+    robots_text: Cafe24Datetime;
+    mobile_robots_text: Cafe24Datetime;
+    use_missing_page_redirect: Cafe24Enum;
+    missing_page_redirect_url: Cafe24Enum;
+    mobile_use_missing_page_redirect: Cafe24Enum;
+    mobile_missing_page_redirect_url: Cafe24Enum;
+    use_sitemap_auto_update: Cafe24Enum;
+    use_rss: Cafe24Enum;
+    display_group: number;
+    header_tag: string;
+    footer_tag: string;
+    mobile_header_tag: string;
+    mobile_footer_tag: string;
     };
   }
 
@@ -491,7 +492,7 @@ declare module 'cafe24api-client' {
      */
     retrieveSeoSettings(
       input: RetrieveSeoSettingsInput,
-      options?: RequestOptions<RetrieveSeoSettingsInput>,
+      options?: RequestOptions<RetrieveSeoSettingsOutput['seo']>,
     ): Promise<AxiosResponse<RetrieveSeoSettingsOutput>>;
     /**
      * @description
@@ -533,7 +534,7 @@ declare module 'cafe24api-client' {
      */
     updateStoreSeoSettings(
       input: UpdateStoreSeoSettingsInput,
-      options?: RequestOptions<UpdateStoreSeoSettingsInput>,
+      options?: RequestOptions<UpdateStoreSeoSettingsOutput['seo']>,
     ): Promise<AxiosResponse<UpdateStoreSeoSettingsOutput>>;
   }
 }

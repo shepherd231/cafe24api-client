@@ -1,8 +1,6 @@
+
 export default (cls) => {
-  cls.prototype.retrievePushNotificationDeliveryHistory = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.retrievePushNotificationDeliveryHistory = async function (input, options) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/push`,
@@ -81,4 +79,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

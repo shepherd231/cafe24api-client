@@ -1,8 +1,6 @@
+
 export default (cls) => {
-  cls.prototype.retrieveAListOfPaymentMethods = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.retrieveAListOfPaymentMethods = async function (input, options) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/paymentmethods`,
@@ -12,4 +10,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

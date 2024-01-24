@@ -1,8 +1,6 @@
+
 export default (cls) => {
-  cls.prototype.retrieveAListOfShippingInformationOfAnOrder = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.retrieveAListOfShippingInformationOfAnOrder = async function (input, options) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/orders/${input['order_id']}/shipments`,
@@ -14,10 +12,7 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.createAnOrderShippingInformation = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.createAnOrderShippingInformation = async function (input, options) {
     return this.createRequest(
       'POST',
       `/api/v2/admin/orders/${input['order_id']}/shipments`,
@@ -64,4 +59,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

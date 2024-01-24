@@ -5,112 +5,113 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   /**
    * @description
-   *
-   *
+   * 
+   * 
    * 게시판(Boards)은 상품리뷰나 상품문의 등 고객의 반응이 글로 게시되는 공간입니다.
    * 게시판 리소스에서는 현재 쇼핑몰에 있는 게시판의 목록을 확인할 수 있습니다.
    */
   export interface Boards {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 
+      */ 
     shopNo: any;
     /**
-     * @description
-     * 게시판 번호
-     *
-     *
-     */
+      * @description
+      * 게시판 번호
+      * 
+      * 
+      */ 
     boardNo: any;
     /**
-     * @description
-     * 게시판 분류
-     *
-     * 1 : 운영
-     * 2 : 일반
-     * 3 : 자료실
-     * 4 : 기타
-     * 5 : 상품
-     * 6 : 갤러리
-     * 7 : 1:1상담
-     * 11 : 한줄메모
-     *
-     *
-     */
+      * @description
+      * 게시판 분류
+      * 
+      * 1 : 운영
+      * 2 : 일반
+      * 3 : 자료실
+      * 4 : 기타
+      * 5 : 상품
+      * 6 : 갤러리
+      * 7 : 1:1상담
+      * 11 : 한줄메모
+      * 
+      * 
+      */ 
     boardType: any;
     /**
-     * @description
-     * 게시판 이름
-     *
-     *
-     */
+      * @description
+      * 게시판 이름
+      * 
+      * 
+      */ 
     boardName: any;
     /**
-     * @description
-     * 게시판 추가여부
-     *
-     * T : 추가게시판
-     * F : 기본게시판
-     *
-     *
-     */
+      * @description
+      * 게시판 추가여부
+      * 
+      * T : 추가게시판
+      * F : 기본게시판
+      * 
+      * 
+      */ 
     useAdditionalBoard: any;
     /**
-     * @description
-     * 게시판 사용여부
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 게시판 사용여부
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     useBoard: any;
     /**
-     * @description
-     * 표시여부
-     *
-     * T : 표시함
-     * F : 표시안함
-     *
-     *
-     */
+      * @description
+      * 표시여부
+      * 
+      * T : 표시함
+      * F : 표시안함
+      * 
+      * 
+      */ 
     useDisplay: any;
     /**
-     * @description
-     * 정렬 순서
-     *
-     *
-     */
+      * @description
+      * 정렬 순서
+      * 
+      * 
+      */ 
     displayOrder: any;
   }
 
   export interface RetrieveAListOfBoardsInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shopNo?: any;
   }
 
   export interface RetrieveAListOfBoardsOutput {
-    boards: {
-      shopNo: number;
-      boardNo: number;
-      boardType: number;
-      boardName: string;
-      useAdditionalBoard: Cafe24Enum;
-      useBoard: Cafe24Enum;
-      useDisplay: Cafe24Enum;
-      displayOrder: number;
+    boards: { 
+    shopNo: number;
+    boardNo: number;
+    boardType: number;
+    boardName: string;
+    useAdditionalBoard: Cafe24Enum;
+    useBoard: Cafe24Enum;
+    useDisplay: Cafe24Enum;
+    displayOrder: number;
     }[];
   }
 
@@ -153,7 +154,7 @@ declare module 'cafe24api-client' {
      */
     retrieveAListOfBoards(
       input: RetrieveAListOfBoardsInput,
-      options?: RequestOptions<RetrieveAListOfBoardsInput>,
+      options?: RequestOptions<RetrieveAListOfBoardsOutput['boards'][number]>,
     ): Promise<AxiosResponse<RetrieveAListOfBoardsOutput>>;
   }
 }

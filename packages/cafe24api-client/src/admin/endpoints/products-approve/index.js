@@ -1,8 +1,6 @@
+
 export default (cls) => {
-  cls.prototype.retrieveAProductApprovalStatus = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.retrieveAProductApprovalStatus = async function (input, options) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/products/${input['product_no']}/approve`,
@@ -14,10 +12,7 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.createAProductApprovalRequest = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.createAProductApprovalRequest = async function (input, options) {
     return this.createRequest(
       'POST',
       `/api/v2/admin/products/${input['product_no']}/approve`,
@@ -43,4 +38,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

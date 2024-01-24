@@ -5,274 +5,275 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   /**
    * @description
-   *
-   *
+   * 
+   * 
    * 상품분류(Categories)는 쇼핑몰에 노출할 카테고리를 설정하는 기능입니다.
    * 상품분류는 대분류 하위에 중분류, 소분류, 상세 분류까지 세분화해서 설정할 수 있습니다.
    * 상품분류 리소스를 사용하면 쇼핑몰의 분류들을 조회하거나 분류를 생성, 수정, 삭제할 수 있습니다.
    */
   export interface Categories {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
+      * 
+      * 
+      */ 
     shopNo: any;
     /**
-     * @description
-     * 분류 번호
-     *
-     * 상품분류의 고유한 일련 번호. 해당 쇼핑몰 내에서 상품분류 번호는 중복되지 않음.
-     *
-     *
-     */
+      * @description
+      * 분류 번호
+      * 
+      * 상품분류의 고유한 일련 번호. 해당 쇼핑몰 내에서 상품분류 번호는 중복되지 않음.
+      * 
+      * 
+      */ 
     categoryNo: any;
     /**
-     * @description
-     * 분류 Depth
-     *
-     * 해당 상품분류가 하위 몇 차 상품분류에 있는 카테고리인지 표시함. 1~4차까지 상품분류가 존재한다.
-     *
-     * 최소: [1]~최대: [4]
-     */
+      * @description
+      * 분류 Depth
+      * 
+      * 해당 상품분류가 하위 몇 차 상품분류에 있는 카테고리인지 표시함. 1~4차까지 상품분류가 존재한다.
+      * 
+      * 최소: [1]~최대: [4]
+      */ 
     categoryDepth: any;
     /**
-     * @description
-     * 부모 분류 번호
-     *
-     * 해당 상품분류가 2차(중분류), 3차(소분류), 4차(세분류)일 경우 상위에 있는 상품분류의 번호를 표시함.
-     *
-     * parent_category_no = 1일 경우 해당 분류는 대분류를 의미한다.
-     *
-     *
-     */
+      * @description
+      * 부모 분류 번호
+      * 
+      * 해당 상품분류가 2차(중분류), 3차(소분류), 4차(세분류)일 경우 상위에 있는 상품분류의 번호를 표시함.
+      * 
+      * parent_category_no = 1일 경우 해당 분류는 대분류를 의미한다.
+      * 
+      * 
+      */ 
     parentCategoryNo: any;
     /**
-     * @description
-     * 분류명
-     *
-     * 해당 상품분류의 이름을 나타낸다.
-     *
-     * 최대글자수 : [50자]
-     */
+      * @description
+      * 분류명
+      * 
+      * 해당 상품분류의 이름을 나타낸다.
+      * 
+      * 최대글자수 : [50자]
+      */ 
     categoryName: any;
     /**
-     * @description
-     * 분류 전체 이름
-     *
-     * 해당 상품분류가 속해있는 상위 상품분류의 이름을 모두 표시.
-     *
-     *
-     */
+      * @description
+      * 분류 전체 이름
+      * 
+      * 해당 상품분류가 속해있는 상위 상품분류의 이름을 모두 표시.
+      * 
+      * 
+      */ 
     fullCategoryName: any;
     /**
-     * @description
-     * 분류 전체 번호
-     *
-     * 해당 상품분류가 속해있는 상위 상품분류의 번호를 모두 표시.
-     *
-     *
-     */
+      * @description
+      * 분류 전체 번호
+      * 
+      * 해당 상품분류가 속해있는 상위 상품분류의 번호를 모두 표시.
+      * 
+      * 
+      */ 
     fullCategoryNo: any;
     /**
-     * @description
-     * 최상위 분류 번호
-     *
-     * 해당 상품분류가 속해있는 최상위 상품분류의 분류 번호 표시.
-     *
-     *
-     */
+      * @description
+      * 최상위 분류 번호
+      * 
+      * 해당 상품분류가 속해있는 최상위 상품분류의 분류 번호 표시.
+      * 
+      * 
+      */ 
     rootCategoryNo: any;
     /**
-     * @description
-     * 표시상태
-     *
-     * 해당 상품분류의 표시 여부. 표시안함 일 경우 해당 상품분류에 접근할 수 없다.
-     *
-     * 해당 설정은 멀티쇼핑몰별로 설정할 수 없으며 모든 쇼핑몰에 적용된다.
-     *
-     * T : 표시함
-     * F : 표시안함
-     *
-     *
-     */
+      * @description
+      * 표시상태
+      * 
+      * 해당 상품분류의 표시 여부. 표시안함 일 경우 해당 상품분류에 접근할 수 없다.
+      * 
+      * 해당 설정은 멀티쇼핑몰별로 설정할 수 없으며 모든 쇼핑몰에 적용된다.
+      * 
+      * T : 표시함
+      * F : 표시안함
+      * 
+      * 
+      */ 
     useDisplay: any;
     /**
-     * @description
-     * 진열 순서
-     *
-     * 상품분류를 쇼핑몰 운영자가 배치한 순서.
-     *
-     *
-     */
+      * @description
+      * 진열 순서
+      * 
+      * 상품분류를 쇼핑몰 운영자가 배치한 순서.
+      * 
+      * 
+      */ 
     displayOrder: any;
     /**
-     * @description
-     * 쇼핑 큐레이션 해시태그
-     *
-     * 해당 상품분류의 해시태그 목록
-     *
-     * ※ 해당 기능은 쇼핑 큐레이션 서비스를 사용하는 경우에만 사용 가능하다.
-     *
-     *
-     */
+      * @description
+      * 쇼핑 큐레이션 해시태그
+      * 
+      * 해당 상품분류의 해시태그 목록
+      * 
+      * ※ 해당 기능은 쇼핑 큐레이션 서비스를 사용하는 경우에만 사용 가능하다.
+      * 
+      * 
+      */ 
     hashTags: any;
   }
 
   export interface RetrieveAListOfProductCategoriesInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 분류 Depth
-     *
-     * 조회하고자 하는 상품분류의 차수 검색
-     *
-     * 최소: [1]~최대: [4]
-     */
+      * @description
+      * 분류 Depth
+      * 
+      * 조회하고자 하는 상품분류의 차수 검색
+      * 
+      * 최소: [1]~최대: [4]
+      */ 
     categoryDepth?: any;
     /**
-     * @description
-     * 분류 번호
-     *
-     * 조회하고자 하는 상품분류의 번호
-     *
-     *
-     */
+      * @description
+      * 분류 번호
+      * 
+      * 조회하고자 하는 상품분류의 번호
+      * 
+      * 
+      */ 
     categoryNo?: any;
     /**
-     * @description
-     * 부모 분류 번호
-     *
-     * 조회하고자 하는 상품분류의 부모 상품분류 번호 검색
-     *
-     * 대분류만 검색하고자 할 경우 parent_category_no =1 로 검색한다.
-     *
-     *
-     */
+      * @description
+      * 부모 분류 번호
+      * 
+      * 조회하고자 하는 상품분류의 부모 상품분류 번호 검색
+      * 
+      * 대분류만 검색하고자 할 경우 parent_category_no =1 로 검색한다.
+      * 
+      * 
+      */ 
     parentCategoryNo?: any;
     /**
-     * @description
-     * 분류명
-     *
-     * 검색어를 분류명에 포함하고 있는 상품분류 검색(대소문자 구분 없음)
-     *
-     *
-     */
+      * @description
+      * 분류명
+      * 
+      * 검색어를 분류명에 포함하고 있는 상품분류 검색(대소문자 구분 없음)
+      * 
+      * 
+      */ 
     categoryName?: any;
     /**
-     * @description
-     * 조회결과 시작위치
-     *
-     * 조회결과 시작위치
-     *
-     * @default 0
-     *
-     * 최대값: [8000]
-     */
+      * @description
+      * 조회결과 시작위치
+      * 
+      * 조회결과 시작위치
+      * 
+      * @default 0
+      * 
+      * 최대값: [8000]
+      */ 
     offset?: any;
     /**
-     * @description
-     * 조회결과 최대건수
-     *
-     * 조회하고자 하는 최대 건수를 지정할 수 있음.
-     * 예) 10 입력시 10건만 표시함.
-     *
-     * @default 10
-     *
-     * 최소: [1]~최대: [100]
-     */
+      * @description
+      * 조회결과 최대건수
+      * 
+      * 조회하고자 하는 최대 건수를 지정할 수 있음.
+      * 예) 10 입력시 10건만 표시함.
+      * 
+      * @default 10
+      * 
+      * 최소: [1]~최대: [100]
+      */ 
     limit?: any;
   }
 
   export interface RetrieveAListOfProductCategoriesOutput {
-    categories: {
-      shopNo: number;
-      categoryNo: number;
-      categoryDepth: number;
-      parentCategoryNo: number;
-      categoryName: string;
-      fullCategoryName: {
-        1: string;
-        2: any;
-        3: any;
-        4: any;
-      };
-      fullCategoryNo: {
-        1: string;
-        2: any;
-        3: any;
-        4: any;
-      };
-      rootCategoryNo: number;
-      useDisplay: Cafe24Enum;
-      displayOrder: number;
-      hashTags: string[];
+    categories: { 
+    shopNo: number;
+    categoryNo: number;
+    categoryDepth: number;
+    parentCategoryNo: number;
+    categoryName: string;
+    fullCategoryName: { 
+    1: string;
+    2: any;
+    3: any;
+    4: any;
+    };
+    fullCategoryNo: { 
+    1: string;
+    2: any;
+    3: any;
+    4: any;
+    };
+    rootCategoryNo: number;
+    useDisplay: Cafe24Enum;
+    displayOrder: number;
+    hashTags: string[];
     }[];
   }
   export interface RetrieveACountOfProductCategoriesInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 분류 Depth
-     *
-     * 조회하고자 하는 상품분류의 차수 검색
-     *
-     * 최소: [1]~최대: [4]
-     */
+      * @description
+      * 분류 Depth
+      * 
+      * 조회하고자 하는 상품분류의 차수 검색
+      * 
+      * 최소: [1]~최대: [4]
+      */ 
     categoryDepth?: any;
     /**
-     * @description
-     * 분류 번호
-     *
-     * 조회하고자 하는 상품분류의 번호
-     *
-     *
-     */
+      * @description
+      * 분류 번호
+      * 
+      * 조회하고자 하는 상품분류의 번호
+      * 
+      * 
+      */ 
     categoryNo?: any;
     /**
-     * @description
-     * 부모 분류 번호
-     *
-     * 조회하고자 하는 상품분류의 부모 상품분류 번호 검색
-     *
-     * 대분류만 검색하고자 할 경우 parent_category_no =1 로 검색한다.
-     *
-     *
-     */
+      * @description
+      * 부모 분류 번호
+      * 
+      * 조회하고자 하는 상품분류의 부모 상품분류 번호 검색
+      * 
+      * 대분류만 검색하고자 할 경우 parent_category_no =1 로 검색한다.
+      * 
+      * 
+      */ 
     parentCategoryNo?: any;
     /**
-     * @description
-     * 분류명
-     *
-     * 검색어를 분류명에 포함하고 있는 상품분류 검색(대소문자 구분 없음)
-     *
-     *
-     */
+      * @description
+      * 분류명
+      * 
+      * 검색어를 분류명에 포함하고 있는 상품분류 검색(대소문자 구분 없음)
+      * 
+      * 
+      */ 
     categoryName?: any;
   }
 
@@ -281,49 +282,49 @@ declare module 'cafe24api-client' {
   }
   export interface RetrieveAProductCategoryInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 분류 번호
-     *
-     * 조회하고자 하는 상품분류의 번호
-     *
-     * @required
-     */
+      * @description
+      * 분류 번호
+      * 
+      * 조회하고자 하는 상품분류의 번호
+      * 
+      * @required
+      */ 
     categoryNo: any;
   }
 
   export interface RetrieveAProductCategoryOutput {
-    category: {
-      shopNo: number;
-      categoryNo: number;
-      categoryDepth: number;
-      parentCategoryNo: number;
-      categoryName: string;
-      fullCategoryNo: {
-        1: string;
-        2: string;
-        3: string;
-        4: Cafe24Datetime;
-      };
-      fullCategoryName: {
-        1: string;
-        2: string;
-        3: string;
-        4: string;
-      };
-      useDisplay: Cafe24Enum;
-      displayOrder: number;
-      hashTags: string[];
+    category: { 
+    shopNo: number;
+    categoryNo: number;
+    categoryDepth: number;
+    parentCategoryNo: number;
+    categoryName: string;
+    fullCategoryNo: { 
+    1: string;
+    2: string;
+    3: string;
+    4: Cafe24Datetime;
+    };
+    fullCategoryName: { 
+    1: string;
+    2: string;
+    3: string;
+    4: string;
+    };
+    useDisplay: Cafe24Enum;
+    displayOrder: number;
+    hashTags: string[];
     };
   }
 
@@ -397,7 +398,7 @@ declare module 'cafe24api-client' {
      */
     retrieveAListOfProductCategories(
       input: RetrieveAListOfProductCategoriesInput,
-      options?: RequestOptions<RetrieveAListOfProductCategoriesInput>,
+      options?: RequestOptions<RetrieveAListOfProductCategoriesOutput['categories'][number]>,
     ): Promise<AxiosResponse<RetrieveAListOfProductCategoriesOutput>>;
     /**
      * @description
@@ -414,7 +415,7 @@ declare module 'cafe24api-client' {
      */
     retrieveACountOfProductCategories(
       input: RetrieveACountOfProductCategoriesInput,
-      options?: RequestOptions<RetrieveACountOfProductCategoriesInput>,
+      options?: RequestOptions<RetrieveACountOfProductCategoriesOutput['count']>,
     ): Promise<AxiosResponse<RetrieveACountOfProductCategoriesOutput>>;
     /**
      * @description
@@ -456,7 +457,7 @@ declare module 'cafe24api-client' {
      */
     retrieveAProductCategory(
       input: RetrieveAProductCategoryInput,
-      options?: RequestOptions<RetrieveAProductCategoryInput>,
+      options?: RequestOptions<RetrieveAProductCategoryOutput['category']>,
     ): Promise<AxiosResponse<RetrieveAProductCategoryOutput>>;
   }
 }

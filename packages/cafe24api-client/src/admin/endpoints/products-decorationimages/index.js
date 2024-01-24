@@ -1,20 +1,16 @@
+
 export default (cls) => {
-  cls.prototype.retrieveAListOfDecorationImages = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.retrieveAListOfDecorationImages = async function (input, options) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/products/decorationimages`,
-      {},
+      {
+      },
       options,
     );
   };
 
-  cls.prototype.retrieveAListOfProductDecorationImages = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.retrieveAListOfProductDecorationImages = async function (input, options) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/products/${input['product_no']}/decorationimages`,
@@ -26,10 +22,7 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.setDecorationImagesForAProduct = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.setDecorationImagesForAProduct = async function (input, options) {
     return this.createRequest(
       'POST',
       `/api/v2/admin/products/${input['product_no']}/decorationimages`,
@@ -45,10 +38,7 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.updateProductDecorationImages = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.updateProductDecorationImages = async function (input, options) {
     return this.createRequest(
       'PUT',
       `/api/v2/admin/products/${input['product_no']}/decorationimages`,
@@ -64,10 +54,7 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.removeAProductDecorationImage = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.removeAProductDecorationImage = async function (input, options) {
     return this.createRequest(
       'DELETE',
       `/api/v2/admin/products/${input['product_no']}/decorationimages/{code}`,
@@ -79,4 +66,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

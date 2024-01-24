@@ -5,6 +5,7 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   /**
    * @description
    * 배송(Shipping)은 쇼핑몰에 등록된 배송방법과 관련된 기능입니다.
@@ -12,664 +13,664 @@ declare module 'cafe24api-client' {
    */
   export interface Shipping {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 
+      */ 
     shopNo: any;
     /**
-     * @description
-     * 배송방법
-     *
-     * shipping_01 : 택배
-     * shipping_02 : 빠른등기
-     * shipping_04 : 직접배송
-     * shipping_05 : 퀵배송
-     * shipping_06 : 기타
-     * shipping_07 : 화물배송
-     * shipping_08 : 매장직접수령
-     * shipping_09 : 배송필요 없음
-     *
-     *
-     */
+      * @description
+      * 배송방법
+      * 
+      * shipping_01 : 택배
+      * shipping_02 : 빠른등기
+      * shipping_04 : 직접배송
+      * shipping_05 : 퀵배송
+      * shipping_06 : 기타
+      * shipping_07 : 화물배송
+      * shipping_08 : 매장직접수령
+      * shipping_09 : 배송필요 없음
+      * 
+      * 
+      */ 
     shippingMethod: any;
     /**
-     * @description
-     * 기타배송
-     *
-     *
-     */
+      * @description
+      * 기타배송
+      * 
+      * 
+      */ 
     shippingEtc: any;
     /**
-     * @description
-     * 국내/해외배송 설정
-     *
-     * A : 국내배송
-     * C : 해외배송
-     * B : 국내/해외배송
-     *
-     *
-     */
+      * @description
+      * 국내/해외배송 설정
+      * 
+      * A : 국내배송
+      * C : 해외배송
+      * B : 국내/해외배송
+      * 
+      * 
+      */ 
     shippingType: any;
     /**
-     * @description
-     * 배송기간
-     *
-     *
-     */
+      * @description
+      * 배송기간
+      * 
+      * 
+      */ 
     shippingPeriod: any;
     /**
-     * @description
-     * 배송비타입
-     *
-     * T : 배송비 무료
-     * R : 고정배송비 사용
-     * M : 구매 금액에 따른 부과
-     * D : 구매 금액별 차등 배송료 사용
-     * W : 상품 무게별 차등 배송료 사용
-     * C : 상품 수량별 차등 배송료 사용
-     * N : 상품 수량에 비례하여 배송료 부과
-     *
-     *
-     */
+      * @description
+      * 배송비타입
+      * 
+      * T : 배송비 무료
+      * R : 고정배송비 사용
+      * M : 구매 금액에 따른 부과
+      * D : 구매 금액별 차등 배송료 사용
+      * W : 상품 무게별 차등 배송료 사용
+      * C : 상품 수량별 차등 배송료 사용
+      * N : 상품 수량에 비례하여 배송료 부과
+      * 
+      * 
+      */ 
     shippingFeeType: any;
     /**
-     * @description
-     * 배송비
-     *
-     * 최대값: [999999999]
-     */
+      * @description
+      * 배송비
+      * 
+      * 최대값: [999999999]
+      */ 
     shippingFee: any;
     /**
-     * @description
-     * 배송비 무료 최소금액
-     *
-     * 배송비 설정 &gt; 구매 금액에 따른 부과 일 경우 사용
-     *
-     * 최대값: [99999999999999]
-     */
+      * @description
+      * 배송비 무료 최소금액
+      * 
+      * 배송비 설정 &gt; 구매 금액에 따른 부과 일 경우 사용
+      * 
+      * 최대값: [99999999999999]
+      */ 
     freeShippingPrice: any;
     /**
-     * @description
-     * 상품 수량별 배송비
-     *
-     * 배송비 설정 &gt; 상품 수량에 비례하여 배송료 부과 일 경우 사용
-     *
-     * 최대값: [999999999]
-     */
+      * @description
+      * 상품 수량별 배송비
+      * 
+      * 배송비 설정 &gt; 상품 수량에 비례하여 배송료 부과 일 경우 사용
+      * 
+      * 최대값: [999999999]
+      */ 
     shippingFeeByQuantity: any;
     /**
-     * @description
-     * 배송비 상세 설정
-     *
-     *
-     */
+      * @description
+      * 배송비 상세 설정
+      * 
+      * 
+      */ 
     shippingRates: any;
     /**
-     * @description
-     * 배송비 청구 기준 주문금액 조건 설정
-     *
-     * D : 할인전 정상판매가격 기준(권장)
-     * L : 최종 주문(결제)금액 기준
-     * A : 할인 적용 후 결제 금액 기준
-     * R : 최종 실 결제금액 기준
-     *
-     *
-     */
+      * @description
+      * 배송비 청구 기준 주문금액 조건 설정
+      * 
+      * D : 할인전 정상판매가격 기준(권장)
+      * L : 최종 주문(결제)금액 기준
+      * A : 할인 적용 후 결제 금액 기준
+      * R : 최종 실 결제금액 기준
+      * 
+      * 
+      */ 
     shippingFeeCriteria: any;
     /**
-     * @description
-     * 배송비 선결제 설정
-     *
-     * C : 착불
-     * P : 선결제
-     * B : 착불/선결제
-     *
-     *
-     */
+      * @description
+      * 배송비 선결제 설정
+      * 
+      * C : 착불
+      * P : 선결제
+      * B : 착불/선결제
+      * 
+      * 
+      */ 
     prepaidShippingFee: any;
     /**
-     * @description
-     * 상품중량
-     *
-     *
-     */
+      * @description
+      * 상품중량
+      * 
+      * 
+      */ 
     productWeight: any;
     /**
-     * @description
-     * 해외배송가능 국가 제한 여부
-     *
-     * T : 제한함
-     * F : 제한안함
-     *
-     *
-     */
+      * @description
+      * 해외배송가능 국가 제한 여부
+      * 
+      * T : 제한함
+      * F : 제한안함
+      * 
+      * 
+      */ 
     overseaShippingCountry: any;
     /**
-     * @description
-     * 배송국가
-     *
-     *
-     */
+      * @description
+      * 배송국가
+      * 
+      * 
+      */ 
     overseaShippingCountryList: any;
     /**
-     * @description
-     * 배송비 국가별 개별 설정 여부
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 배송비 국가별 개별 설정 여부
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     countryShippingFee: any;
     /**
-     * @description
-     * 국가별 배송비
-     *
-     *
-     */
+      * @description
+      * 국가별 배송비
+      * 
+      * 
+      */ 
     countryShippingFeeList: any;
     /**
-     * @description
-     * 해외배송 보험료
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 해외배송 보험료
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     internationalShippingInsurance: any;
     /**
-     * @description
-     * 반품주소
-     *
-     *
-     */
+      * @description
+      * 반품주소
+      * 
+      * 
+      */ 
     returnAddress: any;
     /**
-     * @description
-     * 배송규격
-     *
-     *
-     */
+      * @description
+      * 배송규격
+      * 
+      * 
+      */ 
     packageVolume: any;
     /**
-     * @description
-     * 희망배송일
-     *
-     *
-     */
+      * @description
+      * 희망배송일
+      * 
+      * 
+      */ 
     wishedDeliveryDate: any;
     /**
-     * @description
-     * 희망배송시간
-     *
-     *
-     */
+      * @description
+      * 희망배송시간
+      * 
+      * 
+      */ 
     wishedDeliveryTime: any;
     /**
-     * @description
-     * HS코드
-     *
-     *
-     */
+      * @description
+      * HS코드
+      * 
+      * 
+      */ 
     hsCode: any;
     /**
-     * @description
-     * 국가별 HS 코드
-     *
-     *
-     */
+      * @description
+      * 국가별 HS 코드
+      * 
+      * 
+      */ 
     countryHsCode: any;
   }
 
   export interface RetrieveShippingReturnSettingsInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     * 최소값: [1]
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 최소값: [1]
+      */ 
     shopNo?: any;
   }
 
   export interface RetrieveShippingReturnSettingsOutput {
-    shipping: {
-      shopNo: number;
-      shippingMethod: string;
-      shippingEtc: any;
-      shippingPeriod: {
-        minimum: number;
-        maximum: number;
-      };
-      productWeight: string;
-      shippingFeeType: Cafe24Enum;
-      shippingFee: any;
-      freeShippingPrice: any;
-      shippingFeeByQuantity: any;
-      shippingRates: {
-        minValue: string;
-        maxValue: Cafe24Datetime;
-        shippingFee: Cafe24Datetime;
-      }[];
-      shippingFeeCriteria: Cafe24Enum;
-      prepaidShippingFee: Cafe24Enum;
-      overseaShippingCountry: Cafe24Enum;
-      overseaShippingCountryList: {
-        countryCode: string;
-      }[];
-      countryShippingFee: Cafe24Enum;
-      countryShippingFeeList: {
-        countryCode: string;
-        conditional: string;
-        minValue: string;
-        maxValue: Cafe24Datetime;
-        shippingFee: Cafe24Datetime;
-      }[];
-      internationalShippingInsurance: Cafe24Enum;
-      returnAddress: {
-        zipcode: Cafe24Datetime;
-        ziptype: string;
-        address1: string;
-        address2: string;
-      };
-      packageVolume: {
-        width: string;
-        length: string;
-        height: Cafe24Datetime;
-      };
-      wishedDeliveryDate: {
-        use: Cafe24Enum;
-        range: {
-          minimum: number;
-          maximum: number;
-        };
-        default: {
-          minimum: any;
-          useFastDelivery: Cafe24Enum;
-        };
-      };
-      wishedDeliveryTime: {
-        use: Cafe24Enum;
-        range: {
-          startHour: Cafe24Datetime;
-          endHour: string;
-        }[];
-        default: {
-          range: {
-            startHour: Cafe24Datetime;
-            endHour: string;
-          };
-          useFastDelivery: Cafe24Enum;
-        };
-      };
-      hsCode: Cafe24Datetime;
-      countryHsCode: {
-        hsCode: Cafe24Datetime;
-        countryCode: string;
-      }[];
+    shipping: { 
+    shopNo: number;
+    shippingMethod: string;
+    shippingEtc: any;
+    shippingPeriod: { 
+    minimum: number;
+    maximum: number;
+    };
+    productWeight: string;
+    shippingFeeType: Cafe24Enum;
+    shippingFee: any;
+    freeShippingPrice: any;
+    shippingFeeByQuantity: any;
+    shippingRates: { 
+    minValue: string;
+    maxValue: Cafe24Datetime;
+    shippingFee: Cafe24Datetime;
+    }[];
+    shippingFeeCriteria: Cafe24Enum;
+    prepaidShippingFee: Cafe24Enum;
+    overseaShippingCountry: Cafe24Enum;
+    overseaShippingCountryList: { 
+    countryCode: string;
+    }[];
+    countryShippingFee: Cafe24Enum;
+    countryShippingFeeList: { 
+    countryCode: string;
+    conditional: string;
+    minValue: string;
+    maxValue: Cafe24Datetime;
+    shippingFee: Cafe24Datetime;
+    }[];
+    internationalShippingInsurance: Cafe24Enum;
+    returnAddress: { 
+    zipcode: Cafe24Datetime;
+    ziptype: string;
+    address1: string;
+    address2: string;
+    };
+    packageVolume: { 
+    width: string;
+    length: string;
+    height: Cafe24Datetime;
+    };
+    wishedDeliveryDate: { 
+    use: Cafe24Enum;
+    range: { 
+    minimum: number;
+    maximum: number;
+    };
+    default: { 
+    minimum: any;
+    useFastDelivery: Cafe24Enum;
+    };
+    };
+    wishedDeliveryTime: { 
+    use: Cafe24Enum;
+    range: { 
+    startHour: Cafe24Datetime;
+    endHour: string;
+    }[];
+    default: { 
+    range: { 
+    startHour: Cafe24Datetime;
+    endHour: string;
+    };
+    useFastDelivery: Cafe24Enum;
+    };
+    };
+    hsCode: Cafe24Datetime;
+    countryHsCode: { 
+    hsCode: Cafe24Datetime;
+    countryCode: string;
+    }[];
     };
   }
   export interface UpdateStoreShippingReturnSettingsInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     * 최소값: [1]
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 최소값: [1]
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 배송방법
-     *
-     * shipping_01 : 택배
-     * shipping_02 : 빠른등기
-     * shipping_04 : 직접배송
-     * shipping_05 : 퀵배송
-     * shipping_06 : 기타
-     * shipping_07 : 화물배송
-     * shipping_08 : 매장직접수령
-     * shipping_09 : 배송필요 없음
-     *
-     *
-     */
+      * @description
+      * 배송방법
+      * 
+      * shipping_01 : 택배
+      * shipping_02 : 빠른등기
+      * shipping_04 : 직접배송
+      * shipping_05 : 퀵배송
+      * shipping_06 : 기타
+      * shipping_07 : 화물배송
+      * shipping_08 : 매장직접수령
+      * shipping_09 : 배송필요 없음
+      * 
+      * 
+      */ 
     shippingMethod?: any;
     /**
-     * @description
-     * 기타배송
-     *
-     * 최대글자수 : [25자]
-     */
+      * @description
+      * 기타배송
+      * 
+      * 최대글자수 : [25자]
+      */ 
     shippingEtc?: any;
     /**
-     * @description
-     * 배송기간
-     *
-     *
-     */
-    shippingPeriod?: {
-      /**
-       * @description
-       * 최소 기간
-       *
-       *
-       */
-      minimum?: any;
-      /**
-       * @description
-       * 최대 기간
-       *
-       *
-       */
-      maximum?: any;
+      * @description
+      * 배송기간
+      * 
+      * 
+      */ 
+    shippingPeriod?: { 
+    /**
+      * @description
+      * 최소 기간
+      * 
+      * 
+      */ 
+    minimum?: any;
+    /**
+      * @description
+      * 최대 기간
+      * 
+      * 
+      */ 
+    maximum?: any;
     };
     /**
-     * @description
-     * 배송비타입
-     *
-     * T : 배송비 무료
-     * R : 고정배송비 사용
-     * M : 구매 금액에 따른 부과
-     * D : 구매 금액별 차등 배송료 사용
-     * W : 상품 무게별 차등 배송료 사용
-     * C : 상품 수량별 차등 배송료 사용
-     * N : 상품 수량에 비례하여 배송료 부과
-     *
-     *
-     */
+      * @description
+      * 배송비타입
+      * 
+      * T : 배송비 무료
+      * R : 고정배송비 사용
+      * M : 구매 금액에 따른 부과
+      * D : 구매 금액별 차등 배송료 사용
+      * W : 상품 무게별 차등 배송료 사용
+      * C : 상품 수량별 차등 배송료 사용
+      * N : 상품 수량에 비례하여 배송료 부과
+      * 
+      * 
+      */ 
     shippingFeeType?: any;
     /**
-     * @description
-     * 배송비
-     *
-     * 최대값: [999999999]
-     */
+      * @description
+      * 배송비
+      * 
+      * 최대값: [999999999]
+      */ 
     shippingFee?: any;
     /**
-     * @description
-     * 배송비 무료 최소금액
-     *
-     * 최대값: [99999999999999]
-     */
+      * @description
+      * 배송비 무료 최소금액
+      * 
+      * 최대값: [99999999999999]
+      */ 
     freeShippingPrice?: any;
     /**
-     * @description
-     * 상품 수량별 배송비
-     *
-     * 최대값: [999999999]
-     */
+      * @description
+      * 상품 수량별 배송비
+      * 
+      * 최대값: [999999999]
+      */ 
     shippingFeeByQuantity?: any;
     /**
-     * @description
-     * 배송비 상세 설정
-     *
-     *
-     */
-    shippingRates?: {
-      /**
-       * @description
-       * 조건 최소값
-       *
-       *
-       */
-      minValue?: any;
-      /**
-       * @description
-       * 조건 최대값
-       *
-       *
-       */
-      maxValue?: any;
-      /**
-       * @description
-       * 배송비
-       *
-       *
-       */
-      shippingFee?: any;
+      * @description
+      * 배송비 상세 설정
+      * 
+      * 
+      */ 
+    shippingRates?: { 
+    /**
+      * @description
+      * 조건 최소값
+      * 
+      * 
+      */ 
+    minValue?: any;
+    /**
+      * @description
+      * 조건 최대값
+      * 
+      * 
+      */ 
+    maxValue?: any;
+    /**
+      * @description
+      * 배송비
+      * 
+      * 
+      */ 
+    shippingFee?: any;
     };
     /**
-     * @description
-     * 배송비 청구 기준 주문금액 조건 설정
-     *
-     * D : 할인전 정상판매가격 기준(권장)
-     * A : 할인 적용 후 결제 금액 기준
-     *
-     *
-     */
+      * @description
+      * 배송비 청구 기준 주문금액 조건 설정
+      * 
+      * D : 할인전 정상판매가격 기준(권장)
+      * A : 할인 적용 후 결제 금액 기준
+      * 
+      * 
+      */ 
     shippingFeeCriteria?: any;
     /**
-     * @description
-     * 배송비 선결제 설정
-     *
-     * EC 일본, 베트남, 필리핀 버전에서는 사용할 수 없음.
-     *
-     * C : 착불
-     * P : 선결제
-     * B : 착불/선결제
-     *
-     *
-     */
+      * @description
+      * 배송비 선결제 설정
+      * 
+      * EC 일본, 베트남, 필리핀 버전에서는 사용할 수 없음.
+      * 
+      * C : 착불
+      * P : 선결제
+      * B : 착불/선결제
+      * 
+      * 
+      */ 
     prepaidShippingFee?: any;
     /**
-     * @description
-     * 상품중량
-     *
-     * 최소값: [0]
-     * 최대값: [30]
-     */
+      * @description
+      * 상품중량
+      * 
+      * 최소값: [0]
+      * 최대값: [30]
+      */ 
     productWeight?: any;
     /**
-     * @description
-     * 해외배송가능 국가 제한 여부
-     *
-     * T : 제한함
-     * F : 제한안함
-     *
-     *
-     */
+      * @description
+      * 해외배송가능 국가 제한 여부
+      * 
+      * T : 제한함
+      * F : 제한안함
+      * 
+      * 
+      */ 
     overseaShippingCountry?: any;
     /**
-     * @description
-     * 배송국가
-     *
-     *
-     */
-    overseaShippingCountryList?: {
-      /**
-       * @description
-       * 국가코드
-       *
-       *
-       */
-      countryCode?: any;
+      * @description
+      * 배송국가
+      * 
+      * 
+      */ 
+    overseaShippingCountryList?: { 
+    /**
+      * @description
+      * 국가코드
+      * 
+      * 
+      */ 
+    countryCode?: any;
     };
     /**
-     * @description
-     * 배송비 국가별 개별 설정 여부
-     *
-     * EC 일본, 베트남, 필리핀 버전에서는 사용할 수 없음.
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 배송비 국가별 개별 설정 여부
+      * 
+      * EC 일본, 베트남, 필리핀 버전에서는 사용할 수 없음.
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     countryShippingFee?: any;
     /**
-     * @description
-     * 국가별 배송비
-     *
-     * EC 일본, 베트남, 필리핀 버전에서는 사용할 수 없음.
-     *
-     *
-     */
-    countryShippingFeeList?: {
-      /**
-       * @description
-       * 국가코드
-       *
-       *
-       */
-      countryCode?: any;
-      /**
-       * @description
-       * 배송비 책정 조건
-       * quantity : 수량
-       * weight : 무게
-       * price : 가격
-       *
-       *
-       */
-      conditional?: any;
-      /**
-       * @description
-       * 조건 최소값
-       *
-       *
-       */
-      minValue?: any;
-      /**
-       * @description
-       * 조건 최대값
-       *
-       *
-       */
-      maxValue?: any;
-      /**
-       * @description
-       * 배송비
-       *
-       *
-       */
-      shippingFee?: any;
+      * @description
+      * 국가별 배송비
+      * 
+      * EC 일본, 베트남, 필리핀 버전에서는 사용할 수 없음.
+      * 
+      * 
+      */ 
+    countryShippingFeeList?: { 
+    /**
+      * @description
+      * 국가코드
+      * 
+      * 
+      */ 
+    countryCode?: any;
+    /**
+      * @description
+      * 배송비 책정 조건
+      * quantity : 수량
+      * weight : 무게
+      * price : 가격
+      * 
+      * 
+      */ 
+    conditional?: any;
+    /**
+      * @description
+      * 조건 최소값
+      * 
+      * 
+      */ 
+    minValue?: any;
+    /**
+      * @description
+      * 조건 최대값
+      * 
+      * 
+      */ 
+    maxValue?: any;
+    /**
+      * @description
+      * 배송비
+      * 
+      * 
+      */ 
+    shippingFee?: any;
     };
     /**
-     * @description
-     * 해외배송 보험료
-     *
-     * EC 일본, 베트남, 필리핀 버전에서는 사용할 수 없음.
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 해외배송 보험료
+      * 
+      * EC 일본, 베트남, 필리핀 버전에서는 사용할 수 없음.
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     internationalShippingInsurance?: any;
     /**
-     * @description
-     * 반품주소
-     *
-     *
-     */
-    returnAddress?: {
-      /**
-       * @description
-       * 우편번호
-       *
-       *
-       */
-      zipcode?: any;
-      /**
-       * @description
-       * 우편번호 선택 국가
-       *
-       *
-       */
-      ziptype?: any;
-      /**
-       * @description
-       * 기본 주소
-       *
-       *
-       */
-      address1?: any;
-      /**
-       * @description
-       * 상세 주소
-       *
-       *
-       */
-      address2?: any;
+      * @description
+      * 반품주소
+      * 
+      * 
+      */ 
+    returnAddress?: { 
+    /**
+      * @description
+      * 우편번호
+      * 
+      * 
+      */ 
+    zipcode?: any;
+    /**
+      * @description
+      * 우편번호 선택 국가
+      * 
+      * 
+      */ 
+    ziptype?: any;
+    /**
+      * @description
+      * 기본 주소
+      * 
+      * 
+      */ 
+    address1?: any;
+    /**
+      * @description
+      * 상세 주소
+      * 
+      * 
+      */ 
+    address2?: any;
     };
     /**
-     * @description
-     * 배송규격
-     *
-     *
-     */
-    packageVolume?: {
-      /**
-       * @description
-       * 가로
-       *
-       *
-       */
-      width?: any;
-      /**
-       * @description
-       * 세로
-       *
-       *
-       */
-      length?: any;
-      /**
-       * @description
-       * 높이
-       *
-       *
-       */
-      height?: any;
+      * @description
+      * 배송규격
+      * 
+      * 
+      */ 
+    packageVolume?: { 
+    /**
+      * @description
+      * 가로
+      * 
+      * 
+      */ 
+    width?: any;
+    /**
+      * @description
+      * 세로
+      * 
+      * 
+      */ 
+    length?: any;
+    /**
+      * @description
+      * 높이
+      * 
+      * 
+      */ 
+    height?: any;
     };
   }
 
   export interface UpdateStoreShippingReturnSettingsOutput {
-    shipping: {
-      shopNo: number;
-      shippingMethod: string;
-      shippingEtc: any;
-      shippingPeriod: {
-        minimum: number;
-        maximum: number;
-      };
-      shippingFeeType: Cafe24Enum;
-      shippingRates: {
-        minValue: string;
-        maxValue: Cafe24Datetime;
-        shippingFee: Cafe24Datetime;
-      }[];
-      shippingFeeCriteria: Cafe24Enum;
-      prepaidShippingFee: Cafe24Enum;
-      productWeight: string;
-      overseaShippingCountry: Cafe24Enum;
-      overseaShippingCountryList: {
-        countryCode: string;
-      }[];
-      countryShippingFee: Cafe24Enum;
-      countryShippingFeeList: {
-        countryCode: string;
-        conditional: string;
-        minValue: string;
-        maxValue: Cafe24Datetime;
-        shippingFee: Cafe24Datetime;
-      }[];
-      internationalShippingInsurance: Cafe24Enum;
-      returnAddress: {
-        zipcode: Cafe24Datetime;
-        ziptype: string;
-        address1: string;
-        address2: string;
-      };
-      packageVolume: {
-        width: string;
-        length: string;
-        height: Cafe24Datetime;
-      };
+    shipping: { 
+    shopNo: number;
+    shippingMethod: string;
+    shippingEtc: any;
+    shippingPeriod: { 
+    minimum: number;
+    maximum: number;
+    };
+    shippingFeeType: Cafe24Enum;
+    shippingRates: { 
+    minValue: string;
+    maxValue: Cafe24Datetime;
+    shippingFee: Cafe24Datetime;
+    }[];
+    shippingFeeCriteria: Cafe24Enum;
+    prepaidShippingFee: Cafe24Enum;
+    productWeight: string;
+    overseaShippingCountry: Cafe24Enum;
+    overseaShippingCountryList: { 
+    countryCode: string;
+    }[];
+    countryShippingFee: Cafe24Enum;
+    countryShippingFeeList: { 
+    countryCode: string;
+    conditional: string;
+    minValue: string;
+    maxValue: Cafe24Datetime;
+    shippingFee: Cafe24Datetime;
+    }[];
+    internationalShippingInsurance: Cafe24Enum;
+    returnAddress: { 
+    zipcode: Cafe24Datetime;
+    ziptype: string;
+    address1: string;
+    address2: string;
+    };
+    packageVolume: { 
+    width: string;
+    length: string;
+    height: Cafe24Datetime;
+    };
     };
   }
 
@@ -797,7 +798,7 @@ declare module 'cafe24api-client' {
      */
     retrieveShippingReturnSettings(
       input: RetrieveShippingReturnSettingsInput,
-      options?: RequestOptions<RetrieveShippingReturnSettingsInput>,
+      options?: RequestOptions<RetrieveShippingReturnSettingsOutput['shipping']>,
     ): Promise<AxiosResponse<RetrieveShippingReturnSettingsOutput>>;
     /**
      * @description
@@ -877,7 +878,7 @@ declare module 'cafe24api-client' {
      */
     updateStoreShippingReturnSettings(
       input: UpdateStoreShippingReturnSettingsInput,
-      options?: RequestOptions<UpdateStoreShippingReturnSettingsInput>,
+      options?: RequestOptions<UpdateStoreShippingReturnSettingsOutput['shipping']>,
     ): Promise<AxiosResponse<UpdateStoreShippingReturnSettingsOutput>>;
   }
 }

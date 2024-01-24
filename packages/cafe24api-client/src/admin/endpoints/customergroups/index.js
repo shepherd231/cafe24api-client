@@ -1,3 +1,4 @@
+
 export default (cls) => {
   cls.prototype.retrieveAListOfCustomerTiers = async function (input, options) {
     return this.createRequest(
@@ -12,10 +13,7 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.retrieveACountOfCustomerTiers = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.retrieveACountOfCustomerTiers = async function (input, options) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/customergroups/count`,
@@ -39,4 +37,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

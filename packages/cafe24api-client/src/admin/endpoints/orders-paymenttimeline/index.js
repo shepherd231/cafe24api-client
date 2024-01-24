@@ -1,8 +1,6 @@
+
 export default (cls) => {
-  cls.prototype.retrievePaymentHistoryOfAnOrder = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.retrievePaymentHistoryOfAnOrder = async function (input, options) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/orders/${input['order_id']}/paymenttimeline`,
@@ -17,10 +15,7 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.retrievePaymentDetailsOfAnOrder = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.retrievePaymentDetailsOfAnOrder = async function (input, options) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/orders/${input['order_id']}/paymenttimeline/{payment_no}`,
@@ -32,4 +27,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

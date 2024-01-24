@@ -1,8 +1,6 @@
+
 export default (cls) => {
-  cls.prototype.retrieveAKakaoChannelSenderProfileKey = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.retrieveAKakaoChannelSenderProfileKey = async function (input, options) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/kakaoalimtalk/profile`,
@@ -12,4 +10,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

@@ -5,705 +5,706 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   export interface Push {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * 최소값: [1]
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 최소값: [1]
+      */ 
     shop_no: any;
     /**
-     * @description
-     * 푸시 코드
-     *
-     *
-     */
+      * @description
+      * 푸시 코드
+      * 
+      * 
+      */ 
     push_code: any;
     /**
-     * @description
-     * 발송구분
-     *
-     * immediately : 즉시발송
-     * reservation : 예약발송
-     * repetition : 반복발송
-     *
-     *
-     */
+      * @description
+      * 발송구분
+      * 
+      * immediately : 즉시발송
+      * reservation : 예약발송
+      * repetition : 반복발송
+      * 
+      * 
+      */ 
     send_type: any;
     /**
-     * @description
-     * 발송예약 일
-     *
-     *
-     */
+      * @description
+      * 발송예약 일
+      * 
+      * 
+      */ 
     reserve_day: any;
     /**
-     * @description
-     * 발송예약 시
-     *
-     *
-     */
+      * @description
+      * 발송예약 시
+      * 
+      * 
+      */ 
     reserve_hour: any;
     /**
-     * @description
-     * 발송예약 분
-     *
-     *
-     */
+      * @description
+      * 발송예약 분
+      * 
+      * 
+      */ 
     reserve_minuate: any;
     /**
-     * @description
-     * OS 타입
-     *
-     * all : 전체
-     * android : 안드로이드
-     * ios : iOS
-     *
-     *
-     */
+      * @description
+      * OS 타입
+      * 
+      * all : 전체
+      * android : 안드로이드
+      * ios : iOS
+      * 
+      * 
+      */ 
     os_type: any;
     /**
-     * @description
-     * 수신대상 타입
-     *
-     * all : 앱사용자
-     * group : 가입회원
-     * id : 대상등록
-     *
-     *
-     */
+      * @description
+      * 수신대상 타입
+      * 
+      * all : 앱사용자
+      * group : 가입회원
+      * id : 대상등록
+      * 
+      * 
+      */ 
     receiver_type: any;
     /**
-     * @description
-     * 수신대상 회원등급
-     *
-     *
-     */
+      * @description
+      * 수신대상 회원등급
+      * 
+      * 
+      */ 
     group_no: any;
     /**
-     * @description
-     * 푸시 제목
-     *
-     *
-     */
+      * @description
+      * 푸시 제목
+      * 
+      * 
+      */ 
     title: any;
     /**
-     * @description
-     * 푸시 내용 (Android)
-     *
-     *
-     */
+      * @description
+      * 푸시 내용 (Android)
+      * 
+      * 
+      */ 
     content_android: any;
     /**
-     * @description
-     * 푸시 내용 (iOS)
-     *
-     *
-     */
+      * @description
+      * 푸시 내용 (iOS)
+      * 
+      * 
+      */ 
     content_ios: any;
     /**
-     * @description
-     * 푸시 이미지 URL
-     *
-     *
-     */
+      * @description
+      * 푸시 이미지 URL
+      * 
+      * 
+      */ 
     image_url: any;
     /**
-     * @description
-     * 푸시 연결 사용 여부
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 푸시 연결 사용 여부
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     use_link: any;
     /**
-     * @description
-     * 푸시 연결 타입
-     *
-     * url : 쇼핑몰페이지
-     * coupon : 쿠폰 화면
-     * notice : 푸시 알림함
-     *
-     *
-     */
+      * @description
+      * 푸시 연결 타입
+      * 
+      * url : 쇼핑몰페이지
+      * coupon : 쿠폰 화면
+      * notice : 푸시 알림함
+      * 
+      * 
+      */ 
     link_type: any;
     /**
-     * @description
-     * 푸시 외부 연결 URL
-     *
-     *
-     */
+      * @description
+      * 푸시 외부 연결 URL
+      * 
+      * 
+      */ 
     external_link: any;
     /**
-     * @description
-     * 푸시 혜택 사용여부
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 푸시 혜택 사용여부
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     use_benefit: any;
     /**
-     * @description
-     * 푸시 혜택 발송일 기준 종료일
-     *
-     *
-     */
+      * @description
+      * 푸시 혜택 발송일 기준 종료일
+      * 
+      * 
+      */ 
     benefit_end_day: any;
     /**
-     * @description
-     * 푸시 혜택 적립금액
-     *
-     *
-     */
+      * @description
+      * 푸시 혜택 적립금액
+      * 
+      * 
+      */ 
     benefit_points: any;
     /**
-     * @description
-     * 사일런트 푸시 사용 여부
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 사일런트 푸시 사용 여부
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     silent: any;
     /**
-     * @description
-     * 푸시 반복발송 번호
-     *
-     *
-     */
+      * @description
+      * 푸시 반복발송 번호
+      * 
+      * 
+      */ 
     repetition_no: any;
     /**
-     * @description
-     * 등록일
-     *
-     *
-     */
+      * @description
+      * 등록일
+      * 
+      * 
+      */ 
     created_date: any;
     /**
-     * @description
-     * 발송일시
-     *
-     *
-     */
+      * @description
+      * 발송일시
+      * 
+      * 
+      */ 
     send_date: any;
     /**
-     * @description
-     * 발송예정일시
-     *
-     *
-     */
+      * @description
+      * 발송예정일시
+      * 
+      * 
+      */ 
     reserve_date: any;
     /**
-     * @description
-     * 발송상태
-     *
-     * W : 대기
-     * F : 실패
-     * T : 성공
-     * H : 중단
-     * D : 실행중
-     * X : 실패건재발송
-     *
-     *
-     */
+      * @description
+      * 발송상태
+      * 
+      * W : 대기
+      * F : 실패
+      * T : 성공
+      * H : 중단
+      * D : 실행중
+      * X : 실패건재발송
+      * 
+      * 
+      */ 
     send_status: any;
     /**
-     * @description
-     * 발송건수 (Android)
-     *
-     *
-     */
+      * @description
+      * 발송건수 (Android)
+      * 
+      * 
+      */ 
     send_count_android: any;
     /**
-     * @description
-     * 발송건수 (iOS)
-     *
-     *
-     */
+      * @description
+      * 발송건수 (iOS)
+      * 
+      * 
+      */ 
     send_count_ios: any;
     /**
-     * @description
-     * 응답건수 (Android)
-     *
-     *
-     */
+      * @description
+      * 응답건수 (Android)
+      * 
+      * 
+      */ 
     response_count_android: any;
     /**
-     * @description
-     * 응답건수 (iOS)
-     *
-     *
-     */
+      * @description
+      * 응답건수 (iOS)
+      * 
+      * 
+      */ 
     response_count_ios: any;
     /**
-     * @description
-     * 수신대상 회원아이디
-     *
-     *
-     */
+      * @description
+      * 수신대상 회원아이디
+      * 
+      * 
+      */ 
     member_id: any;
   }
 
   export interface RetrievePushNotificationDeliveryHistoryInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     * 최소값: [1]
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 최소값: [1]
+      */ 
     shop_no?: any;
     /**
-     * @description
-     * 푸시 현황조회
-     *
-     * sending : 발송현황
-     * reservation : 예약현황
-     *
-     * @required
-     */
+      * @description
+      * 푸시 현황조회
+      * 
+      * sending : 발송현황
+      * reservation : 예약현황
+      * 
+      * @required
+      */ 
     search_status: any;
     /**
-     * @description
-     * 검색 기준일
-     *
-     * send_date : 발송일
-     * regist_date : 등록일
-     *
-     *
-     */
+      * @description
+      * 검색 기준일
+      * 
+      * send_date : 발송일
+      * regist_date : 등록일
+      * 
+      * 
+      */ 
     search_date?: any;
     /**
-     * @description
-     * 검색 시작일
-     *
-     * 날짜
-     */
+      * @description
+      * 검색 시작일
+      * 
+      * 날짜
+      */ 
     start_date?: any;
     /**
-     * @description
-     * 검색 종료일
-     *
-     * 날짜
-     */
+      * @description
+      * 검색 종료일
+      * 
+      * 날짜
+      */ 
     end_date?: any;
     /**
-     * @description
-     * 푸시 코드
-     *
-     * ,(콤마)로 여러 건을 검색할 수 있다.
-     *
-     *
-     */
+      * @description
+      * 푸시 코드
+      * 
+      * ,(콤마)로 여러 건을 검색할 수 있다.
+      * 
+      * 
+      */ 
     push_code?: any;
     /**
-     * @description
-     * 푸시 내용
-     *
-     *
-     */
+      * @description
+      * 푸시 내용
+      * 
+      * 
+      */ 
     content?: any;
     /**
-     * @description
-     * 발송구분
-     *
-     * immediately : 즉시발송
-     * reservation : 예약발송
-     * repetition : 반복발송
-     *
-     *
-     */
+      * @description
+      * 발송구분
+      * 
+      * immediately : 즉시발송
+      * reservation : 예약발송
+      * repetition : 반복발송
+      * 
+      * 
+      */ 
     send_type?: any;
     /**
-     * @description
-     * 수신대상 타입
-     *
-     * all : 앱사용자
-     * group : 가입회원
-     * id : 대상등록
-     *
-     *
-     */
+      * @description
+      * 수신대상 타입
+      * 
+      * all : 앱사용자
+      * group : 가입회원
+      * id : 대상등록
+      * 
+      * 
+      */ 
     receiver_type?: any;
     /**
-     * @description
-     * 사일런트 푸시 사용 여부
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 사일런트 푸시 사용 여부
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     silent?: any;
     /**
-     * @description
-     * 조회결과 최대건수
-     *
-     * @default 10
-     *
-     * 최소: [1]~최대: [100]
-     */
+      * @description
+      * 조회결과 최대건수
+      * 
+      * @default 10
+      * 
+      * 최소: [1]~최대: [100]
+      */ 
     limit?: any;
     /**
-     * @description
-     * 조회결과 시작위치
-     *
-     * @default 0
-     *
-     * 최대값: [10000]
-     */
+      * @description
+      * 조회결과 시작위치
+      * 
+      * @default 0
+      * 
+      * 최대값: [10000]
+      */ 
     offset?: any;
   }
 
   export interface RetrievePushNotificationDeliveryHistoryOutput {
-    push: {
-      shop_no: number;
-      push_code: string;
-      send_type: string;
-      reserve_day: any;
-      reserve_hour: any;
-      reserve_minuate: any;
-      os_type: string;
-      receiver_type: string;
-      group_no: number[];
-      title: string;
-      content_android: string;
-      content_ios: any;
-      image_url: string;
-      use_link: Cafe24Enum;
-      link_type: string;
-      external_link: string;
-      use_benefit: Cafe24Enum;
-      benefit_end_day: number;
-      benefit_points: string;
-      silent: Cafe24Enum;
-      repetition_no: any;
-      created_date: Cafe24Datetime;
-      send_date: Cafe24Datetime;
-      reserve_date: any;
-      send_status: Cafe24Enum;
-      send_count_android: number;
-      send_count_ios: any;
-      response_count_android: number;
-      response_count_ios: any;
+    push: { 
+    shop_no: number;
+    push_code: string;
+    send_type: string;
+    reserve_day: any;
+    reserve_hour: any;
+    reserve_minuate: any;
+    os_type: string;
+    receiver_type: string;
+    group_no: number[];
+    title: string;
+    content_android: string;
+    content_ios: any;
+    image_url: string;
+    use_link: Cafe24Enum;
+    link_type: string;
+    external_link: string;
+    use_benefit: Cafe24Enum;
+    benefit_end_day: number;
+    benefit_points: string;
+    silent: Cafe24Enum;
+    repetition_no: any;
+    created_date: Cafe24Datetime;
+    send_date: Cafe24Datetime;
+    reserve_date: any;
+    send_status: Cafe24Enum;
+    send_count_android: number;
+    send_count_ios: any;
+    response_count_android: number;
+    response_count_ios: any;
     }[];
-    links: {
-      rel: string;
-      href: string;
+    links: { 
+    rel: string;
+    href: string;
     }[];
   }
   export interface CreateAPushNotificationInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     * 최소값: [1]
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 최소값: [1]
+      */ 
     shop_no?: any;
     /**
-     * @description
-     * 발송구분
-     *
-     * immediately : 즉시발송
-     * reservation : 예약발송
-     *
-     * @required
-     */
+      * @description
+      * 발송구분
+      * 
+      * immediately : 즉시발송
+      * reservation : 예약발송
+      * 
+      * @required
+      */ 
     send_type: any;
     /**
-     * @description
-     * 발송예약 일
-     *
-     *
-     */
+      * @description
+      * 발송예약 일
+      * 
+      * 
+      */ 
     reserve_day?: any;
     /**
-     * @description
-     * 발송예약 시
-     *
-     * 최소: [0]~최대: [23]
-     */
+      * @description
+      * 발송예약 시
+      * 
+      * 최소: [0]~최대: [23]
+      */ 
     reserve_hour?: any;
     /**
-     * @description
-     * 발송예약 분
-     *
-     * 최소: [0]~최대: [59]
-     */
+      * @description
+      * 발송예약 분
+      * 
+      * 최소: [0]~최대: [59]
+      */ 
     reserve_minuate?: any;
     /**
-     * @description
-     * OS 타입
-     *
-     * all : 전체
-     * android : 안드로이드
-     * ios : iOS
-     *
-     * @default all
-     *
-     *
-     */
+      * @description
+      * OS 타입
+      * 
+      * all : 전체
+      * android : 안드로이드
+      * ios : iOS
+      * 
+      * @default all
+      * 
+      * 
+      */ 
     os_type?: any;
     /**
-     * @description
-     * 수신대상 타입
-     *
-     * all : 앱사용자
-     * group : 가입회원
-     * id : 대상등록
-     *
-     * @default all
-     *
-     *
-     */
+      * @description
+      * 수신대상 타입
+      * 
+      * all : 앱사용자
+      * group : 가입회원
+      * id : 대상등록
+      * 
+      * @default all
+      * 
+      * 
+      */ 
     receiver_type?: any;
     /**
-     * @description
-     * 수신대상 회원등급
-     *
-     * 최소값: [1]
-     */
+      * @description
+      * 수신대상 회원등급
+      * 
+      * 최소값: [1]
+      */ 
     group_no?: any;
     /**
-     * @description
-     * 수신대상 회원아이디
-     *
-     * 최대글자수 : [20자]
-     */
+      * @description
+      * 수신대상 회원아이디
+      * 
+      * 최대글자수 : [20자]
+      */ 
     member_id?: any;
     /**
-     * @description
-     * 푸시 제목
-     *
-     *
-     */
+      * @description
+      * 푸시 제목
+      * 
+      * 
+      */ 
     title?: any;
     /**
-     * @description
-     * 푸시 내용 (Android)
-     *
-     *
-     */
+      * @description
+      * 푸시 내용 (Android)
+      * 
+      * 
+      */ 
     content_android?: any;
     /**
-     * @description
-     * 푸시 내용 (iOS)
-     *
-     *
-     */
+      * @description
+      * 푸시 내용 (iOS)
+      * 
+      * 
+      */ 
     content_ios?: any;
     /**
-     * @description
-     * 푸시 이미지 URL
-     *
-     *
-     */
+      * @description
+      * 푸시 이미지 URL
+      * 
+      * 
+      */ 
     image_url?: any;
     /**
-     * @description
-     * 푸시 연결 사용 여부
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     * @default F
-     *
-     *
-     */
+      * @description
+      * 푸시 연결 사용 여부
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * @default F
+      * 
+      * 
+      */ 
     use_link?: any;
     /**
-     * @description
-     * 푸시 연결 타입
-     *
-     * url : 쇼핑몰페이지
-     * coupon : 쿠폰 화면
-     * notice : 푸시 알림함
-     *
-     *
-     */
+      * @description
+      * 푸시 연결 타입
+      * 
+      * url : 쇼핑몰페이지
+      * coupon : 쿠폰 화면
+      * notice : 푸시 알림함
+      * 
+      * 
+      */ 
     link_type?: any;
     /**
-     * @description
-     * 푸시 외부 연결 URL
-     *
-     *
-     */
+      * @description
+      * 푸시 외부 연결 URL
+      * 
+      * 
+      */ 
     external_link?: any;
     /**
-     * @description
-     * 푸시 혜택 사용여부
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     * @default F
-     *
-     *
-     */
+      * @description
+      * 푸시 혜택 사용여부
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * @default F
+      * 
+      * 
+      */ 
     use_benefit?: any;
     /**
-     * @description
-     * 푸시 혜택 발송일 기준 종료일
-     *
-     * 최소: [1]~최대: [999]
-     */
+      * @description
+      * 푸시 혜택 발송일 기준 종료일
+      * 
+      * 최소: [1]~최대: [999]
+      */ 
     benefit_end_day?: any;
     /**
-     * @description
-     * 푸시 혜택 적립금액
-     *
-     *
-     */
+      * @description
+      * 푸시 혜택 적립금액
+      * 
+      * 
+      */ 
     benefit_points?: any;
     /**
-     * @description
-     * 사일런트 푸시 사용 여부
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     * @default F
-     *
-     *
-     */
+      * @description
+      * 사일런트 푸시 사용 여부
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * @default F
+      * 
+      * 
+      */ 
     silent?: any;
   }
 
   export interface CreateAPushNotificationOutput {
-    push: {
-      shop_no: number;
-      push_code: string;
-      send_type: string;
-      reserve_day: any;
-      reserve_hour: any;
-      reserve_minuate: any;
-      os_type: string;
-      receiver_type: string;
-      group_no: number[];
-      member_id: any;
-      title: string;
-      content_android: string;
-      content_ios: any;
-      image_url: string;
-      use_link: Cafe24Enum;
-      link_type: string;
-      external_link: string;
-      use_benefit: Cafe24Enum;
-      benefit_end_day: number;
-      benefit_points: string;
-      silent: Cafe24Enum;
-      created_date: Cafe24Datetime;
-      send_count_android: number;
-      send_count_ios: any;
+    push: { 
+    shop_no: number;
+    push_code: string;
+    send_type: string;
+    reserve_day: any;
+    reserve_hour: any;
+    reserve_minuate: any;
+    os_type: string;
+    receiver_type: string;
+    group_no: number[];
+    member_id: any;
+    title: string;
+    content_android: string;
+    content_ios: any;
+    image_url: string;
+    use_link: Cafe24Enum;
+    link_type: string;
+    external_link: string;
+    use_benefit: Cafe24Enum;
+    benefit_end_day: number;
+    benefit_points: string;
+    silent: Cafe24Enum;
+    created_date: Cafe24Datetime;
+    send_count_android: number;
+    send_count_ios: any;
     };
   }
   export interface UpdateAPushNotificationInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     * 최소값: [1]
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 최소값: [1]
+      */ 
     shop_no?: any;
     /**
-     * @description
-     * 푸시 코드
-     *
-     * @required
-     */
+      * @description
+      * 푸시 코드
+      * 
+      * @required
+      */ 
     push_code: any;
     /**
-     * @description
-     * 푸시 제목
-     *
-     *
-     */
+      * @description
+      * 푸시 제목
+      * 
+      * 
+      */ 
     title?: any;
     /**
-     * @description
-     * 푸시 내용 (Android)
-     *
-     *
-     */
+      * @description
+      * 푸시 내용 (Android)
+      * 
+      * 
+      */ 
     content_android?: any;
     /**
-     * @description
-     * 푸시 내용 (iOS)
-     *
-     *
-     */
+      * @description
+      * 푸시 내용 (iOS)
+      * 
+      * 
+      */ 
     content_ios?: any;
     /**
-     * @description
-     * 푸시 이미지 URL
-     *
-     *
-     */
+      * @description
+      * 푸시 이미지 URL
+      * 
+      * 
+      */ 
     image_url?: any;
   }
 
   export interface UpdateAPushNotificationOutput {
-    push: {
-      shop_no: number;
-      push_code: string;
-      send_type: string;
-      reserve_day: any;
-      reserve_hour: any;
-      reserve_minuate: any;
-      os_type: string;
-      receiver_type: string;
-      group_no: number[];
-      member_id: any;
-      title: string;
-      content_android: string;
-      content_ios: any;
-      image_url: string;
-      use_link: Cafe24Enum;
-      link_type: string;
-      external_link: string;
-      use_benefit: Cafe24Enum;
-      benefit_end_day: number;
-      benefit_points: string;
-      silent: Cafe24Enum;
-      created_date: Cafe24Datetime;
-      send_count_android: number;
-      send_count_ios: any;
+    push: { 
+    shop_no: number;
+    push_code: string;
+    send_type: string;
+    reserve_day: any;
+    reserve_hour: any;
+    reserve_minuate: any;
+    os_type: string;
+    receiver_type: string;
+    group_no: number[];
+    member_id: any;
+    title: string;
+    content_android: string;
+    content_ios: any;
+    image_url: string;
+    use_link: Cafe24Enum;
+    link_type: string;
+    external_link: string;
+    use_benefit: Cafe24Enum;
+    benefit_end_day: number;
+    benefit_points: string;
+    silent: Cafe24Enum;
+    created_date: Cafe24Datetime;
+    send_count_android: number;
+    send_count_ios: any;
     };
   }
   export interface DeleteAPushNotificationInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     * 최소값: [1]
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 최소값: [1]
+      */ 
     shop_no?: any;
     /**
-     * @description
-     * 푸시 코드
-     *
-     * @required
-     */
+      * @description
+      * 푸시 코드
+      * 
+      * @required
+      */ 
     push_code: any;
   }
 
   export interface DeleteAPushNotificationOutput {
-    push: {
-      shop_no: number;
-      push_code: string;
+    push: { 
+    shop_no: number;
+    push_code: string;
     };
   }
 
@@ -796,7 +797,7 @@ declare module 'cafe24api-client' {
      */
     retrievePushNotificationDeliveryHistory(
       input: RetrievePushNotificationDeliveryHistoryInput,
-      options?: RequestOptions<RetrievePushNotificationDeliveryHistoryInput>,
+      options?: RequestOptions<RetrievePushNotificationDeliveryHistoryOutput['push'][number]>,
     ): Promise<AxiosResponse<RetrievePushNotificationDeliveryHistoryOutput>>;
     /**
      * @see https://developers.cafe24.com/docs/api/admin/#create-a-push-notification
@@ -838,7 +839,7 @@ declare module 'cafe24api-client' {
      */
     createAPushNotification(
       input: CreateAPushNotificationInput,
-      options?: RequestOptions<CreateAPushNotificationInput>,
+      options?: RequestOptions<CreateAPushNotificationOutput['push']>,
     ): Promise<AxiosResponse<CreateAPushNotificationOutput>>;
     /**
      * @see https://developers.cafe24.com/docs/api/admin/#update-a-push-notification
@@ -880,7 +881,7 @@ declare module 'cafe24api-client' {
      */
     updateAPushNotification(
       input: UpdateAPushNotificationInput,
-      options?: RequestOptions<UpdateAPushNotificationInput>,
+      options?: RequestOptions<UpdateAPushNotificationOutput['push']>,
     ): Promise<AxiosResponse<UpdateAPushNotificationOutput>>;
     /**
      * @see https://developers.cafe24.com/docs/api/admin/#delete-a-push-notification
@@ -897,7 +898,7 @@ declare module 'cafe24api-client' {
      */
     deleteAPushNotification(
       input: DeleteAPushNotificationInput,
-      options?: RequestOptions<DeleteAPushNotificationInput>,
+      options?: RequestOptions<DeleteAPushNotificationOutput['push']>,
     ): Promise<AxiosResponse<DeleteAPushNotificationOutput>>;
   }
 }

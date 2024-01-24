@@ -5,138 +5,139 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   /**
    * @description
-   *
-   *
+   * 
+   * 
    * 주문혜택(Orders benefits)은 특정 주문에 적용된 혜택에 관한 기능입니다.
    */
   export interface OrdersBenefits {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 
+      */ 
     shop_no: any;
     /**
-     * @description
-     * 주문번호
-     *
-     *
-     */
+      * @description
+      * 주문번호
+      * 
+      * 
+      */ 
     order_id: any;
     /**
-     * @description
-     * 품주코드
-     *
-     *
-     */
+      * @description
+      * 품주코드
+      * 
+      * 
+      */ 
     order_item_code: any;
     /**
-     * @description
-     * 혜택번호
-     *
-     *
-     */
+      * @description
+      * 혜택번호
+      * 
+      * 
+      */ 
     benefit_no: any;
     /**
-     * @description
-     * 혜택 유형
-     *
-     *
-     */
+      * @description
+      * 혜택 유형
+      * 
+      * 
+      */ 
     benefit_title: any;
     /**
-     * @description
-     * 혜택명
-     *
-     *
-     */
+      * @description
+      * 혜택명
+      * 
+      * 
+      */ 
     benefit_name: any;
     /**
-     * @description
-     * 혜택코드
-     *
-     *
-     */
+      * @description
+      * 혜택코드
+      * 
+      * 
+      */ 
     benefit_code: any;
     /**
-     * @description
-     * 혜택 비율
-     *
-     *
-     */
+      * @description
+      * 혜택 비율
+      * 
+      * 
+      */ 
     benefit_percent: any;
     /**
-     * @description
-     * 혜택 금액
-     *
-     *
-     */
+      * @description
+      * 혜택 금액
+      * 
+      * 
+      */ 
     benefit_value: any;
     /**
-     * @description
-     * 앱 클라이언트 ID
-     *
-     *
-     */
+      * @description
+      * 앱 클라이언트 ID
+      * 
+      * 
+      */ 
     benefit_app_key: any;
   }
 
   export interface RetrieveAListOfOrderBenefitsAppliedToAnOrderInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     * 최소값: [1]
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 최소값: [1]
+      */ 
     shop_no?: any;
     /**
-     * @description
-     * 주문번호
-     *
-     * ,(콤마)로 여러 건을 검색할 수 있다.
-     *
-     * @required
-     *
-     * 주문번호
-     */
+      * @description
+      * 주문번호
+      * 
+      * ,(콤마)로 여러 건을 검색할 수 있다.
+      * 
+      * @required
+      * 
+      * 주문번호
+      */ 
     order_id: any;
     /**
-     * @description
-     * 조회결과 최대건수
-     *
-     * @default 10
-     *
-     * 최소: [1]~최대: [500]
-     */
+      * @description
+      * 조회결과 최대건수
+      * 
+      * @default 10
+      * 
+      * 최소: [1]~최대: [500]
+      */ 
     limit?: any;
     /**
-     * @description
-     * 조회결과 시작위치
-     *
-     * @default 0
-     *
-     * 최대값: [8000]
-     */
+      * @description
+      * 조회결과 시작위치
+      * 
+      * @default 0
+      * 
+      * 최대값: [8000]
+      */ 
     offset?: any;
   }
 
   export interface RetrieveAListOfOrderBenefitsAppliedToAnOrderOutput {
-    benefits: {
-      shop_no: number;
-      order_id: string;
-      order_item_code: string;
-      benefit_no: number;
-      benefit_title: string;
-      benefit_name: string;
-      benefit_code: number;
-      benefit_percent: Cafe24Datetime;
-      benefit_value: string;
-      benefit_app_key: any;
+    benefits: { 
+    shop_no: number;
+    order_id: string;
+    order_item_code: string;
+    benefit_no: number;
+    benefit_title: string;
+    benefit_name: string;
+    benefit_code: number;
+    benefit_percent: Cafe24Datetime;
+    benefit_value: string;
+    benefit_app_key: any;
     }[];
   }
 
@@ -182,9 +183,7 @@ declare module 'cafe24api-client' {
      */
     retrieveAListOfOrderBenefitsAppliedToAnOrder(
       input: RetrieveAListOfOrderBenefitsAppliedToAnOrderInput,
-      options?: RequestOptions<RetrieveAListOfOrderBenefitsAppliedToAnOrderInput>,
-    ): Promise<
-      AxiosResponse<RetrieveAListOfOrderBenefitsAppliedToAnOrderOutput>
-    >;
+      options?: RequestOptions<RetrieveAListOfOrderBenefitsAppliedToAnOrderOutput['benefits'][number]>,
+    ): Promise<AxiosResponse<RetrieveAListOfOrderBenefitsAppliedToAnOrderOutput>>;
   }
 }

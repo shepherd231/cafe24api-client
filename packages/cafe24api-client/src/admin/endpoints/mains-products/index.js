@@ -1,8 +1,6 @@
+
 export default (cls) => {
-  cls.prototype.retrieveAListOfProductsInMainCategory = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.retrieveAListOfProductsInMainCategory = async function (input, options) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/mains/${input['display_group']}/products`,
@@ -14,10 +12,7 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.retrieveACountOfProductsInMainCategory = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.retrieveACountOfProductsInMainCategory = async function (input, options) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/mains/${input['display_group']}/products/count`,
@@ -42,10 +37,7 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.updateFixedSortingOfProductsInMainCategory = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.updateFixedSortingOfProductsInMainCategory = async function (input, options) {
     return this.createRequest(
       'PUT',
       `/api/v2/admin/mains/${input['display_group']}/products`,
@@ -71,4 +63,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

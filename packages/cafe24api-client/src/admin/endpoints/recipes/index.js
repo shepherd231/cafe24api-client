@@ -1,6 +1,13 @@
+
 export default (cls) => {
   cls.prototype.retrieveAListOfRecipes = async function (input, options) {
-    return this.createRequest('GET', `/api/v2/admin/recipes`, {}, options);
+    return this.createRequest(
+      'GET',
+      `/api/v2/admin/recipes`,
+      {
+      },
+      options,
+    );
   };
 
   cls.prototype.createARecipe = async function (input, options) {
@@ -25,4 +32,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

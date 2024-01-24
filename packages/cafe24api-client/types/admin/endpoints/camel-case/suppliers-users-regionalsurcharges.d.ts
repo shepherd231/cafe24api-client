@@ -5,283 +5,284 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   /**
    * @description
    * 공급사 지역별 배송비(Suppliers users regionalsurcharges)를 통해 공급사별로 지역별 배송비를 설정하거나, 설정된 정보를 조회할 수 있습니다.
-   *
-   *
+   * 
+   * 
    */
   export interface SuppliersUsersRegionalsurcharges {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 
+      */ 
     shopNo: any;
     /**
-     * @description
-     * 지역별 배송비 등록 번호
-     *
-     *
-     */
+      * @description
+      * 지역별 배송비 등록 번호
+      * 
+      * 
+      */ 
     regionalSurchargeNo: any;
     /**
-     * @description
-     * 공급사 아이디
-     *
-     * 최대글자수 : [20자]
-     */
+      * @description
+      * 공급사 아이디
+      * 
+      * 최대글자수 : [20자]
+      */ 
     supplierId: any;
     /**
-     * @description
-     * 국가코드
-     *
-     * KR : 대한민국
-     * JP : 일본
-     * VN : 베트남
-     *
-     * 최대글자수 : [2자]
-     */
+      * @description
+      * 국가코드
+      * 
+      * KR : 대한민국
+      * JP : 일본
+      * VN : 베트남
+      * 
+      * 최대글자수 : [2자]
+      */ 
     countryCode: any;
     /**
-     * @description
-     * 특수지역명
-     *
-     * 최대글자수 : [255자]
-     */
+      * @description
+      * 특수지역명
+      * 
+      * 최대글자수 : [255자]
+      */ 
     regionName: any;
     /**
-     * @description
-     * 지역명
-     *
-     * 추가배송비를 부과할 지역이름
-     * 지역 설정방식(region_setting_type)이 &#39;N&#39;으로 설정 되어있는 경우 필수 입력
-     *
-     * 최대글자수 : [300자]
-     */
+      * @description
+      * 지역명
+      * 
+      * 추가배송비를 부과할 지역이름
+      * 지역 설정방식(region_setting_type)이 &#39;N&#39;으로 설정 되어있는 경우 필수 입력
+      * 
+      * 최대글자수 : [300자]
+      */ 
     surchargeRegionName: any;
     /**
-     * @description
-     * 시작 우편번호
-     *
-     * 지역 설정 방식(region_setting_type)이 &#39;Z&#39;로 설정 되어있는 경우 필수 입력
-     *
-     * 최대글자수 : [8자]
-     */
+      * @description
+      * 시작 우편번호
+      * 
+      * 지역 설정 방식(region_setting_type)이 &#39;Z&#39;로 설정 되어있는 경우 필수 입력
+      * 
+      * 최대글자수 : [8자]
+      */ 
     startZipcode: any;
     /**
-     * @description
-     * 끝 우편번호
-     *
-     * 지역 설정 방식(region_setting_type)이 &#39;Z&#39;로 설정 되어있는 경우 필수 입력
-     *
-     * 최대글자수 : [8자]
-     */
+      * @description
+      * 끝 우편번호
+      * 
+      * 지역 설정 방식(region_setting_type)이 &#39;Z&#39;로 설정 되어있는 경우 필수 입력
+      * 
+      * 최대글자수 : [8자]
+      */ 
     endZipcode: any;
     /**
-     * @description
-     * 지역 추가 배송비
-     *
-     * 부과할 추가배송비 금액
-     *
-     * 최소: [1]~최대: [999999999]
-     */
+      * @description
+      * 지역 추가 배송비
+      * 
+      * 부과할 추가배송비 금액
+      * 
+      * 최소: [1]~최대: [999999999]
+      */ 
     regionalSurchargeAmount: any;
     /**
-     * @description
-     * 지역별 배송비 사용여부
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 지역별 배송비 사용여부
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     useRegionalSurcharge: any;
   }
 
   export interface RetrieveASupplierUserSListOfRegionalShippingFeesInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 공급사 아이디
-     *
-     * @required
-     *
-     * 최대글자수 : [20자]
-     */
+      * @description
+      * 공급사 아이디
+      * 
+      * @required
+      * 
+      * 최대글자수 : [20자]
+      */ 
     supplierId: any;
     /**
-     * @description
-     * 조회결과 시작위치
-     *
-     * @default 0
-     *
-     * 최대값: [10000]
-     */
+      * @description
+      * 조회결과 시작위치
+      * 
+      * @default 0
+      * 
+      * 최대값: [10000]
+      */ 
     offset?: any;
     /**
-     * @description
-     * 조회결과 최대건수
-     *
-     * @default 10
-     *
-     * 최소: [1]~최대: [100]
-     */
+      * @description
+      * 조회결과 최대건수
+      * 
+      * @default 10
+      * 
+      * 최소: [1]~최대: [100]
+      */ 
     limit?: any;
   }
 
   export interface RetrieveASupplierUserSListOfRegionalShippingFeesOutput {
-    regionalsurcharges: {
-      shopNo: number;
-      regionalSurchargeNo: number;
-      supplierId: string;
-      countryCode: string;
-      regionName: string;
-      surchargeRegionName: any;
-      startZipcode: Cafe24Datetime;
-      endZipcode: Cafe24Datetime;
-      regionalSurchargeAmount: Cafe24Datetime;
+    regionalsurcharges: { 
+    shopNo: number;
+    regionalSurchargeNo: number;
+    supplierId: string;
+    countryCode: string;
+    regionName: string;
+    surchargeRegionName: any;
+    startZipcode: Cafe24Datetime;
+    endZipcode: Cafe24Datetime;
+    regionalSurchargeAmount: Cafe24Datetime;
     }[];
   }
   export interface CreateRegionalShippingFeeForASupplierUserInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 공급사 아이디
-     *
-     * @required
-     *
-     * 최대글자수 : [20자]
-     */
+      * @description
+      * 공급사 아이디
+      * 
+      * @required
+      * 
+      * 최대글자수 : [20자]
+      */ 
     supplierId: any;
     /**
-     * @description
-     * 국가코드
-     *
-     * EC 한국, 일본, 베트남, 필리핀 버전에서는 사용할 수 없음.
-     *
-     * KR : 대한민국
-     * JP : 일본
-     * VN : 베트남
-     *
-     * 최대글자수 : [2자]
-     */
+      * @description
+      * 국가코드
+      * 
+      * EC 한국, 일본, 베트남, 필리핀 버전에서는 사용할 수 없음.
+      * 
+      * KR : 대한민국
+      * JP : 일본
+      * VN : 베트남
+      * 
+      * 최대글자수 : [2자]
+      */ 
     countryCode?: any;
     /**
-     * @description
-     * 특수지역명
-     *
-     * @required
-     *
-     * 최대글자수 : [255자]
-     */
+      * @description
+      * 특수지역명
+      * 
+      * @required
+      * 
+      * 최대글자수 : [255자]
+      */ 
     regionName: any;
     /**
-     * @description
-     * 지역별 배송비 사용여부
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     * @required
-     */
+      * @description
+      * 지역별 배송비 사용여부
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * @required
+      */ 
     useRegionalSurcharge: any;
     /**
-     * @description
-     * 지역명
-     *
-     * 최대글자수 : [300자]
-     */
+      * @description
+      * 지역명
+      * 
+      * 최대글자수 : [300자]
+      */ 
     surchargeRegionName?: any;
     /**
-     * @description
-     * 시작 우편번호
-     *
-     * 최대글자수 : [8자]
-     */
+      * @description
+      * 시작 우편번호
+      * 
+      * 최대글자수 : [8자]
+      */ 
     startZipcode?: any;
     /**
-     * @description
-     * 끝 우편번호
-     *
-     * 최대글자수 : [8자]
-     */
+      * @description
+      * 끝 우편번호
+      * 
+      * 최대글자수 : [8자]
+      */ 
     endZipcode?: any;
     /**
-     * @description
-     * 지역 추가 배송비
-     *
-     * @required
-     *
-     * 최소: [1]~최대: [999999999]
-     */
+      * @description
+      * 지역 추가 배송비
+      * 
+      * @required
+      * 
+      * 최소: [1]~최대: [999999999]
+      */ 
     regionalSurchargeAmount: any;
   }
 
   export interface CreateRegionalShippingFeeForASupplierUserOutput {
-    regionalsurcharge: {
-      shopNo: number;
-      regionalSurchargeNo: number;
-      supplierId: string;
-      countyCode: string;
-      regionName: string;
-      useRegionalSurcharge: Cafe24Enum;
-      surchargeRegionName: any;
-      startZipcode: Cafe24Datetime;
-      endZipcode: Cafe24Datetime;
-      regionalSurchargeAmount: Cafe24Datetime;
+    regionalsurcharge: { 
+    shopNo: number;
+    regionalSurchargeNo: number;
+    supplierId: string;
+    countyCode: string;
+    regionName: string;
+    useRegionalSurcharge: Cafe24Enum;
+    surchargeRegionName: any;
+    startZipcode: Cafe24Datetime;
+    endZipcode: Cafe24Datetime;
+    regionalSurchargeAmount: Cafe24Datetime;
     };
   }
   export interface DeleteSupplierUserSRegionalShippingFeeSettingsInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 공급사 아이디
-     *
-     * @required
-     *
-     * 최대글자수 : [20자]
-     */
+      * @description
+      * 공급사 아이디
+      * 
+      * @required
+      * 
+      * 최대글자수 : [20자]
+      */ 
     supplierId: any;
     /**
-     * @description
-     * 지역별 배송비 등록 번호
-     *
-     * @required
-     */
+      * @description
+      * 지역별 배송비 등록 번호
+      * 
+      * @required
+      */ 
     regionalSurchargeNo: any;
   }
 
   export interface DeleteSupplierUserSRegionalShippingFeeSettingsOutput {
-    regionalsurcharge: {
-      shopNo: number;
-      supplierId: string;
-      regionalSurchargeNo: number;
+    regionalsurcharge: { 
+    shopNo: number;
+    supplierId: string;
+    regionalSurchargeNo: number;
     };
   }
 
@@ -325,10 +326,8 @@ declare module 'cafe24api-client' {
      */
     retrieveASupplierUserSListOfRegionalShippingFees(
       input: RetrieveASupplierUserSListOfRegionalShippingFeesInput,
-      options?: RequestOptions<RetrieveASupplierUserSListOfRegionalShippingFeesInput>,
-    ): Promise<
-      AxiosResponse<RetrieveASupplierUserSListOfRegionalShippingFeesOutput>
-    >;
+      options?: RequestOptions<RetrieveASupplierUserSListOfRegionalShippingFeesOutput['regionalsurcharges'][number]>,
+    ): Promise<AxiosResponse<RetrieveASupplierUserSListOfRegionalShippingFeesOutput>>;
     /**
      * @description
      * 특정 공급사의 지역별 배송비 설정을 등록할 수 있습니다.
@@ -356,7 +355,7 @@ declare module 'cafe24api-client' {
      */
     createRegionalShippingFeeForASupplierUser(
       input: CreateRegionalShippingFeeForASupplierUserInput,
-      options?: RequestOptions<CreateRegionalShippingFeeForASupplierUserInput>,
+      options?: RequestOptions<CreateRegionalShippingFeeForASupplierUserOutput['regionalsurcharge']>,
     ): Promise<AxiosResponse<CreateRegionalShippingFeeForASupplierUserOutput>>;
     /**
      * @description
@@ -377,9 +376,7 @@ declare module 'cafe24api-client' {
      */
     deleteSupplierUserSRegionalShippingFeeSettings(
       input: DeleteSupplierUserSRegionalShippingFeeSettingsInput,
-      options?: RequestOptions<DeleteSupplierUserSRegionalShippingFeeSettingsInput>,
-    ): Promise<
-      AxiosResponse<DeleteSupplierUserSRegionalShippingFeeSettingsOutput>
-    >;
+      options?: RequestOptions<DeleteSupplierUserSRegionalShippingFeeSettingsOutput['regionalsurcharge']>,
+    ): Promise<AxiosResponse<DeleteSupplierUserSRegionalShippingFeeSettingsOutput>>;
   }
 }

@@ -5,6 +5,7 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   /**
    * @description
    * 장바구니(Carts)는 상품을 주문하기 전 한번에 주문할 수 있도록 상품을 미리 담아두는 기능입니다.
@@ -12,164 +13,164 @@ declare module 'cafe24api-client' {
    */
   export interface Carts {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 
+      */ 
     shop_no: any;
     /**
-     * @description
-     * 장바구니 상품번호
-     *
-     *
-     */
+      * @description
+      * 장바구니 상품번호
+      * 
+      * 
+      */ 
     basket_product_no: any;
     /**
-     * @description
-     * 회원아이디
-     *
-     *
-     */
+      * @description
+      * 회원아이디
+      * 
+      * 
+      */ 
     member_id: any;
     /**
-     * @description
-     * 담은일자
-     *
-     *
-     */
+      * @description
+      * 담은일자
+      * 
+      * 
+      */ 
     created_date: any;
     /**
-     * @description
-     * 상품번호
-     *
-     *
-     */
+      * @description
+      * 상품번호
+      * 
+      * 
+      */ 
     product_no: any;
     /**
-     * @description
-     * 추가입력 옵션
-     *
-     *
-     */
+      * @description
+      * 추가입력 옵션
+      * 
+      * 
+      */ 
     additional_option_values: any;
     /**
-     * @description
-     * 상품 품목 코드
-     *
-     * 형식 : [A-Z0-9]
-     * 글자수 최소: [12자]~최대: [12자]
-     */
+      * @description
+      * 상품 품목 코드
+      * 
+      * 형식 : [A-Z0-9]
+      * 글자수 최소: [12자]~최대: [12자]
+      */ 
     variant_code: any;
     /**
-     * @description
-     * 수량
-     *
-     *
-     */
+      * @description
+      * 수량
+      * 
+      * 
+      */ 
     quantity: any;
     /**
-     * @description
-     * 상품 판매가
-     *
-     *
-     */
+      * @description
+      * 상품 판매가
+      * 
+      * 
+      */ 
     product_price: any;
     /**
-     * @description
-     * 옵션 추가 가격
-     *
-     *
-     */
+      * @description
+      * 옵션 추가 가격
+      * 
+      * 
+      */ 
     option_price: any;
     /**
-     * @description
-     * 세트상품 여부
-     *
-     * T : 세트상품
-     * F : 세트상품 아님
-     *
-     *
-     */
+      * @description
+      * 세트상품 여부
+      * 
+      * T : 세트상품
+      * F : 세트상품 아님
+      * 
+      * 
+      */ 
     product_bundle: any;
     /**
-     * @description
-     * 배송 유형
-     *
-     * A : 국내
-     * B : 해외
-     *
-     *
-     */
+      * @description
+      * 배송 유형
+      * 
+      * A : 국내
+      * B : 해외
+      * 
+      * 
+      */ 
     shipping_type: any;
     /**
-     * @description
-     * 분류 번호
-     *
-     *
-     */
+      * @description
+      * 분류 번호
+      * 
+      * 
+      */ 
     category_no: any;
   }
 
   export interface RetrieveAShoppingCartInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     * 최소값: [1]
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 최소값: [1]
+      */ 
     shop_no?: any;
     /**
-     * @description
-     * 회원아이디
-     *
-     * ,(콤마)로 여러 건을 검색할 수 있다.
-     *
-     * @required
-     */
+      * @description
+      * 회원아이디
+      * 
+      * ,(콤마)로 여러 건을 검색할 수 있다.
+      * 
+      * @required
+      */ 
     member_id: any;
     /**
-     * @description
-     * 조회결과 시작위치
-     *
-     * @default 0
-     *
-     * 최대값: [10000]
-     */
+      * @description
+      * 조회결과 시작위치
+      * 
+      * @default 0
+      * 
+      * 최대값: [10000]
+      */ 
     offset?: any;
     /**
-     * @description
-     * 조회결과 최대건수
-     *
-     * @default 10
-     *
-     * 최소: [1]~최대: [100]
-     */
+      * @description
+      * 조회결과 최대건수
+      * 
+      * @default 10
+      * 
+      * 최소: [1]~최대: [100]
+      */ 
     limit?: any;
   }
 
   export interface RetrieveAShoppingCartOutput {
-    carts: {
-      shop_no: number;
-      basket_product_no: number;
-      member_id: string;
-      created_date: Cafe24Datetime;
-      product_no: number;
-      additional_option_values: {
-        key: string;
-        type: string;
-        value: string;
-        name: string;
-      }[];
-      variant_code: string;
-      quantity: number;
-      product_price: Cafe24Datetime;
-      option_price: Cafe24Datetime;
-      product_bundle: Cafe24Enum;
-      shipping_type: Cafe24Enum;
-      category_no: number;
+    carts: { 
+    shop_no: number;
+    basket_product_no: number;
+    member_id: string;
+    created_date: Cafe24Datetime;
+    product_no: number;
+    additional_option_values: { 
+    key: string;
+    type: string;
+    value: string;
+    name: string;
+    }[];
+    variant_code: string;
+    quantity: number;
+    product_price: Cafe24Datetime;
+    option_price: Cafe24Datetime;
+    product_bundle: Cafe24Enum;
+    shipping_type: Cafe24Enum;
+    category_no: number;
     }[];
   }
 
@@ -235,7 +236,7 @@ declare module 'cafe24api-client' {
      */
     retrieveAShoppingCart(
       input: RetrieveAShoppingCartInput,
-      options?: RequestOptions<RetrieveAShoppingCartInput>,
+      options?: RequestOptions<RetrieveAShoppingCartOutput['carts'][number]>,
     ): Promise<AxiosResponse<RetrieveAShoppingCartOutput>>;
   }
 }

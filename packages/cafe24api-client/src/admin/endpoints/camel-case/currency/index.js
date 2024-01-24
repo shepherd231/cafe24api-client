@@ -8,16 +8,19 @@ import {
 export default (cls) => {
   register(cls);
 
-  const retrieveCurrencySettings = cls.prototype.retrieveCurrencySettings;
-  cls.prototype.retrieveCurrencySettings = async function (input, options) {
-    const response = await retrieveCurrencySettings.call(
-      this,
-      convertToSnakeCase(input),
-      optionsToSnakeCase(options),
-    );
-    return {
-      ...response,
-      data: convertToCamelCase(response.data),
+  
+    const retrieveCurrencySettings = cls.prototype.retrieveCurrencySettings;
+    cls.prototype.retrieveCurrencySettings = async function (input, options) {
+      const response = await retrieveCurrencySettings.call(
+        this,
+        convertToSnakeCase(input),
+        optionsToSnakeCase(options),
+      );
+      return {
+        ...response,
+        data: convertToCamelCase(response.data),
+      };
     };
-  };
+
+ 
 };

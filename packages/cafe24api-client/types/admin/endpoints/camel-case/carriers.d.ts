@@ -5,6 +5,7 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   /**
    * @description
    * 배송사(Carriers)는 쇼핑몰로부터 쇼핑몰 고객에게까지 상품을 배송하는 주체입니다.
@@ -13,663 +14,663 @@ declare module 'cafe24api-client' {
    */
   export interface Carriers {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 
+      */ 
     shopNo: any;
     /**
-     * @description
-     * 배송사 아이디
-     *
-     *
-     */
+      * @description
+      * 배송사 아이디
+      * 
+      * 
+      */ 
     carrierId: any;
     /**
-     * @description
-     * 배송사 코드
-     *
-     * shipping_company_code
-     *
-     *
-     */
+      * @description
+      * 배송사 코드
+      * 
+      * shipping_company_code 
+      * 
+      * 
+      */ 
     shippingCarrierCode: any;
     /**
-     * @description
-     * 배송사 명
-     *
-     *
-     */
+      * @description
+      * 배송사 명
+      * 
+      * 
+      */ 
     shippingCarrier: any;
     /**
-     * @description
-     * 배송추적 URL
-     *
-     *
-     */
+      * @description
+      * 배송추적 URL
+      * 
+      * 
+      */ 
     trackShipmentUrl: any;
     /**
-     * @description
-     * 국내/해외배송 설정
-     *
-     * A : 국내
-     * B : 국내/해외
-     * C : 해외
-     *
-     *
-     */
+      * @description
+      * 국내/해외배송 설정
+      * 
+      * A : 국내
+      * B : 국내/해외
+      * C : 해외
+      * 
+      * 
+      */ 
     shippingType: any;
     /**
-     * @description
-     * 대표 연락처
-     *
-     *
-     */
+      * @description
+      * 대표 연락처
+      * 
+      * 
+      */ 
     contact: any;
     /**
-     * @description
-     * 보조 연락처
-     *
-     *
-     */
+      * @description
+      * 보조 연락처
+      * 
+      * 
+      */ 
     secondaryContact: any;
     /**
-     * @description
-     * 이메일
-     *
-     *
-     */
+      * @description
+      * 이메일
+      * 
+      * 
+      */ 
     email: any;
     /**
-     * @description
-     * 기본 배송비
-     *
-     *
-     */
+      * @description
+      * 기본 배송비
+      * 
+      * 
+      */ 
     defaultShippingFee: any;
     /**
-     * @description
-     * 홈페이지 주소
-     *
-     *
-     */
+      * @description
+      * 홈페이지 주소
+      * 
+      * 
+      */ 
     homepageUrl: any;
     /**
-     * @description
-     * 기본배송사 여부
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 기본배송사 여부
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     defaultShippingCarrier: any;
     /**
-     * @description
-     * 배송비 설정 여부
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 배송비 설정 여부
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     shippingFeeSetting: any;
     /**
-     * @description
-     * 배송비 설정 데이터
-     *
-     *
-     */
+      * @description
+      * 배송비 설정 데이터
+      * 
+      * 
+      */ 
     shippingFeeSettingDetail: any;
     /**
-     * @description
-     * 연동택배 예외정보 설정
-     *
-     *
-     */
+      * @description
+      * 연동택배 예외정보 설정
+      * 
+      * 
+      */ 
     expressExceptionSetting: any;
     /**
-     * @description
-     * link
-     *
-     *
-     */
+      * @description
+      * link
+      * 
+      * 
+      */ 
     links: any;
   }
 
   export interface RetrieveAListOfShippingCarriersInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shopNo?: any;
   }
 
   export interface RetrieveAListOfShippingCarriersOutput {
-    carriers: {
-      shopNo: number;
-      carrierId: number;
-      shippingCarrierCode: Cafe24Datetime;
-      shippingCarrier: string;
-      trackShipmentUrl: any;
-      shippingType: Cafe24Enum;
-      contact: string;
-      secondaryContact: string;
-      email: string;
-      defaultShippingFee: any;
-      homepageUrl: string;
-      defaultShippingCarrier: Cafe24Enum;
-      shippingFeeSetting: Cafe24Enum;
-      shippingFeeSettingDetail: {
-        shippingType: Cafe24Enum;
-        availableShippingZone: string;
-        minShippingPeriod: number;
-        maxShippingPeriod: number;
-        shippingInformation: string;
-        shippingFeeSettingDomestic: {
-          shippingFeeType: Cafe24Enum;
-          shippingFee: any;
-          minPrice: any;
-          useProductCategory: Cafe24Enum;
-          productCategoryList: {
-            categoryNo: number;
-            categoryName: string;
-          }[];
-          shippingFeeCriteria: Cafe24Enum;
-          domesticShippingFeeList: {
-            countryCode: string;
-            conditional: Cafe24Enum;
-            minValue: string;
-            maxValue: Cafe24Datetime;
-            shippingFee: Cafe24Datetime;
-          }[];
-          availableShippingZone: any;
-          availableShippingZoneList: any;
-          availableOrderTime: any;
-          startTime: any;
-          endTime: any;
-        };
-        shippingFeeSettingOversea: {
-          shippingFeeCriteria: any;
-          shippingCountryList: {
-            countryCode: string;
-            countryName: string;
-          }[];
-          countryShippingFeeList: {
-            countryCode: string;
-            countryName: string;
-            conditional: Cafe24Enum;
-            minValue: string;
-            maxValue: Cafe24Datetime;
-            shippingFee: Cafe24Datetime;
-          }[];
-          additionalHandlingFee: Cafe24Enum;
-          additionalHandlingFeeList: {
-            countryCode: string;
-            countryName: string;
-            text: string;
-            minValue: string;
-            maxValue: Cafe24Datetime;
-            additionalHandlingFee: Cafe24Datetime;
-            unit: string;
-            roundingUnit: any;
-            roundingRule: any;
-          }[];
-        };
-      };
-      expressExceptionSetting: {
-        weight: Cafe24Datetime;
-        volume: Cafe24Datetime;
-        shippingType: any;
-        boxType: any;
-        senderName: string;
-        senderCellphone: string;
-        senderPhone: any;
-        senderZipcode: any;
-        senderAddress1: any;
-        senderAddress2: any;
-      };
+    carriers: { 
+    shopNo: number;
+    carrierId: number;
+    shippingCarrierCode: Cafe24Datetime;
+    shippingCarrier: string;
+    trackShipmentUrl: any;
+    shippingType: Cafe24Enum;
+    contact: string;
+    secondaryContact: string;
+    email: string;
+    defaultShippingFee: any;
+    homepageUrl: string;
+    defaultShippingCarrier: Cafe24Enum;
+    shippingFeeSetting: Cafe24Enum;
+    shippingFeeSettingDetail: { 
+    shippingType: Cafe24Enum;
+    availableShippingZone: string;
+    minShippingPeriod: number;
+    maxShippingPeriod: number;
+    shippingInformation: string;
+    shippingFeeSettingDomestic: { 
+    shippingFeeType: Cafe24Enum;
+    shippingFee: any;
+    minPrice: any;
+    useProductCategory: Cafe24Enum;
+    productCategoryList: { 
+    categoryNo: number;
+    categoryName: string;
+    }[];
+    shippingFeeCriteria: Cafe24Enum;
+    domesticShippingFeeList: { 
+    countryCode: string;
+    conditional: Cafe24Enum;
+    minValue: string;
+    maxValue: Cafe24Datetime;
+    shippingFee: Cafe24Datetime;
+    }[];
+    availableShippingZone: any;
+    availableShippingZoneList: any;
+    availableOrderTime: any;
+    startTime: any;
+    endTime: any;
+    };
+    shippingFeeSettingOversea: { 
+    shippingFeeCriteria: any;
+    shippingCountryList: { 
+    countryCode: string;
+    countryName: string;
+    }[];
+    countryShippingFeeList: { 
+    countryCode: string;
+    countryName: string;
+    conditional: Cafe24Enum;
+    minValue: string;
+    maxValue: Cafe24Datetime;
+    shippingFee: Cafe24Datetime;
+    }[];
+    additionalHandlingFee: Cafe24Enum;
+    additionalHandlingFeeList: { 
+    countryCode: string;
+    countryName: string;
+    text: string;
+    minValue: string;
+    maxValue: Cafe24Datetime;
+    additionalHandlingFee: Cafe24Datetime;
+    unit: string;
+    roundingUnit: any;
+    roundingRule: any;
+    }[];
+    };
+    };
+    expressExceptionSetting: { 
+    weight: Cafe24Datetime;
+    volume: Cafe24Datetime;
+    shippingType: any;
+    boxType: any;
+    senderName: string;
+    senderCellphone: string;
+    senderPhone: any;
+    senderZipcode: any;
+    senderAddress1: any;
+    senderAddress2: any;
+    };
     }[];
   }
   export interface RetrieveAShippingCarrierInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 배송업체 아이디
-     *
-     * @required
-     */
+      * @description
+      * 배송업체 아이디
+      * 
+      * @required
+      */ 
     carrierId: any;
   }
 
   export interface RetrieveAShippingCarrierOutput {
-    carrier: {
-      shopNo: number;
-      carrierId: number;
-      shippingCarrierCode: Cafe24Datetime;
-      shippingCarrier: string;
-      trackShipmentUrl: any;
-      contact: string;
-      secondaryContact: string;
-      email: string;
-      defaultShippingFee: any;
-      homepageUrl: string;
-      defaultShippingCarrier: Cafe24Enum;
-      shippingFeeSetting: Cafe24Enum;
-      shippingFeeSettingDetail: {
-        shippingType: Cafe24Enum;
-        availableShippingZone: string;
-        minShippingPeriod: number;
-        maxShippingPeriod: number;
-        shippingInformation: string;
-        shippingFeeSettingDomestic: {
-          shippingFeeType: Cafe24Enum;
-          shippingFee: any;
-          minPrice: any;
-          useProductCategory: Cafe24Enum;
-          productCategoryList: {
-            categoryNo: number;
-            categoryName: string;
-          }[];
-          shippingFeeCriteria: Cafe24Enum;
-          domesticShippingFeeList: {
-            countryCode: string;
-            conditional: Cafe24Enum;
-            minValue: string;
-            maxValue: Cafe24Datetime;
-            shippingFee: Cafe24Datetime;
-          }[];
-          availableShippingZone: any;
-          availableShippingZoneList: any;
-          availableOrderTime: any;
-          startTime: any;
-          endTime: any;
-        };
-        shippingFeeSettingOversea: {
-          shippingFeeCriteria: any;
-          shippingCountryList: {
-            countryCode: string;
-            countryName: string;
-          }[];
-          countryShippingFeeList: {
-            countryCode: string;
-            countryName: string;
-            conditional: string;
-            minValue: string;
-            maxValue: Cafe24Datetime;
-            shippingFee: Cafe24Datetime;
-          }[];
-          additionalHandlingFee: Cafe24Enum;
-          additionalHandlingFeeList: {
-            countryCode: string;
-            countryName: string;
-            text: string;
-            minValue: string;
-            maxValue: Cafe24Datetime;
-            additionalHandlingFee: Cafe24Datetime;
-            unit: string;
-            roundingUnit: any;
-            roundingRule: any;
-          }[];
-          maximumQuantity: any;
-          productCategoryLimit: any;
-          productCategoryLimitList: any;
-        };
-      };
-      expressExceptionSetting: {
-        weight: Cafe24Datetime;
-        volume: Cafe24Datetime;
-        shippingType: any;
-        boxType: any;
-        senderName: string;
-        senderCellphone: string;
-        senderPhone: any;
-        senderZipcode: any;
-        senderAddress1: any;
-        senderAddress2: any;
-      };
+    carrier: { 
+    shopNo: number;
+    carrierId: number;
+    shippingCarrierCode: Cafe24Datetime;
+    shippingCarrier: string;
+    trackShipmentUrl: any;
+    contact: string;
+    secondaryContact: string;
+    email: string;
+    defaultShippingFee: any;
+    homepageUrl: string;
+    defaultShippingCarrier: Cafe24Enum;
+    shippingFeeSetting: Cafe24Enum;
+    shippingFeeSettingDetail: { 
+    shippingType: Cafe24Enum;
+    availableShippingZone: string;
+    minShippingPeriod: number;
+    maxShippingPeriod: number;
+    shippingInformation: string;
+    shippingFeeSettingDomestic: { 
+    shippingFeeType: Cafe24Enum;
+    shippingFee: any;
+    minPrice: any;
+    useProductCategory: Cafe24Enum;
+    productCategoryList: { 
+    categoryNo: number;
+    categoryName: string;
+    }[];
+    shippingFeeCriteria: Cafe24Enum;
+    domesticShippingFeeList: { 
+    countryCode: string;
+    conditional: Cafe24Enum;
+    minValue: string;
+    maxValue: Cafe24Datetime;
+    shippingFee: Cafe24Datetime;
+    }[];
+    availableShippingZone: any;
+    availableShippingZoneList: any;
+    availableOrderTime: any;
+    startTime: any;
+    endTime: any;
+    };
+    shippingFeeSettingOversea: { 
+    shippingFeeCriteria: any;
+    shippingCountryList: { 
+    countryCode: string;
+    countryName: string;
+    }[];
+    countryShippingFeeList: { 
+    countryCode: string;
+    countryName: string;
+    conditional: string;
+    minValue: string;
+    maxValue: Cafe24Datetime;
+    shippingFee: Cafe24Datetime;
+    }[];
+    additionalHandlingFee: Cafe24Enum;
+    additionalHandlingFeeList: { 
+    countryCode: string;
+    countryName: string;
+    text: string;
+    minValue: string;
+    maxValue: Cafe24Datetime;
+    additionalHandlingFee: Cafe24Datetime;
+    unit: string;
+    roundingUnit: any;
+    roundingRule: any;
+    }[];
+    maximumQuantity: any;
+    productCategoryLimit: any;
+    productCategoryLimitList: any;
+    };
+    };
+    expressExceptionSetting: { 
+    weight: Cafe24Datetime;
+    volume: Cafe24Datetime;
+    shippingType: any;
+    boxType: any;
+    senderName: string;
+    senderCellphone: string;
+    senderPhone: any;
+    senderZipcode: any;
+    senderAddress1: any;
+    senderAddress2: any;
+    };
     };
   }
   export interface CreateAShippingCarrierInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 배송사 코드
-     *
-     * shipping_company_code
-     *
-     * @required
-     */
+      * @description
+      * 배송사 코드
+      * 
+      * shipping_company_code 
+      * 
+      * @required
+      */ 
     shippingCarrierCode: any;
     /**
-     * @description
-     * 대표 연락처
-     *
-     * @required
-     *
-     * 최대글자수 : [16자]
-     */
+      * @description
+      * 대표 연락처
+      * 
+      * @required
+      * 
+      * 최대글자수 : [16자]
+      */ 
     contact: any;
     /**
-     * @description
-     * 이메일
-     *
-     * @required
-     *
-     * 이메일
-     * 최대글자수 : [255자]
-     */
+      * @description
+      * 이메일
+      * 
+      * @required
+      * 
+      * 이메일
+      * 최대글자수 : [255자]
+      */ 
     email: any;
     /**
-     * @description
-     * 배송사 명
-     *
-     * 최대글자수 : [80자]
-     */
+      * @description
+      * 배송사 명
+      * 
+      * 최대글자수 : [80자]
+      */ 
     shippingCarrier?: any;
     /**
-     * @description
-     * 배송추적 URL
-     *
-     * 최대글자수 : [255자]
-     */
+      * @description
+      * 배송추적 URL
+      * 
+      * 최대글자수 : [255자]
+      */ 
     trackShipmentUrl?: any;
     /**
-     * @description
-     * 보조 연락처
-     *
-     * 최대글자수 : [16자]
-     */
+      * @description
+      * 보조 연락처
+      * 
+      * 최대글자수 : [16자]
+      */ 
     secondaryContact?: any;
     /**
-     * @description
-     * 기본 배송비
-     *
-     *
-     */
+      * @description
+      * 기본 배송비
+      * 
+      * 
+      */ 
     defaultShippingFee?: any;
     /**
-     * @description
-     * 홈페이지 주소
-     *
-     * 최대글자수 : [255자]
-     */
+      * @description
+      * 홈페이지 주소
+      * 
+      * 최대글자수 : [255자]
+      */ 
     homepageUrl?: any;
     /**
-     * @description
-     * 배송비 설정 여부
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     * @default F
-     *
-     *
-     */
+      * @description
+      * 배송비 설정 여부
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * @default F
+      * 
+      * 
+      */ 
     shippingFeeSetting?: any;
     /**
-     * @description
-     * 배송비 설정 데이터
-     *
-     * ※shipping_fee_setting_detail의 하위요소에 대한 값 정의
-     *
-     * 1)shipping_fee_setting_domestic &gt; shipping_fee_type
-     *
-     * shipping_fee_type(배송비 설정)
-     * T : 배송비 무료
-     * R : 고정배송비 사용
-     * M : 구매 금액에 따른 부과
-     * D : 구매 금액별 차등 배송료 사용
-     * W : 상품 무게별 차등 배송료 사용
-     * C : 상품 수량별 차등 배송료 사용
-     * N : 상품 수량에 비례하여 배송료 부과
-     *
-     * 2)shipping_fee_setting_domestic &gt; shipping_fee_criteria
-     *
-     * shipping_fee_criteria(배송비 청구 기준 주문금액 조건 설정)
-     * D : 할인전, 정상판매가격 기준(권장)
-     * A : 할인 적용 후 결제 금액 기준
-     *
-     * 3)shipping_fee_setting_oversea &gt; additional_handling_fee_list &gt; unit
-     *
-     * unit(해외배송 부가금액 단위)
-     * W : 정액
-     * P : 퍼센트
-     *
-     * 4)shipping_fee_setting_oversea &gt; additional_handling_fee_list &gt; rounding_unit
-     *
-     * rounding_unit(해외배송 부가금액 절사단위)
-     * F : 절사안함
-     * 0 : 1단위
-     * 1 : 10단위
-     * 2 : 100단위
-     * 3 : 1000단위
-     *
-     * 5)shipping_fee_setting_oversea &gt; additional_handling_fee_list &gt; rounding_rule
-     *
-     * rounding_rule(해외배송 부가금액 절사방식)
-     * L : 내림
-     * U : 반올림
-     * C : 올림
-     *
-     *
-     */
-    shippingFeeSettingDetail?: {
-      /**
-       * @description
-       * 국내/해외배송 설정
-       * A : 국내
-       * B : 국내/해외
-       * C : 해외
-       * @default B
-       *
-       *
-       */
-      shippingType?: any;
-      /**
-       * @description
-       * 배송가능 지역
-       *
-       *
-       */
-      availableShippingZone?: any;
-      /**
-       * @description
-       * 배송가능 최소일
-       *
-       *
-       */
-      minShippingPeriod?: any;
-      /**
-       * @description
-       * 배송가능 최대일
-       *
-       *
-       */
-      maxShippingPeriod?: any;
-      /**
-       * @description
-       * 주문서 배송안내
-       *
-       *
-       */
-      shippingInformation?: any;
-      shippingFeeSettingDomestic?: any[];
-      shippingFeeSettingOversea?: any[];
+      * @description
+      * 배송비 설정 데이터
+      * 
+      * ※shipping_fee_setting_detail의 하위요소에 대한 값 정의
+      * 
+      * 1)shipping_fee_setting_domestic &gt; shipping_fee_type
+      * 
+      * shipping_fee_type(배송비 설정)
+      * T : 배송비 무료
+      * R : 고정배송비 사용
+      * M : 구매 금액에 따른 부과
+      * D : 구매 금액별 차등 배송료 사용
+      * W : 상품 무게별 차등 배송료 사용
+      * C : 상품 수량별 차등 배송료 사용
+      * N : 상품 수량에 비례하여 배송료 부과
+      * 
+      * 2)shipping_fee_setting_domestic &gt; shipping_fee_criteria
+      * 
+      * shipping_fee_criteria(배송비 청구 기준 주문금액 조건 설정)
+      * D : 할인전, 정상판매가격 기준(권장)
+      * A : 할인 적용 후 결제 금액 기준
+      * 
+      * 3)shipping_fee_setting_oversea &gt; additional_handling_fee_list &gt; unit
+      * 
+      * unit(해외배송 부가금액 단위)
+      * W : 정액
+      * P : 퍼센트
+      * 
+      * 4)shipping_fee_setting_oversea &gt; additional_handling_fee_list &gt; rounding_unit
+      * 
+      * rounding_unit(해외배송 부가금액 절사단위)
+      * F : 절사안함
+      * 0 : 1단위
+      * 1 : 10단위
+      * 2 : 100단위
+      * 3 : 1000단위
+      * 
+      * 5)shipping_fee_setting_oversea &gt; additional_handling_fee_list &gt; rounding_rule
+      * 
+      * rounding_rule(해외배송 부가금액 절사방식)
+      * L : 내림
+      * U : 반올림
+      * C : 올림
+      * 
+      * 
+      */ 
+    shippingFeeSettingDetail?: { 
+    /**
+      * @description
+      * 국내/해외배송 설정
+      * A : 국내
+      * B : 국내/해외
+      * C : 해외
+      * @default B
+      * 
+      * 
+      */ 
+    shippingType?: any;
+    /**
+      * @description
+      * 배송가능 지역
+      * 
+      * 
+      */ 
+    availableShippingZone?: any;
+    /**
+      * @description
+      * 배송가능 최소일
+      * 
+      * 
+      */ 
+    minShippingPeriod?: any;
+    /**
+      * @description
+      * 배송가능 최대일
+      * 
+      * 
+      */ 
+    maxShippingPeriod?: any;
+    /**
+      * @description
+      * 주문서 배송안내
+      * 
+      * 
+      */ 
+    shippingInformation?: any;
+    shippingFeeSettingDomestic?: any[];
+    shippingFeeSettingOversea?: any[];
     };
   }
 
   export interface CreateAShippingCarrierOutput {
-    carrier: {
-      shopNo: number;
-      shippingCarrierCode: Cafe24Datetime;
-      shippingCarrier: string;
-      carrierId: number;
-      contact: string;
-      secondaryContact: string;
-      email: string;
-      defaultShippingFee: any;
-      homepageUrl: string;
-      trackShipmentUrl: any;
-      shippingFeeSetting: Cafe24Enum;
-      shippingFeeSettingDetail: {
-        shippingType: Cafe24Enum;
-        availableShippingZone: string;
-        minShippingPeriod: number;
-        maxShippingPeriod: number;
-        shippingInformation: string;
-        shippingFeeSettingDomestic: {
-          shippingFeeType: Cafe24Enum;
-          shippingFee: any;
-          minPrice: any;
-          useProductCategory: Cafe24Enum;
-          productCategoryList: {
-            categoryNo: number;
-          }[];
-          shippingFeeCriteria: Cafe24Enum;
-          domesticShippingFeeList: {
-            minValue: string;
-            maxValue: Cafe24Datetime;
-            shippingFee: Cafe24Datetime;
-          }[];
-          availableShippingZone: any;
-          availableShippingZoneList: any;
-          availableOrderTime: any;
-          startTime: any;
-          endTime: any;
-        };
-        shippingFeeSettingOversea: {
-          shippingFeeCriteria: any;
-          shippingCountryList: {
-            countryCode: string;
-          }[];
-          countryShippingFeeList: {
-            countryCode: string;
-            conditional: string;
-            minValue: string;
-            maxValue: Cafe24Datetime;
-            shippingFee: Cafe24Datetime;
-          }[];
-          additionalHandlingFee: Cafe24Enum;
-          additionalHandlingFeeList: {
-            countryCode: string;
-            text: string;
-            minValue: string;
-            maxValue: Cafe24Datetime;
-            additionalHandlingFee: Cafe24Datetime;
-            unit: Cafe24Enum;
-            roundingUnit: any;
-            roundingRule: any;
-          }[];
-          maximumQuantity: any;
-          productCategoryLimit: any;
-          productCategoryLimitList: any;
-        };
-      };
-      links: {
-        rel: string;
-        href: string;
-      }[];
+    carrier: { 
+    shopNo: number;
+    shippingCarrierCode: Cafe24Datetime;
+    shippingCarrier: string;
+    carrierId: number;
+    contact: string;
+    secondaryContact: string;
+    email: string;
+    defaultShippingFee: any;
+    homepageUrl: string;
+    trackShipmentUrl: any;
+    shippingFeeSetting: Cafe24Enum;
+    shippingFeeSettingDetail: { 
+    shippingType: Cafe24Enum;
+    availableShippingZone: string;
+    minShippingPeriod: number;
+    maxShippingPeriod: number;
+    shippingInformation: string;
+    shippingFeeSettingDomestic: { 
+    shippingFeeType: Cafe24Enum;
+    shippingFee: any;
+    minPrice: any;
+    useProductCategory: Cafe24Enum;
+    productCategoryList: { 
+    categoryNo: number;
+    }[];
+    shippingFeeCriteria: Cafe24Enum;
+    domesticShippingFeeList: { 
+    minValue: string;
+    maxValue: Cafe24Datetime;
+    shippingFee: Cafe24Datetime;
+    }[];
+    availableShippingZone: any;
+    availableShippingZoneList: any;
+    availableOrderTime: any;
+    startTime: any;
+    endTime: any;
+    };
+    shippingFeeSettingOversea: { 
+    shippingFeeCriteria: any;
+    shippingCountryList: { 
+    countryCode: string;
+    }[];
+    countryShippingFeeList: { 
+    countryCode: string;
+    conditional: string;
+    minValue: string;
+    maxValue: Cafe24Datetime;
+    shippingFee: Cafe24Datetime;
+    }[];
+    additionalHandlingFee: Cafe24Enum;
+    additionalHandlingFeeList: { 
+    countryCode: string;
+    text: string;
+    minValue: string;
+    maxValue: Cafe24Datetime;
+    additionalHandlingFee: Cafe24Datetime;
+    unit: Cafe24Enum;
+    roundingUnit: any;
+    roundingRule: any;
+    }[];
+    maximumQuantity: any;
+    productCategoryLimit: any;
+    productCategoryLimitList: any;
+    };
+    };
+    links: { 
+    rel: string;
+    href: string;
+    }[];
     };
   }
   export interface UpdateAShippingCarrierInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 배송사 아이디
-     *
-     * @required
-     */
+      * @description
+      * 배송사 아이디
+      * 
+      * @required
+      */ 
     carrierId: any;
     /**
-     * @description
-     * 기본배송사 여부
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     * @default T
-     *
-     *
-     */
+      * @description
+      * 기본배송사 여부
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * @default T
+      * 
+      * 
+      */ 
     defaultShippingCarrier?: any;
   }
 
   export interface UpdateAShippingCarrierOutput {
-    carrier: {
-      shopNo: number;
-      carrierId: number;
-      defaultShippingCarrier: Cafe24Enum;
-      links: {
-        rel: string;
-        href: string;
-      }[];
+    carrier: { 
+    shopNo: number;
+    carrierId: number;
+    defaultShippingCarrier: Cafe24Enum;
+    links: { 
+    rel: string;
+    href: string;
+    }[];
     };
   }
   export interface DeleteAShippingCarrierInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 배송사 아이디
-     *
-     * @required
-     */
+      * @description
+      * 배송사 아이디
+      * 
+      * @required
+      */ 
     carrierId: any;
     /**
-     * @description
-     * 기본배송사 삭제 여부
-     *
-     * T : 삭제함
-     * F : 삭제안함
-     *
-     * @default F
-     *
-     *
-     */
+      * @description
+      * 기본배송사 삭제 여부
+      * 
+      * T : 삭제함
+      * F : 삭제안함
+      * 
+      * @default F
+      * 
+      * 
+      */ 
     deleteDefaultCarrier?: any;
   }
 
   export interface DeleteAShippingCarrierOutput {
-    carrier: {
-      shopNo: number;
-      carrierId: number;
+    carrier: { 
+    shopNo: number;
+    carrierId: number;
     };
   }
 
@@ -947,7 +948,7 @@ declare module 'cafe24api-client' {
      */
     retrieveAListOfShippingCarriers(
       input: RetrieveAListOfShippingCarriersInput,
-      options?: RequestOptions<RetrieveAListOfShippingCarriersInput>,
+      options?: RequestOptions<RetrieveAListOfShippingCarriersOutput['carriers'][number]>,
     ): Promise<AxiosResponse<RetrieveAListOfShippingCarriersOutput>>;
     /**
      * @description
@@ -1094,7 +1095,7 @@ declare module 'cafe24api-client' {
      */
     retrieveAShippingCarrier(
       input: RetrieveAShippingCarrierInput,
-      options?: RequestOptions<RetrieveAShippingCarrierInput>,
+      options?: RequestOptions<RetrieveAShippingCarrierOutput['carrier']>,
     ): Promise<AxiosResponse<RetrieveAShippingCarrierOutput>>;
     /**
      * @description
@@ -1222,7 +1223,7 @@ declare module 'cafe24api-client' {
      */
     createAShippingCarrier(
       input: CreateAShippingCarrierInput,
-      options?: RequestOptions<CreateAShippingCarrierInput>,
+      options?: RequestOptions<CreateAShippingCarrierOutput['carrier']>,
     ): Promise<AxiosResponse<CreateAShippingCarrierOutput>>;
     /**
      * @description
@@ -1250,7 +1251,7 @@ declare module 'cafe24api-client' {
      */
     updateAShippingCarrier(
       input: UpdateAShippingCarrierInput,
-      options?: RequestOptions<UpdateAShippingCarrierInput>,
+      options?: RequestOptions<UpdateAShippingCarrierOutput['carrier']>,
     ): Promise<AxiosResponse<UpdateAShippingCarrierOutput>>;
     /**
      * @description
@@ -1270,7 +1271,7 @@ declare module 'cafe24api-client' {
      */
     deleteAShippingCarrier(
       input: DeleteAShippingCarrierInput,
-      options?: RequestOptions<DeleteAShippingCarrierInput>,
+      options?: RequestOptions<DeleteAShippingCarrierOutput['carrier']>,
     ): Promise<AxiosResponse<DeleteAShippingCarrierOutput>>;
   }
 }

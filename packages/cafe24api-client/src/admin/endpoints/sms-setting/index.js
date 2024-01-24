@@ -1,5 +1,6 @@
+
 export default (cls) => {
-  cls.prototype.retrieveSmsSettings = async function (input, options) {
+  cls.prototype.retrieveSMSSettings = async function (input, options) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/sms/setting`,
@@ -9,4 +10,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

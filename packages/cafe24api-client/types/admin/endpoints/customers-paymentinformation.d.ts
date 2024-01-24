@@ -5,105 +5,106 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   /**
    * @description
-   *
-   *
+   * 
+   * 
    * 회원의 결제수단정보(Customers paymentinformation)는 회원이 결제한 결제수단에 대해 목록조회, 삭제가 가능합니다.
    */
   export interface CustomersPaymentinformation {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 
+      */ 
     shop_no: any;
     /**
-     * @description
-     * 회원아이디
-     *
-     * 최대글자수 : [20자]
-     */
+      * @description
+      * 회원아이디
+      * 
+      * 최대글자수 : [20자]
+      */ 
     member_id: any;
     /**
-     * @description
-     * 결제수단명
-     *
-     *
-     */
+      * @description
+      * 결제수단명
+      * 
+      * 
+      */ 
     payment_method: any;
     /**
-     * @description
-     * PG 이름
-     *
-     *
-     */
+      * @description
+      * PG 이름
+      * 
+      * 
+      */ 
     payment_gateway: any;
     /**
-     * @description
-     * 생성일
-     *
-     *
-     */
+      * @description
+      * 생성일
+      * 
+      * 
+      */ 
     created_date: any;
   }
 
   export interface RetrieveACustomerSListOfPaymentMethodsInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     * 최소값: [1]
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 최소값: [1]
+      */ 
     shop_no?: any;
     /**
-     * @description
-     * 회원아이디
-     *
-     * @required
-     *
-     * 최대글자수 : [20자]
-     */
+      * @description
+      * 회원아이디
+      * 
+      * @required
+      * 
+      * 최대글자수 : [20자]
+      */ 
     member_id: any;
   }
 
   export interface RetrieveACustomerSListOfPaymentMethodsOutput {
-    paymentinformation: {
-      shop_no: number;
-      member_id: string;
-      payment_method: string;
-      payment_gateway: string;
-      created_date: Cafe24Datetime;
+    paymentinformation: { 
+    shop_no: number;
+    member_id: string;
+    payment_method: string;
+    payment_gateway: string;
+    created_date: Cafe24Datetime;
     }[];
   }
   export interface DeleteCustomerSPaymentInformationInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     * 최소값: [1]
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 최소값: [1]
+      */ 
     shop_no?: any;
     /**
-     * @description
-     * 회원아이디
-     *
-     * @required
-     *
-     * 최대글자수 : [20자]
-     */
+      * @description
+      * 회원아이디
+      * 
+      * @required
+      * 
+      * 최대글자수 : [20자]
+      */ 
     member_id: any;
   }
 
   export interface DeleteCustomerSPaymentInformationOutput {
-    paymentinformation: {
-      shop_no: number;
-      member_id: string;
+    paymentinformation: { 
+    shop_no: number;
+    member_id: string;
     };
   }
 
@@ -139,7 +140,7 @@ declare module 'cafe24api-client' {
      */
     retrieveACustomerSListOfPaymentMethods(
       input: RetrieveACustomerSListOfPaymentMethodsInput,
-      options?: RequestOptions<RetrieveACustomerSListOfPaymentMethodsInput>,
+      options?: RequestOptions<RetrieveACustomerSListOfPaymentMethodsOutput['paymentinformation'][number]>,
     ): Promise<AxiosResponse<RetrieveACustomerSListOfPaymentMethodsOutput>>;
     /**
      * @description
@@ -159,7 +160,7 @@ declare module 'cafe24api-client' {
      */
     deleteCustomerSPaymentInformation(
       input: DeleteCustomerSPaymentInformationInput,
-      options?: RequestOptions<DeleteCustomerSPaymentInformationInput>,
+      options?: RequestOptions<DeleteCustomerSPaymentInformationOutput['paymentinformation']>,
     ): Promise<AxiosResponse<DeleteCustomerSPaymentInformationOutput>>;
   }
 }

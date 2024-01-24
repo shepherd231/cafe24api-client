@@ -5,180 +5,181 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   export interface BoardsComments {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 
+      */ 
     shopNo: any;
     /**
-     * @description
-     * 게시판 번호
-     *
-     *
-     */
+      * @description
+      * 게시판 번호
+      * 
+      * 
+      */ 
     boardNo: any;
     /**
-     * @description
-     * 게시물 번호
-     *
-     *
-     */
+      * @description
+      * 게시물 번호
+      * 
+      * 
+      */ 
     articleNo: any;
     /**
-     * @description
-     * 댓글 번호
-     *
-     *
-     */
+      * @description
+      * 댓글 번호
+      * 
+      * 
+      */ 
     commentNo: any;
     /**
-     * @description
-     * 댓글 내용
-     *
-     *
-     */
+      * @description
+      * 댓글 내용
+      * 
+      * 
+      */ 
     content: any;
     /**
-     * @description
-     * 작성자명
-     *
-     * 최대글자수 : [100자]
-     */
+      * @description
+      * 작성자명
+      * 
+      * 최대글자수 : [100자]
+      */ 
     writer: any;
     /**
-     * @description
-     * 회원아이디
-     *
-     * 최대글자수 : [20자]
-     */
+      * @description
+      * 회원아이디
+      * 
+      * 최대글자수 : [20자]
+      */ 
     memberId: any;
     /**
-     * @description
-     * 생성일
-     *
-     * 날짜
-     */
+      * @description
+      * 생성일
+      * 
+      * 날짜
+      */ 
     createdDate: any;
     /**
-     * @description
-     * 작성자 IP
-     *
-     * IP
-     */
+      * @description
+      * 작성자 IP
+      * 
+      * IP
+      */ 
     clientIp: any;
     /**
-     * @description
-     * 댓글 평점
-     *
-     * 최소: [1]~최대: [5]
-     */
+      * @description
+      * 댓글 평점
+      * 
+      * 최소: [1]~최대: [5]
+      */ 
     rating: any;
     /**
-     * @description
-     * 비밀글 여부
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 비밀글 여부
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     secret: any;
     /**
-     * @description
-     * 부모 댓글 번호
-     *
-     *
-     */
+      * @description
+      * 부모 댓글 번호
+      * 
+      * 
+      */ 
     parentCommentNo: any;
     /**
-     * @description
-     * 쇼핑몰 구분
-     *
-     * P : PC
-     * M : 모바일
-     *
-     *
-     */
+      * @description
+      * 쇼핑몰 구분
+      * 
+      * P : PC
+      * M : 모바일
+      * 
+      * 
+      */ 
     inputChannel: any;
     /**
-     * @description
-     * 첨부 파일 상세
-     *
-     *
-     */
+      * @description
+      * 첨부 파일 상세
+      * 
+      * 
+      */ 
     attachFileUrls: any;
     /**
-     * @description
-     * link
-     *
-     *
-     */
+      * @description
+      * link
+      * 
+      * 
+      */ 
     links: any;
   }
 
   export interface RetrieveCommentsInBulkInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     * 최소값: [1]
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 최소값: [1]
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 게시판 번호
-     *
-     * @required
-     */
+      * @description
+      * 게시판 번호
+      * 
+      * @required
+      */ 
     boardNo: any;
     /**
-     * @description
-     * 해당 댓글번호 이후 검색
-     *
-     * 최소값: [1]
-     * 최대값: [2147483647]
-     */
+      * @description
+      * 해당 댓글번호 이후 검색
+      * 
+      * 최소값: [1]
+      * 최대값: [2147483647]
+      */ 
     sinceCommentNo?: any;
     /**
-     * @description
-     * 조회결과 최대건수
-     *
-     * @default 10
-     *
-     * 최소: [1]~최대: [100]
-     */
+      * @description
+      * 조회결과 최대건수
+      * 
+      * @default 10
+      * 
+      * 최소: [1]~최대: [100]
+      */ 
     limit?: any;
   }
 
   export interface RetrieveCommentsInBulkOutput {
-    comments: {
-      shopNo: number;
-      boardNo: number;
-      articleNo: number;
-      commentNo: number;
-      content: string;
-      writer: string;
-      memberId: string;
-      createdDate: Cafe24Datetime;
-      clientIp: string;
-      rating: number;
-      secret: Cafe24Enum;
-      parentCommentNo: any;
-      inputChannel: Cafe24Enum;
-      attachFileUrls: {
-        no: number;
-        name: string;
-        url: string;
-      }[];
-      links: {
-        rel: string;
-        href: string;
-      }[];
+    comments: { 
+    shopNo: number;
+    boardNo: number;
+    articleNo: number;
+    commentNo: number;
+    content: string;
+    writer: string;
+    memberId: string;
+    createdDate: Cafe24Datetime;
+    clientIp: string;
+    rating: number;
+    secret: Cafe24Enum;
+    parentCommentNo: any;
+    inputChannel: Cafe24Enum;
+    attachFileUrls: { 
+    no: number;
+    name: string;
+    url: string;
+    }[];
+    links: { 
+    rel: string;
+    href: string;
+    }[];
     }[];
   }
 
@@ -262,7 +263,7 @@ declare module 'cafe24api-client' {
      */
     retrieveCommentsInBulk(
       input: RetrieveCommentsInBulkInput,
-      options?: RequestOptions<RetrieveCommentsInBulkInput>,
+      options?: RequestOptions<RetrieveCommentsInBulkOutput['comments'][number]>,
     ): Promise<AxiosResponse<RetrieveCommentsInBulkOutput>>;
   }
 }

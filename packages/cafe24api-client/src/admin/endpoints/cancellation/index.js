@@ -1,3 +1,4 @@
+
 export default (cls) => {
   cls.prototype.retrieveAnOrderCancellation = async function (input, options) {
     return this.createRequest(
@@ -11,10 +12,7 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.createMultipleOrderCancellations = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.createMultipleOrderCancellations = async function (input, options) {
     return this.createRequest(
       'POST',
       `/api/v2/admin/cancellation`,
@@ -41,10 +39,7 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.changeCancellationDetailsInBulk = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.changeCancellationDetailsInBulk = async function (input, options) {
     return this.createRequest(
       'PUT',
       `/api/v2/admin/cancellation`,
@@ -63,4 +58,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

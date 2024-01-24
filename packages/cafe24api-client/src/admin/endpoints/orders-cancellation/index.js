@@ -1,3 +1,4 @@
+
 export default (cls) => {
   cls.prototype.createAnOrderCancellation = async function (input, options) {
     return this.createRequest(
@@ -46,4 +47,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

@@ -6,7 +6,14 @@ const shell = require('shelljs');
 const ejs = require('ejs');
 const Case = require('case');
 const { targets, templatesPath } = require('./config');
-const { replaceAllMatches } = require('./utils');
+const {
+  replaceAllMatches,
+  inferEffectiveOutputSchemaType,
+  formatExampleString,
+  writeIf,
+  formatPropertyType,
+  formatRequestPath,
+} = require('./utils');
 
 const generateFromTemplate = async (
   docsUrl,
@@ -31,6 +38,11 @@ const generateFromTemplate = async (
         camelCase: Case.camel,
         pascalCase: Case.pascal,
         replaceAllMatches,
+        inferEffectiveOutputSchemaType,
+        formatExampleString,
+        formatPropertyType,
+        formatRequestPath,
+        writeIf,
         ...templateContext,
       },
       {

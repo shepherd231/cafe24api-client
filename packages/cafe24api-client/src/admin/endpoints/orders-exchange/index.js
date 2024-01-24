@@ -1,3 +1,4 @@
+
 export default (cls) => {
   cls.prototype.createAnOrderExchange = async function (input, options) {
     return this.createRequest(
@@ -46,4 +47,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

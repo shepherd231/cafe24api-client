@@ -5,205 +5,206 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   export interface OrdersItemsLabels {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shopNo: any;
     /**
-     * @description
-     * 주문 라벨명
-     *
-     *
-     */
+      * @description
+      * 주문 라벨명
+      * 
+      * 
+      */ 
     names: any;
     /**
-     * @description
-     * 주문번호
-     *
-     *
-     */
+      * @description
+      * 주문번호
+      * 
+      * 
+      */ 
     orderId: any;
     /**
-     * @description
-     * 품주코드
-     *
-     *
-     */
+      * @description
+      * 품주코드
+      * 
+      * 
+      */ 
     orderItemCode: any;
     /**
-     * @description
-     * 주문 라벨명
-     *
-     *
-     */
+      * @description
+      * 주문 라벨명
+      * 
+      * 
+      */ 
     name: any;
   }
 
   export interface RetrieveAnOrderLabelInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     * 최소값: [1]
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 최소값: [1]
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 주문번호
-     *
-     * @required
-     *
-     * 주문번호
-     */
+      * @description
+      * 주문번호
+      * 
+      * @required
+      * 
+      * 주문번호
+      */ 
     orderId: any;
     /**
-     * @description
-     * 품주코드
-     *
-     * @required
-     */
+      * @description
+      * 품주코드
+      * 
+      * @required
+      */ 
     orderItemCode: any;
   }
 
   export interface RetrieveAnOrderLabelOutput {
-    labels: {
-      shopNo: number;
-      names: string[];
+    labels: { 
+    shopNo: number;
+    names: string[];
     };
   }
   export interface CreateAnOrderLabelInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     * 최소값: [1]
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 최소값: [1]
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 주문번호
-     *
-     * @required
-     *
-     * 주문번호
-     */
+      * @description
+      * 주문번호
+      * 
+      * @required
+      * 
+      * 주문번호
+      */ 
     orderId: any;
     /**
-     * @description
-     * 품주코드
-     *
-     * @required
-     */
+      * @description
+      * 품주코드
+      * 
+      * @required
+      */ 
     orderItemCode: any;
     /**
-     * @description
-     * 주문 라벨명
-     *
-     * @required
-     */
+      * @description
+      * 주문 라벨명
+      * 
+      * @required
+      */ 
     names: any;
   }
 
   export interface CreateAnOrderLabelOutput {
-    label: {
-      shopNo: number;
-      orderId: string;
-      orderItemCode: string;
-      names: string[];
+    label: { 
+    shopNo: number;
+    orderId: string;
+    orderItemCode: string;
+    names: string[];
     };
   }
   export interface UpdateAnOrderLabelInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     * 최소값: [1]
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 최소값: [1]
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 주문번호
-     *
-     * @required
-     *
-     * 주문번호
-     */
+      * @description
+      * 주문번호
+      * 
+      * @required
+      * 
+      * 주문번호
+      */ 
     orderId: any;
     /**
-     * @description
-     * 품주코드
-     *
-     * @required
-     */
+      * @description
+      * 품주코드
+      * 
+      * @required
+      */ 
     orderItemCode: any;
     /**
-     * @description
-     * 주문 라벨명
-     *
-     * @required
-     */
+      * @description
+      * 주문 라벨명
+      * 
+      * @required
+      */ 
     names: any;
   }
 
   export interface UpdateAnOrderLabelOutput {
-    label: {
-      shopNo: number;
-      names: string[];
+    label: { 
+    shopNo: number;
+    names: string[];
     };
   }
   export interface DeleteAnOrderLabelInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     * 최소값: [1]
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 최소값: [1]
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 주문번호
-     *
-     * @required
-     *
-     * 주문번호
-     */
+      * @description
+      * 주문번호
+      * 
+      * @required
+      * 
+      * 주문번호
+      */ 
     orderId: any;
     /**
-     * @description
-     * 품주코드
-     *
-     * @required
-     */
+      * @description
+      * 품주코드
+      * 
+      * @required
+      */ 
     orderItemCode: any;
     /**
-     * @description
-     * 주문 라벨명
-     *
-     * @required
-     */
+      * @description
+      * 주문 라벨명
+      * 
+      * @required
+      */ 
     name: any;
   }
 
   export interface DeleteAnOrderLabelOutput {
-    label: {
-      shopNo: number;
-      orderId: string;
-      orderItemCode: string;
-      name: string;
+    label: { 
+    shopNo: number;
+    orderId: string;
+    orderItemCode: string;
+    name: string;
     };
   }
 
@@ -226,7 +227,7 @@ declare module 'cafe24api-client' {
      */
     retrieveAnOrderLabel(
       input: RetrieveAnOrderLabelInput,
-      options?: RequestOptions<RetrieveAnOrderLabelInput>,
+      options?: RequestOptions<RetrieveAnOrderLabelOutput['labels']>,
     ): Promise<AxiosResponse<RetrieveAnOrderLabelOutput>>;
     /**
      * @see https://developers.cafe24.com/docs/api/admin/#create-an-order-label
@@ -248,7 +249,7 @@ declare module 'cafe24api-client' {
      */
     createAnOrderLabel(
       input: CreateAnOrderLabelInput,
-      options?: RequestOptions<CreateAnOrderLabelInput>,
+      options?: RequestOptions<CreateAnOrderLabelOutput['label']>,
     ): Promise<AxiosResponse<CreateAnOrderLabelOutput>>;
     /**
      * @see https://developers.cafe24.com/docs/api/admin/#update-an-order-label
@@ -268,7 +269,7 @@ declare module 'cafe24api-client' {
      */
     updateAnOrderLabel(
       input: UpdateAnOrderLabelInput,
-      options?: RequestOptions<UpdateAnOrderLabelInput>,
+      options?: RequestOptions<UpdateAnOrderLabelOutput['label']>,
     ): Promise<AxiosResponse<UpdateAnOrderLabelOutput>>;
     /**
      * @see https://developers.cafe24.com/docs/api/admin/#delete-an-order-label
@@ -287,7 +288,7 @@ declare module 'cafe24api-client' {
      */
     deleteAnOrderLabel(
       input: DeleteAnOrderLabelInput,
-      options?: RequestOptions<DeleteAnOrderLabelInput>,
+      options?: RequestOptions<DeleteAnOrderLabelOutput['label']>,
     ): Promise<AxiosResponse<DeleteAnOrderLabelOutput>>;
   }
 }

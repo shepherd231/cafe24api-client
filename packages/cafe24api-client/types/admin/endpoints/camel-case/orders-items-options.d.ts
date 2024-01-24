@@ -5,96 +5,97 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   export interface OrdersItemsOptions {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 
+      */ 
     shopNo: any;
     /**
-     * @description
-     * 주문번호
-     *
-     *
-     */
+      * @description
+      * 주문번호
+      * 
+      * 
+      */ 
     orderId: any;
     /**
-     * @description
-     * 품주코드
-     *
-     *
-     */
+      * @description
+      * 품주코드
+      * 
+      * 
+      */ 
     orderItemCode: any;
     /**
-     * @description
-     * 추가입력 옵션
-     *
-     *
-     */
+      * @description
+      * 추가입력 옵션
+      * 
+      * 
+      */ 
     additionalOptions: any;
   }
 
   export interface UpdateAnOrderItemInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     * 최소값: [1]
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 최소값: [1]
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 주문번호
-     *
-     * @required
-     *
-     * 주문번호
-     */
+      * @description
+      * 주문번호
+      * 
+      * @required
+      * 
+      * 주문번호
+      */ 
     orderId: any;
     /**
-     * @description
-     * 품주코드
-     *
-     * @required
-     */
+      * @description
+      * 품주코드
+      * 
+      * @required
+      */ 
     orderItemCode: any;
     /**
-     * @description
-     * 추가입력 옵션
-     *
-     *
-     */
-    additionalOptions?: {
-      /**
-       * @description
-       * 추가입력옵션명
-       *
-       *
-       */
-      additionalOptionName: any;
-      /**
-       * @description
-       * 추가입력 옵션 값
-       *
-       *
-       */
-      additionalOptionValue: any;
+      * @description
+      * 추가입력 옵션
+      * 
+      * 
+      */ 
+    additionalOptions?: { 
+    /**
+      * @description
+      * 추가입력옵션명
+      * 
+      * 
+      */ 
+    additionalOptionName: any;
+    /**
+      * @description
+      * 추가입력 옵션 값
+      * 
+      * 
+      */ 
+    additionalOptionValue: any;
     };
   }
 
   export interface UpdateAnOrderItemOutput {
-    item: {
-      shopNo: number;
-      orderId: string;
-      orderItemCode: string;
-      additionalOptions: {
-        additionalOptionName: string;
-        additionalOptionValue: string;
-      }[];
+    item: { 
+    shopNo: number;
+    orderId: string;
+    orderItemCode: string;
+    additionalOptions: { 
+    additionalOptionName: string;
+    additionalOptionValue: string;
+    }[];
     };
   }
 
@@ -125,7 +126,7 @@ declare module 'cafe24api-client' {
      */
     updateAnOrderItem(
       input: UpdateAnOrderItemInput,
-      options?: RequestOptions<UpdateAnOrderItemInput>,
+      options?: RequestOptions<UpdateAnOrderItemOutput['item']>,
     ): Promise<AxiosResponse<UpdateAnOrderItemOutput>>;
   }
 }

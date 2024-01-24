@@ -5,221 +5,222 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   /**
    * @description
    * 상점 번역 정보(Translations store)는, 상점의 번역 정보를 조회하거나 수정할 수 있는 기능입니다.
    */
   export interface TranslationsStore {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 
+      */ 
     shop_no: any;
     /**
-     * @description
-     * 번역 정보
-     *
-     *
-     */
+      * @description
+      * 번역 정보
+      * 
+      * 
+      */ 
     translations: any;
   }
 
   export interface RetrieveAListOfStoreTranslationsInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     * 최소값: [1]
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 최소값: [1]
+      */ 
     shop_no?: any;
     /**
-     * @description
-     * 언어 코드
-     *
-     * 언어별로 번역된 정보에서 검색하고자 하는 언어를 선택하면, 해당 언어에 대한 번역 내용을 확인할 수 있습니다.
-     *
-     * ,(콤마)로 여러 건을 검색할 수 있다.
-     *
-     *
-     */
+      * @description
+      * 언어 코드
+      * 
+      * 언어별로 번역된 정보에서 검색하고자 하는 언어를 선택하면, 해당 언어에 대한 번역 내용을 확인할 수 있습니다.
+      * 
+      * ,(콤마)로 여러 건을 검색할 수 있다.
+      * 
+      * 
+      */ 
     language_code?: any;
   }
 
   export interface RetrieveAListOfStoreTranslationsOutput {
-    store: {
-      shop_no: number;
-      translations: {
-        language_code: string;
-        translated: Cafe24Enum;
-        shop_name: string;
-        company_name: string;
-        company_registration_no: string;
-        president_name: string;
-        phone: string;
-        email: string;
-        fax: string;
-        zipcode: Cafe24Datetime;
-        address1: string;
-        address2: string;
-        customer_service_phone: string;
-        customer_service_hours: string;
-        privacy_officer_name: string;
-        privacy_officer_email: string;
-        updated_date: Cafe24Datetime;
-      }[];
+    store: { 
+    shop_no: number;
+    translations: { 
+    language_code: string;
+    translated: Cafe24Enum;
+    shop_name: string;
+    company_name: string;
+    company_registration_no: string;
+    president_name: string;
+    phone: string;
+    email: string;
+    fax: string;
+    zipcode: Cafe24Datetime;
+    address1: string;
+    address2: string;
+    customer_service_phone: string;
+    customer_service_hours: string;
+    privacy_officer_name: string;
+    privacy_officer_email: string;
+    updated_date: Cafe24Datetime;
+    }[];
     };
   }
   export interface UpdateTheTranslationsOfAStoreInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     * 최소값: [1]
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 최소값: [1]
+      */ 
     shop_no?: any;
     /**
-     * @description
-     * 번역 정보
-     *
-     *
-     */
-    translations?: {
-      /**
-       * @description
-       * 언어 코드
-       *
-       *
-       */
-      language_code: any;
-      /**
-       * @description
-       * 쇼핑몰명
-       *
-       *
-       */
-      shop_name?: any;
-      /**
-       * @description
-       * 상호명
-       *
-       *
-       */
-      company_name?: any;
-      /**
-       * @description
-       * 사업자등록번호
-       *
-       *
-       */
-      company_registration_no?: any;
-      /**
-       * @description
-       * 대표자명
-       *
-       *
-       */
-      president_name?: any;
-      /**
-       * @description
-       * 전화번호
-       *
-       *
-       */
-      phone?: any;
-      /**
-       * @description
-       * 이메일
-       *
-       *
-       */
-      email?: any;
-      /**
-       * @description
-       * 팩스번호
-       *
-       *
-       */
-      fax?: any;
-      /**
-       * @description
-       * 우편번호
-       *
-       *
-       */
-      zipcode?: any;
-      /**
-       * @description
-       * 기본 주소
-       *
-       *
-       */
-      address1?: any;
-      /**
-       * @description
-       * 상세 주소
-       *
-       *
-       */
-      address2?: any;
-      /**
-       * @description
-       * 고객센터 상담/주문 전화
-       *
-       *
-       */
-      customer_service_phone?: any;
-      /**
-       * @description
-       * 고객센터 운영시간
-       *
-       *
-       */
-      customer_service_hours?: any;
-      /**
-       * @description
-       * 개인정보보호 책임자명
-       *
-       *
-       */
-      privacy_officer_name?: any;
-      /**
-       * @description
-       * 개인정보보호 책임자 이메일
-       *
-       *
-       */
-      privacy_officer_email?: any;
+      * @description
+      * 번역 정보
+      * 
+      * 
+      */ 
+    translations?: { 
+    /**
+      * @description
+      * 언어 코드
+      * 
+      * 
+      */ 
+    language_code: any;
+    /**
+      * @description
+      * 쇼핑몰명
+      * 
+      * 
+      */ 
+    shop_name?: any;
+    /**
+      * @description
+      * 상호명
+      * 
+      * 
+      */ 
+    company_name?: any;
+    /**
+      * @description
+      * 사업자등록번호
+      * 
+      * 
+      */ 
+    company_registration_no?: any;
+    /**
+      * @description
+      * 대표자명
+      * 
+      * 
+      */ 
+    president_name?: any;
+    /**
+      * @description
+      * 전화번호
+      * 
+      * 
+      */ 
+    phone?: any;
+    /**
+      * @description
+      * 이메일
+      * 
+      * 
+      */ 
+    email?: any;
+    /**
+      * @description
+      * 팩스번호
+      * 
+      * 
+      */ 
+    fax?: any;
+    /**
+      * @description
+      * 우편번호
+      * 
+      * 
+      */ 
+    zipcode?: any;
+    /**
+      * @description
+      * 기본 주소
+      * 
+      * 
+      */ 
+    address1?: any;
+    /**
+      * @description
+      * 상세 주소
+      * 
+      * 
+      */ 
+    address2?: any;
+    /**
+      * @description
+      * 고객센터 상담/주문 전화
+      * 
+      * 
+      */ 
+    customer_service_phone?: any;
+    /**
+      * @description
+      * 고객센터 운영시간
+      * 
+      * 
+      */ 
+    customer_service_hours?: any;
+    /**
+      * @description
+      * 개인정보보호 책임자명
+      * 
+      * 
+      */ 
+    privacy_officer_name?: any;
+    /**
+      * @description
+      * 개인정보보호 책임자 이메일
+      * 
+      * 
+      */ 
+    privacy_officer_email?: any;
     };
   }
 
   export interface UpdateTheTranslationsOfAStoreOutput {
-    store: {
-      shop_no: number;
-      translations: {
-        language_code: string;
-        translated: Cafe24Enum;
-        shop_name: string;
-        company_name: string;
-        company_registration_no: string;
-        president_name: string;
-        phone: string;
-        email: string;
-        fax: string;
-        zipcode: Cafe24Datetime;
-        address1: string;
-        address2: string;
-        customer_service_phone: string;
-        customer_service_hours: string;
-        privacy_officer_name: string;
-        privacy_officer_email: string;
-        updated_date: Cafe24Datetime;
-      }[];
+    store: { 
+    shop_no: number;
+    translations: { 
+    language_code: string;
+    translated: Cafe24Enum;
+    shop_name: string;
+    company_name: string;
+    company_registration_no: string;
+    president_name: string;
+    phone: string;
+    email: string;
+    fax: string;
+    zipcode: Cafe24Datetime;
+    address1: string;
+    address2: string;
+    customer_service_phone: string;
+    customer_service_hours: string;
+    privacy_officer_name: string;
+    privacy_officer_email: string;
+    updated_date: Cafe24Datetime;
+    }[];
     };
   }
 
@@ -281,7 +282,7 @@ declare module 'cafe24api-client' {
      */
     retrieveAListOfStoreTranslations(
       input: RetrieveAListOfStoreTranslationsInput,
-      options?: RequestOptions<RetrieveAListOfStoreTranslationsInput>,
+      options?: RequestOptions<RetrieveAListOfStoreTranslationsOutput['store']>,
     ): Promise<AxiosResponse<RetrieveAListOfStoreTranslationsOutput>>;
     /**
      * @description
@@ -341,7 +342,7 @@ declare module 'cafe24api-client' {
      */
     updateTheTranslationsOfAStore(
       input: UpdateTheTranslationsOfAStoreInput,
-      options?: RequestOptions<UpdateTheTranslationsOfAStoreInput>,
+      options?: RequestOptions<UpdateTheTranslationsOfAStoreOutput['store']>,
     ): Promise<AxiosResponse<UpdateTheTranslationsOfAStoreOutput>>;
   }
 }

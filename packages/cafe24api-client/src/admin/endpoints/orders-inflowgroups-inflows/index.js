@@ -1,8 +1,6 @@
+
 export default (cls) => {
-  cls.prototype.retrieveAListOfGroupTrafficSources = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.retrieveAListOfGroupTrafficSources = async function (input, options) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/orders/inflowgroups/${input['group_id']}/inflows`,
@@ -52,4 +50,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

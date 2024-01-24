@@ -1,5 +1,6 @@
+
 export default (cls) => {
-  cls.prototype.updateACustomerSCustomerTier = async function (input, options) {
+  cls.prototype.updateACustomersCustomerTier = async function (input, options) {
     return this.createRequest(
       'POST',
       `/api/v2/admin/customergroups/${input['group_no']}/customers`,
@@ -12,4 +13,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

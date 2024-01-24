@@ -5,71 +5,72 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   /**
    * @description
-   *
-   *
+   * 
+   * 
    * 상품 태그(Products tags)는 상품이 특정 단어로 검색 되어야할 경우 추가할 수 있는 검색 키워드와 관련된 기능입니다.
    * 상품 태그는 하위 리소스로서 상품(Products) 하위에서만 사용할 수 있습니다.
    * 상품명이나 상품 상세 설명 외에 다른 단어로도 상품이 검색되길 원할 경우 검색어를 상품에 추가할 수 있습니다.
    */
   export interface ProductsTags {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
+      * 
+      * 
+      */ 
     shopNo: any;
     /**
-     * @description
-     * 상품 태그
-     *
-     * @required
-     */
+      * @description
+      * 상품 태그
+      * 
+      * @required
+      */ 
     tags: any;
     /**
-     * @description
-     * 상품번호
-     *
-     * 시스템에서 부여한 상품의 번호. 상품 번호는 쇼핑몰 내에서 중복되지 않는다.
-     *
-     *
-     */
+      * @description
+      * 상품번호
+      * 
+      * 시스템에서 부여한 상품의 번호. 상품 번호는 쇼핑몰 내에서 중복되지 않는다.
+      * 
+      * 
+      */ 
     productNo: any;
     /**
-     * @description
-     * 상품 태그
-     *
-     * 검색 또는 분류를 위하여 상품에 입력하는 검색어 정보(해시태그)
-     *
-     *
-     */
+      * @description
+      * 상품 태그
+      * 
+      * 검색 또는 분류를 위하여 상품에 입력하는 검색어 정보(해시태그)
+      * 
+      * 
+      */ 
     tag: any;
   }
 
   export interface RetrieveACountOfAProductSProductTagsInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 상품번호
-     *
-     * 시스템에서 부여한 상품의 번호. 상품 번호는 쇼핑몰 내에서 중복되지 않는다.
-     *
-     * @required
-     */
+      * @description
+      * 상품번호
+      * 
+      * 시스템에서 부여한 상품의 번호. 상품 번호는 쇼핑몰 내에서 중복되지 않는다.
+      * 
+      * @required
+      */ 
     productNo: any;
   }
 
@@ -78,109 +79,109 @@ declare module 'cafe24api-client' {
   }
   export interface RetrieveAListOfAProductSProductTagsInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 상품번호
-     *
-     * 시스템에서 부여한 상품의 번호. 상품 번호는 쇼핑몰 내에서 중복되지 않는다.
-     *
-     * @required
-     */
+      * @description
+      * 상품번호
+      * 
+      * 시스템에서 부여한 상품의 번호. 상품 번호는 쇼핑몰 내에서 중복되지 않는다.
+      * 
+      * @required
+      */ 
     productNo: any;
   }
 
   export interface RetrieveAListOfAProductSProductTagsOutput {
-    tags: {
-      shopNo: number;
-      tags: string[];
+    tags: { 
+    shopNo: number;
+    tags: string[];
     };
   }
   export interface CreateProductTagsInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 상품번호
-     *
-     * 시스템에서 부여한 상품의 번호. 상품 번호는 쇼핑몰 내에서 중복되지 않는다.
-     *
-     * @required
-     */
+      * @description
+      * 상품번호
+      * 
+      * 시스템에서 부여한 상품의 번호. 상품 번호는 쇼핑몰 내에서 중복되지 않는다.
+      * 
+      * @required
+      */ 
     productNo: any;
     /**
-     * @description
-     * 상품 태그
-     *
-     * @required
-     *
-     * 배열 최대사이즈: [50]
-     */
+      * @description
+      * 상품 태그
+      * 
+      * @required
+      * 
+      * 배열 최대사이즈: [50]
+      */ 
     tags: any;
   }
 
   export interface CreateProductTagsOutput {
-    tag: {
-      shopNo: number;
-      productNo: number;
-      tags: string[];
+    tag: { 
+    shopNo: number;
+    productNo: number;
+    tags: string[];
     };
   }
   export interface DeleteAProductTagInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 상품번호
-     *
-     * 시스템에서 부여한 상품의 번호. 상품 번호는 쇼핑몰 내에서 중복되지 않는다.
-     *
-     * @required
-     */
+      * @description
+      * 상품번호
+      * 
+      * 시스템에서 부여한 상품의 번호. 상품 번호는 쇼핑몰 내에서 중복되지 않는다.
+      * 
+      * @required
+      */ 
     productNo: any;
     /**
-     * @description
-     * 상품 태그
-     *
-     * 검색 또는 분류를 위하여 상품에 입력하는 검색어 정보(해시태그)
-     *
-     *
-     */
+      * @description
+      * 상품 태그
+      * 
+      * 검색 또는 분류를 위하여 상품에 입력하는 검색어 정보(해시태그)
+      * 
+      * 
+      */ 
     tag?: any;
   }
 
   export interface DeleteAProductTagOutput {
-    tag: {
-      shopNo: number;
-      productNo: number;
-      tag: string;
+    tag: { 
+    shopNo: number;
+    productNo: number;
+    tag: string;
     };
   }
 
@@ -200,7 +201,7 @@ declare module 'cafe24api-client' {
      */
     retrieveACountOfAProductSProductTags(
       input: RetrieveACountOfAProductSProductTagsInput,
-      options?: RequestOptions<RetrieveACountOfAProductSProductTagsInput>,
+      options?: RequestOptions<RetrieveACountOfAProductSProductTagsOutput['count']>,
     ): Promise<AxiosResponse<RetrieveACountOfAProductSProductTagsOutput>>;
     /**
      * @description
@@ -224,7 +225,7 @@ declare module 'cafe24api-client' {
      */
     retrieveAListOfAProductSProductTags(
       input: RetrieveAListOfAProductSProductTagsInput,
-      options?: RequestOptions<RetrieveAListOfAProductSProductTagsInput>,
+      options?: RequestOptions<RetrieveAListOfAProductSProductTagsOutput['tags']>,
     ): Promise<AxiosResponse<RetrieveAListOfAProductSProductTagsOutput>>;
     /**
      * @description
@@ -248,7 +249,7 @@ declare module 'cafe24api-client' {
      */
     createProductTags(
       input: CreateProductTagsInput,
-      options?: RequestOptions<CreateProductTagsInput>,
+      options?: RequestOptions<CreateProductTagsOutput['tag']>,
     ): Promise<AxiosResponse<CreateProductTagsOutput>>;
     /**
      * @description
@@ -269,7 +270,7 @@ declare module 'cafe24api-client' {
      */
     deleteAProductTag(
       input: DeleteAProductTagInput,
-      options?: RequestOptions<DeleteAProductTagInput>,
+      options?: RequestOptions<DeleteAProductTagOutput['tag']>,
     ): Promise<AxiosResponse<DeleteAProductTagOutput>>;
   }
 }

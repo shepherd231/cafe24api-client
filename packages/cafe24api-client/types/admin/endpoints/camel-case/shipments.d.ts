@@ -5,6 +5,7 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   /**
    * @description
    * 배송(Shipments)은 주문의 하위리소스인 주문의 배송(Orders shipments)과 다르게 여러 주문의 배송 정보를 한번에 등록하거나 수정할 수 있습니다.
@@ -12,233 +13,233 @@ declare module 'cafe24api-client' {
    */
   export interface Shipments {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 
+      */ 
     shopNo: any;
     /**
-     * @description
-     * 송장번호
-     *
-     *
-     */
+      * @description
+      * 송장번호
+      * 
+      * 
+      */ 
     trackingNo: any;
     /**
-     * @description
-     * 배송업체 코드
-     *
-     * shipping_company_code
-     *
-     *
-     */
+      * @description
+      * 배송업체 코드
+      * 
+      * shipping_company_code 
+      * 
+      * 
+      */ 
     shippingCompanyCode: any;
     /**
-     * @description
-     * 주문상태
-     *
-     * standby : 배송대기
-     * shipping : 배송중
-     * shipped : 배송완료
-     *
-     *
-     */
+      * @description
+      * 주문상태
+      * 
+      * standby : 배송대기
+      * shipping : 배송중
+      * shipped : 배송완료
+      * 
+      * 
+      */ 
     status: any;
     /**
-     * @description
-     * 주문번호
-     *
-     *
-     */
+      * @description
+      * 주문번호
+      * 
+      * 
+      */ 
     orderId: any;
     /**
-     * @description
-     * 배송번호
-     *
-     *
-     */
+      * @description
+      * 배송번호
+      * 
+      * 
+      */ 
     shippingCode: any;
     /**
-     * @description
-     * 품주코드
-     *
-     *
-     */
+      * @description
+      * 품주코드
+      * 
+      * 
+      */ 
     orderItemCode: any;
     /**
-     * @description
-     * 배송사 아이디
-     *
-     *
-     */
+      * @description
+      * 배송사 아이디
+      * 
+      * 
+      */ 
     carrierId: any;
     /**
-     * @description
-     * 주문상태 추가정보
-     *
-     *
-     */
+      * @description
+      * 주문상태 추가정보
+      * 
+      * 
+      */ 
     statusAdditionalInfo: any;
   }
 
   export interface CreateShippingInformationForMultipleOrdersInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 송장번호
-     *
-     * @required
-     *
-     * 최대글자수 : [40자]
-     */
+      * @description
+      * 송장번호
+      * 
+      * @required
+      * 
+      * 최대글자수 : [40자]
+      */ 
     trackingNo: any;
     /**
-     * @description
-     * 배송업체 코드
-     *
-     * shipping_company_code
-     *
-     * @required
-     */
+      * @description
+      * 배송업체 코드
+      * 
+      * shipping_company_code 
+      * 
+      * @required
+      */ 
     shippingCompanyCode: any;
     /**
-     * @description
-     * 주문상태
-     *
-     * standby : 배송대기
-     * shipping : 배송중
-     *
-     * @required
-     */
+      * @description
+      * 주문상태
+      * 
+      * standby : 배송대기
+      * shipping : 배송중
+      * 
+      * @required
+      */ 
     status: any;
     /**
-     * @description
-     * 주문번호
-     *
-     *
-     */
+      * @description
+      * 주문번호
+      * 
+      * 
+      */ 
     orderId?: any;
     /**
-     * @description
-     * 배송번호
-     *
-     *
-     */
+      * @description
+      * 배송번호
+      * 
+      * 
+      */ 
     shippingCode?: any;
     /**
-     * @description
-     * 품주코드
-     *
-     *
-     */
+      * @description
+      * 품주코드
+      * 
+      * 
+      */ 
     orderItemCode?: any;
     /**
-     * @description
-     * 배송사 아이디
-     *
-     *
-     */
+      * @description
+      * 배송사 아이디
+      * 
+      * 
+      */ 
     carrierId?: any;
   }
 
   export interface CreateShippingInformationForMultipleOrdersOutput {
-    shipments: {
-      shopNo: number;
-      trackingNo: Cafe24Datetime;
-      shippingCompanyCode: Cafe24Datetime;
-      status: string;
-      orderId: string;
-      shippingCode: string;
-      orderItemCode: string[];
-      carrierId: number;
+    shipments: { 
+    shopNo: number;
+    trackingNo: Cafe24Datetime;
+    shippingCompanyCode: Cafe24Datetime;
+    status: string;
+    orderId: string;
+    shippingCode: string;
+    orderItemCode: string[];
+    carrierId: number;
     }[];
   }
   export interface UpdateMultipleOrderShippingsInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 배송번호
-     *
-     * @required
-     */
+      * @description
+      * 배송번호
+      * 
+      * @required
+      */ 
     shippingCode: any;
     /**
-     * @description
-     * 주문번호
-     *
-     *
-     */
+      * @description
+      * 주문번호
+      * 
+      * 
+      */ 
     orderId?: any;
     /**
-     * @description
-     * 주문상태
-     *
-     * status 사용하여 배송상태 수정시 tracking_no, shipping_company_code는 사용 불가
-     *
-     * standby : 배송대기
-     * shipping : 배송중
-     * shipped : 배송완료
-     *
-     *
-     */
+      * @description
+      * 주문상태
+      * 
+      * status 사용하여 배송상태 수정시 tracking_no, shipping_company_code는 사용 불가
+      * 
+      * standby : 배송대기
+      * shipping : 배송중
+      * shipped : 배송완료
+      * 
+      * 
+      */ 
     status?: any;
     /**
-     * @description
-     * 주문상태 추가정보
-     *
-     * 최대글자수 : [30자]
-     */
+      * @description
+      * 주문상태 추가정보
+      * 
+      * 최대글자수 : [30자]
+      */ 
     statusAdditionalInfo?: any;
     /**
-     * @description
-     * 송장번호
-     *
-     * tracking_no 사용시 shipping_company_code를 함께 사용해야 하며, 송장번호 수정시 status는 사용 불가
-     *
-     * 최대글자수 : [40자]
-     */
+      * @description
+      * 송장번호
+      * 
+      * tracking_no 사용시 shipping_company_code를 함께 사용해야 하며, 송장번호 수정시 status는 사용 불가
+      * 
+      * 최대글자수 : [40자]
+      */ 
     trackingNo?: any;
     /**
-     * @description
-     * 배송업체 코드
-     *
-     * 해당 주문의 송장번호와 함께 배송사를 변경할 수 있다.
-     *
-     * shipping_company_code
-     *
-     * tracking_no 사용시 shipping_company_code를 함께 사용해야 하며, 송장번호 수정시 status는 사용 불가
-     *
-     *
-     */
+      * @description
+      * 배송업체 코드
+      * 
+      * 해당 주문의 송장번호와 함께 배송사를 변경할 수 있다.
+      * 
+      * shipping_company_code 
+      * 
+      * tracking_no 사용시 shipping_company_code를 함께 사용해야 하며, 송장번호 수정시 status는 사용 불가
+      * 
+      * 
+      */ 
     shippingCompanyCode?: any;
   }
 
   export interface UpdateMultipleOrderShippingsOutput {
-    shipments: {
-      shopNo: number;
-      shippingCode: string;
-      orderId: string;
-      status: string;
-      statusAdditionalInfo: string;
-      trackingNo: any;
-      shippingCompanyCode: any;
+    shipments: { 
+    shopNo: number;
+    shippingCode: string;
+    orderId: string;
+    status: string;
+    statusAdditionalInfo: string;
+    trackingNo: any;
+    shippingCompanyCode: any;
     }[];
   }
 
@@ -285,7 +286,7 @@ declare module 'cafe24api-client' {
      */
     createShippingInformationForMultipleOrders(
       input: CreateShippingInformationForMultipleOrdersInput,
-      options?: RequestOptions<CreateShippingInformationForMultipleOrdersInput>,
+      options?: RequestOptions<CreateShippingInformationForMultipleOrdersOutput['shipments'][number]>,
     ): Promise<AxiosResponse<CreateShippingInformationForMultipleOrdersOutput>>;
     /**
      * @description
@@ -322,7 +323,7 @@ declare module 'cafe24api-client' {
      */
     updateMultipleOrderShippings(
       input: UpdateMultipleOrderShippingsInput,
-      options?: RequestOptions<UpdateMultipleOrderShippingsInput>,
+      options?: RequestOptions<UpdateMultipleOrderShippingsOutput['shipments'][number]>,
     ): Promise<AxiosResponse<UpdateMultipleOrderShippingsOutput>>;
   }
 }

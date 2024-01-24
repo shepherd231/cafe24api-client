@@ -5,6 +5,7 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   /**
    * @description
    * 모바일 설정(Mobile setting)은 쇼핑몰의 모바일 쇼핑몰 설정에 관한 리소스입니다.
@@ -12,51 +13,51 @@ declare module 'cafe24api-client' {
    */
   export interface MobileSetting {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 
+      */ 
     shopNo: any;
     /**
-     * @description
-     * 모바일 쇼핑몰 사용설정
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 모바일 쇼핑몰 사용설정
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     useMobilePage: any;
     /**
-     * @description
-     * 모바일 접속 주소 자동연결 설정
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 모바일 접속 주소 자동연결 설정
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     useMobileDomainRedirection: any;
   }
 
   export interface RetrieveMobileSettingsInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shopNo?: any;
   }
 
   export interface RetrieveMobileSettingsOutput {
-    mobile: {
-      shopNo: number;
-      useMobilePage: Cafe24Enum;
-      useMobileDomainRedirection: Cafe24Enum;
+    mobile: { 
+    shopNo: number;
+    useMobilePage: Cafe24Enum;
+    useMobileDomainRedirection: Cafe24Enum;
     };
   }
 
@@ -80,7 +81,7 @@ declare module 'cafe24api-client' {
      */
     retrieveMobileSettings(
       input: RetrieveMobileSettingsInput,
-      options?: RequestOptions<RetrieveMobileSettingsInput>,
+      options?: RequestOptions<RetrieveMobileSettingsOutput['mobile']>,
     ): Promise<AxiosResponse<RetrieveMobileSettingsOutput>>;
   }
 }

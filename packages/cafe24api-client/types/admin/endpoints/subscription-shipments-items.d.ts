@@ -5,152 +5,153 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   /**
    * @description
    * 정기배송 품목(Subscription shipments items)을 통해 정기배송 품목별 수정을 할 수 있습니다.
    */
   export interface SubscriptionShipmentsItems {
     /**
-     * @description
-     * 품목코드
-     *
-     *
-     */
+      * @description
+      * 품목코드
+      * 
+      * 
+      */ 
     variant_code: any;
     /**
-     * @description
-     * 상품옵션 아이디
-     *
-     *
-     */
+      * @description
+      * 상품옵션 아이디
+      * 
+      * 
+      */ 
     option_id: any;
     /**
-     * @description
-     * 정기배송 상태
-     *
-     * U:이용중
-     * P:일시정지
-     * C:해지
-     *
-     *
-     */
+      * @description
+      * 정기배송 상태
+      * 
+      * U:이용중
+      * P:일시정지
+      * C:해지
+      * 
+      * 
+      */ 
     subscription_state: any;
     /**
-     * @description
-     * 주문 수량
-     *
-     *
-     */
+      * @description
+      * 주문 수량
+      * 
+      * 
+      */ 
     quantity: any;
     /**
-     * @description
-     * 배송예정일
-     *
-     *
-     */
+      * @description
+      * 배송예정일
+      * 
+      * 
+      */ 
     expected_delivery_date: any;
     /**
-     * @description
-     * 배송주기
-     *
-     * 1W : 1주
-     * 2W : 2주
-     * 3W : 3주
-     * 4W : 4주
-     * 1M : 1개월
-     * 2M : 2개월
-     * 3M : 3개월
-     * 4M : 4개월
-     * 5M : 5개월
-     * 6M : 6개월
-     * 1Y : 1년
-     *
-     *
-     */
+      * @description
+      * 배송주기
+      * 
+      * 1W : 1주
+      * 2W : 2주
+      * 3W : 3주
+      * 4W : 4주
+      * 1M : 1개월
+      * 2M : 2개월
+      * 3M : 3개월
+      * 4M : 4개월
+      * 5M : 5개월
+      * 6M : 6개월
+      * 1Y : 1년
+      * 
+      * 
+      */ 
     subscription_shipments_cycle: any;
   }
 
   export interface UpdateProductVariantsInSubscriptionInput {
     /**
-     * @description
-     * 정기배송 신청번호
-     *
-     * @required
-     */
+      * @description
+      * 정기배송 신청번호
+      * 
+      * @required
+      */ 
     subscription_id: any;
     /**
-     * @description
-     * 품목코드
-     *
-     * @required
-     *
-     * 형식 : [A-Z0-9]
-     * 글자수 최소: [12자]~최대: [12자]
-     */
+      * @description
+      * 품목코드
+      * 
+      * @required
+      * 
+      * 형식 : [A-Z0-9]
+      * 글자수 최소: [12자]~최대: [12자]
+      */ 
     variant_code: any;
     /**
-     * @description
-     * 상품옵션 아이디
-     *
-     * @required
-     *
-     * 형식 : [A-Z0-9]
-     * 글자수 최소: [4자]~최대: [11자]
-     */
+      * @description
+      * 상품옵션 아이디
+      * 
+      * @required
+      * 
+      * 형식 : [A-Z0-9]
+      * 글자수 최소: [4자]~최대: [11자]
+      */ 
     option_id: any;
     /**
-     * @description
-     * 정기배송 상태
-     *
-     * U:이용중
-     * P:일시정지
-     * C:해지
-     *
-     *
-     */
+      * @description
+      * 정기배송 상태
+      * 
+      * U:이용중
+      * P:일시정지
+      * C:해지
+      * 
+      * 
+      */ 
     subscription_state?: any;
     /**
-     * @description
-     * 주문 수량
-     *
-     * 최소값: [1]
-     */
+      * @description
+      * 주문 수량
+      * 
+      * 최소값: [1]
+      */ 
     quantity?: any;
     /**
-     * @description
-     * 배송예정일
-     *
-     * 날짜
-     */
+      * @description
+      * 배송예정일
+      * 
+      * 날짜
+      */ 
     expected_delivery_date?: any;
     /**
-     * @description
-     * 배송주기
-     *
-     * 1W : 1주
-     * 2W : 2주
-     * 3W : 3주
-     * 4W : 4주
-     * 1M : 1개월
-     * 2M : 2개월
-     * 3M : 3개월
-     * 4M : 4개월
-     * 5M : 5개월
-     * 6M : 6개월
-     * 1Y : 1년
-     *
-     *
-     */
+      * @description
+      * 배송주기
+      * 
+      * 1W : 1주
+      * 2W : 2주
+      * 3W : 3주
+      * 4W : 4주
+      * 1M : 1개월
+      * 2M : 2개월
+      * 3M : 3개월
+      * 4M : 4개월
+      * 5M : 5개월
+      * 6M : 6개월
+      * 1Y : 1년
+      * 
+      * 
+      */ 
     subscription_shipments_cycle?: any;
   }
 
   export interface UpdateProductVariantsInSubscriptionOutput {
-    items: {
-      variant_code: string;
-      option_id: string;
-      quantity: number;
-      expected_delivery_date: Cafe24Date;
-      subscription_shipments_cycle: string;
+    items: { 
+    variant_code: string;
+    option_id: string;
+    quantity: number;
+    expected_delivery_date: Cafe24Date;
+    subscription_shipments_cycle: string;
     }[];
   }
 
@@ -183,7 +184,7 @@ declare module 'cafe24api-client' {
      */
     updateProductVariantsInSubscription(
       input: UpdateProductVariantsInSubscriptionInput,
-      options?: RequestOptions<UpdateProductVariantsInSubscriptionInput>,
+      options?: RequestOptions<UpdateProductVariantsInSubscriptionOutput['items'][number]>,
     ): Promise<AxiosResponse<UpdateProductVariantsInSubscriptionOutput>>;
   }
 }

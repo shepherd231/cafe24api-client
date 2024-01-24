@@ -1,9 +1,11 @@
+
 export default (cls) => {
   cls.prototype.retrieveAListOfIcons = async function (input, options) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/products/icons`,
-      {},
+      {
+      },
       options,
     );
   };
@@ -61,4 +63,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

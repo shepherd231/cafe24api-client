@@ -1,5 +1,6 @@
+
 export default (cls) => {
-  cls.prototype.sendASms = async function (input, options) {
+  cls.prototype.sendASMS = async function (input, options) {
     return this.createRequest(
       'POST',
       `/api/v2/admin/sms`,
@@ -17,4 +18,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

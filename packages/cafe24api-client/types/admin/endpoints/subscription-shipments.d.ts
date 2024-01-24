@@ -5,803 +5,804 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   /**
    * @description
    * 정기배송(Subscription shipments)은 정기배송에 대한 조회, 등록, 수정, 삭제를 할 수 있는 기능입니다.
    */
   export interface SubscriptionShipments {
     /**
-     * @description
-     * 정기배송 신청번호
-     *
-     *
-     */
+      * @description
+      * 정기배송 신청번호
+      * 
+      * 
+      */ 
     subscription_id: any;
     /**
-     * @description
-     * 회원아이디
-     *
-     *
-     */
+      * @description
+      * 회원아이디
+      * 
+      * 
+      */ 
     member_id: any;
     /**
-     * @description
-     * 주문자 이름
-     *
-     *
-     */
+      * @description
+      * 주문자 이름
+      * 
+      * 
+      */ 
     buyer_name: any;
     /**
-     * @description
-     * 주문자 우편번호
-     *
-     *
-     */
+      * @description
+      * 주문자 우편번호
+      * 
+      * 
+      */ 
     buyer_zipcode: any;
     /**
-     * @description
-     * 주문자 기본 주소
-     *
-     *
-     */
+      * @description
+      * 주문자 기본 주소
+      * 
+      * 
+      */ 
     buyer_address1: any;
     /**
-     * @description
-     * 주문자 상세 주소
-     *
-     *
-     */
+      * @description
+      * 주문자 상세 주소
+      * 
+      * 
+      */ 
     buyer_address2: any;
     /**
-     * @description
-     * 주문자 일반 전화
-     *
-     *
-     */
+      * @description
+      * 주문자 일반 전화
+      * 
+      * 
+      */ 
     buyer_phone: any;
     /**
-     * @description
-     * 주문자 휴대 전화
-     *
-     *
-     */
+      * @description
+      * 주문자 휴대 전화
+      * 
+      * 
+      */ 
     buyer_cellphone: any;
     /**
-     * @description
-     * 주문자 이메일
-     *
-     *
-     */
+      * @description
+      * 주문자 이메일
+      * 
+      * 
+      */ 
     buyer_email: any;
     /**
-     * @description
-     * 수령자 명
-     *
-     * 최대글자수 : [100자]
-     */
+      * @description
+      * 수령자 명
+      * 
+      * 최대글자수 : [100자]
+      */ 
     receiver_name: any;
     /**
-     * @description
-     * 수령자 우편번호
-     *
-     *
-     */
+      * @description
+      * 수령자 우편번호
+      * 
+      * 
+      */ 
     receiver_zipcode: any;
     /**
-     * @description
-     * 수령자 기본 주소
-     *
-     *
-     */
+      * @description
+      * 수령자 기본 주소
+      * 
+      * 
+      */ 
     receiver_address1: any;
     /**
-     * @description
-     * 수령자 상세 주소
-     *
-     *
-     */
+      * @description
+      * 수령자 상세 주소
+      * 
+      * 
+      */ 
     receiver_address2: any;
     /**
-     * @description
-     * 수령자 일반 전화
-     *
-     *
-     */
+      * @description
+      * 수령자 일반 전화
+      * 
+      * 
+      */ 
     receiver_phone: any;
     /**
-     * @description
-     * 수령자 휴대 전화
-     *
-     *
-     */
+      * @description
+      * 수령자 휴대 전화
+      * 
+      * 
+      */ 
     receiver_cellphone: any;
     /**
-     * @description
-     * 배송 메세지
-     *
-     *
-     */
+      * @description
+      * 배송 메세지
+      * 
+      * 
+      */ 
     shipping_message: any;
     /**
-     * @description
-     * 배송 유형
-     *
-     * A : 국내
-     * B : 해외
-     *
-     *
-     */
+      * @description
+      * 배송 유형
+      * 
+      * A : 국내
+      * B : 해외
+      * 
+      * 
+      */ 
     delivery_type: any;
     /**
-     * @description
-     * 희망배송일 사용여부
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 희망배송일 사용여부
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     wished_delivery: any;
     /**
-     * @description
-     * 희망배송시작시간
-     *
-     *
-     */
+      * @description
+      * 희망배송시작시간
+      * 
+      * 
+      */ 
     wished_delivery_start_hour: any;
     /**
-     * @description
-     * 희망배송종료시간
-     *
-     *
-     */
+      * @description
+      * 희망배송종료시간
+      * 
+      * 
+      */ 
     wished_delivery_end_hour: any;
     /**
-     * @description
-     * 가능한 빠른 배송시간
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 가능한 빠른 배송시간
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     wished_delivery_hour_asap: any;
     /**
-     * @description
-     * 스토어픽업
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 스토어픽업
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     store_pickup: any;
     /**
-     * @description
-     * 안심번호
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 안심번호
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     use_virtual_phone_no: any;
     /**
-     * @description
-     * 신청일자
-     *
-     *
-     */
+      * @description
+      * 신청일자
+      * 
+      * 
+      */ 
     created_date: any;
     /**
-     * @description
-     * 정기배송 상태
-     *
-     * U:이용중
-     * P: 일시정지
-     * C:해지
-     *
-     *
-     */
+      * @description
+      * 정기배송 상태
+      * 
+      * U:이용중
+      * P: 일시정지
+      * C:해지
+      * 
+      * 
+      */ 
     subscription_state: any;
     /**
-     * @description
-     * 주문상품목록
-     *
-     *
-     */
+      * @description
+      * 주문상품목록
+      * 
+      * 
+      */ 
     items: any;
   }
 
   export interface RetrieveASubscriptionInput {
     /**
-     * @description
-     * 검색날짜 유형
-     *
-     * created_date : 신청일
-     * expected_pay_date : 결제예정일
-     * terminated_date : 해지일
-     *
-     * @default created_date
-     *
-     *
-     */
+      * @description
+      * 검색날짜 유형
+      * 
+      * created_date : 신청일
+      * expected_pay_date : 결제예정일
+      * terminated_date : 해지일
+      * 
+      * @default created_date
+      * 
+      * 
+      */ 
     date_type?: any;
     /**
-     * @description
-     * 검색 시작일
-     *
-     * @required
-     *
-     * 날짜
-     */
+      * @description
+      * 검색 시작일
+      * 
+      * @required
+      * 
+      * 날짜
+      */ 
     start_date: any;
     /**
-     * @description
-     * 검색 종료일
-     *
-     * @required
-     *
-     * 날짜
-     */
+      * @description
+      * 검색 종료일
+      * 
+      * @required
+      * 
+      * 날짜
+      */ 
     end_date: any;
     /**
-     * @description
-     * 정기배송 신청번호
-     *
-     *
-     */
+      * @description
+      * 정기배송 신청번호
+      * 
+      * 
+      */ 
     subscription_id?: any;
     /**
-     * @description
-     * 회원아이디
-     *
-     * 최대글자수 : [20자]
-     */
+      * @description
+      * 회원아이디
+      * 
+      * 최대글자수 : [20자]
+      */ 
     member_id?: any;
     /**
-     * @description
-     * 주문자 이름
-     *
-     * 최대글자수 : [100자]
-     */
+      * @description
+      * 주문자 이름
+      * 
+      * 최대글자수 : [100자]
+      */ 
     buyer_name?: any;
     /**
-     * @description
-     * 주문자 일반 전화
-     *
-     *
-     */
+      * @description
+      * 주문자 일반 전화
+      * 
+      * 
+      */ 
     buyer_phone?: any;
     /**
-     * @description
-     * 주문자 휴대 전화
-     *
-     *
-     */
+      * @description
+      * 주문자 휴대 전화
+      * 
+      * 
+      */ 
     buyer_cellphone?: any;
     /**
-     * @description
-     * 상품번호
-     *
-     * ,(콤마)로 여러 건을 검색할 수 있다.
-     *
-     *
-     */
+      * @description
+      * 상품번호
+      * 
+      * ,(콤마)로 여러 건을 검색할 수 있다.
+      * 
+      * 
+      */ 
     product_no?: any;
     /**
-     * @description
-     * 상품명
-     *
-     * 최대글자수 : [250자]
-     */
+      * @description
+      * 상품명
+      * 
+      * 최대글자수 : [250자]
+      */ 
     product_name?: any;
     /**
-     * @description
-     * 상품코드
-     *
-     *
-     */
+      * @description
+      * 상품코드
+      * 
+      * 
+      */ 
     product_code?: any;
     /**
-     * @description
-     * 품목코드
-     *
-     *
-     */
+      * @description
+      * 품목코드
+      * 
+      * 
+      */ 
     variant_code?: any;
     /**
-     * @description
-     * 배송주기
-     *
-     * ,(콤마)로 여러 건을 검색할 수 있다.
-     *
-     * 1W : 1주
-     * 2W : 2주
-     * 3W : 3주
-     * 4W : 4주
-     * 1M : 1개월
-     * 2M : 2개월
-     * 3M : 3개월
-     * 4M : 4개월
-     * 5M : 5개월
-     * 6M : 6개월
-     * 1Y : 1년
-     *
-     *
-     */
+      * @description
+      * 배송주기
+      * 
+      * ,(콤마)로 여러 건을 검색할 수 있다.
+      * 
+      * 1W : 1주
+      * 2W : 2주
+      * 3W : 3주
+      * 4W : 4주
+      * 1M : 1개월
+      * 2M : 2개월
+      * 3M : 3개월
+      * 4M : 4개월
+      * 5M : 5개월
+      * 6M : 6개월
+      * 1Y : 1년
+      * 
+      * 
+      */ 
     subscription_shipments_cycle?: any;
     /**
-     * @description
-     * 정기배송 상태
-     *
-     * U:이용중
-     * P: 일시정지
-     * C:해지
-     *
-     *
-     */
+      * @description
+      * 정기배송 상태
+      * 
+      * U:이용중
+      * P: 일시정지
+      * C:해지
+      * 
+      * 
+      */ 
     subscription_state?: any;
     /**
-     * @description
-     * 조회결과 최대건수
-     *
-     * @default 20
-     *
-     * 최소: [1]~최대: [100]
-     */
+      * @description
+      * 조회결과 최대건수
+      * 
+      * @default 20
+      * 
+      * 최소: [1]~최대: [100]
+      */ 
     limit?: any;
     /**
-     * @description
-     * 조회결과 시작위치
-     *
-     * @default 0
-     *
-     * 최대값: [1000]
-     */
+      * @description
+      * 조회결과 시작위치
+      * 
+      * @default 0
+      * 
+      * 최대값: [1000]
+      */ 
     offset?: any;
   }
 
   export interface RetrieveASubscriptionOutput {
-    shipments: {
-      subscription_id: string;
-      member_id: string;
-      buyer_name: string;
-      buyer_zipcode: string;
-      buyer_address1: string;
-      buyer_address2: string;
-      buyer_phone: string;
-      buyer_cellphone: string;
-      buyer_email: string;
-      receiver_name: string;
-      receiver_zipcode: string;
-      receiver_address1: string;
-      receiver_address2: string;
-      receiver_phone: string;
-      receiver_cellphone: string;
-      shipping_message: string;
-      shipping_type: Cafe24Enum;
-      wished_delivery: Cafe24Enum;
-      wished_delivery_start_hour: Cafe24Datetime;
-      wished_delivery_end_hour: string;
-      wished_delivery_hour_asap: Cafe24Enum;
-      created_date: Cafe24Date;
-      terminated_date: any;
-      subscription_state: Cafe24Enum;
-      items: {
-        variants_code: string;
-        product_code: string;
-        product_no: Cafe24Datetime;
-        product_name: string;
-        options: {
-          name: string;
-          value: string;
-        }[];
-        option_id: string;
-        quantity: number;
-        product_price: Cafe24Datetime;
-        option_price: string;
-        shipping_payment_option: Cafe24Enum;
-        subscription_shipments_sequence: number;
-        subscription_state: Cafe24Enum;
-        expected_pay_date: Cafe24Date;
-        terminated_date: any;
-      }[];
+    shipments: { 
+    subscription_id: string;
+    member_id: string;
+    buyer_name: string;
+    buyer_zipcode: string;
+    buyer_address1: string;
+    buyer_address2: string;
+    buyer_phone: string;
+    buyer_cellphone: string;
+    buyer_email: string;
+    receiver_name: string;
+    receiver_zipcode: string;
+    receiver_address1: string;
+    receiver_address2: string;
+    receiver_phone: string;
+    receiver_cellphone: string;
+    shipping_message: string;
+    shipping_type: Cafe24Enum;
+    wished_delivery: Cafe24Enum;
+    wished_delivery_start_hour: Cafe24Datetime;
+    wished_delivery_end_hour: string;
+    wished_delivery_hour_asap: Cafe24Enum;
+    created_date: Cafe24Date;
+    terminated_date: any;
+    subscription_state: Cafe24Enum;
+    items: { 
+    variants_code: string;
+    product_code: string;
+    product_no: Cafe24Datetime;
+    product_name: string;
+    options: { 
+    name: string;
+    value: string;
+    }[];
+    option_id: string;
+    quantity: number;
+    product_price: Cafe24Datetime;
+    option_price: string;
+    shipping_payment_option: Cafe24Enum;
+    subscription_shipments_sequence: number;
+    subscription_state: Cafe24Enum;
+    expected_pay_date: Cafe24Date;
+    terminated_date: any;
+    }[];
     }[];
   }
   export interface CreateASubscriptionInput {
     /**
-     * @description
-     * 회원아이디
-     *
-     * @required
-     *
-     * 최대글자수 : [20자]
-     */
+      * @description
+      * 회원아이디
+      * 
+      * @required
+      * 
+      * 최대글자수 : [20자]
+      */ 
     member_id: any;
     /**
-     * @description
-     * 주문자 이름
-     *
-     * @required
-     *
-     * 최대글자수 : [100자]
-     */
+      * @description
+      * 주문자 이름
+      * 
+      * @required
+      * 
+      * 최대글자수 : [100자]
+      */ 
     buyer_name: any;
     /**
-     * @description
-     * 주문자 우편번호
-     *
-     * @required
-     *
-     * 글자수 최소: [2자]~최대: [14자]
-     */
+      * @description
+      * 주문자 우편번호
+      * 
+      * @required
+      * 
+      * 글자수 최소: [2자]~최대: [14자]
+      */ 
     buyer_zipcode: any;
     /**
-     * @description
-     * 주문자 기본 주소
-     *
-     * @required
-     *
-     * 최대글자수 : [250자]
-     */
+      * @description
+      * 주문자 기본 주소
+      * 
+      * @required
+      * 
+      * 최대글자수 : [250자]
+      */ 
     buyer_address1: any;
     /**
-     * @description
-     * 주문자 상세 주소
-     *
-     * @required
-     */
+      * @description
+      * 주문자 상세 주소
+      * 
+      * @required
+      */ 
     buyer_address2: any;
     /**
-     * @description
-     * 주문자 일반 전화
-     *
-     * 최대글자수 : [20자]
-     */
+      * @description
+      * 주문자 일반 전화
+      * 
+      * 최대글자수 : [20자]
+      */ 
     buyer_phone?: any;
     /**
-     * @description
-     * 주문자 휴대 전화
-     *
-     * @required
-     *
-     * 최대글자수 : [20자]
-     */
+      * @description
+      * 주문자 휴대 전화
+      * 
+      * @required
+      * 
+      * 최대글자수 : [20자]
+      */ 
     buyer_cellphone: any;
     /**
-     * @description
-     * 주문자 이메일
-     *
-     * @required
-     *
-     * 이메일
-     */
+      * @description
+      * 주문자 이메일
+      * 
+      * @required
+      * 
+      * 이메일
+      */ 
     buyer_email: any;
     /**
-     * @description
-     * 수령자 명
-     *
-     * @required
-     *
-     * 최대글자수 : [100자]
-     */
+      * @description
+      * 수령자 명
+      * 
+      * @required
+      * 
+      * 최대글자수 : [100자]
+      */ 
     receiver_name: any;
     /**
-     * @description
-     * 수령자 우편번호
-     *
-     * @required
-     *
-     * 글자수 최소: [2자]~최대: [13자]
-     */
+      * @description
+      * 수령자 우편번호
+      * 
+      * @required
+      * 
+      * 글자수 최소: [2자]~최대: [13자]
+      */ 
     receiver_zipcode: any;
     /**
-     * @description
-     * 수령자 기본 주소
-     *
-     * @required
-     */
+      * @description
+      * 수령자 기본 주소
+      * 
+      * @required
+      */ 
     receiver_address1: any;
     /**
-     * @description
-     * 수령자 상세 주소
-     *
-     * @required
-     */
+      * @description
+      * 수령자 상세 주소
+      * 
+      * @required
+      */ 
     receiver_address2: any;
     /**
-     * @description
-     * 수령자 일반 전화
-     *
-     * @required
-     *
-     * 최대글자수 : [20자]
-     */
+      * @description
+      * 수령자 일반 전화
+      * 
+      * @required
+      * 
+      * 최대글자수 : [20자]
+      */ 
     receiver_phone: any;
     /**
-     * @description
-     * 수령자 휴대 전화
-     *
-     * @required
-     *
-     * 최대글자수 : [20자]
-     */
+      * @description
+      * 수령자 휴대 전화
+      * 
+      * @required
+      * 
+      * 최대글자수 : [20자]
+      */ 
     receiver_cellphone: any;
     /**
-     * @description
-     * 배송 메세지
-     *
-     *
-     */
+      * @description
+      * 배송 메세지
+      * 
+      * 
+      */ 
     shipping_message?: any;
     /**
-     * @description
-     * 배송 유형
-     *
-     * A : 국내
-     * B : 해외
-     *
-     * @default A
-     *
-     *
-     */
+      * @description
+      * 배송 유형
+      * 
+      * A : 국내
+      * B : 해외
+      * 
+      * @default A
+      * 
+      * 
+      */ 
     delivery_type?: any;
     /**
-     * @description
-     * 배송시작일
-     *
-     * @required
-     *
-     * 날짜
-     */
+      * @description
+      * 배송시작일
+      * 
+      * @required
+      * 
+      * 날짜
+      */ 
     expected_delivery_date: any;
     /**
-     * @description
-     * 배송주기
-     *
-     * 1W : 1주
-     * 2W : 2주
-     * 3W : 3주
-     * 4W : 4주
-     * 1M : 1개월
-     * 2M : 2개월
-     * 3M : 3개월
-     * 4M : 4개월
-     * 5M : 5개월
-     * 6M : 6개월
-     * 1Y : 1년
-     *
-     * @required
-     */
+      * @description
+      * 배송주기
+      * 
+      * 1W : 1주
+      * 2W : 2주
+      * 3W : 3주
+      * 4W : 4주
+      * 1M : 1개월
+      * 2M : 2개월
+      * 3M : 3개월
+      * 4M : 4개월
+      * 5M : 5개월
+      * 6M : 6개월
+      * 1Y : 1년
+      * 
+      * @required
+      */ 
     subscription_shipments_cycle: any;
     /**
-     * @description
-     * 희망배송일 사용여부
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     * @default F
-     *
-     *
-     */
+      * @description
+      * 희망배송일 사용여부
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * @default F
+      * 
+      * 
+      */ 
     wished_delivery?: any;
     /**
-     * @description
-     * 희망배송시작시간
-     *
-     * 최소: [0]~최대: [23]
-     */
+      * @description
+      * 희망배송시작시간
+      * 
+      * 최소: [0]~최대: [23]
+      */ 
     wished_delivery_start_hour?: any;
     /**
-     * @description
-     * 희망배송종료시간
-     *
-     * 최소: [0]~최대: [23]
-     */
+      * @description
+      * 희망배송종료시간
+      * 
+      * 최소: [0]~최대: [23]
+      */ 
     wished_delivery_end_hour?: any;
     /**
-     * @description
-     * 가능한 빠른 배송시간
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 가능한 빠른 배송시간
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     wished_delivery_hour_asap?: any;
     /**
-     * @description
-     * 스토어픽업
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     * @default F
-     *
-     *
-     */
+      * @description
+      * 스토어픽업
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * @default F
+      * 
+      * 
+      */ 
     store_pickup?: any;
     /**
-     * @description
-     * 안심번호
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     * @default F
-     *
-     *
-     */
+      * @description
+      * 안심번호
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * @default F
+      * 
+      * 
+      */ 
     use_virtual_phone_no?: any;
     /**
-     * @description
-     * 주문상품목록
-     *
-     *
-     */
-    items?: {
-      /**
-       * @description
-       * 상품코드
-       *
-       *
-       */
-      product_code: any;
-      /**
-       * @description
-       * 상품번호
-       *
-       *
-       */
-      product_no: any;
-      /**
-       * @description
-       * 상품명
-       *
-       *
-       */
-      product_name: any;
-      options?: any[];
-      /**
-       * @description
-       * 상품옵션 아이디
-       * @default 000A
-       *
-       *
-       */
-      option_id: any;
-      /**
-       * @description
-       * 주문 수량
-       *
-       *
-       */
-      quantity: any;
-      /**
-       * @description
-       * 상품 판매가
-       *
-       *
-       */
-      product_price: any;
-      /**
-       * @description
-       * 옵션 추가 가격
-       *
-       *
-       */
-      option_price?: any;
-      /**
-       * @description
-       * 선/착불 구분
-       * C : 착불
-       * P : 선결제
-       * F : 무료
-       *
-       *
-       */
-      shipping_payment_option?: any;
-      /**
-       * @description
-       * 분류 번호
-       *
-       *
-       */
-      category_no?: any;
+      * @description
+      * 주문상품목록
+      * 
+      * 
+      */ 
+    items?: { 
+    /**
+      * @description
+      * 상품코드
+      * 
+      * 
+      */ 
+    product_code: any;
+    /**
+      * @description
+      * 상품번호
+      * 
+      * 
+      */ 
+    product_no: any;
+    /**
+      * @description
+      * 상품명
+      * 
+      * 
+      */ 
+    product_name: any;
+    options?: any[];
+    /**
+      * @description
+      * 상품옵션 아이디
+      * @default 000A
+      * 
+      * 
+      */ 
+    option_id: any;
+    /**
+      * @description
+      * 주문 수량
+      * 
+      * 
+      */ 
+    quantity: any;
+    /**
+      * @description
+      * 상품 판매가
+      * 
+      * 
+      */ 
+    product_price: any;
+    /**
+      * @description
+      * 옵션 추가 가격
+      * 
+      * 
+      */ 
+    option_price?: any;
+    /**
+      * @description
+      * 선/착불 구분
+      * C : 착불
+      * P : 선결제
+      * F : 무료
+      * 
+      * 
+      */ 
+    shipping_payment_option?: any;
+    /**
+      * @description
+      * 분류 번호
+      * 
+      * 
+      */ 
+    category_no?: any;
     };
   }
 
   export interface CreateASubscriptionOutput {
-    shipments: {
-      subscription_id: string;
-      items: {
-        variant_code: string;
-        option_id: string;
-      }[];
+    shipments: { 
+    subscription_id: string;
+    items: { 
+    variant_code: string;
+    option_id: string;
+    }[];
     }[];
   }
   export interface UpdateASubscriptionInput {
     /**
-     * @description
-     * 정기배송 신청번호
-     *
-     * @required
-     */
+      * @description
+      * 정기배송 신청번호
+      * 
+      * @required
+      */ 
     subscription_id: any;
     /**
-     * @description
-     * 수령자 명
-     *
-     * 최대글자수 : [100자]
-     */
+      * @description
+      * 수령자 명
+      * 
+      * 최대글자수 : [100자]
+      */ 
     receiver_name?: any;
     /**
-     * @description
-     * 수령자 우편번호
-     *
-     * 글자수 최소: [2자]~최대: [14자]
-     */
+      * @description
+      * 수령자 우편번호
+      * 
+      * 글자수 최소: [2자]~최대: [14자]
+      */ 
     receiver_zipcode?: any;
     /**
-     * @description
-     * 수령자 기본 주소
-     *
-     *
-     */
+      * @description
+      * 수령자 기본 주소
+      * 
+      * 
+      */ 
     receiver_address1?: any;
     /**
-     * @description
-     * 수령자 상세 주소
-     *
-     *
-     */
+      * @description
+      * 수령자 상세 주소
+      * 
+      * 
+      */ 
     receiver_address2?: any;
     /**
-     * @description
-     * 수령자 일반 전화
-     *
-     * 최대글자수 : [20자]
-     */
+      * @description
+      * 수령자 일반 전화
+      * 
+      * 최대글자수 : [20자]
+      */ 
     receiver_phone?: any;
     /**
-     * @description
-     * 수령자 휴대 전화
-     *
-     * 최대글자수 : [20자]
-     */
+      * @description
+      * 수령자 휴대 전화
+      * 
+      * 최대글자수 : [20자]
+      */ 
     receiver_cellphone?: any;
     /**
-     * @description
-     * 배송 메세지
-     *
-     *
-     */
+      * @description
+      * 배송 메세지
+      * 
+      * 
+      */ 
     shipping_message?: any;
     /**
-     * @description
-     * 정기배송 상태
-     *
-     * U:이용중
-     * P:일시정지
-     * C:해지
-     *
-     *
-     */
+      * @description
+      * 정기배송 상태
+      * 
+      * U:이용중
+      * P:일시정지
+      * C:해지
+      * 
+      * 
+      */ 
     subscription_state?: any;
   }
 
   export interface UpdateASubscriptionOutput {
-    shipments: {
-      receiver_name: string;
-      receiver_zipcode: string;
-      receiver_address1: string;
-      receiver_address2: string;
-      receiver_phone: string;
-      receiver_cellphone: string;
-      shipping_message: string;
-      subscription_state: Cafe24Enum;
+    shipments: { 
+    receiver_name: string;
+    receiver_zipcode: string;
+    receiver_address1: string;
+    receiver_address2: string;
+    receiver_phone: string;
+    receiver_cellphone: string;
+    shipping_message: string;
+    subscription_state: Cafe24Enum;
     };
   }
 
@@ -978,7 +979,7 @@ declare module 'cafe24api-client' {
      */
     retrieveASubscription(
       input: RetrieveASubscriptionInput,
-      options?: RequestOptions<RetrieveASubscriptionInput>,
+      options?: RequestOptions<RetrieveASubscriptionOutput['shipments'][number]>,
     ): Promise<AxiosResponse<RetrieveASubscriptionOutput>>;
     /**
      * @description
@@ -1022,7 +1023,7 @@ declare module 'cafe24api-client' {
      */
     createASubscription(
       input: CreateASubscriptionInput,
-      options?: RequestOptions<CreateASubscriptionInput>,
+      options?: RequestOptions<CreateASubscriptionOutput['shipments'][number]>,
     ): Promise<AxiosResponse<CreateASubscriptionOutput>>;
     /**
      * @description
@@ -1049,7 +1050,7 @@ declare module 'cafe24api-client' {
      */
     updateASubscription(
       input: UpdateASubscriptionInput,
-      options?: RequestOptions<UpdateASubscriptionInput>,
+      options?: RequestOptions<UpdateASubscriptionOutput['shipments']>,
     ): Promise<AxiosResponse<UpdateASubscriptionOutput>>;
   }
 }

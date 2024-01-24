@@ -5,365 +5,367 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   /**
    * @description
-   *
-   *
+   * 
+   * 
    * 꾸미기 이미지(Decorationimages)는 쇼핑몰에 진열된 상품 이미지 위에 추가하여 상품에 포인트를 줄 수 있는 기능입니다.
    * 쇼핑몰에 등록되어있는 꾸미기 이미지를 조회하여 상품별로 꾸미기 이미지를 지정하거나, 상품에 등록되어있는 꾸미기 이미지를 조회할 수 있습니다.
    * 꾸미기 이미지는 하위 리소스로서 상품(Products) 하위에서만 사용할 수 있습니다.
    */
   export interface ProductsDecorationimages {
     /**
-     * @description
-     * 꾸미기 이미지 코드
-     *
-     *
-     */
+      * @description
+      * 꾸미기 이미지 코드
+      * 
+      * 
+      */ 
     code: any;
     /**
-     * @description
-     * 꾸미기 이미지 URL
-     *
-     *
-     */
+      * @description
+      * 꾸미기 이미지 URL
+      * 
+      * 
+      */ 
     path: any;
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 
+      */ 
     shopNo: any;
     /**
-     * @description
-     * 표시기간 사용 여부
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 표시기간 사용 여부
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     useShowDate: any;
     /**
-     * @description
-     * 표시기간 시작 일자
-     *
-     *
-     */
+      * @description
+      * 표시기간 시작 일자
+      * 
+      * 
+      */ 
     showStartDate: any;
     /**
-     * @description
-     * 표시기간 종료 일자
-     *
-     *
-     */
+      * @description
+      * 표시기간 종료 일자
+      * 
+      * 
+      */ 
     showEndDate: any;
     /**
-     * @description
-     * 꾸미기 이미지 리스트
-     *
-     * 수평위치(image_horizontal_position)
-     * L : 왼쪽
-     * C : 가운데
-     * R : 오른쪽
-     *
-     * 수직위치(image_vertical_position)
-     * T : 상단
-     * C : 중단
-     * B : 하단
-     *
-     *
-     */
+      * @description
+      * 꾸미기 이미지 리스트
+      * 
+      * 수평위치(image_horizontal_position)
+      * L : 왼쪽
+      * C : 가운데
+      * R : 오른쪽
+      * 
+      * 수직위치(image_vertical_position)
+      * T : 상단
+      * C : 중단
+      * B : 하단
+      * 
+      * 
+      */ 
     imageList: any;
   }
 
-  export interface RetrieveAListOfDecorationImagesInput {}
+  export interface RetrieveAListOfDecorationImagesInput {
+  }
 
   export interface RetrieveAListOfDecorationImagesOutput {
-    decorationimages: {
-      code: string;
-      path: string;
+    decorationimages: { 
+    code: string;
+    path: string;
     }[];
   }
   export interface RetrieveAListOfProductDecorationImagesInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 상품번호
-     *
-     * 상품의 고유한 일련 번호. 해당 쇼핑몰 내에서 상품 번호는 중복되지 않음.
-     *
-     * @required
-     */
+      * @description
+      * 상품번호
+      * 
+      * 상품의 고유한 일련 번호. 해당 쇼핑몰 내에서 상품 번호는 중복되지 않음.
+      * 
+      * @required
+      */ 
     productNo: any;
   }
 
   export interface RetrieveAListOfProductDecorationImagesOutput {
-    decorationimage: {
-      useShowDate: Cafe24Enum;
-      showStartDate: Cafe24Datetime;
-      showEndDate: Cafe24Datetime;
-      imageList: {
-        code: string;
-        path: string;
-        imageVerticalPosition: Cafe24Enum;
-        imageHorizontalPosition: Cafe24Enum;
-      }[];
+    decorationimage: { 
+    useShowDate: Cafe24Enum;
+    showStartDate: Cafe24Datetime;
+    showEndDate: Cafe24Datetime;
+    imageList: { 
+    code: string;
+    path: string;
+    imageVerticalPosition: Cafe24Enum;
+    imageHorizontalPosition: Cafe24Enum;
+    }[];
     };
   }
   export interface SetDecorationImagesForAProductInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 상품번호
-     *
-     * @required
-     */
+      * @description
+      * 상품번호
+      * 
+      * @required
+      */ 
     productNo: any;
     /**
-     * @description
-     * 표시기간 사용 여부
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 표시기간 사용 여부
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     useShowDate?: any;
     /**
-     * @description
-     * 표시기간 시작 일자
-     *
-     * 날짜
-     */
+      * @description
+      * 표시기간 시작 일자
+      * 
+      * 날짜
+      */ 
     showStartDate?: any;
     /**
-     * @description
-     * 표시기간 종료 일자
-     *
-     * 날짜
-     */
+      * @description
+      * 표시기간 종료 일자
+      * 
+      * 날짜
+      */ 
     showEndDate?: any;
     /**
-     * @description
-     * 꾸미기 이미지 리스트
-     *
-     * 수평위치(image_horizontal_position)
-     * L : 왼쪽
-     * C : 가운데
-     * R : 오른쪽
-     *
-     * 수직위치(image_vertical_position)
-     * T : 상단
-     * C : 중단
-     * B : 하단
-     *
-     * @required
-     */
-    imageList: {
-      /**
-       * @description
-       * 꾸미기 이미지 코드
-       *
-       *
-       */
-      code?: any;
-      /**
-       * @description
-       * 꾸미기 이미지 경로
-       *
-       *
-       */
-      path?: any;
-      /**
-       * @description
-       * 꾸미기 이미지 수평값
-       *
-       *
-       */
-      imageHorizontalPosition?: any;
-      /**
-       * @description
-       * 꾸미기 이미지 수직값
-       *
-       *
-       */
-      imageVerticalPosition?: any;
+      * @description
+      * 꾸미기 이미지 리스트
+      * 
+      * 수평위치(image_horizontal_position)
+      * L : 왼쪽
+      * C : 가운데
+      * R : 오른쪽
+      * 
+      * 수직위치(image_vertical_position)
+      * T : 상단
+      * C : 중단
+      * B : 하단
+      * 
+      * @required
+      */ 
+    imageList: { 
+    /**
+      * @description
+      * 꾸미기 이미지 코드
+      * 
+      * 
+      */ 
+    code?: any;
+    /**
+      * @description
+      * 꾸미기 이미지 경로
+      * 
+      * 
+      */ 
+    path?: any;
+    /**
+      * @description
+      * 꾸미기 이미지 수평값
+      * 
+      * 
+      */ 
+    imageHorizontalPosition?: any;
+    /**
+      * @description
+      * 꾸미기 이미지 수직값
+      * 
+      * 
+      */ 
+    imageVerticalPosition?: any;
     };
   }
 
   export interface SetDecorationImagesForAProductOutput {
-    decorationimage: {
-      shopNo: number;
-      useShowDate: Cafe24Enum;
-      showStartDate: Cafe24Datetime;
-      showEndDate: Cafe24Datetime;
-      imageList: {
-        code: string;
-        path: string;
-        imageVerticalPosition: Cafe24Enum;
-        imageHorizontalPosition: Cafe24Enum;
-      }[];
+    decorationimage: { 
+    shopNo: number;
+    useShowDate: Cafe24Enum;
+    showStartDate: Cafe24Datetime;
+    showEndDate: Cafe24Datetime;
+    imageList: { 
+    code: string;
+    path: string;
+    imageVerticalPosition: Cafe24Enum;
+    imageHorizontalPosition: Cafe24Enum;
+    }[];
     };
   }
   export interface UpdateProductDecorationImagesInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 상품번호
-     *
-     * 상품의 고유한 일련 번호. 해당 쇼핑몰 내에서 상품 번호는 중복되지 않음.
-     *
-     * @required
-     */
+      * @description
+      * 상품번호
+      * 
+      * 상품의 고유한 일련 번호. 해당 쇼핑몰 내에서 상품 번호는 중복되지 않음.
+      * 
+      * @required
+      */ 
     productNo: any;
     /**
-     * @description
-     * 표시기간 사용 여부
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 표시기간 사용 여부
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     useShowDate?: any;
     /**
-     * @description
-     * 표시기간 시작 일자
-     *
-     * 날짜
-     */
+      * @description
+      * 표시기간 시작 일자
+      * 
+      * 날짜
+      */ 
     showStartDate?: any;
     /**
-     * @description
-     * 표시기간 종료 일자
-     *
-     * 날짜
-     */
+      * @description
+      * 표시기간 종료 일자
+      * 
+      * 날짜
+      */ 
     showEndDate?: any;
     /**
-     * @description
-     * 꾸미기 이미지 리스트
-     *
-     * 수평위치(image_horizontal_position)
-     * L : 왼쪽
-     * C : 가운데
-     * R : 오른쪽
-     *
-     * 수직위치(image_vertical_position)
-     * T : 상단
-     * C : 중단
-     * B : 하단
-     *
-     * @required
-     */
-    imageList: {
-      /**
-       * @description
-       * 꾸미기 이미지 코드
-       *
-       *
-       */
-      code?: any;
-      /**
-       * @description
-       * 꾸미기 이미지 경로
-       *
-       *
-       */
-      path?: any;
-      /**
-       * @description
-       * 꾸미기 이미지 수평값
-       *
-       *
-       */
-      imageHorizontalPosition?: any;
-      /**
-       * @description
-       * 꾸미기 이미지 수직값
-       *
-       *
-       */
-      imageVerticalPosition?: any;
+      * @description
+      * 꾸미기 이미지 리스트
+      * 
+      * 수평위치(image_horizontal_position)
+      * L : 왼쪽
+      * C : 가운데
+      * R : 오른쪽
+      * 
+      * 수직위치(image_vertical_position)
+      * T : 상단
+      * C : 중단
+      * B : 하단
+      * 
+      * @required
+      */ 
+    imageList: { 
+    /**
+      * @description
+      * 꾸미기 이미지 코드
+      * 
+      * 
+      */ 
+    code?: any;
+    /**
+      * @description
+      * 꾸미기 이미지 경로
+      * 
+      * 
+      */ 
+    path?: any;
+    /**
+      * @description
+      * 꾸미기 이미지 수평값
+      * 
+      * 
+      */ 
+    imageHorizontalPosition?: any;
+    /**
+      * @description
+      * 꾸미기 이미지 수직값
+      * 
+      * 
+      */ 
+    imageVerticalPosition?: any;
     };
   }
 
   export interface UpdateProductDecorationImagesOutput {
-    decorationimage: {
-      shopNo: number;
-      useShowDate: Cafe24Enum;
-      showStartDate: Cafe24Datetime;
-      showEndDate: Cafe24Datetime;
-      imageList: {
-        code: string;
-        path: string;
-        imageVerticalPosition: Cafe24Enum;
-        imageHorizontalPosition: Cafe24Enum;
-      }[];
+    decorationimage: { 
+    shopNo: number;
+    useShowDate: Cafe24Enum;
+    showStartDate: Cafe24Datetime;
+    showEndDate: Cafe24Datetime;
+    imageList: { 
+    code: string;
+    path: string;
+    imageVerticalPosition: Cafe24Enum;
+    imageHorizontalPosition: Cafe24Enum;
+    }[];
     };
   }
   export interface RemoveAProductDecorationImageInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 꾸미기 이미지 코드
-     *
-     * @required
-     */
+      * @description
+      * 꾸미기 이미지 코드
+      * 
+      * @required
+      */ 
     code: any;
     /**
-     * @description
-     * 상품번호
-     *
-     * 상품의 고유한 일련 번호. 해당 쇼핑몰 내에서 상품 번호는 중복되지 않음.
-     *
-     * @required
-     */
+      * @description
+      * 상품번호
+      * 
+      * 상품의 고유한 일련 번호. 해당 쇼핑몰 내에서 상품 번호는 중복되지 않음.
+      * 
+      * @required
+      */ 
     productNo: any;
   }
 
   export interface RemoveAProductDecorationImageOutput {
-    decorationimage: {
-      shopNo: number;
-      code: string;
+    decorationimage: { 
+    shopNo: number;
+    code: string;
     };
   }
 
@@ -399,8 +401,8 @@ declare module 'cafe24api-client' {
      * ```
      */
     retrieveAListOfDecorationImages(
-      input: RetrieveAListOfDecorationImagesInput,
-      options?: RequestOptions<RetrieveAListOfDecorationImagesInput>,
+      input?: RetrieveAListOfDecorationImagesInput,
+      options?: RequestOptions<RetrieveAListOfDecorationImagesOutput['decorationimages'][number]>,
     ): Promise<AxiosResponse<RetrieveAListOfDecorationImagesOutput>>;
     /**
      * @description
@@ -435,7 +437,7 @@ declare module 'cafe24api-client' {
      */
     retrieveAListOfProductDecorationImages(
       input: RetrieveAListOfProductDecorationImagesInput,
-      options?: RequestOptions<RetrieveAListOfProductDecorationImagesInput>,
+      options?: RequestOptions<RetrieveAListOfProductDecorationImagesOutput['decorationimage']>,
     ): Promise<AxiosResponse<RetrieveAListOfProductDecorationImagesOutput>>;
     /**
      * @description
@@ -472,7 +474,7 @@ declare module 'cafe24api-client' {
      */
     setDecorationImagesForAProduct(
       input: SetDecorationImagesForAProductInput,
-      options?: RequestOptions<SetDecorationImagesForAProductInput>,
+      options?: RequestOptions<SetDecorationImagesForAProductOutput['decorationimage']>,
     ): Promise<AxiosResponse<SetDecorationImagesForAProductOutput>>;
     /**
      * @description
@@ -509,7 +511,7 @@ declare module 'cafe24api-client' {
      */
     updateProductDecorationImages(
       input: UpdateProductDecorationImagesInput,
-      options?: RequestOptions<UpdateProductDecorationImagesInput>,
+      options?: RequestOptions<UpdateProductDecorationImagesOutput['decorationimage']>,
     ): Promise<AxiosResponse<UpdateProductDecorationImagesOutput>>;
     /**
      * @description
@@ -529,7 +531,7 @@ declare module 'cafe24api-client' {
      */
     removeAProductDecorationImage(
       input: RemoveAProductDecorationImageInput,
-      options?: RequestOptions<RemoveAProductDecorationImageInput>,
+      options?: RequestOptions<RemoveAProductDecorationImageOutput['decorationimage']>,
     ): Promise<AxiosResponse<RemoveAProductDecorationImageOutput>>;
   }
 }

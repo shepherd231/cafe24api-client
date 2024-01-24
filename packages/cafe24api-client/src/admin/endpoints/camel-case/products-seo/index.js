@@ -8,30 +8,33 @@ import {
 export default (cls) => {
   register(cls);
 
-  const retrieveAProductSSeoSettings =
-    cls.prototype.retrieveAProductSSeoSettings;
-  cls.prototype.retrieveAProductSSeoSettings = async function (input, options) {
-    const response = await retrieveAProductSSeoSettings.call(
-      this,
-      convertToSnakeCase(input),
-      optionsToSnakeCase(options),
-    );
-    return {
-      ...response,
-      data: convertToCamelCase(response.data),
+  
+    const retrieveAProductSSeoSettings = cls.prototype.retrieveAProductSSeoSettings;
+    cls.prototype.retrieveAProductSSeoSettings = async function (input, options) {
+      const response = await retrieveAProductSSeoSettings.call(
+        this,
+        convertToSnakeCase(input),
+        optionsToSnakeCase(options),
+      );
+      return {
+        ...response,
+        data: convertToCamelCase(response.data),
+      };
     };
-  };
 
-  const updateProductSeoSettings = cls.prototype.updateProductSeoSettings;
-  cls.prototype.updateProductSeoSettings = async function (input, options) {
-    const response = await updateProductSeoSettings.call(
-      this,
-      convertToSnakeCase(input),
-      optionsToSnakeCase(options),
-    );
-    return {
-      ...response,
-      data: convertToCamelCase(response.data),
+ 
+    const updateProductSeoSettings = cls.prototype.updateProductSeoSettings;
+    cls.prototype.updateProductSeoSettings = async function (input, options) {
+      const response = await updateProductSeoSettings.call(
+        this,
+        convertToSnakeCase(input),
+        optionsToSnakeCase(options),
+      );
+      return {
+        ...response,
+        data: convertToCamelCase(response.data),
+      };
     };
-  };
+
+ 
 };

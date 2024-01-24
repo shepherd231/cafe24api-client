@@ -1,8 +1,6 @@
+
 export default (cls) => {
-  cls.prototype.updateProductVariantsInSubscription = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.updateProductVariantsInSubscription = async function (input, options) {
     return this.createRequest(
       'PUT',
       `/api/v2/admin/subscription/shipments/${input['subscription_id']}/items`,
@@ -18,4 +16,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

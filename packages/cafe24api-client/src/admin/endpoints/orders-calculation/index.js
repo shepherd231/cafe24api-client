@@ -1,3 +1,4 @@
+
 export default (cls) => {
   cls.prototype.calculateTotalDue = async function (input, options) {
     return this.createRequest(
@@ -19,4 +20,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

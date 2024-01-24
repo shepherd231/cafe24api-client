@@ -5,6 +5,7 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   /**
    * @description
    * 발송 그룹(Recipientgroups)은 대량 메일 발송 그룹을 관리하는 기능입니다.
@@ -12,815 +13,815 @@ declare module 'cafe24api-client' {
    */
   export interface Recipientgroups {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 
+      */ 
     shop_no: any;
     /**
-     * @description
-     * 발송그룹 번호
-     *
-     *
-     */
+      * @description
+      * 발송그룹 번호
+      * 
+      * 
+      */ 
     group_no: any;
     /**
-     * @description
-     * 발송그룹명
-     *
-     * 최대글자수 : [40자]
-     */
+      * @description
+      * 발송그룹명
+      * 
+      * 최대글자수 : [40자]
+      */ 
     group_name: any;
     /**
-     * @description
-     * 발송그룹 설명
-     *
-     * 최대글자수 : [255자]
-     */
+      * @description
+      * 발송그룹 설명
+      * 
+      * 최대글자수 : [255자]
+      */ 
     group_description: any;
     /**
-     * @description
-     * 등록일
-     *
-     *
-     */
+      * @description
+      * 등록일
+      * 
+      * 
+      */ 
     created_date: any;
     /**
-     * @description
-     * 발송그룹 회원 수
-     *
-     *
-     */
+      * @description
+      * 발송그룹 회원 수
+      * 
+      * 
+      */ 
     group_member_count: any;
     /**
-     * @description
-     * 뉴스메일 수신여부
-     *
-     * T : 수신허용
-     * F : 수신안함
-     * D : 절대수신안함
-     *
-     *
-     */
+      * @description
+      * 뉴스메일 수신여부
+      * 
+      * T : 수신허용
+      * F : 수신안함
+      * D : 절대수신안함
+      * 
+      * 
+      */ 
     news_mail: any;
     /**
-     * @description
-     * SMS 수신여부
-     *
-     * T : 수신
-     * F : 수신안함
-     *
-     *
-     */
+      * @description
+      * SMS 수신여부
+      * 
+      * T : 수신
+      * F : 수신안함
+      * 
+      * 
+      */ 
     sms: any;
     /**
-     * @description
-     * 회원등급번호
-     *
-     *
-     */
+      * @description
+      * 회원등급번호
+      * 
+      * 
+      */ 
     member_group_no: any;
     /**
-     * @description
-     * 회원구분
-     *
-     * p : 개인
-     * c : 사업자
-     * f : 외국인
-     *
-     *
-     */
+      * @description
+      * 회원구분
+      * 
+      * p : 개인
+      * c : 사업자
+      * f : 외국인
+      * 
+      * 
+      */ 
     member_class: any;
     /**
-     * @description
-     * 회원타입
-     *
-     * vip : 특별관리회원
-     * poor : 불량회원
-     *
-     *
-     */
+      * @description
+      * 회원타입
+      * 
+      * vip : 특별관리회원
+      * poor : 불량회원
+      * 
+      * 
+      */ 
     member_type: any;
     /**
-     * @description
-     * 가입경로
-     *
-     * P : PC
-     * M : 모바일
-     *
-     *
-     */
+      * @description
+      * 가입경로
+      * 
+      * P : PC
+      * M : 모바일
+      * 
+      * 
+      */ 
     join_path: any;
     /**
-     * @description
-     * 유입경로
-     *
-     *
-     */
+      * @description
+      * 유입경로
+      * 
+      * 
+      */ 
     inflow_path: any;
     /**
-     * @description
-     * 유입경로 상세정보
-     *
-     *
-     */
+      * @description
+      * 유입경로 상세정보
+      * 
+      * 
+      */ 
     inflow_path_detail: any;
     /**
-     * @description
-     * 검색날짜 유형
-     *
-     * join : 회원가입일
-     * birthday : 생일
-     * wedding : 결혼기념일
-     * partner : 배우자생일
-     *
-     *
-     */
+      * @description
+      * 검색날짜 유형
+      * 
+      * join : 회원가입일
+      * birthday : 생일
+      * wedding : 결혼기념일
+      * partner : 배우자생일
+      * 
+      * 
+      */ 
     date_type: any;
     /**
-     * @description
-     * 검색 시작일
-     *
-     * 날짜
-     */
+      * @description
+      * 검색 시작일
+      * 
+      * 날짜
+      */ 
     start_date: any;
     /**
-     * @description
-     * 검색 종료일
-     *
-     * 날짜
-     */
+      * @description
+      * 검색 종료일
+      * 
+      * 날짜
+      */ 
     end_date: any;
     /**
-     * @description
-     * 양력여부
-     *
-     * T : 양력
-     * F : 음력
-     *
-     *
-     */
+      * @description
+      * 양력여부
+      * 
+      * T : 양력
+      * F : 음력
+      * 
+      * 
+      */ 
     solar_calendar: any;
     /**
-     * @description
-     * 나이 검색 최소값
-     *
-     *
-     */
+      * @description
+      * 나이 검색 최소값
+      * 
+      * 
+      */ 
     age_min: any;
     /**
-     * @description
-     * 나이 검색 최대값
-     *
-     *
-     */
+      * @description
+      * 나이 검색 최대값
+      * 
+      * 
+      */ 
     age_max: any;
     /**
-     * @description
-     * 성별
-     *
-     * M : 남자
-     * F : 여자
-     *
-     *
-     */
+      * @description
+      * 성별
+      * 
+      * M : 남자
+      * F : 여자
+      * 
+      * 
+      */ 
     gender: any;
     /**
-     * @description
-     * 적립금 검색 최소값
-     *
-     *
-     */
+      * @description
+      * 적립금 검색 최소값
+      * 
+      * 
+      */ 
     available_points_min: any;
     /**
-     * @description
-     * 적립금 검색 최대값
-     *
-     *
-     */
+      * @description
+      * 적립금 검색 최대값
+      * 
+      * 
+      */ 
     available_points_max: any;
     /**
-     * @description
-     * 모바일앱 사용여부
-     *
-     * T : 사용
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 모바일앱 사용여부
+      * 
+      * T : 사용
+      * F : 사용안함
+      * 
+      * 
+      */ 
     use_mobile_app: any;
     /**
-     * @description
-     * 플러스앱 경로 가입회원 여부
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 플러스앱 경로 가입회원 여부
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     plusapp_member_join: any;
   }
 
   export interface RetrieveDistributionGroupListInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     * 최소값: [1]
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 최소값: [1]
+      */ 
     shop_no?: any;
     /**
-     * @description
-     * 조회결과 최대건수
-     *
-     * @default 10
-     *
-     * 최소: [1]~최대: [100]
-     */
+      * @description
+      * 조회결과 최대건수
+      * 
+      * @default 10
+      * 
+      * 최소: [1]~최대: [100]
+      */ 
     limit?: any;
     /**
-     * @description
-     * 조회결과 시작위치
-     *
-     * @default 0
-     *
-     * 최대값: [10000]
-     */
+      * @description
+      * 조회결과 시작위치
+      * 
+      * @default 0
+      * 
+      * 최대값: [10000]
+      */ 
     offset?: any;
   }
 
   export interface RetrieveDistributionGroupListOutput {
-    recipientgroups: {
-      shop_no: number;
-      group_no: number;
-      group_name: string;
-      group_description: string;
-      created_date: Cafe24Datetime;
-      group_member_count: number;
-      news_mail: Cafe24Enum;
-      sms: Cafe24Enum;
-      member_group_no: number;
-      member_class: string;
-      member_type: string;
-      join_path: Cafe24Enum;
-      inflow_path: string;
-      inflow_path_detail: string;
-      date_type: string;
-      start_date: Cafe24Date;
-      end_date: Cafe24Date;
-      solar_calendar: string;
-      age_min: number;
-      age_max: number;
-      gender: Cafe24Enum;
-      available_points_min: string;
-      available_points_max: Cafe24Datetime;
-      use_mobile_app: Cafe24Enum;
-      plusapp_member_join: Cafe24Enum;
+    recipientgroups: { 
+    shop_no: number;
+    group_no: number;
+    group_name: string;
+    group_description: string;
+    created_date: Cafe24Datetime;
+    group_member_count: number;
+    news_mail: Cafe24Enum;
+    sms: Cafe24Enum;
+    member_group_no: number;
+    member_class: string;
+    member_type: string;
+    join_path: Cafe24Enum;
+    inflow_path: string;
+    inflow_path_detail: string;
+    date_type: string;
+    start_date: Cafe24Date;
+    end_date: Cafe24Date;
+    solar_calendar: string;
+    age_min: number;
+    age_max: number;
+    gender: Cafe24Enum;
+    available_points_min: string;
+    available_points_max: Cafe24Datetime;
+    use_mobile_app: Cafe24Enum;
+    plusapp_member_join: Cafe24Enum;
     }[];
-    links: {
-      rel: string;
-      href: string;
+    links: { 
+    rel: string;
+    href: string;
     }[];
   }
   export interface RetrieveDistributionGroupDetailsInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     * 최소값: [1]
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 최소값: [1]
+      */ 
     shop_no?: any;
     /**
-     * @description
-     * 발송그룹 번호
-     *
-     * @required
-     *
-     * 최소값: [1]
-     */
+      * @description
+      * 발송그룹 번호
+      * 
+      * @required
+      * 
+      * 최소값: [1]
+      */ 
     group_no: any;
   }
 
   export interface RetrieveDistributionGroupDetailsOutput {
-    recipientgroup: {
-      shop_no: number;
-      group_no: number;
-      group_name: string;
-      group_description: string;
-      created_date: Cafe24Datetime;
-      group_member_count: number;
-      news_mail: Cafe24Enum;
-      sms: Cafe24Enum;
-      member_group_no: number;
-      member_class: string;
-      member_type: string;
-      join_path: Cafe24Enum;
-      inflow_path: string;
-      inflow_path_detail: string;
-      date_type: string;
-      start_date: Cafe24Date;
-      end_date: Cafe24Date;
-      solar_calendar: string;
-      age_min: number;
-      age_max: number;
-      gender: Cafe24Enum;
-      available_points_min: string;
-      available_points_max: Cafe24Datetime;
-      use_mobile_app: Cafe24Enum;
-      plusapp_member_join: Cafe24Enum;
+    recipientgroup: { 
+    shop_no: number;
+    group_no: number;
+    group_name: string;
+    group_description: string;
+    created_date: Cafe24Datetime;
+    group_member_count: number;
+    news_mail: Cafe24Enum;
+    sms: Cafe24Enum;
+    member_group_no: number;
+    member_class: string;
+    member_type: string;
+    join_path: Cafe24Enum;
+    inflow_path: string;
+    inflow_path_detail: string;
+    date_type: string;
+    start_date: Cafe24Date;
+    end_date: Cafe24Date;
+    solar_calendar: string;
+    age_min: number;
+    age_max: number;
+    gender: Cafe24Enum;
+    available_points_min: string;
+    available_points_max: Cafe24Datetime;
+    use_mobile_app: Cafe24Enum;
+    plusapp_member_join: Cafe24Enum;
     };
   }
   export interface CreateADistributionGroupInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     * 최소값: [1]
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 최소값: [1]
+      */ 
     shop_no?: any;
     /**
-     * @description
-     * 발송그룹명
-     *
-     * @required
-     *
-     * 최대글자수 : [40자]
-     */
+      * @description
+      * 발송그룹명
+      * 
+      * @required
+      * 
+      * 최대글자수 : [40자]
+      */ 
     group_name: any;
     /**
-     * @description
-     * 발송그룹 설명
-     *
-     * 최대글자수 : [255자]
-     */
+      * @description
+      * 발송그룹 설명
+      * 
+      * 최대글자수 : [255자]
+      */ 
     group_description?: any;
     /**
-     * @description
-     * 뉴스메일 수신여부
-     *
-     * T : 수신허용
-     * F : 수신안함
-     * D : 절대수신안함
-     *
-     *
-     */
+      * @description
+      * 뉴스메일 수신여부
+      * 
+      * T : 수신허용
+      * F : 수신안함
+      * D : 절대수신안함
+      * 
+      * 
+      */ 
     news_mail?: any;
     /**
-     * @description
-     * SMS 수신여부
-     *
-     * T : 수신
-     * F : 수신안함
-     *
-     *
-     */
+      * @description
+      * SMS 수신여부
+      * 
+      * T : 수신
+      * F : 수신안함
+      * 
+      * 
+      */ 
     sms?: any;
     /**
-     * @description
-     * 회원등급번호
-     *
-     * 최소값: [1]
-     */
+      * @description
+      * 회원등급번호
+      * 
+      * 최소값: [1]
+      */ 
     member_group_no?: any;
     /**
-     * @description
-     * 회원구분
-     *
-     * EC 일본, 베트남 버전에서는 사용할 수 없음.
-     *
-     * p : 개인
-     * c : 사업자
-     * f : 외국인
-     *
-     *
-     */
+      * @description
+      * 회원구분
+      * 
+      * EC 일본, 베트남 버전에서는 사용할 수 없음.
+      * 
+      * p : 개인
+      * c : 사업자
+      * f : 외국인
+      * 
+      * 
+      */ 
     member_class?: any;
     /**
-     * @description
-     * 회원타입
-     *
-     * vip : 특별관리회원
-     * poor : 불량회원
-     *
-     *
-     */
+      * @description
+      * 회원타입
+      * 
+      * vip : 특별관리회원
+      * poor : 불량회원
+      * 
+      * 
+      */ 
     member_type?: any;
     /**
-     * @description
-     * 가입경로
-     *
-     * P : PC
-     * M : 모바일
-     *
-     *
-     */
+      * @description
+      * 가입경로
+      * 
+      * P : PC
+      * M : 모바일
+      * 
+      * 
+      */ 
     join_path?: any;
     /**
-     * @description
-     * 유입경로
-     *
-     *
-     */
+      * @description
+      * 유입경로
+      * 
+      * 
+      */ 
     inflow_path?: any;
     /**
-     * @description
-     * 유입경로 상세정보
-     *
-     *
-     */
+      * @description
+      * 유입경로 상세정보
+      * 
+      * 
+      */ 
     inflow_path_detail?: any;
     /**
-     * @description
-     * 검색날짜 유형
-     *
-     * join : 회원가입일
-     * birthday : 생일
-     * wedding : 결혼기념일
-     * partner : 배우자생일
-     *
-     *
-     */
+      * @description
+      * 검색날짜 유형
+      * 
+      * join : 회원가입일
+      * birthday : 생일
+      * wedding : 결혼기념일
+      * partner : 배우자생일
+      * 
+      * 
+      */ 
     date_type?: any;
     /**
-     * @description
-     * 검색 시작일
-     *
-     *
-     */
+      * @description
+      * 검색 시작일
+      * 
+      * 
+      */ 
     start_date?: any;
     /**
-     * @description
-     * 검색 종료일
-     *
-     *
-     */
+      * @description
+      * 검색 종료일
+      * 
+      * 
+      */ 
     end_date?: any;
     /**
-     * @description
-     * 양력여부
-     *
-     * T : 양력
-     * F : 음력
-     *
-     *
-     */
+      * @description
+      * 양력여부
+      * 
+      * T : 양력
+      * F : 음력
+      * 
+      * 
+      */ 
     solar_calendar?: any;
     /**
-     * @description
-     * 나이 검색 최소값
-     *
-     * 최소: [1]~최대: [99]
-     */
+      * @description
+      * 나이 검색 최소값
+      * 
+      * 최소: [1]~최대: [99]
+      */ 
     age_min?: any;
     /**
-     * @description
-     * 나이 검색 최대값
-     *
-     * 최소: [1]~최대: [99]
-     */
+      * @description
+      * 나이 검색 최대값
+      * 
+      * 최소: [1]~최대: [99]
+      */ 
     age_max?: any;
     /**
-     * @description
-     * 성별
-     *
-     * M : 남자
-     * F : 여자
-     *
-     *
-     */
+      * @description
+      * 성별
+      * 
+      * M : 남자
+      * F : 여자
+      * 
+      * 
+      */ 
     gender?: any;
     /**
-     * @description
-     * 적립금 검색 최소값
-     *
-     * 최소: [0]~최대: [999999999]
-     */
+      * @description
+      * 적립금 검색 최소값
+      * 
+      * 최소: [0]~최대: [999999999]
+      */ 
     available_points_min?: any;
     /**
-     * @description
-     * 적립금 검색 최대값
-     *
-     * 최소: [0]~최대: [999999999]
-     */
+      * @description
+      * 적립금 검색 최대값
+      * 
+      * 최소: [0]~최대: [999999999]
+      */ 
     available_points_max?: any;
     /**
-     * @description
-     * 모바일앱 사용여부
-     *
-     * T : 사용
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 모바일앱 사용여부
+      * 
+      * T : 사용
+      * F : 사용안함
+      * 
+      * 
+      */ 
     use_mobile_app?: any;
     /**
-     * @description
-     * 플러스앱 경로 가입회원 여부
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 플러스앱 경로 가입회원 여부
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     plusapp_member_join?: any;
   }
 
   export interface CreateADistributionGroupOutput {
-    recipientgroup: {
-      shop_no: number;
-      group_no: number;
-      group_name: string;
-      group_description: string;
-      created_date: Cafe24Datetime;
-      group_member_count: number;
-      news_mail: Cafe24Enum;
-      sms: Cafe24Enum;
-      member_group_no: number;
-      member_class: string;
-      member_type: string;
-      join_path: Cafe24Enum;
-      inflow_path: string;
-      inflow_path_detail: string;
-      date_type: string;
-      start_date: Cafe24Date;
-      end_date: Cafe24Date;
-      solar_calendar: string;
-      age_min: number;
-      age_max: number;
-      gender: Cafe24Enum;
-      available_points_min: string;
-      available_points_max: Cafe24Datetime;
-      use_mobile_app: Cafe24Enum;
-      plusapp_member_join: Cafe24Enum;
+    recipientgroup: { 
+    shop_no: number;
+    group_no: number;
+    group_name: string;
+    group_description: string;
+    created_date: Cafe24Datetime;
+    group_member_count: number;
+    news_mail: Cafe24Enum;
+    sms: Cafe24Enum;
+    member_group_no: number;
+    member_class: string;
+    member_type: string;
+    join_path: Cafe24Enum;
+    inflow_path: string;
+    inflow_path_detail: string;
+    date_type: string;
+    start_date: Cafe24Date;
+    end_date: Cafe24Date;
+    solar_calendar: string;
+    age_min: number;
+    age_max: number;
+    gender: Cafe24Enum;
+    available_points_min: string;
+    available_points_max: Cafe24Datetime;
+    use_mobile_app: Cafe24Enum;
+    plusapp_member_join: Cafe24Enum;
     };
   }
   export interface EditDistributionGroupInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     * 최소값: [1]
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 최소값: [1]
+      */ 
     shop_no?: any;
     /**
-     * @description
-     * 발송그룹 번호
-     *
-     * @required
-     *
-     * 최소값: [1]
-     */
+      * @description
+      * 발송그룹 번호
+      * 
+      * @required
+      * 
+      * 최소값: [1]
+      */ 
     group_no: any;
     /**
-     * @description
-     * 발송그룹명
-     *
-     * @required
-     *
-     * 최대글자수 : [40자]
-     */
+      * @description
+      * 발송그룹명
+      * 
+      * @required
+      * 
+      * 최대글자수 : [40자]
+      */ 
     group_name: any;
     /**
-     * @description
-     * 발송그룹 설명
-     *
-     * 최대글자수 : [255자]
-     */
+      * @description
+      * 발송그룹 설명
+      * 
+      * 최대글자수 : [255자]
+      */ 
     group_description?: any;
     /**
-     * @description
-     * 뉴스메일 수신여부
-     *
-     * T : 수신허용
-     * F : 수신안함
-     * D : 절대수신안함
-     *
-     *
-     */
+      * @description
+      * 뉴스메일 수신여부
+      * 
+      * T : 수신허용
+      * F : 수신안함
+      * D : 절대수신안함
+      * 
+      * 
+      */ 
     news_mail?: any;
     /**
-     * @description
-     * SMS 수신여부
-     *
-     * T : 수신
-     * F : 수신안함
-     *
-     *
-     */
+      * @description
+      * SMS 수신여부
+      * 
+      * T : 수신
+      * F : 수신안함
+      * 
+      * 
+      */ 
     sms?: any;
     /**
-     * @description
-     * 회원등급번호
-     *
-     * 최소값: [1]
-     */
+      * @description
+      * 회원등급번호
+      * 
+      * 최소값: [1]
+      */ 
     member_group_no?: any;
     /**
-     * @description
-     * 회원구분
-     *
-     * EC 일본, 베트남 버전에서는 사용할 수 없음.
-     *
-     * p : 개인
-     * c : 사업자
-     * f : 외국인
-     *
-     *
-     */
+      * @description
+      * 회원구분
+      * 
+      * EC 일본, 베트남 버전에서는 사용할 수 없음.
+      * 
+      * p : 개인
+      * c : 사업자
+      * f : 외국인
+      * 
+      * 
+      */ 
     member_class?: any;
     /**
-     * @description
-     * 회원타입
-     *
-     * vip : 특별관리회원
-     * poor : 불량회원
-     *
-     *
-     */
+      * @description
+      * 회원타입
+      * 
+      * vip : 특별관리회원
+      * poor : 불량회원
+      * 
+      * 
+      */ 
     member_type?: any;
     /**
-     * @description
-     * 가입경로
-     *
-     * P : PC
-     * M : 모바일
-     *
-     *
-     */
+      * @description
+      * 가입경로
+      * 
+      * P : PC
+      * M : 모바일
+      * 
+      * 
+      */ 
     join_path?: any;
     /**
-     * @description
-     * 유입경로
-     *
-     *
-     */
+      * @description
+      * 유입경로
+      * 
+      * 
+      */ 
     inflow_path?: any;
     /**
-     * @description
-     * 유입경로 상세정보
-     *
-     *
-     */
+      * @description
+      * 유입경로 상세정보
+      * 
+      * 
+      */ 
     inflow_path_detail?: any;
     /**
-     * @description
-     * 검색날짜 유형
-     *
-     * join : 회원가입일
-     * birthday : 생일
-     * wedding : 결혼기념일
-     * partner : 배우자생일
-     *
-     *
-     */
+      * @description
+      * 검색날짜 유형
+      * 
+      * join : 회원가입일
+      * birthday : 생일
+      * wedding : 결혼기념일
+      * partner : 배우자생일
+      * 
+      * 
+      */ 
     date_type?: any;
     /**
-     * @description
-     * 검색 시작일
-     *
-     *
-     */
+      * @description
+      * 검색 시작일
+      * 
+      * 
+      */ 
     start_date?: any;
     /**
-     * @description
-     * 검색 종료일
-     *
-     *
-     */
+      * @description
+      * 검색 종료일
+      * 
+      * 
+      */ 
     end_date?: any;
     /**
-     * @description
-     * 양력여부
-     *
-     * T : 양력
-     * F : 음력
-     *
-     *
-     */
+      * @description
+      * 양력여부
+      * 
+      * T : 양력
+      * F : 음력
+      * 
+      * 
+      */ 
     solar_calendar?: any;
     /**
-     * @description
-     * 나이 검색 최소값
-     *
-     * 최소: [1]~최대: [99]
-     */
+      * @description
+      * 나이 검색 최소값
+      * 
+      * 최소: [1]~최대: [99]
+      */ 
     age_min?: any;
     /**
-     * @description
-     * 나이 검색 최대값
-     *
-     * 최소: [1]~최대: [99]
-     */
+      * @description
+      * 나이 검색 최대값
+      * 
+      * 최소: [1]~최대: [99]
+      */ 
     age_max?: any;
     /**
-     * @description
-     * 성별
-     *
-     * M : 남자
-     * F : 여자
-     *
-     *
-     */
+      * @description
+      * 성별
+      * 
+      * M : 남자
+      * F : 여자
+      * 
+      * 
+      */ 
     gender?: any;
     /**
-     * @description
-     * 적립금 검색 최소값
-     *
-     * 최소: [0]~최대: [999999999]
-     */
+      * @description
+      * 적립금 검색 최소값
+      * 
+      * 최소: [0]~최대: [999999999]
+      */ 
     available_points_min?: any;
     /**
-     * @description
-     * 적립금 검색 최대값
-     *
-     * 최소: [0]~최대: [999999999]
-     */
+      * @description
+      * 적립금 검색 최대값
+      * 
+      * 최소: [0]~최대: [999999999]
+      */ 
     available_points_max?: any;
     /**
-     * @description
-     * 모바일앱 사용여부
-     *
-     * T : 사용
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 모바일앱 사용여부
+      * 
+      * T : 사용
+      * F : 사용안함
+      * 
+      * 
+      */ 
     use_mobile_app?: any;
     /**
-     * @description
-     * 플러스앱 경로 가입회원 여부
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 플러스앱 경로 가입회원 여부
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     plusapp_member_join?: any;
   }
 
   export interface EditDistributionGroupOutput {
-    recipientgroup: {
-      shop_no: number;
-      group_no: number;
-      group_name: string;
-      group_description: string;
-      created_date: Cafe24Datetime;
-      group_member_count: number;
-      news_mail: Cafe24Enum;
-      sms: Cafe24Enum;
-      member_group_no: number;
-      member_class: string;
-      member_type: string;
-      join_path: Cafe24Enum;
-      inflow_path: string;
-      inflow_path_detail: string;
-      date_type: string;
-      start_date: Cafe24Date;
-      end_date: Cafe24Date;
-      solar_calendar: string;
-      age_min: number;
-      age_max: number;
-      gender: Cafe24Enum;
-      available_points_min: string;
-      available_points_max: Cafe24Datetime;
-      use_mobile_app: Cafe24Enum;
-      plusapp_member_join: Cafe24Enum;
+    recipientgroup: { 
+    shop_no: number;
+    group_no: number;
+    group_name: string;
+    group_description: string;
+    created_date: Cafe24Datetime;
+    group_member_count: number;
+    news_mail: Cafe24Enum;
+    sms: Cafe24Enum;
+    member_group_no: number;
+    member_class: string;
+    member_type: string;
+    join_path: Cafe24Enum;
+    inflow_path: string;
+    inflow_path_detail: string;
+    date_type: string;
+    start_date: Cafe24Date;
+    end_date: Cafe24Date;
+    solar_calendar: string;
+    age_min: number;
+    age_max: number;
+    gender: Cafe24Enum;
+    available_points_min: string;
+    available_points_max: Cafe24Datetime;
+    use_mobile_app: Cafe24Enum;
+    plusapp_member_join: Cafe24Enum;
     };
   }
   export interface DeleteDistributionGroupInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     * 최소값: [1]
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 최소값: [1]
+      */ 
     shop_no?: any;
     /**
-     * @description
-     * 발송그룹 번호
-     *
-     * @required
-     *
-     * 최소값: [1]
-     */
+      * @description
+      * 발송그룹 번호
+      * 
+      * @required
+      * 
+      * 최소값: [1]
+      */ 
     group_no: any;
   }
 
   export interface DeleteDistributionGroupOutput {
-    recipientgroup: {
-      shop_no: number;
-      group_no: number;
+    recipientgroup: { 
+    shop_no: number;
+    group_no: number;
     };
   }
 
@@ -901,7 +902,7 @@ declare module 'cafe24api-client' {
      */
     retrieveDistributionGroupList(
       input: RetrieveDistributionGroupListInput,
-      options?: RequestOptions<RetrieveDistributionGroupListInput>,
+      options?: RequestOptions<RetrieveDistributionGroupListOutput['recipientgroups'][number]>,
     ): Promise<AxiosResponse<RetrieveDistributionGroupListOutput>>;
     /**
      * @description
@@ -944,7 +945,7 @@ declare module 'cafe24api-client' {
      */
     retrieveDistributionGroupDetails(
       input: RetrieveDistributionGroupDetailsInput,
-      options?: RequestOptions<RetrieveDistributionGroupDetailsInput>,
+      options?: RequestOptions<RetrieveDistributionGroupDetailsOutput['recipientgroup']>,
     ): Promise<AxiosResponse<RetrieveDistributionGroupDetailsOutput>>;
     /**
      * @description
@@ -987,7 +988,7 @@ declare module 'cafe24api-client' {
      */
     createADistributionGroup(
       input: CreateADistributionGroupInput,
-      options?: RequestOptions<CreateADistributionGroupInput>,
+      options?: RequestOptions<CreateADistributionGroupOutput['recipientgroup']>,
     ): Promise<AxiosResponse<CreateADistributionGroupOutput>>;
     /**
      * @description
@@ -1030,7 +1031,7 @@ declare module 'cafe24api-client' {
      */
     editDistributionGroup(
       input: EditDistributionGroupInput,
-      options?: RequestOptions<EditDistributionGroupInput>,
+      options?: RequestOptions<EditDistributionGroupOutput['recipientgroup']>,
     ): Promise<AxiosResponse<EditDistributionGroupOutput>>;
     /**
      * @description
@@ -1050,7 +1051,7 @@ declare module 'cafe24api-client' {
      */
     deleteDistributionGroup(
       input: DeleteDistributionGroupInput,
-      options?: RequestOptions<DeleteDistributionGroupInput>,
+      options?: RequestOptions<DeleteDistributionGroupOutput['recipientgroup']>,
     ): Promise<AxiosResponse<DeleteDistributionGroupOutput>>;
   }
 }

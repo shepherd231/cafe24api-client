@@ -5,382 +5,383 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   /**
    * @description
-   *
-   *
+   * 
+   * 
    * 메인분류 상품(Mains products)은 상품 메인진열의 순서에 관한 메인분류의 관계형 리소스입니다
    */
   export interface MainsProducts {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
+      * 
+      * 
+      */ 
     shop_no: any;
     /**
-     * @description
-     * 상품번호
-     *
-     *
-     */
+      * @description
+      * 상품번호
+      * 
+      * 
+      */ 
     product_no: any;
     /**
-     * @description
-     * 상품명
-     *
-     *
-     */
+      * @description
+      * 상품명
+      * 
+      * 
+      */ 
     product_name: any;
     /**
-     * @description
-     * 제조사
-     *
-     *
-     */
+      * @description
+      * 제조사
+      * 
+      * 
+      */ 
     manufacturer_name: any;
     /**
-     * @description
-     * 원산지
-     *
-     *
-     */
+      * @description
+      * 원산지
+      * 
+      * 
+      */ 
     origin_place_value: any;
     /**
-     * @description
-     * 상품 소비자가
-     *
-     *
-     */
+      * @description
+      * 상품 소비자가
+      * 
+      * 
+      */ 
     retail_price: any;
     /**
-     * @description
-     * 판매가
-     *
-     *
-     */
+      * @description
+      * 판매가
+      * 
+      * 
+      */ 
     price: any;
     /**
-     * @description
-     * 무이자할부 기간
-     *
-     *
-     */
+      * @description
+      * 무이자할부 기간
+      * 
+      * 
+      */ 
     interest_free_period: any;
     /**
-     * @description
-     * 영문 상품명
-     *
-     *
-     */
+      * @description
+      * 영문 상품명
+      * 
+      * 
+      */ 
     eng_product_name: any;
     /**
-     * @description
-     * 자체상품 코드
-     *
-     *
-     */
+      * @description
+      * 자체상품 코드
+      * 
+      * 
+      */ 
     custom_product_code: any;
     /**
-     * @description
-     * 적립금
-     *
-     *
-     */
+      * @description
+      * 적립금
+      * 
+      * 
+      */ 
     point_amount: any;
     /**
-     * @description
-     * 브랜드 명
-     *
-     *
-     */
+      * @description
+      * 브랜드 명
+      * 
+      * 
+      */ 
     brand_name: any;
     /**
-     * @description
-     * 모델명
-     *
-     *
-     */
+      * @description
+      * 모델명
+      * 
+      * 
+      */ 
     model_name: any;
     /**
-     * @description
-     * 상품 판매가
-     *
-     *
-     */
+      * @description
+      * 상품 판매가
+      * 
+      * 
+      */ 
     price_excluding_tax: any;
     /**
-     * @description
-     * 세액
-     *
-     *
-     */
+      * @description
+      * 세액
+      * 
+      * 
+      */ 
     tax: any;
     /**
-     * @description
-     * 상품코드
-     *
-     *
-     */
+      * @description
+      * 상품코드
+      * 
+      * 
+      */ 
     product_code: any;
     /**
-     * @description
-     * 상품 간략 설명
-     *
-     *
-     */
+      * @description
+      * 상품 간략 설명
+      * 
+      * 
+      */ 
     simple_description: any;
     /**
-     * @description
-     * 상품요약설명
-     *
-     *
-     */
+      * @description
+      * 상품요약설명
+      * 
+      * 
+      */ 
     summary_description: any;
     /**
-     * @description
-     * 공급사명
-     *
-     *
-     */
+      * @description
+      * 공급사명
+      * 
+      * 
+      */ 
     supplier_name: any;
     /**
-     * @description
-     * 제조일자
-     *
-     *
-     */
+      * @description
+      * 제조일자
+      * 
+      * 
+      */ 
     made_date: any;
     /**
-     * @description
-     * 사용후기 갯수
-     *
-     *
-     */
+      * @description
+      * 사용후기 갯수
+      * 
+      * 
+      */ 
     review_count: any;
     /**
-     * @description
-     * 유효기간
-     *
-     *
-     */
+      * @description
+      * 유효기간
+      * 
+      * 
+      */ 
     expiration_date: any;
     /**
-     * @description
-     * 쿠폰적용가
-     *
-     *
-     */
+      * @description
+      * 쿠폰적용가
+      * 
+      * 
+      */ 
     coupon_discounted_price: any;
     /**
-     * @description
-     * 트렌드 명
-     *
-     *
-     */
+      * @description
+      * 트렌드 명
+      * 
+      * 
+      */ 
     trend_name: any;
     /**
-     * @description
-     * 배송정보
-     *
-     *
-     */
+      * @description
+      * 배송정보
+      * 
+      * 
+      */ 
     shipping_scope: any;
     /**
-     * @description
-     * 배송비 타입
-     *
-     * T : 배송비 무료
-     * R : 고정배송비 사용
-     * M : 구매 금액에 따른 부과
-     * D : 구매 금액별 차등 배송료 사용
-     * W : 상품 무게별 차등 배송료 사용
-     * C : 상품 수량별 차등 배송료 사용
-     * N : 상품 수량에 비례하여 배송료 부과
-     *
-     *
-     */
+      * @description
+      * 배송비 타입
+      * 
+      * T : 배송비 무료
+      * R : 고정배송비 사용
+      * M : 구매 금액에 따른 부과
+      * D : 구매 금액별 차등 배송료 사용
+      * W : 상품 무게별 차등 배송료 사용
+      * C : 상품 수량별 차등 배송료 사용
+      * N : 상품 수량에 비례하여 배송료 부과
+      * 
+      * 
+      */ 
     shipping_fee_type: any;
     /**
-     * @description
-     * 구간별 배송비
-     *
-     *
-     */
+      * @description
+      * 구간별 배송비
+      * 
+      * 
+      */ 
     shipping_rates: any;
     /**
-     * @description
-     * 배송비
-     *
-     *
-     */
+      * @description
+      * 배송비
+      * 
+      * 
+      */ 
     shipping_fee: any;
     /**
-     * @description
-     * 할인판매가
-     *
-     *
-     */
+      * @description
+      * 할인판매가
+      * 
+      * 
+      */ 
     discount_price: any;
     /**
-     * @description
-     * 최적할인가
-     *
-     *
-     */
+      * @description
+      * 최적할인가
+      * 
+      * 
+      */ 
     optimum_discount_price: any;
     /**
-     * @description
-     * 배송방법
-     *
-     *
-     */
+      * @description
+      * 배송방법
+      * 
+      * 
+      */ 
     shipping_method: any;
     /**
-     * @description
-     * 할인 기간
-     *
-     *
-     */
+      * @description
+      * 할인 기간
+      * 
+      * 
+      */ 
     promotion_period: any;
     /**
-     * @description
-     * 상품색상
-     *
-     *
-     */
+      * @description
+      * 상품색상
+      * 
+      * 
+      */ 
     color: any;
     /**
-     * @description
-     * 상품 추가설명 번역정보
-     *
-     *
-     */
+      * @description
+      * 상품 추가설명 번역정보
+      * 
+      * 
+      */ 
     translated_additional_description: any;
     /**
-     * @description
-     * 재고수량
-     *
-     *
-     */
+      * @description
+      * 재고수량
+      * 
+      * 
+      */ 
     stock_quantity: any;
     /**
-     * @description
-     * 상품문의(수)
-     *
-     *
-     */
+      * @description
+      * 상품문의(수)
+      * 
+      * 
+      */ 
     question_count: any;
     /**
-     * @description
-     * 상품자유게시판(수)
-     *
-     *
-     */
+      * @description
+      * 상품자유게시판(수)
+      * 
+      * 
+      */ 
     product_article_count: any;
   }
 
   export interface RetrieveAListOfProductsInMainCategoryInput {
     /**
-     * @description
-     * 모바일 설정값 조회 여부
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 모바일 설정값 조회 여부
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     mobile?: any;
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shop_no?: any;
     /**
-     * @description
-     * 메인분류 번호
-     *
-     * @required
-     */
+      * @description
+      * 메인분류 번호
+      * 
+      * @required
+      */ 
     display_group: any;
     /**
-     * @description
-     * 조회결과 최대건수
-     *
-     * @default 100
-     *
-     * 최소: [1]~최대: [200]
-     */
+      * @description
+      * 조회결과 최대건수
+      * 
+      * @default 100
+      * 
+      * 최소: [1]~최대: [200]
+      */ 
     limit?: any;
     /**
-     * @description
-     * 조회결과 시작위치
-     *
-     * @default 0
-     *
-     * 최대값: [8000]
-     */
+      * @description
+      * 조회결과 시작위치
+      * 
+      * @default 0
+      * 
+      * 최대값: [8000]
+      */ 
     offset?: any;
   }
 
   export interface RetrieveAListOfProductsInMainCategoryOutput {
-    products: {
-      shop_no: number;
-      product_no: number;
-      product_name: string;
-      manufacturer_name: string;
-      origin_place_value: string;
-      retail_price: string;
-      price: Cafe24Datetime;
-      interest_free_period: string;
-      eng_product_name: string;
-      custom_product_code: string;
-      point_amount: {
-        payment_method: string;
-        type: Cafe24Enum;
-        value: string;
-        rate: string;
-      }[];
-      brand_name: string;
-      model_name: string;
-      price_excluding_tax: Cafe24Datetime;
-      tax: Cafe24Datetime;
-      product_code: string;
-      simple_description: string;
-      summary_description: string;
-      supplier_name: string;
-      made_date: string;
-      review_count: number;
-      expiration_date: {
-        start_date: Cafe24Date;
-        end_date: Cafe24Date;
-      };
-      coupon_discounted_price: string;
-      trend_name: string;
-      shipping_scope: string;
-      shipping_fee_type: Cafe24Enum;
-      shipping_rates: string;
-      shipping_fee: Cafe24Datetime;
-      discount_price: string;
-      optimum_discount_price: string;
-      shipping_method: string;
-      promotion_period: {
-        start_date: Cafe24Datetime;
-        end_date: Cafe24Datetime;
-        dc_price: Cafe24Datetime;
-      };
-      color: Cafe24Datetime[];
-      translated_additional_description: string;
-      stock_quantity: number;
-      question_count: number;
-      product_article_count: number;
+    products: { 
+    shop_no: number;
+    product_no: number;
+    product_name: string;
+    manufacturer_name: string;
+    origin_place_value: string;
+    retail_price: string;
+    price: Cafe24Datetime;
+    interest_free_period: string;
+    eng_product_name: string;
+    custom_product_code: string;
+    point_amount: { 
+    payment_method: string;
+    type: Cafe24Enum;
+    value: string;
+    rate: string;
+    }[];
+    brand_name: string;
+    model_name: string;
+    price_excluding_tax: Cafe24Datetime;
+    tax: Cafe24Datetime;
+    product_code: string;
+    simple_description: string;
+    summary_description: string;
+    supplier_name: string;
+    made_date: string;
+    review_count: number;
+    expiration_date: { 
+    start_date: Cafe24Date;
+    end_date: Cafe24Date;
+    };
+    coupon_discounted_price: string;
+    trend_name: string;
+    shipping_scope: string;
+    shipping_fee_type: Cafe24Enum;
+    shipping_rates: string;
+    shipping_fee: Cafe24Datetime;
+    discount_price: string;
+    optimum_discount_price: string;
+    shipping_method: string;
+    promotion_period: { 
+    start_date: Cafe24Datetime;
+    end_date: Cafe24Datetime;
+    dc_price: Cafe24Datetime;
+    };
+    color: Cafe24Datetime[];
+    translated_additional_description: string;
+    stock_quantity: number;
+    question_count: number;
+    product_article_count: number;
     }[];
   }
 
@@ -532,7 +533,7 @@ declare module 'cafe24api-client' {
      */
     retrieveAListOfProductsInMainCategory(
       input: RetrieveAListOfProductsInMainCategoryInput,
-      options?: RequestOptions<RetrieveAListOfProductsInMainCategoryInput>,
+      options?: RequestOptions<RetrieveAListOfProductsInMainCategoryOutput['products'][number]>,
     ): Promise<AxiosResponse<RetrieveAListOfProductsInMainCategoryOutput>>;
   }
 }

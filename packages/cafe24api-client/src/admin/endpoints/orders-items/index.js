@@ -1,3 +1,4 @@
+
 export default (cls) => {
   cls.prototype.retrieveAListOfOrderItems = async function (input, options) {
     return this.createRequest(
@@ -27,7 +28,7 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.updateAnOrderItem_1 = async function (input, options) {
+  cls.prototype.updateAnOrderItem1 = async function (input, options) {
     return this.createRequest(
       'PUT',
       `/api/v2/admin/orders/${input['order_id']}/items/{order_item_code}`,
@@ -44,4 +45,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

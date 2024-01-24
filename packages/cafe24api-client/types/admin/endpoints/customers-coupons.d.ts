@@ -5,242 +5,243 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   /**
    * @description
-   *
-   *
+   * 
+   * 
    * 회원 쿠폰(Customers coupons)은 특정 회원이 보유한 쿠폰에 관한 기능입니다.
    * 회원에게 발급된 쿠폰을 조회하거나 삭제할 수 있습니다.
    */
   export interface CustomersCoupons {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 
+      */ 
     shop_no: any;
     /**
-     * @description
-     * 쿠폰번호
-     *
-     *
-     */
+      * @description
+      * 쿠폰번호
+      * 
+      * 
+      */ 
     coupon_no: any;
     /**
-     * @description
-     * 쿠폰 발급번호
-     *
-     *
-     */
+      * @description
+      * 쿠폰 발급번호
+      * 
+      * 
+      */ 
     issue_no: any;
     /**
-     * @description
-     * 쿠폰명
-     *
-     *
-     */
+      * @description
+      * 쿠폰명
+      * 
+      * 
+      */ 
     coupon_name: any;
     /**
-     * @description
-     * 사용가능 구매 금액 유형
-     *
-     * U : 제한 없음
-     * O : 주문 금액 기준
-     * P : 상품 금액 기준
-     *
-     *
-     */
+      * @description
+      * 사용가능 구매 금액 유형
+      * 
+      * U : 제한 없음
+      * O : 주문 금액 기준
+      * P : 상품 금액 기준
+      * 
+      * 
+      */ 
     available_price_type: any;
     /**
-     * @description
-     * 사용가능 구매 금액 유형 상세
-     *
-     * U : 모든 상품의 주문 금액
-     * I : 쿠폰 적용 상품의 주문 금액
-     *
-     *
-     */
+      * @description
+      * 사용가능 구매 금액 유형 상세
+      * 
+      * U : 모든 상품의 주문 금액
+      * I : 쿠폰 적용 상품의 주문 금액
+      * 
+      * 
+      */ 
     available_price_type_detail: any;
     /**
-     * @description
-     * 사용가능 구매 금액
-     *
-     *
-     */
+      * @description
+      * 사용가능 구매 금액
+      * 
+      * 
+      */ 
     available_min_price: any;
     /**
-     * @description
-     * 사용가능 결제수단
-     *
-     * all : 제한없음
-     * R : 무통장입금
-     * E : 가상계좌
-     * C : 신용카드
-     * A : 계좌이체
-     * H : 휴대폰
-     * M : 적립금
-     * K : 케이페이
-     * P : 페이나우
-     * N : 페이코
-     * O : 카카오페이
-     * S : 스마일페이
-     * V : 네이버페이
-     * B : 편의점
-     * D : 토스
-     *
-     *
-     */
+      * @description
+      * 사용가능 결제수단
+      * 
+      * all : 제한없음
+      * R : 무통장입금
+      * E : 가상계좌
+      * C : 신용카드
+      * A : 계좌이체
+      * H : 휴대폰
+      * M : 적립금
+      * K : 케이페이
+      * P : 페이나우
+      * N : 페이코
+      * O : 카카오페이
+      * S : 스마일페이
+      * V : 네이버페이
+      * B : 편의점
+      * D : 토스
+      * 
+      * 
+      */ 
     available_payment_methods: any;
     /**
-     * @description
-     * 혜택 구분
-     *
-     * A : 할인금액
-     * B : 할인율
-     * C : 적립금액
-     * D : 적립율
-     * E : 기본배송비 할인(전액할인)
-     * I : 기본배송비 할인(할인율)
-     * H : 기본배송비 할인(할인금액)
-     * F : 즉시적립
-     * G : 예치금
-     *
-     *
-     */
+      * @description
+      * 혜택 구분
+      * 
+      * A : 할인금액
+      * B : 할인율
+      * C : 적립금액
+      * D : 적립율
+      * E : 기본배송비 할인(전액할인)
+      * I : 기본배송비 할인(할인율)
+      * H : 기본배송비 할인(할인금액)
+      * F : 즉시적립
+      * G : 예치금
+      * 
+      * 
+      */ 
     benefit_type: any;
     /**
-     * @description
-     * 혜택 금액
-     *
-     *
-     */
+      * @description
+      * 혜택 금액
+      * 
+      * 
+      */ 
     benefit_price: any;
     /**
-     * @description
-     * 혜택 비율
-     *
-     *
-     */
+      * @description
+      * 혜택 비율
+      * 
+      * 
+      */ 
     benefit_percentage: any;
     /**
-     * @description
-     * 혜택 비율 절사 단위
-     *
-     *
-     */
+      * @description
+      * 혜택 비율 절사 단위
+      * 
+      * 
+      */ 
     benefit_percentage_round_unit: any;
     /**
-     * @description
-     * 혜택 비율 최대 금액
-     *
-     *
-     */
+      * @description
+      * 혜택 비율 최대 금액
+      * 
+      * 
+      */ 
     benefit_percentage_max_price: any;
     /**
-     * @description
-     * 예치금 지급 금액
-     *
-     *
-     */
+      * @description
+      * 예치금 지급 금액
+      * 
+      * 
+      */ 
     credit_amount: any;
     /**
-     * @description
-     * 발행일
-     *
-     *
-     */
+      * @description
+      * 발행일
+      * 
+      * 
+      */ 
     issued_date: any;
     /**
-     * @description
-     * 사용 기간 시작 일시
-     *
-     *
-     */
+      * @description
+      * 사용 기간 시작 일시
+      * 
+      * 
+      */ 
     available_begin_datetime: any;
     /**
-     * @description
-     * 사용 기간 종료 일시
-     *
-     *
-     */
+      * @description
+      * 사용 기간 종료 일시
+      * 
+      * 
+      */ 
     available_end_datetime: any;
   }
 
   export interface RetrieveAListOfCustomerCouponsInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shop_no?: any;
     /**
-     * @description
-     * 회원아이디
-     *
-     * @required
-     */
+      * @description
+      * 회원아이디
+      * 
+      * @required
+      */ 
     member_id: any;
     /**
-     * @description
-     * 조회결과 시작위치
-     *
-     * @default 0
-     *
-     * 최대값: [10000]
-     */
+      * @description
+      * 조회결과 시작위치
+      * 
+      * @default 0
+      * 
+      * 최대값: [10000]
+      */ 
     offset?: any;
     /**
-     * @description
-     * 조회결과 최대건수
-     *
-     * @default 10
-     *
-     * 최소: [1]~최대: [100]
-     */
+      * @description
+      * 조회결과 최대건수
+      * 
+      * @default 10
+      * 
+      * 최소: [1]~최대: [100]
+      */ 
     limit?: any;
   }
 
   export interface RetrieveAListOfCustomerCouponsOutput {
-    coupons: {
-      shop_no: number;
-      coupon_no: Cafe24Datetime;
-      issue_no: Cafe24Datetime;
-      coupon_name: string;
-      available_price_type: Cafe24Enum;
-      available_price_type_detail: any;
-      available_min_price: any;
-      available_payment_methods: Cafe24Enum[];
-      benefit_type: Cafe24Enum;
-      benefit_price: string;
-      benefit_percentage: any;
-      benefit_percentage_round_unit: any;
-      benefit_percentage_max_price: any;
-      credit_amount: any;
-      issued_date: Cafe24Datetime;
-      available_begin_datetime: Cafe24Datetime;
-      available_end_datetime: Cafe24Datetime;
+    coupons: { 
+    shop_no: number;
+    coupon_no: Cafe24Datetime;
+    issue_no: Cafe24Datetime;
+    coupon_name: string;
+    available_price_type: Cafe24Enum;
+    available_price_type_detail: any;
+    available_min_price: any;
+    available_payment_methods: Cafe24Enum[];
+    benefit_type: Cafe24Enum;
+    benefit_price: string;
+    benefit_percentage: any;
+    benefit_percentage_round_unit: any;
+    benefit_percentage_max_price: any;
+    credit_amount: any;
+    issued_date: Cafe24Datetime;
+    available_begin_datetime: Cafe24Datetime;
+    available_end_datetime: Cafe24Datetime;
     }[];
   }
   export interface RetrieveACountOfCustomerCouponsInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shop_no?: any;
     /**
-     * @description
-     * 회원아이디
-     *
-     * @required
-     */
+      * @description
+      * 회원아이디
+      * 
+      * @required
+      */ 
     member_id: any;
   }
 
@@ -249,42 +250,42 @@ declare module 'cafe24api-client' {
   }
   export interface DeleteACustomerCouponInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shop_no?: any;
     /**
-     * @description
-     * 회원아이디
-     *
-     * @required
-     */
+      * @description
+      * 회원아이디
+      * 
+      * @required
+      */ 
     member_id: any;
     /**
-     * @description
-     * 쿠폰번호
-     *
-     * @required
-     */
+      * @description
+      * 쿠폰번호
+      * 
+      * @required
+      */ 
     coupon_no: any;
     /**
-     * @description
-     * 쿠폰 발급번호
-     *
-     *
-     */
+      * @description
+      * 쿠폰 발급번호
+      * 
+      * 
+      */ 
     issue_no?: any;
   }
 
   export interface DeleteACustomerCouponOutput {
-    coupon: {
-      shop_no: number;
-      coupon_no: Cafe24Datetime;
-      issue_no: Cafe24Datetime[];
+    coupon: { 
+    shop_no: number;
+    coupon_no: Cafe24Datetime;
+    issue_no: Cafe24Datetime[];
     };
   }
 
@@ -350,7 +351,7 @@ declare module 'cafe24api-client' {
      */
     retrieveAListOfCustomerCoupons(
       input: RetrieveAListOfCustomerCouponsInput,
-      options?: RequestOptions<RetrieveAListOfCustomerCouponsInput>,
+      options?: RequestOptions<RetrieveAListOfCustomerCouponsOutput['coupons'][number]>,
     ): Promise<AxiosResponse<RetrieveAListOfCustomerCouponsOutput>>;
     /**
      * @description
@@ -367,7 +368,7 @@ declare module 'cafe24api-client' {
      */
     retrieveACountOfCustomerCoupons(
       input: RetrieveACountOfCustomerCouponsInput,
-      options?: RequestOptions<RetrieveACountOfCustomerCouponsInput>,
+      options?: RequestOptions<RetrieveACountOfCustomerCouponsOutput['count']>,
     ): Promise<AxiosResponse<RetrieveACountOfCustomerCouponsOutput>>;
     /**
      * @description
@@ -391,7 +392,7 @@ declare module 'cafe24api-client' {
      */
     deleteACustomerCoupon(
       input: DeleteACustomerCouponInput,
-      options?: RequestOptions<DeleteACustomerCouponInput>,
+      options?: RequestOptions<DeleteACustomerCouponOutput['coupon']>,
     ): Promise<AxiosResponse<DeleteACustomerCouponOutput>>;
   }
 }

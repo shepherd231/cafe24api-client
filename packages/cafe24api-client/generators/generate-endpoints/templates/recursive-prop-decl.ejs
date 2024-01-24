@@ -7,5 +7,10 @@
 <% } -%>
       */ 
 <% } -%>
-    <%= camelCase ? camelCase(property.name) : property.name %><%= property.required ? '' : '?'%>: <%- !property.subproperties ? property.type?.replace('non-primitive', 'any')?.replace('primitive', 'any') ?? 'any' : `{ \n${include('/recursive-prop-decl.ejs', { properties: property.subproperties, camelCase, })}${property.type === 'array' ? '    }[]' : '    }'}` -%>;
+    <%= formatName(property.name) %><%= writeIf(!property.required, '?') %>: <%- !property.subproperties ? formatPropertyType(property.type) : `{ \n${include('/recursive-prop-decl.ejs', { 
+      properties: property.subproperties, 
+      formatName: formatName,
+      writeIf: writeIf,
+      formatPropertyType: formatPropertyType,
+    })}    }${writeIf(property.type === 'array', '[]')}` -%>;
 <% } -%>

@@ -1,8 +1,6 @@
+
 export default (cls) => {
-  cls.prototype.retrieveAListOfPaymentGatewayContractDetails = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.retrieveAListOfPaymentGatewayContractDetails = async function (input, options) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/financials/paymentgateway`,
@@ -13,4 +11,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

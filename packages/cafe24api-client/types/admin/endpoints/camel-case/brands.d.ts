@@ -5,6 +5,7 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   /**
    * @description
    * 브랜드(Brands)는 쇼핑몰 상품의 &#34;브랜드&#34;를 나타냅니다.
@@ -13,176 +14,176 @@ declare module 'cafe24api-client' {
    */
   export interface Brands {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shopNo: any;
     /**
-     * @description
-     * 브랜드 코드
-     *
-     *
-     */
+      * @description
+      * 브랜드 코드
+      * 
+      * 
+      */ 
     brandCode: any;
     /**
-     * @description
-     * 브랜드 명
-     *
-     * 최대글자수 : [50자]
-     */
+      * @description
+      * 브랜드 명
+      * 
+      * 최대글자수 : [50자]
+      */ 
     brandName: any;
     /**
-     * @description
-     * 브랜드 사용여부
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 브랜드 사용여부
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     useBrand: any;
     /**
-     * @description
-     * 검색어 설정
-     *
-     * 최대글자수 : [200자]
-     */
+      * @description
+      * 검색어 설정
+      * 
+      * 최대글자수 : [200자]
+      */ 
     searchKeyword: any;
     /**
-     * @description
-     * 상품수
-     *
-     *
-     */
+      * @description
+      * 상품수
+      * 
+      * 
+      */ 
     productCount: any;
     /**
-     * @description
-     * 생성일
-     *
-     *
-     */
+      * @description
+      * 생성일
+      * 
+      * 
+      */ 
     createdDate: any;
   }
 
   export interface RetrieveAListOfBrandsInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 브랜드 코드
-     *
-     * ,(콤마)로 여러 건을 검색할 수 있다.
-     *
-     *
-     */
+      * @description
+      * 브랜드 코드
+      * 
+      * ,(콤마)로 여러 건을 검색할 수 있다.
+      * 
+      * 
+      */ 
     brandCode?: any;
     /**
-     * @description
-     * 브랜드 명
-     *
-     * ,(콤마)로 여러 건을 검색할 수 있다.
-     *
-     *
-     */
+      * @description
+      * 브랜드 명
+      * 
+      * ,(콤마)로 여러 건을 검색할 수 있다.
+      * 
+      * 
+      */ 
     brandName?: any;
     /**
-     * @description
-     * 브랜드 사용여부
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 브랜드 사용여부
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     useBrand?: any;
     /**
-     * @description
-     * 조회결과 시작위치
-     *
-     * @default 0
-     *
-     * 최대값: [8000]
-     */
+      * @description
+      * 조회결과 시작위치
+      * 
+      * @default 0
+      * 
+      * 최대값: [8000]
+      */ 
     offset?: any;
     /**
-     * @description
-     * 조회결과 최대건수
-     *
-     * 조회하고자 하는 최대 건수를 지정할 수 있음.
-     * 예) 10 입력시 10건만 표시함.
-     *
-     * @default 10
-     *
-     * 최소: [1]~최대: [100]
-     */
+      * @description
+      * 조회결과 최대건수
+      * 
+      * 조회하고자 하는 최대 건수를 지정할 수 있음.
+      * 예) 10 입력시 10건만 표시함.
+      * 
+      * @default 10
+      * 
+      * 최소: [1]~최대: [100]
+      */ 
     limit?: any;
   }
 
   export interface RetrieveAListOfBrandsOutput {
-    brands: {
-      shopNo: number;
-      brandCode: string;
-      brandName: string;
-      useBrand: Cafe24Enum;
-      searchKeyword: string;
-      productCount: number;
-      createdDate: Cafe24Datetime;
+    brands: { 
+    shopNo: number;
+    brandCode: string;
+    brandName: string;
+    useBrand: Cafe24Enum;
+    searchKeyword: string;
+    productCount: number;
+    createdDate: Cafe24Datetime;
     }[];
   }
   export interface RetrieveACountOfBrandsInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 브랜드 코드
-     *
-     * ,(콤마)로 여러 건을 검색할 수 있다.
-     *
-     *
-     */
+      * @description
+      * 브랜드 코드
+      * 
+      * ,(콤마)로 여러 건을 검색할 수 있다.
+      * 
+      * 
+      */ 
     brandCode?: any;
     /**
-     * @description
-     * 브랜드 명
-     *
-     * ,(콤마)로 여러 건을 검색할 수 있다.
-     *
-     *
-     */
+      * @description
+      * 브랜드 명
+      * 
+      * ,(콤마)로 여러 건을 검색할 수 있다.
+      * 
+      * 
+      */ 
     brandName?: any;
     /**
-     * @description
-     * 브랜드 사용여부
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 브랜드 사용여부
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     useBrand?: any;
   }
 
@@ -191,126 +192,126 @@ declare module 'cafe24api-client' {
   }
   export interface CreateABrandInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 브랜드 명
-     *
-     * @required
-     */
+      * @description
+      * 브랜드 명
+      * 
+      * @required
+      */ 
     brandName: any;
     /**
-     * @description
-     * 브랜드 사용여부
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     * @default T
-     *
-     *
-     */
+      * @description
+      * 브랜드 사용여부
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * @default T
+      * 
+      * 
+      */ 
     useBrand?: any;
     /**
-     * @description
-     * 검색어 설정
-     *
-     * 최대글자수 : [200자]
-     */
+      * @description
+      * 검색어 설정
+      * 
+      * 최대글자수 : [200자]
+      */ 
     searchKeyword?: any;
   }
 
   export interface CreateABrandOutput {
-    brand: {
-      shopNo: number;
-      brandCode: string;
-      brandName: string;
-      useBrand: Cafe24Enum;
-      searchKeyword: string;
-      createdDate: Cafe24Datetime;
+    brand: { 
+    shopNo: number;
+    brandCode: string;
+    brandName: string;
+    useBrand: Cafe24Enum;
+    searchKeyword: string;
+    createdDate: Cafe24Datetime;
     };
   }
   export interface UpdateABrandInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 브랜드 코드
-     *
-     * @required
-     *
-     * 형식 : [A-Z0-9]
-     * 글자수 최소: [8자]~최대: [8자]
-     */
+      * @description
+      * 브랜드 코드
+      * 
+      * @required
+      * 
+      * 형식 : [A-Z0-9]
+      * 글자수 최소: [8자]~최대: [8자]
+      */ 
     brandCode: any;
     /**
-     * @description
-     * 브랜드 명
-     *
-     *
-     */
+      * @description
+      * 브랜드 명
+      * 
+      * 
+      */ 
     brandName?: any;
     /**
-     * @description
-     * 브랜드 사용여부
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     * @default T
-     *
-     *
-     */
+      * @description
+      * 브랜드 사용여부
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * @default T
+      * 
+      * 
+      */ 
     useBrand?: any;
     /**
-     * @description
-     * 검색어 설정
-     *
-     * 최대글자수 : [200자]
-     */
+      * @description
+      * 검색어 설정
+      * 
+      * 최대글자수 : [200자]
+      */ 
     searchKeyword?: any;
   }
 
   export interface UpdateABrandOutput {
-    brand: {
-      shopNo: number;
-      brandCode: string;
-      brandName: string;
-      useBrand: Cafe24Enum;
-      searchKeyword: string;
-      createdDate: Cafe24Datetime;
+    brand: { 
+    shopNo: number;
+    brandCode: string;
+    brandName: string;
+    useBrand: Cafe24Enum;
+    searchKeyword: string;
+    createdDate: Cafe24Datetime;
     };
   }
   export interface DeleteABrandInput {
     /**
-     * @description
-     * 브랜드 코드
-     *
-     * @required
-     *
-     * 형식 : [A-Z0-9]
-     * 글자수 최소: [8자]~최대: [8자]
-     */
+      * @description
+      * 브랜드 코드
+      * 
+      * @required
+      * 
+      * 형식 : [A-Z0-9]
+      * 글자수 최소: [8자]~최대: [8자]
+      */ 
     brandCode: any;
   }
 
   export interface DeleteABrandOutput {
-    brand: {
-      brandCode: string;
+    brand: { 
+    brandCode: string;
     };
   }
 
@@ -350,7 +351,7 @@ declare module 'cafe24api-client' {
      */
     retrieveAListOfBrands(
       input: RetrieveAListOfBrandsInput,
-      options?: RequestOptions<RetrieveAListOfBrandsInput>,
+      options?: RequestOptions<RetrieveAListOfBrandsOutput['brands'][number]>,
     ): Promise<AxiosResponse<RetrieveAListOfBrandsOutput>>;
     /**
      * @description
@@ -367,7 +368,7 @@ declare module 'cafe24api-client' {
      */
     retrieveACountOfBrands(
       input: RetrieveACountOfBrandsInput,
-      options?: RequestOptions<RetrieveACountOfBrandsInput>,
+      options?: RequestOptions<RetrieveACountOfBrandsOutput['count']>,
     ): Promise<AxiosResponse<RetrieveACountOfBrandsOutput>>;
     /**
      * @description
@@ -392,7 +393,7 @@ declare module 'cafe24api-client' {
      */
     createABrand(
       input: CreateABrandInput,
-      options?: RequestOptions<CreateABrandInput>,
+      options?: RequestOptions<CreateABrandOutput['brand']>,
     ): Promise<AxiosResponse<CreateABrandOutput>>;
     /**
      * @description
@@ -417,7 +418,7 @@ declare module 'cafe24api-client' {
      */
     updateABrand(
       input: UpdateABrandInput,
-      options?: RequestOptions<UpdateABrandInput>,
+      options?: RequestOptions<UpdateABrandOutput['brand']>,
     ): Promise<AxiosResponse<UpdateABrandOutput>>;
     /**
      * @description
@@ -436,7 +437,7 @@ declare module 'cafe24api-client' {
      */
     deleteABrand(
       input: DeleteABrandInput,
-      options?: RequestOptions<DeleteABrandInput>,
+      options?: RequestOptions<DeleteABrandOutput['brand']>,
     ): Promise<AxiosResponse<DeleteABrandOutput>>;
   }
 }
