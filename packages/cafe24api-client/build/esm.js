@@ -54,6 +54,9 @@ const moveTypeFileOfEndpoints = async (prefix, excludes = []) => {
     );
 
     // Copy `index.d.ts` to `dist/esm`
+    //
+    // This assumes that `index.d.ts` is already generated
+    // by `tsc` command from `build/index.js`.
     copyFileSync(
       join(DESTINATION, 'index.d.ts'),
       join(DESTINATION, 'esm', 'index.d.ts'),
