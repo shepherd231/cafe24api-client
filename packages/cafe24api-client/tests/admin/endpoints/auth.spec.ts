@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { MockAPICall } from './mocks/auth.mock';
+import { MockAPICall } from './mocks/api.mock';
 import Case from 'case';
 import { Cafe24AdminAPIClient } from '../../../src/client/index';
 import Auth from '../../../src/admin/endpoints/auth/index';

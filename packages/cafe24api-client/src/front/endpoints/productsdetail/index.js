@@ -1,4 +1,3 @@
-
 export default (cls) => {
   cls.prototype.retrieveTheDetailsOfAProduct = async function (input, options) {
     return this.createRequest(
@@ -12,5 +11,4 @@ export default (cls) => {
       options,
     );
   };
-
 };

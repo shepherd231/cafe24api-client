@@ -1,11 +1,12 @@
-
 export default (cls) => {
-  cls.prototype.retrieveAListOfThemeTranslations = async function (input, options) {
+  cls.prototype.retrieveAListOfThemeTranslations = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/translations/themes`,
-      {
-      },
+      {},
       options,
     );
   };
@@ -33,5 +34,4 @@ export default (cls) => {
       options,
     );
   };
-
 };

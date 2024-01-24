@@ -5,7 +5,6 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
-
   /**
    * @description
    * 배송 관리자(Shippingmanager)는 배송 관리자 활성화 정보 관련 기능입니다.
@@ -13,20 +12,19 @@ declare module 'cafe24api-client' {
    */
   export interface Shippingmanager {
     /**
-      * @description
-      * 배송 관리자 활성화 정보
-      * 
-      * 
-      */ 
+     * @description
+     * 배송 관리자 활성화 정보
+     *
+     *
+     */
     use: any;
   }
 
-  export interface RetrieveActivationInformationForShippingManagerInput {
-  }
+  export interface RetrieveActivationInformationForShippingManagerInput {}
 
   export interface RetrieveActivationInformationForShippingManagerOutput {
-    shippingmanager: { 
-    use: Cafe24Enum;
+    shippingmanager: {
+      use: Cafe24Enum;
     };
   }
 
@@ -48,7 +46,11 @@ declare module 'cafe24api-client' {
      */
     retrieveActivationInformationForShippingManager(
       input?: RetrieveActivationInformationForShippingManagerInput,
-      options?: RequestOptions<RetrieveActivationInformationForShippingManagerOutput['shippingmanager']>,
-    ): Promise<AxiosResponse<RetrieveActivationInformationForShippingManagerOutput>>;
+      options?: RequestOptions<
+        RetrieveActivationInformationForShippingManagerOutput['shippingmanager']
+      >,
+    ): Promise<
+      AxiosResponse<RetrieveActivationInformationForShippingManagerOutput>
+    >;
   }
 }

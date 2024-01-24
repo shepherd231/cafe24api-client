@@ -8,19 +8,20 @@ import {
 export default (cls) => {
   register(cls);
 
-  
-    const retrieveAListOfProductDecorationImages = cls.prototype.retrieveAListOfProductDecorationImages;
-    cls.prototype.retrieveAListOfProductDecorationImages = async function (input, options) {
-      const response = await retrieveAListOfProductDecorationImages.call(
-        this,
-        convertToSnakeCase(input),
-        optionsToSnakeCase(options),
-      );
-      return {
-        ...response,
-        data: convertToCamelCase(response.data),
-      };
+  const retrieveAListOfProductDecorationImages =
+    cls.prototype.retrieveAListOfProductDecorationImages;
+  cls.prototype.retrieveAListOfProductDecorationImages = async function (
+    input,
+    options,
+  ) {
+    const response = await retrieveAListOfProductDecorationImages.call(
+      this,
+      convertToSnakeCase(input),
+      optionsToSnakeCase(options),
+    );
+    return {
+      ...response,
+      data: convertToCamelCase(response.data),
     };
-
- 
+  };
 };

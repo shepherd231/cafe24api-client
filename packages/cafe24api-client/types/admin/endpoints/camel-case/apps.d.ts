@@ -5,7 +5,6 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
-
   /**
    * @description
    * 앱(Apps)는 앱의 정보를 조회하고 수정할 수 있는 리소스입니다.
@@ -14,81 +13,80 @@ declare module 'cafe24api-client' {
    */
   export interface Apps {
     /**
-      * @description
-      * 버전
-      * 
-      * 
-      */ 
+     * @description
+     * 버전
+     *
+     *
+     */
     version: any;
     /**
-      * @description
-      * 버전 만료일
-      * 
-      * 
-      */ 
+     * @description
+     * 버전 만료일
+     *
+     *
+     */
     versionExpirationDate: any;
     /**
-      * @description
-      * 최초 버전
-      * 
-      * 
-      */ 
+     * @description
+     * 최초 버전
+     *
+     *
+     */
     initialVersion: any;
     /**
-      * @description
-      * 이전 버전
-      * 
-      * 
-      */ 
+     * @description
+     * 이전 버전
+     *
+     *
+     */
     previousVersion: any;
     /**
-      * @description
-      * 확장 타입
-      * 
-      * section : 섹션(쇼핑몰 프론트에 html 삽입이 필요한 앱 타입)
-      * embedded : 임베디드(쇼핑몰 프론트에 임베디드되어 자동으로 구동되는 앱 타입)
-      * 
-      * 
-      */ 
+     * @description
+     * 확장 타입
+     *
+     * section : 섹션(쇼핑몰 프론트에 html 삽입이 필요한 앱 타입)
+     * embedded : 임베디드(쇼핑몰 프론트에 임베디드되어 자동으로 구동되는 앱 타입)
+     *
+     *
+     */
     extensionType: any;
   }
 
-  export interface RetrieveAnAppInformationInput {
-  }
+  export interface RetrieveAnAppInformationInput {}
 
   export interface RetrieveAnAppInformationOutput {
-    app: { 
-    version: Cafe24Date;
-    versionExpirationDate: any;
-    initialVersion: Cafe24Date;
-    previousVersion: Cafe24Date;
-    extensionType: string;
+    app: {
+      version: Cafe24Date;
+      versionExpirationDate: any;
+      initialVersion: Cafe24Date;
+      previousVersion: Cafe24Date;
+      extensionType: string;
     };
   }
   export interface UpdateAnAppInformationInput {
     /**
-      * @description
-      * 버전
-      * 
-      * 
-      */ 
+     * @description
+     * 버전
+     *
+     *
+     */
     version?: any;
     /**
-      * @description
-      * 확장 타입
-      * 
-      * section : 섹션(쇼핑몰 프론트에 html 삽입이 필요한 앱 타입)
-      * embedded : 임베디드(쇼핑몰 프론트에 임베디드되어 자동으로 구동되는 앱 타입)
-      * 
-      * 
-      */ 
+     * @description
+     * 확장 타입
+     *
+     * section : 섹션(쇼핑몰 프론트에 html 삽입이 필요한 앱 타입)
+     * embedded : 임베디드(쇼핑몰 프론트에 임베디드되어 자동으로 구동되는 앱 타입)
+     *
+     *
+     */
     extensionType?: any;
   }
 
   export interface UpdateAnAppInformationOutput {
-    app: { 
-    version: Cafe24Date;
-    extensionType: string;
+    app: {
+      version: Cafe24Date;
+      extensionType: string;
     };
   }
 

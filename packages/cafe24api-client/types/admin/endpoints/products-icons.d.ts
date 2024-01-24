@@ -5,257 +5,255 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
-
   /**
    * @description
-   * 
-   * 
+   *
+   *
    * 상품 아이콘은 상품을 강조하기 위해 상품 옆에 추가할 수 있는 작은 이미지들입니다. 진열된 상품에 할인 정보, &#34;매진 임박&#34; 등의 메시지를 추가하여 상품을 강조할 수 있습니다.
    * 상품 아이콘는 하위 리소스로서 상품(Products) 하위에서만 사용할 수 있습니다.
    */
   export interface ProductsIcons {
     /**
-      * @description
-      * 상품 아이콘 코드
-      * 
-      * 
-      */ 
+     * @description
+     * 상품 아이콘 코드
+     *
+     *
+     */
     code: any;
     /**
-      * @description
-      * 아이콘 URL
-      * 
-      * 
-      */ 
+     * @description
+     * 아이콘 URL
+     *
+     *
+     */
     path: any;
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     *
+     */
     shop_no: any;
     /**
-      * @description
-      * 표시기간 사용 여부
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 표시기간 사용 여부
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     use_show_date: any;
     /**
-      * @description
-      * 표시기간 시작 일자
-      * 
-      * 
-      */ 
+     * @description
+     * 표시기간 시작 일자
+     *
+     *
+     */
     show_start_date: any;
     /**
-      * @description
-      * 표시기간 종료 일자
-      * 
-      * 
-      */ 
+     * @description
+     * 표시기간 종료 일자
+     *
+     *
+     */
     show_end_date: any;
     /**
-      * @description
-      * 상품 아이콘 리스트
-      * 
-      * 
-      */ 
+     * @description
+     * 상품 아이콘 리스트
+     *
+     *
+     */
     image_list: any;
   }
 
-  export interface RetrieveAListOfIconsInput {
-  }
+  export interface RetrieveAListOfIconsInput {}
 
   export interface RetrieveAListOfIconsOutput {
-    icons: { 
-    code: string;
-    path: string;
+    icons: {
+      code: string;
+      path: string;
     }[];
   }
   export interface RetrieveAListOfProductIconsInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     *
+     */
     shop_no?: any;
     /**
-      * @description
-      * 상품번호
-      * 
-      * @required
-      */ 
+     * @description
+     * 상품번호
+     *
+     * @required
+     */
     product_no: any;
   }
 
   export interface RetrieveAListOfProductIconsOutput {
-    icons: { 
-    shop_no: number;
-    use_show_date: Cafe24Enum;
-    show_start_date: Cafe24Datetime;
-    show_end_date: Cafe24Datetime;
-    image_list: { 
-    code: string;
-    path: string;
-    }[];
+    icons: {
+      shop_no: number;
+      use_show_date: Cafe24Enum;
+      show_start_date: Cafe24Datetime;
+      show_end_date: Cafe24Datetime;
+      image_list: {
+        code: string;
+        path: string;
+      }[];
     };
   }
   export interface SetIconsForAProductInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     *
+     */
     shop_no?: any;
     /**
-      * @description
-      * 상품번호
-      * 
-      * @required
-      */ 
+     * @description
+     * 상품번호
+     *
+     * @required
+     */
     product_no: any;
     /**
-      * @description
-      * 상품 아이콘 리스트
-      * 
-      * @required
-      * 
-      * 배열 최대사이즈: [5]
-      */ 
-    image_list: { 
-    /**
-      * @description
-      * 상품 아이콘 코드
-      * 
-      * 
-      */ 
-    code: any;
+     * @description
+     * 상품 아이콘 리스트
+     *
+     * @required
+     *
+     * 배열 최대사이즈: [5]
+     */
+    image_list: {
+      /**
+       * @description
+       * 상품 아이콘 코드
+       *
+       *
+       */
+      code: any;
     };
   }
 
   export interface SetIconsForAProductOutput {
-    icon: { 
-    shop_no: number;
-    use_show_date: Cafe24Enum;
-    show_start_date: Cafe24Datetime;
-    show_end_date: Cafe24Datetime;
-    image_list: { 
-    code: string;
-    path: string;
-    }[];
+    icon: {
+      shop_no: number;
+      use_show_date: Cafe24Enum;
+      show_start_date: Cafe24Datetime;
+      show_end_date: Cafe24Datetime;
+      image_list: {
+        code: string;
+        path: string;
+      }[];
     };
   }
   export interface UpdateProductIconsInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     *
+     */
     shop_no?: any;
     /**
-      * @description
-      * 상품번호
-      * 
-      * @required
-      */ 
+     * @description
+     * 상품번호
+     *
+     * @required
+     */
     product_no: any;
     /**
-      * @description
-      * 표시기간 사용 여부
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 표시기간 사용 여부
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     use_show_date?: any;
     /**
-      * @description
-      * 표시기간 시작 일자
-      * 
-      * 날짜
-      */ 
+     * @description
+     * 표시기간 시작 일자
+     *
+     * 날짜
+     */
     show_start_date?: any;
     /**
-      * @description
-      * 표시기간 종료 일자
-      * 
-      * 날짜
-      */ 
+     * @description
+     * 표시기간 종료 일자
+     *
+     * 날짜
+     */
     show_end_date?: any;
     /**
-      * @description
-      * 상품 아이콘 리스트
-      * 
-      * 배열 최대사이즈: [5]
-      */ 
-    image_list?: { 
-    /**
-      * @description
-      * 상품 아이콘 코드
-      * 
-      * 
-      */ 
-    code: any;
+     * @description
+     * 상품 아이콘 리스트
+     *
+     * 배열 최대사이즈: [5]
+     */
+    image_list?: {
+      /**
+       * @description
+       * 상품 아이콘 코드
+       *
+       *
+       */
+      code: any;
     };
   }
 
   export interface UpdateProductIconsOutput {
-    icon: { 
-    shop_no: number;
-    use_show_date: Cafe24Enum;
-    show_start_date: Cafe24Datetime;
-    show_end_date: Cafe24Datetime;
-    image_list: { 
-    code: string;
-    path: string;
-    }[];
+    icon: {
+      shop_no: number;
+      use_show_date: Cafe24Enum;
+      show_start_date: Cafe24Datetime;
+      show_end_date: Cafe24Datetime;
+      image_list: {
+        code: string;
+        path: string;
+      }[];
     };
   }
   export interface RemoveAProductIconInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     *
+     */
     shop_no?: any;
     /**
-      * @description
-      * 상품번호
-      * 
-      * @required
-      */ 
+     * @description
+     * 상품번호
+     *
+     * @required
+     */
     product_no: any;
     /**
-      * @description
-      * 상품 아이콘 코드
-      * 
-      * @required
-      */ 
+     * @description
+     * 상품 아이콘 코드
+     *
+     * @required
+     */
     code: any;
   }
 
   export interface RemoveAProductIconOutput {
-    icon: { 
-    shop_no: number;
-    code: string;
+    icon: {
+      shop_no: number;
+      code: string;
     };
   }
 

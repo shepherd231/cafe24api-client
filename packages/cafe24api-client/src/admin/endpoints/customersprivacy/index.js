@@ -1,6 +1,8 @@
-
 export default (cls) => {
-  cls.prototype.retrieveAListOfCustomerInformation = async function (input, options) {
+  cls.prototype.retrieveAListOfCustomerInformation = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/customersprivacy`,
@@ -33,7 +35,10 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.retrieveACountOfCustomerInformation = async function (input, options) {
+  cls.prototype.retrieveACountOfCustomerInformation = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/customersprivacy/count`,
@@ -105,5 +110,4 @@ export default (cls) => {
       options,
     );
   };
-
 };

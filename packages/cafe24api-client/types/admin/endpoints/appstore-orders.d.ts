@@ -5,7 +5,6 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
-
   /**
    * @description
    * 앱스토어 주문(Appstore orders)은 앱에서 사용 금액이나 기타 금액을 쇼핑몰 운영자에게 부과하기 위한 주문입니다.
@@ -13,159 +12,159 @@ declare module 'cafe24api-client' {
    */
   export interface AppstoreOrders {
     /**
-      * @description
-      * 주문아이디
-      * 
-      * 앱스토어 주문의 주문 ID
-      * 
-      * 
-      */ 
+     * @description
+     * 주문아이디
+     *
+     * 앱스토어 주문의 주문 ID
+     *
+     *
+     */
     order_id: any;
     /**
-      * @description
-      * 주문명
-      * 
-      * 앱스토어 주문의 주문 이름. 주문 생성시 지정이 가능하며, 사용자가 결제시 해당 결제의 내용이 무엇인지 알 수 있는 내용이어야 함.
-      * 
-      * 
-      */ 
+     * @description
+     * 주문명
+     *
+     * 앱스토어 주문의 주문 이름. 주문 생성시 지정이 가능하며, 사용자가 결제시 해당 결제의 내용이 무엇인지 알 수 있는 내용이어야 함.
+     *
+     *
+     */
     order_name: any;
     /**
-      * @description
-      * 주문금액
-      * 
-      * 앱스토어 주문 생성시 결제 요청한 주문 금액
-      * 
-      * 
-      */ 
+     * @description
+     * 주문금액
+     *
+     * 앱스토어 주문 생성시 결제 요청한 주문 금액
+     *
+     *
+     */
     order_amount: any;
     /**
-      * @description
-      * 화폐단위
-      * 
-      * KRW : ￦ 원
-      * USD : $ 달러
-      * JPY : ¥ 엔
-      * PHP : ₱ 페소
-      * 
-      * 
-      */ 
+     * @description
+     * 화폐단위
+     *
+     * KRW : ￦ 원
+     * USD : $ 달러
+     * JPY : ¥ 엔
+     * PHP : ₱ 페소
+     *
+     *
+     */
     currency: any;
     /**
-      * @description
-      * Return Url
-      * 
-      * 사용자가 결제 후 이동해야하는 페이지.
-      * 
-      * 
-      */ 
+     * @description
+     * Return Url
+     *
+     * 사용자가 결제 후 이동해야하는 페이지.
+     *
+     *
+     */
     return_url: any;
     /**
-      * @description
-      * 정기과금 여부
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 최대글자수 : [1자]
-      */ 
+     * @description
+     * 정기과금 여부
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     * 최대글자수 : [1자]
+     */
     automatic_payment: any;
     /**
-      * @description
-      * 주문 생성일
-      * 
-      * 
-      */ 
+     * @description
+     * 주문 생성일
+     *
+     *
+     */
     created_date: any;
     /**
-      * @description
-      * 결제 Url
-      * 
-      * 사용자가 결제하기 위해 자동으로 이동하는 페이지 주소
-      * 
-      * 
-      */ 
+     * @description
+     * 결제 Url
+     *
+     * 사용자가 결제하기 위해 자동으로 이동하는 페이지 주소
+     *
+     *
+     */
     confirmation_url: any;
   }
 
   export interface RetreiveACafe24StoreOrderInput {
     /**
-      * @description
-      * 주문번호
-      * 
-      * 조회하고자하는 앱스토어 주문 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 주문번호
+     *
+     * 조회하고자하는 앱스토어 주문 번호
+     *
+     *
+     */
     order_id?: any;
   }
 
   export interface RetreiveACafe24StoreOrderOutput {
-    order: { 
-    order_id: string;
-    order_name: string;
-    order_amount: Cafe24Datetime;
-    currency: string;
-    return_url: string;
-    automatic_payment: Cafe24Enum;
-    created_date: Cafe24Datetime;
+    order: {
+      order_id: string;
+      order_name: string;
+      order_amount: Cafe24Datetime;
+      currency: string;
+      return_url: string;
+      automatic_payment: Cafe24Enum;
+      created_date: Cafe24Datetime;
     };
   }
   export interface CreateACafe24StoreOrderInput {
     /**
-      * @description
-      * 주문명
-      * 
-      * 앱스토어 주문의 주문 이름. 주문 생성시 지정이 가능하며, 사용자가 결제시 해당 결제의 내용이 무엇인지 알 수 있는 내용이어야 함.
-      * 
-      * @required
-      * 
-      * 최대글자수 : [100자]
-      */ 
+     * @description
+     * 주문명
+     *
+     * 앱스토어 주문의 주문 이름. 주문 생성시 지정이 가능하며, 사용자가 결제시 해당 결제의 내용이 무엇인지 알 수 있는 내용이어야 함.
+     *
+     * @required
+     *
+     * 최대글자수 : [100자]
+     */
     order_name: any;
     /**
-      * @description
-      * 주문금액
-      * 
-      * 사용자에게 결제 받고자 하는 주문 금액 입력
-      * 
-      * @required
-      */ 
+     * @description
+     * 주문금액
+     *
+     * 사용자에게 결제 받고자 하는 주문 금액 입력
+     *
+     * @required
+     */
     order_amount: any;
     /**
-      * @description
-      * Return Url
-      * 
-      * 사용자가 결제 후 이동해야하는 페이지. 결제 완료 페이지 주소를 입력한다.
-      * 
-      * @required
-      * 
-      * 최대글자수 : [250자]
-      */ 
+     * @description
+     * Return Url
+     *
+     * 사용자가 결제 후 이동해야하는 페이지. 결제 완료 페이지 주소를 입력한다.
+     *
+     * @required
+     *
+     * 최대글자수 : [250자]
+     */
     return_url: any;
     /**
-      * @description
-      * 정기과금 여부
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * @default F
-      * 
-      * 최대글자수 : [1자]
-      */ 
+     * @description
+     * 정기과금 여부
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     * @default F
+     *
+     * 최대글자수 : [1자]
+     */
     automatic_payment?: any;
   }
 
   export interface CreateACafe24StoreOrderOutput {
-    order: { 
-    order_id: string;
-    order_name: string;
-    order_amount: Cafe24Datetime;
-    currency: string;
-    return_url: string;
-    automatic_payment: Cafe24Enum;
-    confirmation_url: string;
+    order: {
+      order_id: string;
+      order_name: string;
+      order_amount: Cafe24Datetime;
+      currency: string;
+      return_url: string;
+      automatic_payment: Cafe24Enum;
+      confirmation_url: string;
     };
   }
 

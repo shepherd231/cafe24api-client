@@ -5,63 +5,62 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
-
   /**
    * @description
-   * 
-   * 
+   *
+   *
    * 회원 초대(invitation)는 계정을 활성화하기 위해 SMS, 이메일 등으로 초대 메시지를 발송하는 기능입니다.
    * 기존에 가입되어 있는 아이디가 있어야만 초대가 가능합니다.
    */
   export interface CustomersInvitation {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * 최소값: [1]
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * 최소값: [1]
+     */
     shopNo: any;
     /**
-      * @description
-      * 회원아이디
-      * 
-      * 최대글자수 : [16자]
-      */ 
+     * @description
+     * 회원아이디
+     *
+     * 최대글자수 : [16자]
+     */
     memberId: any;
   }
 
   export interface SendAnInvitationToActivateAccountInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 최소값: [1]
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     * 최소값: [1]
+     */
     shopNo?: any;
     /**
-      * @description
-      * 회원아이디
-      * 
-      * @required
-      * 
-      * 최대글자수 : [16자]
-      */ 
+     * @description
+     * 회원아이디
+     *
+     * @required
+     *
+     * 최대글자수 : [16자]
+     */
     memberId: any;
     /**
-      * @description
-      * 계정 활성화 초대 수단
-      * 
-      * @required
-      */ 
+     * @description
+     * 계정 활성화 초대 수단
+     *
+     * @required
+     */
     invitationType: any;
   }
 
   export interface SendAnInvitationToActivateAccountOutput {
-    invitation: { 
-    shopNo: number;
-    memberId: string;
+    invitation: {
+      shopNo: number;
+      memberId: string;
     };
   }
 
@@ -85,7 +84,9 @@ declare module 'cafe24api-client' {
      */
     sendAnInvitationToActivateAccount(
       input: SendAnInvitationToActivateAccountInput,
-      options?: RequestOptions<SendAnInvitationToActivateAccountOutput['invitation']>,
+      options?: RequestOptions<
+        SendAnInvitationToActivateAccountOutput['invitation']
+      >,
     ): Promise<AxiosResponse<SendAnInvitationToActivateAccountOutput>>;
   }
 }

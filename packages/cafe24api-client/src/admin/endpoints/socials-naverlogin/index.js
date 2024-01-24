@@ -1,4 +1,3 @@
-
 export default (cls) => {
   cls.prototype.naverLoginDetails = async function (input, options) {
     return this.createRequest(
@@ -24,5 +23,4 @@ export default (cls) => {
       options,
     );
   };
-
 };

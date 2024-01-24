@@ -5,92 +5,91 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
-
   /**
    * @description
    * 수거신청 정보(Collectrequests)는 반품, 교환처리로 수거요청시 수거신청 정보를 수정할 수 있는 리소스입니다.
    */
   export interface Collectrequests {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     *
+     */
     shopNo: any;
     /**
-      * @description
-      * 요청 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 요청 번호
+     *
+     *
+     */
     requestNo: any;
     /**
-      * @description
-      * 주문번호
-      * 
-      * 
-      */ 
+     * @description
+     * 주문번호
+     *
+     *
+     */
     orderId: any;
     /**
-      * @description
-      * 품주코드
-      * 
-      * 
-      */ 
+     * @description
+     * 품주코드
+     *
+     *
+     */
     orderItemCode: any;
     /**
-      * @description
-      * 수거 배송사명
-      * 
-      * 
-      */ 
+     * @description
+     * 수거 배송사명
+     *
+     *
+     */
     shippingCompanyName: any;
     /**
-      * @description
-      * 수거 송장 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 수거 송장 번호
+     *
+     *
+     */
     collectTrackingNo: any;
   }
 
   export interface UpdateACollectionRequestInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 최소값: [1]
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     * 최소값: [1]
+     */
     shopNo?: any;
     /**
-      * @description
-      * 요청 번호
-      * 
-      * @required
-      */ 
+     * @description
+     * 요청 번호
+     *
+     * @required
+     */
     requestNo: any;
     /**
-      * @description
-      * 수거 송장 번호
-      * 
-      * @required
-      * 
-      * 최대글자수 : [40자]
-      */ 
+     * @description
+     * 수거 송장 번호
+     *
+     * @required
+     *
+     * 최대글자수 : [40자]
+     */
     collectTrackingNo: any;
   }
 
   export interface UpdateACollectionRequestOutput {
-    collectrequest: { 
-    shopNo: number;
-    requestNo: number;
-    orderId: string;
-    orderItemCode: string[];
-    shippingCompanyName: string;
-    collectTrackingNo: Cafe24Datetime;
+    collectrequest: {
+      shopNo: number;
+      requestNo: number;
+      orderId: string;
+      orderItemCode: string[];
+      shippingCompanyName: string;
+      collectTrackingNo: Cafe24Datetime;
     };
   }
 
@@ -121,7 +120,9 @@ declare module 'cafe24api-client' {
      */
     updateACollectionRequest(
       input: UpdateACollectionRequestInput,
-      options?: RequestOptions<UpdateACollectionRequestOutput['collectrequest']>,
+      options?: RequestOptions<
+        UpdateACollectionRequestOutput['collectrequest']
+      >,
     ): Promise<AxiosResponse<UpdateACollectionRequestOutput>>;
   }
 }

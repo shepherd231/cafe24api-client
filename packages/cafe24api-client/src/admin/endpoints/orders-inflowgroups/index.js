@@ -1,11 +1,12 @@
-
 export default (cls) => {
-  cls.prototype.retrieveAListOfTrafficSourceGroups = async function (input, options) {
+  cls.prototype.retrieveAListOfTrafficSourceGroups = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/orders/inflowgroups`,
-      {
-      },
+      {},
       options,
     );
   };
@@ -44,5 +45,4 @@ export default (cls) => {
       options,
     );
   };
-
 };

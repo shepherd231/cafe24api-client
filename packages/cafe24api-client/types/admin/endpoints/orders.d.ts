@@ -5,11 +5,10 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
-
   /**
    * @description
-   * 
-   * 
+   *
+   *
    * 주문(Order)은 쇼핑몰에서 고객이 상품의 구매의사를 쇼핑몰에 요청한 내역입니다.
    * 결제수단이 무통장입금인 경우 입금전에도 주문은 생성됩니다.
    * 쇼핑몰 운영자는 결제가 완료된 주문 정보를 참고하여 쇼핑몰 고객에게 물건을 배송합니다.
@@ -18,1980 +17,1984 @@ declare module 'cafe24api-client' {
    */
   export interface Orders {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
+     *
+     *
+     */
     shop_no: any;
     /**
-      * @description
-      * 화폐단위
-      * 
-      * 해당 멀티쇼핑몰의 화폐단위
-      * 
-      * 
-      */ 
+     * @description
+     * 화폐단위
+     *
+     * 해당 멀티쇼핑몰의 화폐단위
+     *
+     *
+     */
     currency: any;
     /**
-      * @description
-      * 주문번호
-      * 
-      * 
-      */ 
+     * @description
+     * 주문번호
+     *
+     *
+     */
     order_id: any;
     /**
-      * @description
-      * 마켓 구분값
-      * 
-      * 가격 비교 사이트를 통하여 마켓 등에서 상품 구매 시 해당 사이트를 구분하기 위한 ID
-      * 
-      * 
-      */ 
+     * @description
+     * 마켓 구분값
+     *
+     * 가격 비교 사이트를 통하여 마켓 등에서 상품 구매 시 해당 사이트를 구분하기 위한 ID
+     *
+     *
+     */
     market_id: any;
     /**
-      * @description
-      * 마켓 주문 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 마켓 주문 번호
+     *
+     *
+     */
     market_order_no: any;
     /**
-      * @description
-      * 회원아이디
-      * 
-      * 
-      */ 
+     * @description
+     * 회원아이디
+     *
+     *
+     */
     member_id: any;
     /**
-      * @description
-      * 회원 이메일
-      * 
-      * 
-      */ 
+     * @description
+     * 회원 이메일
+     *
+     *
+     */
     member_email: any;
     /**
-      * @description
-      * 회원인증여부
-      * 
-      * 회원 인증여부. 인증여부에 따라 3가지로 회원타입이 나눠짐.
-      * 
-      * T : 승인
-      * B : 특별관리회원
-      * J : 14세미만회원
-      * 
-      * 
-      */ 
+     * @description
+     * 회원인증여부
+     *
+     * 회원 인증여부. 인증여부에 따라 3가지로 회원타입이 나눠짐.
+     *
+     * T : 승인
+     * B : 특별관리회원
+     * J : 14세미만회원
+     *
+     *
+     */
     member_authentication: any;
     /**
-      * @description
-      * 결제자명
-      * 
-      * 입금자 이름. 주문자 혹은 수령자 이름과는 다를 수 있음.
-      * 
-      * 
-      */ 
+     * @description
+     * 결제자명
+     *
+     * 입금자 이름. 주문자 혹은 수령자 이름과는 다를 수 있음.
+     *
+     *
+     */
     billing_name: any;
     /**
-      * @description
-      * 은행코드
-      * 
-      * bank_code 
-      * 
-      * 
-      */ 
+     * @description
+     * 은행코드
+     *
+     * bank_code
+     *
+     *
+     */
     bank_code: any;
     /**
-      * @description
-      * 입금자 은행명
-      * 
-      * 
-      */ 
+     * @description
+     * 입금자 은행명
+     *
+     *
+     */
     bank_code_name: any;
     /**
-      * @description
-      * 결제수단 코드
-      * 
-      * 주문자가 이용한 결제수단의 코드
-      * 
-      * cash : 무통장
-      * card : 신용카드
-      * cell : 휴대폰
-      * tcash : 계좌이체
-      * icash : 가상계좌
-      * prepaid : 선불금
-      * credit : 예치금
-      * point : 적립금
-      * pointfy : 통합포인트
-      * cvs : 편의점
-      * cod : 후불
-      * coupon : 쿠폰
-      * market_discount : 마켓할인
-      * giftcard : 제휴상품권
-      * pointcard : 제휴포인트
-      * etc : 기타
-      * 
-      * 
-      */ 
+     * @description
+     * 결제수단 코드
+     *
+     * 주문자가 이용한 결제수단의 코드
+     *
+     * cash : 무통장
+     * card : 신용카드
+     * cell : 휴대폰
+     * tcash : 계좌이체
+     * icash : 가상계좌
+     * prepaid : 선불금
+     * credit : 예치금
+     * point : 적립금
+     * pointfy : 통합포인트
+     * cvs : 편의점
+     * cod : 후불
+     * coupon : 쿠폰
+     * market_discount : 마켓할인
+     * giftcard : 제휴상품권
+     * pointcard : 제휴포인트
+     * etc : 기타
+     *
+     *
+     */
     payment_method: any;
     /**
-      * @description
-      * 결제수단명
-      * 
-      * 주문자가 이용한 결제수단의 이름
-      * 
-      * 
-      */ 
+     * @description
+     * 결제수단명
+     *
+     * 주문자가 이용한 결제수단의 이름
+     *
+     *
+     */
     payment_method_name: any;
     /**
-      * @description
-      * PG 이름
-      * 
-      * 
-      */ 
+     * @description
+     * PG 이름
+     *
+     *
+     */
     payment_gateway_names: any;
     /**
-      * @description
-      * 해외 결제수단명
-      * 
-      * 
-      */ 
+     * @description
+     * 해외 결제수단명
+     *
+     *
+     */
     sub_payment_method_name: any;
     /**
-      * @description
-      * 해외 결제수단코드
-      * 
-      * sub_payment_method_code 
-      * 
-      * 
-      */ 
+     * @description
+     * 해외 결제수단코드
+     *
+     * sub_payment_method_code
+     *
+     *
+     */
     sub_payment_method_code: any;
     /**
-      * @description
-      * 카드 거래 아이디
-      * 
-      * 
-      */ 
+     * @description
+     * 카드 거래 아이디
+     *
+     *
+     */
     transaction_ids: any;
     /**
-      * @description
-      * 결제 여부
-      * 
-      * 결제가 완료되었는지 여부
-      * 
-      * T : 결제
-      * F : 미결제
-      * M : 부분 결제
-      * 
-      * 
-      */ 
+     * @description
+     * 결제 여부
+     *
+     * 결제가 완료되었는지 여부
+     *
+     * T : 결제
+     * F : 미결제
+     * M : 부분 결제
+     *
+     *
+     */
     paid: any;
     /**
-      * @description
-      * 취소 여부
-      * 
-      * T : 취소
-      * F : 미취소
-      * M : 부분 취소
-      * 
-      * 
-      */ 
+     * @description
+     * 취소 여부
+     *
+     * T : 취소
+     * F : 미취소
+     * M : 부분 취소
+     *
+     *
+     */
     canceled: any;
     /**
-      * @description
-      * 주문일
-      * 
-      * 
-      */ 
+     * @description
+     * 주문일
+     *
+     *
+     */
     order_date: any;
     /**
-      * @description
-      * 최초 주문여부
-      * 
-      * 해당 주문이 최초 주문인지 여부
-      * 
-      * T : 최초 주문
-      * F : 최초 주문 아님
-      * 
-      * 
-      */ 
+     * @description
+     * 최초 주문여부
+     *
+     * 해당 주문이 최초 주문인지 여부
+     *
+     * T : 최초 주문
+     * F : 최초 주문 아님
+     *
+     *
+     */
     first_order: any;
     /**
-      * @description
-      * 결제일
-      * 
-      * 
-      */ 
+     * @description
+     * 결제일
+     *
+     *
+     */
     payment_date: any;
     /**
-      * @description
-      * 모바일 구분
-      * 
-      * 주문이 모바일에서 이루어졌는지 여부
-      * 
-      * T : 모바일 주문
-      * F : 모바일 주문 아님
-      * 
-      * 
-      */ 
+     * @description
+     * 모바일 구분
+     *
+     * 주문이 모바일에서 이루어졌는지 여부
+     *
+     * T : 모바일 주문
+     * F : 모바일 주문 아님
+     *
+     *
+     */
     order_from_mobile: any;
     /**
-      * @description
-      * 에스크로 사용여부
-      * 
-      * 에스크로를 사용했는지 여부
-      * 
-      * T : 에스크로 사용
-      * F : 에스크로 미사용
-      * 
-      * 
-      */ 
+     * @description
+     * 에스크로 사용여부
+     *
+     * 에스크로를 사용했는지 여부
+     *
+     * T : 에스크로 사용
+     * F : 에스크로 미사용
+     *
+     *
+     */
     use_escrow: any;
     /**
-      * @description
-      * 주문시 회원등급
-      * 
-      * 
-      */ 
+     * @description
+     * 주문시 회원등급
+     *
+     *
+     */
     group_no_when_ordering: any;
     /**
-      * @description
-      * 최초 주문 금액
-      * 
-      * 
-      */ 
+     * @description
+     * 최초 주문 금액
+     *
+     *
+     */
     initial_order_amount: any;
     /**
-      * @description
-      * 현재 주문 금액
-      * 
-      * 실결제금액 중 coupon_shipping_fee_amount는 할인 금액 자동 계산을 사용할 때만 품목별로 배송비 배분이 가능하기 때문에 할인 금액 자동 계산 기능을 사용할 때만 노출됨
-      * 
-      * 
-      */ 
+     * @description
+     * 현재 주문 금액
+     *
+     * 실결제금액 중 coupon_shipping_fee_amount는 할인 금액 자동 계산을 사용할 때만 품목별로 배송비 배분이 가능하기 때문에 할인 금액 자동 계산 기능을 사용할 때만 노출됨
+     *
+     *
+     */
     actual_order_amount: any;
     /**
-      * @description
-      * 계좌번호
-      * 
-      * 해당 주문건에 대한 쇼핑몰의 계좌번호
-      * 
-      * 
-      */ 
+     * @description
+     * 계좌번호
+     *
+     * 해당 주문건에 대한 쇼핑몰의 계좌번호
+     *
+     *
+     */
     bank_account_no: any;
     /**
-      * @description
-      * 예금주
-      * 
-      * 
-      */ 
+     * @description
+     * 예금주
+     *
+     *
+     */
     bank_account_owner_name: any;
     /**
-      * @description
-      * 마켓 판매자 아이디
-      * 
-      * 
-      */ 
+     * @description
+     * 마켓 판매자 아이디
+     *
+     *
+     */
     market_seller_id: any;
     /**
-      * @description
-      * 최종 결제 금액
-      * 
-      * 
-      */ 
+     * @description
+     * 최종 결제 금액
+     *
+     *
+     */
     payment_amount: any;
     /**
-      * @description
-      * 주문취소일
-      * 
-      * 
-      */ 
+     * @description
+     * 주문취소일
+     *
+     *
+     */
     cancel_date: any;
     /**
-      * @description
-      * 주문경로 텍스트
-      * 
-      * 
-      */ 
+     * @description
+     * 주문경로 텍스트
+     *
+     *
+     */
     order_place_name: any;
     /**
-      * @description
-      * 주문경로
-      * 
-      * 
-      */ 
+     * @description
+     * 주문경로
+     *
+     *
+     */
     order_place_id: any;
     /**
-      * @description
-      * 후불결제 입금확인 가능 여부
-      * 
-      * T : 입금확인
-      * F : 입금미확인
-      * 
-      * 
-      */ 
+     * @description
+     * 후불결제 입금확인 가능 여부
+     *
+     * T : 입금확인
+     * F : 입금미확인
+     *
+     *
+     */
     payment_confirmation: any;
     /**
-      * @description
-      * 결제 수수료
-      * 
-      * 
-      */ 
+     * @description
+     * 결제 수수료
+     *
+     *
+     */
     commission: any;
     /**
-      * @description
-      * 후불결제여부
-      * 
-      * T : 후불결제
-      * F : 후불결제 아님
-      * 
-      * 
-      */ 
+     * @description
+     * 후불결제여부
+     *
+     * T : 후불결제
+     * F : 후불결제 아님
+     *
+     *
+     */
     postpay: any;
     /**
-      * @description
-      * 관리자 입력 금액
-      * 
-      * 
-      */ 
+     * @description
+     * 관리자 입력 금액
+     *
+     *
+     */
     admin_additional_amount: any;
     /**
-      * @description
-      * 추가 배송비
-      * 
-      * 
-      */ 
+     * @description
+     * 추가 배송비
+     *
+     *
+     */
     additional_shipping_fee: any;
     /**
-      * @description
-      * 해외배송 보험료
-      * 
-      * 
-      */ 
+     * @description
+     * 해외배송 보험료
+     *
+     *
+     */
     international_shipping_insurance: any;
     /**
-      * @description
-      * 해외배송 부가금액
-      * 
-      * 
-      */ 
+     * @description
+     * 해외배송 부가금액
+     *
+     *
+     */
     additional_handling_fee: any;
     /**
-      * @description
-      * 배송 유형
-      * 
-      * 배송 유형. 국내배송인지 해외배송인지 여부
-      * 
-      * A : 국내
-      * B : 해외
-      * 
-      * 
-      */ 
+     * @description
+     * 배송 유형
+     *
+     * 배송 유형. 국내배송인지 해외배송인지 여부
+     *
+     * A : 국내
+     * B : 해외
+     *
+     *
+     */
     shipping_type: any;
     /**
-      * @description
-      * 배송 유형명
-      * 
-      * 배송 유형. 국내배송인지 해외배송인지 여부
-      * 
-      * 
-      */ 
+     * @description
+     * 배송 유형명
+     *
+     * 배송 유형. 국내배송인지 해외배송인지 여부
+     *
+     *
+     */
     shipping_type_text: any;
     /**
-      * @description
-      * 배송상태
-      * 
-      * F : 배송전
-      * M : 배송중
-      * T : 배송완료
-      * W : 배송보류
-      * X : 발주전
-      * 
-      * 
-      */ 
+     * @description
+     * 배송상태
+     *
+     * F : 배송전
+     * M : 배송중
+     * T : 배송완료
+     * W : 배송보류
+     * X : 발주전
+     *
+     *
+     */
     shipping_status: any;
     /**
-      * @description
-      * 희망배송일
-      * 
-      * 
-      */ 
+     * @description
+     * 희망배송일
+     *
+     *
+     */
     wished_delivery_date: any;
     /**
-      * @description
-      * 희망배송시간
-      * 
-      * 
-      */ 
+     * @description
+     * 희망배송시간
+     *
+     *
+     */
     wished_delivery_time: any;
     /**
-      * @description
-      * 희망배송사 코드
-      * 
-      * 
-      */ 
+     * @description
+     * 희망배송사 코드
+     *
+     *
+     */
     wished_carrier_id: any;
     /**
-      * @description
-      * 희망배송사 명
-      * 
-      * 
-      */ 
+     * @description
+     * 희망배송사 명
+     *
+     *
+     */
     wished_carrier_name: any;
     /**
-      * @description
-      * 반품승인일시
-      * 
-      * 
-      */ 
+     * @description
+     * 반품승인일시
+     *
+     *
+     */
     return_confirmed_date: any;
     /**
-      * @description
-      * 총 공급가액
-      * 
-      * 
-      */ 
+     * @description
+     * 총 공급가액
+     *
+     *
+     */
     total_supply_price: any;
     /**
-      * @description
-      * 네이버포인트
-      * 
-      * 
-      */ 
+     * @description
+     * 네이버포인트
+     *
+     *
+     */
     naver_point: any;
     /**
-      * @description
-      * 주문서 추가항목
-      * 
-      * 
-      */ 
+     * @description
+     * 주문서 추가항목
+     *
+     *
+     */
     additional_order_info_list: any;
     /**
-      * @description
-      * 매장수령여부
-      * 
-      * T : 매장수령
-      * F : 매장수령 아님
-      * 
-      * 
-      */ 
+     * @description
+     * 매장수령여부
+     *
+     * T : 매장수령
+     * F : 매장수령 아님
+     *
+     *
+     */
     store_pickup: any;
     /**
-      * @description
-      * 간편결제 결제사 이름
-      * 
-      * 
-      */ 
+     * @description
+     * 간편결제 결제사 이름
+     *
+     *
+     */
     easypay_name: any;
     /**
-      * @description
-      * 여신상태
-      * 
-      * OK : GOOD
-      * NG : NOT GOOD
-      * ER : ERROR
-      * 
-      * 
-      */ 
+     * @description
+     * 여신상태
+     *
+     * OK : GOOD
+     * NG : NOT GOOD
+     * ER : ERROR
+     *
+     *
+     */
     loan_status: any;
     /**
-      * @description
-      * 정기결제 여부
-      * 
-      * T : 정기결제
-      * F : 정기결제 아님
-      * 
-      * 
-      */ 
+     * @description
+     * 정기결제 여부
+     *
+     * T : 정기결제
+     * F : 정기결제 아님
+     *
+     *
+     */
     subscription: any;
     /**
-      * @description
-      * 품주 리소스
-      * 
-      * 조회시 Embed 파라메터를 사용하여 조회할 수 있다.
-      * 
-      * 
-      */ 
+     * @description
+     * 품주 리소스
+     *
+     * 조회시 Embed 파라메터를 사용하여 조회할 수 있다.
+     *
+     *
+     */
     items: any;
     /**
-      * @description
-      * 수령자정보 리소스
-      * 
-      * 조회시 Embed 파라메터를 사용하여 조회할 수 있다.
-      * 
-      * 
-      */ 
+     * @description
+     * 수령자정보 리소스
+     *
+     * 조회시 Embed 파라메터를 사용하여 조회할 수 있다.
+     *
+     *
+     */
     receivers: any;
     /**
-      * @description
-      * 주문자정보 리소스
-      * 
-      * 
-      */ 
+     * @description
+     * 주문자정보 리소스
+     *
+     *
+     */
     buyer: any;
     /**
-      * @description
-      * 배송비 정보
-      * 
-      * 
-      */ 
+     * @description
+     * 배송비 정보
+     *
+     *
+     */
     shipping_fee_detail: any;
     /**
-      * @description
-      * 지역별 배송비 정보
-      * 
-      * 
-      */ 
+     * @description
+     * 지역별 배송비 정보
+     *
+     *
+     */
     regional_surcharge_detail: any;
     /**
-      * @description
-      * 반품상세 리소스
-      * 
-      * 
-      */ 
+     * @description
+     * 반품상세 리소스
+     *
+     *
+     */
     return: any;
     /**
-      * @description
-      * 취소상세 리소스
-      * 
-      * 
-      */ 
+     * @description
+     * 취소상세 리소스
+     *
+     *
+     */
     cancellation: any;
     /**
-      * @description
-      * 교환상세 리소스
-      * 
-      * 
-      */ 
+     * @description
+     * 교환상세 리소스
+     *
+     *
+     */
     exchange: any;
     /**
-      * @description
-      * 멀티 배송지 여부
-      * 
-      * T : 멀티 배송지 주문
-      * F : 멀티 배송지 주문 아님
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티 배송지 여부
+     *
+     * T : 멀티 배송지 주문
+     * F : 멀티 배송지 주문 아님
+     *
+     *
+     */
     multiple_addresses: any;
     /**
-      * @description
-      * 결제 화폐 환율 정보
-      * 
-      * 
-      */ 
+     * @description
+     * 결제 화폐 환율 정보
+     *
+     *
+     */
     exchange_rate: any;
     /**
-      * @description
-      * 최초 결제수단 코드
-      * 
-      * cash : 무통장
-      * card : 신용카드
-      * cell : 휴대폰
-      * tcash : 계좌이체
-      * icash : 가상계좌
-      * prepaid : 선불금
-      * credit : 예치금
-      * point : 적립금
-      * pointfy : 통합포인트
-      * cvs : 편의점
-      * cod : 후불
-      * giftcard : 제휴상품권
-      * pointcard : 제휴포인트
-      * etc : 기타
-      * 
-      * 
-      */ 
+     * @description
+     * 최초 결제수단 코드
+     *
+     * cash : 무통장
+     * card : 신용카드
+     * cell : 휴대폰
+     * tcash : 계좌이체
+     * icash : 가상계좌
+     * prepaid : 선불금
+     * credit : 예치금
+     * point : 적립금
+     * pointfy : 통합포인트
+     * cvs : 편의점
+     * cod : 후불
+     * giftcard : 제휴상품권
+     * pointcard : 제휴포인트
+     * etc : 기타
+     *
+     *
+     */
     first_payment_methods: any;
     /**
-      * @description
-      * 네이버페이 PG 결제 정보
-      * 
-      * P : PG결제
-      * N : 네이버결제
-      * 
-      * 
-      */ 
+     * @description
+     * 네이버페이 PG 결제 정보
+     *
+     * P : PG결제
+     * N : 네이버결제
+     *
+     *
+     */
     naverpay_payment_information: any;
     /**
-      * @description
-      * 가격에 세금 포함
-      * 
-      * T: 세금포함
-      * F: 세금제외
-      * 
-      * 
-      */ 
+     * @description
+     * 가격에 세금 포함
+     *
+     * T: 세금포함
+     * F: 세금제외
+     *
+     *
+     */
     include_tax: any;
     /**
-      * @description
-      * 세금 상세 정보
-      * 
-      * 
-      */ 
+     * @description
+     * 세금 상세 정보
+     *
+     *
+     */
     tax_detail: any;
     /**
-      * @description
-      * 주문 서비스 유형
-      * 
-      * rental : 렌탈주문
-      * 
-      * 
-      */ 
+     * @description
+     * 주문 서비스 유형
+     *
+     * rental : 렌탈주문
+     *
+     *
+     */
     service_type: any;
     /**
-      * @description
-      * 주문 서비스 데이터
-      * 
-      * 
-      */ 
+     * @description
+     * 주문 서비스 데이터
+     *
+     *
+     */
     service_data: any;
     /**
-      * @description
-      * 배송지 정보 표기 여부
-      * 
-      * T: 배송지 정보 표기
-      * F: 배송지 정보 가림
-      * 
-      * 
-      */ 
+     * @description
+     * 배송지 정보 표기 여부
+     *
+     * T: 배송지 정보 표기
+     * F: 배송지 정보 가림
+     *
+     *
+     */
     show_shipping_address: any;
     /**
-      * @description
-      * 연동 된 SNS 제공코드
-      * 
-      * 
-      */ 
+     * @description
+     * 연동 된 SNS 제공코드
+     *
+     *
+     */
     social_member_code: any;
     /**
-      * @description
-      * 연동 된 SNS명
-      * 
-      * 
-      */ 
+     * @description
+     * 연동 된 SNS명
+     *
+     *
+     */
     social_name: any;
     /**
-      * @description
-      * 주문시 회원등급
-      * 
-      * 주문 당시의 회원등급
-      * 
-      * 
-      */ 
+     * @description
+     * 주문시 회원등급
+     *
+     * 주문 당시의 회원등급
+     *
+     *
+     */
     customer_group_no_when_ordering: any;
     /**
-      * @description
-      * 혜택 리소스
-      * 
-      * 
-      */ 
+     * @description
+     * 혜택 리소스
+     *
+     *
+     */
     benefits: any;
     /**
-      * @description
-      * 쿠폰 리소스
-      * 
-      * 
-      */ 
+     * @description
+     * 쿠폰 리소스
+     *
+     *
+     */
     coupons: any;
     /**
-      * @description
-      * 환불상세 리소스
-      * 
-      * 
-      */ 
+     * @description
+     * 환불상세 리소스
+     *
+     *
+     */
     refunds: any;
     /**
-      * @description
-      * 주문상태
-      * 
-      * prepare : 배송준비중
-      * prepareproduct : 상품준비중
-      * hold : 배송보류
-      * unhold : 배송보류해제
-      * 
-      * 
-      */ 
+     * @description
+     * 주문상태
+     *
+     * prepare : 배송준비중
+     * prepareproduct : 상품준비중
+     * hold : 배송보류
+     * unhold : 배송보류해제
+     *
+     *
+     */
     process_status: any;
     /**
-      * @description
-      * 품주코드
-      * 
-      * 
-      */ 
+     * @description
+     * 품주코드
+     *
+     *
+     */
     order_item_code: any;
     /**
-      * @description
-      * 구매확정 여부
-      * 
-      * 
-      */ 
+     * @description
+     * 구매확정 여부
+     *
+     *
+     */
     purchase_confirmation: any;
     /**
-      * @description
-      * 적립금 회수
-      * 
-      * 
-      */ 
+     * @description
+     * 적립금 회수
+     *
+     *
+     */
     collect_points: any;
   }
 
   export interface RetrieveAListOfOrdersInput {
     /**
-      * @description
-      * 품주 리소스
-      * 
-      * 조회시 Embed 파라메터를 사용하여 조회할 수 있다.
-      * 
-      * @embed
-      */ 
+     * @description
+     * 품주 리소스
+     *
+     * 조회시 Embed 파라메터를 사용하여 조회할 수 있다.
+     *
+     * @embed
+     */
     items?: any;
     /**
-      * @description
-      * 수령자정보 리소스
-      * 
-      * 조회시 Embed 파라메터를 사용하여 조회할 수 있다.
-      * 
-      * @embed
-      */ 
+     * @description
+     * 수령자정보 리소스
+     *
+     * 조회시 Embed 파라메터를 사용하여 조회할 수 있다.
+     *
+     * @embed
+     */
     receivers?: any;
     /**
-      * @description
-      * 주문자정보 리소스
-      * 
-      * @embed
-      */ 
+     * @description
+     * 주문자정보 리소스
+     *
+     * @embed
+     */
     buyer?: any;
     /**
-      * @description
-      * 반품상세 리소스
-      * 
-      * @embed
-      */ 
+     * @description
+     * 반품상세 리소스
+     *
+     * @embed
+     */
     return?: any;
     /**
-      * @description
-      * 취소상세 리소스
-      * 
-      * @embed
-      */ 
+     * @description
+     * 취소상세 리소스
+     *
+     * @embed
+     */
     cancellation?: any;
     /**
-      * @description
-      * 교환상세 리소스
-      * 
-      * @embed
-      */ 
+     * @description
+     * 교환상세 리소스
+     *
+     * @embed
+     */
     exchange?: any;
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
-      * 
-      * @default 1
-      * 
-      * 최소값: [1]
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
+     *
+     * @default 1
+     *
+     * 최소값: [1]
+     */
     shop_no?: any;
     /**
-      * @description
-      * 검색 시작일
-      * 
-      * 검색을 시작할 기준일
-      * 
-      * 날짜
-      */ 
+     * @description
+     * 검색 시작일
+     *
+     * 검색을 시작할 기준일
+     *
+     * 날짜
+     */
     start_date?: any;
     /**
-      * @description
-      * 검색 종료일
-      * 
-      * 검색을 종료할 기준일
-      * 검색 시작일과 같이 사용해야함.
-      * 검색기간은 한 호출에 3개월 이상 검색 불가.
-      * 
-      * 날짜
-      */ 
+     * @description
+     * 검색 종료일
+     *
+     * 검색을 종료할 기준일
+     * 검색 시작일과 같이 사용해야함.
+     * 검색기간은 한 호출에 3개월 이상 검색 불가.
+     *
+     * 날짜
+     */
     end_date?: any;
     /**
-      * @description
-      * 주문번호
-      * 
-      * ,(콤마)로 여러 건을 검색할 수 있다.
-      * 
-      * 주문번호
-      */ 
+     * @description
+     * 주문번호
+     *
+     * ,(콤마)로 여러 건을 검색할 수 있다.
+     *
+     * 주문번호
+     */
     order_id?: any;
     /**
-      * @description
-      * 주문상태
-      * 
-      * 주문상태. 주문 상태별로 각각의 코드가 있음.
-      * 
-      * ,(콤마)로 여러 건을 검색할 수 있다.
-      * 
-      * N00 : 입금전
-      * N10 : 상품준비중
-      * N20 : 배송준비중
-      * N21 : 배송대기
-      * N22 : 배송보류
-      * N30 : 배송중
-      * N40 : 배송완료
-      * N50 : 구매확정
-      * C00 : 취소신청
-      * C10 : 취소접수 - 관리자
-      * C11 : 취소접수거부 - 관리자
-      * C34 : 취소처리중 - 환불전
-      * C35 : 취소처리중 - 환불완료
-      * C36 : 취소처리중 - 환불보류
-      * C40 : 취소완료
-      * C41 : 취소 완료 - 환불전
-      * C42 : 취소 완료 - 환불요청중
-      * C43 : 취소 완료 - 환불보류
-      * C47 : 입금전취소 - 구매자
-      * C48 : 입금전취소 - 자동취소
-      * C49 : 입금전취소 - 관리자
-      * R00 : 반품신청
-      * R10 : 반품접수
-      * R11 : 반품 접수 거부
-      * R12 : 반품보류
-      * R13 : 반품접수 - 수거완료(자동)
-      * R20 : 반품 수거 완료
-      * R30 : 반품처리중 - 수거전
-      * R31 : 반품처리중 - 수거완료
-      * R34 : 반품처리중 - 환불전
-      * R36 : 반품처리중 - 환불보류
-      * R40 : 반품완료 - 환불완료
-      * R41 : 반품완료 - 환불전
-      * R42 : 반품완료 - 환불요청중
-      * R43 : 반품완료 - 환불보류
-      * E00 : 교환신청
-      * E10 : 교환접수
-      * N01 : 교환접수 - 교환상품
-      * E11 : 교환접수거부
-      * E12 : 교환보류
-      * E13 : 교환접수 - 수거완료(자동)
-      * E20 : 교환준비
-      * E30 : 교환처리중 - 수거전
-      * E31 : 교환처리중 - 수거완료
-      * E32 : 교환처리중 - 입금전
-      * E33 : 교환처리중 - 입금완료
-      * E34 : 교환처리중 - 환불전
-      * E35 : 교환처리중 - 환불완료
-      * E36 : 교환처리중 - 환불보류
-      * E40 : 교환완료
-      * E41 : 교환 완료 - 교환철회
-      * E50 : 교환철회 - 판매자
-      * E51 : 교환철회 - 구매자
-      * 
-      * 
-      */ 
+     * @description
+     * 주문상태
+     *
+     * 주문상태. 주문 상태별로 각각의 코드가 있음.
+     *
+     * ,(콤마)로 여러 건을 검색할 수 있다.
+     *
+     * N00 : 입금전
+     * N10 : 상품준비중
+     * N20 : 배송준비중
+     * N21 : 배송대기
+     * N22 : 배송보류
+     * N30 : 배송중
+     * N40 : 배송완료
+     * N50 : 구매확정
+     * C00 : 취소신청
+     * C10 : 취소접수 - 관리자
+     * C11 : 취소접수거부 - 관리자
+     * C34 : 취소처리중 - 환불전
+     * C35 : 취소처리중 - 환불완료
+     * C36 : 취소처리중 - 환불보류
+     * C40 : 취소완료
+     * C41 : 취소 완료 - 환불전
+     * C42 : 취소 완료 - 환불요청중
+     * C43 : 취소 완료 - 환불보류
+     * C47 : 입금전취소 - 구매자
+     * C48 : 입금전취소 - 자동취소
+     * C49 : 입금전취소 - 관리자
+     * R00 : 반품신청
+     * R10 : 반품접수
+     * R11 : 반품 접수 거부
+     * R12 : 반품보류
+     * R13 : 반품접수 - 수거완료(자동)
+     * R20 : 반품 수거 완료
+     * R30 : 반품처리중 - 수거전
+     * R31 : 반품처리중 - 수거완료
+     * R34 : 반품처리중 - 환불전
+     * R36 : 반품처리중 - 환불보류
+     * R40 : 반품완료 - 환불완료
+     * R41 : 반품완료 - 환불전
+     * R42 : 반품완료 - 환불요청중
+     * R43 : 반품완료 - 환불보류
+     * E00 : 교환신청
+     * E10 : 교환접수
+     * N01 : 교환접수 - 교환상품
+     * E11 : 교환접수거부
+     * E12 : 교환보류
+     * E13 : 교환접수 - 수거완료(자동)
+     * E20 : 교환준비
+     * E30 : 교환처리중 - 수거전
+     * E31 : 교환처리중 - 수거완료
+     * E32 : 교환처리중 - 입금전
+     * E33 : 교환처리중 - 입금완료
+     * E34 : 교환처리중 - 환불전
+     * E35 : 교환처리중 - 환불완료
+     * E36 : 교환처리중 - 환불보류
+     * E40 : 교환완료
+     * E41 : 교환 완료 - 교환철회
+     * E50 : 교환철회 - 판매자
+     * E51 : 교환철회 - 구매자
+     *
+     *
+     */
     order_status?: any;
     /**
-      * @description
-      * 결제상태
-      * 
-      * F : 입금전
-      * M : 추가입금대기
-      * T : 입금완료(수동)
-      * A : 입금완료(자동)
-      * P : 결제완료
-      * 
-      * 
-      */ 
+     * @description
+     * 결제상태
+     *
+     * F : 입금전
+     * M : 추가입금대기
+     * T : 입금완료(수동)
+     * A : 입금완료(자동)
+     * P : 결제완료
+     *
+     *
+     */
     payment_status?: any;
     /**
-      * @description
-      * 회원여부
-      * 
-      * 회원여부. 회원과 비회원 각각의 코드가 있음.
-      * 
-      * 2 : 회원
-      * 3 : 비회원
-      * 
-      * 
-      */ 
+     * @description
+     * 회원여부
+     *
+     * 회원여부. 회원과 비회원 각각의 코드가 있음.
+     *
+     * 2 : 회원
+     * 3 : 비회원
+     *
+     *
+     */
     member_type?: any;
     /**
-      * @description
-      * 회원등급번호
-      * 
-      * 
-      */ 
+     * @description
+     * 회원등급번호
+     *
+     *
+     */
     group_no?: any;
     /**
-      * @description
-      * 주문자명
-      * 
-      * 주문자 이름. 입금자 혹은 수령자 이름과는 다를 수 있음.
-      * 
-      * 
-      */ 
+     * @description
+     * 주문자명
+     *
+     * 주문자 이름. 입금자 혹은 수령자 이름과는 다를 수 있음.
+     *
+     *
+     */
     buyer_name?: any;
     /**
-      * @description
-      * 수령자명
-      * 
-      * 수령자 이름. 주문자 혹은 입금자 이름과는 다를 수 있음.
-      * 
-      * 
-      */ 
+     * @description
+     * 수령자명
+     *
+     * 수령자 이름. 주문자 혹은 입금자 이름과는 다를 수 있음.
+     *
+     *
+     */
     receiver_name?: any;
     /**
-      * @description
-      * 수령자명 (발음)
-      * 
-      * 
-      */ 
+     * @description
+     * 수령자명 (발음)
+     *
+     *
+     */
     name_furigana?: any;
     /**
-      * @description
-      * 수령자주소
-      * 
-      * 수령자 주소. 주문자 혹은 입금자 주소와는 다를 수 있음.
-      * 
-      * 
-      */ 
+     * @description
+     * 수령자주소
+     *
+     * 수령자 주소. 주문자 혹은 입금자 주소와는 다를 수 있음.
+     *
+     *
+     */
     receiver_address?: any;
     /**
-      * @description
-      * 회원아이디
-      * 
-      * 회원 아이디
-      * 
-      * 
-      */ 
+     * @description
+     * 회원아이디
+     *
+     * 회원 아이디
+     *
+     *
+     */
     member_id?: any;
     /**
-      * @description
-      * 회원 이메일
-      * 
-      * 
-      */ 
+     * @description
+     * 회원 이메일
+     *
+     *
+     */
     member_email?: any;
     /**
-      * @description
-      * 상품번호
-      * 
-      * 상품 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 상품번호
+     *
+     * 상품 번호
+     *
+     * ,(콤마)로 여러 건을 검색할 수 있다.
+     *
+     *
+     */
     product_no?: any;
     /**
-      * @description
-      * 상품코드
-      * 
-      * 상품 코드
-      * 
-      * 
-      */ 
+     * @description
+     * 상품코드
+     *
+     * 상품 코드
+     *
+     *
+     */
     product_code?: any;
     /**
-      * @description
-      * 검색날짜 유형
-      * 
-      * 검색을 위한 날짜 유형 기준. 기본값은 주문일로 설정되어 있음.
-      * 
-      * order_date : 주문일
-      * pay_date : 결제일
-      * shipbegin_date : 배송시작일
-      * shipend_date : 배송완료일
-      * cancel_date : 주문취소일
-      * place_date : 발주일
-      * cancel_request_date : 취소신청일
-      * cancel_accept_date : 취소접수일
-      * cancel_complete_date : 취소완료일
-      * exchange_request_date : 교환신청일
-      * exchange_accept_date : 교환접수일
-      * exchange_complete_date : 교환완료일
-      * return_request_date : 반품신청일
-      * return_accept_date : 반품접수일
-      * return_complete_date : 반품완료일
-      * purchaseconfirmation_date : 구매확정일
-      * 
-      * @default order_date
-      * 
-      * 
-      */ 
+     * @description
+     * 검색날짜 유형
+     *
+     * 검색을 위한 날짜 유형 기준. 기본값은 주문일로 설정되어 있음.
+     *
+     * order_date : 주문일
+     * pay_date : 결제일
+     * shipbegin_date : 배송시작일
+     * shipend_date : 배송완료일
+     * cancel_date : 주문취소일
+     * place_date : 발주일
+     * cancel_request_date : 취소신청일
+     * cancel_accept_date : 취소접수일
+     * cancel_complete_date : 취소완료일
+     * exchange_request_date : 교환신청일
+     * exchange_accept_date : 교환접수일
+     * exchange_complete_date : 교환완료일
+     * return_request_date : 반품신청일
+     * return_accept_date : 반품접수일
+     * return_complete_date : 반품완료일
+     * purchaseconfirmation_date : 구매확정일
+     *
+     * @default order_date
+     *
+     *
+     */
     date_type?: any;
     /**
-      * @description
-      * 공급사 아이디
-      * 
-      * ,(콤마)로 여러 건을 검색할 수 있다.
-      * 
-      * 
-      */ 
+     * @description
+     * 공급사 아이디
+     *
+     * ,(콤마)로 여러 건을 검색할 수 있다.
+     *
+     *
+     */
     supplier_id?: any;
     /**
-      * @description
-      * 주문경로
-      * 
-      * ,(콤마)로 여러 건을 검색할 수 있다.
-      * 
-      * cafe24:카페24
-      * mobile:모바일웹
-      * mobile_d:모바일앱
-      * NCHECKOUT:네이버페이
-      * inpark:인터파크
-      * auction:옥션
-      * sk11st:11번가
-      * gmarket:G마켓
-      * coupang:쿠팡
-      * shopn:스마트스토어
-      * 
-      * 
-      */ 
+     * @description
+     * 주문경로
+     *
+     * ,(콤마)로 여러 건을 검색할 수 있다.
+     *
+     * cafe24:카페24
+     * mobile:모바일웹
+     * mobile_d:모바일앱
+     * NCHECKOUT:네이버페이
+     * inpark:인터파크
+     * auction:옥션
+     * sk11st:11번가
+     * gmarket:G마켓
+     * coupang:쿠팡
+     * shopn:스마트스토어
+     *
+     *
+     */
     order_place_id?: any;
     /**
-      * @description
-      * 주문자 휴대 전화
-      * 
-      * 
-      */ 
+     * @description
+     * 주문자 휴대 전화
+     *
+     *
+     */
     buyer_cellphone?: any;
     /**
-      * @description
-      * 주문자 일반 전화
-      * 
-      * 
-      */ 
+     * @description
+     * 주문자 일반 전화
+     *
+     *
+     */
     buyer_phone?: any;
     /**
-      * @description
-      * 주문자 이메일
-      * 
-      * 
-      */ 
+     * @description
+     * 주문자 이메일
+     *
+     *
+     */
     buyer_email?: any;
     /**
-      * @description
-      * 유입경로
-      * 
-      * 
-      */ 
+     * @description
+     * 유입경로
+     *
+     *
+     */
     inflow_path?: any;
     /**
-      * @description
-      * 정기결제 여부
-      * 
-      * T : 정기결제
-      * F : 정기결제 아님
-      * 
-      * 
-      */ 
+     * @description
+     * 정기결제 여부
+     *
+     * T : 정기결제
+     * F : 정기결제 아님
+     *
+     *
+     */
     subscription?: any;
     /**
-      * @description
-      * 마켓 주문 번호
-      * 
-      * ,(콤마)로 여러 건을 검색할 수 있다.
-      * 
-      * 형식 : [a-zA-Z0-9_-]
-      * 최대글자수 : [40자]
-      */ 
+     * @description
+     * 마켓 주문 번호
+     *
+     * ,(콤마)로 여러 건을 검색할 수 있다.
+     *
+     * 형식 : [a-zA-Z0-9_-]
+     * 최대글자수 : [40자]
+     */
     market_order_no?: any;
     /**
-      * @description
-      * 마켓 취소요청 여부
-      * 
-      * T : 취소 요청된 마켓 주문
-      * 
-      * 
-      */ 
+     * @description
+     * 마켓 취소요청 여부
+     *
+     * T : 취소 요청된 마켓 주문
+     *
+     *
+     */
     market_cancel_request?: any;
     /**
-      * @description
-      * 결제수단 코드
-      * 
-      * ,(콤마)로 여러 건을 검색할 수 있다.
-      * 
-      * cash : 무통장
-      * card : 신용카드
-      * tcash : 계좌이체
-      * icash : 가상계좌
-      * cell : 휴대폰
-      * deferpay : 후불
-      * cvs : 편의점
-      * point : 선불금
-      * mileage : 적립금
-      * deposit : 예치금
-      * giftcard : 제휴상품권
-      * pointcard : 제휴포인트
-      * etc : 기타
-      * 
-      * 
-      */ 
+     * @description
+     * 결제수단 코드
+     *
+     * ,(콤마)로 여러 건을 검색할 수 있다.
+     *
+     * cash : 무통장
+     * card : 신용카드
+     * tcash : 계좌이체
+     * icash : 가상계좌
+     * cell : 휴대폰
+     * deferpay : 후불
+     * cvs : 편의점
+     * point : 선불금
+     * mileage : 적립금
+     * deposit : 예치금
+     * giftcard : 제휴상품권
+     * pointcard : 제휴포인트
+     * etc : 기타
+     *
+     *
+     */
     payment_method?: any;
     /**
-      * @description
-      * PG 이름
-      * 
-      * ,(콤마)로 여러 건을 검색할 수 있다.
-      * 
-      * 
-      */ 
+     * @description
+     * PG 이름
+     *
+     * ,(콤마)로 여러 건을 검색할 수 있다.
+     *
+     *
+     */
     payment_gateway_name?: any;
     /**
-      * @description
-      * 마켓 판매자 아이디
-      * 
-      * 
-      */ 
+     * @description
+     * 마켓 판매자 아이디
+     *
+     *
+     */
     market_seller_id?: any;
     /**
-      * @description
-      * 할인수단
-      * 
-      * ,(콤마)로 여러 건을 검색할 수 있다.
-      * 
-      * point : 적립금
-      * credit : 예치금
-      * coupon : 쿠폰
-      * market_discount : 마켓할인
-      * discount_code : 할인코드
-      * 
-      * 
-      */ 
+     * @description
+     * 할인수단
+     *
+     * ,(콤마)로 여러 건을 검색할 수 있다.
+     *
+     * point : 적립금
+     * credit : 예치금
+     * coupon : 쿠폰
+     * market_discount : 마켓할인
+     * discount_code : 할인코드
+     *
+     *
+     */
     discount_method?: any;
     /**
-      * @description
-      * 할인코드
-      * 
-      * 
-      */ 
+     * @description
+     * 할인코드
+     *
+     *
+     */
     discount_code?: any;
     /**
-      * @description
-      * 배송사 아이디
-      * 
-      * 최소값: [1]
-      */ 
+     * @description
+     * 배송사 아이디
+     *
+     * 최소값: [1]
+     */
     carrier_id?: any;
     /**
-      * @description
-      * 주문 라벨
-      * 
-      * ,(콤마)로 여러 건을 검색할 수 있다.
-      * 
-      * 
-      */ 
+     * @description
+     * 주문 라벨
+     *
+     * ,(콤마)로 여러 건을 검색할 수 있다.
+     *
+     *
+     */
     labels?: any;
     /**
-      * @description
-      * 조회결과 최대건수
-      * 
-      * 조회하고자 하는 최대 건수를 지정할 수 있음.
-      * 예) 10 입력시 10건만 표시함.
-      * 
-      * @default 10
-      * 
-      * 최소: [1]~최대: [1000]
-      */ 
+     * @description
+     * 조회결과 최대건수
+     *
+     * 조회하고자 하는 최대 건수를 지정할 수 있음.
+     * 예) 10 입력시 10건만 표시함.
+     *
+     * @default 10
+     *
+     * 최소: [1]~최대: [1000]
+     */
     limit?: any;
     /**
-      * @description
-      * 조회결과 시작위치
-      * 
-      * @default 0
-      * 
-      * 최대값: [15000]
-      */ 
+     * @description
+     * 조회결과 시작위치
+     *
+     * @default 0
+     *
+     * 최대값: [15000]
+     */
     offset?: any;
   }
 
   export interface RetrieveAListOfOrdersOutput {
-    orders: { 
-    shop_no: number;
-    currency: string;
-    order_id: string;
-    market_id: string;
-    market_order_no: any;
-    member_id: string;
-    member_email: string;
-    member_authentication: Cafe24Enum;
-    initial_order_amount: { 
-    order_price_amount: Cafe24Datetime;
-    shipping_fee: Cafe24Datetime;
-    points_spent_amount: string;
-    credits_spent_amount: Cafe24Datetime;
-    coupon_discount_price: Cafe24Datetime;
-    coupon_shipping_fee_amount: string;
-    membership_discount_amount: string;
-    shipping_fee_discount_amount: Cafe24Datetime;
-    set_product_discount_amount: string;
-    app_discount_amount: string;
-    point_incentive_amount: string;
-    total_amount_due: string;
-    payment_amount: Cafe24Datetime;
-    market_other_discount_amount: string;
-    tax: string;
-    };
-    actual_order_amount: { 
-    order_price_amount: Cafe24Datetime;
-    shipping_fee: Cafe24Datetime;
-    points_spent_amount: string;
-    credits_spent_amount: Cafe24Datetime;
-    coupon_discount_price: Cafe24Datetime;
-    coupon_shipping_fee_amount: string;
-    membership_discount_amount: string;
-    shipping_fee_discount_amount: Cafe24Datetime;
-    set_product_discount_amount: string;
-    app_discount_amount: string;
-    point_incentive_amount: string;
-    total_amount_due: string;
-    payment_amount: Cafe24Datetime;
-    market_other_discount_amount: string;
-    tax: string;
-    };
-    billing_name: string;
-    bank_code: string;
-    bank_code_name: string;
-    payment_method: string[];
-    payment_method_name: string[];
-    payment_gateway_names: any;
-    sub_payment_method_name: string;
-    sub_payment_method_code: string;
-    transaction_ids: any;
-    paid: Cafe24Enum;
-    canceled: Cafe24Enum;
-    order_date: Cafe24Datetime;
-    first_order: Cafe24Enum;
-    payment_date: Cafe24Datetime;
-    order_from_mobile: Cafe24Enum;
-    use_escrow: Cafe24Enum;
-    bank_account_no: Cafe24Datetime;
-    bank_account_owner_name: string;
-    market_seller_id: any;
-    payment_amount: Cafe24Datetime;
-    cancel_date: any;
-    order_place_name: string;
-    order_place_id: string;
-    payment_confirmation: any;
-    commission: string;
-    postpay: Cafe24Enum;
-    admin_additional_amount: string;
-    additional_shipping_fee: string;
-    international_shipping_insurance: string;
-    additional_handling_fee: string;
-    shipping_type: Cafe24Enum;
-    shipping_type_text: string;
-    shipping_status: Cafe24Enum;
-    shipping_fee_detail: { 
-    shipping_group_code: number;
-    supplier_code: string;
-    shipping_fee: Cafe24Datetime;
-    cancel_shipping_fee: string;
-    additional_shipping_fee: string;
-    refunded_shipping_fee: string;
-    return_shpping_fee: string;
-    items: string[];
+    orders: {
+      shop_no: number;
+      currency: string;
+      order_id: string;
+      market_id: string;
+      market_order_no: any;
+      member_id: string;
+      member_email: string;
+      member_authentication: Cafe24Enum;
+      initial_order_amount: {
+        order_price_amount: Cafe24Datetime;
+        shipping_fee: Cafe24Datetime;
+        points_spent_amount: string;
+        credits_spent_amount: Cafe24Datetime;
+        coupon_discount_price: Cafe24Datetime;
+        coupon_shipping_fee_amount: string;
+        membership_discount_amount: string;
+        shipping_fee_discount_amount: Cafe24Datetime;
+        set_product_discount_amount: string;
+        app_discount_amount: string;
+        point_incentive_amount: string;
+        total_amount_due: string;
+        payment_amount: Cafe24Datetime;
+        market_other_discount_amount: string;
+        tax: string;
+      };
+      actual_order_amount: {
+        order_price_amount: Cafe24Datetime;
+        shipping_fee: Cafe24Datetime;
+        points_spent_amount: string;
+        credits_spent_amount: Cafe24Datetime;
+        coupon_discount_price: Cafe24Datetime;
+        coupon_shipping_fee_amount: string;
+        membership_discount_amount: string;
+        shipping_fee_discount_amount: Cafe24Datetime;
+        set_product_discount_amount: string;
+        app_discount_amount: string;
+        point_incentive_amount: string;
+        total_amount_due: string;
+        payment_amount: Cafe24Datetime;
+        market_other_discount_amount: string;
+        tax: string;
+      };
+      billing_name: string;
+      bank_code: string;
+      bank_code_name: string;
+      payment_method: string[];
+      payment_method_name: string[];
+      payment_gateway_names: any;
+      sub_payment_method_name: string;
+      sub_payment_method_code: string;
+      transaction_ids: any;
+      paid: Cafe24Enum;
+      canceled: Cafe24Enum;
+      order_date: Cafe24Datetime;
+      first_order: Cafe24Enum;
+      payment_date: Cafe24Datetime;
+      order_from_mobile: Cafe24Enum;
+      use_escrow: Cafe24Enum;
+      bank_account_no: Cafe24Datetime;
+      bank_account_owner_name: string;
+      market_seller_id: any;
+      payment_amount: Cafe24Datetime;
+      cancel_date: any;
+      order_place_name: string;
+      order_place_id: string;
+      payment_confirmation: any;
+      commission: string;
+      postpay: Cafe24Enum;
+      admin_additional_amount: string;
+      additional_shipping_fee: string;
+      international_shipping_insurance: string;
+      additional_handling_fee: string;
+      shipping_type: Cafe24Enum;
+      shipping_type_text: string;
+      shipping_status: Cafe24Enum;
+      shipping_fee_detail: {
+        shipping_group_code: number;
+        supplier_code: string;
+        shipping_fee: Cafe24Datetime;
+        cancel_shipping_fee: string;
+        additional_shipping_fee: string;
+        refunded_shipping_fee: string;
+        return_shpping_fee: string;
+        items: string[];
+      }[];
+      regional_surcharge_detail: {
+        shipping_group_code: number;
+        supplier_code: string;
+        regional_surcharge_amount: Cafe24Datetime;
+        cancel_shipping_fee: string;
+        additional_shipping_fee: string;
+        refunded_shipping_fee: string;
+        return_shpping_fee: string;
+        items: string[];
+      }[];
+      wished_delivery_date: string;
+      wished_delivery_time: any;
+      wished_carrier_id: any;
+      wished_carrier_name: any;
+      return_confirmed_date: any;
+      total_supply_price: Cafe24Datetime;
+      naver_point: number;
+      additional_order_info_list: {
+        id: number;
+        name: string;
+        value: string;
+        input_type: Cafe24Enum;
+        product_type: Cafe24Enum;
+        applied_product_list: string[];
+      }[];
+      store_pickup: Cafe24Enum;
+      easypay_name: string;
+      loan_status: any;
+      subscription: Cafe24Enum;
+      multiple_addresses: Cafe24Enum;
+      exchange_rate: string;
+      first_payment_methods: string[];
+      naverpay_payment_information: Cafe24Enum;
+      market_discount_info: any;
+      include_tax: Cafe24Enum;
+      tax_detail: {
+        name: string;
+        amount: string;
+        price_before_tax: Cafe24Datetime;
+        price_before_tax_type: Cafe24Enum;
+        order_item_code: string[];
+        country_tax_rate: string;
+        region_tax: {
+          rate: string;
+          taxation_method: Cafe24Enum;
+        };
+        product_tax_override: {
+          rate: string;
+          taxation_method: Cafe24Enum;
+        };
+        shipping_tax_override: {
+          rate: any;
+          taxation_method: any;
+        };
+      }[];
+      service_type: string;
+      service_data: {
+        key: string;
+        value: Cafe24Datetime;
+        title: string;
+      }[];
+      show_shipping_address: Cafe24Enum;
+      social_member_code: any;
+      social_name: any;
     }[];
-    regional_surcharge_detail: { 
-    shipping_group_code: number;
-    supplier_code: string;
-    regional_surcharge_amount: Cafe24Datetime;
-    cancel_shipping_fee: string;
-    additional_shipping_fee: string;
-    refunded_shipping_fee: string;
-    return_shpping_fee: string;
-    items: string[];
-    }[];
-    wished_delivery_date: string;
-    wished_delivery_time: any;
-    wished_carrier_id: any;
-    wished_carrier_name: any;
-    return_confirmed_date: any;
-    total_supply_price: Cafe24Datetime;
-    naver_point: number;
-    additional_order_info_list: { 
-    id: number;
-    name: string;
-    value: string;
-    input_type: Cafe24Enum;
-    product_type: Cafe24Enum;
-    applied_product_list: string[];
-    }[];
-    store_pickup: Cafe24Enum;
-    easypay_name: string;
-    loan_status: any;
-    subscription: Cafe24Enum;
-    multiple_addresses: Cafe24Enum;
-    exchange_rate: string;
-    first_payment_methods: string[];
-    naverpay_payment_information: Cafe24Enum;
-    market_discount_info: any;
-    include_tax: Cafe24Enum;
-    tax_detail: { 
-    name: string;
-    amount: string;
-    price_before_tax: Cafe24Datetime;
-    price_before_tax_type: Cafe24Enum;
-    order_item_code: string[];
-    country_tax_rate: string;
-    region_tax: { 
-    rate: string;
-    taxation_method: Cafe24Enum;
-    };
-    product_tax_override: { 
-    rate: string;
-    taxation_method: Cafe24Enum;
-    };
-    shipping_tax_override: { 
-    rate: any;
-    taxation_method: any;
-    };
-    }[];
-    service_type: string;
-    service_data: { 
-    key: string;
-    value: Cafe24Datetime;
-    title: string;
-    }[];
-    show_shipping_address: Cafe24Enum;
-    social_member_code: any;
-    social_name: any;
-    }[];
-    links: { 
-    rel: string;
-    href: string;
+    links: {
+      rel: string;
+      href: string;
     }[];
   }
   export interface RetrieveAnOrderInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     *
+     */
     shop_no?: any;
     /**
-      * @description
-      * 주문번호
-      * 
-      * @required
-      * 
-      * 주문번호
-      */ 
+     * @description
+     * 주문번호
+     *
+     * @required
+     *
+     * 주문번호
+     */
     order_id: any;
     /**
-      * @description
-      * 품주 리소스
-      * 
-      * @embed
-      */ 
+     * @description
+     * 품주 리소스
+     *
+     * @embed
+     */
     items?: any;
     /**
-      * @description
-      * 수령자정보 리소스
-      * 
-      * @embed
-      */ 
+     * @description
+     * 수령자정보 리소스
+     *
+     * @embed
+     */
     receivers?: any;
     /**
-      * @description
-      * 주문자정보 리소스
-      * 
-      * @embed
-      */ 
+     * @description
+     * 주문자정보 리소스
+     *
+     * @embed
+     */
     buyer?: any;
     /**
-      * @description
-      * 혜택 리소스
-      * 
-      * @embed
-      */ 
+     * @description
+     * 혜택 리소스
+     *
+     * @embed
+     */
     benefits?: any;
     /**
-      * @description
-      * 쿠폰 리소스
-      * 
-      * @embed
-      */ 
+     * @description
+     * 쿠폰 리소스
+     *
+     * @embed
+     */
     coupons?: any;
     /**
-      * @description
-      * 반품상세 리소스
-      * 
-      * @embed
-      */ 
+     * @description
+     * 반품상세 리소스
+     *
+     * @embed
+     */
     return?: any;
     /**
-      * @description
-      * 취소상세 리소스
-      * 
-      * @embed
-      */ 
+     * @description
+     * 취소상세 리소스
+     *
+     * @embed
+     */
     cancellation?: any;
     /**
-      * @description
-      * 교환상세 리소스
-      * 
-      * @embed
-      */ 
+     * @description
+     * 교환상세 리소스
+     *
+     * @embed
+     */
     exchange?: any;
     /**
-      * @description
-      * 환불상세 리소스
-      * 
-      * @embed
-      */ 
+     * @description
+     * 환불상세 리소스
+     *
+     * @embed
+     */
     refunds?: any;
   }
 
   export interface RetrieveAnOrderOutput {
-    order: { 
-    shop_no: number;
-    currency: string;
-    order_id: string;
-    market_id: string;
-    market_order_no: any;
-    member_id: string;
-    member_authentication: Cafe24Enum;
-    customer_group_no_when_ordering: number;
-    initial_order_amount: { 
-    order_price_amount: Cafe24Datetime;
-    shipping_fee: Cafe24Datetime;
-    points_spent_amount: string;
-    credits_spent_amount: Cafe24Datetime;
-    coupon_discount_price: Cafe24Datetime;
-    coupon_shipping_fee_amount: string;
-    membership_discount_amount: string;
-    shipping_fee_discount_amount: Cafe24Datetime;
-    set_product_discount_amount: string;
-    app_discount_amount: string;
-    point_incentive_amount: string;
-    total_amount_due: string;
-    payment_amount: Cafe24Datetime;
-    market_other_discount_amount: string;
-    tax: string;
-    };
-    actual_order_amount: { 
-    order_price_amount: Cafe24Datetime;
-    shipping_fee: Cafe24Datetime;
-    points_spent_amount: string;
-    credits_spent_amount: Cafe24Datetime;
-    coupon_discount_price: string;
-    coupon_shipping_fee_amount: string;
-    membership_discount_amount: string;
-    shipping_fee_discount_amount: string;
-    set_product_discount_amount: string;
-    app_discount_amount: string;
-    point_incentive_amount: string;
-    total_amount_due: string;
-    payment_amount: Cafe24Datetime;
-    market_other_discount_amount: string;
-    tax: string;
-    };
-    billing_name: string;
-    bank_code: string;
-    bank_code_name: string;
-    payment_method: string[];
-    payment_method_name: string[];
-    payment_gateway_names: any;
-    sub_payment_method_name: string;
-    sub_payment_method_code: string;
-    transaction_ids: any;
-    paid: Cafe24Enum;
-    canceled: Cafe24Enum;
-    order_date: Cafe24Datetime;
-    first_order: Cafe24Enum;
-    payment_date: Cafe24Datetime;
-    order_from_mobile: Cafe24Enum;
-    use_escrow: Cafe24Enum;
-    bank_account_no: Cafe24Datetime;
-    bank_account_owner_name: string;
-    market_seller_id: any;
-    payment_amount: Cafe24Datetime;
-    cancel_date: any;
-    order_place_name: string;
-    order_place_id: string;
-    payment_confirmation: any;
-    commission: string;
-    postpay: Cafe24Enum;
-    admin_additional_amount: string;
-    additional_shipping_fee: string;
-    international_shipping_insurance: string;
-    additional_handling_fee: string;
-    shipping_type: Cafe24Enum;
-    shipping_type_text: string;
-    shipping_status: Cafe24Enum;
-    shipping_fee_detail: { 
-    shipping_group_code: number;
-    supplier_code: string;
-    shipping_fee: Cafe24Datetime;
-    cancel_shipping_fee: string;
-    additional_shipping_fee: string;
-    refunded_shipping_fee: string;
-    return_shpping_fee: string;
-    items: string[];
-    }[];
-    regional_surcharge_detail: { 
-    shipping_group_code: number;
-    supplier_code: string;
-    regional_surcharge_amount: Cafe24Datetime;
-    cancel_shipping_fee: string;
-    additional_shipping_fee: string;
-    refunded_shipping_fee: string;
-    return_shpping_fee: string;
-    items: string[];
-    }[];
-    wished_delivery_date: string;
-    wished_delivery_time: any;
-    wished_carrier_id: any;
-    wished_carrier_name: any;
-    return_confirmed_date: any;
-    total_supply_price: Cafe24Datetime;
-    naver_point: number;
-    additional_order_info_list: { 
-    id: number;
-    name: string;
-    value: string;
-    input_type: Cafe24Enum;
-    product_type: Cafe24Enum;
-    applied_product_list: string[];
-    }[];
-    store_pickup: Cafe24Enum;
-    easypay_name: string;
-    loan_status: any;
-    subscription: Cafe24Enum;
-    multiple_addresses: Cafe24Enum;
-    exchange_rate: Cafe24Datetime;
-    first_payment_methods: string[];
-    naverpay_payment_information: Cafe24Enum;
-    include_tax: Cafe24Enum;
-    tax_detail: { 
-    name: string;
-    amount: string;
-    price_before_tax: Cafe24Datetime;
-    price_before_tax_type: Cafe24Enum;
-    order_item_code: string[];
-    country_tax_rate: string;
-    region_tax: { 
-    rate: string;
-    taxation_method: Cafe24Enum;
-    };
-    product_tax_override: { 
-    rate: string;
-    taxation_method: Cafe24Enum;
-    };
-    shipping_tax_override: { 
-    rate: any;
-    taxation_method: any;
-    };
-    }[];
-    service_type: string;
-    service_data: { 
-    key: string;
-    value: Cafe24Datetime;
-    title: string;
-    }[];
-    show_shipping_address: Cafe24Enum;
-    social_member_code: any;
-    social_name: any;
+    order: {
+      shop_no: number;
+      currency: string;
+      order_id: string;
+      market_id: string;
+      market_order_no: any;
+      member_id: string;
+      member_authentication: Cafe24Enum;
+      customer_group_no_when_ordering: number;
+      initial_order_amount: {
+        order_price_amount: Cafe24Datetime;
+        shipping_fee: Cafe24Datetime;
+        points_spent_amount: string;
+        credits_spent_amount: Cafe24Datetime;
+        coupon_discount_price: Cafe24Datetime;
+        coupon_shipping_fee_amount: string;
+        membership_discount_amount: string;
+        shipping_fee_discount_amount: Cafe24Datetime;
+        set_product_discount_amount: string;
+        app_discount_amount: string;
+        point_incentive_amount: string;
+        total_amount_due: string;
+        payment_amount: Cafe24Datetime;
+        market_other_discount_amount: string;
+        tax: string;
+      };
+      actual_order_amount: {
+        order_price_amount: Cafe24Datetime;
+        shipping_fee: Cafe24Datetime;
+        points_spent_amount: string;
+        credits_spent_amount: Cafe24Datetime;
+        coupon_discount_price: string;
+        coupon_shipping_fee_amount: string;
+        membership_discount_amount: string;
+        shipping_fee_discount_amount: string;
+        set_product_discount_amount: string;
+        app_discount_amount: string;
+        point_incentive_amount: string;
+        total_amount_due: string;
+        payment_amount: Cafe24Datetime;
+        market_other_discount_amount: string;
+        tax: string;
+      };
+      billing_name: string;
+      bank_code: string;
+      bank_code_name: string;
+      payment_method: string[];
+      payment_method_name: string[];
+      payment_gateway_names: any;
+      sub_payment_method_name: string;
+      sub_payment_method_code: string;
+      transaction_ids: any;
+      paid: Cafe24Enum;
+      canceled: Cafe24Enum;
+      order_date: Cafe24Datetime;
+      first_order: Cafe24Enum;
+      payment_date: Cafe24Datetime;
+      order_from_mobile: Cafe24Enum;
+      use_escrow: Cafe24Enum;
+      bank_account_no: Cafe24Datetime;
+      bank_account_owner_name: string;
+      market_seller_id: any;
+      payment_amount: Cafe24Datetime;
+      cancel_date: any;
+      order_place_name: string;
+      order_place_id: string;
+      payment_confirmation: any;
+      commission: string;
+      postpay: Cafe24Enum;
+      admin_additional_amount: string;
+      additional_shipping_fee: string;
+      international_shipping_insurance: string;
+      additional_handling_fee: string;
+      shipping_type: Cafe24Enum;
+      shipping_type_text: string;
+      shipping_status: Cafe24Enum;
+      shipping_fee_detail: {
+        shipping_group_code: number;
+        supplier_code: string;
+        shipping_fee: Cafe24Datetime;
+        cancel_shipping_fee: string;
+        additional_shipping_fee: string;
+        refunded_shipping_fee: string;
+        return_shpping_fee: string;
+        items: string[];
+      }[];
+      regional_surcharge_detail: {
+        shipping_group_code: number;
+        supplier_code: string;
+        regional_surcharge_amount: Cafe24Datetime;
+        cancel_shipping_fee: string;
+        additional_shipping_fee: string;
+        refunded_shipping_fee: string;
+        return_shpping_fee: string;
+        items: string[];
+      }[];
+      wished_delivery_date: string;
+      wished_delivery_time: any;
+      wished_carrier_id: any;
+      wished_carrier_name: any;
+      return_confirmed_date: any;
+      total_supply_price: Cafe24Datetime;
+      naver_point: number;
+      additional_order_info_list: {
+        id: number;
+        name: string;
+        value: string;
+        input_type: Cafe24Enum;
+        product_type: Cafe24Enum;
+        applied_product_list: string[];
+      }[];
+      store_pickup: Cafe24Enum;
+      easypay_name: string;
+      loan_status: any;
+      subscription: Cafe24Enum;
+      multiple_addresses: Cafe24Enum;
+      exchange_rate: Cafe24Datetime;
+      first_payment_methods: string[];
+      naverpay_payment_information: Cafe24Enum;
+      include_tax: Cafe24Enum;
+      tax_detail: {
+        name: string;
+        amount: string;
+        price_before_tax: Cafe24Datetime;
+        price_before_tax_type: Cafe24Enum;
+        order_item_code: string[];
+        country_tax_rate: string;
+        region_tax: {
+          rate: string;
+          taxation_method: Cafe24Enum;
+        };
+        product_tax_override: {
+          rate: string;
+          taxation_method: Cafe24Enum;
+        };
+        shipping_tax_override: {
+          rate: any;
+          taxation_method: any;
+        };
+      }[];
+      service_type: string;
+      service_data: {
+        key: string;
+        value: Cafe24Datetime;
+        title: string;
+      }[];
+      show_shipping_address: Cafe24Enum;
+      social_member_code: any;
+      social_name: any;
     };
   }
   export interface RetrieveACountOfOrdersInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
-      * 
-      * @default 1
-      * 
-      * 최소값: [1]
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
+     *
+     * @default 1
+     *
+     * 최소값: [1]
+     */
     shop_no?: any;
     /**
-      * @description
-      * 검색 시작일
-      * 
-      * 검색을 시작할 기준일
-      * 
-      * 날짜
-      */ 
+     * @description
+     * 검색 시작일
+     *
+     * 검색을 시작할 기준일
+     *
+     * 날짜
+     */
     start_date?: any;
     /**
-      * @description
-      * 검색 종료일
-      * 
-      * 검색을 종료할 기준일
-      * 검색 시작일과 같이 사용해야함.
-      * 검색기간은 한 호출에 3개월 이상 검색 불가.
-      * 
-      * 날짜
-      */ 
+     * @description
+     * 검색 종료일
+     *
+     * 검색을 종료할 기준일
+     * 검색 시작일과 같이 사용해야함.
+     * 검색기간은 한 호출에 3개월 이상 검색 불가.
+     *
+     * 날짜
+     */
     end_date?: any;
     /**
-      * @description
-      * 주문번호
-      * 
-      * ,(콤마)로 여러 건을 검색할 수 있다.
-      * 
-      * 주문번호
-      */ 
+     * @description
+     * 주문번호
+     *
+     * ,(콤마)로 여러 건을 검색할 수 있다.
+     *
+     * 주문번호
+     */
     order_id?: any;
     /**
-      * @description
-      * 주문상태
-      * 
-      * 주문상태. 주문 상태별로 각각의 코드가 있음.
-      * 
-      * ,(콤마)로 여러 건을 검색할 수 있다.
-      * 
-      * N00 : 입금전
-      * N10 : 상품준비중
-      * N20 : 배송준비중
-      * N21 : 배송대기
-      * N22 : 배송보류
-      * N30 : 배송중
-      * N40 : 배송완료
-      * N50 : 구매확정
-      * C00 : 취소신청
-      * C10 : 취소접수 - 관리자
-      * C11 : 취소접수거부 - 관리자
-      * C34 : 취소처리중 - 환불전
-      * C35 : 취소처리중 - 환불완료
-      * C36 : 취소처리중 - 환불보류
-      * C40 : 취소완료
-      * C41 : 취소 완료 - 환불전
-      * C42 : 취소 완료 - 환불요청중
-      * C43 : 취소 완료 - 환불보류
-      * C47 : 입금전취소 - 구매자
-      * C48 : 입금전취소 - 자동취소
-      * C49 : 입금전취소 - 관리자
-      * R00 : 반품신청
-      * R10 : 반품접수
-      * R11 : 반품 접수 거부
-      * R12 : 반품보류
-      * R13 : 반품접수 - 수거완료(자동)
-      * R20 : 반품 수거 완료
-      * R30 : 반품처리중 - 수거전
-      * R31 : 반품처리중 - 수거완료
-      * R34 : 반품처리중 - 환불전
-      * R36 : 반품처리중 - 환불보류
-      * R40 : 반품완료 - 환불완료
-      * R41 : 반품완료 - 환불전
-      * R42 : 반품완료 - 환불요청중
-      * R43 : 반품완료 - 환불보류
-      * E00 : 교환신청
-      * E10 : 교환접수
-      * N01 : 교환접수 - 교환상품
-      * E11 : 교환접수거부
-      * E12 : 교환보류
-      * E13 : 교환접수 - 수거완료(자동)
-      * E20 : 교환준비
-      * E30 : 교환처리중 - 수거전
-      * E31 : 교환처리중 - 수거완료
-      * E32 : 교환처리중 - 입금전
-      * E33 : 교환처리중 - 입금완료
-      * E34 : 교환처리중 - 환불전
-      * E35 : 교환처리중 - 환불완료
-      * E36 : 교환처리중 - 환불보류
-      * E40 : 교환완료
-      * E41 : 교환 완료 - 교환철회
-      * E50 : 교환철회 - 판매자
-      * E51 : 교환철회 - 구매자
-      * 
-      * 
-      */ 
+     * @description
+     * 주문상태
+     *
+     * 주문상태. 주문 상태별로 각각의 코드가 있음.
+     *
+     * ,(콤마)로 여러 건을 검색할 수 있다.
+     *
+     * N00 : 입금전
+     * N10 : 상품준비중
+     * N20 : 배송준비중
+     * N21 : 배송대기
+     * N22 : 배송보류
+     * N30 : 배송중
+     * N40 : 배송완료
+     * N50 : 구매확정
+     * C00 : 취소신청
+     * C10 : 취소접수 - 관리자
+     * C11 : 취소접수거부 - 관리자
+     * C34 : 취소처리중 - 환불전
+     * C35 : 취소처리중 - 환불완료
+     * C36 : 취소처리중 - 환불보류
+     * C40 : 취소완료
+     * C41 : 취소 완료 - 환불전
+     * C42 : 취소 완료 - 환불요청중
+     * C43 : 취소 완료 - 환불보류
+     * C47 : 입금전취소 - 구매자
+     * C48 : 입금전취소 - 자동취소
+     * C49 : 입금전취소 - 관리자
+     * R00 : 반품신청
+     * R10 : 반품접수
+     * R11 : 반품 접수 거부
+     * R12 : 반품보류
+     * R13 : 반품접수 - 수거완료(자동)
+     * R20 : 반품 수거 완료
+     * R30 : 반품처리중 - 수거전
+     * R31 : 반품처리중 - 수거완료
+     * R34 : 반품처리중 - 환불전
+     * R36 : 반품처리중 - 환불보류
+     * R40 : 반품완료 - 환불완료
+     * R41 : 반품완료 - 환불전
+     * R42 : 반품완료 - 환불요청중
+     * R43 : 반품완료 - 환불보류
+     * E00 : 교환신청
+     * E10 : 교환접수
+     * N01 : 교환접수 - 교환상품
+     * E11 : 교환접수거부
+     * E12 : 교환보류
+     * E13 : 교환접수 - 수거완료(자동)
+     * E20 : 교환준비
+     * E30 : 교환처리중 - 수거전
+     * E31 : 교환처리중 - 수거완료
+     * E32 : 교환처리중 - 입금전
+     * E33 : 교환처리중 - 입금완료
+     * E34 : 교환처리중 - 환불전
+     * E35 : 교환처리중 - 환불완료
+     * E36 : 교환처리중 - 환불보류
+     * E40 : 교환완료
+     * E41 : 교환 완료 - 교환철회
+     * E50 : 교환철회 - 판매자
+     * E51 : 교환철회 - 구매자
+     *
+     *
+     */
     order_status?: any;
     /**
-      * @description
-      * 결제상태
-      * 
-      * F : 입금전
-      * M : 추가입금대기
-      * T : 입금완료(수동)
-      * A : 입금완료(자동)
-      * P : 결제완료
-      * 
-      * 
-      */ 
+     * @description
+     * 결제상태
+     *
+     * F : 입금전
+     * M : 추가입금대기
+     * T : 입금완료(수동)
+     * A : 입금완료(자동)
+     * P : 결제완료
+     *
+     *
+     */
     payment_status?: any;
     /**
-      * @description
-      * 회원여부
-      * 
-      * 회원여부. 회원과 비회원 각각의 코드가 있음.
-      * 
-      * 2 : 회원
-      * 3 : 비회원
-      * 
-      * 
-      */ 
+     * @description
+     * 회원여부
+     *
+     * 회원여부. 회원과 비회원 각각의 코드가 있음.
+     *
+     * 2 : 회원
+     * 3 : 비회원
+     *
+     *
+     */
     member_type?: any;
     /**
-      * @description
-      * 회원등급번호
-      * 
-      * 
-      */ 
+     * @description
+     * 회원등급번호
+     *
+     *
+     */
     group_no?: any;
     /**
-      * @description
-      * 주문자명
-      * 
-      * 주문자 이름. 입금자 혹은 수령자 이름과는 다를 수 있음.
-      * 
-      * 
-      */ 
+     * @description
+     * 주문자명
+     *
+     * 주문자 이름. 입금자 혹은 수령자 이름과는 다를 수 있음.
+     *
+     *
+     */
     buyer_name?: any;
     /**
-      * @description
-      * 수령자명
-      * 
-      * 수령자 이름. 주문자 혹은 입금자 이름과는 다를 수 있음.
-      * 
-      * 
-      */ 
+     * @description
+     * 수령자명
+     *
+     * 수령자 이름. 주문자 혹은 입금자 이름과는 다를 수 있음.
+     *
+     *
+     */
     receiver_name?: any;
     /**
-      * @description
-      * 수령자명 (발음)
-      * 
-      * 
-      */ 
+     * @description
+     * 수령자명 (발음)
+     *
+     *
+     */
     name_furigana?: any;
     /**
-      * @description
-      * 수령자주소
-      * 
-      * 수령자 주소. 주문자 혹은 입금자 주소와는 다를 수 있음.
-      * 
-      * 
-      */ 
+     * @description
+     * 수령자주소
+     *
+     * 수령자 주소. 주문자 혹은 입금자 주소와는 다를 수 있음.
+     *
+     *
+     */
     receiver_address?: any;
     /**
-      * @description
-      * 회원아이디
-      * 
-      * 회원 아이디
-      * 
-      * 
-      */ 
+     * @description
+     * 회원아이디
+     *
+     * 회원 아이디
+     *
+     *
+     */
     member_id?: any;
     /**
-      * @description
-      * 회원 이메일
-      * 
-      * 
-      */ 
+     * @description
+     * 회원 이메일
+     *
+     *
+     */
     member_email?: any;
     /**
-      * @description
-      * 상품번호
-      * 
-      * 상품 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 상품번호
+     *
+     * 상품 번호
+     *
+     * ,(콤마)로 여러 건을 검색할 수 있다.
+     *
+     *
+     */
     product_no?: any;
     /**
-      * @description
-      * 상품코드
-      * 
-      * 검색어를 상품코드에 포함하고 있는 상품 검색(대소문자 구분 필요)
-      * 
-      * 
-      */ 
+     * @description
+     * 상품코드
+     *
+     * 검색어를 상품코드에 포함하고 있는 상품 검색(대소문자 구분 필요)
+     *
+     *
+     */
     product_code?: any;
     /**
-      * @description
-      * 검색날짜 유형
-      * 
-      * 검색을 위한 날짜 유형 기준. 기본값은 주문일로 설정되어 있음.
-      * 
-      * order_date : 주문일
-      * pay_date : 결제일
-      * shipbegin_date : 배송시작일
-      * shipend_date : 배송완료일
-      * cancel_date : 주문취소일
-      * place_date : 발주일
-      * cancel_request_date : 취소신청일
-      * cancel_accept_date : 취소접수일
-      * cancel_complete_date : 취소완료일
-      * exchange_request_date : 교환신청일
-      * exchange_accept_date : 교환접수일
-      * exchange_complete_date : 교환완료일
-      * return_request_date : 반품신청일
-      * return_accept_date : 반품접수일
-      * return_complete_date : 반품완료일
-      * purchaseconfirmation_date : 구매확정일
-      * 
-      * @default order_date
-      * 
-      * 
-      */ 
+     * @description
+     * 검색날짜 유형
+     *
+     * 검색을 위한 날짜 유형 기준. 기본값은 주문일로 설정되어 있음.
+     *
+     * order_date : 주문일
+     * pay_date : 결제일
+     * shipbegin_date : 배송시작일
+     * shipend_date : 배송완료일
+     * cancel_date : 주문취소일
+     * place_date : 발주일
+     * cancel_request_date : 취소신청일
+     * cancel_accept_date : 취소접수일
+     * cancel_complete_date : 취소완료일
+     * exchange_request_date : 교환신청일
+     * exchange_accept_date : 교환접수일
+     * exchange_complete_date : 교환완료일
+     * return_request_date : 반품신청일
+     * return_accept_date : 반품접수일
+     * return_complete_date : 반품완료일
+     * purchaseconfirmation_date : 구매확정일
+     *
+     * @default order_date
+     *
+     *
+     */
     date_type?: any;
     /**
-      * @description
-      * 공급사 아이디
-      * 
-      * ,(콤마)로 여러 건을 검색할 수 있다.
-      * 
-      * 
-      */ 
+     * @description
+     * 공급사 아이디
+     *
+     * ,(콤마)로 여러 건을 검색할 수 있다.
+     *
+     *
+     */
     supplier_id?: any;
     /**
-      * @description
-      * 주문경로
-      * 
-      * ,(콤마)로 여러 건을 검색할 수 있다.
-      * 
-      * cafe24:카페24
-      * mobile:모바일웹
-      * mobile_d:모바일앱
-      * NCHECKOUT:네이버페이
-      * inpark:인터파크
-      * auction:옥션
-      * sk11st:11번가
-      * gmarket:G마켓
-      * coupang:쿠팡
-      * shopn:스마트스토어
-      * 
-      * 
-      */ 
+     * @description
+     * 주문경로
+     *
+     * ,(콤마)로 여러 건을 검색할 수 있다.
+     *
+     * cafe24:카페24
+     * mobile:모바일웹
+     * mobile_d:모바일앱
+     * NCHECKOUT:네이버페이
+     * inpark:인터파크
+     * auction:옥션
+     * sk11st:11번가
+     * gmarket:G마켓
+     * coupang:쿠팡
+     * shopn:스마트스토어
+     *
+     *
+     */
     order_place_id?: any;
     /**
-      * @description
-      * 주문자 휴대 전화
-      * 
-      * 
-      */ 
+     * @description
+     * 주문자 휴대 전화
+     *
+     *
+     */
     buyer_cellphone?: any;
     /**
-      * @description
-      * 주문자 일반 전화
-      * 
-      * 
-      */ 
+     * @description
+     * 주문자 일반 전화
+     *
+     *
+     */
     buyer_phone?: any;
     /**
-      * @description
-      * 주문자 이메일
-      * 
-      * 
-      */ 
+     * @description
+     * 주문자 이메일
+     *
+     *
+     */
     buyer_email?: any;
     /**
-      * @description
-      * 유입경로
-      * 
-      * 
-      */ 
+     * @description
+     * 유입경로
+     *
+     *
+     */
     inflow_path?: any;
     /**
-      * @description
-      * 정기결제 여부
-      * 
-      * T : 정기결제
-      * F : 정기결제 아님
-      * 
-      * 
-      */ 
+     * @description
+     * 정기결제 여부
+     *
+     * T : 정기결제
+     * F : 정기결제 아님
+     *
+     *
+     */
     subscription?: any;
     /**
-      * @description
-      * 마켓 주문 번호
-      * 
-      * ,(콤마)로 여러 건을 검색할 수 있다.
-      * 
-      * 형식 : [a-zA-Z0-9_-]
-      * 최대글자수 : [40자]
-      */ 
+     * @description
+     * 마켓 주문 번호
+     *
+     * ,(콤마)로 여러 건을 검색할 수 있다.
+     *
+     * 형식 : [a-zA-Z0-9_-]
+     * 최대글자수 : [40자]
+     */
     market_order_no?: any;
     /**
-      * @description
-      * 마켓 취소요청 여부
-      * 
-      * T : 취소 요청된 마켓 주문
-      * 
-      * 
-      */ 
+     * @description
+     * 마켓 취소요청 여부
+     *
+     * T : 취소 요청된 마켓 주문
+     *
+     *
+     */
     market_cancel_request?: any;
     /**
-      * @description
-      * 결제수단 코드
-      * 
-      * ,(콤마)로 여러 건을 검색할 수 있다.
-      * 
-      * cash : 무통장
-      * card : 신용카드
-      * tcash : 계좌이체
-      * icash : 가상계좌
-      * cell : 휴대폰
-      * deferpay : 후불
-      * cvs : 편의점
-      * point : 선불금
-      * mileage : 적립금
-      * deposit : 예치금
-      * giftcard : 제휴상품권
-      * pointcard : 제휴포인트
-      * etc : 기타
-      * 
-      * 
-      */ 
+     * @description
+     * 결제수단 코드
+     *
+     * ,(콤마)로 여러 건을 검색할 수 있다.
+     *
+     * cash : 무통장
+     * card : 신용카드
+     * tcash : 계좌이체
+     * icash : 가상계좌
+     * cell : 휴대폰
+     * deferpay : 후불
+     * cvs : 편의점
+     * point : 선불금
+     * mileage : 적립금
+     * deposit : 예치금
+     * giftcard : 제휴상품권
+     * pointcard : 제휴포인트
+     * etc : 기타
+     *
+     *
+     */
     payment_method?: any;
     /**
-      * @description
-      * PG 이름
-      * 
-      * ,(콤마)로 여러 건을 검색할 수 있다.
-      * 
-      * 
-      */ 
+     * @description
+     * PG 이름
+     *
+     * ,(콤마)로 여러 건을 검색할 수 있다.
+     *
+     *
+     */
     payment_gateway_name?: any;
     /**
-      * @description
-      * 마켓 판매자 아이디
-      * 
-      * 
-      */ 
+     * @description
+     * 마켓 판매자 아이디
+     *
+     *
+     */
     market_seller_id?: any;
     /**
-      * @description
-      * 할인수단
-      * 
-      * ,(콤마)로 여러 건을 검색할 수 있다.
-      * 
-      * point : 적립금
-      * credit : 예치금
-      * coupon : 쿠폰
-      * market_discount : 마켓할인
-      * discount_code : 할인코드
-      * 
-      * 
-      */ 
+     * @description
+     * 할인수단
+     *
+     * ,(콤마)로 여러 건을 검색할 수 있다.
+     *
+     * point : 적립금
+     * credit : 예치금
+     * coupon : 쿠폰
+     * market_discount : 마켓할인
+     * discount_code : 할인코드
+     *
+     *
+     */
     discount_method?: any;
     /**
-      * @description
-      * 할인코드
-      * 
-      * 
-      */ 
+     * @description
+     * 할인코드
+     *
+     *
+     */
     discount_code?: any;
     /**
-      * @description
-      * 배송사 아이디
-      * 
-      * 최소값: [1]
-      */ 
+     * @description
+     * 배송사 아이디
+     *
+     * 최소값: [1]
+     */
     carrier_id?: any;
     /**
-      * @description
-      * 주문 라벨
-      * 
-      * ,(콤마)로 여러 건을 검색할 수 있다.
-      * 
-      * 
-      */ 
+     * @description
+     * 주문 라벨
+     *
+     * ,(콤마)로 여러 건을 검색할 수 있다.
+     *
+     *
+     */
     labels?: any;
   }
 
@@ -2000,163 +2003,163 @@ declare module 'cafe24api-client' {
   }
   export interface UpdateStatusForMultipleOrdersInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     *
+     */
     shop_no?: any;
     /**
-      * @description
-      * 주문번호
-      * 
-      * @required
-      */ 
+     * @description
+     * 주문번호
+     *
+     * @required
+     */
     order_id: any;
     /**
-      * @description
-      * 주문상태
-      * 
-      * prepare : 배송준비중
-      * prepareproduct : 상품준비중
-      * hold : 배송보류
-      * unhold : 배송보류해제
-      * 
-      * 
-      */ 
+     * @description
+     * 주문상태
+     *
+     * prepare : 배송준비중
+     * prepareproduct : 상품준비중
+     * hold : 배송보류
+     * unhold : 배송보류해제
+     *
+     *
+     */
     process_status?: any;
     /**
-      * @description
-      * 품주코드
-      * 
-      * 
-      */ 
+     * @description
+     * 품주코드
+     *
+     *
+     */
     order_item_code?: any;
     /**
-      * @description
-      * 구매확정 여부
-      * 
-      * T : 구매확정
-      * F : 구매확정 철회
-      * 
-      * 
-      */ 
+     * @description
+     * 구매확정 여부
+     *
+     * T : 구매확정
+     * F : 구매확정 철회
+     *
+     *
+     */
     purchase_confirmation?: any;
     /**
-      * @description
-      * 적립금 회수
-      * 
-      * T: 회수
-      * F: 회수안함
-      * 
-      * @default F
-      * 
-      * 
-      */ 
+     * @description
+     * 적립금 회수
+     *
+     * T: 회수
+     * F: 회수안함
+     *
+     * @default F
+     *
+     *
+     */
     collect_points?: any;
     /**
-      * @description
-      * 배송지 정보 표기 여부
-      * 
-      * T: 배송지 정보 표기
-      * F: 배송지 정보 가림
-      * 
-      * 
-      */ 
+     * @description
+     * 배송지 정보 표기 여부
+     *
+     * T: 배송지 정보 표기
+     * F: 배송지 정보 가림
+     *
+     *
+     */
     show_shipping_address?: any;
   }
 
   export interface UpdateStatusForMultipleOrdersOutput {
-    orders: { 
-    shop_no: number;
-    order_id: string;
-    process_status: string;
-    order_item_code: string[];
-    purchase_confirmation: any;
-    collect_points: Cafe24Enum;
-    show_shipping_address: any;
+    orders: {
+      shop_no: number;
+      order_id: string;
+      process_status: string;
+      order_item_code: string[];
+      purchase_confirmation: any;
+      collect_points: Cafe24Enum;
+      show_shipping_address: any;
     }[];
   }
   export interface UpdateAnOrderStatusInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     *
+     */
     shop_no?: any;
     /**
-      * @description
-      * 주문번호
-      * 
-      * @required
-      */ 
+     * @description
+     * 주문번호
+     *
+     * @required
+     */
     order_id: any;
     /**
-      * @description
-      * 주문상태
-      * 
-      * prepare : 배송준비중
-      * prepareproduct : 상품준비중
-      * hold : 배송보류
-      * unhold : 배송보류해제
-      * 
-      * 
-      */ 
+     * @description
+     * 주문상태
+     *
+     * prepare : 배송준비중
+     * prepareproduct : 상품준비중
+     * hold : 배송보류
+     * unhold : 배송보류해제
+     *
+     *
+     */
     process_status?: any;
     /**
-      * @description
-      * 품주코드
-      * 
-      * 
-      */ 
+     * @description
+     * 품주코드
+     *
+     *
+     */
     order_item_code?: any;
     /**
-      * @description
-      * 구매확정 여부
-      * 
-      * T : 구매확정
-      * F : 구매확정 철회
-      * 
-      * 
-      */ 
+     * @description
+     * 구매확정 여부
+     *
+     * T : 구매확정
+     * F : 구매확정 철회
+     *
+     *
+     */
     purchase_confirmation?: any;
     /**
-      * @description
-      * 적립금 회수
-      * 
-      * T: 회수
-      * F: 회수안함
-      * 
-      * @default F
-      * 
-      * 
-      */ 
+     * @description
+     * 적립금 회수
+     *
+     * T: 회수
+     * F: 회수안함
+     *
+     * @default F
+     *
+     *
+     */
     collect_points?: any;
     /**
-      * @description
-      * 배송지 정보 표기 여부
-      * 
-      * T: 배송지 정보 표기
-      * F: 배송지 정보 가림
-      * 
-      * 
-      */ 
+     * @description
+     * 배송지 정보 표기 여부
+     *
+     * T: 배송지 정보 표기
+     * F: 배송지 정보 가림
+     *
+     *
+     */
     show_shipping_address?: any;
   }
 
   export interface UpdateAnOrderStatusOutput {
-    order: { 
-    shop_no: number;
-    process_status: string;
-    order_item_code: string[];
-    purchase_confirmation: any;
-    collect_points: Cafe24Enum;
-    show_shipping_address: any;
+    order: {
+      shop_no: number;
+      process_status: string;
+      order_item_code: string[];
+      purchase_confirmation: any;
+      collect_points: Cafe24Enum;
+      show_shipping_address: any;
     };
   }
 
@@ -2978,7 +2981,9 @@ declare module 'cafe24api-client' {
      */
     updateStatusForMultipleOrders(
       input: UpdateStatusForMultipleOrdersInput,
-      options?: RequestOptions<UpdateStatusForMultipleOrdersOutput['orders'][number]>,
+      options?: RequestOptions<
+        UpdateStatusForMultipleOrdersOutput['orders'][number]
+      >,
     ): Promise<AxiosResponse<UpdateStatusForMultipleOrdersOutput>>;
     /**
      * @description

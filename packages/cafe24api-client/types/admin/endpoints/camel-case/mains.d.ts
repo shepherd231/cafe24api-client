@@ -5,70 +5,68 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
-
   /**
    * @description
    * 메인분류(Mains)는 쇼핑몰의 상품을 메인화면에 진열할 수 있는 기능입니다.
    */
   export interface Mains {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
+     *
+     *
+     */
     shopNo: any;
     /**
-      * @description
-      * 모듈 코드
-      * 
-      * 각 메인분류에 지정된 모듈 코드
-      * 
-      * 
-      */ 
+     * @description
+     * 모듈 코드
+     *
+     * 각 메인분류에 지정된 모듈 코드
+     *
+     *
+     */
     moduleCode: any;
     /**
-      * @description
-      * 메인분류 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 메인분류 번호
+     *
+     *
+     */
     displayGroup: any;
     /**
-      * @description
-      * 메인분류 명
-      * 
-      * 메인분류 생성 당시 지정한 분류명
-      * 
-      * 
-      */ 
+     * @description
+     * 메인분류 명
+     *
+     * 메인분류 생성 당시 지정한 분류명
+     *
+     *
+     */
     groupName: any;
     /**
-      * @description
-      * 품절상품진열
-      * 
-      * 품절상품을 진열할 위치
-      * 
-      * B : 품절상품 맨 뒤로
-      * N : 품절상품 상관없음
-      * 
-      * 
-      */ 
+     * @description
+     * 품절상품진열
+     *
+     * 품절상품을 진열할 위치
+     *
+     * B : 품절상품 맨 뒤로
+     * N : 품절상품 상관없음
+     *
+     *
+     */
     soldoutSortType: any;
   }
 
-  export interface RetrieveAListOfMainCategoriesInput {
-  }
+  export interface RetrieveAListOfMainCategoriesInput {}
 
   export interface RetrieveAListOfMainCategoriesOutput {
-    mains: { 
-    shopNo: number;
-    moduleCode: string;
-    displayGroup: number;
-    groupName: string;
-    soldoutSortType: Cafe24Enum;
+    mains: {
+      shopNo: number;
+      moduleCode: string;
+      displayGroup: number;
+      groupName: string;
+      soldoutSortType: Cafe24Enum;
     }[];
   }
 
@@ -104,7 +102,9 @@ declare module 'cafe24api-client' {
      */
     retrieveAListOfMainCategories(
       input?: RetrieveAListOfMainCategoriesInput,
-      options?: RequestOptions<RetrieveAListOfMainCategoriesOutput['mains'][number]>,
+      options?: RequestOptions<
+        RetrieveAListOfMainCategoriesOutput['mains'][number]
+      >,
     ): Promise<AxiosResponse<RetrieveAListOfMainCategoriesOutput>>;
   }
 }

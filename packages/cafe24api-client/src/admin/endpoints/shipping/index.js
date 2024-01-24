@@ -1,6 +1,8 @@
-
 export default (cls) => {
-  cls.prototype.retrieveShippingReturnSettings = async function (input, options) {
+  cls.prototype.retrieveShippingReturnSettings = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/shipping`,
@@ -11,7 +13,10 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.updateStoreShippingReturnSettings = async function (input, options) {
+  cls.prototype.updateStoreShippingReturnSettings = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'PUT',
       `/api/v2/admin/shipping`,
@@ -32,12 +37,12 @@ export default (cls) => {
         oversea_shipping_country_list: input['oversea_shipping_country_list'],
         country_shipping_fee: input['country_shipping_fee'],
         country_shipping_fee_list: input['country_shipping_fee_list'],
-        international_shipping_insurance: input['international_shipping_insurance'],
+        international_shipping_insurance:
+          input['international_shipping_insurance'],
         return_address: input['return_address'],
         package_volume: input['package_volume'],
       },
       options,
     );
   };
-
 };

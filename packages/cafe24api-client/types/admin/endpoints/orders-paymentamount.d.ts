@@ -5,116 +5,115 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
-
   /**
    * @description
-   * 
-   * 
+   *
+   *
    * 주문의 실결제금액(Orders paymentamount)은 특정 주문의 실제 결제금액에 대한 기능입니다.
    * 1개 혹은 여러 개의 품주에 대한 실제 결제금액과 관련된 정보를 조회할 수 있습니다.
    */
   export interface OrdersPaymentamount {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     *
+     */
     shop_no: any;
     /**
-      * @description
-      * 품주코드
-      * 
-      * 
-      */ 
+     * @description
+     * 품주코드
+     *
+     *
+     */
     order_item_code: any;
     /**
-      * @description
-      * 품목 정보
-      * 
-      * 
-      */ 
+     * @description
+     * 품목 정보
+     *
+     *
+     */
     items: any;
     /**
-      * @description
-      * 상품구매금액
-      * 
-      * 
-      */ 
+     * @description
+     * 상품구매금액
+     *
+     *
+     */
     order_price_amount: any;
     /**
-      * @description
-      * 주문 할인금액
-      * 
-      * 
-      */ 
+     * @description
+     * 주문 할인금액
+     *
+     *
+     */
     order_discount_amount: any;
     /**
-      * @description
-      * 상품 할인금액
-      * 
-      * 
-      */ 
+     * @description
+     * 상품 할인금액
+     *
+     *
+     */
     item_discount_amount: any;
     /**
-      * @description
-      * 보조 결제금액
-      * 
-      * 
-      */ 
+     * @description
+     * 보조 결제금액
+     *
+     *
+     */
     additional_payment_amount: any;
     /**
-      * @description
-      * 품목별 결제금액
-      * 
-      * 
-      */ 
+     * @description
+     * 품목별 결제금액
+     *
+     *
+     */
     payment_amount: any;
   }
 
   export interface RetrieveAPaymentAmountInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 최소값: [1]
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     * 최소값: [1]
+     */
     shop_no?: any;
     /**
-      * @description
-      * 품주코드
-      * 
-      * ,(콤마)로 여러 건을 검색할 수 있다.
-      * 
-      * @required
-      */ 
+     * @description
+     * 품주코드
+     *
+     * ,(콤마)로 여러 건을 검색할 수 있다.
+     *
+     * @required
+     */
     order_item_code: any;
   }
 
   export interface RetrieveAPaymentAmountOutput {
-    paymentamount: { 
-    shop_no: number;
-    order_item_code: string;
-    items: { 
-    product_price: Cafe24Datetime;
-    option_price: Cafe24Datetime;
-    quantity: number;
-    };
-    order_price_amount: Cafe24Datetime;
-    order_discount_amount: { 
-    membership_discount_amount: string;
-    coupon_discount_price: string;
-    app_discount_amount: string;
-    };
-    item_discount_amount: { 
-    additional_discount_price: string;
-    coupon_discount_price: string;
-    app_discount_amount: string;
-    };
-    additional_payment_amount: string;
-    payment_amount: Cafe24Datetime;
+    paymentamount: {
+      shop_no: number;
+      order_item_code: string;
+      items: {
+        product_price: Cafe24Datetime;
+        option_price: Cafe24Datetime;
+        quantity: number;
+      };
+      order_price_amount: Cafe24Datetime;
+      order_discount_amount: {
+        membership_discount_amount: string;
+        coupon_discount_price: string;
+        app_discount_amount: string;
+      };
+      item_discount_amount: {
+        additional_discount_price: string;
+        coupon_discount_price: string;
+        app_discount_amount: string;
+      };
+      additional_payment_amount: string;
+      payment_amount: Cafe24Datetime;
     }[];
   }
 
@@ -181,7 +180,9 @@ declare module 'cafe24api-client' {
      */
     retrieveAPaymentAmount(
       input: RetrieveAPaymentAmountInput,
-      options?: RequestOptions<RetrieveAPaymentAmountOutput['paymentamount'][number]>,
+      options?: RequestOptions<
+        RetrieveAPaymentAmountOutput['paymentamount'][number]
+      >,
     ): Promise<AxiosResponse<RetrieveAPaymentAmountOutput>>;
   }
 }

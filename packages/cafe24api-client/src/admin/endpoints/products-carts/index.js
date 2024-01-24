@@ -1,6 +1,8 @@
-
 export default (cls) => {
-  cls.prototype.retrieveACountOfCartsContainingAProduct = async function (input, options) {
+  cls.prototype.retrieveACountOfCartsContainingAProduct = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/products/${input['product_no']}/carts/count`,
@@ -12,7 +14,10 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.retrieveAListOfCartsContainingAProduct = async function (input, options) {
+  cls.prototype.retrieveAListOfCartsContainingAProduct = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/products/${input['product_no']}/carts`,
@@ -25,5 +30,4 @@ export default (cls) => {
       options,
     );
   };
-
 };

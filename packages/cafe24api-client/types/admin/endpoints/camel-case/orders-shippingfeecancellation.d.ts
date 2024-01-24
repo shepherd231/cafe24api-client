@@ -5,378 +5,377 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
-
   /**
    * @description
-   * 
-   * 
+   *
+   *
    * 주문의 배송비취소(Orders shippingfeecancellation)를 통해 주문의 취소현황을 조회하거나 취소처리를 요청할 수 있습니다.
    */
   export interface OrdersShippingfeecancellation {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     *
+     */
     shopNo: any;
     /**
-      * @description
-      * 주문번호
-      * 
-      * 
-      */ 
+     * @description
+     * 주문번호
+     *
+     *
+     */
     orderId: any;
     /**
-      * @description
-      * 기본 배송비
-      * 
-      * 
-      */ 
+     * @description
+     * 기본 배송비
+     *
+     *
+     */
     defaultShippingFee: any;
     /**
-      * @description
-      * 공급사배송비
-      * 
-      * 
-      */ 
+     * @description
+     * 공급사배송비
+     *
+     *
+     */
     supplierShippingFee: any;
     /**
-      * @description
-      * 개별배송비
-      * 
-      * 
-      */ 
+     * @description
+     * 개별배송비
+     *
+     *
+     */
     individualShippingFee: any;
     /**
-      * @description
-      * 해외배송비
-      * 
-      * 
-      */ 
+     * @description
+     * 해외배송비
+     *
+     *
+     */
     internationalShippingFee: any;
     /**
-      * @description
-      * 해외배송 보험료
-      * 
-      * 
-      */ 
+     * @description
+     * 해외배송 보험료
+     *
+     *
+     */
     internationalShippingInsuranceFee: any;
     /**
-      * @description
-      * 추가 배송비
-      * 
-      * 
-      */ 
+     * @description
+     * 추가 배송비
+     *
+     *
+     */
     additionalShippingFee: any;
     /**
-      * @description
-      * 해외배송 부가금액
-      * 
-      * 
-      */ 
+     * @description
+     * 해외배송 부가금액
+     *
+     *
+     */
     additionalHandlingFee: any;
     /**
-      * @description
-      * 지역별 배송비
-      * 
-      * 
-      */ 
+     * @description
+     * 지역별 배송비
+     *
+     *
+     */
     regionalSurchargeAmount: any;
     /**
-      * @description
-      * 취소 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 취소 번호
+     *
+     *
+     */
     claimCode: any;
     /**
-      * @description
-      * 구분
-      * 
-      * A:고객변심
-      * B:배송지연
-      * J:배송오류
-      * C:배송불가지역
-      * L:수출/통관 불가
-      * D:포장불량
-      * E:상품 불만족
-      * F:상품정보상이
-      * K:상품불량
-      * G:서비스불만족
-      * H:품절
-      * I:기타
-      * 
-      * 
-      */ 
+     * @description
+     * 구분
+     *
+     * A:고객변심
+     * B:배송지연
+     * J:배송오류
+     * C:배송불가지역
+     * L:수출/통관 불가
+     * D:포장불량
+     * E:상품 불만족
+     * F:상품정보상이
+     * K:상품불량
+     * G:서비스불만족
+     * H:품절
+     * I:기타
+     *
+     *
+     */
     claimReasonType: any;
     /**
-      * @description
-      * 사유
-      * 
-      * 
-      */ 
+     * @description
+     * 사유
+     *
+     *
+     */
     claimReason: any;
     /**
-      * @description
-      * 환불 방식
-      * 
-      * 
-      */ 
+     * @description
+     * 환불 방식
+     *
+     *
+     */
     refundMethod: any;
     /**
-      * @description
-      * 배송비할인 취소액
-      * 
-      * 
-      */ 
+     * @description
+     * 배송비할인 취소액
+     *
+     *
+     */
     shippingDiscountAmount: any;
     /**
-      * @description
-      * 쿠폰할인 취소액
-      * 
-      * 
-      */ 
+     * @description
+     * 쿠폰할인 취소액
+     *
+     *
+     */
     couponDiscountAmount: any;
     /**
-      * @description
-      * 환불금액
-      * 
-      * 
-      */ 
+     * @description
+     * 환불금액
+     *
+     *
+     */
     refundAmount: any;
     /**
-      * @description
-      * 사용된 적립금 반환액
-      * 
-      * 
-      */ 
+     * @description
+     * 사용된 적립금 반환액
+     *
+     *
+     */
     pointUsed: any;
     /**
-      * @description
-      * 사용된 예치금 반환액
-      * 
-      * 
-      */ 
+     * @description
+     * 사용된 예치금 반환액
+     *
+     *
+     */
     creditUsed: any;
     /**
-      * @description
-      * 복합 환불 금액
-      * 
-      * 
-      */ 
+     * @description
+     * 복합 환불 금액
+     *
+     *
+     */
     mixedRefundAmount: any;
     /**
-      * @description
-      * 복합 환불 방식
-      * 
-      * 
-      */ 
+     * @description
+     * 복합 환불 방식
+     *
+     *
+     */
     mixedRefundMethods: any;
     /**
-      * @description
-      * 주문상태
-      * 
-      * canceled: 취소완료
-      * canceling : 취소처리중
-      * 
-      * 
-      */ 
+     * @description
+     * 주문상태
+     *
+     * canceled: 취소완료
+     * canceling : 취소처리중
+     *
+     *
+     */
     status: any;
     /**
-      * @description
-      * 가격에 세금 포함
-      * 
-      * T: 세금포함
-      * F: 세금제외
-      * 
-      * 
-      */ 
+     * @description
+     * 가격에 세금 포함
+     *
+     * T: 세금포함
+     * F: 세금제외
+     *
+     *
+     */
     includeTax: any;
     /**
-      * @description
-      * 세금 정보
-      * 
-      * 세금 관리자 앱을 사용 안 할 경우 null로 반환
-      * 
-      * 
-      */ 
+     * @description
+     * 세금 정보
+     *
+     * 세금 관리자 앱을 사용 안 할 경우 null로 반환
+     *
+     *
+     */
     tax: any;
   }
 
   export interface RetrieveShippingFeeCancellationDetailsOfAnOrderInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 최소값: [1]
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     * 최소값: [1]
+     */
     shopNo?: any;
     /**
-      * @description
-      * 주문번호
-      * 
-      * @required
-      */ 
+     * @description
+     * 주문번호
+     *
+     * @required
+     */
     orderId: any;
   }
 
   export interface RetrieveShippingFeeCancellationDetailsOfAnOrderOutput {
-    shippingfeecancellation: { 
-    shopNo: number;
-    orderId: string;
-    claimCode: string;
-    claimReasonType: Cafe24Enum;
-    claimReason: string;
-    status: string;
-    defaultShippingFee: Cafe24Datetime;
-    supplierShippingFee: string;
-    individualShippingFee: string;
-    internationalShippingFee: string;
-    internationalShippingInsuranceFee: string;
-    additionalShippingFee: string;
-    additionalHandlingFee: string;
-    regionalSurchargeAmount: string;
-    refundMethod: string;
-    shippingDiscountAmount: Cafe24Datetime;
-    couponDiscountAmount: string;
-    refundAmount: Cafe24Datetime;
-    pointUsed: string;
-    creditUsed: string;
-    mixedRefundAmount: string;
-    mixedRefundMethods: any;
-    includeTax: Cafe24Enum;
-    tax: { 
-    name: string;
-    amount: Cafe24Datetime;
-    }[];
+    shippingfeecancellation: {
+      shopNo: number;
+      orderId: string;
+      claimCode: string;
+      claimReasonType: Cafe24Enum;
+      claimReason: string;
+      status: string;
+      defaultShippingFee: Cafe24Datetime;
+      supplierShippingFee: string;
+      individualShippingFee: string;
+      internationalShippingFee: string;
+      internationalShippingInsuranceFee: string;
+      additionalShippingFee: string;
+      additionalHandlingFee: string;
+      regionalSurchargeAmount: string;
+      refundMethod: string;
+      shippingDiscountAmount: Cafe24Datetime;
+      couponDiscountAmount: string;
+      refundAmount: Cafe24Datetime;
+      pointUsed: string;
+      creditUsed: string;
+      mixedRefundAmount: string;
+      mixedRefundMethods: any;
+      includeTax: Cafe24Enum;
+      tax: {
+        name: string;
+        amount: Cafe24Datetime;
+      }[];
     }[];
   }
   export interface CreateAnOrderShippingFeeCancellationInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 최소값: [1]
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     * 최소값: [1]
+     */
     shopNo?: any;
     /**
-      * @description
-      * 주문번호
-      * 
-      * @required
-      */ 
+     * @description
+     * 주문번호
+     *
+     * @required
+     */
     orderId: any;
     /**
-      * @description
-      * 취소사유
-      * 
-      * 최대글자수 : [2000자]
-      */ 
+     * @description
+     * 취소사유
+     *
+     * 최대글자수 : [2000자]
+     */
     reason?: any;
     /**
-      * @description
-      * 취소사유 구분
-      * 
-      * A:고객변심
-      * B:배송지연
-      * J:배송오류
-      * C:배송불가지역
-      * L:수출/통관 불가
-      * D:포장불량
-      * E:상품 불만족
-      * F:상품정보상이
-      * K:상품불량
-      * G:서비스불만족
-      * H:품절
-      * I:기타
-      * 
-      * 
-      */ 
+     * @description
+     * 취소사유 구분
+     *
+     * A:고객변심
+     * B:배송지연
+     * J:배송오류
+     * C:배송불가지역
+     * L:수출/통관 불가
+     * D:포장불량
+     * E:상품 불만족
+     * F:상품정보상이
+     * K:상품불량
+     * G:서비스불만족
+     * H:품절
+     * I:기타
+     *
+     *
+     */
     claimReasonType?: any;
     /**
-      * @description
-      * 쿠폰 복원
-      * 
-      * T : 복구함
-      * F : 복구안함
-      * 
-      * @default F
-      * 
-      * 
-      */ 
+     * @description
+     * 쿠폰 복원
+     *
+     * T : 복구함
+     * F : 복구안함
+     *
+     * @default F
+     *
+     *
+     */
     recoverCoupon?: any;
     /**
-      * @description
-      * 환불 방식
-      * 
-      * T : 현금
-      * F : 신용카드
-      * M : 적립금
-      * G : 계좌이체
-      * C : 휴대폰
-      * D : 예치금
-      * Z : 후불
-      * O : 선불금
-      * V : 편의점
-      * J : 제휴상품권
-      * K : 제휴포인트
-      * I : 기타
-      * 
-      * 
-      */ 
+     * @description
+     * 환불 방식
+     *
+     * T : 현금
+     * F : 신용카드
+     * M : 적립금
+     * G : 계좌이체
+     * C : 휴대폰
+     * D : 예치금
+     * Z : 후불
+     * O : 선불금
+     * V : 편의점
+     * J : 제휴상품권
+     * K : 제휴포인트
+     * I : 기타
+     *
+     *
+     */
     refundMethodCode?: any;
     /**
-      * @description
-      * 환불 은행 코드
-      * 
-      * 
-      */ 
+     * @description
+     * 환불 은행 코드
+     *
+     *
+     */
     refundBankCode?: any;
     /**
-      * @description
-      * 환불은행명
-      * 
-      * 최대글자수 : [250자]
-      */ 
+     * @description
+     * 환불은행명
+     *
+     * 최대글자수 : [250자]
+     */
     refundBankName?: any;
     /**
-      * @description
-      * 환불 계좌번호
-      * 
-      * 
-      */ 
+     * @description
+     * 환불 계좌번호
+     *
+     *
+     */
     refundBankAccountNo?: any;
     /**
-      * @description
-      * 환불계좌 예금주 명의
-      * 
-      * 최대글자수 : [30자]
-      */ 
+     * @description
+     * 환불계좌 예금주 명의
+     *
+     * 최대글자수 : [30자]
+     */
     refundBankAccountHolder?: any;
     /**
-      * @description
-      * PG 취소 요청 여부
-      * 
-      * T : 취소함
-      * F : 취소안함
-      * 
-      * @default F
-      * 
-      * 
-      */ 
+     * @description
+     * PG 취소 요청 여부
+     *
+     * T : 취소함
+     * F : 취소안함
+     *
+     * @default F
+     *
+     *
+     */
     paymentGatewayCancel?: any;
   }
 
   export interface CreateAnOrderShippingFeeCancellationOutput {
-    shippingfeecancellation: { 
-    shopNo: number;
-    orderId: string;
-    claimCode: string;
+    shippingfeecancellation: {
+      shopNo: number;
+      orderId: string;
+      claimCode: string;
     };
   }
 
@@ -468,8 +467,12 @@ declare module 'cafe24api-client' {
      */
     retrieveShippingFeeCancellationDetailsOfAnOrder(
       input: RetrieveShippingFeeCancellationDetailsOfAnOrderInput,
-      options?: RequestOptions<RetrieveShippingFeeCancellationDetailsOfAnOrderOutput['shippingfeecancellation'][number]>,
-    ): Promise<AxiosResponse<RetrieveShippingFeeCancellationDetailsOfAnOrderOutput>>;
+      options?: RequestOptions<
+        RetrieveShippingFeeCancellationDetailsOfAnOrderOutput['shippingfeecancellation'][number]
+      >,
+    ): Promise<
+      AxiosResponse<RetrieveShippingFeeCancellationDetailsOfAnOrderOutput>
+    >;
     /**
      * @description
      * 주문의 취소처리를 요청할 수 있습니다.
@@ -491,7 +494,9 @@ declare module 'cafe24api-client' {
      */
     createAnOrderShippingFeeCancellation(
       input: CreateAnOrderShippingFeeCancellationInput,
-      options?: RequestOptions<CreateAnOrderShippingFeeCancellationOutput['shippingfeecancellation']>,
+      options?: RequestOptions<
+        CreateAnOrderShippingFeeCancellationOutput['shippingfeecancellation']
+      >,
     ): Promise<AxiosResponse<CreateAnOrderShippingFeeCancellationOutput>>;
   }
 }

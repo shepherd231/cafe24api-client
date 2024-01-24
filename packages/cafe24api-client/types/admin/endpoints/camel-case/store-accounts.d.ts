@@ -5,91 +5,90 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
-
   /**
    * @description
-   * 
-   * 
+   *
+   *
    * 상점 계좌(Store accounts)는 쇼핑몰의 무통장입금 정보에 대한 기능입니다.
    */
   export interface StoreAccounts {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     *
+     */
     shopNo: any;
     /**
-      * @description
-      * 무통장 입금 은행 ID
-      * 
-      * 
-      */ 
+     * @description
+     * 무통장 입금 은행 ID
+     *
+     *
+     */
     bankAccountId: any;
     /**
-      * @description
-      * 은행명
-      * 
-      * 
-      */ 
+     * @description
+     * 은행명
+     *
+     *
+     */
     bankName: any;
     /**
-      * @description
-      * 은행코드
-      * 
-      * bank_code 
-      * 
-      * 최대글자수 : [50자]
-      */ 
+     * @description
+     * 은행코드
+     *
+     * bank_code
+     *
+     * 최대글자수 : [50자]
+     */
     bankCode: any;
     /**
-      * @description
-      * 계좌번호
-      * 
-      * 
-      */ 
+     * @description
+     * 계좌번호
+     *
+     *
+     */
     bankAccountNo: any;
     /**
-      * @description
-      * 예금주
-      * 
-      * 
-      */ 
+     * @description
+     * 예금주
+     *
+     *
+     */
     bankAccountHolder: any;
     /**
-      * @description
-      * 사용여부
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 사용여부
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     useAccount: any;
   }
 
   export interface RetrieveAListOfStoreBankAccountsInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     *
+     */
     shopNo?: any;
   }
 
   export interface RetrieveAListOfStoreBankAccountsOutput {
-    accounts: { 
-    shopNo: number;
-    bankAccountId: number;
-    bankName: string;
-    bankCode: string;
-    bankAccountNo: Cafe24Datetime;
-    bankAccountHolder: string;
-    useAccount: Cafe24Enum;
+    accounts: {
+      shopNo: number;
+      bankAccountId: number;
+      bankName: string;
+      bankCode: string;
+      bankAccountNo: Cafe24Datetime;
+      bankAccountHolder: string;
+      useAccount: Cafe24Enum;
     }[];
   }
 
@@ -129,7 +128,9 @@ declare module 'cafe24api-client' {
      */
     retrieveAListOfStoreBankAccounts(
       input: RetrieveAListOfStoreBankAccountsInput,
-      options?: RequestOptions<RetrieveAListOfStoreBankAccountsOutput['accounts'][number]>,
+      options?: RequestOptions<
+        RetrieveAListOfStoreBankAccountsOutput['accounts'][number]
+      >,
     ): Promise<AxiosResponse<RetrieveAListOfStoreBankAccountsOutput>>;
   }
 }

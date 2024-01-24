@@ -8,19 +8,20 @@ import {
 export default (cls) => {
   register(cls);
 
-  
-    const retrieveAKakaoChannelSenderProfileKey = cls.prototype.retrieveAKakaoChannelSenderProfileKey;
-    cls.prototype.retrieveAKakaoChannelSenderProfileKey = async function (input, options) {
-      const response = await retrieveAKakaoChannelSenderProfileKey.call(
-        this,
-        convertToSnakeCase(input),
-        optionsToSnakeCase(options),
-      );
-      return {
-        ...response,
-        data: convertToCamelCase(response.data),
-      };
+  const retrieveAKakaoChannelSenderProfileKey =
+    cls.prototype.retrieveAKakaoChannelSenderProfileKey;
+  cls.prototype.retrieveAKakaoChannelSenderProfileKey = async function (
+    input,
+    options,
+  ) {
+    const response = await retrieveAKakaoChannelSenderProfileKey.call(
+      this,
+      convertToSnakeCase(input),
+      optionsToSnakeCase(options),
+    );
+    return {
+      ...response,
+      data: convertToCamelCase(response.data),
     };
-
- 
+  };
 };

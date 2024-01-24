@@ -1,4 +1,3 @@
-
 export default (cls) => {
   cls.prototype.retrieveAListOfProducts = async function (input, options) {
     return this.createRequest(
@@ -282,7 +281,8 @@ export default (cls) => {
         description: input['description'],
         mobile_description: input['mobile_description'],
         translated_description: input['translated_description'],
-        translated_additional_description: input['translated_additional_description'],
+        translated_additional_description:
+          input['translated_additional_description'],
         summary_description: input['summary_description'],
         simple_description: input['simple_description'],
         product_tag: input['product_tag'],
@@ -363,5 +363,4 @@ export default (cls) => {
       options,
     );
   };
-
 };

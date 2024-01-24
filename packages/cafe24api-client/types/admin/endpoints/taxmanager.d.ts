@@ -5,27 +5,25 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
-
   /**
    * @description
    * 세금 관리자(MSA)의 활성화 정보 관련 기능입니다.
    */
   export interface Taxmanager {
     /**
-      * @description
-      * 세금 관리자 활성화 정보
-      * 
-      * 
-      */ 
+     * @description
+     * 세금 관리자 활성화 정보
+     *
+     *
+     */
     use: any;
   }
 
-  export interface RetrieveActivationInformationForTaxManagerInput {
-  }
+  export interface RetrieveActivationInformationForTaxManagerInput {}
 
   export interface RetrieveActivationInformationForTaxManagerOutput {
-    taxmanager: { 
-    use: Cafe24Enum;
+    taxmanager: {
+      use: Cafe24Enum;
     };
   }
 
@@ -47,7 +45,9 @@ declare module 'cafe24api-client' {
      */
     retrieveActivationInformationForTaxManager(
       input?: RetrieveActivationInformationForTaxManagerInput,
-      options?: RequestOptions<RetrieveActivationInformationForTaxManagerOutput['taxmanager']>,
+      options?: RequestOptions<
+        RetrieveActivationInformationForTaxManagerOutput['taxmanager']
+      >,
     ): Promise<AxiosResponse<RetrieveActivationInformationForTaxManagerOutput>>;
   }
 }

@@ -1,6 +1,8 @@
-
 export default (cls) => {
-  cls.prototype.retrieveAListOfSubscriptionProducts = async function (input, options) {
+  cls.prototype.retrieveAListOfSubscriptionProducts = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/subscription/shipments/setting`,
@@ -12,7 +14,10 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.createASubscriptionPaymentRule = async function (input, options) {
+  cls.prototype.createASubscriptionPaymentRule = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'POST',
       `/api/v2/admin/subscription/shipments/setting`,
@@ -27,7 +32,8 @@ export default (cls) => {
         discount_value_unit: input['discount_value_unit'],
         discount_values: input['discount_values'],
         related_purchase_quantity: input['related_purchase_quantity'],
-        subscription_shipments_cycle_type: input['subscription_shipments_cycle_type'],
+        subscription_shipments_cycle_type:
+          input['subscription_shipments_cycle_type'],
         subscription_shipments_cycle: input['subscription_shipments_cycle'],
         use_order_price_condition: input['use_order_price_condition'],
         order_price_greater_than: input['order_price_greater_than'],
@@ -54,7 +60,8 @@ export default (cls) => {
         discount_value_unit: input['discount_value_unit'],
         discount_values: input['discount_values'],
         related_purchase_quantity: input['related_purchase_quantity'],
-        subscription_shipments_cycle_type: input['subscription_shipments_cycle_type'],
+        subscription_shipments_cycle_type:
+          input['subscription_shipments_cycle_type'],
         subscription_shipments_cycle: input['subscription_shipments_cycle'],
         use_order_price_condition: input['use_order_price_condition'],
         order_price_greater_than: input['order_price_greater_than'],
@@ -76,5 +83,4 @@ export default (cls) => {
       options,
     );
   };
-
 };

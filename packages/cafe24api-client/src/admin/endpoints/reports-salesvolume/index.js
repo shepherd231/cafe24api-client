@@ -1,4 +1,3 @@
-
 export default (cls) => {
   cls.prototype.retrieveASalesReport = async function (input, options) {
     return this.createRequest(
@@ -19,5 +18,4 @@ export default (cls) => {
       options,
     );
   };
-
 };

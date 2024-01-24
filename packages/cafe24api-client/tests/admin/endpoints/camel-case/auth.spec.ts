@@ -2,7 +2,7 @@ import axios from 'axios';
 import Case from 'case';
 import { Cafe24AdminAPIClient } from '../../../../src/client/index';
 import Auth from '../../../../src/admin/endpoints/camel-case/auth/index';
-import { MockAPICall } from '../mocks/auth.mock';
+import { MockAPICall } from '../mocks/api.mock';
 
 // https://stackoverflow.com/questions/45016033/how-do-i-test-axios-in-jest
 jest.mock('axios');

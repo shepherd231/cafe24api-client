@@ -5,1080 +5,1084 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
-
   /**
    * @description
-   * 
-   * 
+   *
+   *
    * 게시물(Boards articles)은 게시판에 게시되는 게시물을 관리하기 위한 리소스입니다.
    * 특정 게시판의 게시물을 조회하거나 게시물을 생성하거나 수정, 삭제할 수 있습니다.
    */
   export interface BoardsArticles {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     *
+     */
     shop_no: any;
     /**
-      * @description
-      * 게시물 번호
-      * 
-      * 최대값: [2147483647]
-      */ 
+     * @description
+     * 게시물 번호
+     *
+     * 최대값: [2147483647]
+     */
     article_no: any;
     /**
-      * @description
-      * 부모 게시물 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 부모 게시물 번호
+     *
+     *
+     */
     parent_article_no: any;
     /**
-      * @description
-      * 게시판 번호
-      * 
-      * @required
-      */ 
+     * @description
+     * 게시판 번호
+     *
+     * @required
+     */
     board_no: any;
     /**
-      * @description
-      * 상품번호
-      * 
-      * 
-      */ 
+     * @description
+     * 상품번호
+     *
+     *
+     */
     product_no: any;
     /**
-      * @description
-      * 분류 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 분류 번호
+     *
+     *
+     */
     category_no: any;
     /**
-      * @description
-      * 게시판 카테고리 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 게시판 카테고리 번호
+     *
+     *
+     */
     board_category_no: any;
     /**
-      * @description
-      * 답변 게시물 순서
-      * 
-      * 
-      */ 
+     * @description
+     * 답변 게시물 순서
+     *
+     *
+     */
     reply_sequence: any;
     /**
-      * @description
-      * 답변 차수
-      * 
-      * 
-      */ 
+     * @description
+     * 답변 차수
+     *
+     *
+     */
     reply_depth: any;
     /**
-      * @description
-      * 생성일
-      * 
-      * 날짜
-      */ 
+     * @description
+     * 생성일
+     *
+     * 날짜
+     */
     created_date: any;
     /**
-      * @description
-      * 작성자명
-      * 
-      * 
-      */ 
+     * @description
+     * 작성자명
+     *
+     *
+     */
     writer: any;
     /**
-      * @description
-      * 작성자 이메일
-      * 
-      * 이메일
-      */ 
+     * @description
+     * 작성자 이메일
+     *
+     * 이메일
+     */
     writer_email: any;
     /**
-      * @description
-      * 회원아이디
-      * 
-      * 
-      */ 
+     * @description
+     * 회원아이디
+     *
+     *
+     */
     member_id: any;
     /**
-      * @description
-      * 제목
-      * 
-      * 
-      */ 
+     * @description
+     * 제목
+     *
+     *
+     */
     title: any;
     /**
-      * @description
-      * 내용
-      * 
-      * 
-      */ 
+     * @description
+     * 내용
+     *
+     *
+     */
     content: any;
     /**
-      * @description
-      * 공급사 아이디
-      * 
-      * 형식 : [a-z0-9]
-      * 글자수 최소: [4자]~최대: [16자]
-      */ 
+     * @description
+     * 공급사 아이디
+     *
+     * 형식 : [a-z0-9]
+     * 글자수 최소: [4자]~최대: [16자]
+     */
     supplier_id: any;
     /**
-      * @description
-      * 작성자 IP
-      * 
-      * IP
-      */ 
+     * @description
+     * 작성자 IP
+     *
+     * IP
+     */
     client_ip: any;
     /**
-      * @description
-      * 별명
-      * 
-      * 
-      */ 
+     * @description
+     * 별명
+     *
+     *
+     */
     nick_name: any;
     /**
-      * @description
-      * 평점
-      * 
-      * 최소: [1]~최대: [5]
-      */ 
+     * @description
+     * 평점
+     *
+     * 최소: [1]~최대: [5]
+     */
     rating: any;
     /**
-      * @description
-      * 매체사
-      * 
-      * 최대글자수 : [20자]
-      */ 
+     * @description
+     * 매체사
+     *
+     * 최대글자수 : [20자]
+     */
     sales_channel: any;
     /**
-      * @description
-      * 1:1 게시판 문의내용에 대한 답변 메일 여부
-      * 
-      * Y : 사용함
-      * N : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 1:1 게시판 문의내용에 대한 답변 메일 여부
+     *
+     * Y : 사용함
+     * N : 사용안함
+     *
+     *
+     */
     reply_mail: any;
     /**
-      * @description
-      * 게시 여부
-      * 
-      * T : 게시함
-      * F : 게시안함
-      * 
-      * 
-      */ 
+     * @description
+     * 게시 여부
+     *
+     * T : 게시함
+     * F : 게시안함
+     *
+     *
+     */
     display: any;
     /**
-      * @description
-      * 비밀글 여부
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 비밀글 여부
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     secret: any;
     /**
-      * @description
-      * 공지 여부
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 공지 여부
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     notice: any;
     /**
-      * @description
-      * 고정글 여부
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 고정글 여부
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     fixed: any;
     /**
-      * @description
-      * 삭제 구분
-      * 
-      * T : 삭제
-      * F : 비삭제
-      * 
-      * 
-      */ 
+     * @description
+     * 삭제 구분
+     *
+     * T : 삭제
+     * F : 비삭제
+     *
+     *
+     */
     deleted: any;
     /**
-      * @description
-      * 게시물 작성 경로
-      * 
-      * P : PC
-      * M : 모바일
-      * 
-      * 
-      */ 
+     * @description
+     * 게시물 작성 경로
+     *
+     * P : PC
+     * M : 모바일
+     *
+     *
+     */
     input_channel: any;
     /**
-      * @description
-      * 주문번호
-      * 
-      * 
-      */ 
+     * @description
+     * 주문번호
+     *
+     *
+     */
     order_id: any;
     /**
-      * @description
-      * 첨부 파일 상세
-      * 
-      * 
-      */ 
+     * @description
+     * 첨부 파일 상세
+     *
+     *
+     */
     attach_file_urls: any;
     /**
-      * @description
-      * 조회수
-      * 
-      * 
-      */ 
+     * @description
+     * 조회수
+     *
+     *
+     */
     hit: any;
     /**
-      * @description
-      * 1:1 게시판 문의내용에 대한 답변여부
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 1:1 게시판 문의내용에 대한 답변여부
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     reply: any;
     /**
-      * @description
-      * 처리중 또는 답변완료 한 운영자 아이디
-      * 
-      * 
-      */ 
+     * @description
+     * 처리중 또는 답변완료 한 운영자 아이디
+     *
+     *
+     */
     reply_user_id: any;
     /**
-      * @description
-      * 답변 처리 상태
-      * 
-      * N : 답변전
-      * P : 처리중
-      * C : 처리완료
-      * 
-      * 
-      */ 
+     * @description
+     * 답변 처리 상태
+     *
+     * N : 답변전
+     * P : 처리중
+     * C : 처리완료
+     *
+     *
+     */
     reply_status: any;
     /**
-      * @description
-      * 네이버페이 리뷰 아이디
-      * 
-      * 
-      */ 
+     * @description
+     * 네이버페이 리뷰 아이디
+     *
+     *
+     */
     naverpay_review_id: any;
     /**
-      * @description
-      * 노출시간 사용여부
-      * 
-      * 
-      */ 
+     * @description
+     * 노출시간 사용여부
+     *
+     *
+     */
     display_time: any;
     /**
-      * @description
-      * 노출시간 시작 시각
-      * 
-      * 
-      */ 
+     * @description
+     * 노출시간 시작 시각
+     *
+     *
+     */
     display_time_start_hour: any;
     /**
-      * @description
-      * 노출시간 종료 시각
-      * 
-      * 
-      */ 
+     * @description
+     * 노출시간 종료 시각
+     *
+     *
+     */
     display_time_end_hour: any;
     /**
-      * @description
-      * 첨부 파일 상세
-      * 
-      * 
-      */ 
+     * @description
+     * 첨부 파일 상세
+     *
+     *
+     */
     attached_file_detail: any;
     /**
-      * @description
-      * 첨부 파일 상세
-      * 
-      * 
-      */ 
+     * @description
+     * 첨부 파일 상세
+     *
+     *
+     */
     attached_file_urls: any;
   }
 
   export interface RetrieveAListOfPostsForABoardInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     *
+     */
     shop_no?: any;
     /**
-      * @description
-      * 게시판 번호
-      * 
-      * @required
-      */ 
+     * @description
+     * 게시판 번호
+     *
+     * @required
+     */
     board_no: any;
     /**
-      * @description
-      * 게시판 카테고리 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 게시판 카테고리 번호
+     *
+     *
+     */
     board_category_no?: any;
     /**
-      * @description
-      * 작성일 시작일자
-      * 
-      * 날짜
-      */ 
+     * @description
+     * 검색 시작일(작성일)
+     *
+     * 검색을 시작할 기준일 또는 작성일
+     *
+     * 날짜
+     */
     start_date?: any;
     /**
-      * @description
-      * 작성일 종료일자
-      * 
-      * 날짜
-      */ 
+     * @description
+     * 검색 종료일
+     *
+     * 검색을 종료할 기준일
+     * 검색 시작일과 같이 사용해야함. 검색기간은 한 호출에 1년 이상 검색 불가.
+     *
+     * 날짜
+     */
     end_date?: any;
     /**
-      * @description
-      * 쇼핑몰 구분
-      * 
-      * P : PC
-      * M : 모바일
-      * 
-      * 
-      */ 
+     * @description
+     * 쇼핑몰 구분
+     *
+     * P : PC
+     * M : 모바일
+     *
+     *
+     */
     input_channel?: any;
     /**
-      * @description
-      * 검색 영역
-      * 
-      * subject : 제목
-      * content : 내용
-      * writer_name : 작성자
-      * product : 상품명
-      * member_id : 회원 아이디
-      * 
-      * 
-      */ 
+     * @description
+     * 검색 영역
+     *
+     * subject : 제목
+     * content : 내용
+     * writer_name : 작성자
+     * product : 상품명
+     * member_id : 회원 아이디
+     *
+     *
+     */
     search?: any;
     /**
-      * @description
-      * 검색어
-      * 
-      * 
-      */ 
+     * @description
+     * 검색어
+     *
+     *
+     */
     keyword?: any;
     /**
-      * @description
-      * 답변상태
-      * 
-      * N : 답변 전
-      * P : 처리중
-      * C : 답변 완료
-      * 
-      * 
-      */ 
+     * @description
+     * 답변상태
+     *
+     * N : 답변 전
+     * P : 처리중
+     * C : 답변 완료
+     *
+     *
+     */
     reply_status?: any;
     /**
-      * @description
-      * 댓글여부
-      * 
-      * T : 있음
-      * F : 없음
-      * 
-      * 
-      */ 
+     * @description
+     * 댓글여부
+     *
+     * T : 있음
+     * F : 없음
+     *
+     *
+     */
     comment?: any;
     /**
-      * @description
-      * 첨부파일 여부
-      * 
-      * T : 있음
-      * F : 없음
-      * 
-      * 
-      */ 
+     * @description
+     * 첨부파일 여부
+     *
+     * T : 있음
+     * F : 없음
+     *
+     *
+     */
     attached_file?: any;
     /**
-      * @description
-      * 게시물 유형
-      * 
-      * ,(콤마)로 여러 건을 검색할 수 있다.
-      * 
-      * all : 전체
-      * normal : 일반글
-      * notice : 공지글
-      * fixed : 고정글
-      * 
-      * 
-      */ 
+     * @description
+     * 게시물 유형
+     *
+     * ,(콤마)로 여러 건을 검색할 수 있다.
+     *
+     * all : 전체
+     * normal : 일반글
+     * notice : 공지글
+     * fixed : 고정글
+     *
+     *
+     */
     article_type?: any;
     /**
-      * @description
-      * 상품번호
-      * 
-      * 
-      */ 
+     * @description
+     * 상품번호
+     *
+     *
+     */
     product_no?: any;
     /**
-      * @description
-      * 상품정보 포함 여부
-      * 
-      * T : 있음
-      * F : 없음
-      * 
-      * 
-      */ 
+     * @description
+     * 상품정보 포함 여부
+     *
+     * T : 있음
+     * F : 없음
+     *
+     *
+     */
     has_product?: any;
     /**
-      * @description
-      * 공지 여부
-      * 
-      * T : 있음
-      * F : 없음
-      * 
-      * 
-      */ 
+     * @description
+     * 공지 여부
+     *
+     * T : 있음
+     * F : 없음
+     *
+     *
+     */
     is_notice?: any;
     /**
-      * @description
-      * 게시 여부
-      * 
-      * T : 있음
-      * F : 없음
-      * 
-      * 
-      */ 
+     * @description
+     * 게시 여부
+     *
+     * T : 있음
+     * F : 없음
+     *
+     *
+     */
     is_display?: any;
     /**
-      * @description
-      * 공급사 아이디
-      * 
-      * 형식 : [a-z0-9]
-      * 글자수 최소: [4자]~최대: [16자]
-      */ 
+     * @description
+     * 공급사 아이디
+     *
+     * 형식 : [a-z0-9]
+     * 글자수 최소: [4자]~최대: [16자]
+     */
     supplier_id?: any;
     /**
-      * @description
-      * 조회결과 시작위치
-      * 
-      * @default 0
-      * 
-      * 최대값: [8000]
-      */ 
+     * @description
+     * 조회결과 시작위치
+     *
+     * @default 0
+     *
+     * 최대값: [8000]
+     */
     offset?: any;
     /**
-      * @description
-      * 조회결과 최대건수
-      * 
-      * @default 10
-      * 
-      * 최소: [1]~최대: [100]
-      */ 
+     * @description
+     * 조회결과 최대건수
+     *
+     * @default 10
+     *
+     * 최소: [1]~최대: [100]
+     */
     limit?: any;
   }
 
   export interface RetrieveAListOfPostsForABoardOutput {
-    articles: { 
-    shop_no: number;
-    article_no: number;
-    parent_article_no: number;
-    board_no: number;
-    product_no: number;
-    category_no: number;
-    board_category_no: number;
-    reply_sequence: number;
-    reply_depth: number;
-    created_date: Cafe24Datetime;
-    writer: string;
-    writer_email: string;
-    member_id: string;
-    title: string;
-    content: string;
-    supplier_id: string;
-    client_ip: string;
-    nick_name: string;
-    rating: number;
-    reply_mail: Cafe24Enum;
-    display: Cafe24Enum;
-    secret: Cafe24Enum;
-    notice: Cafe24Enum;
-    fixed: Cafe24Enum;
-    deleted: Cafe24Enum;
-    input_channel: Cafe24Enum;
-    order_id: string;
-    attach_file_urls: { 
-    no: number;
-    name: string;
-    url: string;
+    articles: {
+      shop_no: number;
+      article_no: number;
+      parent_article_no: number;
+      board_no: number;
+      product_no: number;
+      category_no: number;
+      board_category_no: number;
+      reply_sequence: number;
+      reply_depth: number;
+      created_date: Cafe24Datetime;
+      writer: string;
+      writer_email: string;
+      member_id: string;
+      title: string;
+      content: string;
+      supplier_id: string;
+      client_ip: string;
+      nick_name: string;
+      rating: number;
+      reply_mail: Cafe24Enum;
+      display: Cafe24Enum;
+      secret: Cafe24Enum;
+      notice: Cafe24Enum;
+      fixed: Cafe24Enum;
+      deleted: Cafe24Enum;
+      input_channel: Cafe24Enum;
+      order_id: string;
+      attach_file_urls: {
+        no: number;
+        name: string;
+        url: string;
+      }[];
+      hit: number;
+      reply: Cafe24Enum;
+      reply_user_id: string;
+      reply_status: Cafe24Enum;
+      naverpay_review_id: string;
+      display_time: Cafe24Enum;
+      display_time_start_hour: number;
+      display_time_end_hour: number;
     }[];
-    hit: number;
-    reply: Cafe24Enum;
-    reply_user_id: string;
-    reply_status: Cafe24Enum;
-    naverpay_review_id: string;
-    display_time: Cafe24Enum;
-    display_time_start_hour: number;
-    display_time_end_hour: number;
-    }[];
-    links: { 
-    rel: string;
-    href: string;
+    links: {
+      rel: string;
+      href: string;
     }[];
   }
   export interface CreateABoardPostInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     *
+     */
     shop_no?: any;
     /**
-      * @description
-      * 게시판 번호
-      * 
-      * @required
-      */ 
+     * @description
+     * 게시판 번호
+     *
+     * @required
+     */
     board_no: any;
     /**
-      * @description
-      * 작성자명
-      * 
-      * @required
-      * 
-      * 최대글자수 : [100자]
-      */ 
+     * @description
+     * 작성자명
+     *
+     * @required
+     *
+     * 최대글자수 : [100자]
+     */
     writer: any;
     /**
-      * @description
-      * 제목
-      * 
-      * @required
-      * 
-      * 최대글자수 : [256자]
-      */ 
+     * @description
+     * 제목
+     *
+     * @required
+     *
+     * 최대글자수 : [256자]
+     */
     title: any;
     /**
-      * @description
-      * 내용
-      * 
-      * @required
-      */ 
+     * @description
+     * 내용
+     *
+     * @required
+     */
     content: any;
     /**
-      * @description
-      * 작성자 IP
-      * 
-      * @required
-      * 
-      * IP
-      */ 
+     * @description
+     * 작성자 IP
+     *
+     * @required
+     *
+     * IP
+     */
     client_ip: any;
     /**
-      * @description
-      * 답변 게시물 번호
-      * 
-      * 게시물에 답변을 추가하고자 할 경우 게시물의 번호를 입력한다.
-      * 
-      * 
-      */ 
+     * @description
+     * 답변 게시물 번호
+     *
+     * 게시물에 답변을 추가하고자 할 경우 게시물의 번호를 입력한다.
+     *
+     *
+     */
     reply_article_no?: any;
     /**
-      * @description
-      * 생성일
-      * 
-      * 날짜
-      */ 
+     * @description
+     * 생성일
+     *
+     * 날짜
+     */
     created_date?: any;
     /**
-      * @description
-      * 작성자 이메일
-      * 
-      * 이메일
-      */ 
+     * @description
+     * 작성자 이메일
+     *
+     * 이메일
+     */
     writer_email?: any;
     /**
-      * @description
-      * 회원아이디
-      * 
-      * 미입력시 대표운영자 계정으로 작성된다.
-      * 
-      * 최대글자수 : [20자]
-      */ 
+     * @description
+     * 회원아이디
+     *
+     * 미입력시 대표운영자 계정으로 작성된다.
+     *
+     * 최대글자수 : [20자]
+     */
     member_id?: any;
     /**
-      * @description
-      * 공지 여부
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * @default F
-      * 
-      * 
-      */ 
+     * @description
+     * 공지 여부
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     * @default F
+     *
+     *
+     */
     notice?: any;
     /**
-      * @description
-      * 고정글 여부
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * @default F
-      * 
-      * 
-      */ 
+     * @description
+     * 고정글 여부
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     * @default F
+     *
+     *
+     */
     fixed?: any;
     /**
-      * @description
-      * 삭제 구분
-      * 
-      * T : 삭제
-      * F : 비삭제
-      * 
-      * @default F
-      * 
-      * 
-      */ 
+     * @description
+     * 삭제 구분
+     *
+     * T : 삭제
+     * F : 비삭제
+     *
+     * @default F
+     *
+     *
+     */
     deleted?: any;
     /**
-      * @description
-      * 1:1 게시판 문의내용에 대한 답변여부
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * @default F
-      * 
-      * 
-      */ 
+     * @description
+     * 1:1 게시판 문의내용에 대한 답변여부
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     * @default F
+     *
+     *
+     */
     reply?: any;
     /**
-      * @description
-      * 평점
-      * 
-      * 최소: [1]~최대: [5]
-      */ 
+     * @description
+     * 평점
+     *
+     * 최소: [1]~최대: [5]
+     */
     rating?: any;
     /**
-      * @description
-      * 매체사
-      * 
-      * 최대글자수 : [20자]
-      */ 
+     * @description
+     * 매체사
+     *
+     * 최대글자수 : [20자]
+     */
     sales_channel?: any;
     /**
-      * @description
-      * 비밀글 여부
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * @default F
-      * 
-      * 
-      */ 
+     * @description
+     * 비밀글 여부
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     * @default F
+     *
+     *
+     */
     secret?: any;
     /**
-      * @description
-      * 게시글 비밀번호
-      * 
-      * 
-      */ 
+     * @description
+     * 게시글 비밀번호
+     *
+     *
+     */
     password?: any;
     /**
-      * @description
-      * 1:1 게시판 문의내용에 대한 답변 메일 여부
-      * 
-      * Y : 사용함
-      * N : 사용안함
-      * 
-      * @default N
-      * 
-      * 
-      */ 
+     * @description
+     * 1:1 게시판 문의내용에 대한 답변 메일 여부
+     *
+     * Y : 사용함
+     * N : 사용안함
+     *
+     * @default N
+     *
+     *
+     */
     reply_mail?: any;
     /**
-      * @description
-      * 게시판 카테고리 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 게시판 카테고리 번호
+     *
+     *
+     */
     board_category_no?: any;
     /**
-      * @description
-      * 별명
-      * 
-      * 최대글자수 : [50자]
-      */ 
+     * @description
+     * 별명
+     *
+     * 최대글자수 : [50자]
+     */
     nick_name?: any;
     /**
-      * @description
-      * 게시물 작성 경로
-      * 
-      * P : PC
-      * M : 모바일
-      * 
-      * @default P
-      * 
-      * 
-      */ 
+     * @description
+     * 게시물 작성 경로
+     *
+     * P : PC
+     * M : 모바일
+     *
+     * @default P
+     *
+     *
+     */
     input_channel?: any;
     /**
-      * @description
-      * 처리중 또는 답변완료 한 운영자 아이디
-      * 
-      * 
-      */ 
+     * @description
+     * 처리중 또는 답변완료 한 운영자 아이디
+     *
+     *
+     */
     reply_user_id?: any;
     /**
-      * @description
-      * 답변 처리 상태
-      * 
-      * N : 답변전
-      * P : 처리중
-      * C : 처리완료
-      * 
-      * 
-      */ 
+     * @description
+     * 답변 처리 상태
+     *
+     * N : 답변전
+     * P : 처리중
+     * C : 처리완료
+     *
+     *
+     */
     reply_status?: any;
     /**
-      * @description
-      * 상품번호
-      * 
-      * 최대값: [2147483647]
-      */ 
+     * @description
+     * 상품번호
+     *
+     * 최대값: [2147483647]
+     */
     product_no?: any;
     /**
-      * @description
-      * 분류 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 분류 번호
+     *
+     *
+     */
     category_no?: any;
     /**
-      * @description
-      * 주문번호
-      * 
-      * 주문번호
-      */ 
+     * @description
+     * 주문번호
+     *
+     * 주문번호
+     */
     order_id?: any;
     /**
-      * @description
-      * 네이버페이 리뷰 아이디
-      * 
-      * 
-      */ 
+     * @description
+     * 네이버페이 리뷰 아이디
+     *
+     *
+     */
     naverpay_review_id?: any;
     /**
-      * @description
-      * 첨부 파일 상세
-      * 
-      * 
-      */ 
-    attach_file_urls?: { 
-    /**
-      * @description
-      * 파일명
-      * 
-      * 
-      */ 
-    name?: any;
-    /**
-      * @description
-      * 파일 URL
-      * 
-      * 
-      */ 
-    url?: any;
+     * @description
+     * 첨부 파일 상세
+     *
+     *
+     */
+    attach_file_urls?: {
+      /**
+       * @description
+       * 파일명
+       *
+       *
+       */
+      name?: any;
+      /**
+       * @description
+       * 파일 URL
+       *
+       *
+       */
+      url?: any;
     };
   }
 
   export interface CreateABoardPostOutput {
-    articles: { 
-    shop_no: number;
-    article_no: number;
-    parent_article_no: number;
-    board_no: number;
-    product_no: number;
-    category_no: number;
-    board_category_no: number;
-    reply_sequence: number;
-    reply_depth: number;
-    created_date: Cafe24Datetime;
-    writer: string;
-    writer_email: string;
-    member_id: string;
-    title: string;
-    content: string;
-    client_ip: string;
-    nick_name: string;
-    rating: number;
-    reply_mail: Cafe24Enum;
-    display: Cafe24Enum;
-    secret: Cafe24Enum;
-    notice: Cafe24Enum;
-    fixed: Cafe24Enum;
-    deleted: Cafe24Enum;
-    input_channel: Cafe24Enum;
-    order_id: string;
-    attached_file_detail: { 
-    no: number;
-    path: string;
-    name: string;
-    size: number;
-    source: string;
-    type: string;
-    ext: string;
-    width: number;
-    height: number;
-    thumb: string;
-    }[];
-    hit: number;
-    reply: Cafe24Enum;
-    reply_user_id: string;
-    reply_status: Cafe24Enum;
-    naverpay_review_id: string;
+    articles: {
+      shop_no: number;
+      article_no: number;
+      parent_article_no: number;
+      board_no: number;
+      product_no: number;
+      category_no: number;
+      board_category_no: number;
+      reply_sequence: number;
+      reply_depth: number;
+      created_date: Cafe24Datetime;
+      writer: string;
+      writer_email: string;
+      member_id: string;
+      title: string;
+      content: string;
+      client_ip: string;
+      nick_name: string;
+      rating: number;
+      reply_mail: Cafe24Enum;
+      display: Cafe24Enum;
+      secret: Cafe24Enum;
+      notice: Cafe24Enum;
+      fixed: Cafe24Enum;
+      deleted: Cafe24Enum;
+      input_channel: Cafe24Enum;
+      order_id: string;
+      attached_file_detail: {
+        no: number;
+        path: string;
+        name: string;
+        size: number;
+        source: string;
+        type: string;
+        ext: string;
+        width: number;
+        height: number;
+        thumb: string;
+      }[];
+      hit: number;
+      reply: Cafe24Enum;
+      reply_user_id: string;
+      reply_status: Cafe24Enum;
+      naverpay_review_id: string;
     }[];
   }
   export interface UpdateABoardPostInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     *
+     */
     shop_no?: any;
     /**
-      * @description
-      * 게시판 번호
-      * 
-      * @required
-      */ 
+     * @description
+     * 게시판 번호
+     *
+     * @required
+     */
     board_no: any;
     /**
-      * @description
-      * 게시물 번호
-      * 
-      * @required
-      */ 
+     * @description
+     * 게시물 번호
+     *
+     * @required
+     */
     article_no: any;
     /**
-      * @description
-      * 제목
-      * 
-      * 최대글자수 : [256자]
-      */ 
+     * @description
+     * 제목
+     *
+     * 최대글자수 : [256자]
+     */
     title?: any;
     /**
-      * @description
-      * 내용
-      * 
-      * 
-      */ 
+     * @description
+     * 내용
+     *
+     *
+     */
     content?: any;
     /**
-      * @description
-      * 평점
-      * 
-      * 최소: [1]~최대: [5]
-      */ 
+     * @description
+     * 평점
+     *
+     * 최소: [1]~최대: [5]
+     */
     rating?: any;
     /**
-      * @description
-      * 매체사
-      * 
-      * 최대글자수 : [20자]
-      */ 
+     * @description
+     * 매체사
+     *
+     * 최대글자수 : [20자]
+     */
     sales_channel?: any;
     /**
-      * @description
-      * 게시판 카테고리 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 게시판 카테고리 번호
+     *
+     *
+     */
     board_category_no?: any;
     /**
-      * @description
-      * 게시 여부
-      * 
-      * T : 게시함
-      * F : 게시안함
-      * 
-      * 
-      */ 
+     * @description
+     * 게시 여부
+     *
+     * T : 게시함
+     * F : 게시안함
+     *
+     *
+     */
     display?: any;
     /**
-      * @description
-      * 공지 여부
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 공지 여부
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     notice?: any;
     /**
-      * @description
-      * 고정글 여부
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 고정글 여부
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     fixed?: any;
     /**
-      * @description
-      * 노출시간 시작 시각
-      * 
-      * 
-      */ 
+     * @description
+     * 노출시간 시작 시각
+     *
+     *
+     */
     display_time_start_hour?: any;
     /**
-      * @description
-      * 노출시간 종료 시각
-      * 
-      * 
-      */ 
+     * @description
+     * 노출시간 종료 시각
+     *
+     *
+     */
     display_time_end_hour?: any;
     /**
-      * @description
-      * 파일 URL
-      * 
-      * URL
-      */ 
+     * @description
+     * 파일 URL
+     *
+     * URL
+     */
     attach_file_url1?: any;
     /**
-      * @description
-      * 파일 URL
-      * 
-      * URL
-      */ 
+     * @description
+     * 파일 URL
+     *
+     * URL
+     */
     attach_file_url2?: any;
     /**
-      * @description
-      * 파일 URL
-      * 
-      * URL
-      */ 
+     * @description
+     * 파일 URL
+     *
+     * URL
+     */
     attach_file_url3?: any;
     /**
-      * @description
-      * 파일 URL
-      * 
-      * URL
-      */ 
+     * @description
+     * 파일 URL
+     *
+     * URL
+     */
     attach_file_url4?: any;
     /**
-      * @description
-      * 파일 URL
-      * 
-      * URL
-      */ 
+     * @description
+     * 파일 URL
+     *
+     * URL
+     */
     attach_file_url5?: any;
   }
 
   export interface UpdateABoardPostOutput {
-    article: { 
-    shop_no: number;
-    article_no: number;
-    parent_article_no: number;
-    board_no: number;
-    product_no: number;
-    category_no: number;
-    board_category_no: number;
-    reply_sequence: number;
-    reply_depth: number;
-    created_date: Cafe24Datetime;
-    writer: string;
-    writer_email: string;
-    member_id: string;
-    title: string;
-    content: string;
-    client_ip: string;
-    nick_name: string;
-    rating: number;
-    reply_mail: Cafe24Enum;
-    display: Cafe24Enum;
-    secret: Cafe24Enum;
-    notice: Cafe24Enum;
-    fixed: Cafe24Enum;
-    deleted: Cafe24Enum;
-    input_channel: Cafe24Enum;
-    order_id: string;
-    attached_file_urls: { 
-    no: number;
-    name: string;
-    url: string;
-    }[];
-    hit: number;
-    reply: Cafe24Enum;
-    reply_user_id: string;
-    reply_status: Cafe24Enum;
-    naverpay_review_id: string;
-    display_time: Cafe24Enum;
-    display_time_start_hour: Cafe24Datetime;
-    display_time_end_hour: Cafe24Datetime;
+    article: {
+      shop_no: number;
+      article_no: number;
+      parent_article_no: number;
+      board_no: number;
+      product_no: number;
+      category_no: number;
+      board_category_no: number;
+      reply_sequence: number;
+      reply_depth: number;
+      created_date: Cafe24Datetime;
+      writer: string;
+      writer_email: string;
+      member_id: string;
+      title: string;
+      content: string;
+      client_ip: string;
+      nick_name: string;
+      rating: number;
+      reply_mail: Cafe24Enum;
+      display: Cafe24Enum;
+      secret: Cafe24Enum;
+      notice: Cafe24Enum;
+      fixed: Cafe24Enum;
+      deleted: Cafe24Enum;
+      input_channel: Cafe24Enum;
+      order_id: string;
+      attached_file_urls: {
+        no: number;
+        name: string;
+        url: string;
+      }[];
+      hit: number;
+      reply: Cafe24Enum;
+      reply_user_id: string;
+      reply_status: Cafe24Enum;
+      naverpay_review_id: string;
+      display_time: Cafe24Enum;
+      display_time_start_hour: Cafe24Datetime;
+      display_time_end_hour: Cafe24Datetime;
     };
   }
   export interface DeleteABoardPostInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     *
+     */
     shop_no?: any;
     /**
-      * @description
-      * 게시판 번호
-      * 
-      * @required
-      */ 
+     * @description
+     * 게시판 번호
+     *
+     * @required
+     */
     board_no: any;
     /**
-      * @description
-      * 게시물 번호
-      * 
-      * @required
-      * 
-      * 최대값: [2147483647]
-      */ 
+     * @description
+     * 게시물 번호
+     *
+     * @required
+     *
+     * 최대값: [2147483647]
+     */
     article_no: any;
   }
 
   export interface DeleteABoardPostOutput {
-    article: { 
-    shop_no: number;
-    board_no: number;
-    article_no: number;
+    article: {
+      shop_no: number;
+      board_no: number;
+      article_no: number;
     };
   }
 
@@ -1208,7 +1212,9 @@ declare module 'cafe24api-client' {
      */
     retrieveAListOfPostsForABoard(
       input: RetrieveAListOfPostsForABoardInput,
-      options?: RequestOptions<RetrieveAListOfPostsForABoardOutput['articles'][number]>,
+      options?: RequestOptions<
+        RetrieveAListOfPostsForABoardOutput['articles'][number]
+      >,
     ): Promise<AxiosResponse<RetrieveAListOfPostsForABoardOutput>>;
     /**
      * @description

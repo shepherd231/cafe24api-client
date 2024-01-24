@@ -1,4 +1,3 @@
-
 export default (cls) => {
   cls.prototype.retrieveAListOfManufacturers = async function (input, options) {
     return this.createRequest(
@@ -28,7 +27,10 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.retrieveACountOfManufacturers = async function (input, options) {
+  cls.prototype.retrieveACountOfManufacturers = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/manufacturers/count`,
@@ -84,5 +86,4 @@ export default (cls) => {
       options,
     );
   };
-
 };

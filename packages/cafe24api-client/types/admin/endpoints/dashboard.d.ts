@@ -5,150 +5,149 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
-
   /**
    * @description
    * 대시보드(Dashboard)는 쇼핑몰의 주문 현황과 매출 현황 등 쇼핑몰 운영에 필요한 정보를 간략하게 요약해놓은 정보입니다.
    */
   export interface Dashboard {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
+     *
+     *
+     */
     shop_no: any;
     /**
-      * @description
-      * 일일 현황 정보
-      * 
-      * 일 단위의 매출 현황 정보
-      * 
-      * 
-      */ 
+     * @description
+     * 일일 현황 정보
+     *
+     * 일 단위의 매출 현황 정보
+     *
+     *
+     */
     daily_sales_stats: any;
     /**
-      * @description
-      * 주간 매출 현황
-      * 
-      * 주간 단위의 매출 현황 정보
-      * 
-      * 
-      */ 
+     * @description
+     * 주간 매출 현황
+     *
+     * 주간 단위의 매출 현황 정보
+     *
+     *
+     */
     weekly_sales_stats: any;
     /**
-      * @description
-      * 월간 매출 현황
-      * 
-      * 월간 단위의 매출 현황 정보
-      * 
-      * 
-      */ 
+     * @description
+     * 월간 매출 현황
+     *
+     * 월간 단위의 매출 현황 정보
+     *
+     *
+     */
     monthly_sales_stats: any;
     /**
-      * @description
-      * 품절된 상품 수
-      * 
-      * 품절된 상품의 수. 재고관리기능과 품절기능이 활성화 되어있을 경우 집계에 포함됨.
-      * 
-      * 
-      */ 
+     * @description
+     * 품절된 상품 수
+     *
+     * 품절된 상품의 수. 재고관리기능과 품절기능이 활성화 되어있을 경우 집계에 포함됨.
+     *
+     *
+     */
     sold_out_products_count: any;
     /**
-      * @description
-      * 신규회원 수
-      * 
-      * 신규가입한 회원의 숫자
-      * 
-      * 
-      */ 
+     * @description
+     * 신규회원 수
+     *
+     * 신규가입한 회원의 숫자
+     *
+     *
+     */
     new_members_count: any;
     /**
-      * @description
-      * 게시판 목록
-      * 
-      * 해당 몰의 게시판의 리스트
-      * 
-      * 
-      */ 
+     * @description
+     * 게시판 목록
+     *
+     * 해당 몰의 게시판의 리스트
+     *
+     *
+     */
     board_list: any;
   }
 
   export interface RetrieveADashboardInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
-      * 
-      * @default 1
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
+     *
+     * @default 1
+     *
+     *
+     */
     shop_no?: any;
   }
 
   export interface RetrieveADashboardOutput {
-    dashboard: { 
-    shop_no: number;
-    daily_sales_stats: { 
-    title: Cafe24Datetime;
-    date: Cafe24Date;
-    order_price: string;
-    paid_price: string;
-    refund_price: string;
-    order_count: number;
-    payed_count: number;
-    refund_count: number;
-    prepareproduct_count: number;
-    prepare_count: number;
-    standby_count: number;
-    shipping_count: number;
-    shipped_count: number;
-    canceled_count: number;
-    returned_count: number;
-    exchanged_count: number;
-    ordered_total_count: number;
-    }[];
-    weekly_sales_stats: { 
-    ordered_total_price: string;
-    payed_total_price: string;
-    refunded_total_price: string;
-    ordered_count: number;
-    payed_count: number;
-    refunded_count: number;
-    ordered_average_total_price: string;
-    payed_average_total_price: string;
-    refunded_average_total_price: string;
-    ordered_average_count: number;
-    payed_average_count: number;
-    refunded_average_count: number;
-    };
-    monthly_sales_stats: { 
-    ordered_total_price: string;
-    payed_total_price: string;
-    refunded_total_price: string;
-    ordered_count: number;
-    payed_count: number;
-    refunded_count: number;
-    ordered_average_total_price: string;
-    payed_average_total_price: string;
-    refunded_average_total_price: string;
-    ordered_average_count: number;
-    payed_average_count: number;
-    refunded_average_count: number;
-    };
-    sold_out_products_count: number;
-    new_members_count: number;
-    board_list: { 
-    type: Cafe24Enum;
-    board_no: number;
-    board_name: string;
-    new_registered_count: number;
-    page_url: Cafe24Datetime;
-    }[];
+    dashboard: {
+      shop_no: number;
+      daily_sales_stats: {
+        title: Cafe24Datetime;
+        date: Cafe24Date;
+        order_price: string;
+        paid_price: string;
+        refund_price: string;
+        order_count: number;
+        payed_count: number;
+        refund_count: number;
+        prepareproduct_count: number;
+        prepare_count: number;
+        standby_count: number;
+        shipping_count: number;
+        shipped_count: number;
+        canceled_count: number;
+        returned_count: number;
+        exchanged_count: number;
+        ordered_total_count: number;
+      }[];
+      weekly_sales_stats: {
+        ordered_total_price: string;
+        payed_total_price: string;
+        refunded_total_price: string;
+        ordered_count: number;
+        payed_count: number;
+        refunded_count: number;
+        ordered_average_total_price: string;
+        payed_average_total_price: string;
+        refunded_average_total_price: string;
+        ordered_average_count: number;
+        payed_average_count: number;
+        refunded_average_count: number;
+      };
+      monthly_sales_stats: {
+        ordered_total_price: string;
+        payed_total_price: string;
+        refunded_total_price: string;
+        ordered_count: number;
+        payed_count: number;
+        refunded_count: number;
+        ordered_average_total_price: string;
+        payed_average_total_price: string;
+        refunded_average_total_price: string;
+        ordered_average_count: number;
+        payed_average_count: number;
+        refunded_average_count: number;
+      };
+      sold_out_products_count: number;
+      new_members_count: number;
+      board_list: {
+        type: Cafe24Enum;
+        board_no: number;
+        board_name: string;
+        new_registered_count: number;
+        page_url: Cafe24Datetime;
+      }[];
     }[];
   }
 

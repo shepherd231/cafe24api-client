@@ -5,7 +5,6 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
-
   /**
    * @description
    * 제조사(Manufacturers)는 상품의 제작정보 중 제조사에 입력하는 정보입니다.
@@ -15,284 +14,284 @@ declare module 'cafe24api-client' {
    */
   export interface Manufacturers {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
+     *
+     *
+     */
     shopNo: any;
     /**
-      * @description
-      * 제조사 코드
-      * 
-      * 시스템이 부여한 제조사의 코드. 해당 쇼핑몰 내에서 제조사 코드는 중복되지 않는다.
-      * 
-      * 형식 : [A-Z0-9]
-      * 글자수 최소: [8자]~최대: [8자]
-      */ 
+     * @description
+     * 제조사 코드
+     *
+     * 시스템이 부여한 제조사의 코드. 해당 쇼핑몰 내에서 제조사 코드는 중복되지 않는다.
+     *
+     * 형식 : [A-Z0-9]
+     * 글자수 최소: [8자]~최대: [8자]
+     */
     manufacturerCode: any;
     /**
-      * @description
-      * 제조사명
-      * 
-      * 제조사의 이름. 제조사명은 쇼핑몰 관리자 화면에서 제조사를 구분할 수 있는 기본적인 정보이다.
-      * 
-      * 최대글자수 : [50자]
-      */ 
+     * @description
+     * 제조사명
+     *
+     * 제조사의 이름. 제조사명은 쇼핑몰 관리자 화면에서 제조사를 구분할 수 있는 기본적인 정보이다.
+     *
+     * 최대글자수 : [50자]
+     */
     manufacturerName: any;
     /**
-      * @description
-      * 대표자명
-      * 
-      * 제조사의 대표자 이름.
-      * 
-      * 최대글자수 : [30자]
-      */ 
+     * @description
+     * 대표자명
+     *
+     * 제조사의 대표자 이름.
+     *
+     * 최대글자수 : [30자]
+     */
     presidentName: any;
     /**
-      * @description
-      * 사용여부
-      * 
-      * 해당 제조사를 사용하는지 여부 표시
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 사용여부
+     *
+     * 해당 제조사를 사용하는지 여부 표시
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     useManufacturer: any;
     /**
-      * @description
-      * 이메일
-      * 
-      * 제조사의 문의 메일.
-      * 
-      * 최대글자수 : [255자]
-      */ 
+     * @description
+     * 이메일
+     *
+     * 제조사의 문의 메일.
+     *
+     * 최대글자수 : [255자]
+     */
     email: any;
     /**
-      * @description
-      * 전화번호
-      * 
-      * 제조사의 전화번호.
-      * 
-      * 최대글자수 : [20자]
-      */ 
+     * @description
+     * 전화번호
+     *
+     * 제조사의 전화번호.
+     *
+     * 최대글자수 : [20자]
+     */
     phone: any;
     /**
-      * @description
-      * 홈페이지
-      * 
-      * 제조사의 홈페이지 주소
-      * 
-      * 최대글자수 : [255자]
-      */ 
+     * @description
+     * 홈페이지
+     *
+     * 제조사의 홈페이지 주소
+     *
+     * 최대글자수 : [255자]
+     */
     homepage: any;
     /**
-      * @description
-      * 우편번호
-      * 
-      * 제조사의 사업장 우편번호.
-      * 
-      * 
-      */ 
+     * @description
+     * 우편번호
+     *
+     * 제조사의 사업장 우편번호.
+     *
+     *
+     */
     zipcode: any;
     /**
-      * @description
-      * 국가코드
-      * 
-      * 
-      */ 
+     * @description
+     * 국가코드
+     *
+     *
+     */
     countryCode: any;
     /**
-      * @description
-      * 기본 주소
-      * 
-      * 제조사의 사업장 주소(시/군/구 단위 표기)
-      * 
-      * 최대글자수 : [255자]
-      */ 
+     * @description
+     * 기본 주소
+     *
+     * 제조사의 사업장 주소(시/군/구 단위 표기)
+     *
+     * 최대글자수 : [255자]
+     */
     address1: any;
     /**
-      * @description
-      * 상세 주소
-      * 
-      * 제조사의 사업장 주소(상세 주소 표기)
-      * 
-      * 최대글자수 : [255자]
-      */ 
+     * @description
+     * 상세 주소
+     *
+     * 제조사의 사업장 주소(상세 주소 표기)
+     *
+     * 최대글자수 : [255자]
+     */
     address2: any;
     /**
-      * @description
-      * 생성일
-      * 
-      * 
-      */ 
+     * @description
+     * 생성일
+     *
+     *
+     */
     createdDate: any;
   }
 
   export interface RetrieveAListOfManufacturersInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
-      * 
-      * @default 1
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
+     *
+     * @default 1
+     *
+     *
+     */
     shopNo?: any;
     /**
-      * @description
-      * 제조사 코드
-      * 
-      * 조회하고자 하는 제조사의 코드.
-      * 
-      * ,(콤마)로 여러 건을 검색할 수 있다.
-      * 
-      * 
-      */ 
+     * @description
+     * 제조사 코드
+     *
+     * 조회하고자 하는 제조사의 코드.
+     *
+     * ,(콤마)로 여러 건을 검색할 수 있다.
+     *
+     *
+     */
     manufacturerCode?: any;
     /**
-      * @description
-      * 제조사명
-      * 
-      * ,(콤마)로 여러 건을 검색할 수 있다.
-      * 
-      * 
-      */ 
+     * @description
+     * 제조사명
+     *
+     * ,(콤마)로 여러 건을 검색할 수 있다.
+     *
+     *
+     */
     manufacturerName?: any;
     /**
-      * @description
-      * 제조사 사용여부
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 제조사 사용여부
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     useManufacturer?: any;
     /**
-      * @description
-      * 조회결과 시작위치
-      * 
-      * 조회결과 시작위치
-      * 
-      * @default 0
-      * 
-      * 최대값: [8000]
-      */ 
+     * @description
+     * 조회결과 시작위치
+     *
+     * 조회결과 시작위치
+     *
+     * @default 0
+     *
+     * 최대값: [8000]
+     */
     offset?: any;
     /**
-      * @description
-      * 조회결과 최대건수
-      * 
-      * 조회하고자 하는 최대 건수를 지정할 수 있음.
-      * 예) 10 입력시 10건만 표시함.
-      * 
-      * @default 10
-      * 
-      * 최소: [1]~최대: [100]
-      */ 
+     * @description
+     * 조회결과 최대건수
+     *
+     * 조회하고자 하는 최대 건수를 지정할 수 있음.
+     * 예) 10 입력시 10건만 표시함.
+     *
+     * @default 10
+     *
+     * 최소: [1]~최대: [100]
+     */
     limit?: any;
   }
 
   export interface RetrieveAListOfManufacturersOutput {
-    manufacturers: { 
-    shopNo: number;
-    manufacturerCode: string;
-    manufacturerName: string;
-    presidentName: string;
-    useManufacturer: Cafe24Enum;
+    manufacturers: {
+      shopNo: number;
+      manufacturerCode: string;
+      manufacturerName: string;
+      presidentName: string;
+      useManufacturer: Cafe24Enum;
     }[];
   }
   export interface RetrieveAManufacturerInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
-      * 
-      * @default 1
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
+     *
+     * @default 1
+     *
+     *
+     */
     shopNo?: any;
     /**
-      * @description
-      * 제조사 코드
-      * 
-      * @required
-      * 
-      * 형식 : [A-Z0-9]
-      * 글자수 최소: [8자]~최대: [8자]
-      */ 
+     * @description
+     * 제조사 코드
+     *
+     * @required
+     *
+     * 형식 : [A-Z0-9]
+     * 글자수 최소: [8자]~최대: [8자]
+     */
     manufacturerCode: any;
   }
 
   export interface RetrieveAManufacturerOutput {
-    manufacturer: { 
-    shopNo: number;
-    manufacturerCode: string;
-    manufacturerName: string;
-    presidentName: string;
-    email: string;
-    phone: string;
-    homepage: string;
-    zipcode: Cafe24Datetime;
-    countryCode: string;
-    address1: string;
-    address2: string;
-    createdDate: Cafe24Datetime;
-    useManufacturer: Cafe24Enum;
+    manufacturer: {
+      shopNo: number;
+      manufacturerCode: string;
+      manufacturerName: string;
+      presidentName: string;
+      email: string;
+      phone: string;
+      homepage: string;
+      zipcode: Cafe24Datetime;
+      countryCode: string;
+      address1: string;
+      address2: string;
+      createdDate: Cafe24Datetime;
+      useManufacturer: Cafe24Enum;
     };
   }
   export interface RetrieveACountOfManufacturersInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
-      * 
-      * @default 1
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
+     *
+     * @default 1
+     *
+     *
+     */
     shopNo?: any;
     /**
-      * @description
-      * 제조사 코드
-      * 
-      * 조회하고자 하는 제조사의 코드.
-      * 
-      * ,(콤마)로 여러 건을 검색할 수 있다.
-      * 
-      * 
-      */ 
+     * @description
+     * 제조사 코드
+     *
+     * 조회하고자 하는 제조사의 코드.
+     *
+     * ,(콤마)로 여러 건을 검색할 수 있다.
+     *
+     *
+     */
     manufacturerCode?: any;
     /**
-      * @description
-      * 제조사명
-      * 
-      * 검색어를 제조사명에 포함하고 있는 공급사 검색(대소문자 구분 없음)
-      * 
-      * ,(콤마)로 여러 건을 검색할 수 있다.
-      * 
-      * 
-      */ 
+     * @description
+     * 제조사명
+     *
+     * 검색어를 제조사명에 포함하고 있는 공급사 검색(대소문자 구분 없음)
+     *
+     * ,(콤마)로 여러 건을 검색할 수 있다.
+     *
+     *
+     */
     manufacturerName?: any;
     /**
-      * @description
-      * 제조사 사용여부
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 제조사 사용여부
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     useManufacturer?: any;
   }
 
@@ -301,224 +300,224 @@ declare module 'cafe24api-client' {
   }
   export interface CreateAManufacturerInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
-      * 
-      * @default 1
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
+     *
+     * @default 1
+     *
+     *
+     */
     shopNo?: any;
     /**
-      * @description
-      * 제조사명
-      * 
-      * @required
-      */ 
+     * @description
+     * 제조사명
+     *
+     * @required
+     */
     manufacturerName: any;
     /**
-      * @description
-      * 대표자명
-      * 
-      * @required
-      * 
-      * 최대글자수 : [30자]
-      */ 
+     * @description
+     * 대표자명
+     *
+     * @required
+     *
+     * 최대글자수 : [30자]
+     */
     presidentName: any;
     /**
-      * @description
-      * 이메일
-      * 
-      * 최대글자수 : [255자]
-      * 이메일
-      */ 
+     * @description
+     * 이메일
+     *
+     * 최대글자수 : [255자]
+     * 이메일
+     */
     email?: any;
     /**
-      * @description
-      * 전화번호
-      * 
-      * 최대글자수 : [20자]
-      * 전화번호
-      */ 
+     * @description
+     * 전화번호
+     *
+     * 최대글자수 : [20자]
+     * 전화번호
+     */
     phone?: any;
     /**
-      * @description
-      * 홈페이지
-      * 
-      * 최대글자수 : [255자]
-      */ 
+     * @description
+     * 홈페이지
+     *
+     * 최대글자수 : [255자]
+     */
     homepage?: any;
     /**
-      * @description
-      * 우편번호
-      * 
-      * 
-      */ 
+     * @description
+     * 우편번호
+     *
+     *
+     */
     zipcode?: any;
     /**
-      * @description
-      * 기본 주소
-      * 
-      * 최대글자수 : [255자]
-      */ 
+     * @description
+     * 기본 주소
+     *
+     * 최대글자수 : [255자]
+     */
     address1?: any;
     /**
-      * @description
-      * 상세 주소
-      * 
-      * 최대글자수 : [255자]
-      */ 
+     * @description
+     * 상세 주소
+     *
+     * 최대글자수 : [255자]
+     */
     address2?: any;
     /**
-      * @description
-      * 국가코드
-      * 
-      * 
-      */ 
+     * @description
+     * 국가코드
+     *
+     *
+     */
     countryCode?: any;
     /**
-      * @description
-      * 사용여부
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 사용여부
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     useManufacturer?: any;
   }
 
   export interface CreateAManufacturerOutput {
-    manufacturer: { 
-    shopNo: number;
-    manufacturerCode: string;
-    manufacturerName: string;
-    presidentName: string;
-    email: string;
-    phone: string;
-    homepage: string;
-    zipcode: Cafe24Datetime;
-    countryCode: string;
-    address1: string;
-    address2: string;
-    useManufacturer: Cafe24Enum;
+    manufacturer: {
+      shopNo: number;
+      manufacturerCode: string;
+      manufacturerName: string;
+      presidentName: string;
+      email: string;
+      phone: string;
+      homepage: string;
+      zipcode: Cafe24Datetime;
+      countryCode: string;
+      address1: string;
+      address2: string;
+      useManufacturer: Cafe24Enum;
     };
   }
   export interface UpdateAManufacturerInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
-      * 
-      * @default 1
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
+     *
+     * @default 1
+     *
+     *
+     */
     shopNo?: any;
     /**
-      * @description
-      * 제조사 코드
-      * 
-      * @required
-      * 
-      * 형식 : [A-Z0-9]
-      * 글자수 최소: [8자]~최대: [8자]
-      */ 
+     * @description
+     * 제조사 코드
+     *
+     * @required
+     *
+     * 형식 : [A-Z0-9]
+     * 글자수 최소: [8자]~최대: [8자]
+     */
     manufacturerCode: any;
     /**
-      * @description
-      * 제조사명
-      * 
-      * 
-      */ 
+     * @description
+     * 제조사명
+     *
+     *
+     */
     manufacturerName?: any;
     /**
-      * @description
-      * 대표자명
-      * 
-      * 
-      */ 
+     * @description
+     * 대표자명
+     *
+     *
+     */
     presidentName?: any;
     /**
-      * @description
-      * 이메일
-      * 
-      * 최대글자수 : [255자]
-      * 이메일
-      */ 
+     * @description
+     * 이메일
+     *
+     * 최대글자수 : [255자]
+     * 이메일
+     */
     email?: any;
     /**
-      * @description
-      * 전화번호
-      * 
-      * 최대글자수 : [20자]
-      * 전화번호
-      */ 
+     * @description
+     * 전화번호
+     *
+     * 최대글자수 : [20자]
+     * 전화번호
+     */
     phone?: any;
     /**
-      * @description
-      * 홈페이지
-      * 
-      * 최대글자수 : [255자]
-      */ 
+     * @description
+     * 홈페이지
+     *
+     * 최대글자수 : [255자]
+     */
     homepage?: any;
     /**
-      * @description
-      * 우편번호
-      * 
-      * 
-      */ 
+     * @description
+     * 우편번호
+     *
+     *
+     */
     zipcode?: any;
     /**
-      * @description
-      * 기본 주소
-      * 
-      * 최대글자수 : [255자]
-      */ 
+     * @description
+     * 기본 주소
+     *
+     * 최대글자수 : [255자]
+     */
     address1?: any;
     /**
-      * @description
-      * 상세 주소
-      * 
-      * 최대글자수 : [255자]
-      */ 
+     * @description
+     * 상세 주소
+     *
+     * 최대글자수 : [255자]
+     */
     address2?: any;
     /**
-      * @description
-      * 국가코드
-      * 
-      * 
-      */ 
+     * @description
+     * 국가코드
+     *
+     *
+     */
     countryCode?: any;
     /**
-      * @description
-      * 사용여부
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 사용여부
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     useManufacturer?: any;
   }
 
   export interface UpdateAManufacturerOutput {
-    manufacturer: { 
-    shopNo: number;
-    manufacturerCode: string;
-    manufacturerName: string;
-    presidentName: string;
-    email: string;
-    phone: string;
-    homepage: string;
-    zipcode: Cafe24Datetime;
-    countryCode: string;
-    address1: string;
-    address2: string;
-    useManufacturer: Cafe24Enum;
+    manufacturer: {
+      shopNo: number;
+      manufacturerCode: string;
+      manufacturerName: string;
+      presidentName: string;
+      email: string;
+      phone: string;
+      homepage: string;
+      zipcode: Cafe24Datetime;
+      countryCode: string;
+      address1: string;
+      address2: string;
+      useManufacturer: Cafe24Enum;
     };
   }
 
@@ -555,7 +554,9 @@ declare module 'cafe24api-client' {
      */
     retrieveAListOfManufacturers(
       input: RetrieveAListOfManufacturersInput,
-      options?: RequestOptions<RetrieveAListOfManufacturersOutput['manufacturers'][number]>,
+      options?: RequestOptions<
+        RetrieveAListOfManufacturersOutput['manufacturers'][number]
+      >,
     ): Promise<AxiosResponse<RetrieveAListOfManufacturersOutput>>;
     /**
      * @description

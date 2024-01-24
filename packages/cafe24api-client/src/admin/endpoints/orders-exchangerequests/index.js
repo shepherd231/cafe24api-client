@@ -1,4 +1,3 @@
-
 export default (cls) => {
   cls.prototype.rejectAnExchangeRequest = async function (input, options) {
     return this.createRequest(
@@ -17,5 +16,4 @@ export default (cls) => {
       options,
     );
   };
-
 };

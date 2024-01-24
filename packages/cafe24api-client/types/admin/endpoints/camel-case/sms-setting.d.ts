@@ -5,7 +5,6 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
-
   /**
    * @description
    * SMS 설정(Sms setting)은 쇼핑몰의 SMS 설정에 관한 기능입니다.
@@ -13,78 +12,78 @@ declare module 'cafe24api-client' {
    */
   export interface SmsSetting {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     *
+     */
     shopNo: any;
     /**
-      * @description
-      * SMS 사용 여부
-      * 
-      * T: 사용함
-      * F: 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * SMS 사용 여부
+     *
+     * T: 사용함
+     * F: 사용안함
+     *
+     *
+     */
     useSms: any;
     /**
-      * @description
-      * 수신거부자 제외 발송 여부
-      * 
-      * T : 제외
-      * F : 포함
-      * 
-      * 
-      */ 
+     * @description
+     * 수신거부자 제외 발송 여부
+     *
+     * T : 제외
+     * F : 포함
+     *
+     *
+     */
     excludeUnsubscriber: any;
     /**
-      * @description
-      * 기본 발신번호
-      * 
-      * 
-      */ 
+     * @description
+     * 기본 발신번호
+     *
+     *
+     */
     defaultSender: any;
     /**
-      * @description
-      * 무료 수신거부 전화번호
-      * 
-      * 
-      */ 
+     * @description
+     * 무료 수신거부 전화번호
+     *
+     *
+     */
     unsubscribePhone: any;
     /**
-      * @description
-      * SMS 발송방법
-      * 
-      * S: 단문 분할발송
-      * L: 장문발송(3건 차감)
-      * 
-      * 
-      */ 
+     * @description
+     * SMS 발송방법
+     *
+     * S: 단문 분할발송
+     * L: 장문발송(3건 차감)
+     *
+     *
+     */
     sendMethod: any;
   }
 
   export interface RetrieveSmsSettingsInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     *
+     */
     shopNo?: any;
   }
 
   export interface RetrieveSmsSettingsOutput {
-    sms: { 
-    shopNo: number;
-    useSms: Cafe24Enum;
-    excludeUnsubscriber: Cafe24Enum;
-    defaultSender: Cafe24Datetime;
-    unsubscribePhone: Cafe24Datetime;
-    sendMethod: Cafe24Enum;
+    sms: {
+      shopNo: number;
+      useSms: Cafe24Enum;
+      excludeUnsubscriber: Cafe24Enum;
+      defaultSender: Cafe24Datetime;
+      unsubscribePhone: Cafe24Datetime;
+      sendMethod: Cafe24Enum;
     };
   }
 

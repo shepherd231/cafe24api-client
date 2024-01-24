@@ -1,6 +1,8 @@
-
 export default (cls) => {
-  cls.prototype.retrieveHourlyProductSalesStatisticsOfAStore = async function (input, options) {
+  cls.prototype.retrieveHourlyProductSalesStatisticsOfAStore = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/reports/productsales`,
@@ -15,5 +17,4 @@ export default (cls) => {
       options,
     );
   };
-
 };

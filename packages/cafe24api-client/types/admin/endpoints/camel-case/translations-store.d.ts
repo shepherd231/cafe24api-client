@@ -5,222 +5,221 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
-
   /**
    * @description
    * 상점 번역 정보(Translations store)는, 상점의 번역 정보를 조회하거나 수정할 수 있는 기능입니다.
    */
   export interface TranslationsStore {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     *
+     */
     shopNo: any;
     /**
-      * @description
-      * 번역 정보
-      * 
-      * 
-      */ 
+     * @description
+     * 번역 정보
+     *
+     *
+     */
     translations: any;
   }
 
   export interface RetrieveAListOfStoreTranslationsInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 최소값: [1]
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     * 최소값: [1]
+     */
     shopNo?: any;
     /**
-      * @description
-      * 언어 코드
-      * 
-      * 언어별로 번역된 정보에서 검색하고자 하는 언어를 선택하면, 해당 언어에 대한 번역 내용을 확인할 수 있습니다.
-      * 
-      * ,(콤마)로 여러 건을 검색할 수 있다.
-      * 
-      * 
-      */ 
+     * @description
+     * 언어 코드
+     *
+     * 언어별로 번역된 정보에서 검색하고자 하는 언어를 선택하면, 해당 언어에 대한 번역 내용을 확인할 수 있습니다.
+     *
+     * ,(콤마)로 여러 건을 검색할 수 있다.
+     *
+     *
+     */
     languageCode?: any;
   }
 
   export interface RetrieveAListOfStoreTranslationsOutput {
-    store: { 
-    shopNo: number;
-    translations: { 
-    languageCode: string;
-    translated: Cafe24Enum;
-    shopName: string;
-    companyName: string;
-    companyRegistrationNo: string;
-    presidentName: string;
-    phone: string;
-    email: string;
-    fax: string;
-    zipcode: Cafe24Datetime;
-    address1: string;
-    address2: string;
-    customerServicePhone: string;
-    customerServiceHours: string;
-    privacyOfficerName: string;
-    privacyOfficerEmail: string;
-    updatedDate: Cafe24Datetime;
-    }[];
+    store: {
+      shopNo: number;
+      translations: {
+        languageCode: string;
+        translated: Cafe24Enum;
+        shopName: string;
+        companyName: string;
+        companyRegistrationNo: string;
+        presidentName: string;
+        phone: string;
+        email: string;
+        fax: string;
+        zipcode: Cafe24Datetime;
+        address1: string;
+        address2: string;
+        customerServicePhone: string;
+        customerServiceHours: string;
+        privacyOfficerName: string;
+        privacyOfficerEmail: string;
+        updatedDate: Cafe24Datetime;
+      }[];
     };
   }
   export interface UpdateTheTranslationsOfAStoreInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 최소값: [1]
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     * 최소값: [1]
+     */
     shopNo?: any;
     /**
-      * @description
-      * 번역 정보
-      * 
-      * 
-      */ 
-    translations?: { 
-    /**
-      * @description
-      * 언어 코드
-      * 
-      * 
-      */ 
-    languageCode: any;
-    /**
-      * @description
-      * 쇼핑몰명
-      * 
-      * 
-      */ 
-    shopName?: any;
-    /**
-      * @description
-      * 상호명
-      * 
-      * 
-      */ 
-    companyName?: any;
-    /**
-      * @description
-      * 사업자등록번호
-      * 
-      * 
-      */ 
-    companyRegistrationNo?: any;
-    /**
-      * @description
-      * 대표자명
-      * 
-      * 
-      */ 
-    presidentName?: any;
-    /**
-      * @description
-      * 전화번호
-      * 
-      * 
-      */ 
-    phone?: any;
-    /**
-      * @description
-      * 이메일
-      * 
-      * 
-      */ 
-    email?: any;
-    /**
-      * @description
-      * 팩스번호
-      * 
-      * 
-      */ 
-    fax?: any;
-    /**
-      * @description
-      * 우편번호
-      * 
-      * 
-      */ 
-    zipcode?: any;
-    /**
-      * @description
-      * 기본 주소
-      * 
-      * 
-      */ 
-    address1?: any;
-    /**
-      * @description
-      * 상세 주소
-      * 
-      * 
-      */ 
-    address2?: any;
-    /**
-      * @description
-      * 고객센터 상담/주문 전화
-      * 
-      * 
-      */ 
-    customerServicePhone?: any;
-    /**
-      * @description
-      * 고객센터 운영시간
-      * 
-      * 
-      */ 
-    customerServiceHours?: any;
-    /**
-      * @description
-      * 개인정보보호 책임자명
-      * 
-      * 
-      */ 
-    privacyOfficerName?: any;
-    /**
-      * @description
-      * 개인정보보호 책임자 이메일
-      * 
-      * 
-      */ 
-    privacyOfficerEmail?: any;
+     * @description
+     * 번역 정보
+     *
+     *
+     */
+    translations?: {
+      /**
+       * @description
+       * 언어 코드
+       *
+       *
+       */
+      languageCode: any;
+      /**
+       * @description
+       * 쇼핑몰명
+       *
+       *
+       */
+      shopName?: any;
+      /**
+       * @description
+       * 상호명
+       *
+       *
+       */
+      companyName?: any;
+      /**
+       * @description
+       * 사업자등록번호
+       *
+       *
+       */
+      companyRegistrationNo?: any;
+      /**
+       * @description
+       * 대표자명
+       *
+       *
+       */
+      presidentName?: any;
+      /**
+       * @description
+       * 전화번호
+       *
+       *
+       */
+      phone?: any;
+      /**
+       * @description
+       * 이메일
+       *
+       *
+       */
+      email?: any;
+      /**
+       * @description
+       * 팩스번호
+       *
+       *
+       */
+      fax?: any;
+      /**
+       * @description
+       * 우편번호
+       *
+       *
+       */
+      zipcode?: any;
+      /**
+       * @description
+       * 기본 주소
+       *
+       *
+       */
+      address1?: any;
+      /**
+       * @description
+       * 상세 주소
+       *
+       *
+       */
+      address2?: any;
+      /**
+       * @description
+       * 고객센터 상담/주문 전화
+       *
+       *
+       */
+      customerServicePhone?: any;
+      /**
+       * @description
+       * 고객센터 운영시간
+       *
+       *
+       */
+      customerServiceHours?: any;
+      /**
+       * @description
+       * 개인정보보호 책임자명
+       *
+       *
+       */
+      privacyOfficerName?: any;
+      /**
+       * @description
+       * 개인정보보호 책임자 이메일
+       *
+       *
+       */
+      privacyOfficerEmail?: any;
     };
   }
 
   export interface UpdateTheTranslationsOfAStoreOutput {
-    store: { 
-    shopNo: number;
-    translations: { 
-    languageCode: string;
-    translated: Cafe24Enum;
-    shopName: string;
-    companyName: string;
-    companyRegistrationNo: string;
-    presidentName: string;
-    phone: string;
-    email: string;
-    fax: string;
-    zipcode: Cafe24Datetime;
-    address1: string;
-    address2: string;
-    customerServicePhone: string;
-    customerServiceHours: string;
-    privacyOfficerName: string;
-    privacyOfficerEmail: string;
-    updatedDate: Cafe24Datetime;
-    }[];
+    store: {
+      shopNo: number;
+      translations: {
+        languageCode: string;
+        translated: Cafe24Enum;
+        shopName: string;
+        companyName: string;
+        companyRegistrationNo: string;
+        presidentName: string;
+        phone: string;
+        email: string;
+        fax: string;
+        zipcode: Cafe24Datetime;
+        address1: string;
+        address2: string;
+        customerServicePhone: string;
+        customerServiceHours: string;
+        privacyOfficerName: string;
+        privacyOfficerEmail: string;
+        updatedDate: Cafe24Datetime;
+      }[];
     };
   }
 

@@ -1,6 +1,8 @@
-
 export default (cls) => {
-  cls.prototype.retrieveTheTransactionInformationOfAStore = async function (input, options) {
+  cls.prototype.retrieveTheTransactionInformationOfAStore = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/financials/store`,
@@ -11,5 +13,4 @@ export default (cls) => {
       options,
     );
   };
-
 };

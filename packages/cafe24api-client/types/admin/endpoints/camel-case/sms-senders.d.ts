@@ -5,80 +5,79 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
-
   /**
    * @description
-   * 
-   * 
+   *
+   *
    * SMS 발신자(Sms senders)는 SMS를 발송할 발신번호를 나타냅니다. SMS 발신자의 발신번호는 반드시 본인인증이 되어있어야 합니다.
    * SMS 발신자는 SMS에 속해있는 하위 리소스입니다.
    */
   export interface SmsSenders {
     /**
-      * @description
-      * 발신자 아이디
-      * 
-      * 발신자의 고유한 일련번호
-      * 
-      * 
-      */ 
+     * @description
+     * 발신자 아이디
+     *
+     * 발신자의 고유한 일련번호
+     *
+     *
+     */
     senderNo: any;
     /**
-      * @description
-      * 발신자 번호
-      * 
-      * 발신자의 전화번호
-      * 
-      * 
-      */ 
+     * @description
+     * 발신자 번호
+     *
+     * 발신자의 전화번호
+     *
+     *
+     */
     sender: any;
     /**
-      * @description
-      * 인증 상태
-      * 
-      * 발신자의 전화번호의 인증 상태.
-      * 인증완료 상태인 발신자로만 SMS 를 발송할 수 있다.
-      * 
-      * 00 : 삭제
-      * 10 : 등록
-      * 20 : 심사중
-      * 30 : 인증완료
-      * 40 : 반려
-      * 
-      * 
-      */ 
+     * @description
+     * 인증 상태
+     *
+     * 발신자의 전화번호의 인증 상태.
+     * 인증완료 상태인 발신자로만 SMS 를 발송할 수 있다.
+     *
+     * 00 : 삭제
+     * 10 : 등록
+     * 20 : 심사중
+     * 30 : 인증완료
+     * 40 : 반려
+     *
+     *
+     */
     authStatus: any;
   }
 
   export interface RetrieveAListOfSmsSendersInput {
     /**
-      * @description
-      * 조회결과 시작위치
-      * 
-      * @default 0
-      * 
-      * 최대값: [8000]
-      */ 
+     * @description
+     * 조회결과 시작위치
+     *
+     * @default 0
+     *
+     * 최대값: [8000]
+     */
     offset?: any;
     /**
-      * @description
-      * 조회결과 최대건수
-      * 
-      * 조회하고자 하는 최대 건수를 지정할 수 있음.
-      * 예) 10 입력시 10건만 표시함.
-      * 
-      * @default 10
-      * 
-      * 최소: [1]~최대: [100]
-      */ 
+     * @description
+     * 조회결과 최대건수
+     *
+     * 조회하고자 하는 최대 건수를 지정할 수 있음.
+     * 예) 10 입력시 10건만 표시함.
+     *
+     * @default 10
+     *
+     * 최소: [1]~최대: [100]
+     */
     limit?: any;
   }
 
   export interface RetrieveAListOfSmsSendersOutput {
-    senders: { 
-    senderNo: number;
-    sender: string;
-    authStatus: string;
+    senders: {
+      senderNo: number;
+      sender: string;
+      authStatus: string;
     }[];
   }
 
@@ -110,7 +109,9 @@ declare module 'cafe24api-client' {
      */
     retrieveAListOfSmsSenders(
       input: RetrieveAListOfSmsSendersInput,
-      options?: RequestOptions<RetrieveAListOfSmsSendersOutput['senders'][number]>,
+      options?: RequestOptions<
+        RetrieveAListOfSmsSendersOutput['senders'][number]
+      >,
     ): Promise<AxiosResponse<RetrieveAListOfSmsSendersOutput>>;
   }
 }

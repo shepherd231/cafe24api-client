@@ -1,4 +1,3 @@
-
 export default (cls) => {
   cls.prototype.retrieveSMSSettings = async function (input, options) {
     return this.createRequest(
@@ -10,5 +9,4 @@ export default (cls) => {
       options,
     );
   };
-
 };

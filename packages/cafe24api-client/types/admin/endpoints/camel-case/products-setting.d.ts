@@ -5,77 +5,76 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
-
   /**
    * @description
    * 상품의 설정(Products setting)은 상품의 판매가 등의 설정값에 대한 기능입니다.
    */
   export interface ProductsSetting {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     *
+     */
     shopNo: any;
     /**
-      * @description
-      * 판매가 계산 기준
-      * 
-      * S : 공급가 대비 마진율
-      * A : 판매가 대비 마진율
-      * P : 기본몰 판매가
-      * B : 상품가
-      * 
-      * 
-      */ 
+     * @description
+     * 판매가 계산 기준
+     *
+     * S : 공급가 대비 마진율
+     * A : 판매가 대비 마진율
+     * P : 기본몰 판매가
+     * B : 상품가
+     *
+     *
+     */
     calculatePriceBasedOn: any;
     /**
-      * @description
-      * 판매가 계산 절사 단위
-      * 
-      * F : 절사안함
-      * -2 : 0.01단위
-      * -1 : 0.1단위
-      * 0 : 1단위
-      * 1 : 10단위
-      * 2 : 100단위
-      * 3 : 1000단위
-      * 
-      * 
-      */ 
+     * @description
+     * 판매가 계산 절사 단위
+     *
+     * F : 절사안함
+     * -2 : 0.01단위
+     * -1 : 0.1단위
+     * 0 : 1단위
+     * 1 : 10단위
+     * 2 : 100단위
+     * 3 : 1000단위
+     *
+     *
+     */
     priceRoundingUnit: any;
     /**
-      * @description
-      * 판매가 계산 절사 방법
-      * 
-      * L : 내림
-      * U : 반올림
-      * C : 올림
-      * 
-      * 
-      */ 
+     * @description
+     * 판매가 계산 절사 방법
+     *
+     * L : 내림
+     * U : 반올림
+     * C : 올림
+     *
+     *
+     */
     priceRoundingRule: any;
   }
 
   export interface RetrieveProductSettingsInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     *
+     */
     shopNo?: any;
   }
 
   export interface RetrieveProductSettingsOutput {
-    product: { 
-    shopNo: number;
-    calculatePriceBasedOn: Cafe24Enum;
-    priceRoundingUnit: Cafe24Datetime;
-    priceRoundingRule: Cafe24Enum;
+    product: {
+      shopNo: number;
+      calculatePriceBasedOn: Cafe24Enum;
+      priceRoundingUnit: Cafe24Datetime;
+      priceRoundingRule: Cafe24Enum;
     };
   }
 

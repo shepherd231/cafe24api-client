@@ -5,89 +5,88 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
-
   export interface CustomersAutoupdate {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     *
+     */
     shopNo: any;
     /**
-      * @description
-      * 회원아이디
-      * 
-      * 
-      */ 
+     * @description
+     * 회원아이디
+     *
+     *
+     */
     memberId: any;
     /**
-      * @description
-      * 다음 예상 등급
-      * 
-      * 
-      */ 
+     * @description
+     * 다음 예상 등급
+     *
+     *
+     */
     nextGrade: any;
     /**
-      * @description
-      * 등급 산정 기간 내 누적 사용 금액
-      * 
-      * 
-      */ 
+     * @description
+     * 등급 산정 기간 내 누적 사용 금액
+     *
+     *
+     */
     totalPurchaseAmount: any;
     /**
-      * @description
-      * 등급 산정 기간 내 누적 사용 건수
-      * 
-      * 
-      */ 
+     * @description
+     * 등급 산정 기간 내 누적 사용 건수
+     *
+     *
+     */
     totalPurchaseCount: any;
     /**
-      * @description
-      * 다음 등급까지 필요 금액
-      * 
-      * 
-      */ 
+     * @description
+     * 다음 등급까지 필요 금액
+     *
+     *
+     */
     requiredPurchaseAmount: any;
     /**
-      * @description
-      * 다음 등급까지 필요 건수
-      * 
-      * 
-      */ 
+     * @description
+     * 다음 등급까지 필요 건수
+     *
+     *
+     */
     requiredPurchaseCount: any;
   }
 
   export interface RetrieveCustomerTierAutoUpdateDetailsInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 최소값: [1]
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     * 최소값: [1]
+     */
     shopNo?: any;
     /**
-      * @description
-      * 회원아이디
-      * 
-      * @required
-      * 
-      * 최대글자수 : [20자]
-      */ 
+     * @description
+     * 회원아이디
+     *
+     * @required
+     *
+     * 최대글자수 : [20자]
+     */
     memberId: any;
   }
 
   export interface RetrieveCustomerTierAutoUpdateDetailsOutput {
-    autoupdate: { 
-    shopNo: number;
-    memberId: string;
-    nextGrade: string;
-    totalPurchaseAmount: number;
-    totalPurchaseCount: number;
-    requiredPurchaseAmount: number;
-    requiredPurchaseCount: number;
+    autoupdate: {
+      shopNo: number;
+      memberId: string;
+      nextGrade: string;
+      totalPurchaseAmount: number;
+      totalPurchaseCount: number;
+      requiredPurchaseAmount: number;
+      requiredPurchaseCount: number;
     };
   }
 
@@ -112,7 +111,9 @@ declare module 'cafe24api-client' {
      */
     retrieveCustomerTierAutoUpdateDetails(
       input: RetrieveCustomerTierAutoUpdateDetailsInput,
-      options?: RequestOptions<RetrieveCustomerTierAutoUpdateDetailsOutput['autoupdate']>,
+      options?: RequestOptions<
+        RetrieveCustomerTierAutoUpdateDetailsOutput['autoupdate']
+      >,
     ): Promise<AxiosResponse<RetrieveCustomerTierAutoUpdateDetailsOutput>>;
   }
 }

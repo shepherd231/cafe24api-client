@@ -1,6 +1,8 @@
-
 export default (cls) => {
-  cls.prototype.retrieveAListOfProductDecorationImages = async function (input, options) {
+  cls.prototype.retrieveAListOfProductDecorationImages = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'GET',
       `/api/v2/products/${input['product_no']}/decorationimages`,
@@ -11,5 +13,4 @@ export default (cls) => {
       options,
     );
   };
-
 };

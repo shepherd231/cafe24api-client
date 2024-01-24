@@ -5,325 +5,324 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
-
   /**
    * @description
-   * 
-   * 
+   *
+   *
    * 주문의 배송(Shipments)은 주문을 배송처리하기 위해 필요한 배송 정보를 의미합니다.
    * 주문의 배송 정보에는 송장번호와 배송사 정보, 배송 상태 등이 있습니다.
    * 주문의 배송 기능을 활용하여 주문을 배송대기 처리하거나 배송중 처리할 수 있으며 송장번호 등도 수정할 수 있습니다.
    */
   export interface OrdersShipments {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     *
+     */
     shopNo: any;
     /**
-      * @description
-      * 배송번호
-      * 
-      * 
-      */ 
+     * @description
+     * 배송번호
+     *
+     *
+     */
     shippingCode: any;
     /**
-      * @description
-      * 주문번호
-      * 
-      * 
-      */ 
+     * @description
+     * 주문번호
+     *
+     *
+     */
     orderId: any;
     /**
-      * @description
-      * 송장번호
-      * 
-      * 
-      */ 
+     * @description
+     * 송장번호
+     *
+     *
+     */
     trackingNo: any;
     /**
-      * @description
-      * 송장번호입력일
-      * 
-      * 
-      */ 
+     * @description
+     * 송장번호입력일
+     *
+     *
+     */
     trackingNoUpdatedDate: any;
     /**
-      * @description
-      * 배송업체 코드
-      * 
-      * shipping_company_code 
-      * 
-      * 
-      */ 
+     * @description
+     * 배송업체 코드
+     *
+     * shipping_company_code
+     *
+     *
+     */
     shippingCompanyCode: any;
     /**
-      * @description
-      * 품주 목록
-      * 
-      * 
-      */ 
+     * @description
+     * 품주 목록
+     *
+     *
+     */
     items: any;
     /**
-      * @description
-      * 주문상태
-      * 
-      * standby : 배송대기
-      * shipping : 배송중
-      * shipped : 배송완료
-      * 
-      * 
-      */ 
+     * @description
+     * 주문상태
+     *
+     * standby : 배송대기
+     * shipping : 배송중
+     * shipped : 배송완료
+     *
+     *
+     */
     status: any;
     /**
-      * @description
-      * 품주코드
-      * 
-      * 
-      */ 
+     * @description
+     * 품주코드
+     *
+     *
+     */
     orderItemCode: any;
     /**
-      * @description
-      * 배송사 아이디
-      * 
-      * 
-      */ 
+     * @description
+     * 배송사 아이디
+     *
+     *
+     */
     carrierId: any;
     /**
-      * @description
-      * 주문상태 추가정보
-      * 
-      * 
-      */ 
+     * @description
+     * 주문상태 추가정보
+     *
+     *
+     */
     statusAdditionalInfo: any;
   }
 
   export interface RetrieveAListOfShippingInformationOfAnOrderInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 최소값: [1]
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     * 최소값: [1]
+     */
     shopNo?: any;
     /**
-      * @description
-      * 주문번호
-      * 
-      * @required
-      * 
-      * 주문번호
-      */ 
+     * @description
+     * 주문번호
+     *
+     * @required
+     *
+     * 주문번호
+     */
     orderId: any;
   }
 
   export interface RetrieveAListOfShippingInformationOfAnOrderOutput {
-    shipments: { 
-    shopNo: number;
-    shippingCode: string;
-    orderId: string;
-    trackingNo: Cafe24Datetime;
-    trackingNoUpdatedDate: Cafe24Datetime;
-    shippingCompanyCode: Cafe24Datetime;
-    items: { 
-    orderItemCode: string;
-    status: string;
-    }[];
+    shipments: {
+      shopNo: number;
+      shippingCode: string;
+      orderId: string;
+      trackingNo: Cafe24Datetime;
+      trackingNoUpdatedDate: Cafe24Datetime;
+      shippingCompanyCode: Cafe24Datetime;
+      items: {
+        orderItemCode: string;
+        status: string;
+      }[];
     }[];
   }
   export interface CreateAnOrderShippingInformationInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     *
+     */
     shopNo?: any;
     /**
-      * @description
-      * 주문번호
-      * 
-      * @required
-      */ 
+     * @description
+     * 주문번호
+     *
+     * @required
+     */
     orderId: any;
     /**
-      * @description
-      * 송장번호
-      * 
-      * @required
-      * 
-      * 최대글자수 : [40자]
-      */ 
+     * @description
+     * 송장번호
+     *
+     * @required
+     *
+     * 최대글자수 : [40자]
+     */
     trackingNo: any;
     /**
-      * @description
-      * 배송업체 코드
-      * 
-      * shipping_company_code 
-      * 
-      * @required
-      */ 
+     * @description
+     * 배송업체 코드
+     *
+     * shipping_company_code
+     *
+     * @required
+     */
     shippingCompanyCode: any;
     /**
-      * @description
-      * 품주코드
-      * 
-      * 
-      */ 
+     * @description
+     * 품주코드
+     *
+     *
+     */
     orderItemCode?: any;
     /**
-      * @description
-      * 주문상태
-      * 
-      * standby : 배송대기
-      * shipping : 배송중
-      * 
-      * @required
-      */ 
+     * @description
+     * 주문상태
+     *
+     * standby : 배송대기
+     * shipping : 배송중
+     *
+     * @required
+     */
     status: any;
     /**
-      * @description
-      * 배송번호
-      * 
-      * 
-      */ 
+     * @description
+     * 배송번호
+     *
+     *
+     */
     shippingCode?: any;
     /**
-      * @description
-      * 배송사 아이디
-      * 
-      * 
-      */ 
+     * @description
+     * 배송사 아이디
+     *
+     *
+     */
     carrierId?: any;
   }
 
   export interface CreateAnOrderShippingInformationOutput {
-    shipments: { 
-    shopNo: number;
-    shippingCode: string;
-    orderId: string;
-    status: string;
-    trackingNo: Cafe24Datetime;
-    shippingCompanyCode: Cafe24Datetime;
-    orderItemCode: string[];
-    carrierId: number;
+    shipments: {
+      shopNo: number;
+      shippingCode: string;
+      orderId: string;
+      status: string;
+      trackingNo: Cafe24Datetime;
+      shippingCompanyCode: Cafe24Datetime;
+      orderItemCode: string[];
+      carrierId: number;
     }[];
   }
   export interface UpdateAnOrderShippingInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     *
+     */
     shopNo?: any;
     /**
-      * @description
-      * 주문번호
-      * 
-      * @required
-      */ 
+     * @description
+     * 주문번호
+     *
+     * @required
+     */
     orderId: any;
     /**
-      * @description
-      * 배송번호
-      * 
-      * @required
-      */ 
+     * @description
+     * 배송번호
+     *
+     * @required
+     */
     shippingCode: any;
     /**
-      * @description
-      * 주문상태
-      * 
-      * status 사용하여 배송상태 수정시 tracking_no, shipping_company_code는 사용 불가
-      * 
-      * standby : 배송대기
-      * shipping : 배송중
-      * shipped : 배송완료
-      * 
-      * 
-      */ 
+     * @description
+     * 주문상태
+     *
+     * status 사용하여 배송상태 수정시 tracking_no, shipping_company_code는 사용 불가
+     *
+     * standby : 배송대기
+     * shipping : 배송중
+     * shipped : 배송완료
+     *
+     *
+     */
     status?: any;
     /**
-      * @description
-      * 주문상태 추가정보
-      * 
-      * 최대글자수 : [30자]
-      */ 
+     * @description
+     * 주문상태 추가정보
+     *
+     * 최대글자수 : [30자]
+     */
     statusAdditionalInfo?: any;
     /**
-      * @description
-      * 송장번호
-      * 
-      * tracking_no 사용시 shipping_company_code를 함께 사용해야 하며, 송장번호 수정시 status는 사용 불가
-      * 
-      * 최대글자수 : [40자]
-      */ 
+     * @description
+     * 송장번호
+     *
+     * tracking_no 사용시 shipping_company_code를 함께 사용해야 하며, 송장번호 수정시 status는 사용 불가
+     *
+     * 최대글자수 : [40자]
+     */
     trackingNo?: any;
     /**
-      * @description
-      * 배송업체 코드
-      * 
-      * shipping_company_code 
-      * 
-      * tracking_no 사용시 shipping_company_code를 함께 사용해야 하며, 송장번호 수정시 status는 사용 불가
-      * 
-      * 
-      */ 
+     * @description
+     * 배송업체 코드
+     *
+     * shipping_company_code
+     *
+     * tracking_no 사용시 shipping_company_code를 함께 사용해야 하며, 송장번호 수정시 status는 사용 불가
+     *
+     *
+     */
     shippingCompanyCode?: any;
   }
 
   export interface UpdateAnOrderShippingOutput {
-    shipment: { 
-    shopNo: number;
-    status: string;
-    statusAdditionalInfo: string;
-    trackingNo: any;
-    shippingCompanyCode: any;
+    shipment: {
+      shopNo: number;
+      status: string;
+      statusAdditionalInfo: string;
+      trackingNo: any;
+      shippingCompanyCode: any;
     };
   }
   export interface DeleteAnOrderShippingInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 최소값: [1]
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     * 최소값: [1]
+     */
     shopNo?: any;
     /**
-      * @description
-      * 주문번호
-      * 
-      * @required
-      */ 
+     * @description
+     * 주문번호
+     *
+     * @required
+     */
     orderId: any;
     /**
-      * @description
-      * 배송번호
-      * 
-      * @required
-      */ 
+     * @description
+     * 배송번호
+     *
+     * @required
+     */
     shippingCode: any;
   }
 
   export interface DeleteAnOrderShippingOutput {
-    shipment: { 
-    shopNo: number;
-    orderId: string;
-    shippingCode: string;
-    orderItemCode: string[];
+    shipment: {
+      shopNo: number;
+      orderId: string;
+      shippingCode: string;
+      orderItemCode: string[];
     };
   }
 
@@ -382,8 +381,12 @@ declare module 'cafe24api-client' {
      */
     retrieveAListOfShippingInformationOfAnOrder(
       input: RetrieveAListOfShippingInformationOfAnOrderInput,
-      options?: RequestOptions<RetrieveAListOfShippingInformationOfAnOrderOutput['shipments'][number]>,
-    ): Promise<AxiosResponse<RetrieveAListOfShippingInformationOfAnOrderOutput>>;
+      options?: RequestOptions<
+        RetrieveAListOfShippingInformationOfAnOrderOutput['shipments'][number]
+      >,
+    ): Promise<
+      AxiosResponse<RetrieveAListOfShippingInformationOfAnOrderOutput>
+    >;
     /**
      * @description
      * 주문에 송장번호 등의 배송정보를 등록하여 주문을 배송대기 시키거나 배송중 처리할 수 있습니다.
@@ -413,7 +416,9 @@ declare module 'cafe24api-client' {
      */
     createAnOrderShippingInformation(
       input: CreateAnOrderShippingInformationInput,
-      options?: RequestOptions<CreateAnOrderShippingInformationOutput['shipments'][number]>,
+      options?: RequestOptions<
+        CreateAnOrderShippingInformationOutput['shipments'][number]
+      >,
     ): Promise<AxiosResponse<CreateAnOrderShippingInformationOutput>>;
     /**
      * @description

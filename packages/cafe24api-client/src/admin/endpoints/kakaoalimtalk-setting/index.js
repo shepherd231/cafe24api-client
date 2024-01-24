@@ -1,6 +1,8 @@
-
 export default (cls) => {
-  cls.prototype.retrieveTheKakaoInfoTalkSettings = async function (input, options) {
+  cls.prototype.retrieveTheKakaoInfoTalkSettings = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/kakaoalimtalk/setting`,
@@ -11,7 +13,10 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.updateTheKakaoInfoTalkSettings = async function (input, options) {
+  cls.prototype.updateTheKakaoInfoTalkSettings = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'PUT',
       `/api/v2/admin/kakaoalimtalk/setting`,
@@ -22,5 +27,4 @@ export default (cls) => {
       options,
     );
   };
-
 };

@@ -5,7 +5,6 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
-
   /**
    * @description
    * 자체분류(Classifications)는 상품등록시 사용할 자체분류에 입력하는 정보를 의미합니다.
@@ -13,167 +12,167 @@ declare module 'cafe24api-client' {
    */
   export interface Classifications {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
+     *
+     *
+     */
     shop_no: any;
     /**
-      * @description
-      * 자체분류 코드
-      * 
-      * 형식 : [A-Z0-9]
-      * 최소글자수 : [8자]
-      * 최대글자수 : [8자]
-      */ 
+     * @description
+     * 자체분류 코드
+     *
+     * 형식 : [A-Z0-9]
+     * 최소글자수 : [8자]
+     * 최대글자수 : [8자]
+     */
     classification_code: any;
     /**
-      * @description
-      * 자체분류 명
-      * 
-      * 최대글자수 : [200자]
-      */ 
+     * @description
+     * 자체분류 명
+     *
+     * 최대글자수 : [200자]
+     */
     classification_name: any;
     /**
-      * @description
-      * 자체분류 설명
-      * 
-      * 최대글자수 : [300자]
-      */ 
+     * @description
+     * 자체분류 설명
+     *
+     * 최대글자수 : [300자]
+     */
     classification_description: any;
     /**
-      * @description
-      * 사용여부
-      * 
-      * 
-      */ 
+     * @description
+     * 사용여부
+     *
+     *
+     */
     use_classification: any;
     /**
-      * @description
-      * 생성일
-      * 
-      * 
-      */ 
+     * @description
+     * 생성일
+     *
+     *
+     */
     created_date: any;
     /**
-      * @description
-      * 상품수
-      * 
-      * 
-      */ 
+     * @description
+     * 상품수
+     *
+     *
+     */
     product_count: any;
   }
 
   export interface RetrieveAListOfCustomCategoriesInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
-      * 
-      * @default 1
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
+     *
+     * @default 1
+     *
+     *
+     */
     shop_no?: any;
     /**
-      * @description
-      * 자체분류 코드
-      * 
-      * ,(콤마)로 여러 건을 검색할 수 있다.
-      * 
-      * 
-      */ 
+     * @description
+     * 자체분류 코드
+     *
+     * ,(콤마)로 여러 건을 검색할 수 있다.
+     *
+     *
+     */
     classification_code?: any;
     /**
-      * @description
-      * 자체분류 명
-      * 
-      * ,(콤마)로 여러 건을 검색할 수 있다.
-      * 
-      * 
-      */ 
+     * @description
+     * 자체분류 명
+     *
+     * ,(콤마)로 여러 건을 검색할 수 있다.
+     *
+     *
+     */
     classification_name?: any;
     /**
-      * @description
-      * 사용여부
-      * 
-      * 
-      */ 
+     * @description
+     * 사용여부
+     *
+     *
+     */
     use_classification?: any;
     /**
-      * @description
-      * 조회결과 시작위치
-      * 
-      * @default 0
-      * 
-      * 최대값: [8000]
-      */ 
+     * @description
+     * 조회결과 시작위치
+     *
+     * @default 0
+     *
+     * 최대값: [8000]
+     */
     offset?: any;
     /**
-      * @description
-      * 조회결과 최대건수
-      * 
-      * 조회하고자 하는 최대 건수를 지정할 수 있음.
-      * 예) 10 입력시 10건만 표시함.
-      * 
-      * @default 10
-      * 
-      * 최소: [1]~최대: [100]
-      */ 
+     * @description
+     * 조회결과 최대건수
+     *
+     * 조회하고자 하는 최대 건수를 지정할 수 있음.
+     * 예) 10 입력시 10건만 표시함.
+     *
+     * @default 10
+     *
+     * 최소: [1]~최대: [100]
+     */
     limit?: any;
   }
 
   export interface RetrieveAListOfCustomCategoriesOutput {
-    classifications: { 
-    shop_no: number;
-    classification_code: string;
-    classification_name: string;
-    classification_description: string;
-    use_classification: Cafe24Enum;
-    created_date: Cafe24Datetime;
-    product_count: number;
+    classifications: {
+      shop_no: number;
+      classification_code: string;
+      classification_name: string;
+      classification_description: string;
+      use_classification: Cafe24Enum;
+      created_date: Cafe24Datetime;
+      product_count: number;
     }[];
   }
   export interface RetrieveACountOfCustomCategoriesInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
-      * 
-      * @default 1
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
+     *
+     * @default 1
+     *
+     *
+     */
     shop_no?: any;
     /**
-      * @description
-      * 자체분류 코드
-      * 
-      * ,(콤마)로 여러 건을 검색할 수 있다.
-      * 
-      * 
-      */ 
+     * @description
+     * 자체분류 코드
+     *
+     * ,(콤마)로 여러 건을 검색할 수 있다.
+     *
+     *
+     */
     classification_code?: any;
     /**
-      * @description
-      * 자체분류 명
-      * 
-      * ,(콤마)로 여러 건을 검색할 수 있다.
-      * 
-      * 
-      */ 
+     * @description
+     * 자체분류 명
+     *
+     * ,(콤마)로 여러 건을 검색할 수 있다.
+     *
+     *
+     */
     classification_name?: any;
     /**
-      * @description
-      * 사용여부
-      * 
-      * 
-      */ 
+     * @description
+     * 사용여부
+     *
+     *
+     */
     use_classification?: any;
   }
 
@@ -217,7 +216,9 @@ declare module 'cafe24api-client' {
      */
     retrieveAListOfCustomCategories(
       input: RetrieveAListOfCustomCategoriesInput,
-      options?: RequestOptions<RetrieveAListOfCustomCategoriesOutput['classifications'][number]>,
+      options?: RequestOptions<
+        RetrieveAListOfCustomCategoriesOutput['classifications'][number]
+      >,
     ): Promise<AxiosResponse<RetrieveAListOfCustomCategoriesOutput>>;
     /**
      * @description

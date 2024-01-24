@@ -5,320 +5,319 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
-
   /**
    * @description
    * 공급사 운영자(Supplier Users)는 공급사가 쇼핑몰에 로그인하여 상품을 직접 등록해야할 경우 필요합니다.
    * 공급사 운영자에게 상품 업로드, 분류 관리, 게시판 관리 등 제한적인 권한을 부여할 수 있습니다.
-   * 
-   * 
+   *
+   *
    */
   export interface SuppliersUsers {
     /**
-      * @description
-      * 공급사 운영자 아이디
-      * 
-      * 공급사 운영자가 로그인할 경우 사용하는 로그인 아이디. 부운영자와 마찬가지로 쇼핑몰 관리자 화면에 로그인하면 공급사 관리자 화면에 접근할 수 있다.
-      * 
-      * 형식 : [a-z0-9]
-      * 글자수 최소: [4자]~최대: [16자]
-      */ 
+     * @description
+     * 공급사 운영자 아이디
+     *
+     * 공급사 운영자가 로그인할 경우 사용하는 로그인 아이디. 부운영자와 마찬가지로 쇼핑몰 관리자 화면에 로그인하면 공급사 관리자 화면에 접근할 수 있다.
+     *
+     * 형식 : [a-z0-9]
+     * 글자수 최소: [4자]~최대: [16자]
+     */
     userId: any;
     /**
-      * @description
-      * 공급사 코드
-      * 
-      * 시스템에서 부여한 공급사의 코드. 해당 쇼핑몰 내에서 공급사 코드는 중복되지 않는다.
-      * 
-      * 형식 : [A-Z0-9]
-      * 글자수 최소: [8자]~최대: [8자]
-      */ 
+     * @description
+     * 공급사 코드
+     *
+     * 시스템에서 부여한 공급사의 코드. 해당 쇼핑몰 내에서 공급사 코드는 중복되지 않는다.
+     *
+     * 형식 : [A-Z0-9]
+     * 글자수 최소: [8자]~최대: [8자]
+     */
     supplierCode: any;
     /**
-      * @description
-      * 공급사명
-      * 
-      * 공급사의 이름. 공급사명은 쇼핑몰 관리자 화면에서 공급사를 구분할 수 있는 기본적인 정보이다.
-      * 
-      * 최대글자수 : [100자]
-      */ 
+     * @description
+     * 공급사명
+     *
+     * 공급사의 이름. 공급사명은 쇼핑몰 관리자 화면에서 공급사를 구분할 수 있는 기본적인 정보이다.
+     *
+     * 최대글자수 : [100자]
+     */
     supplierName: any;
     /**
-      * @description
-      * 상품 등록 시 분류선택 권한
-      * 
-      * 공급사 운영자가 상품 등록시 상품 분류를 선택하여 등록할 수 있는지에 대한 권한 설정
-      * 
-      * 
-      */ 
+     * @description
+     * 상품 등록 시 분류선택 권한
+     *
+     * 공급사 운영자가 상품 등록시 상품 분류를 선택하여 등록할 수 있는지에 대한 권한 설정
+     *
+     *
+     */
     permissionCategorySelect: any;
     /**
-      * @description
-      * 상품 수정 권한
-      * 
-      * 공급사 운영자가 상품을 등록한 후 상품 정보를 수정할 수 있는 권한 설정
-      * 
-      * 
-      */ 
+     * @description
+     * 상품 수정 권한
+     *
+     * 공급사 운영자가 상품을 등록한 후 상품 정보를 수정할 수 있는 권한 설정
+     *
+     *
+     */
     permissionProductModify: any;
     /**
-      * @description
-      * 상품 진열 권한
-      * 
-      * 공급사 운영자가 상품을 등록한 후 쇼핑몰 화면에 진열할 수 있는 권한 설정
-      * 
-      * 
-      */ 
+     * @description
+     * 상품 진열 권한
+     *
+     * 공급사 운영자가 상품을 등록한 후 쇼핑몰 화면에 진열할 수 있는 권한 설정
+     *
+     *
+     */
     permissionProductDisplay: any;
     /**
-      * @description
-      * 상품 판매 권한
-      * 
-      * 공급사 운영자가 상품을 등록한 후 해당 상품의 판매여부를 설정할 수 있는 권한 설정
-      * 
-      * 
-      */ 
+     * @description
+     * 상품 판매 권한
+     *
+     * 공급사 운영자가 상품을 등록한 후 해당 상품의 판매여부를 설정할 수 있는 권한 설정
+     *
+     *
+     */
     permissionProductSelling: any;
     /**
-      * @description
-      * 등록 상품 삭제 권한
-      * 
-      * 공급사 운영자가 자신이 등록한 상품을 삭제할 수 있는 권한 설정
-      * 
-      * 
-      */ 
+     * @description
+     * 등록 상품 삭제 권한
+     *
+     * 공급사 운영자가 자신이 등록한 상품을 삭제할 수 있는 권한 설정
+     *
+     *
+     */
     permissionProductDelete: any;
     /**
-      * @description
-      * 주문 금액 조회 권한
-      * 
-      * 
-      */ 
+     * @description
+     * 주문 금액 조회 권한
+     *
+     *
+     */
     permissionAmountInquiry: any;
     /**
-      * @description
-      * 게시판 권한 설정
-      * 
-      * 공급사 운영자가 쇼핑몰의 게시판에 접근할 수 있는 권한 설정
-      * 
-      * T : 허용함
-      * F : 허용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 게시판 권한 설정
+     *
+     * 공급사 운영자가 쇼핑몰의 게시판에 접근할 수 있는 권한 설정
+     *
+     * T : 허용함
+     * F : 허용안함
+     *
+     *
+     */
     permissionBoardManage: any;
     /**
-      * @description
-      * 주문 메뉴 접근 권한
-      * 
-      * 
-      */ 
+     * @description
+     * 주문 메뉴 접근 권한
+     *
+     *
+     */
     permissionOrderMenu: any;
     /**
-      * @description
-      * 공급사운영자명
-      * 
-      * 공급사 운영자의 이름. 공급사 운영자 명은 공급사 운영자가 쇼핑몰 관리자 화면에서 어떤 작업을 할 경우 &#34;작업을 실행한 사람(처리자)&#34; 부분에 표시되는 이름을 의미한다.
-      * 공급사 운영자 상세 조회 API에서만 확인 가능하다.
-      * 
-      * 
-      */ 
+     * @description
+     * 공급사운영자명
+     *
+     * 공급사 운영자의 이름. 공급사 운영자 명은 공급사 운영자가 쇼핑몰 관리자 화면에서 어떤 작업을 할 경우 &#34;작업을 실행한 사람(처리자)&#34; 부분에 표시되는 이름을 의미한다.
+     * 공급사 운영자 상세 조회 API에서만 확인 가능하다.
+     *
+     *
+     */
     userName: any;
     /**
-      * @description
-      * 별명
-      * 
-      * 공급사 운영자의 별명. 공급사 운영자 별명은 공급사 운영자가 게시판에 게시글 작성할 경우 &#34;게시자&#34; 부분에 표시되는 별명을 의미한다.(단, 해당 게시판이 작성자명 대신 &#39;별명&#39;을 노출하도록 설정되어있을 경우에 한 함)
-      * 공급사 운영자 상세 조회 API에서만 확인 가능하다.
-      * 
-      * 
-      */ 
+     * @description
+     * 별명
+     *
+     * 공급사 운영자의 별명. 공급사 운영자 별명은 공급사 운영자가 게시판에 게시글 작성할 경우 &#34;게시자&#34; 부분에 표시되는 별명을 의미한다.(단, 해당 게시판이 작성자명 대신 &#39;별명&#39;을 노출하도록 설정되어있을 경우에 한 함)
+     * 공급사 운영자 상세 조회 API에서만 확인 가능하다.
+     *
+     *
+     */
     nickName: any;
     /**
-      * @description
-      * 별명 아이콘 타입
-      * 
-      * 공급사 운영자의 별명 옆에 표시되는 아이콘을 설정할 수 있다.
-      * 
-      * 직접 아이콘 등록 : 별명 아이콘을 직접 업로드하여 설정할 수 있다.
-      * 샘플 아이콘 등록 : 미리 제공되는 아이콘을 선택하여 설정할 수 있다.
-      * 공급사 운영자 상세 조회 API에서만 확인 가능하다.
-      * 
-      * D : 직접
-      * S : 샘플
-      * 
-      * 
-      */ 
+     * @description
+     * 별명 아이콘 타입
+     *
+     * 공급사 운영자의 별명 옆에 표시되는 아이콘을 설정할 수 있다.
+     *
+     * 직접 아이콘 등록 : 별명 아이콘을 직접 업로드하여 설정할 수 있다.
+     * 샘플 아이콘 등록 : 미리 제공되는 아이콘을 선택하여 설정할 수 있다.
+     * 공급사 운영자 상세 조회 API에서만 확인 가능하다.
+     *
+     * D : 직접
+     * S : 샘플
+     *
+     *
+     */
     nickNameIconType: any;
     /**
-      * @description
-      * 별명 아이콘 URL
-      * 
-      * 공급사 운영자의 별명 아이콘의 이미지 경로.
-      * 
-      * 공급사 운영자 상세 조회 API에서만 확인 가능하다.
-      * 
-      * 최대글자수 : [255자]
-      */ 
+     * @description
+     * 별명 아이콘 URL
+     *
+     * 공급사 운영자의 별명 아이콘의 이미지 경로.
+     *
+     * 공급사 운영자 상세 조회 API에서만 확인 가능하다.
+     *
+     * 최대글자수 : [255자]
+     */
     nickNameIconUrl: any;
     /**
-      * @description
-      * 게시판 닉네임 아이콘 노출 설정
-      * 
-      * 공급사 운영자가 게시판에 게시글 작성시 별명 아이콘을 노출할 것인지 여부 표시
-      * 
-      * 공급사 운영자 상세 조회 API에서만 확인 가능하다.
-      * 
-      * 
-      */ 
+     * @description
+     * 게시판 닉네임 아이콘 노출 설정
+     *
+     * 공급사 운영자가 게시판에 게시글 작성시 별명 아이콘을 노출할 것인지 여부 표시
+     *
+     * 공급사 운영자 상세 조회 API에서만 확인 가능하다.
+     *
+     *
+     */
     useNickNameIcon: any;
     /**
-      * @description
-      * 게시판 작성자 노출 설정
-      * 
-      * 공급사 운영자가 게시판에 게시글 작성시 작성자 명을 노출할 것인지 여부 표시
-      * 
-      * 공급사 운영자 상세 조회 API에서만 확인 가능하다.
-      * 
-      * 
-      */ 
+     * @description
+     * 게시판 작성자 노출 설정
+     *
+     * 공급사 운영자가 게시판에 게시글 작성시 작성자 명을 노출할 것인지 여부 표시
+     *
+     * 공급사 운영자 상세 조회 API에서만 확인 가능하다.
+     *
+     *
+     */
     useWriterNameIcon: any;
     /**
-      * @description
-      * 이메일
-      * 
-      * 공급사 운영자의 이메일 주소. 공급사 운영자의 연락처 저장 목적으로 사용함.
-      * 
-      * 공급사 운영자 상세 조회 API에서만 확인 가능하다.
-      * 
-      * 이메일
-      */ 
+     * @description
+     * 이메일
+     *
+     * 공급사 운영자의 이메일 주소. 공급사 운영자의 연락처 저장 목적으로 사용함.
+     *
+     * 공급사 운영자 상세 조회 API에서만 확인 가능하다.
+     *
+     * 이메일
+     */
     email: any;
     /**
-      * @description
-      * 전화번호
-      * 
-      * 공급사 운영자의 전화번호. 공급사 운영자의 연락처 저장 목적으로 사용함.
-      * 
-      * 공급사 운영자 상세 조회 API에서만 확인 가능하다.
-      * 
-      * 
-      */ 
+     * @description
+     * 전화번호
+     *
+     * 공급사 운영자의 전화번호. 공급사 운영자의 연락처 저장 목적으로 사용함.
+     *
+     * 공급사 운영자 상세 조회 API에서만 확인 가능하다.
+     *
+     *
+     */
     phone: any;
     /**
-      * @description
-      * 접근가능 쇼핑몰
-      * 
-      * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
-      * 
-      * 
-      */ 
+     * @description
+     * 접근가능 쇼핑몰
+     *
+     * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
+     *
+     *
+     */
     permissionShopNo: any;
     /**
-      * @description
-      * 상품 등록시 허용 상품분류
-      * 
-      * 공급사 운영자가 상품 등록시 선택 가능한 상품 분류. 공급사 운영자는 상품 등록시 해당 상품 분류에만 상품을 올릴 수 있다.
-      * 
-      * 공급사 운영자 상세 조회 API에서만 확인 가능하다.
-      * 
-      * 
-      */ 
+     * @description
+     * 상품 등록시 허용 상품분류
+     *
+     * 공급사 운영자가 상품 등록시 선택 가능한 상품 분류. 공급사 운영자는 상품 등록시 해당 상품 분류에만 상품을 올릴 수 있다.
+     *
+     * 공급사 운영자 상세 조회 API에서만 확인 가능하다.
+     *
+     *
+     */
     permittedCategoryList: any;
   }
 
   export interface RetrieveAListOfSupplierUsersInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     *
+     */
     shopNo?: any;
     /**
-      * @description
-      * 공급사 운영자 아이디
-      * 
-      * 공급사 운영자가 로그인할 경우 사용하는 로그인 아이디. 부운영자와 마찬가지로 쇼핑몰 관리자 화면에 로그인하면 공급사 관리자 화면에 접근할 수 있다.
-      * 
-      * 형식 : [a-zA-Z0-9]
-      * 글자수 최소: [4자]~최대: [16자]
-      */ 
+     * @description
+     * 공급사 운영자 아이디
+     *
+     * 공급사 운영자가 로그인할 경우 사용하는 로그인 아이디. 부운영자와 마찬가지로 쇼핑몰 관리자 화면에 로그인하면 공급사 관리자 화면에 접근할 수 있다.
+     *
+     * 형식 : [a-zA-Z0-9]
+     * 글자수 최소: [4자]~최대: [16자]
+     */
     userId?: any;
     /**
-      * @description
-      * 공급사 코드
-      * 
-      * 시스템에서 부여한 공급사의 코드. 해당 쇼핑몰 내에서 공급사 코드는 중복되지 않는다.
-      * 
-      * 최대글자수 : [8자]
-      */ 
+     * @description
+     * 공급사 코드
+     *
+     * 시스템에서 부여한 공급사의 코드. 해당 쇼핑몰 내에서 공급사 코드는 중복되지 않는다.
+     *
+     * 최대글자수 : [8자]
+     */
     supplierCode?: any;
     /**
-      * @description
-      * 공급사명
-      * 
-      * 공급사의 이름. 공급사명은 쇼핑몰 관리자 화면에서 공급사를 구분할 수 있는 기본적인 정보이다.
-      * 
-      * 최대글자수 : [100자]
-      */ 
+     * @description
+     * 공급사명
+     *
+     * 공급사의 이름. 공급사명은 쇼핑몰 관리자 화면에서 공급사를 구분할 수 있는 기본적인 정보이다.
+     *
+     * 최대글자수 : [100자]
+     */
     supplierName?: any;
   }
 
   export interface RetrieveAListOfSupplierUsersOutput {
-    users: { 
-    userId: string;
-    supplierCode: string;
-    supplierName: string;
-    permissionCategorySelect: string;
-    permissionProductModify: Cafe24Enum;
-    permissionProductDisplay: string;
-    permissionProductSelling: Cafe24Enum;
-    permissionProductDelete: string;
-    permissionBoardManage: Cafe24Enum;
-    permissionAmountInquiry: Cafe24Enum;
-    permissionOrderMenu: Cafe24Enum;
+    users: {
+      userId: string;
+      supplierCode: string;
+      supplierName: string;
+      permissionCategorySelect: string;
+      permissionProductModify: Cafe24Enum;
+      permissionProductDisplay: string;
+      permissionProductSelling: Cafe24Enum;
+      permissionProductDelete: string;
+      permissionBoardManage: Cafe24Enum;
+      permissionAmountInquiry: Cafe24Enum;
+      permissionOrderMenu: Cafe24Enum;
     }[];
   }
   export interface RetrieveACountOfSupplierUsersInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     *
+     */
     shopNo?: any;
     /**
-      * @description
-      * 공급사 운영자 아이디
-      * 
-      * 공급사 운영자가 로그인할 경우 사용하는 로그인 아이디. 부운영자와 마찬가지로 쇼핑몰 관리자 화면에 로그인하면 공급사 관리자 화면에 접근할 수 있다.
-      * 
-      * 형식 : [a-zA-Z0-9]
-      * 글자수 최소: [4자]~최대: [16자]
-      */ 
+     * @description
+     * 공급사 운영자 아이디
+     *
+     * 공급사 운영자가 로그인할 경우 사용하는 로그인 아이디. 부운영자와 마찬가지로 쇼핑몰 관리자 화면에 로그인하면 공급사 관리자 화면에 접근할 수 있다.
+     *
+     * 형식 : [a-zA-Z0-9]
+     * 글자수 최소: [4자]~최대: [16자]
+     */
     userId?: any;
     /**
-      * @description
-      * 공급사 코드
-      * 
-      * 시스템에서 부여한 공급사의 코드. 해당 쇼핑몰 내에서 공급사 코드는 중복되지 않는다.
-      * 
-      * 최대글자수 : [8자]
-      */ 
+     * @description
+     * 공급사 코드
+     *
+     * 시스템에서 부여한 공급사의 코드. 해당 쇼핑몰 내에서 공급사 코드는 중복되지 않는다.
+     *
+     * 최대글자수 : [8자]
+     */
     supplierCode?: any;
     /**
-      * @description
-      * 공급사명
-      * 
-      * 공급사의 이름. 공급사명은 쇼핑몰 관리자 화면에서 공급사를 구분할 수 있는 기본적인 정보이다.
-      * 
-      * 최대글자수 : [100자]
-      */ 
+     * @description
+     * 공급사명
+     *
+     * 공급사의 이름. 공급사명은 쇼핑몰 관리자 화면에서 공급사를 구분할 수 있는 기본적인 정보이다.
+     *
+     * 최대글자수 : [100자]
+     */
     supplierName?: any;
   }
 
@@ -327,517 +326,517 @@ declare module 'cafe24api-client' {
   }
   export interface RetrieveSupplierUserDetailsInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     *
+     */
     shopNo?: any;
     /**
-      * @description
-      * 공급사 운영자 아이디
-      * 
-      * 공급사 운영자가 로그인할 경우 사용하는 로그인 아이디. 부운영자와 마찬가지로 쇼핑몰 관리자 화면에 로그인하면 공급사 관리자 화면에 접근할 수 있다.
-      * 
-      * 형식 : [a-zA-Z0-9]
-      * 글자수 최소: [4자]~최대: [16자]
-      */ 
+     * @description
+     * 공급사 운영자 아이디
+     *
+     * 공급사 운영자가 로그인할 경우 사용하는 로그인 아이디. 부운영자와 마찬가지로 쇼핑몰 관리자 화면에 로그인하면 공급사 관리자 화면에 접근할 수 있다.
+     *
+     * 형식 : [a-zA-Z0-9]
+     * 글자수 최소: [4자]~최대: [16자]
+     */
     userId?: any;
   }
 
   export interface RetrieveSupplierUserDetailsOutput {
-    user: { 
-    userId: string;
-    supplierCode: string;
-    supplierName: string;
-    userName: string;
-    nickName: string;
-    nickNameIconType: Cafe24Enum;
-    nickNameIconUrl: string;
-    useNickNameIcon: Cafe24Enum;
-    useWriterNameIcon: Cafe24Enum;
-    email: string;
-    phone: string;
-    permissionShopNo: number[];
-    permissionCategorySelect: Cafe24Enum;
-    permittedCategoryList: number[];
-    permissionProductModify: Cafe24Enum;
-    permissionProductDisplay: Cafe24Enum;
-    permissionProductSelling: Cafe24Enum;
-    permissionProductDelete: Cafe24Enum;
-    permissionBoardManage: Cafe24Enum;
-    permissionAmountInquiry: Cafe24Enum;
-    permissionOrderMenu: Cafe24Enum;
+    user: {
+      userId: string;
+      supplierCode: string;
+      supplierName: string;
+      userName: string;
+      nickName: string;
+      nickNameIconType: Cafe24Enum;
+      nickNameIconUrl: string;
+      useNickNameIcon: Cafe24Enum;
+      useWriterNameIcon: Cafe24Enum;
+      email: string;
+      phone: string;
+      permissionShopNo: number[];
+      permissionCategorySelect: Cafe24Enum;
+      permittedCategoryList: number[];
+      permissionProductModify: Cafe24Enum;
+      permissionProductDisplay: Cafe24Enum;
+      permissionProductSelling: Cafe24Enum;
+      permissionProductDelete: Cafe24Enum;
+      permissionBoardManage: Cafe24Enum;
+      permissionAmountInquiry: Cafe24Enum;
+      permissionOrderMenu: Cafe24Enum;
     };
   }
   export interface CreateASupplierUserInput {
     /**
-      * @description
-      * 공급사 운영자 아이디
-      * 
-      * @required
-      * 
-      * 형식 : [a-z0-9]
-      * 글자수 최소: [4자]~최대: [16자]
-      */ 
+     * @description
+     * 공급사 운영자 아이디
+     *
+     * @required
+     *
+     * 형식 : [a-z0-9]
+     * 글자수 최소: [4자]~최대: [16자]
+     */
     userId: any;
     /**
-      * @description
-      * 공급사 코드
-      * 
-      * @required
-      * 
-      * 형식 : [A-Z0-9]
-      * 글자수 최소: [8자]~최대: [8자]
-      */ 
+     * @description
+     * 공급사 코드
+     *
+     * @required
+     *
+     * 형식 : [A-Z0-9]
+     * 글자수 최소: [8자]~최대: [8자]
+     */
     supplierCode: any;
     /**
-      * @description
-      * 공급사운영자명
-      * 
-      * 필수 입력 필요
-      * 
-      * 
-      */ 
-    userName?: { 
-    /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * 
-      */ 
-    shopNo: any;
-    /**
-      * @description
-      * 공급사운영자명
-      * 
-      * 
-      */ 
-    userName: any;
+     * @description
+     * 공급사운영자명
+     *
+     * 필수 입력 필요
+     *
+     *
+     */
+    userName?: {
+      /**
+       * @description
+       * 멀티쇼핑몰 번호
+       *
+       *
+       */
+      shopNo: any;
+      /**
+       * @description
+       * 공급사운영자명
+       *
+       *
+       */
+      userName: any;
     };
     /**
-      * @description
-      * 별명
-      * 
-      * 
-      */ 
-    nickName?: { 
-    /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * 
-      */ 
-    shopNo?: any;
-    /**
-      * @description
-      * 별명
-      * 
-      * 
-      */ 
-    nickName?: any;
+     * @description
+     * 별명
+     *
+     *
+     */
+    nickName?: {
+      /**
+       * @description
+       * 멀티쇼핑몰 번호
+       *
+       *
+       */
+      shopNo?: any;
+      /**
+       * @description
+       * 별명
+       *
+       *
+       */
+      nickName?: any;
     };
     /**
-      * @description
-      * 접속 비밀번호
-      * 
-      * @required
-      */ 
+     * @description
+     * 접속 비밀번호
+     *
+     * @required
+     */
     password: any;
     /**
-      * @description
-      * 게시판 닉네임 아이콘 노출 설정
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * @default F
-      * 
-      * 
-      */ 
+     * @description
+     * 게시판 닉네임 아이콘 노출 설정
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     * @default F
+     *
+     *
+     */
     useNickNameIcon?: any;
     /**
-      * @description
-      * 게시판 작성자 노출 설정
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * @default F
-      * 
-      * 
-      */ 
+     * @description
+     * 게시판 작성자 노출 설정
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     * @default F
+     *
+     *
+     */
     useWriterNameIcon?: any;
     /**
-      * @description
-      * 이메일
-      * 
-      * 이메일
-      */ 
+     * @description
+     * 이메일
+     *
+     * 이메일
+     */
     email?: any;
     /**
-      * @description
-      * 전화번호
-      * 
-      * 
-      */ 
+     * @description
+     * 전화번호
+     *
+     *
+     */
     phone?: any;
     /**
-      * @description
-      * 접근가능 쇼핑몰
-      * 
-      * @required
-      */ 
+     * @description
+     * 접근가능 쇼핑몰
+     *
+     * @required
+     */
     permissionShopNo: any;
     /**
-      * @description
-      * 상품 등록 시 분류선택 권한
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * @default T
-      * 
-      * 
-      */ 
+     * @description
+     * 상품 등록 시 분류선택 권한
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     * @default T
+     *
+     *
+     */
     permissionCategorySelect?: any;
     /**
-      * @description
-      * 상품 등록시 허용 상품분류
-      * 
-      * 
-      */ 
+     * @description
+     * 상품 등록시 허용 상품분류
+     *
+     *
+     */
     permittedCategoryList?: any;
     /**
-      * @description
-      * 상품 수정 권한
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * @default T
-      * 
-      * 
-      */ 
+     * @description
+     * 상품 수정 권한
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     * @default T
+     *
+     *
+     */
     permissionProductModify?: any;
     /**
-      * @description
-      * 상품 진열 권한
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * @default T
-      * 
-      * 
-      */ 
+     * @description
+     * 상품 진열 권한
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     * @default T
+     *
+     *
+     */
     permissionProductDisplay?: any;
     /**
-      * @description
-      * 상품 판매 권한
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * @default T
-      * 
-      * 
-      */ 
+     * @description
+     * 상품 판매 권한
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     * @default T
+     *
+     *
+     */
     permissionProductSelling?: any;
     /**
-      * @description
-      * 등록 상품 삭제 권한
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * @default T
-      * 
-      * 
-      */ 
+     * @description
+     * 등록 상품 삭제 권한
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     * @default T
+     *
+     *
+     */
     permissionProductDelete?: any;
     /**
-      * @description
-      * 주문 메뉴 접근 권한
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * @default T
-      * 
-      * 
-      */ 
+     * @description
+     * 주문 메뉴 접근 권한
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     * @default T
+     *
+     *
+     */
     permissionOrderMenu?: any;
     /**
-      * @description
-      * 주문 금액 조회 권한
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * @default F
-      * 
-      * 
-      */ 
+     * @description
+     * 주문 금액 조회 권한
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     * @default F
+     *
+     *
+     */
     permissionAmountInquiry?: any;
   }
 
   export interface CreateASupplierUserOutput {
-    user: { 
-    userId: string;
-    supplierCode: string;
-    userName: { 
-    shopNo: number;
-    userName: string;
-    }[];
-    nickName: { 
-    shopNo: number;
-    nickName: string;
-    }[];
-    useNickNameIcon: Cafe24Enum;
-    useWriterNameIcon: Cafe24Enum;
-    email: string;
-    phone: string;
-    permissionShopNo: number[];
-    permissionCategorySelect: Cafe24Enum;
-    permittedCategoryList: number[];
-    permissionProductModify: Cafe24Enum;
-    permissionProductDisplay: Cafe24Enum;
-    permissionProductSelling: Cafe24Enum;
-    permissionProductDelete: Cafe24Enum;
-    permissionOrderMenu: Cafe24Enum;
-    permissionAmountInquiry: Cafe24Enum;
+    user: {
+      userId: string;
+      supplierCode: string;
+      userName: {
+        shopNo: number;
+        userName: string;
+      }[];
+      nickName: {
+        shopNo: number;
+        nickName: string;
+      }[];
+      useNickNameIcon: Cafe24Enum;
+      useWriterNameIcon: Cafe24Enum;
+      email: string;
+      phone: string;
+      permissionShopNo: number[];
+      permissionCategorySelect: Cafe24Enum;
+      permittedCategoryList: number[];
+      permissionProductModify: Cafe24Enum;
+      permissionProductDisplay: Cafe24Enum;
+      permissionProductSelling: Cafe24Enum;
+      permissionProductDelete: Cafe24Enum;
+      permissionOrderMenu: Cafe24Enum;
+      permissionAmountInquiry: Cafe24Enum;
     };
   }
   export interface UpdateASupplierUserInput {
     /**
-      * @description
-      * 공급사 운영자 아이디
-      * 
-      * @required
-      * 
-      * 형식 : [a-z0-9]
-      * 글자수 최소: [4자]~최대: [16자]
-      */ 
+     * @description
+     * 공급사 운영자 아이디
+     *
+     * @required
+     *
+     * 형식 : [a-z0-9]
+     * 글자수 최소: [4자]~최대: [16자]
+     */
     userId: any;
     /**
-      * @description
-      * 공급사운영자명
-      * 
-      * 필수 입력 필요
-      * 
-      * 
-      */ 
-    userName?: { 
-    /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * 
-      */ 
-    shopNo?: any;
-    /**
-      * @description
-      * 공급사운영자명
-      * 
-      * 
-      */ 
-    userName?: any;
+     * @description
+     * 공급사운영자명
+     *
+     * 필수 입력 필요
+     *
+     *
+     */
+    userName?: {
+      /**
+       * @description
+       * 멀티쇼핑몰 번호
+       *
+       *
+       */
+      shopNo?: any;
+      /**
+       * @description
+       * 공급사운영자명
+       *
+       *
+       */
+      userName?: any;
     };
     /**
-      * @description
-      * 별명
-      * 
-      * 
-      */ 
-    nickName?: { 
-    /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * 
-      */ 
-    shopNo?: any;
-    /**
-      * @description
-      * 별명
-      * 
-      * 
-      */ 
-    nickName?: any;
+     * @description
+     * 별명
+     *
+     *
+     */
+    nickName?: {
+      /**
+       * @description
+       * 멀티쇼핑몰 번호
+       *
+       *
+       */
+      shopNo?: any;
+      /**
+       * @description
+       * 별명
+       *
+       *
+       */
+      nickName?: any;
     };
     /**
-      * @description
-      * 접속 비밀번호
-      * 
-      * 
-      */ 
+     * @description
+     * 접속 비밀번호
+     *
+     *
+     */
     password?: any;
     /**
-      * @description
-      * 게시판 닉네임 아이콘 노출 설정
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 게시판 닉네임 아이콘 노출 설정
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     useNickNameIcon?: any;
     /**
-      * @description
-      * 게시판 작성자 노출 설정
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 게시판 작성자 노출 설정
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     useWriterNameIcon?: any;
     /**
-      * @description
-      * 이메일
-      * 
-      * 이메일
-      */ 
+     * @description
+     * 이메일
+     *
+     * 이메일
+     */
     email?: any;
     /**
-      * @description
-      * 전화번호
-      * 
-      * 
-      */ 
+     * @description
+     * 전화번호
+     *
+     *
+     */
     phone?: any;
     /**
-      * @description
-      * 접근가능 쇼핑몰
-      * 
-      * 
-      */ 
+     * @description
+     * 접근가능 쇼핑몰
+     *
+     *
+     */
     permissionShopNo?: any;
     /**
-      * @description
-      * 상품 등록 시 분류선택 권한
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 상품 등록 시 분류선택 권한
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     permissionCategorySelect?: any;
     /**
-      * @description
-      * 상품 등록시 허용 상품분류
-      * 
-      * 
-      */ 
+     * @description
+     * 상품 등록시 허용 상품분류
+     *
+     *
+     */
     permittedCategoryList?: any;
     /**
-      * @description
-      * 상품 수정 권한
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 상품 수정 권한
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     permissionProductModify?: any;
     /**
-      * @description
-      * 상품 진열 권한
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 상품 진열 권한
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     permissionProductDisplay?: any;
     /**
-      * @description
-      * 상품 판매 권한
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 상품 판매 권한
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     permissionProductSelling?: any;
     /**
-      * @description
-      * 등록 상품 삭제 권한
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 등록 상품 삭제 권한
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     permissionProductDelete?: any;
     /**
-      * @description
-      * 주문 메뉴 접근 권한
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 주문 메뉴 접근 권한
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     permissionOrderMenu?: any;
     /**
-      * @description
-      * 주문 금액 조회 권한
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 주문 금액 조회 권한
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     permissionAmountInquiry?: any;
   }
 
   export interface UpdateASupplierUserOutput {
-    user: { 
-    userId: string;
-    supplierCode: string;
-    userName: { 
-    shopNo: number;
-    userName: string;
-    }[];
-    nickName: { 
-    shopNo: number;
-    nickName: string;
-    }[];
-    useNickNameIcon: Cafe24Enum;
-    useWriterNameIcon: Cafe24Enum;
-    email: string;
-    phone: string;
-    permissionShopNo: number[];
-    permissionCategorySelect: Cafe24Enum;
-    permittedCategoryList: number[];
-    permissionProductModify: Cafe24Enum;
-    permissionProductDisplay: Cafe24Enum;
-    permissionProductSelling: Cafe24Enum;
-    permissionProductDelete: Cafe24Enum;
-    permissionAmountInquiry: Cafe24Enum;
-    permissionOrderMenu: Cafe24Enum;
+    user: {
+      userId: string;
+      supplierCode: string;
+      userName: {
+        shopNo: number;
+        userName: string;
+      }[];
+      nickName: {
+        shopNo: number;
+        nickName: string;
+      }[];
+      useNickNameIcon: Cafe24Enum;
+      useWriterNameIcon: Cafe24Enum;
+      email: string;
+      phone: string;
+      permissionShopNo: number[];
+      permissionCategorySelect: Cafe24Enum;
+      permittedCategoryList: number[];
+      permissionProductModify: Cafe24Enum;
+      permissionProductDisplay: Cafe24Enum;
+      permissionProductSelling: Cafe24Enum;
+      permissionProductDelete: Cafe24Enum;
+      permissionAmountInquiry: Cafe24Enum;
+      permissionOrderMenu: Cafe24Enum;
     };
   }
   export interface DeleteASupplierUserInput {
     /**
-      * @description
-      * 공급사 운영자 아이디
-      * 
-      * @required
-      * 
-      * 형식 : [a-z0-9]
-      * 글자수 최소: [4자]~최대: [16자]
-      */ 
+     * @description
+     * 공급사 운영자 아이디
+     *
+     * @required
+     *
+     * 형식 : [a-z0-9]
+     * 글자수 최소: [4자]~최대: [16자]
+     */
     userId: any;
   }
 
   export interface DeleteASupplierUserOutput {
-    user: { 
-    userId: string;
+    user: {
+      userId: string;
     };
   }
 
@@ -885,7 +884,9 @@ declare module 'cafe24api-client' {
      */
     retrieveAListOfSupplierUsers(
       input: RetrieveAListOfSupplierUsersInput,
-      options?: RequestOptions<RetrieveAListOfSupplierUsersOutput['users'][number]>,
+      options?: RequestOptions<
+        RetrieveAListOfSupplierUsersOutput['users'][number]
+      >,
     ): Promise<AxiosResponse<RetrieveAListOfSupplierUsersOutput>>;
     /**
      * @description

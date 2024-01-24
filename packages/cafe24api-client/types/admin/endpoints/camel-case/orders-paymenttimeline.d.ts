@@ -5,219 +5,218 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
-
   /**
    * @description
-   * 
-   * 
+   *
+   *
    * 주문의 결제타임라인(Orders paymenttimeline)은 특정 주문의 결제에 대한 시간적인 연대표에 대한 기능입니다.
    */
   export interface OrdersPaymenttimeline {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     *
+     */
     shopNo: any;
     /**
-      * @description
-      * 결제번호
-      * 
-      * 
-      */ 
+     * @description
+     * 결제번호
+     *
+     *
+     */
     paymentNo: any;
     /**
-      * @description
-      * 결제유형
-      * 
-      * O : 최초결제
-      * R : 추가결제
-      * P : 환불
-      * 
-      * 
-      */ 
+     * @description
+     * 결제유형
+     *
+     * O : 최초결제
+     * R : 추가결제
+     * P : 환불
+     *
+     *
+     */
     paymentSettleType: any;
     /**
-      * @description
-      * 주문금액
-      * 
-      * 
-      */ 
+     * @description
+     * 주문금액
+     *
+     *
+     */
     orderAmount: any;
     /**
-      * @description
-      * 보조 결제금액
-      * 
-      * 
-      */ 
+     * @description
+     * 보조 결제금액
+     *
+     *
+     */
     additionalPaymentAmount: any;
     /**
-      * @description
-      * 결제금액
-      * 
-      * 
-      */ 
+     * @description
+     * 결제금액
+     *
+     *
+     */
     paidAmount: any;
     /**
-      * @description
-      * 결제수단
-      * 
-      * 
-      */ 
+     * @description
+     * 결제수단
+     *
+     *
+     */
     paymentMethods: any;
     /**
-      * @description
-      * 결제일
-      * 
-      * 
-      */ 
+     * @description
+     * 결제일
+     *
+     *
+     */
     paymentDatetime: any;
     /**
-      * @description
-      * 입력일
-      * 
-      * 
-      */ 
+     * @description
+     * 입력일
+     *
+     *
+     */
     createdDatetime: any;
     /**
-      * @description
-      * 취소/교환/반품 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 취소/교환/반품 번호
+     *
+     *
+     */
     claimCode: any;
     /**
-      * @description
-      * 결제수단별 결제금액
-      * 
-      * payment_method_detail code 
-      * 
-      * 
-      */ 
+     * @description
+     * 결제수단별 결제금액
+     *
+     * payment_method_detail code
+     *
+     *
+     */
     paymentMethodDetail: any;
     /**
-      * @description
-      * 주문금액 상세
-      * 
-      * order_amount_detail code 
-      * 
-      * 
-      */ 
+     * @description
+     * 주문금액 상세
+     *
+     * order_amount_detail code
+     *
+     *
+     */
     orderAmountDetail: any;
   }
 
   export interface RetrievePaymentHistoryOfAnOrderInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 최소값: [1]
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     * 최소값: [1]
+     */
     shopNo?: any;
     /**
-      * @description
-      * 주문번호
-      * 
-      * @required
-      */ 
+     * @description
+     * 주문번호
+     *
+     * @required
+     */
     orderId: any;
     /**
-      * @description
-      * 검색 시작일
-      * 
-      * 날짜
-      */ 
+     * @description
+     * 검색 시작일
+     *
+     * 날짜
+     */
     startDate?: any;
     /**
-      * @description
-      * 검색 종료일
-      * 
-      * 날짜
-      */ 
+     * @description
+     * 검색 종료일
+     *
+     * 날짜
+     */
     endDate?: any;
     /**
-      * @description
-      * 검색날짜 유형
-      * 
-      * 시작일과 종료일 기준으로 기간 검색시 date_type 미입력시 created_datetime 기준으로 검색 진행
-      * 
-      * created_datetime : 입력일
-      * payment_datetime : 결제일
-      * 
-      * 
-      */ 
+     * @description
+     * 검색날짜 유형
+     *
+     * 시작일과 종료일 기준으로 기간 검색시 date_type 미입력시 created_datetime 기준으로 검색 진행
+     *
+     * created_datetime : 입력일
+     * payment_datetime : 결제일
+     *
+     *
+     */
     dateType?: any;
   }
 
   export interface RetrievePaymentHistoryOfAnOrderOutput {
-    paymenttimeline: { 
-    shopNo: number;
-    paymentNo: number;
-    paymentSettleType: Cafe24Enum;
-    paymentMethods: string[];
-    orderAmount: Cafe24Datetime;
-    additionalPaymentAmount: Cafe24Datetime;
-    paidAmount: Cafe24Datetime;
-    paymentDatetime: Cafe24Datetime;
-    createdDatetime: Cafe24Datetime;
-    claimCode: any;
+    paymenttimeline: {
+      shopNo: number;
+      paymentNo: number;
+      paymentSettleType: Cafe24Enum;
+      paymentMethods: string[];
+      orderAmount: Cafe24Datetime;
+      additionalPaymentAmount: Cafe24Datetime;
+      paidAmount: Cafe24Datetime;
+      paymentDatetime: Cafe24Datetime;
+      createdDatetime: Cafe24Datetime;
+      claimCode: any;
     }[];
   }
   export interface RetrievePaymentDetailsOfAnOrderInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 최소값: [1]
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     * 최소값: [1]
+     */
     shopNo?: any;
     /**
-      * @description
-      * 주문번호
-      * 
-      * @required
-      */ 
+     * @description
+     * 주문번호
+     *
+     * @required
+     */
     orderId: any;
     /**
-      * @description
-      * 결제번호
-      * 
-      * @required
-      * 
-      * 최소값: [1]
-      */ 
+     * @description
+     * 결제번호
+     *
+     * @required
+     *
+     * 최소값: [1]
+     */
     paymentNo: any;
   }
 
   export interface RetrievePaymentDetailsOfAnOrderOutput {
-    paymenttimeline: { 
-    shopNo: number;
-    paymentNo: number;
-    paymentSettleType: Cafe24Enum;
-    orderAmount: Cafe24Datetime;
-    additionalPaymentAmount: Cafe24Datetime;
-    paidAmount: Cafe24Datetime;
-    paymentMethodDetail: { 
-    code: number;
-    name: string;
-    amount: Cafe24Datetime;
-    }[];
-    orderAmountDetail: { 
-    code: number;
-    name: string;
-    orderItemCode: string;
-    supplierCode: string;
-    unitPrice: Cafe24Datetime;
-    quantity: number;
-    amount: Cafe24Datetime;
-    }[];
-    paymentDatetime: Cafe24Datetime;
-    createdDatetime: Cafe24Datetime;
+    paymenttimeline: {
+      shopNo: number;
+      paymentNo: number;
+      paymentSettleType: Cafe24Enum;
+      orderAmount: Cafe24Datetime;
+      additionalPaymentAmount: Cafe24Datetime;
+      paidAmount: Cafe24Datetime;
+      paymentMethodDetail: {
+        code: number;
+        name: string;
+        amount: Cafe24Datetime;
+      }[];
+      orderAmountDetail: {
+        code: number;
+        name: string;
+        orderItemCode: string;
+        supplierCode: string;
+        unitPrice: Cafe24Datetime;
+        quantity: number;
+        amount: Cafe24Datetime;
+      }[];
+      paymentDatetime: Cafe24Datetime;
+      createdDatetime: Cafe24Datetime;
     };
   }
 
@@ -268,7 +267,9 @@ declare module 'cafe24api-client' {
      */
     retrievePaymentHistoryOfAnOrder(
       input: RetrievePaymentHistoryOfAnOrderInput,
-      options?: RequestOptions<RetrievePaymentHistoryOfAnOrderOutput['paymenttimeline'][number]>,
+      options?: RequestOptions<
+        RetrievePaymentHistoryOfAnOrderOutput['paymenttimeline'][number]
+      >,
     ): Promise<AxiosResponse<RetrievePaymentHistoryOfAnOrderOutput>>;
     /**
      * @description
@@ -327,7 +328,9 @@ declare module 'cafe24api-client' {
      */
     retrievePaymentDetailsOfAnOrder(
       input: RetrievePaymentDetailsOfAnOrderInput,
-      options?: RequestOptions<RetrievePaymentDetailsOfAnOrderOutput['paymenttimeline']>,
+      options?: RequestOptions<
+        RetrievePaymentDetailsOfAnOrderOutput['paymenttimeline']
+      >,
     ): Promise<AxiosResponse<RetrievePaymentDetailsOfAnOrderOutput>>;
   }
 }

@@ -1,4 +1,3 @@
-
 export default (cls) => {
   cls.prototype.retrieveAListOfMonthlySales = async function (input, options) {
     return this.createRequest(
@@ -14,5 +13,4 @@ export default (cls) => {
       options,
     );
   };
-
 };

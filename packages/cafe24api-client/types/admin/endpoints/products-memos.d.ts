@@ -5,236 +5,235 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
-
   /**
    * @description
-   * 
-   * 
+   *
+   *
    * 상품 메모(Products memos)는 상품에 관한 특이사항을 메모하거나 운영자 간의 의사소통을 위한 도구로 활용할 수 있습니다.
    * 상품 메모는 하위 리소스로서 상품(Products) 하위에서만 사용할 수 있습니다.
    */
   export interface ProductsMemos {
     /**
-      * @description
-      * 메모 번호
-      * 
-      * 시스템에서 부여한 상품 메모의 고유한 번호. 상품 메모 번호는 쇼핑몰 내에서 중복되지 않는다.
-      * 
-      * 
-      */ 
+     * @description
+     * 메모 번호
+     *
+     * 시스템에서 부여한 상품 메모의 고유한 번호. 상품 메모 번호는 쇼핑몰 내에서 중복되지 않는다.
+     *
+     *
+     */
     memo_no: any;
     /**
-      * @description
-      * 작성자 아이디
-      * 
-      * 메모를 작성한 관리자의 아이디 정보.
-      * 
-      * 최대글자수 : [20자]
-      */ 
+     * @description
+     * 작성자 아이디
+     *
+     * 메모를 작성한 관리자의 아이디 정보.
+     *
+     * 최대글자수 : [20자]
+     */
     author_id: any;
     /**
-      * @description
-      * 생성일
-      * 
-      * 메모를 작성한 시간.
-      * 
-      * 
-      */ 
+     * @description
+     * 생성일
+     *
+     * 메모를 작성한 시간.
+     *
+     *
+     */
     created_date: any;
     /**
-      * @description
-      * 메모
-      * 
-      * 메모의 내용. HTML을 사용하여 등록할 수 있다.
-      * 
-      * 
-      */ 
+     * @description
+     * 메모
+     *
+     * 메모의 내용. HTML을 사용하여 등록할 수 있다.
+     *
+     *
+     */
     memo: any;
   }
 
   export interface RetrieveAListOfProductMemosInput {
     /**
-      * @description
-      * 상품번호
-      * 
-      * 시스템에서 부여한 상품의 번호. 상품 번호는 쇼핑몰 내에서 중복되지 않는다.
-      * 
-      * @required
-      */ 
+     * @description
+     * 상품번호
+     *
+     * 시스템에서 부여한 상품의 번호. 상품 번호는 쇼핑몰 내에서 중복되지 않는다.
+     *
+     * @required
+     */
     product_no: any;
     /**
-      * @description
-      * 조회결과 시작위치
-      * 
-      * @default 0
-      * 
-      * 최대값: [8000]
-      */ 
+     * @description
+     * 조회결과 시작위치
+     *
+     * @default 0
+     *
+     * 최대값: [8000]
+     */
     offset?: any;
     /**
-      * @description
-      * 조회결과 최대건수
-      * 
-      * 조회하고자 하는 최대 건수를 지정할 수 있음.
-      * 예) 10 입력시 10건만 표시함.
-      * 
-      * @default 10
-      * 
-      * 최소: [1]~최대: [100]
-      */ 
+     * @description
+     * 조회결과 최대건수
+     *
+     * 조회하고자 하는 최대 건수를 지정할 수 있음.
+     * 예) 10 입력시 10건만 표시함.
+     *
+     * @default 10
+     *
+     * 최소: [1]~최대: [100]
+     */
     limit?: any;
   }
 
   export interface RetrieveAListOfProductMemosOutput {
-    memos: { 
-    memo_no: number;
-    author_id: string;
-    created_date: Cafe24Datetime;
-    memo: string;
+    memos: {
+      memo_no: number;
+      author_id: string;
+      created_date: Cafe24Datetime;
+      memo: string;
     }[];
   }
   export interface RetrieveAProductMemoInput {
     /**
-      * @description
-      * 상품번호
-      * 
-      * 시스템에서 부여한 상품의 번호. 상품 번호는 쇼핑몰 내에서 중복되지 않는다.
-      * 
-      * @required
-      */ 
+     * @description
+     * 상품번호
+     *
+     * 시스템에서 부여한 상품의 번호. 상품 번호는 쇼핑몰 내에서 중복되지 않는다.
+     *
+     * @required
+     */
     product_no: any;
     /**
-      * @description
-      * 메모 번호
-      * 
-      * 시스템에서 부여한 상품 메모의 고유한 번호. 상품 메모 번호는 쇼핑몰 내에서 중복되지 않는다.
-      * 
-      * @required
-      */ 
+     * @description
+     * 메모 번호
+     *
+     * 시스템에서 부여한 상품 메모의 고유한 번호. 상품 메모 번호는 쇼핑몰 내에서 중복되지 않는다.
+     *
+     * @required
+     */
     memo_no: any;
   }
 
   export interface RetrieveAProductMemoOutput {
-    memo: { 
-    memo_no: number;
-    author_id: string;
-    created_date: Cafe24Datetime;
-    memo: string;
+    memo: {
+      memo_no: number;
+      author_id: string;
+      created_date: Cafe24Datetime;
+      memo: string;
     };
   }
   export interface CreateAProductMemoInput {
     /**
-      * @description
-      * 상품번호
-      * 
-      * 시스템에서 부여한 상품의 번호. 상품 번호는 쇼핑몰 내에서 중복되지 않는다.
-      * 
-      * @required
-      */ 
+     * @description
+     * 상품번호
+     *
+     * 시스템에서 부여한 상품의 번호. 상품 번호는 쇼핑몰 내에서 중복되지 않는다.
+     *
+     * @required
+     */
     product_no: any;
     /**
-      * @description
-      * 작성자 아이디
-      * 
-      * 메모를 작성한 관리자의 아이디 정보.
-      * 
-      * @required
-      * 
-      * 최대글자수 : [20자]
-      */ 
+     * @description
+     * 작성자 아이디
+     *
+     * 메모를 작성한 관리자의 아이디 정보.
+     *
+     * @required
+     *
+     * 최대글자수 : [20자]
+     */
     author_id: any;
     /**
-      * @description
-      * 메모
-      * 
-      * 메모의 내용. HTML을 사용하여 등록할 수 있다.
-      * 
-      * @required
-      */ 
+     * @description
+     * 메모
+     *
+     * 메모의 내용. HTML을 사용하여 등록할 수 있다.
+     *
+     * @required
+     */
     memo: any;
   }
 
   export interface CreateAProductMemoOutput {
-    memo: { 
-    memo_no: number;
-    author_id: string;
-    created_date: Cafe24Datetime;
-    memo: string;
+    memo: {
+      memo_no: number;
+      author_id: string;
+      created_date: Cafe24Datetime;
+      memo: string;
     };
   }
   export interface UpdateAProductMemoInput {
     /**
-      * @description
-      * 상품번호
-      * 
-      * 시스템에서 부여한 상품의 번호. 상품 번호는 쇼핑몰 내에서 중복되지 않는다.
-      * 
-      * @required
-      */ 
+     * @description
+     * 상품번호
+     *
+     * 시스템에서 부여한 상품의 번호. 상품 번호는 쇼핑몰 내에서 중복되지 않는다.
+     *
+     * @required
+     */
     product_no: any;
     /**
-      * @description
-      * 메모 번호
-      * 
-      * 시스템에서 부여한 상품 메모의 고유한 번호. 상품 메모 번호는 쇼핑몰 내에서 중복되지 않는다.
-      * 
-      * @required
-      */ 
+     * @description
+     * 메모 번호
+     *
+     * 시스템에서 부여한 상품 메모의 고유한 번호. 상품 메모 번호는 쇼핑몰 내에서 중복되지 않는다.
+     *
+     * @required
+     */
     memo_no: any;
     /**
-      * @description
-      * 작성자 아이디
-      * 
-      * 메모를 작성한 관리자의 아이디 정보.
-      * 
-      * @required
-      * 
-      * 최대글자수 : [20자]
-      */ 
+     * @description
+     * 작성자 아이디
+     *
+     * 메모를 작성한 관리자의 아이디 정보.
+     *
+     * @required
+     *
+     * 최대글자수 : [20자]
+     */
     author_id: any;
     /**
-      * @description
-      * 메모
-      * 
-      * 메모의 내용. HTML을 사용하여 등록할 수 있다.
-      * 
-      * @required
-      */ 
+     * @description
+     * 메모
+     *
+     * 메모의 내용. HTML을 사용하여 등록할 수 있다.
+     *
+     * @required
+     */
     memo: any;
   }
 
   export interface UpdateAProductMemoOutput {
-    memo: { 
-    memo_no: number;
-    author_id: string;
-    created_date: Cafe24Datetime;
-    memo: string;
+    memo: {
+      memo_no: number;
+      author_id: string;
+      created_date: Cafe24Datetime;
+      memo: string;
     };
   }
   export interface DeleteAProductMemoInput {
     /**
-      * @description
-      * 상품번호
-      * 
-      * 시스템에서 부여한 상품의 번호. 상품 번호는 쇼핑몰 내에서 중복되지 않는다.
-      * 
-      * @required
-      */ 
+     * @description
+     * 상품번호
+     *
+     * 시스템에서 부여한 상품의 번호. 상품 번호는 쇼핑몰 내에서 중복되지 않는다.
+     *
+     * @required
+     */
     product_no: any;
     /**
-      * @description
-      * 메모 번호
-      * 
-      * 시스템에서 부여한 상품 메모의 고유한 번호. 상품 메모 번호는 쇼핑몰 내에서 중복되지 않는다.
-      * 
-      * @required
-      */ 
+     * @description
+     * 메모 번호
+     *
+     * 시스템에서 부여한 상품 메모의 고유한 번호. 상품 메모 번호는 쇼핑몰 내에서 중복되지 않는다.
+     *
+     * @required
+     */
     memo_no: any;
   }
 
   export interface DeleteAProductMemoOutput {
-    memo: { 
-    memo_no: number;
+    memo: {
+      memo_no: number;
     };
   }
 
@@ -268,7 +267,9 @@ declare module 'cafe24api-client' {
      */
     retrieveAListOfProductMemos(
       input: RetrieveAListOfProductMemosInput,
-      options?: RequestOptions<RetrieveAListOfProductMemosOutput['memos'][number]>,
+      options?: RequestOptions<
+        RetrieveAListOfProductMemosOutput['memos'][number]
+      >,
     ): Promise<AxiosResponse<RetrieveAListOfProductMemosOutput>>;
     /**
      * @description

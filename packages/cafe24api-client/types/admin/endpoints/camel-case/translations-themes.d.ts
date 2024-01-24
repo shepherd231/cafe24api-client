@@ -5,123 +5,121 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
-
   /**
    * @description
    * 테마 번역 정보(Translations themes)는, 다국어 코드화된 디자인 스킨에 탑재된 번역 정보를 조회하거나 수정할 수 있는 기능입니다.
    */
   export interface TranslationsThemes {
     /**
-      * @description
-      * 디자인 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 디자인 번호
+     *
+     *
+     */
     skinNo: any;
     /**
-      * @description
-      * 번역 정보
-      * 
-      * 
-      */ 
+     * @description
+     * 번역 정보
+     *
+     *
+     */
     translations: any;
     /**
-      * @description
-      * 디자인 코드
-      * 
-      * 
-      */ 
+     * @description
+     * 디자인 코드
+     *
+     *
+     */
     skinCode: any;
     /**
-      * @description
-      * 디자인 번역 정보
-      * 
-      * 
-      */ 
+     * @description
+     * 디자인 번역 정보
+     *
+     *
+     */
     skinTranslation: any;
   }
 
-  export interface RetrieveAListOfThemeTranslationsInput {
-  }
+  export interface RetrieveAListOfThemeTranslationsInput {}
 
   export interface RetrieveAListOfThemeTranslationsOutput {
-    themes: { 
-    skinNo: number;
-    translations: { 
-    languageCode: string;
-    path: string;
-    }[];
+    themes: {
+      skinNo: number;
+      translations: {
+        languageCode: string;
+        path: string;
+      }[];
     }[];
   }
   export interface RetrieveAThemeTranslationInput {
     /**
-      * @description
-      * 디자인 번호
-      * 
-      * @required
-      */ 
+     * @description
+     * 디자인 번호
+     *
+     * @required
+     */
     skinNo: any;
     /**
-      * @description
-      * 언어 코드
-      * 
-      * @required
-      */ 
+     * @description
+     * 언어 코드
+     *
+     * @required
+     */
     languageCode: any;
   }
 
   export interface RetrieveAThemeTranslationOutput {
-    theme: { 
-    skinNo: number;
-    skinCode: string;
-    skinTranslation: { 
-    languageCode: string;
-    path: string;
-    source: string;
-    };
+    theme: {
+      skinNo: number;
+      skinCode: string;
+      skinTranslation: {
+        languageCode: string;
+        path: string;
+        source: string;
+      };
     };
   }
   export interface UpdateAThemeTranslationInput {
     /**
-      * @description
-      * 디자인 번호
-      * 
-      * @required
-      */ 
+     * @description
+     * 디자인 번호
+     *
+     * @required
+     */
     skinNo: any;
     /**
-      * @description
-      * 디자인 번역 정보
-      * 
-      * 
-      */ 
-    skinTranslation?: { 
-    /**
-      * @description
-      * 언어 코드
-      * 
-      * 
-      */ 
-    languageCode: any;
-    /**
-      * @description
-      * 소스 코드
-      * 
-      * 
-      */ 
-    source: any;
+     * @description
+     * 디자인 번역 정보
+     *
+     *
+     */
+    skinTranslation?: {
+      /**
+       * @description
+       * 언어 코드
+       *
+       *
+       */
+      languageCode: any;
+      /**
+       * @description
+       * 소스 코드
+       *
+       *
+       */
+      source: any;
     };
   }
 
   export interface UpdateAThemeTranslationOutput {
-    theme: { 
-    skinNo: number;
-    skinCode: string;
-    skinTranslation: { 
-    languageCode: string;
-    path: string;
-    source: string;
-    };
+    theme: {
+      skinNo: number;
+      skinCode: string;
+      skinTranslation: {
+        languageCode: string;
+        path: string;
+        source: string;
+      };
     };
   }
 
@@ -168,7 +166,9 @@ declare module 'cafe24api-client' {
      */
     retrieveAListOfThemeTranslations(
       input?: RetrieveAListOfThemeTranslationsInput,
-      options?: RequestOptions<RetrieveAListOfThemeTranslationsOutput['themes'][number]>,
+      options?: RequestOptions<
+        RetrieveAListOfThemeTranslationsOutput['themes'][number]
+      >,
     ): Promise<AxiosResponse<RetrieveAListOfThemeTranslationsOutput>>;
     /**
      * @description

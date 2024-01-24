@@ -5,7 +5,6 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
-
   /**
    * @description
    * 메뉴(Menus)는 쇼핑몰의 메뉴 모드에 관한 기능입니다.
@@ -14,106 +13,106 @@ declare module 'cafe24api-client' {
    */
   export interface Menus {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     *
+     */
     shop_no: any;
     /**
-      * @description
-      * 메뉴 모드
-      * 
-      * new_pro: PC 어드민
-      * mobile_admin : 모바일 어드민
-      * 
-      * 
-      */ 
+     * @description
+     * 메뉴 모드
+     *
+     * new_pro: PC 어드민
+     * mobile_admin : 모바일 어드민
+     *
+     *
+     */
     mode: any;
     /**
-      * @description
-      * 메뉴 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 메뉴 번호
+     *
+     *
+     */
     menu_no: any;
     /**
-      * @description
-      * 메뉴명
-      * 
-      * 
-      */ 
+     * @description
+     * 메뉴명
+     *
+     *
+     */
     name: any;
     /**
-      * @description
-      * 메뉴 경로
-      * 
-      * 
-      */ 
+     * @description
+     * 메뉴 경로
+     *
+     *
+     */
     path: any;
     /**
-      * @description
-      * 앱 URL 포함 여부
-      * 
-      * T : 포함
-      * F : 미포함
-      * 
-      * 
-      */ 
+     * @description
+     * 앱 URL 포함 여부
+     *
+     * T : 포함
+     * F : 미포함
+     *
+     *
+     */
     contains_app_url: any;
   }
 
   export interface RetrieveMenusInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 최소값: [1]
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     * 최소값: [1]
+     */
     shop_no?: any;
     /**
-      * @description
-      * 메뉴 모드
-      * 
-      * new_pro: PC 어드민
-      * mobile_admin : 모바일 어드민
-      * 
-      * @default new_pro
-      * 
-      * 
-      */ 
+     * @description
+     * 메뉴 모드
+     *
+     * new_pro: PC 어드민
+     * mobile_admin : 모바일 어드민
+     *
+     * @default new_pro
+     *
+     *
+     */
     mode?: any;
     /**
-      * @description
-      * 메뉴 번호
-      * 
-      * ,(콤마)로 여러 건을 검색할 수 있다.
-      * 
-      * 
-      */ 
+     * @description
+     * 메뉴 번호
+     *
+     * ,(콤마)로 여러 건을 검색할 수 있다.
+     *
+     *
+     */
     menu_no?: any;
     /**
-      * @description
-      * 앱 URL 포함 여부
-      * 
-      * T : 포함
-      * F : 미포함
-      * 
-      * 
-      */ 
+     * @description
+     * 앱 URL 포함 여부
+     *
+     * T : 포함
+     * F : 미포함
+     *
+     *
+     */
     contains_app_url?: any;
   }
 
   export interface RetrieveMenusOutput {
-    menus: { 
-    shop_no: number;
-    mode: string;
-    menu_no: Cafe24Datetime;
-    name: string;
-    path: string;
-    contains_app_url: Cafe24Enum;
+    menus: {
+      shop_no: number;
+      mode: string;
+      menu_no: Cafe24Datetime;
+      name: string;
+      path: string;
+      contains_app_url: Cafe24Enum;
     }[];
   }
 

@@ -5,7 +5,6 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
-
   /**
    * @description
    * 정기배송 설정(Subscription shipments setting)은 정기결제를 통해 이루어지는 정기배송에 대한 기능입니다.
@@ -15,591 +14,591 @@ declare module 'cafe24api-client' {
    */
   export interface SubscriptionShipmentsSetting {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     *
+     */
     shopNo: any;
     /**
-      * @description
-      * 정기배송 상품설정 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 정기배송 상품설정 번호
+     *
+     *
+     */
     subscriptionNo: any;
     /**
-      * @description
-      * 정기배송 상품설정 명
-      * 
-      * 
-      */ 
+     * @description
+     * 정기배송 상품설정 명
+     *
+     *
+     */
     subscriptionShipmentsName: any;
     /**
-      * @description
-      * 정기배송 상품 설정
-      * 
-      * A : 전체상품
-      * P : 개별상품
-      * C : 상품분류
-      * 
-      * 
-      */ 
+     * @description
+     * 정기배송 상품 설정
+     *
+     * A : 전체상품
+     * P : 개별상품
+     * C : 상품분류
+     *
+     *
+     */
     productBindingType: any;
     /**
-      * @description
-      * 1회구매 제공여부
-      * 
-      * T : 제공함
-      * F : 제공안함
-      * 
-      * 
-      */ 
+     * @description
+     * 1회구매 제공여부
+     *
+     * T : 제공함
+     * F : 제공안함
+     *
+     *
+     */
     oneTimePurchase: any;
     /**
-      * @description
-      * 적용 상품
-      * 
-      * 
-      */ 
+     * @description
+     * 적용 상품
+     *
+     *
+     */
     productList: any;
     /**
-      * @description
-      * 적용 분류
-      * 
-      * 
-      */ 
+     * @description
+     * 적용 분류
+     *
+     *
+     */
     categoryList: any;
     /**
-      * @description
-      * 정기배송 할인 사용여부
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 정기배송 할인 사용여부
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     useDiscount: any;
     /**
-      * @description
-      * 할인 기준
-      * 
-      * P : 할인율
-      * W : 할인 금액
-      * 
-      * 
-      */ 
+     * @description
+     * 할인 기준
+     *
+     * P : 할인율
+     * W : 할인 금액
+     *
+     *
+     */
     discountValueUnit: any;
     /**
-      * @description
-      * 할인 값
-      * 
-      * 
-      */ 
+     * @description
+     * 할인 값
+     *
+     *
+     */
     discountValues: any;
     /**
-      * @description
-      * 구매수량 관계 여부
-      * 
-      * T : 구매수량에 따라
-      * F : 구매수량에 관계없이
-      * 
-      * 
-      */ 
+     * @description
+     * 구매수량 관계 여부
+     *
+     * T : 구매수량에 따라
+     * F : 구매수량에 관계없이
+     *
+     *
+     */
     relatedPurchaseQuantity: any;
     /**
-      * @description
-      * 배송주기 제공여부
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 배송주기 제공여부
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     subscriptionShipmentsCycleType: any;
     /**
-      * @description
-      * 배송주기
-      * 
-      * 1W : 1주
-      * 2W : 2주
-      * 3W : 3주
-      * 4W : 4주
-      * 1M : 1개월
-      * 2M : 2개월
-      * 3M : 3개월
-      * 4M : 4개월
-      * 5M : 5개월
-      * 6M : 6개월
-      * 1Y : 1년
-      * 
-      * 
-      */ 
+     * @description
+     * 배송주기
+     *
+     * 1W : 1주
+     * 2W : 2주
+     * 3W : 3주
+     * 4W : 4주
+     * 1M : 1개월
+     * 2M : 2개월
+     * 3M : 3개월
+     * 4M : 4개월
+     * 5M : 5개월
+     * 6M : 6개월
+     * 1Y : 1년
+     *
+     *
+     */
     subscriptionShipmentsCycle: any;
     /**
-      * @description
-      * 혜택제공금액기준 사용여부
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 혜택제공금액기준 사용여부
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     useOrderPriceCondition: any;
     /**
-      * @description
-      * 혜택제공금액기준 제공 기준금액
-      * 
-      * 
-      */ 
+     * @description
+     * 혜택제공금액기준 제공 기준금액
+     *
+     *
+     */
     orderPriceGreaterThan: any;
     /**
-      * @description
-      * 지역별배송비 포함여부
-      * 
-      * T : 포함
-      * F : 미포함
-      * 
-      * 
-      */ 
+     * @description
+     * 지역별배송비 포함여부
+     *
+     * T : 포함
+     * F : 미포함
+     *
+     *
+     */
     includeRegionalShippingRate: any;
     /**
-      * @description
-      * 배송시작일 설정
-      * 
-      * 최소값: [1]
-      * 최대값: [30]
-      */ 
+     * @description
+     * 배송시작일 설정
+     *
+     * 최소값: [1]
+     * 최대값: [30]
+     */
     shipmentsStartDate: any;
   }
 
   export interface RetrieveAListOfSubscriptionProductsInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     *
+     */
     shopNo?: any;
     /**
-      * @description
-      * 정기배송 상품설정 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 정기배송 상품설정 번호
+     *
+     *
+     */
     subscriptionNo?: any;
   }
 
   export interface RetrieveAListOfSubscriptionProductsOutput {
-    shipments: { 
-    shopNo: number;
-    subscriptionNo: number;
-    subscriptionShipmentsName: string;
-    productBindingType: Cafe24Enum;
-    oneTimePurchase: Cafe24Enum;
-    productList: number[];
-    categoryList: any;
-    useDiscount: Cafe24Enum;
-    discountValueUnit: Cafe24Enum;
-    discountValues: string[];
-    subscriptionShipmentsCycleType: Cafe24Enum;
-    subscriptionShipmentsCycle: string[];
-    useOrderPriceCondition: Cafe24Enum;
-    orderPriceGreaterThan: Cafe24Datetime;
-    includeRegionalShippingRate: Cafe24Enum;
-    shipmentsStartDate: number;
+    shipments: {
+      shopNo: number;
+      subscriptionNo: number;
+      subscriptionShipmentsName: string;
+      productBindingType: Cafe24Enum;
+      oneTimePurchase: Cafe24Enum;
+      productList: number[];
+      categoryList: any;
+      useDiscount: Cafe24Enum;
+      discountValueUnit: Cafe24Enum;
+      discountValues: string[];
+      subscriptionShipmentsCycleType: Cafe24Enum;
+      subscriptionShipmentsCycle: string[];
+      useOrderPriceCondition: Cafe24Enum;
+      orderPriceGreaterThan: Cafe24Datetime;
+      includeRegionalShippingRate: Cafe24Enum;
+      shipmentsStartDate: number;
     }[];
   }
   export interface CreateASubscriptionPaymentRuleInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     *
+     */
     shopNo?: any;
     /**
-      * @description
-      * 정기배송 상품설정 명
-      * 
-      * @required
-      * 
-      * 최대글자수 : [255자]
-      */ 
+     * @description
+     * 정기배송 상품설정 명
+     *
+     * @required
+     *
+     * 최대글자수 : [255자]
+     */
     subscriptionShipmentsName: any;
     /**
-      * @description
-      * 정기배송 상품 설정
-      * 
-      * A : 전체상품
-      * P : 개별상품
-      * C : 상품분류
-      * 
-      * @required
-      */ 
+     * @description
+     * 정기배송 상품 설정
+     *
+     * A : 전체상품
+     * P : 개별상품
+     * C : 상품분류
+     *
+     * @required
+     */
     productBindingType: any;
     /**
-      * @description
-      * 1회구매 제공여부
-      * 
-      * T : 제공함
-      * F : 제공안함
-      * 
-      * @default T
-      * 
-      * 
-      */ 
+     * @description
+     * 1회구매 제공여부
+     *
+     * T : 제공함
+     * F : 제공안함
+     *
+     * @default T
+     *
+     *
+     */
     oneTimePurchase?: any;
     /**
-      * @description
-      * 적용 상품
-      * 
-      * 배열 최대사이즈: [10000]
-      */ 
+     * @description
+     * 적용 상품
+     *
+     * 배열 최대사이즈: [10000]
+     */
     productList?: any;
     /**
-      * @description
-      * 적용 분류
-      * 
-      * 배열 최대사이즈: [1000]
-      */ 
+     * @description
+     * 적용 분류
+     *
+     * 배열 최대사이즈: [1000]
+     */
     categoryList?: any;
     /**
-      * @description
-      * 정기배송 할인 사용여부
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * @required
-      */ 
+     * @description
+     * 정기배송 할인 사용여부
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     * @required
+     */
     useDiscount: any;
     /**
-      * @description
-      * 할인 기준
-      * 
-      * P : 할인율
-      * W : 할인 금액
-      * 
-      * 
-      */ 
+     * @description
+     * 할인 기준
+     *
+     * P : 할인율
+     * W : 할인 금액
+     *
+     *
+     */
     discountValueUnit?: any;
     /**
-      * @description
-      * 할인 값
-      * 
-      * discount_value_unit이 P일 경우 최대값 : 100
-      * discount_value_unit이 W일 경우 최대값 : 99999999999999
-      * 
-      * 배열 최대사이즈: [40]
-      */ 
+     * @description
+     * 할인 값
+     *
+     * discount_value_unit이 P일 경우 최대값 : 100
+     * discount_value_unit이 W일 경우 최대값 : 99999999999999
+     *
+     * 배열 최대사이즈: [40]
+     */
     discountValues?: any;
     /**
-      * @description
-      * 구매수량 관계 여부
-      * 
-      * T : 구매수량에 따라
-      * F : 구매수량에 관계없이
-      * 
-      * 
-      */ 
+     * @description
+     * 구매수량 관계 여부
+     *
+     * T : 구매수량에 따라
+     * F : 구매수량에 관계없이
+     *
+     *
+     */
     relatedPurchaseQuantity?: any;
     /**
-      * @description
-      * 배송주기 제공여부
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * @required
-      */ 
+     * @description
+     * 배송주기 제공여부
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     * @required
+     */
     subscriptionShipmentsCycleType: any;
     /**
-      * @description
-      * 배송주기
-      * 
-      * 1W : 1주
-      * 2W : 2주
-      * 3W : 3주
-      * 4W : 4주
-      * 1M : 1개월
-      * 2M : 2개월
-      * 3M : 3개월
-      * 4M : 4개월
-      * 5M : 5개월
-      * 6M : 6개월
-      * 1Y : 1년
-      * 
-      * @required
-      */ 
+     * @description
+     * 배송주기
+     *
+     * 1W : 1주
+     * 2W : 2주
+     * 3W : 3주
+     * 4W : 4주
+     * 1M : 1개월
+     * 2M : 2개월
+     * 3M : 3개월
+     * 4M : 4개월
+     * 5M : 5개월
+     * 6M : 6개월
+     * 1Y : 1년
+     *
+     * @required
+     */
     subscriptionShipmentsCycle: any;
     /**
-      * @description
-      * 혜택제공금액기준 사용여부
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * @required
-      */ 
+     * @description
+     * 혜택제공금액기준 사용여부
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     * @required
+     */
     useOrderPriceCondition: any;
     /**
-      * @description
-      * 혜택제공금액기준 제공 기준금액
-      * 
-      * 최대값: [99999999999999]
-      */ 
+     * @description
+     * 혜택제공금액기준 제공 기준금액
+     *
+     * 최대값: [99999999999999]
+     */
     orderPriceGreaterThan?: any;
     /**
-      * @description
-      * 지역별배송비 포함여부
-      * 
-      * T : 포함
-      * F : 미포함
-      * 
-      * 
-      */ 
+     * @description
+     * 지역별배송비 포함여부
+     *
+     * T : 포함
+     * F : 미포함
+     *
+     *
+     */
     includeRegionalShippingRate?: any;
     /**
-      * @description
-      * 배송시작일 설정
-      * 
-      * @default 3
-      * 
-      * 최소값: [1]
-      * 최대값: [30]
-      */ 
+     * @description
+     * 배송시작일 설정
+     *
+     * @default 3
+     *
+     * 최소값: [1]
+     * 최대값: [30]
+     */
     shipmentsStartDate?: any;
   }
 
   export interface CreateASubscriptionPaymentRuleOutput {
-    shipment: { 
-    shopNo: number;
-    subscriptionNo: number;
-    subscriptionShipmentsName: string;
-    productBindingType: Cafe24Enum;
-    oneTimePurchase: Cafe24Enum;
-    productList: number[];
-    categoryList: any;
-    useDiscount: Cafe24Enum;
-    discountValueUnit: Cafe24Enum;
-    discountValues: string[];
-    subscriptionShipmentsCycleType: Cafe24Enum;
-    subscriptionShipmentsCycle: string[];
-    useOrderPriceCondition: Cafe24Enum;
-    orderPriceGreaterThan: Cafe24Datetime;
-    includeRegionalShippingRate: Cafe24Enum;
-    shipmentsStartDate: number;
+    shipment: {
+      shopNo: number;
+      subscriptionNo: number;
+      subscriptionShipmentsName: string;
+      productBindingType: Cafe24Enum;
+      oneTimePurchase: Cafe24Enum;
+      productList: number[];
+      categoryList: any;
+      useDiscount: Cafe24Enum;
+      discountValueUnit: Cafe24Enum;
+      discountValues: string[];
+      subscriptionShipmentsCycleType: Cafe24Enum;
+      subscriptionShipmentsCycle: string[];
+      useOrderPriceCondition: Cafe24Enum;
+      orderPriceGreaterThan: Cafe24Datetime;
+      includeRegionalShippingRate: Cafe24Enum;
+      shipmentsStartDate: number;
     };
   }
   export interface UpdateSubscriptionProductsInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     *
+     */
     shopNo?: any;
     /**
-      * @description
-      * 정기배송 상품설정 번호
-      * 
-      * @required
-      */ 
+     * @description
+     * 정기배송 상품설정 번호
+     *
+     * @required
+     */
     subscriptionNo: any;
     /**
-      * @description
-      * 정기배송 상품설정 명
-      * 
-      * 최대글자수 : [255자]
-      */ 
+     * @description
+     * 정기배송 상품설정 명
+     *
+     * 최대글자수 : [255자]
+     */
     subscriptionShipmentsName?: any;
     /**
-      * @description
-      * 정기배송 상품 설정
-      * 
-      * A : 전체상품
-      * P : 개별상품
-      * C : 상품분류
-      * 
-      * 
-      */ 
+     * @description
+     * 정기배송 상품 설정
+     *
+     * A : 전체상품
+     * P : 개별상품
+     * C : 상품분류
+     *
+     *
+     */
     productBindingType?: any;
     /**
-      * @description
-      * 1회구매 제공여부
-      * 
-      * T : 제공함
-      * F : 제공안함
-      * 
-      * 
-      */ 
+     * @description
+     * 1회구매 제공여부
+     *
+     * T : 제공함
+     * F : 제공안함
+     *
+     *
+     */
     oneTimePurchase?: any;
     /**
-      * @description
-      * 적용 상품
-      * 
-      * 배열 최대사이즈: [10000]
-      */ 
+     * @description
+     * 적용 상품
+     *
+     * 배열 최대사이즈: [10000]
+     */
     productList?: any;
     /**
-      * @description
-      * 적용 분류
-      * 
-      * 배열 최대사이즈: [1000]
-      */ 
+     * @description
+     * 적용 분류
+     *
+     * 배열 최대사이즈: [1000]
+     */
     categoryList?: any;
     /**
-      * @description
-      * 정기배송 할인 사용여부
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 정기배송 할인 사용여부
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     useDiscount?: any;
     /**
-      * @description
-      * 할인 기준
-      * 
-      * P : 할인율
-      * W : 할인 금액
-      * 
-      * 
-      */ 
+     * @description
+     * 할인 기준
+     *
+     * P : 할인율
+     * W : 할인 금액
+     *
+     *
+     */
     discountValueUnit?: any;
     /**
-      * @description
-      * 할인 값
-      * 
-      * 배열 최대사이즈: [40]
-      */ 
+     * @description
+     * 할인 값
+     *
+     * 배열 최대사이즈: [40]
+     */
     discountValues?: any;
     /**
-      * @description
-      * 구매수량 관계 여부
-      * 
-      * T : 구매수량에 따라
-      * F : 구매수량에 관계없이
-      * 
-      * 
-      */ 
+     * @description
+     * 구매수량 관계 여부
+     *
+     * T : 구매수량에 따라
+     * F : 구매수량에 관계없이
+     *
+     *
+     */
     relatedPurchaseQuantity?: any;
     /**
-      * @description
-      * 배송주기 제공여부
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 배송주기 제공여부
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     subscriptionShipmentsCycleType?: any;
     /**
-      * @description
-      * 배송주기
-      * 
-      * 1W : 1주
-      * 2W : 2주
-      * 3W : 3주
-      * 4W : 4주
-      * 1M : 1개월
-      * 2M : 2개월
-      * 3M : 3개월
-      * 4M : 4개월
-      * 5M : 5개월
-      * 6M : 6개월
-      * 1Y : 1년
-      * 
-      * 
-      */ 
+     * @description
+     * 배송주기
+     *
+     * 1W : 1주
+     * 2W : 2주
+     * 3W : 3주
+     * 4W : 4주
+     * 1M : 1개월
+     * 2M : 2개월
+     * 3M : 3개월
+     * 4M : 4개월
+     * 5M : 5개월
+     * 6M : 6개월
+     * 1Y : 1년
+     *
+     *
+     */
     subscriptionShipmentsCycle?: any;
     /**
-      * @description
-      * 혜택제공금액기준 사용여부
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 혜택제공금액기준 사용여부
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     useOrderPriceCondition?: any;
     /**
-      * @description
-      * 혜택제공금액기준 제공 기준금액
-      * 
-      * 최대값: [99999999999999]
-      */ 
+     * @description
+     * 혜택제공금액기준 제공 기준금액
+     *
+     * 최대값: [99999999999999]
+     */
     orderPriceGreaterThan?: any;
     /**
-      * @description
-      * 지역별배송비 포함여부
-      * 
-      * T : 포함
-      * F : 미포함
-      * 
-      * 
-      */ 
+     * @description
+     * 지역별배송비 포함여부
+     *
+     * T : 포함
+     * F : 미포함
+     *
+     *
+     */
     includeRegionalShippingRate?: any;
     /**
-      * @description
-      * 배송시작일 설정
-      * 
-      * 최소값: [1]
-      * 최대값: [30]
-      */ 
+     * @description
+     * 배송시작일 설정
+     *
+     * 최소값: [1]
+     * 최대값: [30]
+     */
     shipmentsStartDate?: any;
   }
 
   export interface UpdateSubscriptionProductsOutput {
-    shipment: { 
-    shopNo: number;
-    subscriptionNo: number;
-    subscriptionShipmentsName: string;
-    productBindingType: Cafe24Enum;
-    oneTimePurchase: Cafe24Enum;
-    productList: number[];
-    useDiscount: Cafe24Enum;
-    discountValueUnit: Cafe24Enum;
-    discountValues: string[];
-    subscriptionShipmentsCycleType: Cafe24Enum;
-    subscriptionShipmentsCycle: string[];
-    useOrderPriceCondition: Cafe24Enum;
-    orderPriceGreaterThan: Cafe24Datetime;
-    includeRegionalShippingRate: Cafe24Enum;
-    shipmentsStartDate: number;
+    shipment: {
+      shopNo: number;
+      subscriptionNo: number;
+      subscriptionShipmentsName: string;
+      productBindingType: Cafe24Enum;
+      oneTimePurchase: Cafe24Enum;
+      productList: number[];
+      useDiscount: Cafe24Enum;
+      discountValueUnit: Cafe24Enum;
+      discountValues: string[];
+      subscriptionShipmentsCycleType: Cafe24Enum;
+      subscriptionShipmentsCycle: string[];
+      useOrderPriceCondition: Cafe24Enum;
+      orderPriceGreaterThan: Cafe24Datetime;
+      includeRegionalShippingRate: Cafe24Enum;
+      shipmentsStartDate: number;
     };
   }
   export interface DeleteSubscriptionProductsInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     *
+     */
     shopNo?: any;
     /**
-      * @description
-      * 정기배송 상품설정 번호
-      * 
-      * @required
-      */ 
+     * @description
+     * 정기배송 상품설정 번호
+     *
+     * @required
+     */
     subscriptionNo: any;
   }
 
   export interface DeleteSubscriptionProductsOutput {
-    shipment: { 
-    shopNo: number;
-    subscriptionNo: number;
+    shipment: {
+      shopNo: number;
+      subscriptionNo: number;
     };
   }
 
@@ -675,7 +674,9 @@ declare module 'cafe24api-client' {
      */
     retrieveAListOfSubscriptionProducts(
       input: RetrieveAListOfSubscriptionProductsInput,
-      options?: RequestOptions<RetrieveAListOfSubscriptionProductsOutput['shipments'][number]>,
+      options?: RequestOptions<
+        RetrieveAListOfSubscriptionProductsOutput['shipments'][number]
+      >,
     ): Promise<AxiosResponse<RetrieveAListOfSubscriptionProductsOutput>>;
     /**
      * @description
@@ -718,7 +719,9 @@ declare module 'cafe24api-client' {
      */
     createASubscriptionPaymentRule(
       input: CreateASubscriptionPaymentRuleInput,
-      options?: RequestOptions<CreateASubscriptionPaymentRuleOutput['shipment']>,
+      options?: RequestOptions<
+        CreateASubscriptionPaymentRuleOutput['shipment']
+      >,
     ): Promise<AxiosResponse<CreateASubscriptionPaymentRuleOutput>>;
     /**
      * @description

@@ -1,6 +1,8 @@
-
 export default (cls) => {
-  cls.prototype.retrieveAListOfCommentsForABoardPost = async function (input, options) {
+  cls.prototype.retrieveAListOfCommentsForABoardPost = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/boards/${input['board_no']}/articles/{article_no}/comments`,
@@ -52,5 +54,4 @@ export default (cls) => {
       options,
     );
   };
-
 };

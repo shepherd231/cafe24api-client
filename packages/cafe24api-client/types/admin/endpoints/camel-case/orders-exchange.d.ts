@@ -5,7 +5,6 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
-
   /**
    * @description
    * 주문 교환(Orders exchange)은 주문의 교환 접수 상태와 관련된 기능입니다.
@@ -13,587 +12,587 @@ declare module 'cafe24api-client' {
    */
   export interface OrdersExchange {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     *
+     */
     shopNo: any;
     /**
-      * @description
-      * 주문번호
-      * 
-      * 
-      */ 
+     * @description
+     * 주문번호
+     *
+     *
+     */
     orderId: any;
     /**
-      * @description
-      * 주문상태
-      * 
-      * accept : 접수
-      * collected : 수거완료
-      * exchanged : 교환완료
-      * 
-      * 
-      */ 
+     * @description
+     * 주문상태
+     *
+     * accept : 접수
+     * collected : 수거완료
+     * exchanged : 교환완료
+     *
+     *
+     */
     status: any;
     /**
-      * @description
-      * 교환번호
-      * 
-      * 
-      */ 
+     * @description
+     * 교환번호
+     *
+     *
+     */
     claimCode: any;
     /**
-      * @description
-      * 품주코드
-      * 
-      * 
-      */ 
+     * @description
+     * 품주코드
+     *
+     *
+     */
     items: any;
     /**
-      * @description
-      * 교환상품
-      * 
-      * 
-      */ 
+     * @description
+     * 교환상품
+     *
+     *
+     */
     exchangedItems: any;
     /**
-      * @description
-      * 수거완료 여부
-      * 
-      * T : 수거완료
-      * F : 수거전
-      * 
-      * 
-      */ 
+     * @description
+     * 수거완료 여부
+     *
+     * T : 수거완료
+     * F : 수거전
+     *
+     *
+     */
     pickupCompleted: any;
     /**
-      * @description
-      * 반품 송장 번호
-      * 
-      * 최대글자수 : [40자]
-      */ 
+     * @description
+     * 반품 송장 번호
+     *
+     * 최대글자수 : [40자]
+     */
     returnInvoiceNo: any;
     /**
-      * @description
-      * 반품 배송업체명
-      * 
-      * 최대글자수 : [30자]
-      */ 
+     * @description
+     * 반품 배송업체명
+     *
+     * 최대글자수 : [30자]
+     */
     returnShippingCompanyName: any;
     /**
-      * @description
-      * 재고복구
-      * 
-      * T : 복구함
-      * F : 복구안함
-      * 
-      * 
-      */ 
+     * @description
+     * 재고복구
+     *
+     * T : 복구함
+     * F : 복구안함
+     *
+     *
+     */
     recoverInventory: any;
     /**
-      * @description
-      * 수거완료시 교환완료 여부
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 수거완료시 교환완료 여부
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     exchangedAfterCollected: any;
     /**
-      * @description
-      * 수거신청 여부
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 수거신청 여부
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     requestPickup: any;
     /**
-      * @description
-      * 수거지역 상세
-      * 
-      * 
-      */ 
+     * @description
+     * 수거지역 상세
+     *
+     *
+     */
     pickup: any;
     /**
-      * @description
-      * 철회 여부
-      * 
-      * T : 철회함
-      * F : 철회안함
-      * 
-      * 
-      */ 
+     * @description
+     * 철회 여부
+     *
+     * T : 철회함
+     * F : 철회안함
+     *
+     *
+     */
     undone: any;
     /**
-      * @description
-      * 관리자 메모에도 추가
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 관리자 메모에도 추가
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     addMemoToo: any;
     /**
-      * @description
-      * 철회 사유 구분
-      * 
-      * A:고객변심
-      * B:배송지연
-      * J:배송오류
-      * C:배송불가지역
-      * L:수출/통관 불가
-      * D:포장불량
-      * E:상품 불만족
-      * F:상품정보상이
-      * K:상품불량
-      * G:서비스불만족
-      * H:품절
-      * I:기타
-      * 
-      * 
-      */ 
+     * @description
+     * 철회 사유 구분
+     *
+     * A:고객변심
+     * B:배송지연
+     * J:배송오류
+     * C:배송불가지역
+     * L:수출/통관 불가
+     * D:포장불량
+     * E:상품 불만족
+     * F:상품정보상이
+     * K:상품불량
+     * G:서비스불만족
+     * H:품절
+     * I:기타
+     *
+     *
+     */
     undoneReasonType: any;
     /**
-      * @description
-      * 철회 사유
-      * 
-      * 
-      */ 
+     * @description
+     * 철회 사유
+     *
+     *
+     */
     undoneReason: any;
     /**
-      * @description
-      * 주문상세내역 노출 여부
-      * 
-      * T : 노출함
-      * F : 노출안함
-      * 
-      * 
-      */ 
+     * @description
+     * 주문상세내역 노출 여부
+     *
+     * T : 노출함
+     * F : 노출안함
+     *
+     *
+     */
     exposeOrderDetail: any;
     /**
-      * @description
-      * 주문상세내역 노출 철회 사유
-      * 
-      * 
-      */ 
+     * @description
+     * 주문상세내역 노출 철회 사유
+     *
+     *
+     */
     exposedUndoneReason: any;
     /**
-      * @description
-      * 배송사 아이디
-      * 
-      * 
-      */ 
+     * @description
+     * 배송사 아이디
+     *
+     *
+     */
     carrierId: any;
     /**
-      * @description
-      * 반송장 처리 성공 여부
-      * 
-      * T : 성공
-      * F : 실패
-      * N : 미집하
-      * 
-      * 
-      */ 
+     * @description
+     * 반송장 처리 성공 여부
+     *
+     * T : 성공
+     * F : 실패
+     * N : 미집하
+     *
+     *
+     */
     returnInvoiceSuccess: any;
     /**
-      * @description
-      * 반송장 처리 실패 사유
-      * 
-      * 최대글자수 : [100자]
-      */ 
+     * @description
+     * 반송장 처리 실패 사유
+     *
+     * 최대글자수 : [100자]
+     */
     returnInvoiceFailReason: any;
   }
 
   export interface CreateAnOrderExchangeInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 최소값: [1]
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     * 최소값: [1]
+     */
     shopNo?: any;
     /**
-      * @description
-      * 주문번호
-      * 
-      * @required
-      * 
-      * 주문번호
-      */ 
+     * @description
+     * 주문번호
+     *
+     * @required
+     *
+     * 주문번호
+     */
     orderId: any;
     /**
-      * @description
-      * 주문상태
-      * 
-      * accepted : 교환접수
-      * exchanged : 교환완료
-      * 
-      * @required
-      */ 
+     * @description
+     * 주문상태
+     *
+     * accepted : 교환접수
+     * exchanged : 교환완료
+     *
+     * @required
+     */
     status: any;
     /**
-      * @description
-      * 재고복구
-      * 
-      * T : 복구함
-      * F : 복구안함
-      * 
-      * @default F
-      * 
-      * 
-      */ 
+     * @description
+     * 재고복구
+     *
+     * T : 복구함
+     * F : 복구안함
+     *
+     * @default F
+     *
+     *
+     */
     recoverInventory?: any;
     /**
-      * @description
-      * 관리자 메모에도 추가
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * @default F
-      * 
-      * 
-      */ 
+     * @description
+     * 관리자 메모에도 추가
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     * @default F
+     *
+     *
+     */
     addMemoToo?: any;
     /**
-      * @description
-      * 품주코드
-      * 
-      * 
-      */ 
-    items?: { 
-    /**
-      * @description
-      * 품주코드
-      * 
-      * 
-      */ 
-    orderItemCode: any;
-    /**
-      * @description
-      * 수량
-      * 
-      * 
-      */ 
-    quantity: any;
-    /**
-      * @description
-      * (동일상품 다른 옵션 교환시) 교환 상품 품목 코드
-      * 
-      * 
-      */ 
-    exchangeVariantCode?: any;
+     * @description
+     * 품주코드
+     *
+     *
+     */
+    items?: {
+      /**
+       * @description
+       * 품주코드
+       *
+       *
+       */
+      orderItemCode: any;
+      /**
+       * @description
+       * 수량
+       *
+       *
+       */
+      quantity: any;
+      /**
+       * @description
+       * (동일상품 다른 옵션 교환시) 교환 상품 품목 코드
+       *
+       *
+       */
+      exchangeVariantCode?: any;
     };
     /**
-      * @description
-      * 동일상품교환 여부
-      * 
-      * T : 동일상품교환
-      * F : 다른상품교환
-      * 
-      * @required
-      */ 
+     * @description
+     * 동일상품교환 여부
+     *
+     * T : 동일상품교환
+     * F : 다른상품교환
+     *
+     * @required
+     */
     sameProduct: any;
   }
 
   export interface CreateAnOrderExchangeOutput {
-    exchange: { 
-    shopNo: number;
-    orderId: string;
-    status: string;
-    claimCode: string;
-    items: { 
-    orderItemCode: string;
-    quantity: number;
-    exchangeVariantCode: any;
-    }[];
-    exchangedItems: { 
-    orderItemCode: string;
-    }[];
+    exchange: {
+      shopNo: number;
+      orderId: string;
+      status: string;
+      claimCode: string;
+      items: {
+        orderItemCode: string;
+        quantity: number;
+        exchangeVariantCode: any;
+      }[];
+      exchangedItems: {
+        orderItemCode: string;
+      }[];
     };
   }
   export interface UpdateAnOrderExchangeInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     *
+     */
     shopNo?: any;
     /**
-      * @description
-      * 주문번호
-      * 
-      * @required
-      */ 
+     * @description
+     * 주문번호
+     *
+     * @required
+     */
     orderId: any;
     /**
-      * @description
-      * 교환번호
-      * 
-      * @required
-      */ 
+     * @description
+     * 교환번호
+     *
+     * @required
+     */
     claimCode: any;
     /**
-      * @description
-      * 주문상태
-      * 
-      * exchanged : 교환완료
-      * 
-      * 
-      */ 
+     * @description
+     * 주문상태
+     *
+     * exchanged : 교환완료
+     *
+     *
+     */
     status?: any;
     /**
-      * @description
-      * 수거완료 여부
-      * 
-      * T : 수거완료
-      * F : 수거전
-      * 
-      * 
-      */ 
+     * @description
+     * 수거완료 여부
+     *
+     * T : 수거완료
+     * F : 수거전
+     *
+     *
+     */
     pickupCompleted?: any;
     /**
-      * @description
-      * 반품 송장 번호
-      * 
-      * 최대글자수 : [40자]
-      */ 
+     * @description
+     * 반품 송장 번호
+     *
+     * 최대글자수 : [40자]
+     */
     returnInvoiceNo?: any;
     /**
-      * @description
-      * 반품 배송업체명
-      * 
-      * 최대글자수 : [30자]
-      */ 
+     * @description
+     * 반품 배송업체명
+     *
+     * 최대글자수 : [30자]
+     */
     returnShippingCompanyName?: any;
     /**
-      * @description
-      * 재고복구
-      * 
-      * T : 복구함
-      * F : 복구안함
-      * 
-      * 
-      */ 
+     * @description
+     * 재고복구
+     *
+     * T : 복구함
+     * F : 복구안함
+     *
+     *
+     */
     recoverInventory?: any;
     /**
-      * @description
-      * 수거완료시 교환완료 여부
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 수거완료시 교환완료 여부
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     exchangedAfterCollected?: any;
     /**
-      * @description
-      * 품주코드
-      * 
-      * 
-      */ 
-    items?: { 
-    /**
-      * @description
-      * 품주코드
-      * 
-      * 
-      */ 
-    orderItemCode?: any;
+     * @description
+     * 품주코드
+     *
+     *
+     */
+    items?: {
+      /**
+       * @description
+       * 품주코드
+       *
+       *
+       */
+      orderItemCode?: any;
     };
     /**
-      * @description
-      * 수거신청 여부
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 수거신청 여부
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     requestPickup?: any;
     /**
-      * @description
-      * 수거지역 상세
-      * 
-      * 
-      */ 
-    pickup?: { 
-    /**
-      * @description
-      * 이름
-      * 
-      * 
-      */ 
-    name?: any;
-    /**
-      * @description
-      * 전화번호
-      * 
-      * 
-      */ 
-    phone?: any;
-    /**
-      * @description
-      * 휴대전화
-      * 
-      * 
-      */ 
-    cellphone?: any;
-    /**
-      * @description
-      * 우편번호
-      * 
-      * 
-      */ 
-    zipcode?: any;
-    /**
-      * @description
-      * 기본 주소
-      * 
-      * 
-      */ 
-    address1?: any;
-    /**
-      * @description
-      * 상세 주소
-      * 
-      * 
-      */ 
-    address2?: any;
+     * @description
+     * 수거지역 상세
+     *
+     *
+     */
+    pickup?: {
+      /**
+       * @description
+       * 이름
+       *
+       *
+       */
+      name?: any;
+      /**
+       * @description
+       * 전화번호
+       *
+       *
+       */
+      phone?: any;
+      /**
+       * @description
+       * 휴대전화
+       *
+       *
+       */
+      cellphone?: any;
+      /**
+       * @description
+       * 우편번호
+       *
+       *
+       */
+      zipcode?: any;
+      /**
+       * @description
+       * 기본 주소
+       *
+       *
+       */
+      address1?: any;
+      /**
+       * @description
+       * 상세 주소
+       *
+       *
+       */
+      address2?: any;
     };
     /**
-      * @description
-      * 철회 여부
-      * 
-      * T : 철회함
-      * 
-      * 
-      */ 
+     * @description
+     * 철회 여부
+     *
+     * T : 철회함
+     *
+     *
+     */
     undone?: any;
     /**
-      * @description
-      * 관리자 메모에도 추가
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 관리자 메모에도 추가
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     addMemoToo?: any;
     /**
-      * @description
-      * 철회 사유 구분
-      * 
-      * A:고객변심
-      * B:배송지연
-      * J:배송오류
-      * C:배송불가지역
-      * L:수출/통관 불가
-      * D:포장불량
-      * E:상품 불만족
-      * F:상품정보상이
-      * K:상품불량
-      * G:서비스불만족
-      * H:품절
-      * I:기타
-      * 
-      * 
-      */ 
+     * @description
+     * 철회 사유 구분
+     *
+     * A:고객변심
+     * B:배송지연
+     * J:배송오류
+     * C:배송불가지역
+     * L:수출/통관 불가
+     * D:포장불량
+     * E:상품 불만족
+     * F:상품정보상이
+     * K:상품불량
+     * G:서비스불만족
+     * H:품절
+     * I:기타
+     *
+     *
+     */
     undoneReasonType?: any;
     /**
-      * @description
-      * 철회 사유
-      * 
-      * 최대글자수 : [2000자]
-      */ 
+     * @description
+     * 철회 사유
+     *
+     * 최대글자수 : [2000자]
+     */
     undoneReason?: any;
     /**
-      * @description
-      * 주문상세내역 노출 여부
-      * 
-      * T : 노출함
-      * F : 노출안함
-      * 
-      * 
-      */ 
+     * @description
+     * 주문상세내역 노출 여부
+     *
+     * T : 노출함
+     * F : 노출안함
+     *
+     *
+     */
     exposeOrderDetail?: any;
     /**
-      * @description
-      * 주문상세내역 노출 철회 사유
-      * 
-      * 최대글자수 : [2000자]
-      */ 
+     * @description
+     * 주문상세내역 노출 철회 사유
+     *
+     * 최대글자수 : [2000자]
+     */
     exposedUndoneReason?: any;
     /**
-      * @description
-      * 배송사 아이디
-      * 
-      * 
-      */ 
+     * @description
+     * 배송사 아이디
+     *
+     *
+     */
     carrierId?: any;
     /**
-      * @description
-      * 반송장 처리 성공 여부
-      * 
-      * T : 성공
-      * F : 실패
-      * N : 미집하
-      * 
-      * 
-      */ 
+     * @description
+     * 반송장 처리 성공 여부
+     *
+     * T : 성공
+     * F : 실패
+     * N : 미집하
+     *
+     *
+     */
     returnInvoiceSuccess?: any;
     /**
-      * @description
-      * 반송장 처리 실패 사유
-      * 
-      * 최대글자수 : [100자]
-      */ 
+     * @description
+     * 반송장 처리 실패 사유
+     *
+     * 최대글자수 : [100자]
+     */
     returnInvoiceFailReason?: any;
   }
 
   export interface UpdateAnOrderExchangeOutput {
-    exchange: { 
-    shopNo: number;
-    orderId: string;
-    claimCode: string;
-    status: string;
-    pickupCompleted: Cafe24Enum;
-    carrierId: any;
-    returnInvoiceNo: any;
-    returnShippingCompanyName: any;
-    returnInvoiceSuccess: any;
-    returnInvoiceFailReason: any;
-    recoverInventory: Cafe24Enum;
-    exchangedAfterCollected: any;
-    items: { 
-    orderItemCode: string;
-    }[];
-    requestPickup: any;
-    pickup: { 
-    name: any;
-    phone: any;
-    cellphone: any;
-    zipcode: any;
-    address1: any;
-    address2: any;
-    };
-    undone: any;
-    addMemoToo: any;
-    undoneReasonType: any;
-    undoneReason: any;
-    exposeOrderDetail: any;
-    exposedUndoneReason: any;
+    exchange: {
+      shopNo: number;
+      orderId: string;
+      claimCode: string;
+      status: string;
+      pickupCompleted: Cafe24Enum;
+      carrierId: any;
+      returnInvoiceNo: any;
+      returnShippingCompanyName: any;
+      returnInvoiceSuccess: any;
+      returnInvoiceFailReason: any;
+      recoverInventory: Cafe24Enum;
+      exchangedAfterCollected: any;
+      items: {
+        orderItemCode: string;
+      }[];
+      requestPickup: any;
+      pickup: {
+        name: any;
+        phone: any;
+        cellphone: any;
+        zipcode: any;
+        address1: any;
+        address2: any;
+      };
+      undone: any;
+      addMemoToo: any;
+      undoneReasonType: any;
+      undoneReason: any;
+      exposeOrderDetail: any;
+      exposedUndoneReason: any;
     };
   }
 
