@@ -49,6 +49,7 @@ const moveTypeFileOfEndpoints = async (prefix, excludes = []) => {
       `babel src \
         --out-dir dist/esm \
         --copy-files \
+        --no-copy-ignored \
         --extensions .ts,.js,.tsx,.jsx,.cjs,.mjs`,
       { stdio: 'inherit' },
     );

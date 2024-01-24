@@ -1,3 +1,5 @@
+const exclude = ['node_modules/**', '**/tests'];
+
 module.exports = {
   env: {
     test: {
@@ -7,6 +9,7 @@ module.exports = {
       ],
     },
     build: {
+      ignore: exclude,
       presets: [
         '@babel/preset-typescript',
         [
