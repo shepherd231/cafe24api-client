@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.0](https://github.com/shepherd231/cafe24api-client/compare/cafe24-webhook-utils-v0.2.0...cafe24-webhook-utils-v0.3.0) (2024-01-24)
+
+
+### Features
+
+* update webhook interface ([7f3cb6b](https://github.com/shepherd231/cafe24api-client/commit/7f3cb6be297b180ec0bde17db5d35af3b917896e))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * devDependencies
+    * cafe24-webhook-schema-generator bumped to 0.2.0
+
 ## [0.2.0](https://github.com/shepherd231/cafe24api-client/compare/cafe24-webhook-utils@0.1.1...cafe24-webhook-utils-v0.2.0) (2024-01-23)
 
 

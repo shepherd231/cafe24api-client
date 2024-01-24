@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.0](https://github.com/shepherd231/cafe24api-client/compare/cafe24api-client-v0.2.1...cafe24api-client-v0.3.0) (2024-01-24)
+
+
+### Features
+
+* register now receives options and returns this ([5874ab9](https://github.com/shepherd231/cafe24api-client/commit/5874ab96761170f20d2001a71510dd55a375c39e))
+* update client schema ([a998400](https://github.com/shepherd231/cafe24api-client/commit/a9984007440cf20c87933303bc911531ffcc5b82))
+
+
+### Bug Fixes
+
+* fields typing issue ([7c93840](https://github.com/shepherd231/cafe24api-client/commit/7c93840e4a7fa0044affa3322d9066679ed44b54))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * devDependencies
+    * cafe24api-schema-scraper bumped to 0.3.0
+
 ## [0.2.1](https://github.com/shepherd231/cafe24api-client/compare/cafe24api-client-v0.2.0...cafe24api-client-v0.2.1) (2024-01-24)
 
 
