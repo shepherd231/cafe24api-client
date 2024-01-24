@@ -97,7 +97,7 @@ importers:
   packages/cafe24-webhook-schema-generator:
     dependencies:
       cafe24api-schema-scraper:
-        specifier: workspace:^
+        specifier: 0.3.0
         version: link:../cafe24api-schema-scraper
       commander:
         specifier: ^11.1.0
@@ -152,7 +152,7 @@ importers:
         specifier: ^0.8.15
         version: 0.8.15
       cafe24-webhook-schema-generator:
-        specifier: workspace:*
+        specifier: 0.2.0
         version: link:../cafe24-webhook-schema-generator
       case:
         specifier: ^1.6.3
@@ -231,7 +231,7 @@ importers:
         specifier: ^0.8.15
         version: 0.8.15
       cafe24api-schema-scraper:
-        specifier: workspace:*
+        specifier: 0.3.0
         version: link:../cafe24api-schema-scraper
       cross-env:
         specifier: ^7.0.3
