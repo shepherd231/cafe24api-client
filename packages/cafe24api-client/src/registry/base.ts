@@ -10,6 +10,15 @@ export interface InstanceRegistryOptions<T, O> {
   defaultClientOptions?: Partial<O>;
 }
 
+/**
+ * @description
+ * A registry for instances of a class.
+ *
+ * @typeParam T - The type of the instance.
+ *                It should include the key property with `keyPropName` as its name.
+ * @typeParam O - The type of the options for the instance constructor.
+ *                It should include the key property with `keyPropName` as its name.
+ */
 export class InstanceRegistry<T, O> {
   private readonly registry: LRUCache<string, T>;
   private readonly keyPropName: string;
@@ -47,23 +56,20 @@ export class InstanceRegistry<T, O> {
     this.registry.clear();
   }
 
-  public remove(key: string): void {
+  public remove(key: string): boolean {
     const instance = this.registry.get(key);
     if (instance && this.instanceDestructor) {
       this.instanceDestructor(instance);
     }
-    this.registry.delete(key);
+    return this.registry.delete(key);
   }
 
   public register(
-    instanceOrKey: T | string,
+    instanceOrOptions: T | O,
     options?: { overwrite?: boolean },
-  ): void {
+  ): this {
     // Get the mall ID from the instance or the argument
-    const key =
-      typeof instanceOrKey === 'string'
-        ? instanceOrKey
-        : instanceOrKey[this.keyPropName];
+    const key = instanceOrOptions[this.keyPropName] as string;
 
     // If the mall ID is already registered and overwrite is not allowed, throw an error
     if (!options?.overwrite && this.registry.has(key)) {
@@ -72,14 +78,17 @@ export class InstanceRegistry<T, O> {
 
     // Get the instance from the argument or create a new instance with default options
     const instance =
-      typeof instanceOrKey === 'string'
-        ? new this.instanceConstructor({
+      instanceOrOptions instanceof this.instanceConstructor
+        ? instanceOrOptions
+        : new this.instanceConstructor({
             [this.keyPropName]: key,
             ...this.defaultClientOptions,
-          } as any)
-        : instanceOrKey;
+            ...instanceOrOptions,
+          } as any);
 
     // Register the instance
     this.registry.set(key, instance);
+
+    return this;
   }
 }

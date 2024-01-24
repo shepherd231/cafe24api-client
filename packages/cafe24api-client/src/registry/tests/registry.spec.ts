@@ -13,7 +13,7 @@ describe('Cafe24AdminAPIClientRegistry', () => {
   });
 
   it('should register a client with mall id', () => {
-    registry.register('mall-1');
+    registry.register({ mallId: 'mall-1' });
     const client = registry.get('mall-1');
     expect(client).toBeInstanceOf(Cafe24AdminAPIClient);
     expect(client.mallId).toEqual('mall-1');
@@ -28,15 +28,15 @@ describe('Cafe24AdminAPIClientRegistry', () => {
 
   it('should not register a client if it already exists', () => {
     expect(() => {
-      registry.register('mall-3');
-      registry.register('mall-3');
+      registry.register({ mallId: 'mall-3' });
+      registry.register({ mallId: 'mall-3' });
     }).toThrow();
   });
 
   it('should register a client if it already exists with overwrite option', () => {
     expect(() => {
-      registry.register('mall-4');
-      registry.register('mall-4', { overwrite: true });
+      registry.register({ mallId: 'mall-4' });
+      registry.register({ mallId: 'mall-4' }, { overwrite: true });
     }).not.toThrow();
   });
 });

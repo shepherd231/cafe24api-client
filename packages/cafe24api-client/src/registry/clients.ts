@@ -8,7 +8,7 @@ import { InstanceRegistry, InstanceRegistryOptions } from './base';
 
 export type Cafe24AdminAPIClientRegistryOptions = Omit<
   InstanceRegistryOptions<Cafe24AdminAPIClient, Cafe24AdminAPIClientOptions>,
-  'instanceConstructor' | 'keyPropName'
+  'instanceConstructor' | 'keyPropName' | 'instanceDestructor'
 >;
 
 export class Cafe24AdminAPIClientRegistry extends InstanceRegistry<
@@ -28,7 +28,7 @@ export class Cafe24AdminAPIClientRegistry extends InstanceRegistry<
 
 export type Cafe24FrontAPIClientRegistryOptions = Omit<
   InstanceRegistryOptions<Cafe24FrontAPIClient, Cafe24FrontAPIClientOptions>,
-  'instanceConstructor' | 'keyPropName'
+  'instanceConstructor' | 'keyPropName' | 'instanceDestructor'
 >;
 
 export class Cafe24FrontAPIClientRegistry extends InstanceRegistry<
