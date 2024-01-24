@@ -35,6 +35,17 @@
         "command": "node ./bin/index.js run",
         "cwd": "packages/cafe24api-schema-scraper"
       }
+    },
+    "generate": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "pnpm nx run start --url https://developers.cafe24.com/docs/ko/api/admin/ --output ../cafe24api-client/generators/generate-endpoints/gen/admin-endpoints.json",
+          "pnpm nx run start --url https://developers.cafe24.com/docs/ko/api/front/ --output ../cafe24api-client/generators/generate-endpoints/gen/front-endpoints.json"
+        ],
+        "cwd": "packages/cafe24api-schema-scraper",
+        "parallel": true
+      }
     }
   }
 }
