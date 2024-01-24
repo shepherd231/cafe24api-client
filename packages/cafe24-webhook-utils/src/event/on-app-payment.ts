@@ -15,39 +15,46 @@ import {
 export interface OnAppPayment {
   /**
    * @description
-   * 쇼핑몰 ID
+   * 이벤트 구분(타입)
    */
-  mall_id: string;
-  /**
-   * @description
-   * 앱 ID
-   */
-  client_id: string;
-  /**
-   * @description
-   * 주문번호
-   */
-  order_id: string;
-  /**
-   * @description
-   * 결제일시
-   */
-  payed_date: Cafe24Datetime;
-  /**
-   * @description
-   * 결제통화
-   */
-  currency: string;
-  /**
-   * @description
-   * 결제금액
-   */
-  amount: Cafe24Datetime;
-  /**
-   * @description
-   * 요청채널
-   * App : 인앱결제
-   * Web : 유료결제
-   */
-  channel: string;
+  event_no: number;
+  resource: {
+    /**
+     * @description
+     * 쇼핑몰 ID
+     */
+    mall_id: string;
+    /**
+     * @description
+     * 앱 ID
+     */
+    client_id: string;
+    /**
+     * @description
+     * 주문번호
+     */
+    order_id: string;
+    /**
+     * @description
+     * 결제일시
+     */
+    payed_date: Cafe24Datetime;
+    /**
+     * @description
+     * 결제통화
+     */
+    currency: string;
+    /**
+     * @description
+     * 결제금액
+     */
+    amount: Cafe24Datetime;
+    /**
+     * @description
+     * 요청채널
+     * App : 인앱결제
+     * Web : 유료결제
+     */
+    channel: string;
+  };
 }

@@ -8,6 +8,11 @@
     "./tests/**/*",
   ],
   "compilerOptions": {
-    "checkJs": false
+    "checkJs": false,
+    "lib": [
+      "ESNext",
+      "DOM",
+      "DOM.Iterable"
+    ],
   }
 }

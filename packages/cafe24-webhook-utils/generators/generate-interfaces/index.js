@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 
-const fs = require('fs');
-const path = require('path');
+const { existsSync, mkdirSync, writeFileSync, appendFileSync } = require('fs');
+const { resolve, dirname } = require('path');
 const shell = require('shelljs');
 const ejs = require('ejs');
 const Case = require('case');
-const { targets, templatesPath } = require('./config');
+const { targets, templatesPath, sourcePath } = require('./config');
 
 const generateFromTemplate = async (
   event,
@@ -14,12 +14,12 @@ const generateFromTemplate = async (
   outputPrefix,
   filepath,
 ) => {
-  const filePath = path.resolve(outputPrefix, filepath);
+  const filePath = resolve(outputPrefix, filepath);
   console.log(`Generating ${filePath}`);
-  if (!fs.existsSync(path.dirname(filePath))) {
-    fs.mkdirSync(path.dirname(filePath), { recursive: true });
+  if (!existsSync(dirname(filePath))) {
+    mkdirSync(dirname(filePath), { recursive: true });
   }
-  fs.writeFileSync(
+  writeFileSync(
     filePath,
     ejs.render(
       template,
@@ -37,8 +37,8 @@ const generateFromTemplate = async (
 
 const generate = async (target) => {
   // Generate intermediate json file from docs
-  if (!fs.existsSync(target.endpointsJSONPath)) {
-    fs.mkdirSync(path.dirname(target.endpointsJSONPath), { recursive: true });
+  if (!existsSync(target.endpointsJSONPath)) {
+    mkdirSync(dirname(target.endpointsJSONPath), { recursive: true });
     const execution = shell.exec(
       `pnpm cafe24-webhook-schema-generator run --url ${target.docsUrl} --output ${target.endpointsJSONPath}`,
     );
@@ -49,7 +49,7 @@ const generate = async (target) => {
 
   // Generate files from event list json file
   /**
-   * @type {import('cafe24-webhook-schema-generator').WebhookInfo[]}
+   * @type {import("./types").WebhookInfo[]}
    */
   const events = require(target.endpointsJSONPath);
   for (const event of events) {
@@ -63,20 +63,21 @@ const generate = async (target) => {
   }
 
   // Append exports for all event interfaces
-  const filePath = path.resolve(target.fileOutputPath, 'index.ts');
-  fs.appendFileSync(
+  const filePath = resolve(target.fileOutputPath, 'index.ts');
+  appendFileSync(
     filePath,
     events
       .map((event) => `export * from './${Case.kebab(event.name)}';`)
-      .join('\n'),
+      .join('\n')
+      .concat('\n'),
   );
 };
 
 (async () => {
   try {
     // Generate index file for export all event interfaces
-    const indexFilePath = path.resolve(sourcePath, 'event/index.ts');
-    fs.writeFileSync(indexFilePath, '');
+    const indexFilePath = resolve(sourcePath, 'event/index.ts');
+    writeFileSync(indexFilePath, '');
 
     // Generate event interfaces
     for (const target of targets) {

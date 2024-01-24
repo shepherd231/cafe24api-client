@@ -10,6 +10,7 @@ const readTemplate = (templatePath) =>
   fs.readFileSync(path.resolve(templatesPath, templatePath), 'utf-8');
 
 const eventTemplate = readTemplate('event.ejs');
+const eventAliasTemplate = readTemplate('event-alias.ejs');
 
 const targets = [
   {
@@ -25,6 +26,12 @@ const targets = [
     endpointsJSONPath: path.resolve(__dirname, 'gen/extra-webhook-info.json'),
     fileOutputPath: path.resolve(sourcePath, 'event'),
     fileTemplate: eventTemplate,
+  },
+  {
+    id: 'webhook-data-aliases',
+    endpointsJSONPath: path.resolve(__dirname, 'gen/webhook-info-alias.json'),
+    fileOutputPath: path.resolve(sourcePath, 'event'),
+    fileTemplate: eventAliasTemplate,
   },
 ];
 

@@ -7,17 +7,8 @@ import {
   parseExampleJSONToProperties,
 } from 'cafe24api-schema-scraper';
 import { WebhookInfo } from './webhook';
-import { eventScopeTable } from './scope-table';
-import { nameTable } from './name-table';
-
-const isValidJSONString = (str: string) => {
-  try {
-    JSON.parse(str);
-    return true;
-  } catch (error) {
-    return false;
-  }
-};
+import { eventScopeTable, nameTable } from './constants';
+import { tryParseJSON } from './json';
 
 const permissionDocString = (permissions?: string[]) =>
   permissions
@@ -55,7 +46,8 @@ export const parseSampleDataTable = ({
       map(getInnerText),
     );
     const properties = pipe(
-      isValidJSONString(exampleCode) ? some(exampleCode) : none,
+      tryParseJSON(exampleCode),
+      (json) => (json ? some(json) : none),
       match(
         /**
          * @description
@@ -72,10 +64,9 @@ export const parseSampleDataTable = ({
          * Fix those issues
          */
         () => [] as Property[],
-        (code) =>
+        (json) =>
           pipe(
-            code,
-            JSON.parse,
+            json,
             parseExampleJSONToProperties,
             map(
               editWithLookup('description')(

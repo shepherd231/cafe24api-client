@@ -41,7 +41,7 @@ export interface OnOrderReceived {
      * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호
      *
      */
-    event_shop_no: Cafe24Datetime;
+    event_shop_no: number;
     /**
      * @description
      * 주문번호

@@ -15,33 +15,40 @@ import {
 export interface OnAppPaymentRefundCompleted {
   /**
    * @description
-   * 쇼핑몰 ID
+   * 이벤트 구분(타입)
    */
-  mall_id: string;
-  /**
-   * @description
-   * 앱 ID
-   */
-  client_id: string;
-  /**
-   * @description
-   * 주문번호
-   */
-  order_id: string;
-  /**
-   * @description
-   * 결제통화
-   */
-  currency: string;
-  /**
-   * @description
-   * 환불금액
-   */
-  refunded_amount: string;
-  expire_date: Cafe24Datetime;
-  /**
-   * @description
-   * 환불일시
-   */
-  refunded_date: Cafe24Datetime;
+  event_no: number;
+  resource: {
+    /**
+     * @description
+     * 쇼핑몰 ID
+     */
+    mall_id: string;
+    /**
+     * @description
+     * 앱 ID
+     */
+    client_id: string;
+    /**
+     * @description
+     * 주문번호
+     */
+    order_id: string;
+    /**
+     * @description
+     * 결제통화
+     */
+    currency: string;
+    /**
+     * @description
+     * 환불금액
+     */
+    refunded_amount: string;
+    expire_date: Cafe24Datetime;
+    /**
+     * @description
+     * 환불일시
+     */
+    refunded_date: Cafe24Datetime;
+  };
 }

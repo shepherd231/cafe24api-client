@@ -2,7 +2,7 @@ import { map, flatten } from 'fp-ts/Array';
 import { pipe } from 'fp-ts/function';
 import { Property } from 'cafe24api-schema-scraper';
 import { parseLookupTable } from './lookup-table';
-import { parseSampleDataTable } from './sample-data';
+import { parseSampleDataTable } from './sample-data-table';
 
 export interface WebhookInfo {
   eventId: number;

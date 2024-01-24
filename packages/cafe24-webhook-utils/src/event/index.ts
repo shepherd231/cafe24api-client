@@ -72,3 +72,5 @@ export * from './on-coupon-updated';
 export * from './on-coupon-deleted';
 export * from './on-coupon-added';
 export * from './on-coupon-issuance-status-changed';
+export * from './on-product-added-to-order';
+export * from './on-product-updated';

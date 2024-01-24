@@ -1,0 +1,11 @@
+[
+  {
+    "eventId": 90002,
+    "name": "OnProductUpdated",
+    "description": "쇼핑몰 상품이 수정된 경우\n\nRequired permissions:\n- mall.read_category\n- mall.read_collection\n- mall.read_product\n- mall.read_promotion\n- mall.read_supply\n",
+    "alias": {
+      "type": "OnProductCreated",
+      "importFrom": "import { OnProductCreated } from './on-product-created';"
+    }
+  }
+]

@@ -36,7 +36,7 @@ export interface OnMemberPointsChanged {
      * 멀티쇼핑몰 번호
      *
      */
-    shop_no: Cafe24Datetime;
+    shop_no: number;
     /**
      * @description
      * 회원 아이디

@@ -53,7 +53,7 @@ export interface OnProductStockStatusChanged {
      * 상품의 고유한 일련 번호. 해당 쇼핑몰 내에서 상품 번호는 중복되지 않음
      *
      */
-    product_no: Cafe24Datetime;
+    product_no: number;
     /**
      * @description
      * 전체 쇼핑몰의 상품 품절 여부

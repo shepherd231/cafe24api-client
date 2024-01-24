@@ -1,10 +1,3 @@
-/**
- * @fileoverview
- * This file is one of exception case that `cafe24-webhook-schema-generator` cannot handle.
- *
- * If you want to use `cafe24-webhook-schema-generator`,
- * keep in mind that this file will be regenerated as empty type.
- */
 import {
   Cafe24Boolean,
   Cafe24Date,
@@ -26,9 +19,12 @@ import {
  * - mall.read_product
  * - mall.read_promotion
  * - mall.read_supply
- *
  */
 export interface OnProductAddedToOrder {
+  /**
+   * @description
+   * 이벤트 구분(타입)
+   */
   event_no: number;
   resource: {
     mall_id: string;

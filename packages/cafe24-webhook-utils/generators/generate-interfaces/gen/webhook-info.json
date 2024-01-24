@@ -148,46 +148,59 @@
     "description": "쇼핑몰에 설치된 앱이 결제된 경우\n",
     "properties": [
       {
-        "name": "mall_id",
-        "type": "string",
+        "name": "event_no",
+        "type": "number",
         "required": true,
-        "description": "쇼핑몰 ID"
+        "description": "이벤트 구분(타입)"
       },
       {
-        "name": "client_id",
-        "type": "string",
+        "name": "resource",
+        "type": "object",
         "required": true,
-        "description": "앱 ID"
-      },
-      {
-        "name": "order_id",
-        "type": "string",
-        "required": true,
-        "description": "주문번호"
-      },
-      {
-        "name": "payed_date",
-        "type": "Cafe24Datetime",
-        "required": true,
-        "description": "결제일시"
-      },
-      {
-        "name": "currency",
-        "type": "string",
-        "required": true,
-        "description": "결제통화"
-      },
-      {
-        "name": "amount",
-        "type": "Cafe24Datetime",
-        "required": true,
-        "description": "결제금액"
-      },
-      {
-        "name": "channel",
-        "type": "string",
-        "required": true,
-        "description": "요청채널\nApp : 인앱결제\nWeb : 유료결제"
+        "subproperties": [
+          {
+            "name": "mall_id",
+            "type": "string",
+            "required": true,
+            "description": "쇼핑몰 ID"
+          },
+          {
+            "name": "client_id",
+            "type": "string",
+            "required": true,
+            "description": "앱 ID"
+          },
+          {
+            "name": "order_id",
+            "type": "string",
+            "required": true,
+            "description": "주문번호"
+          },
+          {
+            "name": "payed_date",
+            "type": "Cafe24Datetime",
+            "required": true,
+            "description": "결제일시"
+          },
+          {
+            "name": "currency",
+            "type": "string",
+            "required": true,
+            "description": "결제통화"
+          },
+          {
+            "name": "amount",
+            "type": "Cafe24Datetime",
+            "required": true,
+            "description": "결제금액"
+          },
+          {
+            "name": "channel",
+            "type": "string",
+            "required": true,
+            "description": "요청채널\nApp : 인앱결제\nWeb : 유료결제"
+          }
+        ]
       }
     ]
   },
@@ -197,40 +210,53 @@
     "description": "쇼핑몰에 설치된 앱의 결제 환불을 요청한 경우\n",
     "properties": [
       {
-        "name": "mall_id",
-        "type": "string",
+        "name": "event_no",
+        "type": "number",
         "required": true,
-        "description": "쇼핑몰 ID"
+        "description": "이벤트 구분(타입)"
       },
       {
-        "name": "client_id",
-        "type": "string",
+        "name": "resource",
+        "type": "object",
         "required": true,
-        "description": "앱 ID"
-      },
-      {
-        "name": "order_id",
-        "type": "string",
-        "required": true,
-        "description": "주문번호"
-      },
-      {
-        "name": "reason_code",
-        "type": "Cafe24Enum",
-        "required": true,
-        "description": "환불 사유 코드\nA : App의 기능이 정상동작 하지 않음\nB : App으로 인해 쇼핑몰 성능이 저하됨\nC : 개인정보유출 등 법적이슈가 있음\nD : 안내된 기능을 모두 충족하지 못함\nE : 구매자의 사유로 판매자와 합의하였음\nZ : 기타사유"
-      },
-      {
-        "name": "reason_detail",
-        "type": "string",
-        "required": true,
-        "description": "상세사유"
-      },
-      {
-        "name": "request_date",
-        "type": "Cafe24Datetime",
-        "required": true,
-        "description": "요청일시"
+        "subproperties": [
+          {
+            "name": "mall_id",
+            "type": "string",
+            "required": true,
+            "description": "쇼핑몰 ID"
+          },
+          {
+            "name": "client_id",
+            "type": "string",
+            "required": true,
+            "description": "앱 ID"
+          },
+          {
+            "name": "order_id",
+            "type": "string",
+            "required": true,
+            "description": "주문번호"
+          },
+          {
+            "name": "reason_code",
+            "type": "Cafe24Enum",
+            "required": true,
+            "description": "환불 사유 코드\nA : App의 기능이 정상동작 하지 않음\nB : App으로 인해 쇼핑몰 성능이 저하됨\nC : 개인정보유출 등 법적이슈가 있음\nD : 안내된 기능을 모두 충족하지 못함\nE : 구매자의 사유로 판매자와 합의하였음\nZ : 기타사유"
+          },
+          {
+            "name": "reason_detail",
+            "type": "string",
+            "required": true,
+            "description": "상세사유"
+          },
+          {
+            "name": "request_date",
+            "type": "Cafe24Datetime",
+            "required": true,
+            "description": "요청일시"
+          }
+        ]
       }
     ]
   },
@@ -240,45 +266,58 @@
     "description": "쇼핑몰에 설치된 앱의 결제 환불이 완료된 경우\n",
     "properties": [
       {
-        "name": "mall_id",
-        "type": "string",
+        "name": "event_no",
+        "type": "number",
         "required": true,
-        "description": "쇼핑몰 ID"
+        "description": "이벤트 구분(타입)"
       },
       {
-        "name": "client_id",
-        "type": "string",
+        "name": "resource",
+        "type": "object",
         "required": true,
-        "description": "앱 ID"
-      },
-      {
-        "name": "order_id",
-        "type": "string",
-        "required": true,
-        "description": "주문번호"
-      },
-      {
-        "name": "currency",
-        "type": "string",
-        "required": true,
-        "description": "결제통화"
-      },
-      {
-        "name": "refunded_amount",
-        "type": "string",
-        "required": true,
-        "description": "환불금액"
-      },
-      {
-        "name": "expire_date",
-        "type": "Cafe24Datetime",
-        "required": true
-      },
-      {
-        "name": "refunded_date",
-        "type": "Cafe24Datetime",
-        "required": true,
-        "description": "환불일시"
+        "subproperties": [
+          {
+            "name": "mall_id",
+            "type": "string",
+            "required": true,
+            "description": "쇼핑몰 ID"
+          },
+          {
+            "name": "client_id",
+            "type": "string",
+            "required": true,
+            "description": "앱 ID"
+          },
+          {
+            "name": "order_id",
+            "type": "string",
+            "required": true,
+            "description": "주문번호"
+          },
+          {
+            "name": "currency",
+            "type": "string",
+            "required": true,
+            "description": "결제통화"
+          },
+          {
+            "name": "refunded_amount",
+            "type": "string",
+            "required": true,
+            "description": "환불금액"
+          },
+          {
+            "name": "expire_date",
+            "type": "Cafe24Datetime",
+            "required": true
+          },
+          {
+            "name": "refunded_date",
+            "type": "Cafe24Datetime",
+            "required": true,
+            "description": "환불일시"
+          }
+        ]
       }
     ]
   },
@@ -867,7 +906,7 @@
           },
           {
             "name": "product_no",
-            "type": "Cafe24Datetime",
+            "type": "number",
             "required": true,
             "description": "상품번호\n상품의 고유한 일련 번호. 해당 쇼핑몰 내에서 상품 번호는 중복되지 않음\n"
           },
@@ -922,7 +961,7 @@
           },
           {
             "name": "event_shop_no",
-            "type": "Cafe24Datetime",
+            "type": "number",
             "required": true,
             "description": "멀티쇼핑몰 번호\n멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호\n"
           },
@@ -2930,7 +2969,249 @@
     "eventId": 90031,
     "name": "OnProductAddedToOrder",
     "description": "쇼핑몰에 접수된 주문에 상품을 추가한 경우\n\nRequired permissions:\n- mall.read_category\n- mall.read_collection\n- mall.read_customer\n- mall.read_order\n- mall.read_product\n- mall.read_promotion\n- mall.read_supply\n",
-    "properties": []
+    "properties": [
+      {
+        "name": "event_no",
+        "type": "number",
+        "required": true,
+        "description": "이벤트 구분(타입)\n각 이벤트 NO. 참조"
+      },
+      {
+        "name": "resource",
+        "type": "object",
+        "required": true,
+        "subproperties": [
+          {
+            "name": "mall_id",
+            "type": "string",
+            "required": true,
+            "description": "쇼핑몰 ID\n"
+          },
+          {
+            "name": "event_shop_no",
+            "type": "Cafe24Datetime",
+            "required": true,
+            "description": "멀티쇼핑몰 번호\n멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호\n"
+          },
+          {
+            "name": "order_id",
+            "type": "string",
+            "required": true,
+            "description": "주문번호\n"
+          },
+          {
+            "name": "payment_gateway_name",
+            "type": "string",
+            "required": true,
+            "description": "결제 PG사 이름\n"
+          },
+          {
+            "name": "currency",
+            "type": "string",
+            "required": true,
+            "description": "화폐단위\nKRW : ￦ 원\nUSD : $ 달러\nJPY : ¥ 엔"
+          },
+          {
+            "name": "order_date",
+            "type": "Cafe24Datetime",
+            "required": true,
+            "description": "주문일\ndate"
+          },
+          {
+            "name": "order_place_name",
+            "type": "string",
+            "required": true,
+            "description": "주문경로 텍스트\n"
+          },
+          {
+            "name": "member_id",
+            "type": "string",
+            "required": true,
+            "description": "회원 아이디\n"
+          },
+          {
+            "name": "member_authentication",
+            "type": "Cafe24Enum",
+            "required": true,
+            "description": "회원 인증 여부\nT : 인증\nF : 미인증\nB : 특별관리회원\nJ : 14세미만회원"
+          },
+          {
+            "name": "buyer_name",
+            "type": "string",
+            "required": true,
+            "description": "주문자명\n"
+          },
+          {
+            "name": "buyer_email",
+            "type": "string",
+            "required": true,
+            "description": "주문자 이메일\n"
+          },
+          {
+            "name": "buyer_phone",
+            "type": "string",
+            "required": true,
+            "description": "주문자 일반 전화\n"
+          },
+          {
+            "name": "buyer_cellphone",
+            "type": "string",
+            "required": true,
+            "description": "주문자 휴대 전화\n"
+          },
+          {
+            "name": "group_no_when_ordering",
+            "type": "string",
+            "required": true,
+            "description": "주문 시 회원등급\n"
+          },
+          {
+            "name": "first_order",
+            "type": "Cafe24Enum",
+            "required": true,
+            "description": "최초 주문여부\nT : 최초 주문\nF : 최초 주문 아님"
+          },
+          {
+            "name": "order_from_mobile",
+            "type": "Cafe24Enum",
+            "required": true,
+            "description": "주문이 모바일에서 이루어졌는지 여부\nT : 모바일 주문\nF : 모바일 주문 아님"
+          },
+          {
+            "name": "paid",
+            "type": "Cafe24Enum",
+            "required": true,
+            "description": "결제 완료 여부\nT : 결제\nF : 미결제\nM : 부분 결제"
+          },
+          {
+            "name": "payment_date",
+            "type": "Cafe24Datetime",
+            "required": true,
+            "description": "결제일\ndate"
+          },
+          {
+            "name": "billing_name",
+            "type": "string",
+            "required": true,
+            "description": "결제자명\n"
+          },
+          {
+            "name": "bank_code",
+            "type": "string",
+            "required": true,
+            "description": "은행코드\nbank_code"
+          },
+          {
+            "name": "payment_method",
+            "type": "string",
+            "required": true,
+            "description": "결제수단 코드\ncash : 무통장\ncard : 신용카드\ncell : 휴대폰\ntcash : 계좌이체\nprepaid : 선불금\ncredit : 예치금\npoint : 적립금\npointfy : 통합포인트\ncvs : 편의점\ncod : 후불\ncoupon : 쿠폰\nmarket_discount : 마켓할인\netc : 기타"
+          },
+          {
+            "name": "easypay_name",
+            "type": "string",
+            "required": true,
+            "description": "간편결제 결제사 이름\n"
+          },
+          {
+            "name": "use_escrow",
+            "type": "Cafe24Enum",
+            "required": true,
+            "description": "에스크로 사용여부\nT : 에스크로 사용\nF : 에스크로 미사용"
+          },
+          {
+            "name": "bank_account_no",
+            "type": "string",
+            "required": true,
+            "description": "해당 주문건에 대한 쇼핑몰의 계좌번호\n"
+          },
+          {
+            "name": "order_price_amount",
+            "type": "Cafe24Datetime",
+            "required": true,
+            "description": "주문금액\n"
+          },
+          {
+            "name": "membership_discount_amount",
+            "type": "string",
+            "required": true,
+            "description": "회원할인금액\n"
+          },
+          {
+            "name": "actual_payment_amount",
+            "type": "Cafe24Datetime",
+            "required": true,
+            "description": "실결제금액\n"
+          },
+          {
+            "name": "mileage_spent_amount",
+            "type": "string",
+            "required": true,
+            "description": "적립금 사용금액\n"
+          },
+          {
+            "name": "cancel_date",
+            "type": "primitive",
+            "required": true,
+            "description": "주문취소일\n"
+          },
+          {
+            "name": "shipping_fee",
+            "type": "string",
+            "required": true,
+            "description": "배송비\n"
+          },
+          {
+            "name": "shipping_type",
+            "type": "Cafe24Enum",
+            "required": true,
+            "description": "배송비 타입\n01 : 선불\n02 : 착불\n03 : 신용"
+          },
+          {
+            "name": "shipping_status",
+            "type": "Cafe24Enum",
+            "required": true,
+            "description": "배송상태\nF : 배송전\nM : 배송중\nT : 배송완료\nW : 배송보류"
+          },
+          {
+            "name": "wished_delivery_date",
+            "type": "string",
+            "required": true,
+            "description": "희망배송일\n"
+          },
+          {
+            "name": "wished_delivery_time",
+            "type": "string",
+            "required": true,
+            "description": "희망배송시간\n"
+          },
+          {
+            "name": "shipping_message",
+            "type": "string",
+            "required": true,
+            "description": "배송 메세지\n"
+          },
+          {
+            "name": "order_place_id",
+            "type": "string",
+            "required": true,
+            "description": "주문경로\ncafe24:카페24\nmobile:모바일웹\nmobile_d:모바일앱\nNCHECKOUT:네이버페이\ninpark:인터파크\nauction:옥션\nsk11st:11번가\ngmarket:G마켓\ncoupang:쿠팡\nshopn:스마트스토어"
+          },
+          {
+            "name": "ordering_product_code",
+            "type": "string",
+            "required": true,
+            "description": "주문 상품\n"
+          },
+          {
+            "name": "ordering_product_name",
+            "type": "string",
+            "required": true,
+            "description": "주문 상품명\n"
+          }
+        ]
+      }
+    ]
   },
   {
     "eventId": 90064,
@@ -3438,7 +3719,49 @@
     "eventId": 90063,
     "name": "OnMemberLinkedSNSAccount",
     "description": "쇼핑몰 회원이 SNS 계정을 연동한 경우\n",
-    "properties": []
+    "properties": [
+      {
+        "name": "event_no",
+        "type": "number",
+        "required": true,
+        "description": "이벤트 구분(타입)\n각 이벤트 NO. 참조"
+      },
+      {
+        "name": "resource",
+        "type": "object",
+        "required": true,
+        "subproperties": [
+          {
+            "name": "mall_id",
+            "type": "string",
+            "required": true,
+            "description": "쇼핑몰 ID\n"
+          },
+          {
+            "name": "event_shop_no",
+            "type": "Cafe24Datetime",
+            "required": true,
+            "description": "멀티쇼핑몰 번호\n멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호\n"
+          },
+          {
+            "name": "member_id",
+            "type": "string",
+            "required": true,
+            "description": "회원 아이디\n"
+          },
+          {
+            "name": "social_name",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "social_member_code",
+            "type": "number",
+            "required": true
+          }
+        ]
+      }
+    ]
   },
   {
     "eventId": 90080,
@@ -3446,33 +3769,46 @@
     "description": "쇼핑몰 회원정보가 변경된 경우\n\nRequired permissions:\n- mall.read_customer\n- mall.read_personal\n- mall.read_privacy\n",
     "properties": [
       {
-        "name": "mall_id",
-        "type": "string",
+        "name": "event_no",
+        "type": "number",
         "required": true,
-        "description": "쇼핑몰 ID\n"
+        "description": "이벤트 구분(타입)\n각 이벤트 NO. 참조"
       },
       {
-        "name": "event_shop_no",
-        "type": "Cafe24Datetime",
+        "name": "resource",
+        "type": "object",
         "required": true,
-        "description": "멀티쇼핑몰 번호\n멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호\n"
-      },
-      {
-        "name": "member_id",
-        "type": "string",
-        "required": true,
-        "description": "회원 아이디\n"
-      },
-      {
-        "name": "diff_key",
-        "type": "string[]",
-        "required": true
-      },
-      {
-        "name": "sub_event_code",
-        "type": "string",
-        "required": true,
-        "description": "회원정보 변경위치\nEC_FRONT : 프론트 회원정보수정에서 수정\nEC_ADMIN : 몰 어드민에서 관리자가 수정"
+        "subproperties": [
+          {
+            "name": "mall_id",
+            "type": "string",
+            "required": true,
+            "description": "쇼핑몰 ID\n"
+          },
+          {
+            "name": "event_shop_no",
+            "type": "Cafe24Datetime",
+            "required": true,
+            "description": "멀티쇼핑몰 번호\n멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호\n"
+          },
+          {
+            "name": "member_id",
+            "type": "string",
+            "required": true,
+            "description": "회원 아이디\n"
+          },
+          {
+            "name": "diff_key",
+            "type": "string[]",
+            "required": true
+          },
+          {
+            "name": "sub_event_code",
+            "type": "string",
+            "required": true,
+            "description": "회원정보 변경위치\nEC_FRONT : 프론트 회원정보수정에서 수정\nEC_ADMIN : 몰 어드민에서 관리자가 수정"
+          }
+        ]
       }
     ]
   },
@@ -3550,7 +3886,7 @@
           },
           {
             "name": "event_shop_no",
-            "type": "Cafe24Datetime",
+            "type": "number",
             "required": true,
             "description": "멀티쇼핑몰 번호\n멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호\n"
           },
@@ -3649,7 +3985,39 @@
     "eventId": 90147,
     "name": "OnMemberWithdrawal",
     "description": "쇼핑몰에 회원이 탈퇴한 경우\n\nRequired permissions:\n- mall.read_customer\n- mall.read_personal\n- mall.read_privacy\n",
-    "properties": []
+    "properties": [
+      {
+        "name": "event_no",
+        "type": "number",
+        "required": true,
+        "description": "이벤트 구분(타입)\n각 이벤트 NO. 참조"
+      },
+      {
+        "name": "resource",
+        "type": "object",
+        "required": true,
+        "subproperties": [
+          {
+            "name": "mall_id",
+            "type": "string",
+            "required": true,
+            "description": "쇼핑몰 ID\n"
+          },
+          {
+            "name": "event_shop_no",
+            "type": "Cafe24Datetime",
+            "required": true,
+            "description": "멀티쇼핑몰 번호\n멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호\n"
+          },
+          {
+            "name": "member_id",
+            "type": "string",
+            "required": true,
+            "description": "회원 아이디\n"
+          }
+        ]
+      }
+    ]
   },
   {
     "eventId": 90148,
@@ -3675,7 +4043,7 @@
           },
           {
             "name": "shop_no",
-            "type": "Cafe24Datetime",
+            "type": "number",
             "required": true,
             "description": "멀티쇼핑몰 번호\n"
           },
@@ -5220,7 +5588,33 @@
     "eventId": 90115,
     "name": "OnSuboperatorDeleted",
     "description": "쇼핑몰에 등록된 부운영자가 삭제된 경우\n\nRequired permissions:\n- mall.read_store\n- mall.read_supply\n",
-    "properties": []
+    "properties": [
+      {
+        "name": "event_no",
+        "type": "number",
+        "required": true,
+        "description": "이벤트 구분(타입)\n각 이벤트 NO. 참조"
+      },
+      {
+        "name": "resource",
+        "type": "object",
+        "required": true,
+        "subproperties": [
+          {
+            "name": "mall_id",
+            "type": "string",
+            "required": true,
+            "description": "쇼핑몰 ID\n"
+          },
+          {
+            "name": "sub_admin_id",
+            "type": "string",
+            "required": true,
+            "description": "부운영자ID\n"
+          }
+        ]
+      }
+    ]
   },
   {
     "eventId": 90116,
@@ -5334,7 +5728,68 @@
     "eventId": 90121,
     "name": "OnMyStoreInfoSettingsUpdated",
     "description": "내 쇼핑몰 정보 설정이 수정된 경우\n\nRequired permissions:\n- mall.read_store\n- mall.read_supply\n",
-    "properties": []
+    "properties": [
+      {
+        "name": "event_no",
+        "type": "number",
+        "required": true,
+        "description": "이벤트 구분(타입)\n각 이벤트 NO. 참조"
+      },
+      {
+        "name": "resource",
+        "type": "object",
+        "required": true,
+        "subproperties": [
+          {
+            "name": "mall_id",
+            "type": "string",
+            "required": true,
+            "description": "쇼핑몰 ID\n"
+          },
+          {
+            "name": "shop_no",
+            "type": "Cafe24Datetime",
+            "required": true,
+            "description": "멀티쇼핑몰 번호\n"
+          },
+          {
+            "name": "shop_name",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "country",
+            "type": "string",
+            "required": true,
+            "description": "사업장 국가\n사업장이 있는 국가명\n"
+          },
+          {
+            "name": "zipcode",
+            "type": "Cafe24Datetime",
+            "required": true,
+            "description": "사업장 우편번호\n"
+          },
+          {
+            "name": "address1",
+            "type": "string",
+            "required": true,
+            "description": "사업장 기본주소\n사업장의 주소 (시/군/도)\n"
+          },
+          {
+            "name": "address2",
+            "type": "string",
+            "required": true,
+            "description": "사업장 상세주소\n"
+          },
+          {
+            "name": "president_phone",
+            "type": "string",
+            "required": true,
+            "description": "대표전화\n"
+          }
+        ]
+      }
+    ]
   },
   {
     "eventId": 90142,

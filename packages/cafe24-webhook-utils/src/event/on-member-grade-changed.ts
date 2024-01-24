@@ -37,7 +37,7 @@ export interface OnMemberGradeChanged {
      * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호
      *
      */
-    event_shop_no: Cafe24Datetime;
+    event_shop_no: number;
     /**
      * @description
      * 회원 아이디

@@ -45,7 +45,10 @@
         ],
         "cwd": "packages/cafe24api-schema-scraper",
         "parallel": true
-      }
+      },
+      "dependsOn": [
+        "build"
+      ]
     }
   }
 }
