@@ -7,7 +7,7 @@
     "clean": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "pnpm rimraf dist ../../dist ./generators/**/gen",
+        "command": "pnpm rimraf dist ../../dist",
         "cwd": "packages/cafe24api-client"
       }
     },
