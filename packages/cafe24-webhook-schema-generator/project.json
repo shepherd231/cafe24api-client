@@ -35,6 +35,13 @@
         "command": "node ./bin/index.js run",
         "cwd": "packages/cafe24-webhook-schema-generator"
       }
+    },
+    "generate": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "pnpm nx run start --url https://developers.cafe24.com/app/front/app/develop/webhook/sample --output ../cafe24-webhook-utils/generators/generate-interfaces/gen/webhook-info.json",
+        "cwd": "packages/cafe24-webhook-schema-generator"
+      }
     }
   }
 }
