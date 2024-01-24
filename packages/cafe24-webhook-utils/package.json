@@ -1,6 +1,6 @@
 {
   "name": "cafe24-webhook-utils",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Utilities for Cafe24 Webhook.",
   "license": "MIT",
   "main": "dist/index.js",
@@ -15,7 +15,7 @@
   "devDependencies": {
     "@types/ejs": "^3.1.5",
     "@types/shelljs": "^0.8.15",
-    "cafe24-webhook-schema-generator": "workspace:*",
+    "cafe24-webhook-schema-generator": "0.2.0",
     "case": "^1.6.3",
     "ejs": "^3.1.9",
     "shelljs": "^0.8.5"
