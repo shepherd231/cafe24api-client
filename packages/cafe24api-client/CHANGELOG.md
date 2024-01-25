@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.1](https://github.com/shepherd231/cafe24api-client/compare/cafe24api-client-v0.3.0...cafe24api-client-v0.3.1) (2024-01-25)
+
+
+### Bug Fixes
+
+* no url-join ([eb0e742](https://github.com/shepherd231/cafe24api-client/commit/eb0e7423bf80d77c4f50e59d6d155eb1172bd985))
+
 ## [0.3.0](https://github.com/shepherd231/cafe24api-client/compare/cafe24api-client-v0.2.1...cafe24api-client-v0.3.0) (2024-01-24)
 
 
