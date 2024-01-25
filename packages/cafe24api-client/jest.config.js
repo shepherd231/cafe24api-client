@@ -7,9 +7,5 @@ module.exports = {
   transform: {
     '^.+\\.[tj]s$': ['ts-jest', { tsconfig: './tsconfig.spec.json' }],
   },
-  transformIgnorePatterns: [],
-  moduleNameMapper: {
-    '^url-join$': '<rootDir>/node_modules/url-join/lib/url-join.js',
-  },
   coverageDirectory: '../../coverage/packages/cafe24api-client',
 };

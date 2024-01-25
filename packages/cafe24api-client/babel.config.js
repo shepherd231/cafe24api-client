@@ -1,4 +1,4 @@
-const exclude = ['node_modules/**', '**/tests'];
+const exclude = ['node_modules/**', '**/tests/**'];
 
 module.exports = {
   env: {

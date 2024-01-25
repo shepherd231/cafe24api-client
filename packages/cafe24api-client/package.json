@@ -26,8 +26,7 @@
     "case": "^1.6.3",
     "dayjs": "^1.11.10",
     "lru-cache": "^10.1.0",
-    "merge": "^2.1.1",
-    "url-join": "^5.0.0"
+    "merge": "^2.1.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.23.0",

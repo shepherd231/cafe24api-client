@@ -4,7 +4,6 @@ import axios, {
   RawAxiosRequestHeaders,
 } from 'axios';
 import { merge } from 'merge';
-import urlJoin from 'url-join';
 import { TaskQueue, TaskQueueOptions } from '../task-queue';
 
 export interface Cafe24APIClientOptions {
@@ -105,7 +104,7 @@ export abstract class Cafe24APIClient {
     // If the task queue is not enabled, just fetch
     if (!this.taskQueueEnabled) {
       return fetcher({
-        url: urlJoin(this.url, path),
+        url: this.url + path,
         payload,
         fields: options?.fields?.join(','),
         headers: options?.headers ?? this.createHeaders(),
@@ -116,7 +115,7 @@ export abstract class Cafe24APIClient {
     // and wait for the task to be executed
     return this.taskQueue.enqueue(() =>
       fetcher({
-        url: urlJoin(this.url, path),
+        url: this.url + path,
         payload,
         fields: options?.fields?.join(','),
         headers: options?.headers ?? this.createHeaders(),
