@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.0](https://github.com/shepherd231/cafe24api-client/compare/cafe24api-client-v0.4.0...cafe24api-client-v0.5.0) (2024-01-27)
+
+
+### Features
+
+* add display code ([b6f22f1](https://github.com/shepherd231/cafe24api-client/commit/b6f22f1ab8d1ad0a52e6a5dc762370128db90a60))
+* display code ([2172d62](https://github.com/shepherd231/cafe24api-client/commit/2172d62f36a686b822890eaf0d97c373e240f50a))
+
 ## [0.4.0](https://github.com/shepherd231/cafe24api-client/compare/cafe24api-client-v0.3.1...cafe24api-client-v0.4.0) (2024-01-27)
 
 
