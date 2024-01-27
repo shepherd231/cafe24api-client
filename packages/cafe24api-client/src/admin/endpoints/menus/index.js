@@ -1,3 +1,4 @@
+
 export default (cls) => {
   cls.prototype.retrieveMenus = async function (input, options) {
     return this.createRequest(
@@ -12,4 +13,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

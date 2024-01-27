@@ -1,10 +1,19 @@
 import { AxiosResponse } from 'axios';
-import { Endpoint, RequestOptions, Cafe24Datetime } from 'cafe24api-client';
+import { 
+  Endpoint, 
+  AdminRequestOptions, 
+  Cafe24Datetime,
+  Cafe24Boolean,
+  Cafe24Date,
+  Cafe24Datetime,
+  Cafe24Enum,
+} from 'cafe24api-client';
 
 declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   /**
    * @description
    * 취소(Cancellation)는 특정 주문을 배송 전에 취소하는 기능입니다.
@@ -14,807 +23,807 @@ declare module 'cafe24api-client' {
    */
   export interface Cancellation {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 
+      */ 
     shopNo: any;
     /**
-     * @description
-     * 주문번호
-     *
-     *
-     */
+      * @description
+      * 주문번호
+      * 
+      * 
+      */ 
     orderId: any;
     /**
-     * @description
-     * 취소번호
-     *
-     *
-     */
+      * @description
+      * 취소번호
+      * 
+      * 
+      */ 
     claimCode: any;
     /**
-     * @description
-     * 구분
-     *
-     * A:고객변심
-     * B:배송지연
-     * J:배송오류
-     * C:배송불가지역
-     * L:수출/통관 불가
-     * D:포장불량
-     * E:상품 불만족
-     * F:상품정보상이
-     * K:상품불량
-     * G:서비스불만족
-     * H:품절
-     * I:기타
-     *
-     *
-     */
+      * @description
+      * 구분
+      * 
+      * A:고객변심
+      * B:배송지연
+      * J:배송오류
+      * C:배송불가지역
+      * L:수출/통관 불가
+      * D:포장불량
+      * E:상품 불만족
+      * F:상품정보상이
+      * K:상품불량
+      * G:서비스불만족
+      * H:품절
+      * I:기타
+      * 
+      * 
+      */ 
     claimReasonType: any;
     /**
-     * @description
-     * 사유
-     *
-     *
-     */
+      * @description
+      * 사유
+      * 
+      * 
+      */ 
     claimReason: any;
     /**
-     * @description
-     * 환불 방식
-     *
-     *
-     */
+      * @description
+      * 환불 방식
+      * 
+      * 
+      */ 
     refundMethods: any;
     /**
-     * @description
-     * 비고
-     *
-     *
-     */
+      * @description
+      * 비고
+      * 
+      * 
+      */ 
     refundReason: any;
     /**
-     * @description
-     * 상품구매금액
-     *
-     *
-     */
+      * @description
+      * 상품구매금액
+      * 
+      * 
+      */ 
     orderPriceAmount: any;
     /**
-     * @description
-     * 환불금액
-     *
-     *
-     */
+      * @description
+      * 환불금액
+      * 
+      * 
+      */ 
     refundAmounts: any;
     /**
-     * @description
-     * 배송비
-     *
-     *
-     */
+      * @description
+      * 배송비
+      * 
+      * 
+      */ 
     shippingFee: any;
     /**
-     * @description
-     * 반품배송비 적용구분
-     *
-     *
-     */
+      * @description
+      * 반품배송비 적용구분
+      * 
+      * 
+      */ 
     returnShipType: any;
     /**
-     * @description
-     * 후불 결제 수수료
-     *
-     *
-     */
+      * @description
+      * 후불 결제 수수료
+      * 
+      * 
+      */ 
     deferCommission: any;
     /**
-     * @description
-     * 제휴할인 취소액
-     *
-     *
-     */
+      * @description
+      * 제휴할인 취소액
+      * 
+      * 
+      */ 
     partnerDiscountAmount: any;
     /**
-     * @description
-     * 상품별추가할인 취소액
-     *
-     *
-     */
+      * @description
+      * 상품별추가할인 취소액
+      * 
+      * 
+      */ 
     addDiscountAmount: any;
     /**
-     * @description
-     * 회원등급할인 취소액
-     *
-     *
-     */
+      * @description
+      * 회원등급할인 취소액
+      * 
+      * 
+      */ 
     memberGradeDiscountAmount: any;
     /**
-     * @description
-     * 배송비할인 취소액
-     *
-     *
-     */
+      * @description
+      * 배송비할인 취소액
+      * 
+      * 
+      */ 
     shippingDiscountAmount: any;
     /**
-     * @description
-     * 쿠폰할인 취소액
-     *
-     *
-     */
+      * @description
+      * 쿠폰할인 취소액
+      * 
+      * 
+      */ 
     couponDiscountAmount: any;
     /**
-     * @description
-     * 사용된 적립금 반환액
-     *
-     *
-     */
+      * @description
+      * 사용된 적립금 반환액
+      * 
+      * 
+      */ 
     pointUsed: any;
     /**
-     * @description
-     * 사용된 예치금 반환액
-     *
-     *
-     */
+      * @description
+      * 사용된 예치금 반환액
+      * 
+      * 
+      */ 
     creditUsed: any;
     /**
-     * @description
-     * 철회 여부
-     *
-     * T : 철회함
-     * F : 철회안함
-     *
-     *
-     */
+      * @description
+      * 철회 여부
+      * 
+      * T : 철회함
+      * F : 철회안함
+      * 
+      * 
+      */ 
     undone: any;
     /**
-     * @description
-     * 철회 사유 구분
-     *
-     * A:고객변심
-     * B:배송지연
-     * J:배송오류
-     * C:배송불가지역
-     * L:수출/통관 불가
-     * D:포장불량
-     * E:상품 불만족
-     * F:상품정보상이
-     * K:상품불량
-     * G:서비스불만족
-     * H:품절
-     * I:기타
-     *
-     *
-     */
+      * @description
+      * 철회 사유 구분
+      * 
+      * A:고객변심
+      * B:배송지연
+      * J:배송오류
+      * C:배송불가지역
+      * L:수출/통관 불가
+      * D:포장불량
+      * E:상품 불만족
+      * F:상품정보상이
+      * K:상품불량
+      * G:서비스불만족
+      * H:품절
+      * I:기타
+      * 
+      * 
+      */ 
     undoneReasonType: any;
     /**
-     * @description
-     * 철회 사유
-     *
-     *
-     */
+      * @description
+      * 철회 사유
+      * 
+      * 
+      */ 
     undoneReason: any;
     /**
-     * @description
-     * 주문상세내역 노출 여부
-     *
-     * T : 노출함
-     * F : 노출안함
-     *
-     *
-     */
+      * @description
+      * 주문상세내역 노출 여부
+      * 
+      * T : 노출함
+      * F : 노출안함
+      * 
+      * 
+      */ 
     exposeOrderDetail: any;
     /**
-     * @description
-     * 주문상세내역 노출 철회 사유
-     *
-     *
-     */
+      * @description
+      * 주문상세내역 노출 철회 사유
+      * 
+      * 
+      */ 
     exposedUndoneReason: any;
     /**
-     * @description
-     * 품주코드
-     *
-     *
-     */
+      * @description
+      * 품주코드
+      * 
+      * 
+      */ 
     items: any;
     /**
-     * @description
-     * 가격에 세금 포함
-     *
-     * T: 세금포함
-     * F: 세금제외
-     *
-     *
-     */
+      * @description
+      * 가격에 세금 포함
+      * 
+      * T: 세금포함
+      * F: 세금제외
+      * 
+      * 
+      */ 
     includeTax: any;
     /**
-     * @description
-     * 세금 정보
-     *
-     * 세금 관리자 앱을 사용 안 할 경우 null로 반환
-     *
-     *
-     */
+      * @description
+      * 세금 정보
+      * 
+      * 세금 관리자 앱을 사용 안 할 경우 null로 반환
+      * 
+      * 
+      */ 
     tax: any;
     /**
-     * @description
-     * 주문상태
-     *
-     * canceled : 취소완료
-     * canceling : 취소처리중
-     *
-     *
-     */
+      * @description
+      * 주문상태
+      * 
+      * canceled : 취소완료
+      * canceling : 취소처리중
+      * 
+      * 
+      */ 
     status: any;
     /**
-     * @description
-     * 재고복구
-     *
-     * T : 복구함
-     * F : 복구안함
-     *
-     *
-     */
+      * @description
+      * 재고복구
+      * 
+      * T : 복구함
+      * F : 복구안함
+      * 
+      * 
+      */ 
     recoverInventory: any;
     /**
-     * @description
-     * 관리자 메모에도 추가
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 관리자 메모에도 추가
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     addMemoToo: any;
   }
 
   export interface RetrieveAnOrderCancellationInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 취소번호
-     *
-     * @required
-     */
+      * @description
+      * 취소번호
+      * 
+      * @required
+      */ 
     claimCode: any;
   }
 
   export interface RetrieveAnOrderCancellationOutput {
-    cancellation: {
-      shopNo: number;
-      orderId: string;
-      claimCode: string;
-      claimReasonType: Cafe24Enum;
-      claimReason: string;
-      refundMethods: string[];
-      refundReason: string;
-      orderPriceAmount: Cafe24Datetime;
-      refundAmounts: {
-        paymentMethod: string;
-        amount: string;
-      }[];
-      shippingFee: string;
-      returnShipType: string;
-      deferCommission: string;
-      partnerDiscountAmount: string;
-      addDiscountAmount: string;
-      memberGradeDiscountAmount: string;
-      shippingDiscountAmount: string;
-      couponDiscountAmount: string;
-      pointUsed: string;
-      creditUsed: string;
-      undone: Cafe24Enum;
-      undoneReasonType: any;
-      undoneReason: any;
-      exposeOrderDetail: any;
-      exposedUndoneReason: any;
-      items: {
-        shopNo: number;
-        itemNo: number;
-        orderItemCode: string;
-        variantCode: string;
-        productNo: number;
-        productCode: string;
-        customProductCode: string;
-        customVariantCode: string;
-        engProductName: any;
-        optionId: string;
-        optionValue: string;
-        optionValueDefault: string;
-        additionalOptionValue: string;
-        additionalOptionValues: {
-          key: string;
-          type: string;
-          name: string;
-          value: string;
-        }[];
-        productName: string;
-        productNameDefault: string;
-        productPrice: Cafe24Datetime;
-        optionPrice: string;
-        additionalDiscountPrice: string;
-        couponDiscountPrice: Cafe24Datetime;
-        appItemDiscountAmount: string;
-        quantity: number;
-        supplierProductName: string;
-        supplierTransactionType: Cafe24Enum;
-        supplierId: string;
-        supplierName: string;
-        trackingNo: Cafe24Datetime;
-        shippingCode: string;
-        claimCode: string;
-        claimReasonType: Cafe24Enum;
-        claimReason: string;
-        refundBankName: string;
-        refundBankAccountNo: Cafe24Datetime;
-        refundBankAccountHolder: string;
-        postExpressFlag: any;
-        orderStatus: string;
-        orderStatusAdditionalInfo: any;
-        claimQuantity: number;
-        statusCode: string;
-        statusText: string;
-        openMarketStatus: string;
-        bundledShippingType: Cafe24Enum;
-        shippingCompanyId: Cafe24Datetime;
-        shippingCompanyName: string;
-        shippingCompanyCode: Cafe24Datetime;
-        productBundle: Cafe24Enum;
-        productBundleNo: Cafe24Datetime;
-        productBundleName: any;
-        productBundleNameDefault: any;
-        productBundleType: Cafe24Enum;
-        wasProductBundle: any;
-        originalBundleItemNo: any;
-        naverPayOrderId: any;
-        naverPayClaimStatus: string;
-        individualShippingFee: string;
-        shippingFeeType: Cafe24Enum;
-        shippingFeeTypeText: string;
-        shippingPaymentOption: Cafe24Enum;
-        paymentInfoId: Cafe24Datetime;
-        originalItemNo: number[];
-        storePickup: Cafe24Enum;
-        orderedDate: Cafe24Datetime;
-        shippedDate: Cafe24Datetime;
-        deliveredDate: Cafe24Datetime;
-        cancelDate: any;
-        returnRequestDate: any;
-        returnConfirmedDate: any;
-        returnCollectedDate: any;
-        cancelRequestDate: any;
-        refundDate: any;
-        exchangeRequestDate: any;
-        exchangeDate: any;
-        productMaterial: any;
-        productMaterialEng: any;
-        clothFabric: any;
-        productWeight: string;
-        volumeSize: any;
-        volumeSizeWeight: any;
-        clearanceCategory: any;
-        clearanceCategoryInfo: any;
-        clearanceCategoryCode: any;
-        hsCode: string;
-        onePlusNEvent: any;
-        originPlace: Cafe24Enum;
-        gift: Cafe24Enum;
-        itemGrantingGift: any;
-        productBundleList: {
-          productNo: number;
-          productCode: string;
-          variantCode: string;
-          productName: Cafe24Datetime;
-          productNameDefault: Cafe24Datetime;
-          optionId: string;
-          optionValue: string;
-          optionValueDefault: string;
-          additionalOptionValue: string;
-          additionalOptionValues: {
-            key: string;
-            type: string;
-            name: string;
-            value: string;
-          }[];
-          quantity: number;
-          supplierId: string;
-          engProductName: any;
-          hsCode: Cafe24Datetime;
-          optionPrice: string;
-        }[];
-        marketCancelRequest: any;
-        marketCancelRequestQuantity: any;
-        marketFailReason: any;
-        marketFailReasonGuide: any;
-        marketItemSequence: any;
-        marketItemNo: any;
-        marketCustomVariantCode: any;
-        optionType: Cafe24Enum;
-        options: {
-          optionCode: string;
-          optionName: any;
-          optionValue: {
-            optionText: any;
-            valueNo: number;
-          };
-        }[];
-        marketDiscountAmount: string;
-        labels: any;
-        orderStatusBeforeCs: string;
-        supplyPrice: Cafe24Datetime;
-      }[];
-      includeTax: Cafe24Enum;
-      tax: {
-        name: string;
-        amount: Cafe24Datetime;
-      }[];
+    cancellation: { 
+    shopNo: number;
+    orderId: string;
+    claimCode: string;
+    claimReasonType: Cafe24Enum;
+    claimReason: string;
+    refundMethods: string[];
+    refundReason: string;
+    orderPriceAmount: Cafe24Datetime;
+    refundAmounts: { 
+    paymentMethod: string;
+    amount: string;
+    }[];
+    shippingFee: string;
+    returnShipType: string;
+    deferCommission: string;
+    partnerDiscountAmount: string;
+    addDiscountAmount: string;
+    memberGradeDiscountAmount: string;
+    shippingDiscountAmount: string;
+    couponDiscountAmount: string;
+    pointUsed: string;
+    creditUsed: string;
+    undone: Cafe24Enum;
+    undoneReasonType: any;
+    undoneReason: any;
+    exposeOrderDetail: any;
+    exposedUndoneReason: any;
+    items: { 
+    shopNo: number;
+    itemNo: number;
+    orderItemCode: string;
+    variantCode: string;
+    productNo: number;
+    productCode: string;
+    customProductCode: string;
+    customVariantCode: string;
+    engProductName: any;
+    optionId: string;
+    optionValue: string;
+    optionValueDefault: string;
+    additionalOptionValue: string;
+    additionalOptionValues: { 
+    key: string;
+    type: string;
+    name: string;
+    value: string;
+    }[];
+    productName: string;
+    productNameDefault: string;
+    productPrice: Cafe24Datetime;
+    optionPrice: string;
+    additionalDiscountPrice: string;
+    couponDiscountPrice: Cafe24Datetime;
+    appItemDiscountAmount: string;
+    quantity: number;
+    supplierProductName: string;
+    supplierTransactionType: Cafe24Enum;
+    supplierId: string;
+    supplierName: string;
+    trackingNo: Cafe24Datetime;
+    shippingCode: string;
+    claimCode: string;
+    claimReasonType: Cafe24Enum;
+    claimReason: string;
+    refundBankName: string;
+    refundBankAccountNo: Cafe24Datetime;
+    refundBankAccountHolder: string;
+    postExpressFlag: any;
+    orderStatus: string;
+    orderStatusAdditionalInfo: any;
+    claimQuantity: number;
+    statusCode: string;
+    statusText: string;
+    openMarketStatus: string;
+    bundledShippingType: Cafe24Enum;
+    shippingCompanyId: Cafe24Datetime;
+    shippingCompanyName: string;
+    shippingCompanyCode: Cafe24Datetime;
+    productBundle: Cafe24Enum;
+    productBundleNo: Cafe24Datetime;
+    productBundleName: any;
+    productBundleNameDefault: any;
+    productBundleType: Cafe24Enum;
+    wasProductBundle: any;
+    originalBundleItemNo: any;
+    naverPayOrderId: any;
+    naverPayClaimStatus: string;
+    individualShippingFee: string;
+    shippingFeeType: Cafe24Enum;
+    shippingFeeTypeText: string;
+    shippingPaymentOption: Cafe24Enum;
+    paymentInfoId: Cafe24Datetime;
+    originalItemNo: number[];
+    storePickup: Cafe24Enum;
+    orderedDate: Cafe24Datetime;
+    shippedDate: Cafe24Datetime;
+    deliveredDate: Cafe24Datetime;
+    cancelDate: any;
+    returnRequestDate: any;
+    returnConfirmedDate: any;
+    returnCollectedDate: any;
+    cancelRequestDate: any;
+    refundDate: any;
+    exchangeRequestDate: any;
+    exchangeDate: any;
+    productMaterial: any;
+    productMaterialEng: any;
+    clothFabric: any;
+    productWeight: string;
+    volumeSize: any;
+    volumeSizeWeight: any;
+    clearanceCategory: any;
+    clearanceCategoryInfo: any;
+    clearanceCategoryCode: any;
+    hsCode: string;
+    onePlusNEvent: any;
+    originPlace: Cafe24Enum;
+    gift: Cafe24Enum;
+    itemGrantingGift: any;
+    productBundleList: { 
+    productNo: number;
+    productCode: string;
+    variantCode: string;
+    productName: Cafe24Datetime;
+    productNameDefault: Cafe24Datetime;
+    optionId: string;
+    optionValue: string;
+    optionValueDefault: string;
+    additionalOptionValue: string;
+    additionalOptionValues: { 
+    key: string;
+    type: string;
+    name: string;
+    value: string;
+    }[];
+    quantity: number;
+    supplierId: string;
+    engProductName: any;
+    hsCode: Cafe24Datetime;
+    optionPrice: string;
+    }[];
+    marketCancelRequest: any;
+    marketCancelRequestQuantity: any;
+    marketFailReason: any;
+    marketFailReasonGuide: any;
+    marketItemSequence: any;
+    marketItemNo: any;
+    marketCustomVariantCode: any;
+    optionType: Cafe24Enum;
+    options: { 
+    optionCode: string;
+    optionName: any;
+    optionValue: { 
+    optionText: any;
+    valueNo: number;
+    };
+    }[];
+    marketDiscountAmount: string;
+    labels: any;
+    orderStatusBeforeCs: string;
+    supplyPrice: Cafe24Datetime;
+    }[];
+    includeTax: Cafe24Enum;
+    tax: { 
+    name: string;
+    amount: Cafe24Datetime;
+    }[];
     };
   }
   export interface CreateMultipleOrderCancellationsInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 주문번호
-     *
-     * @required
-     */
+      * @description
+      * 주문번호
+      * 
+      * @required
+      */ 
     orderId: any;
     /**
-     * @description
-     * 주문상태
-     *
-     * canceled : 취소완료
-     * canceling : 취소처리중
-     *
-     * @required
-     */
+      * @description
+      * 주문상태
+      * 
+      * canceled : 취소완료
+      * canceling : 취소처리중
+      * 
+      * @required
+      */ 
     status: any;
     /**
-     * @description
-     * 재고복구
-     *
-     * T : 복구함
-     * F : 복구안함
-     *
-     * @default F
-     *
-     *
-     */
+      * @description
+      * 재고복구
+      * 
+      * T : 복구함
+      * F : 복구안함
+      * 
+      * @default F
+      * 
+      * 
+      */ 
     recoverInventory?: any;
     /**
-     * @description
-     * 쿠폰 복원
-     *
-     * 오픈마켓/네이버페이/카카오페이 주문을 취소할 경우 사용 불가
-     *
-     * T : 복구함
-     * F : 복구안함
-     *
-     * @default F
-     *
-     *
-     */
+      * @description
+      * 쿠폰 복원
+      * 
+      * 오픈마켓/네이버페이/카카오페이 주문을 취소할 경우 사용 불가
+      * 
+      * T : 복구함
+      * F : 복구안함
+      * 
+      * @default F
+      * 
+      * 
+      */ 
     recoverCoupon?: any;
     /**
-     * @description
-     * 복원할 쿠폰 번호
-     *
-     *
-     */
+      * @description
+      * 복원할 쿠폰 번호
+      * 
+      * 
+      */ 
     recoverCouponNo?: any;
     /**
-     * @description
-     * 관리자 메모에도 추가
-     *
-     * 오픈마켓/네이버페이/카카오페이 주문을 취소할 경우 사용 불가
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     * @default F
-     *
-     *
-     */
+      * @description
+      * 관리자 메모에도 추가
+      * 
+      * 오픈마켓/네이버페이/카카오페이 주문을 취소할 경우 사용 불가
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * @default F
+      * 
+      * 
+      */ 
     addMemoToo?: any;
     /**
-     * @description
-     * 취소사유
-     *
-     * 최대글자수 : [2000자]
-     */
+      * @description
+      * 취소사유
+      * 
+      * 최대글자수 : [2000자]
+      */ 
     reason?: any;
     /**
-     * @description
-     * 취소사유 구분
-     *
-     * 오픈마켓/네이버페이/카카오페이 주문을 취소할 경우 사용 불가
-     *
-     * A : 고객변심
-     * B : 배송지연
-     * C : 배송불가지역
-     * L : 수출/통관 불가
-     * D : 포장불량
-     * E : 상품불만족
-     * F : 상품정보상이
-     * G : 서비스불만족
-     * H : 품절
-     * I : 기타
-     *
-     *
-     */
+      * @description
+      * 취소사유 구분
+      * 
+      * 오픈마켓/네이버페이/카카오페이 주문을 취소할 경우 사용 불가
+      * 
+      * A : 고객변심
+      * B : 배송지연
+      * C : 배송불가지역
+      * L : 수출/통관 불가
+      * D : 포장불량
+      * E : 상품불만족
+      * F : 상품정보상이
+      * G : 서비스불만족
+      * H : 품절
+      * I : 기타
+      * 
+      * 
+      */ 
     claimReasonType?: any;
     /**
-     * @description
-     * 네이버페이 취소사유 구분
-     *
-     * 쇼핑몰/오픈마켓/카카오페이 주문을 취소할 경우 사용 불가
-     *
-     * EC 베트남, 필리핀 버전에서는 사용할 수 없음.
-     *
-     * 51 : 구매 의사 취소
-     * 52 : 색상 및 사이즈 변경
-     * 53 : 다른 상품 잘못 주문
-     * 54 : 서비스 및 상품 불만족
-     * 55 : 배송 지연
-     * 56 : 상품 품절
-     * 60 : 상품 정보 상이
-     *
-     *
-     */
+      * @description
+      * 네이버페이 취소사유 구분
+      * 
+      * 쇼핑몰/오픈마켓/카카오페이 주문을 취소할 경우 사용 불가
+      * 
+      * EC 베트남, 필리핀 버전에서는 사용할 수 없음.
+      * 
+      * 51 : 구매 의사 취소
+      * 52 : 색상 및 사이즈 변경
+      * 53 : 다른 상품 잘못 주문
+      * 54 : 서비스 및 상품 불만족
+      * 55 : 배송 지연
+      * 56 : 상품 품절
+      * 60 : 상품 정보 상이
+      * 
+      * 
+      */ 
     naverpayCancelReasonType?: any;
     /**
-     * @description
-     * 카카오페이 취소사유 구분
-     *
-     * 오픈마켓/네이버페이 주문을 취소할 경우 사용 불가
-     *
-     * K1 : 변심에 의한 상품 취소
-     * K2 : 다른 옵션이나 상품을 잘못 주문함
-     * K3 : 배송지연
-     * K4 : 상품 파손 또는 불량
-     * K5 : 다른 상품 오배송 또는 구성품 누락
-     * K6 : 상품정보와 다름
-     * K7 : 품절로 인한 배송 불가
-     *
-     *
-     */
+      * @description
+      * 카카오페이 취소사유 구분
+      * 
+      * 오픈마켓/네이버페이 주문을 취소할 경우 사용 불가
+      * 
+      * K1 : 변심에 의한 상품 취소
+      * K2 : 다른 옵션이나 상품을 잘못 주문함
+      * K3 : 배송지연
+      * K4 : 상품 파손 또는 불량
+      * K5 : 다른 상품 오배송 또는 구성품 누락
+      * K6 : 상품정보와 다름
+      * K7 : 품절로 인한 배송 불가
+      * 
+      * 
+      */ 
     kakaopayCancelReasonType?: any;
     /**
-     * @description
-     * 환불 방식
-     *
-     * (오픈마켓/네이버페이/카카오페이 주문을 취소할 경우 사용 불가)
-     *
-     * T : 현금
-     * F : 신용카드
-     * M : 적립금
-     * G : 계좌이체
-     * C : 휴대폰
-     * D : 예치금
-     * Z : 후불
-     * O : 선불금
-     * V : 편의점
-     * J : 제휴상품권
-     * K : 제휴포인트
-     * I : 기타
-     *
-     *
-     */
+      * @description
+      * 환불 방식
+      * 
+      * (오픈마켓/네이버페이/카카오페이 주문을 취소할 경우 사용 불가)
+      * 
+      * T : 현금
+      * F : 신용카드
+      * M : 적립금
+      * G : 계좌이체
+      * C : 휴대폰
+      * D : 예치금
+      * Z : 후불
+      * O : 선불금
+      * V : 편의점
+      * J : 제휴상품권
+      * K : 제휴포인트
+      * I : 기타
+      * 
+      * 
+      */ 
     refundMethodCode?: any;
     /**
-     * @description
-     * 환불 은행 코드
-     *
-     * 환불 방식(refund_method)이 현금(T)일 경우 필수
-     *
-     * refund_bank_code
-     *
-     * 해당 쇼핑몰이 EC Korea 쇼핑몰일 경우 필수
-     * 환불수단(refund_method)이 &#34;현금(T)&#34;일 때만 사용 가능
-     * 오픈마켓/네이버페이/카카오페이 주문을 취소할 경우 사용 불가
-     *
-     *
-     */
+      * @description
+      * 환불 은행 코드
+      * 
+      * 환불 방식(refund_method)이 현금(T)일 경우 필수
+      * 
+      * refund_bank_code 
+      * 
+      * 해당 쇼핑몰이 EC Korea 쇼핑몰일 경우 필수
+      * 환불수단(refund_method)이 &#34;현금(T)&#34;일 때만 사용 가능
+      * 오픈마켓/네이버페이/카카오페이 주문을 취소할 경우 사용 불가
+      * 
+      * 
+      */ 
     refundBankCode?: any;
     /**
-     * @description
-     * 환불은행명
-     *
-     * 환불 방식(refund_method)이 현금(T)일 경우 필수
-     *
-     * ※ 해당 쇼핑몰이 EC Global 쇼핑몰일 경우 필수
-     * 환불수단(refund_method)이 &#34;현금(T)&#34;일 때만 사용 가능
-     * 오픈마켓/네이버페이/카카오페이 주문을 취소할 경우 사용 불가
-     *
-     * 최대글자수 : [250자]
-     */
+      * @description
+      * 환불은행명
+      * 
+      * 환불 방식(refund_method)이 현금(T)일 경우 필수
+      * 
+      * ※ 해당 쇼핑몰이 EC Global 쇼핑몰일 경우 필수
+      * 환불수단(refund_method)이 &#34;현금(T)&#34;일 때만 사용 가능
+      * 오픈마켓/네이버페이/카카오페이 주문을 취소할 경우 사용 불가
+      * 
+      * 최대글자수 : [250자]
+      */ 
     refundBankName?: any;
     /**
-     * @description
-     * 환불 계좌번호
-     *
-     * 환불수단(refund_method)이 &#34;현금(T)&#34;일 때만 사용 가능
-     * 오픈마켓/네이버페이/카카오페이 주문을 취소할 경우 사용 불가
-     *
-     *
-     */
+      * @description
+      * 환불 계좌번호
+      * 
+      * 환불수단(refund_method)이 &#34;현금(T)&#34;일 때만 사용 가능
+      * 오픈마켓/네이버페이/카카오페이 주문을 취소할 경우 사용 불가
+      * 
+      * 
+      */ 
     refundBankAccountNo?: any;
     /**
-     * @description
-     * 환불계좌 예금주 명의
-     *
-     * 최대글자수 : [15자]
-     */
+      * @description
+      * 환불계좌 예금주 명의
+      * 
+      * 최대글자수 : [15자]
+      */ 
     refundBankAccountHolder?: any;
     /**
-     * @description
-     * 품주코드
-     *
-     *
-     */
-    items?: {
-      /**
-       * @description
-       * 품주코드
-       *
-       *
-       */
-      orderItemCode: any;
-      /**
-       * @description
-       * 수량
-       *
-       *
-       */
-      quantity: any;
+      * @description
+      * 품주코드
+      * 
+      * 
+      */ 
+    items?: { 
+    /**
+      * @description
+      * 품주코드
+      * 
+      * 
+      */ 
+    orderItemCode: any;
+    /**
+      * @description
+      * 수량
+      * 
+      * 
+      */ 
+    quantity: any;
     };
   }
 
   export interface CreateMultipleOrderCancellationsOutput {
-    cancellation: {
-      shopNo: number;
-      orderId: string;
-      status: string;
-      claimCode: string;
-      items: {
-        orderItemCode: string;
-        quantity: number;
-      }[];
+    cancellation: { 
+    shopNo: number;
+    orderId: string;
+    status: string;
+    claimCode: string;
+    items: { 
+    orderItemCode: string;
+    quantity: number;
+    }[];
     }[];
   }
   export interface ChangeCancellationDetailsInBulkInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     * 최소값: [1]
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 최소값: [1]
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 주문번호
-     *
-     * @required
-     */
+      * @description
+      * 주문번호
+      * 
+      * @required
+      */ 
     orderId: any;
     /**
-     * @description
-     * 취소번호
-     *
-     * @required
-     */
+      * @description
+      * 취소번호
+      * 
+      * @required
+      */ 
     claimCode: any;
     /**
-     * @description
-     * 재고복구
-     *
-     * T : 복구함
-     * F : 복구안함
-     *
-     * @required
-     */
+      * @description
+      * 재고복구
+      * 
+      * T : 복구함
+      * F : 복구안함
+      * 
+      * @required
+      */ 
     recoverInventory: any;
     /**
-     * @description
-     * 철회 여부
-     *
-     * T : 철회함
-     *
-     * @required
-     */
+      * @description
+      * 철회 여부
+      * 
+      * T : 철회함
+      * 
+      * @required
+      */ 
     undone: any;
     /**
-     * @description
-     * 관리자 메모에도 추가
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     * @required
-     */
+      * @description
+      * 관리자 메모에도 추가
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * @required
+      */ 
     addMemoToo: any;
     /**
-     * @description
-     * 철회 사유 구분
-     *
-     * A:고객변심
-     * B:배송지연
-     * J:배송오류
-     * C:배송불가지역
-     * L:수출/통관 불가
-     * D:포장불량
-     * E:상품 불만족
-     * F:상품정보상이
-     * K:상품불량
-     * G:서비스불만족
-     * H:품절
-     * I:기타
-     *
-     * @required
-     */
+      * @description
+      * 철회 사유 구분
+      * 
+      * A:고객변심
+      * B:배송지연
+      * J:배송오류
+      * C:배송불가지역
+      * L:수출/통관 불가
+      * D:포장불량
+      * E:상품 불만족
+      * F:상품정보상이
+      * K:상품불량
+      * G:서비스불만족
+      * H:품절
+      * I:기타
+      * 
+      * @required
+      */ 
     undoneReasonType: any;
     /**
-     * @description
-     * 철회 사유
-     *
-     * 최대글자수 : [2000자]
-     */
+      * @description
+      * 철회 사유
+      * 
+      * 최대글자수 : [2000자]
+      */ 
     undoneReason?: any;
     /**
-     * @description
-     * 주문상세내역 노출 여부
-     *
-     * T : 노출함
-     * F : 노출안함
-     *
-     * @required
-     */
+      * @description
+      * 주문상세내역 노출 여부
+      * 
+      * T : 노출함
+      * F : 노출안함
+      * 
+      * @required
+      */ 
     exposeOrderDetail: any;
     /**
-     * @description
-     * 주문상세내역 노출 철회 사유
-     *
-     * 최대글자수 : [2000자]
-     */
+      * @description
+      * 주문상세내역 노출 철회 사유
+      * 
+      * 최대글자수 : [2000자]
+      */ 
     exposedUndoneReason?: any;
   }
 
   export interface ChangeCancellationDetailsInBulkOutput {
-    cancellation: {
-      shopNo: number;
-      orderId: string;
-      claimCode: string;
-      recoverInventory: Cafe24Enum;
-      items: {
-        orderItemCode: string;
-      }[];
-      undone: Cafe24Enum;
-      addMemoToo: Cafe24Enum;
-      undoneReasonType: Cafe24Enum;
-      undoneReason: string;
-      exposeOrderDetail: Cafe24Enum;
-      exposedUndoneReason: string;
+    cancellation: { 
+    shopNo: number;
+    orderId: string;
+    claimCode: string;
+    recoverInventory: Cafe24Enum;
+    items: { 
+    orderItemCode: string;
+    }[];
+    undone: Cafe24Enum;
+    addMemoToo: Cafe24Enum;
+    undoneReasonType: Cafe24Enum;
+    undoneReason: string;
+    exposeOrderDetail: Cafe24Enum;
+    exposedUndoneReason: string;
     }[];
   }
 
@@ -1081,9 +1090,7 @@ declare module 'cafe24api-client' {
      */
     retrieveAnOrderCancellation(
       input: RetrieveAnOrderCancellationInput,
-      options?: RequestOptions<
-        RetrieveAnOrderCancellationOutput['cancellation']
-      >,
+      options?: AdminRequestOptions<RetrieveAnOrderCancellationOutput['cancellation']>,
     ): Promise<AxiosResponse<RetrieveAnOrderCancellationOutput>>;
     /**
      * @description
@@ -1135,9 +1142,7 @@ declare module 'cafe24api-client' {
      */
     createMultipleOrderCancellations(
       input: CreateMultipleOrderCancellationsInput,
-      options?: RequestOptions<
-        CreateMultipleOrderCancellationsOutput['cancellation'][number]
-      >,
+      options?: AdminRequestOptions<CreateMultipleOrderCancellationsOutput['cancellation'][number]>,
     ): Promise<AxiosResponse<CreateMultipleOrderCancellationsOutput>>;
     /**
      * @description
@@ -1198,9 +1203,7 @@ declare module 'cafe24api-client' {
      */
     changeCancellationDetailsInBulk(
       input: ChangeCancellationDetailsInBulkInput,
-      options?: RequestOptions<
-        ChangeCancellationDetailsInBulkOutput['cancellation'][number]
-      >,
+      options?: AdminRequestOptions<ChangeCancellationDetailsInBulkOutput['cancellation'][number]>,
     ): Promise<AxiosResponse<ChangeCancellationDetailsInBulkOutput>>;
   }
 }

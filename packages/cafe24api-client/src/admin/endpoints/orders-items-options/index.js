@@ -1,3 +1,4 @@
+
 export default (cls) => {
   cls.prototype.createOrderItemOptions = async function (input, options) {
     return this.createRequest(
@@ -40,4 +41,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

@@ -1,8 +1,6 @@
+
 export default (cls) => {
-  cls.prototype.retrieveProductImageSizeSettings = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.retrieveProductImageSizeSettings = async function (input, options) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/images/setting`,
@@ -13,10 +11,7 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.updateProductImageSizeSettings = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.updateProductImageSizeSettings = async function (input, options) {
     return this.createRequest(
       'PUT',
       `/api/v2/admin/images/setting`,
@@ -27,4 +22,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

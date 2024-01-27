@@ -1,3 +1,4 @@
+
 export default (cls) => {
   cls.prototype.createAPaymentGateway = async function (input, options) {
     return this.createRequest(
@@ -41,4 +42,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

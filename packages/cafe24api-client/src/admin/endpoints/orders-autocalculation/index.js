@@ -1,8 +1,6 @@
+
 export default (cls) => {
-  cls.prototype.removeAutoCalculationSettingOfAnOrder = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.removeAutoCalculationSettingOfAnOrder = async function (input, options) {
     return this.createRequest(
       'DELETE',
       `/api/v2/admin/orders/${input['order_id']}/autocalculation`,
@@ -13,4 +11,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

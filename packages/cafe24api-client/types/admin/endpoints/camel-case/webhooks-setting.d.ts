@@ -1,29 +1,39 @@
 import { AxiosResponse } from 'axios';
-import { Endpoint, RequestOptions, Cafe24Datetime } from 'cafe24api-client';
+import { 
+  Endpoint, 
+  AdminRequestOptions, 
+  Cafe24Datetime,
+  Cafe24Boolean,
+  Cafe24Date,
+  Cafe24Datetime,
+  Cafe24Enum,
+} from 'cafe24api-client';
 
 declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   /**
    * @description
    * 쇼핑몰이 웹훅 사용에 동의(실시간 정보 조회 권한 동의)에 대해 조회할 수 있습니다.
    */
   export interface WebhooksSetting {
     /**
-     * @description
-     * 실시간 정보제공 권한
-     *
-     *
-     */
+      * @description
+      * 실시간 정보제공 권한
+      * 
+      * 
+      */ 
     scopes: any;
   }
 
-  export interface RetrieveWebhookSettingsInput {}
+  export interface RetrieveWebhookSettingsInput {
+  }
 
   export interface RetrieveWebhookSettingsOutput {
-    webhook: {
-      scopes: string[];
+    webhook: { 
+    scopes: string[];
     };
   }
 
@@ -48,7 +58,7 @@ declare module 'cafe24api-client' {
      */
     retrieveWebhookSettings(
       input?: RetrieveWebhookSettingsInput,
-      options?: RequestOptions<RetrieveWebhookSettingsOutput['webhook']>,
+      options?: AdminRequestOptions<RetrieveWebhookSettingsOutput['webhook']>,
     ): Promise<AxiosResponse<RetrieveWebhookSettingsOutput>>;
   }
 }

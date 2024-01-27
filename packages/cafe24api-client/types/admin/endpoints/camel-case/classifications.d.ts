@@ -1,10 +1,19 @@
 import { AxiosResponse } from 'axios';
-import { Endpoint, RequestOptions, Cafe24Datetime } from 'cafe24api-client';
+import { 
+  Endpoint, 
+  AdminRequestOptions, 
+  Cafe24Datetime,
+  Cafe24Boolean,
+  Cafe24Date,
+  Cafe24Datetime,
+  Cafe24Enum,
+} from 'cafe24api-client';
 
 declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   /**
    * @description
    * 자체분류(Classifications)는 상품등록시 사용할 자체분류에 입력하는 정보를 의미합니다.
@@ -12,167 +21,167 @@ declare module 'cafe24api-client' {
    */
   export interface Classifications {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
+      * 
+      * 
+      */ 
     shopNo: any;
     /**
-     * @description
-     * 자체분류 코드
-     *
-     * 형식 : [A-Z0-9]
-     * 최소글자수 : [8자]
-     * 최대글자수 : [8자]
-     */
+      * @description
+      * 자체분류 코드
+      * 
+      * 형식 : [A-Z0-9]
+      * 최소글자수 : [8자]
+      * 최대글자수 : [8자]
+      */ 
     classificationCode: any;
     /**
-     * @description
-     * 자체분류 명
-     *
-     * 최대글자수 : [200자]
-     */
+      * @description
+      * 자체분류 명
+      * 
+      * 최대글자수 : [200자]
+      */ 
     classificationName: any;
     /**
-     * @description
-     * 자체분류 설명
-     *
-     * 최대글자수 : [300자]
-     */
+      * @description
+      * 자체분류 설명
+      * 
+      * 최대글자수 : [300자]
+      */ 
     classificationDescription: any;
     /**
-     * @description
-     * 사용여부
-     *
-     *
-     */
+      * @description
+      * 사용여부
+      * 
+      * 
+      */ 
     useClassification: any;
     /**
-     * @description
-     * 생성일
-     *
-     *
-     */
+      * @description
+      * 생성일
+      * 
+      * 
+      */ 
     createdDate: any;
     /**
-     * @description
-     * 상품수
-     *
-     *
-     */
+      * @description
+      * 상품수
+      * 
+      * 
+      */ 
     productCount: any;
   }
 
   export interface RetrieveAListOfCustomCategoriesInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 자체분류 코드
-     *
-     * ,(콤마)로 여러 건을 검색할 수 있다.
-     *
-     *
-     */
+      * @description
+      * 자체분류 코드
+      * 
+      * ,(콤마)로 여러 건을 검색할 수 있다.
+      * 
+      * 
+      */ 
     classificationCode?: any;
     /**
-     * @description
-     * 자체분류 명
-     *
-     * ,(콤마)로 여러 건을 검색할 수 있다.
-     *
-     *
-     */
+      * @description
+      * 자체분류 명
+      * 
+      * ,(콤마)로 여러 건을 검색할 수 있다.
+      * 
+      * 
+      */ 
     classificationName?: any;
     /**
-     * @description
-     * 사용여부
-     *
-     *
-     */
+      * @description
+      * 사용여부
+      * 
+      * 
+      */ 
     useClassification?: any;
     /**
-     * @description
-     * 조회결과 시작위치
-     *
-     * @default 0
-     *
-     * 최대값: [8000]
-     */
+      * @description
+      * 조회결과 시작위치
+      * 
+      * @default 0
+      * 
+      * 최대값: [8000]
+      */ 
     offset?: any;
     /**
-     * @description
-     * 조회결과 최대건수
-     *
-     * 조회하고자 하는 최대 건수를 지정할 수 있음.
-     * 예) 10 입력시 10건만 표시함.
-     *
-     * @default 10
-     *
-     * 최소: [1]~최대: [100]
-     */
+      * @description
+      * 조회결과 최대건수
+      * 
+      * 조회하고자 하는 최대 건수를 지정할 수 있음.
+      * 예) 10 입력시 10건만 표시함.
+      * 
+      * @default 10
+      * 
+      * 최소: [1]~최대: [100]
+      */ 
     limit?: any;
   }
 
   export interface RetrieveAListOfCustomCategoriesOutput {
-    classifications: {
-      shopNo: number;
-      classificationCode: string;
-      classificationName: string;
-      classificationDescription: string;
-      useClassification: Cafe24Enum;
-      createdDate: Cafe24Datetime;
-      productCount: number;
+    classifications: { 
+    shopNo: number;
+    classificationCode: string;
+    classificationName: string;
+    classificationDescription: string;
+    useClassification: Cafe24Enum;
+    createdDate: Cafe24Datetime;
+    productCount: number;
     }[];
   }
   export interface RetrieveACountOfCustomCategoriesInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 자체분류 코드
-     *
-     * ,(콤마)로 여러 건을 검색할 수 있다.
-     *
-     *
-     */
+      * @description
+      * 자체분류 코드
+      * 
+      * ,(콤마)로 여러 건을 검색할 수 있다.
+      * 
+      * 
+      */ 
     classificationCode?: any;
     /**
-     * @description
-     * 자체분류 명
-     *
-     * ,(콤마)로 여러 건을 검색할 수 있다.
-     *
-     *
-     */
+      * @description
+      * 자체분류 명
+      * 
+      * ,(콤마)로 여러 건을 검색할 수 있다.
+      * 
+      * 
+      */ 
     classificationName?: any;
     /**
-     * @description
-     * 사용여부
-     *
-     *
-     */
+      * @description
+      * 사용여부
+      * 
+      * 
+      */ 
     useClassification?: any;
   }
 
@@ -216,9 +225,7 @@ declare module 'cafe24api-client' {
      */
     retrieveAListOfCustomCategories(
       input: RetrieveAListOfCustomCategoriesInput,
-      options?: RequestOptions<
-        RetrieveAListOfCustomCategoriesOutput['classifications'][number]
-      >,
+      options?: AdminRequestOptions<RetrieveAListOfCustomCategoriesOutput['classifications'][number]>,
     ): Promise<AxiosResponse<RetrieveAListOfCustomCategoriesOutput>>;
     /**
      * @description
@@ -235,7 +242,7 @@ declare module 'cafe24api-client' {
      */
     retrieveACountOfCustomCategories(
       input: RetrieveACountOfCustomCategoriesInput,
-      options?: RequestOptions<RetrieveACountOfCustomCategoriesOutput['count']>,
+      options?: AdminRequestOptions<RetrieveACountOfCustomCategoriesOutput['count']>,
     ): Promise<AxiosResponse<RetrieveACountOfCustomCategoriesOutput>>;
   }
 }

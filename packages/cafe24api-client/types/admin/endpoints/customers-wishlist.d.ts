@@ -1,116 +1,125 @@
 import { AxiosResponse } from 'axios';
-import { Endpoint, RequestOptions, Cafe24Datetime } from 'cafe24api-client';
+import { 
+  Endpoint, 
+  AdminRequestOptions, 
+  Cafe24Datetime,
+  Cafe24Boolean,
+  Cafe24Date,
+  Cafe24Datetime,
+  Cafe24Enum,
+} from 'cafe24api-client';
 
 declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   /**
    * @description
-   *
-   *
+   * 
+   * 
    * 회원 관심상품(Customers wishlist)은 회원의 관심상품을 조회할 수 있는 관계형 리소스입니다.
    */
   export interface CustomersWishlist {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
+      * 
+      * 
+      */ 
     shop_no: any;
     /**
-     * @description
-     * 관심상품번호
-     *
-     *
-     */
+      * @description
+      * 관심상품번호
+      * 
+      * 
+      */ 
     wishlist_no: any;
     /**
-     * @description
-     * 상품번호
-     *
-     *
-     */
+      * @description
+      * 상품번호
+      * 
+      * 
+      */ 
     product_no: any;
     /**
-     * @description
-     * 품목코드
-     *
-     * 시스템이 품목에 부여한 코드. 해당 쇼핑몰 내에서 품목 코드는 중복되지 않음.
-     *
-     * 형식 : [A-Z0-9]
-     * 글자수 최소: [12자]~최대: [12자]
-     */
+      * @description
+      * 품목코드
+      * 
+      * 시스템이 품목에 부여한 코드. 해당 쇼핑몰 내에서 품목 코드는 중복되지 않음.
+      * 
+      * 형식 : [A-Z0-9]
+      * 글자수 최소: [12자]~최대: [12자]
+      */ 
     variant_code: any;
     /**
-     * @description
-     * 추가입력 옵션
-     *
-     *
-     */
+      * @description
+      * 추가입력 옵션
+      * 
+      * 
+      */ 
     additional_option: any;
     /**
-     * @description
-     * 파일 첨부 옵션
-     *
-     *
-     */
+      * @description
+      * 파일 첨부 옵션
+      * 
+      * 
+      */ 
     attached_file_option: any;
     /**
-     * @description
-     * 상품 판매가
-     *
-     * 상품의 판매 가격. 쿠폰 및 혜택을 적용하기 전의 가격.
-     * 상품 등록시엔 모든 멀티 쇼핑몰에 동일한 가격으로 등록하며, 멀티쇼핑몰별로 다른 가격을 입력하고자 할 경우 상품 수정을 통해 가격을 다르게 입력할 수 있다.
-     * ※ 판매가 = [ 공급가 + (공급가 * 마진율) + 추가금액 ]
-     *
-     *
-     */
+      * @description
+      * 상품 판매가
+      * 
+      * 상품의 판매 가격. 쿠폰 및 혜택을 적용하기 전의 가격.
+      * 상품 등록시엔 모든 멀티 쇼핑몰에 동일한 가격으로 등록하며, 멀티쇼핑몰별로 다른 가격을 입력하고자 할 경우 상품 수정을 통해 가격을 다르게 입력할 수 있다.
+      * ※ 판매가 = [ 공급가 + (공급가 * 마진율) + 추가금액 ]
+      * 
+      * 
+      */ 
     price: any;
     /**
-     * @description
-     * 세트상품 여부
-     *
-     *
-     */
+      * @description
+      * 세트상품 여부
+      * 
+      * 
+      */ 
     product_bundle: any;
     /**
-     * @description
-     * 담은일자
-     *
-     * 관심상품을 담은 일자
-     *
-     *
-     */
+      * @description
+      * 담은일자
+      * 
+      * 관심상품을 담은 일자
+      * 
+      * 
+      */ 
     created_date: any;
     /**
-     * @description
-     * 판매가 대체문구
-     *
-     * 최대글자수 : [20자]
-     */
+      * @description
+      * 판매가 대체문구
+      * 
+      * 최대글자수 : [20자]
+      */ 
     price_content: any;
   }
 
   export interface RetrieveACountOfProductsInCustomerWishlistInput {
     /**
-     * @description
-     * 회원아이디
-     *
-     * @required
-     */
+      * @description
+      * 회원아이디
+      * 
+      * @required
+      */ 
     member_id: any;
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shop_no?: any;
   }
 
@@ -119,40 +128,40 @@ declare module 'cafe24api-client' {
   }
   export interface RetrieveAListOfProductsInCustomerWishlistInput {
     /**
-     * @description
-     * 회원아이디
-     *
-     * @required
-     */
+      * @description
+      * 회원아이디
+      * 
+      * @required
+      */ 
     member_id: any;
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shop_no?: any;
   }
 
   export interface RetrieveAListOfProductsInCustomerWishlistOutput {
-    wishlist: {
-      shop_no: number;
-      wishlist_no: number;
-      product_no: number;
-      variant_code: string;
-      additional_option: {
-        option_name: string;
-        option_value: string;
-      }[];
-      attached_file_option: {
-        file_path: string;
-      }[];
-      price: Cafe24Datetime;
-      product_bundle: Cafe24Enum;
-      created_date: Cafe24Datetime;
-      price_content: any;
+    wishlist: { 
+    shop_no: number;
+    wishlist_no: number;
+    product_no: number;
+    variant_code: string;
+    additional_option: { 
+    option_name: string;
+    option_value: string;
+    }[];
+    attached_file_option: { 
+    file_path: string;
+    }[];
+    price: Cafe24Datetime;
+    product_bundle: Cafe24Enum;
+    created_date: Cafe24Datetime;
+    price_content: any;
     }[];
   }
 
@@ -172,9 +181,7 @@ declare module 'cafe24api-client' {
      */
     retrieveACountOfProductsInCustomerWishlist(
       input: RetrieveACountOfProductsInCustomerWishlistInput,
-      options?: RequestOptions<
-        RetrieveACountOfProductsInCustomerWishlistOutput['count']
-      >,
+      options?: AdminRequestOptions<RetrieveACountOfProductsInCustomerWishlistOutput['count']>,
     ): Promise<AxiosResponse<RetrieveACountOfProductsInCustomerWishlistOutput>>;
     /**
      * @description
@@ -225,9 +232,7 @@ declare module 'cafe24api-client' {
      */
     retrieveAListOfProductsInCustomerWishlist(
       input: RetrieveAListOfProductsInCustomerWishlistInput,
-      options?: RequestOptions<
-        RetrieveAListOfProductsInCustomerWishlistOutput['wishlist'][number]
-      >,
+      options?: AdminRequestOptions<RetrieveAListOfProductsInCustomerWishlistOutput['wishlist'][number]>,
     ): Promise<AxiosResponse<RetrieveAListOfProductsInCustomerWishlistOutput>>;
   }
 }

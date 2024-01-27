@@ -1,861 +1,870 @@
 import { AxiosResponse } from 'axios';
-import { Endpoint, RequestOptions, Cafe24Datetime } from 'cafe24api-client';
+import { 
+  Endpoint, 
+  AdminRequestOptions, 
+  Cafe24Datetime,
+  Cafe24Boolean,
+  Cafe24Date,
+  Cafe24Datetime,
+  Cafe24Enum,
+} from 'cafe24api-client';
 
 declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   /**
    * @description
-   *
-   *
+   * 
+   * 
    * 주문 반품(Orders return)은 특정 주문의 반품과 관련된 기능입니다.
    * 특정 주문을 반품처리 하거나, 반품처리중인 주문의 상태를 수정할 수 있습니다.
    */
   export interface OrdersReturn {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 
+      */ 
     shopNo: any;
     /**
-     * @description
-     * 주문번호
-     *
-     *
-     */
+      * @description
+      * 주문번호
+      * 
+      * 
+      */ 
     orderId: any;
     /**
-     * @description
-     * 주문상태
-     *
-     * accepted : 반품접수
-     * processing : 반품처리중
-     * returned : 반품완료
-     *
-     *
-     */
+      * @description
+      * 주문상태
+      * 
+      * accepted : 반품접수
+      * processing : 반품처리중
+      * returned : 반품완료
+      * 
+      * 
+      */ 
     status: any;
     /**
-     * @description
-     * 반품번호
-     *
-     *
-     */
+      * @description
+      * 반품번호
+      * 
+      * 
+      */ 
     claimCode: any;
     /**
-     * @description
-     * 품주코드
-     *
-     *
-     */
+      * @description
+      * 품주코드
+      * 
+      * 
+      */ 
     items: any;
     /**
-     * @description
-     * 수거완료 여부
-     *
-     * T : 수거완료
-     * F : 수거전
-     *
-     *
-     */
+      * @description
+      * 수거완료 여부
+      * 
+      * T : 수거완료
+      * F : 수거전
+      * 
+      * 
+      */ 
     pickupCompleted: any;
     /**
-     * @description
-     * 배송사 아이디
-     *
-     *
-     */
+      * @description
+      * 배송사 아이디
+      * 
+      * 
+      */ 
     carrierId: any;
     /**
-     * @description
-     * 반품 송장 번호
-     *
-     * 최대글자수 : [40자]
-     */
+      * @description
+      * 반품 송장 번호
+      * 
+      * 최대글자수 : [40자]
+      */ 
     returnInvoiceNo: any;
     /**
-     * @description
-     * 반품 배송업체명
-     *
-     * 최대글자수 : [30자]
-     */
+      * @description
+      * 반품 배송업체명
+      * 
+      * 최대글자수 : [30자]
+      */ 
     returnShippingCompanyName: any;
     /**
-     * @description
-     * 반송장 처리 성공 여부
-     *
-     * T : 성공
-     * F : 실패
-     * N : 미집하
-     *
-     *
-     */
+      * @description
+      * 반송장 처리 성공 여부
+      * 
+      * T : 성공
+      * F : 실패
+      * N : 미집하
+      * 
+      * 
+      */ 
     returnInvoiceSuccess: any;
     /**
-     * @description
-     * 반송장 처리 실패 사유
-     *
-     * 최대글자수 : [100자]
-     */
+      * @description
+      * 반송장 처리 실패 사유
+      * 
+      * 최대글자수 : [100자]
+      */ 
     returnInvoiceFailReason: any;
     /**
-     * @description
-     * 재고복구
-     *
-     * T : 복구함
-     * F : 복구안함
-     *
-     *
-     */
+      * @description
+      * 재고복구
+      * 
+      * T : 복구함
+      * F : 복구안함
+      * 
+      * 
+      */ 
     recoverInventory: any;
     /**
-     * @description
-     * 수거신청 여부
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 수거신청 여부
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     requestPickup: any;
     /**
-     * @description
-     * 수거지역 상세
-     *
-     *
-     */
+      * @description
+      * 수거지역 상세
+      * 
+      * 
+      */ 
     pickup: any;
     /**
-     * @description
-     * 철회 여부
-     *
-     * T : 철회함
-     * F : 철회안함
-     *
-     *
-     */
+      * @description
+      * 철회 여부
+      * 
+      * T : 철회함
+      * F : 철회안함
+      * 
+      * 
+      */ 
     undone: any;
     /**
-     * @description
-     * 관리자 메모에도 추가
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 관리자 메모에도 추가
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     addMemoToo: any;
     /**
-     * @description
-     * 철회 사유 구분
-     *
-     * A:고객변심
-     * B:배송지연
-     * J:배송오류
-     * C:배송불가지역
-     * L:수출/통관 불가
-     * D:포장불량
-     * E:상품 불만족
-     * F:상품정보상이
-     * K:상품불량
-     * G:서비스불만족
-     * H:품절
-     * I:기타
-     *
-     *
-     */
+      * @description
+      * 철회 사유 구분
+      * 
+      * A:고객변심
+      * B:배송지연
+      * J:배송오류
+      * C:배송불가지역
+      * L:수출/통관 불가
+      * D:포장불량
+      * E:상품 불만족
+      * F:상품정보상이
+      * K:상품불량
+      * G:서비스불만족
+      * H:품절
+      * I:기타
+      * 
+      * 
+      */ 
     undoneReasonType: any;
     /**
-     * @description
-     * 철회 사유
-     *
-     *
-     */
+      * @description
+      * 철회 사유
+      * 
+      * 
+      */ 
     undoneReason: any;
     /**
-     * @description
-     * 주문상세내역 노출 여부
-     *
-     * T : 노출함
-     * F : 노출안함
-     *
-     *
-     */
+      * @description
+      * 주문상세내역 노출 여부
+      * 
+      * T : 노출함
+      * F : 노출안함
+      * 
+      * 
+      */ 
     exposeOrderDetail: any;
     /**
-     * @description
-     * 주문상세내역 노출 철회 사유
-     *
-     *
-     */
+      * @description
+      * 주문상세내역 노출 철회 사유
+      * 
+      * 
+      */ 
     exposedUndoneReason: any;
   }
 
   export interface CreateAnOrderReturnInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 주문번호
-     *
-     * @required
-     */
+      * @description
+      * 주문번호
+      * 
+      * @required
+      */ 
     orderId: any;
     /**
-     * @description
-     * PG 취소 요청 여부
-     *
-     * 주문을 반품처리함과 동시에 PG취소도 같이 처리할 수 있다.
-     *
-     * PG취소가 가능한 결제수단(신용카드, 실시간계좌이체)에서만 사용 가능하다.
-     *
-     * 결제수단이 복수인 주문(카드 등으로 결제한 주문을 결제 후 품목을 추가한 경우)의 경우에는 PG 결제를 취소할 수 없으며 관리자 화면에서 취소해야 한다.
-     *
-     * 오픈마켓/네이버페이 주문을 취소할 경우 사용 불가
-     *
-     * T : 취소함
-     * F : 취소안함
-     *
-     * @default F
-     *
-     *
-     */
+      * @description
+      * PG 취소 요청 여부
+      * 
+      * 주문을 반품처리함과 동시에 PG취소도 같이 처리할 수 있다.
+      * 
+      * PG취소가 가능한 결제수단(신용카드, 실시간계좌이체)에서만 사용 가능하다.
+      * 
+      * 결제수단이 복수인 주문(카드 등으로 결제한 주문을 결제 후 품목을 추가한 경우)의 경우에는 PG 결제를 취소할 수 없으며 관리자 화면에서 취소해야 한다.
+      * 
+      * 오픈마켓/네이버페이 주문을 취소할 경우 사용 불가
+      * 
+      * T : 취소함
+      * F : 취소안함
+      * 
+      * @default F
+      * 
+      * 
+      */ 
     paymentGatewayCancel?: any;
     /**
-     * @description
-     * 주문상태
-     *
-     * accepted : 반품접수
-     * processing : 반품처리중
-     * returned : 반품완료
-     *
-     * @required
-     */
+      * @description
+      * 주문상태
+      * 
+      * accepted : 반품접수
+      * processing : 반품처리중
+      * returned : 반품완료
+      * 
+      * @required
+      */ 
     status: any;
     /**
-     * @description
-     * 수거완료 여부
-     *
-     * T : 수거완료
-     * F : 수거전
-     *
-     * @default F
-     *
-     *
-     */
+      * @description
+      * 수거완료 여부
+      * 
+      * T : 수거완료
+      * F : 수거전
+      * 
+      * @default F
+      * 
+      * 
+      */ 
     pickupCompleted?: any;
     /**
-     * @description
-     * 재고복구
-     *
-     * T : 복구함
-     * F : 복구안함
-     *
-     * @default F
-     *
-     *
-     */
+      * @description
+      * 재고복구
+      * 
+      * T : 복구함
+      * F : 복구안함
+      * 
+      * @default F
+      * 
+      * 
+      */ 
     recoverInventory?: any;
     /**
-     * @description
-     * 쿠폰 복원
-     *
-     * T : 복구함
-     * F : 복구안함
-     *
-     * @default F
-     *
-     *
-     */
+      * @description
+      * 쿠폰 복원
+      * 
+      * T : 복구함
+      * F : 복구안함
+      * 
+      * @default F
+      * 
+      * 
+      */ 
     recoverCoupon?: any;
     /**
-     * @description
-     * 복원할 쿠폰 번호
-     *
-     *
-     */
+      * @description
+      * 복원할 쿠폰 번호
+      * 
+      * 
+      */ 
     recoverCouponNo?: any;
     /**
-     * @description
-     * 관리자 메모에도 추가
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     * @default F
-     *
-     *
-     */
+      * @description
+      * 관리자 메모에도 추가
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * @default F
+      * 
+      * 
+      */ 
     addMemoToo?: any;
     /**
-     * @description
-     * 반품사유
-     *
-     * 최대글자수 : [2000자]
-     */
+      * @description
+      * 반품사유
+      * 
+      * 최대글자수 : [2000자]
+      */ 
     reason?: any;
     /**
-     * @description
-     * 반품사유 구분
-     *
-     * A : 고객변심
-     * B : 배송지연
-     * C : 배송불가지역
-     * L : 수출/통관 불가
-     * D : 포장불량
-     * E : 상품불만족
-     * F : 상품정보상이
-     * G : 서비스불만족
-     * H : 품절
-     * I : 기타
-     *
-     *
-     */
+      * @description
+      * 반품사유 구분
+      * 
+      * A : 고객변심
+      * B : 배송지연
+      * C : 배송불가지역
+      * L : 수출/통관 불가
+      * D : 포장불량
+      * E : 상품불만족
+      * F : 상품정보상이
+      * G : 서비스불만족
+      * H : 품절
+      * I : 기타
+      * 
+      * 
+      */ 
     claimReasonType?: any;
     /**
-     * @description
-     * 네이버페이 반품사유 구분
-     *
-     * 카카오페이 주문을 반품할 경우 사용 불가
-     *
-     * EC 베트남, 필리핀, 일본 버전에서는 사용할 수 없음.
-     *
-     * 51 : 구매 의사 취소
-     * 52 : 색상 및 사이즈 변경
-     * 53 : 다른 상품 잘못 주문
-     * 54 : 서비스 및 상품 불만족
-     * 55 : 배송 지연
-     * 56 : 상품 품절
-     * 57 : 배송 누락
-     * 58 : 미배송
-     * 59 : 상품 파손
-     * 60 : 상품 정보 상이
-     * 61 : 오배송
-     * 62 : 색상 등 옵션이 다른 상품 잘못 배송
-     *
-     *
-     */
+      * @description
+      * 네이버페이 반품사유 구분
+      * 
+      * 카카오페이 주문을 반품할 경우 사용 불가
+      * 
+      * EC 베트남, 필리핀, 일본 버전에서는 사용할 수 없음.
+      * 
+      * 51 : 구매 의사 취소
+      * 52 : 색상 및 사이즈 변경
+      * 53 : 다른 상품 잘못 주문
+      * 54 : 서비스 및 상품 불만족
+      * 55 : 배송 지연
+      * 56 : 상품 품절
+      * 57 : 배송 누락
+      * 58 : 미배송
+      * 59 : 상품 파손
+      * 60 : 상품 정보 상이
+      * 61 : 오배송
+      * 62 : 색상 등 옵션이 다른 상품 잘못 배송
+      * 
+      * 
+      */ 
     naverpayReturnReasonType?: any;
     /**
-     * @description
-     * 환불 방식
-     *
-     * T : 현금
-     * F : 신용카드
-     * M : 적립금
-     * G : 계좌이체
-     * C : 휴대폰
-     * D : 예치금
-     * Z : 후불
-     * O : 선불금
-     * V : 편의점
-     * J : 제휴상품권
-     * K : 제휴포인트
-     * I : 기타
-     *
-     *
-     */
+      * @description
+      * 환불 방식
+      * 
+      * T : 현금
+      * F : 신용카드
+      * M : 적립금
+      * G : 계좌이체
+      * C : 휴대폰
+      * D : 예치금
+      * Z : 후불
+      * O : 선불금
+      * V : 편의점
+      * J : 제휴상품권
+      * K : 제휴포인트
+      * I : 기타
+      * 
+      * 
+      */ 
     refundMethodCode?: any;
     /**
-     * @description
-     * 환불 은행 코드
-     *
-     * 환불 방식(refund_method)이 현금(T)일 경우 필수
-     *
-     * refund_bank_code
-     *
-     * ※ 해당 쇼핑몰이 EC Korea 쇼핑몰일 경우 필수
-     *
-     *
-     */
+      * @description
+      * 환불 은행 코드
+      * 
+      * 환불 방식(refund_method)이 현금(T)일 경우 필수
+      * 
+      * refund_bank_code 
+      * 
+      * ※ 해당 쇼핑몰이 EC Korea 쇼핑몰일 경우 필수
+      * 
+      * 
+      */ 
     refundBankCode?: any;
     /**
-     * @description
-     * 환불은행명
-     *
-     * 환불 방식(refund_method)이 현금(T)일 경우 필수
-     *
-     * ※ 해당 쇼핑몰이 EC Global 쇼핑몰일 경우 필수
-     * 환불수단(refund_method)이 &#34;현금(T)&#34;일 때만 사용 가능
-     *
-     * 최대글자수 : [250자]
-     */
+      * @description
+      * 환불은행명
+      * 
+      * 환불 방식(refund_method)이 현금(T)일 경우 필수
+      * 
+      * ※ 해당 쇼핑몰이 EC Global 쇼핑몰일 경우 필수
+      * 환불수단(refund_method)이 &#34;현금(T)&#34;일 때만 사용 가능
+      * 
+      * 최대글자수 : [250자]
+      */ 
     refundBankName?: any;
     /**
-     * @description
-     * 환불 계좌번호
-     *
-     * 환불 방식(refund_method)이 현금(T)일 경우 필수
-     *
-     *
-     */
+      * @description
+      * 환불 계좌번호
+      * 
+      * 환불 방식(refund_method)이 현금(T)일 경우 필수
+      * 
+      * 
+      */ 
     refundBankAccountNo?: any;
     /**
-     * @description
-     * 환불계좌 예금주 명의
-     *
-     * 최대글자수 : [15자]
-     */
+      * @description
+      * 환불계좌 예금주 명의
+      * 
+      * 최대글자수 : [15자]
+      */ 
     refundBankAccountHolder?: any;
     /**
-     * @description
-     * 품주코드
-     *
-     *
-     */
-    items?: {
-      /**
-       * @description
-       * 품주코드
-       *
-       *
-       */
-      orderItemCode: any;
-      /**
-       * @description
-       * 수량
-       *
-       *
-       */
-      quantity: any;
+      * @description
+      * 품주코드
+      * 
+      * 
+      */ 
+    items?: { 
+    /**
+      * @description
+      * 품주코드
+      * 
+      * 
+      */ 
+    orderItemCode: any;
+    /**
+      * @description
+      * 수량
+      * 
+      * 
+      */ 
+    quantity: any;
     };
     /**
-     * @description
-     * 수거신청 여부
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 수거신청 여부
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     requestPickup?: any;
     /**
-     * @description
-     * 수거지역 상세
-     *
-     *
-     */
-    pickup?: {
-      /**
-       * @description
-       * 이름
-       *
-       *
-       */
-      name?: any;
-      /**
-       * @description
-       * 전화번호
-       *
-       *
-       */
-      phone?: any;
-      /**
-       * @description
-       * 휴대전화
-       *
-       *
-       */
-      cellphone?: any;
-      /**
-       * @description
-       * 우편번호
-       *
-       *
-       */
-      zipcode?: any;
-      /**
-       * @description
-       * 기본 주소
-       *
-       *
-       */
-      address1?: any;
-      /**
-       * @description
-       * 상세 주소
-       *
-       *
-       */
-      address2?: any;
+      * @description
+      * 수거지역 상세
+      * 
+      * 
+      */ 
+    pickup?: { 
+    /**
+      * @description
+      * 이름
+      * 
+      * 
+      */ 
+    name?: any;
+    /**
+      * @description
+      * 전화번호
+      * 
+      * 
+      */ 
+    phone?: any;
+    /**
+      * @description
+      * 휴대전화
+      * 
+      * 
+      */ 
+    cellphone?: any;
+    /**
+      * @description
+      * 우편번호
+      * 
+      * 
+      */ 
+    zipcode?: any;
+    /**
+      * @description
+      * 기본 주소
+      * 
+      * 
+      */ 
+    address1?: any;
+    /**
+      * @description
+      * 상세 주소
+      * 
+      * 
+      */ 
+    address2?: any;
     };
     /**
-     * @description
-     * 반품 송장 번호
-     *
-     * 최대글자수 : [40자]
-     */
+      * @description
+      * 반품 송장 번호
+      * 
+      * 최대글자수 : [40자]
+      */ 
     returnInvoiceNo?: any;
     /**
-     * @description
-     * 반품 배송업체명
-     *
-     * 최대글자수 : [30자]
-     */
+      * @description
+      * 반품 배송업체명
+      * 
+      * 최대글자수 : [30자]
+      */ 
     returnShippingCompanyName?: any;
   }
 
   export interface CreateAnOrderReturnOutput {
-    return: {
-      shopNo: number;
-      orderId: string;
-      status: string;
-      claimCode: string;
-      pickupCompleted: Cafe24Enum;
-      items: {
-        orderItemCode: string;
-        quantity: number;
-      }[];
+    return: { 
+    shopNo: number;
+    orderId: string;
+    status: string;
+    claimCode: string;
+    pickupCompleted: Cafe24Enum;
+    items: { 
+    orderItemCode: string;
+    quantity: number;
+    }[];
     };
   }
   export interface UpdateAnOrderReturnInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 주문번호
-     *
-     * @required
-     */
+      * @description
+      * 주문번호
+      * 
+      * @required
+      */ 
     orderId: any;
     /**
-     * @description
-     * 반품번호
-     *
-     * @required
-     */
+      * @description
+      * 반품번호
+      * 
+      * @required
+      */ 
     claimCode: any;
     /**
-     * @description
-     * 주문상태
-     *
-     * processing : 반품처리중
-     * returned : 반품완료
-     *
-     *
-     */
+      * @description
+      * 주문상태
+      * 
+      * processing : 반품처리중
+      * returned : 반품완료
+      * 
+      * 
+      */ 
     status?: any;
     /**
-     * @description
-     * 배송사 아이디
-     *
-     * 배송사에서 반송장번호 업데이트시 carrier_id 필수
-     *
-     *
-     */
+      * @description
+      * 배송사 아이디
+      * 
+      * 배송사에서 반송장번호 업데이트시 carrier_id 필수
+      * 
+      * 
+      */ 
     carrierId?: any;
     /**
-     * @description
-     * 반품 송장 번호
-     *
-     * 최대글자수 : [40자]
-     */
+      * @description
+      * 반품 송장 번호
+      * 
+      * 최대글자수 : [40자]
+      */ 
     returnInvoiceNo?: any;
     /**
-     * @description
-     * 반품 배송업체명
-     *
-     * 최대글자수 : [30자]
-     */
+      * @description
+      * 반품 배송업체명
+      * 
+      * 최대글자수 : [30자]
+      */ 
     returnShippingCompanyName?: any;
     /**
-     * @description
-     * 반송장 처리 성공 여부
-     *
-     * T : 성공
-     * F : 실패
-     * N : 미집하
-     *
-     *
-     */
+      * @description
+      * 반송장 처리 성공 여부
+      * 
+      * T : 성공
+      * F : 실패
+      * N : 미집하
+      * 
+      * 
+      */ 
     returnInvoiceSuccess?: any;
     /**
-     * @description
-     * 반송장 처리 실패 사유
-     *
-     * 최대글자수 : [100자]
-     */
+      * @description
+      * 반송장 처리 실패 사유
+      * 
+      * 최대글자수 : [100자]
+      */ 
     returnInvoiceFailReason?: any;
     /**
-     * @description
-     * 환불 방식
-     *
-     * T : 현금
-     * F : 신용카드
-     * M : 적립금
-     * G : 계좌이체
-     * C : 휴대폰
-     * D : 예치금
-     * Z : 후불
-     * O : 선불금
-     * V : 편의점
-     * J : 제휴상품권
-     * K : 제휴포인트
-     * I : 기타
-     *
-     *
-     */
+      * @description
+      * 환불 방식
+      * 
+      * T : 현금
+      * F : 신용카드
+      * M : 적립금
+      * G : 계좌이체
+      * C : 휴대폰
+      * D : 예치금
+      * Z : 후불
+      * O : 선불금
+      * V : 편의점
+      * J : 제휴상품권
+      * K : 제휴포인트
+      * I : 기타
+      * 
+      * 
+      */ 
     refundMethodCode?: any;
     /**
-     * @description
-     * 환불계좌 예금주 명의
-     *
-     * 최대글자수 : [15자]
-     */
+      * @description
+      * 환불계좌 예금주 명의
+      * 
+      * 최대글자수 : [15자]
+      */ 
     refundBankAccountHolder?: any;
     /**
-     * @description
-     * 수거완료 여부
-     *
-     * T : 수거완료
-     * F : 수거전
-     *
-     *
-     */
+      * @description
+      * 수거완료 여부
+      * 
+      * T : 수거완료
+      * F : 수거전
+      * 
+      * 
+      */ 
     pickupCompleted?: any;
     /**
-     * @description
-     * 품주코드
-     *
-     *
-     */
-    items?: {
-      /**
-       * @description
-       * 품주코드
-       *
-       *
-       */
-      orderItemCode?: any;
+      * @description
+      * 품주코드
+      * 
+      * 
+      */ 
+    items?: { 
+    /**
+      * @description
+      * 품주코드
+      * 
+      * 
+      */ 
+    orderItemCode?: any;
     };
     /**
-     * @description
-     * 쿠폰 복원
-     *
-     * T : 복구함
-     * F : 복구안함
-     *
-     *
-     */
+      * @description
+      * 쿠폰 복원
+      * 
+      * T : 복구함
+      * F : 복구안함
+      * 
+      * 
+      */ 
     recoverCoupon?: any;
     /**
-     * @description
-     * 복원할 쿠폰 번호
-     *
-     *
-     */
+      * @description
+      * 복원할 쿠폰 번호
+      * 
+      * 
+      */ 
     recoverCouponNo?: any;
     /**
-     * @description
-     * 재고복구
-     *
-     * T : 복구함
-     * F : 복구안함
-     *
-     *
-     */
+      * @description
+      * 재고복구
+      * 
+      * T : 복구함
+      * F : 복구안함
+      * 
+      * 
+      */ 
     recoverInventory?: any;
     /**
-     * @description
-     * 수거신청 여부
-     *
-     * 반송지 저장시 기본값은 &#34;수거신청함(T)&#34;
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 수거신청 여부
+      * 
+      * 반송지 저장시 기본값은 &#34;수거신청함(T)&#34;
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     requestPickup?: any;
     /**
-     * @description
-     * 수거지역 상세
-     *
-     *
-     */
-    pickup?: {
-      /**
-       * @description
-       * 이름
-       *
-       *
-       */
-      name?: any;
-      /**
-       * @description
-       * 전화번호
-       *
-       *
-       */
-      phone?: any;
-      /**
-       * @description
-       * 휴대전화
-       *
-       *
-       */
-      cellphone?: any;
-      /**
-       * @description
-       * 우편번호
-       *
-       *
-       */
-      zipcode?: any;
-      /**
-       * @description
-       * 기본 주소
-       *
-       *
-       */
-      address1?: any;
-      /**
-       * @description
-       * 상세 주소
-       *
-       *
-       */
-      address2?: any;
+      * @description
+      * 수거지역 상세
+      * 
+      * 
+      */ 
+    pickup?: { 
+    /**
+      * @description
+      * 이름
+      * 
+      * 
+      */ 
+    name?: any;
+    /**
+      * @description
+      * 전화번호
+      * 
+      * 
+      */ 
+    phone?: any;
+    /**
+      * @description
+      * 휴대전화
+      * 
+      * 
+      */ 
+    cellphone?: any;
+    /**
+      * @description
+      * 우편번호
+      * 
+      * 
+      */ 
+    zipcode?: any;
+    /**
+      * @description
+      * 기본 주소
+      * 
+      * 
+      */ 
+    address1?: any;
+    /**
+      * @description
+      * 상세 주소
+      * 
+      * 
+      */ 
+    address2?: any;
     };
     /**
-     * @description
-     * 철회 여부
-     *
-     * T : 철회함
-     *
-     *
-     */
+      * @description
+      * 철회 여부
+      * 
+      * T : 철회함
+      * 
+      * 
+      */ 
     undone?: any;
     /**
-     * @description
-     * 관리자 메모에도 추가
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 관리자 메모에도 추가
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     addMemoToo?: any;
     /**
-     * @description
-     * 철회 사유 구분
-     *
-     * A:고객변심
-     * B:배송지연
-     * J:배송오류
-     * C:배송불가지역
-     * L:수출/통관 불가
-     * D:포장불량
-     * E:상품 불만족
-     * F:상품정보상이
-     * K:상품불량
-     * G:서비스불만족
-     * H:품절
-     * I:기타
-     *
-     *
-     */
+      * @description
+      * 철회 사유 구분
+      * 
+      * A:고객변심
+      * B:배송지연
+      * J:배송오류
+      * C:배송불가지역
+      * L:수출/통관 불가
+      * D:포장불량
+      * E:상품 불만족
+      * F:상품정보상이
+      * K:상품불량
+      * G:서비스불만족
+      * H:품절
+      * I:기타
+      * 
+      * 
+      */ 
     undoneReasonType?: any;
     /**
-     * @description
-     * 철회 사유
-     *
-     * 최대글자수 : [2000자]
-     */
+      * @description
+      * 철회 사유
+      * 
+      * 최대글자수 : [2000자]
+      */ 
     undoneReason?: any;
     /**
-     * @description
-     * 주문상세내역 노출 여부
-     *
-     * T : 노출함
-     * F : 노출안함
-     *
-     *
-     */
+      * @description
+      * 주문상세내역 노출 여부
+      * 
+      * T : 노출함
+      * F : 노출안함
+      * 
+      * 
+      */ 
     exposeOrderDetail?: any;
     /**
-     * @description
-     * 주문상세내역 노출 철회 사유
-     *
-     * 최대글자수 : [2000자]
-     */
+      * @description
+      * 주문상세내역 노출 철회 사유
+      * 
+      * 최대글자수 : [2000자]
+      */ 
     exposedUndoneReason?: any;
     /**
-     * @description
-     * 환불 은행 코드
-     *
-     *
-     */
+      * @description
+      * 환불 은행 코드
+      * 
+      * 
+      */ 
     refundBankCode?: any;
     /**
-     * @description
-     * 환불은행명
-     *
-     * 최대글자수 : [250자]
-     */
+      * @description
+      * 환불은행명
+      * 
+      * 최대글자수 : [250자]
+      */ 
     refundBankName?: any;
     /**
-     * @description
-     * 환불 계좌번호
-     *
-     *
-     */
+      * @description
+      * 환불 계좌번호
+      * 
+      * 
+      */ 
     refundBankAccountNo?: any;
   }
 
   export interface UpdateAnOrderReturnOutput {
-    return: {
-      shopNo: number;
-      orderId: string;
-      claimCode: string;
-      status: string;
-      pickupCompleted: Cafe24Enum;
-      carrierId: any;
-      returnInvoiceNo: any;
-      returnShippingCompanyName: any;
-      returnInvoiceSuccess: any;
-      returnInvoiceFailReason: any;
-      items: {
-        orderItemCode: string;
-      }[];
-      refundMethodCode: Cafe24Enum[];
-      refundBankCode: string;
-      refundBankAccountNo: Cafe24Datetime;
-      refundBankAccountHolder: string;
-      combinedRefundMethod: any;
-      recoverInventory: Cafe24Enum;
-      requestPickup: any;
-      pickup: {
-        name: any;
-        phone: any;
-        cellphone: any;
-        zipcode: any;
-        address1: any;
-        address2: any;
-      };
-      undone: any;
-      addMemoToo: any;
-      undoneReasonType: any;
-      undoneReason: any;
-      exposeOrderDetail: any;
-      exposedUndoneReason: any;
+    return: { 
+    shopNo: number;
+    orderId: string;
+    claimCode: string;
+    status: string;
+    pickupCompleted: Cafe24Enum;
+    carrierId: any;
+    returnInvoiceNo: any;
+    returnShippingCompanyName: any;
+    returnInvoiceSuccess: any;
+    returnInvoiceFailReason: any;
+    items: { 
+    orderItemCode: string;
+    }[];
+    refundMethodCode: Cafe24Enum[];
+    refundBankCode: string;
+    refundBankAccountNo: Cafe24Datetime;
+    refundBankAccountHolder: string;
+    combinedRefundMethod: any;
+    recoverInventory: Cafe24Enum;
+    requestPickup: any;
+    pickup: { 
+    name: any;
+    phone: any;
+    cellphone: any;
+    zipcode: any;
+    address1: any;
+    address2: any;
+    };
+    undone: any;
+    addMemoToo: any;
+    undoneReasonType: any;
+    undoneReason: any;
+    exposeOrderDetail: any;
+    exposedUndoneReason: any;
     };
   }
 
@@ -893,7 +902,7 @@ declare module 'cafe24api-client' {
      */
     createAnOrderReturn(
       input: CreateAnOrderReturnInput,
-      options?: RequestOptions<CreateAnOrderReturnOutput['return']>,
+      options?: AdminRequestOptions<CreateAnOrderReturnOutput['return']>,
     ): Promise<AxiosResponse<CreateAnOrderReturnOutput>>;
     /**
      * @description
@@ -956,7 +965,7 @@ declare module 'cafe24api-client' {
      */
     updateAnOrderReturn(
       input: UpdateAnOrderReturnInput,
-      options?: RequestOptions<UpdateAnOrderReturnOutput['return']>,
+      options?: AdminRequestOptions<UpdateAnOrderReturnOutput['return']>,
     ): Promise<AxiosResponse<UpdateAnOrderReturnOutput>>;
   }
 }

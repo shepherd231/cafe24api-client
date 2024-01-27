@@ -8,20 +8,19 @@ import {
 export default (cls) => {
   register(cls);
 
-  const retrieveHourlyProductSalesStatisticsOfAStore =
-    cls.prototype.retrieveHourlyProductSalesStatisticsOfAStore;
-  cls.prototype.retrieveHourlyProductSalesStatisticsOfAStore = async function (
-    input,
-    options,
-  ) {
-    const response = await retrieveHourlyProductSalesStatisticsOfAStore.call(
-      this,
-      convertToSnakeCase(input),
-      optionsToSnakeCase(options),
-    );
-    return {
-      ...response,
-      data: convertToCamelCase(response.data),
+  
+    const retrieveHourlyProductSalesStatisticsOfAStore = cls.prototype.retrieveHourlyProductSalesStatisticsOfAStore;
+    cls.prototype.retrieveHourlyProductSalesStatisticsOfAStore = async function (input, options) {
+      const response = await retrieveHourlyProductSalesStatisticsOfAStore.call(
+        this,
+        convertToSnakeCase(input),
+        optionsToSnakeCase(options),
+      );
+      return {
+        ...response,
+        data: convertToCamelCase(response.data),
+      };
     };
-  };
+
+ 
 };

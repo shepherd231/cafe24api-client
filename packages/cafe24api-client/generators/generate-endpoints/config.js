@@ -1,7 +1,9 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 
+const Case = require('case');
 const fs = require('fs');
 const path = require('path');
+const { formatExampleString } = require('./utils');
 
 const sourcePath = path.resolve(__dirname, '../../src');
 const typedefPath = path.resolve(__dirname, '../../types');
@@ -24,7 +26,9 @@ const targets = [
     implTemplate: snakeCaseImplTemplate,
     typedefTemplate,
     templateContext: {
-      useCamelCase: false,
+      formatExampleString: (example) => formatExampleString(example),
+      formatPropName: (name) => name,
+      requestOptionType: 'AdminRequestOptions',
     },
   },
   {
@@ -36,7 +40,10 @@ const targets = [
     implTemplate: camelCaseImplTemplate,
     typedefTemplate,
     templateContext: {
-      useCamelCase: true,
+      formatExampleString: (example) =>
+        formatExampleString(example, { useCamelCase: true }),
+      formatPropName: Case.camel,
+      requestOptionType: 'AdminRequestOptions',
     },
   },
   {
@@ -48,7 +55,9 @@ const targets = [
     implTemplate: snakeCaseImplTemplate,
     typedefTemplate,
     templateContext: {
-      useCamelCase: false,
+      formatExampleString: (example) => formatExampleString(example),
+      formatPropName: (name) => name,
+      requestOptionType: 'RequestOptions',
     },
   },
   {
@@ -60,7 +69,10 @@ const targets = [
     implTemplate: camelCaseImplTemplate,
     typedefTemplate,
     templateContext: {
-      useCamelCase: true,
+      formatExampleString: (example) =>
+        formatExampleString(example, { useCamelCase: true }),
+      formatPropName: Case.camel,
+      requestOptionType: 'RequestOptions',
     },
   },
 ];

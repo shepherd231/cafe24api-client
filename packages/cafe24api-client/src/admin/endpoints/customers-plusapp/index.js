@@ -1,8 +1,6 @@
+
 export default (cls) => {
-  cls.prototype.retrieveAppInstallationInformation = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.retrieveAppInstallationInformation = async function (input, options) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/customers/${input['member_id']}/plusapp`,
@@ -13,4 +11,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

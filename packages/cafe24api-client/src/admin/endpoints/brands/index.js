@@ -1,3 +1,4 @@
+
 export default (cls) => {
   cls.prototype.retrieveAListOfBrands = async function (input, options) {
     return this.createRequest(
@@ -68,4 +69,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

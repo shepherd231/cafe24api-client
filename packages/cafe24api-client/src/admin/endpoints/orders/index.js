@@ -1,3 +1,4 @@
+
 export default (cls) => {
   cls.prototype.retrieveAListOfOrders = async function (input, options) {
     return this.createRequest(
@@ -114,10 +115,7 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.updateStatusForMultipleOrders = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.updateStatusForMultipleOrders = async function (input, options) {
     return this.createRequest(
       'PUT',
       `/api/v2/admin/orders`,
@@ -150,4 +148,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

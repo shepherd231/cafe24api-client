@@ -1,119 +1,128 @@
 import { AxiosResponse } from 'axios';
-import { Endpoint, RequestOptions, Cafe24Datetime } from 'cafe24api-client';
+import { 
+  Endpoint, 
+  AdminRequestOptions, 
+  Cafe24Datetime,
+  Cafe24Boolean,
+  Cafe24Date,
+  Cafe24Datetime,
+  Cafe24Enum,
+} from 'cafe24api-client';
 
 declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   /**
    * @description
-   *
-   *
+   * 
+   * 
    * 주문의 실결제금액(Orders paymentamount)은 특정 주문의 실제 결제금액에 대한 기능입니다.
    * 1개 혹은 여러 개의 품주에 대한 실제 결제금액과 관련된 정보를 조회할 수 있습니다.
    */
   export interface OrdersPaymentamount {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 
+      */ 
     shopNo: any;
     /**
-     * @description
-     * 품주코드
-     *
-     *
-     */
+      * @description
+      * 품주코드
+      * 
+      * 
+      */ 
     orderItemCode: any;
     /**
-     * @description
-     * 품목 정보
-     *
-     *
-     */
+      * @description
+      * 품목 정보
+      * 
+      * 
+      */ 
     items: any;
     /**
-     * @description
-     * 상품구매금액
-     *
-     *
-     */
+      * @description
+      * 상품구매금액
+      * 
+      * 
+      */ 
     orderPriceAmount: any;
     /**
-     * @description
-     * 주문 할인금액
-     *
-     *
-     */
+      * @description
+      * 주문 할인금액
+      * 
+      * 
+      */ 
     orderDiscountAmount: any;
     /**
-     * @description
-     * 상품 할인금액
-     *
-     *
-     */
+      * @description
+      * 상품 할인금액
+      * 
+      * 
+      */ 
     itemDiscountAmount: any;
     /**
-     * @description
-     * 보조 결제금액
-     *
-     *
-     */
+      * @description
+      * 보조 결제금액
+      * 
+      * 
+      */ 
     additionalPaymentAmount: any;
     /**
-     * @description
-     * 품목별 결제금액
-     *
-     *
-     */
+      * @description
+      * 품목별 결제금액
+      * 
+      * 
+      */ 
     paymentAmount: any;
   }
 
   export interface RetrieveAPaymentAmountInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     * 최소값: [1]
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 최소값: [1]
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 품주코드
-     *
-     * ,(콤마)로 여러 건을 검색할 수 있다.
-     *
-     * @required
-     */
+      * @description
+      * 품주코드
+      * 
+      * ,(콤마)로 여러 건을 검색할 수 있다.
+      * 
+      * @required
+      */ 
     orderItemCode: any;
   }
 
   export interface RetrieveAPaymentAmountOutput {
-    paymentamount: {
-      shopNo: number;
-      orderItemCode: string;
-      items: {
-        productPrice: Cafe24Datetime;
-        optionPrice: Cafe24Datetime;
-        quantity: number;
-      };
-      orderPriceAmount: Cafe24Datetime;
-      orderDiscountAmount: {
-        membershipDiscountAmount: string;
-        couponDiscountPrice: string;
-        appDiscountAmount: string;
-      };
-      itemDiscountAmount: {
-        additionalDiscountPrice: string;
-        couponDiscountPrice: string;
-        appDiscountAmount: string;
-      };
-      additionalPaymentAmount: string;
-      paymentAmount: Cafe24Datetime;
+    paymentamount: { 
+    shopNo: number;
+    orderItemCode: string;
+    items: { 
+    productPrice: Cafe24Datetime;
+    optionPrice: Cafe24Datetime;
+    quantity: number;
+    };
+    orderPriceAmount: Cafe24Datetime;
+    orderDiscountAmount: { 
+    membershipDiscountAmount: string;
+    couponDiscountPrice: string;
+    appDiscountAmount: string;
+    };
+    itemDiscountAmount: { 
+    additionalDiscountPrice: string;
+    couponDiscountPrice: string;
+    appDiscountAmount: string;
+    };
+    additionalPaymentAmount: string;
+    paymentAmount: Cafe24Datetime;
     }[];
   }
 
@@ -180,9 +189,7 @@ declare module 'cafe24api-client' {
      */
     retrieveAPaymentAmount(
       input: RetrieveAPaymentAmountInput,
-      options?: RequestOptions<
-        RetrieveAPaymentAmountOutput['paymentamount'][number]
-      >,
+      options?: AdminRequestOptions<RetrieveAPaymentAmountOutput['paymentamount'][number]>,
     ): Promise<AxiosResponse<RetrieveAPaymentAmountOutput>>;
   }
 }

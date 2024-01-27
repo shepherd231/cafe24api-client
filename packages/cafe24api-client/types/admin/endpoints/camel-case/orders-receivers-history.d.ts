@@ -1,227 +1,236 @@
 import { AxiosResponse } from 'axios';
-import { Endpoint, RequestOptions, Cafe24Datetime } from 'cafe24api-client';
+import { 
+  Endpoint, 
+  AdminRequestOptions, 
+  Cafe24Datetime,
+  Cafe24Boolean,
+  Cafe24Date,
+  Cafe24Datetime,
+  Cafe24Enum,
+} from 'cafe24api-client';
 
 declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   /**
    * @description
-   *
-   *
+   * 
+   * 
    * 주문수령자 이력(Orders receivers history)은 특정 주문의 수령자 정보 변경이력에 대한 기능입니다.
    * 수정일(updated_date) 파라메터를 통해 언제 정보가 변경되었는지 확인할 수 있습니다.
    */
   export interface OrdersReceiversHistory {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * 최소값: [1]
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 최소값: [1]
+      */ 
     shopNo: any;
     /**
-     * @description
-     * 수령자명
-     *
-     *
-     */
+      * @description
+      * 수령자명
+      * 
+      * 
+      */ 
     name: any;
     /**
-     * @description
-     * 전화번호
-     *
-     *
-     */
+      * @description
+      * 전화번호
+      * 
+      * 
+      */ 
     phone: any;
     /**
-     * @description
-     * 수령자 휴대 전화
-     *
-     *
-     */
+      * @description
+      * 수령자 휴대 전화
+      * 
+      * 
+      */ 
     cellphone: any;
     /**
-     * @description
-     * 우편번호
-     *
-     *
-     */
+      * @description
+      * 우편번호
+      * 
+      * 
+      */ 
     zipcode: any;
     /**
-     * @description
-     * 기본 주소
-     *
-     *
-     */
+      * @description
+      * 기본 주소
+      * 
+      * 
+      */ 
     address1: any;
     /**
-     * @description
-     * 상세 주소
-     *
-     *
-     */
+      * @description
+      * 상세 주소
+      * 
+      * 
+      */ 
     address2: any;
     /**
-     * @description
-     * 주/도
-     *
-     *
-     */
+      * @description
+      * 주/도
+      * 
+      * 
+      */ 
     addressState: any;
     /**
-     * @description
-     * 시/군/도시
-     *
-     *
-     */
+      * @description
+      * 시/군/도시
+      * 
+      * 
+      */ 
     addressCity: any;
     /**
-     * @description
-     * 도로명
-     *
-     *
-     */
+      * @description
+      * 도로명
+      * 
+      * 
+      */ 
     addressStreet: any;
     /**
-     * @description
-     * 전체주소
-     *
-     *
-     */
+      * @description
+      * 전체주소
+      * 
+      * 
+      */ 
     addressFull: any;
     /**
-     * @description
-     * 수령자명 (영문)
-     *
-     *
-     */
+      * @description
+      * 수령자명 (영문)
+      * 
+      * 
+      */ 
     nameEn: any;
     /**
-     * @description
-     * 수령자 도시 (영문)
-     *
-     *
-     */
+      * @description
+      * 수령자 도시 (영문)
+      * 
+      * 
+      */ 
     cityEn: any;
     /**
-     * @description
-     * 수령자 주 (영문)
-     *
-     *
-     */
+      * @description
+      * 수령자 주 (영문)
+      * 
+      * 
+      */ 
     stateEn: any;
     /**
-     * @description
-     * 수령자 주소 (영문)
-     *
-     *
-     */
+      * @description
+      * 수령자 주소 (영문)
+      * 
+      * 
+      */ 
     streetEn: any;
     /**
-     * @description
-     * 국가코드
-     *
-     *
-     */
+      * @description
+      * 국가코드
+      * 
+      * 
+      */ 
     countryCode: any;
     /**
-     * @description
-     * 국가명
-     *
-     *
-     */
+      * @description
+      * 국가명
+      * 
+      * 
+      */ 
     countryName: any;
     /**
-     * @description
-     * 국가명 (영문)
-     *
-     *
-     */
+      * @description
+      * 국가명 (영문)
+      * 
+      * 
+      */ 
     countryNameEn: any;
     /**
-     * @description
-     * 배송 메세지
-     *
-     *
-     */
+      * @description
+      * 배송 메세지
+      * 
+      * 
+      */ 
     shippingMessage: any;
     /**
-     * @description
-     * 수정일
-     *
-     *
-     */
+      * @description
+      * 수정일
+      * 
+      * 
+      */ 
     updatedDate: any;
     /**
-     * @description
-     * 주문자 수정자 ID
-     *
-     *
-     */
+      * @description
+      * 주문자 수정자 ID
+      * 
+      * 
+      */ 
     userId: any;
     /**
-     * @description
-     * 주문자 수정자 명
-     *
-     *
-     */
+      * @description
+      * 주문자 수정자 명
+      * 
+      * 
+      */ 
     userName: any;
     /**
-     * @description
-     * 배송번호
-     *
-     *
-     */
+      * @description
+      * 배송번호
+      * 
+      * 
+      */ 
     shippingCode: any;
   }
 
   export interface RetrieveAListOfRecipientHistoryOfAnOrderInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     * 최소값: [1]
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 최소값: [1]
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 주문번호
-     *
-     * @required
-     *
-     * 주문번호
-     */
+      * @description
+      * 주문번호
+      * 
+      * @required
+      * 
+      * 주문번호
+      */ 
     orderId: any;
   }
 
   export interface RetrieveAListOfRecipientHistoryOfAnOrderOutput {
-    history: {
-      shopNo: number;
-      name: string;
-      phone: string;
-      cellphone: string;
-      zipcode: Cafe24Datetime;
-      address1: string;
-      address2: string;
-      addressState: string;
-      addressCity: string;
-      addressStreet: string;
-      addressFull: string;
-      nameEn: any;
-      cityEn: any;
-      stateEn: any;
-      streetEn: any;
-      countryCode: string;
-      countryName: any;
-      countryNameEn: any;
-      shippingMessage: string;
-      updatedDate: Cafe24Datetime;
-      userId: string;
-      userName: string;
-      shippingCode: string;
+    history: { 
+    shopNo: number;
+    name: string;
+    phone: string;
+    cellphone: string;
+    zipcode: Cafe24Datetime;
+    address1: string;
+    address2: string;
+    addressState: string;
+    addressCity: string;
+    addressStreet: string;
+    addressFull: string;
+    nameEn: any;
+    cityEn: any;
+    stateEn: any;
+    streetEn: any;
+    countryCode: string;
+    countryName: any;
+    countryNameEn: any;
+    shippingMessage: string;
+    updatedDate: Cafe24Datetime;
+    userId: string;
+    userName: string;
+    shippingCode: string;
     }[];
   }
 
@@ -293,9 +302,7 @@ declare module 'cafe24api-client' {
      */
     retrieveAListOfRecipientHistoryOfAnOrder(
       input: RetrieveAListOfRecipientHistoryOfAnOrderInput,
-      options?: RequestOptions<
-        RetrieveAListOfRecipientHistoryOfAnOrderOutput['history'][number]
-      >,
+      options?: AdminRequestOptions<RetrieveAListOfRecipientHistoryOfAnOrderOutput['history'][number]>,
     ): Promise<AxiosResponse<RetrieveAListOfRecipientHistoryOfAnOrderOutput>>;
   }
 }

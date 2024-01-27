@@ -9,7 +9,6 @@ const { targets, templatesPath } = require('./config');
 const {
   replaceAllMatches,
   inferEffectiveOutputSchemaType,
-  formatExampleString,
   writeIf,
   formatPropertyType,
   formatRequestPath,
@@ -39,7 +38,6 @@ const generateFromTemplate = async (
         pascalCase: Case.pascal,
         replaceAllMatches,
         inferEffectiveOutputSchemaType,
-        formatExampleString,
         formatPropertyType,
         formatRequestPath,
         writeIf,

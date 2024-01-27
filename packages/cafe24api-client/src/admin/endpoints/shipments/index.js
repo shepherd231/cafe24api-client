@@ -1,8 +1,6 @@
+
 export default (cls) => {
-  cls.prototype.createShippingInformationForMultipleOrders = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.createShippingInformationForMultipleOrders = async function (input, options) {
     return this.createRequest(
       'POST',
       `/api/v2/admin/shipments`,
@@ -36,4 +34,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

@@ -1,3 +1,4 @@
+
 export default (cls) => {
   cls.prototype.retrievePointsSettings = async function (input, options) {
     return this.createRequest(
@@ -28,4 +29,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

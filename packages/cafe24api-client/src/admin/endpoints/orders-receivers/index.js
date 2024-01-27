@@ -1,8 +1,6 @@
+
 export default (cls) => {
-  cls.prototype.retrieveAListOfRecipientsOfAnOrder = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.retrieveAListOfRecipientsOfAnOrder = async function (input, options) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/orders/${input['order_id']}/receivers`,
@@ -40,8 +38,7 @@ export default (cls) => {
         clearance_information_type: input['clearance_information_type'],
         clearance_information: input['clearance_information'],
         shipping_code: input['shipping_code'],
-        change_default_shipping_address:
-          input['change_default_shipping_address'],
+        change_default_shipping_address: input['change_default_shipping_address'],
         virtual_phone_no: input['virtual_phone_no'],
         wished_delivery_date: input['wished_delivery_date'],
         use_fast_delivery_date: input['use_fast_delivery_date'],
@@ -77,8 +74,7 @@ export default (cls) => {
         country_code: input['country_code'],
         clearance_information_type: input['clearance_information_type'],
         clearance_information: input['clearance_information'],
-        change_default_shipping_address:
-          input['change_default_shipping_address'],
+        change_default_shipping_address: input['change_default_shipping_address'],
         virtual_phone_no: input['virtual_phone_no'],
         wished_delivery_date: input['wished_delivery_date'],
         use_fast_delivery_date: input['use_fast_delivery_date'],
@@ -89,4 +85,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

@@ -1,5 +1,13 @@
 import { AxiosResponse } from 'axios';
-import { Endpoint, RequestOptions, Cafe24Datetime } from 'cafe24api-client';
+import { 
+  Endpoint, 
+  <%= requestOptionType %>, 
+  Cafe24Datetime,
+  Cafe24Boolean,
+  Cafe24Date,
+  Cafe24Datetime,
+  Cafe24Enum,
+} from 'cafe24api-client';
 
 declare const endpoint: Endpoint;
 export = endpoint;
@@ -17,7 +25,7 @@ declare module 'cafe24api-client' {
   export interface <%= pascalCase(endpoint.id) %> {
 <%- include('/recursive-prop-decl.ejs', { 
   properties: endpoint.schema?.properties ?? [], 
-  formatName: useCamelCase ? camelCase : (name) => name,
+  formatName: formatPropName,
   formatPropertyType: formatPropertyType,
   writeIf: writeIf,
 }) -%>
@@ -27,7 +35,7 @@ declare module 'cafe24api-client' {
   export interface <%= pascalCase(method.id) %>Input {
 <%- include('/recursive-prop-decl.ejs', { 
   properties: method.request.properties, 
-  formatName: useCamelCase ? camelCase : (name) => name,
+  formatName: formatPropName,
   formatPropertyType: formatPropertyType,
   writeIf: writeIf,
 }) -%>
@@ -36,7 +44,7 @@ declare module 'cafe24api-client' {
   export interface <%= pascalCase(method.id) %>Output {
 <%- include('/recursive-prop-decl.ejs', { 
   properties: method.response.properties, 
-  formatName: useCamelCase ? camelCase : (name) => name,
+  formatName: formatPropName,
   formatPropertyType: formatPropertyType,
   writeIf: writeIf,
 }) -%>
@@ -66,7 +74,7 @@ declare module 'cafe24api-client' {
      */
     <%= camelCase(method.id) %>(
       input<%= writeIf(method.request.properties.length === 0, '?') %>: <%= pascalCase(method.id) %>Input,
-      options?: RequestOptions<<%- inferEffectiveOutputSchemaType(method) %>>,
+      options?: <%= requestOptionType %><<%- inferEffectiveOutputSchemaType(method) %>>,
     ): Promise<AxiosResponse<<%= pascalCase(method.id) %>Output>>;
 <% } -%>
   }

@@ -1,8 +1,6 @@
+
 export default (cls) => {
-  cls.prototype.retrieveAListOfProductCategories = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.retrieveAListOfProductCategories = async function (input, options) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/categories`,
@@ -19,10 +17,7 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.retrieveACountOfProductCategories = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.retrieveACountOfProductCategories = async function (input, options) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/categories/count`,
@@ -76,8 +71,7 @@ export default (cls) => {
         recommend_product_display_type: input['recommend_product_display_type'],
         recommend_product_display_key: input['recommend_product_display_key'],
         recommend_product_display_sort: input['recommend_product_display_sort'],
-        recommend_product_display_period:
-          input['recommend_product_display_period'],
+        recommend_product_display_period: input['recommend_product_display_period'],
         new_product_display_type: input['new_product_display_type'],
         new_product_display_key: input['new_product_display_key'],
         new_product_display_sort: input['new_product_display_sort'],
@@ -114,8 +108,7 @@ export default (cls) => {
         recommend_product_display_type: input['recommend_product_display_type'],
         recommend_product_display_key: input['recommend_product_display_key'],
         recommend_product_display_sort: input['recommend_product_display_sort'],
-        recommend_product_display_period:
-          input['recommend_product_display_period'],
+        recommend_product_display_period: input['recommend_product_display_period'],
         new_product_display_type: input['new_product_display_type'],
         new_product_display_key: input['new_product_display_key'],
         new_product_display_sort: input['new_product_display_sort'],
@@ -135,4 +128,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

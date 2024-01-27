@@ -1,3 +1,4 @@
+
 export default (cls) => {
   cls.prototype.retrieveAListOfAutoLayouts = async function (input, options) {
     return this.createRequest(
@@ -11,10 +12,7 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.createAutoLayoutForSelectedProductCategory = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.createAutoLayoutForSelectedProductCategory = async function (input, options) {
     return this.createRequest(
       'POST',
       `/api/v2/admin/autodisplay`,
@@ -38,10 +36,7 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.updateAutoLayoutForSelectedProductCategory = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.updateAutoLayoutForSelectedProductCategory = async function (input, options) {
     return this.createRequest(
       'PUT',
       `/api/v2/admin/autodisplay/${input['display_no']}`,
@@ -63,10 +58,7 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.deleteAutoLayoutForSelectedProductCategory = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.deleteAutoLayoutForSelectedProductCategory = async function (input, options) {
     return this.createRequest(
       'DELETE',
       `/api/v2/admin/autodisplay/${input['display_no']}`,
@@ -77,4 +69,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

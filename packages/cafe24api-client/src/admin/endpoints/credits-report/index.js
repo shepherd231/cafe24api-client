@@ -1,8 +1,6 @@
+
 export default (cls) => {
-  cls.prototype.retrieveACreditReportByDateRange = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.retrieveACreditReportByDateRange = async function (input, options) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/credits/report`,
@@ -19,4 +17,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

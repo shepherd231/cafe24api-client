@@ -1,49 +1,58 @@
 import { AxiosResponse } from 'axios';
-import { Endpoint, RequestOptions, Cafe24Datetime } from 'cafe24api-client';
+import { 
+  Endpoint, 
+  AdminRequestOptions, 
+  Cafe24Datetime,
+  Cafe24Boolean,
+  Cafe24Date,
+  Cafe24Datetime,
+  Cafe24Enum,
+} from 'cafe24api-client';
 
 declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   /**
    * @description
-   *
-   *
+   * 
+   * 
    * 쇼핑몰에 설정된 결제수단을 조회할 수 있습니다.
    */
   export interface Paymentmethods {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 
+      */ 
     shopNo: any;
     /**
-     * @description
-     * 결제수단 코드
-     *
-     *
-     */
+      * @description
+      * 결제수단 코드
+      * 
+      * 
+      */ 
     code: any;
   }
 
   export interface RetrieveAListOfPaymentMethodsInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     * 최소값: [1]
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 최소값: [1]
+      */ 
     shopNo?: any;
   }
 
   export interface RetrieveAListOfPaymentMethodsOutput {
-    paymentmethods: {
-      shopNo: number;
-      code: string;
+    paymentmethods: { 
+    shopNo: number;
+    code: string;
     }[];
   }
 
@@ -51,7 +60,7 @@ declare module 'cafe24api-client' {
     /**
      * @description
      * 쇼핑몰에 설정된 결제수단 목록을 조회합니다.
-     *
+     * 
      * 해당 API는 특정 클라이언트만 사용할 수 있는 API입니다. 사용하시려면 카페24 개발자센터로 문의해주세요.
      *
      * @see https://developers.cafe24.com/docs/api/admin/#retrieve-a-list-of-payment-methods
@@ -74,9 +83,7 @@ declare module 'cafe24api-client' {
      */
     retrieveAListOfPaymentMethods(
       input: RetrieveAListOfPaymentMethodsInput,
-      options?: RequestOptions<
-        RetrieveAListOfPaymentMethodsOutput['paymentmethods'][number]
-      >,
+      options?: AdminRequestOptions<RetrieveAListOfPaymentMethodsOutput['paymentmethods'][number]>,
     ): Promise<AxiosResponse<RetrieveAListOfPaymentMethodsOutput>>;
   }
 }

@@ -1,10 +1,19 @@
 import { AxiosResponse } from 'axios';
-import { Endpoint, RequestOptions, Cafe24Datetime } from 'cafe24api-client';
+import { 
+  Endpoint, 
+  AdminRequestOptions, 
+  Cafe24Datetime,
+  Cafe24Boolean,
+  Cafe24Date,
+  Cafe24Datetime,
+  Cafe24Enum,
+} from 'cafe24api-client';
 
 declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   /**
    * @description
    * 주문 환불(Orders refunds)은 특정 주문의 환불상태와 관련된 기능입니다.
@@ -12,119 +21,119 @@ declare module 'cafe24api-client' {
    */
   export interface OrdersRefunds {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 
+      */ 
     shop_no: any;
     /**
-     * @description
-     * 환불번호
-     *
-     *
-     */
+      * @description
+      * 환불번호
+      * 
+      * 
+      */ 
     refund_code: any;
     /**
-     * @description
-     * 환불상태
-     *
-     *
-     */
+      * @description
+      * 환불상태
+      * 
+      * 
+      */ 
     status: any;
     /**
-     * @description
-     * 처리사유
-     *
-     *
-     */
+      * @description
+      * 처리사유
+      * 
+      * 
+      */ 
     reason: any;
   }
 
   export interface UpdateAnOrderRefundInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shop_no?: any;
     /**
-     * @description
-     * 주문번호
-     *
-     * @required
-     */
+      * @description
+      * 주문번호
+      * 
+      * @required
+      */ 
     order_id: any;
     /**
-     * @description
-     * 환불번호
-     *
-     * @required
-     */
+      * @description
+      * 환불번호
+      * 
+      * @required
+      */ 
     refund_code: any;
     /**
-     * @description
-     * 환불상태
-     *
-     * complete : 환불완료
-     *
-     * @required
-     */
+      * @description
+      * 환불상태
+      * 
+      * complete : 환불완료
+      * 
+      * @required
+      */ 
     status: any;
     /**
-     * @description
-     * 처리사유
-     *
-     * 최대글자수 : [2000자]
-     */
+      * @description
+      * 처리사유
+      * 
+      * 최대글자수 : [2000자]
+      */ 
     reason?: any;
     /**
-     * @description
-     * 환불처리후 SMS 발송 여부
-     *
-     * T : 발송함
-     * F : 발송안함
-     *
-     * @default T
-     *
-     *
-     */
+      * @description
+      * 환불처리후 SMS 발송 여부
+      * 
+      * T : 발송함
+      * F : 발송안함
+      * 
+      * @default T
+      * 
+      * 
+      */ 
     send_sms?: any;
     /**
-     * @description
-     * 환불처리후 메일 발송 여부
-     *
-     * T : 발송함
-     * F : 발송안함
-     *
-     * @default T
-     *
-     *
-     */
+      * @description
+      * 환불처리후 메일 발송 여부
+      * 
+      * T : 발송함
+      * F : 발송안함
+      * 
+      * @default T
+      * 
+      * 
+      */ 
     send_mail?: any;
     /**
-     * @description
-     * PG 취소 요청 여부
-     *
-     * T : 취소함
-     * F : 취소안함
-     *
-     * @default F
-     *
-     *
-     */
+      * @description
+      * PG 취소 요청 여부
+      * 
+      * T : 취소함
+      * F : 취소안함
+      * 
+      * @default F
+      * 
+      * 
+      */ 
     payment_gateway_cancel?: any;
   }
 
   export interface UpdateAnOrderRefundOutput {
-    refund: {
-      shop_no: number;
-      refund_code: string;
-      status: string;
-      reason: string;
+    refund: { 
+    shop_no: number;
+    refund_code: string;
+    status: string;
+    reason: string;
     };
   }
 
@@ -150,7 +159,7 @@ declare module 'cafe24api-client' {
      */
     updateAnOrderRefund(
       input: UpdateAnOrderRefundInput,
-      options?: RequestOptions<UpdateAnOrderRefundOutput['refund']>,
+      options?: AdminRequestOptions<UpdateAnOrderRefundOutput['refund']>,
     ): Promise<AxiosResponse<UpdateAnOrderRefundOutput>>;
   }
 }

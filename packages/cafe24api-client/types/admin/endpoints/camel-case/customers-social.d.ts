@@ -1,78 +1,87 @@
 import { AxiosResponse } from 'axios';
-import { Endpoint, RequestOptions, Cafe24Datetime } from 'cafe24api-client';
+import { 
+  Endpoint, 
+  AdminRequestOptions, 
+  Cafe24Datetime,
+  Cafe24Boolean,
+  Cafe24Date,
+  Cafe24Datetime,
+  Cafe24Enum,
+} from 'cafe24api-client';
 
 declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   /**
    * @description
    * 회원의 SNS(Customers social)는 특정 회원에게 연동된 SNS 계정의 정보를 조회할 수 있는 기능입니다.
    */
   export interface CustomersSocial {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 
+      */ 
     shopNo: any;
     /**
-     * @description
-     * 회원아이디
-     *
-     *
-     */
+      * @description
+      * 회원아이디
+      * 
+      * 
+      */ 
     memberId: any;
     /**
-     * @description
-     * 연동 된 SNS명
-     *
-     *
-     */
+      * @description
+      * 연동 된 SNS명
+      * 
+      * 
+      */ 
     socialName: any;
     /**
-     * @description
-     * 연동 된 SNS 제공코드
-     *
-     *
-     */
+      * @description
+      * 연동 된 SNS 제공코드
+      * 
+      * 
+      */ 
     socialMemberCode: any;
     /**
-     * @description
-     * 연동 날짜
-     *
-     *
-     */
+      * @description
+      * 연동 날짜
+      * 
+      * 
+      */ 
     linkedDate: any;
   }
 
   export interface RetrieveACustomerSSocialAccountInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 회원아이디
-     *
-     * @required
-     */
+      * @description
+      * 회원아이디
+      * 
+      * @required
+      */ 
     memberId: any;
   }
 
   export interface RetrieveACustomerSSocialAccountOutput {
-    social: {
-      shopNo: number;
-      memberId: string;
-      socialName: string;
-      socialMemberCode: string;
-      linkedDate: Cafe24Datetime;
+    social: { 
+    shopNo: number;
+    memberId: string;
+    socialName: string;
+    socialMemberCode: string;
+    linkedDate: Cafe24Datetime;
     };
   }
 
@@ -81,7 +90,7 @@ declare module 'cafe24api-client' {
      * @description
      * 특정 회원에게 연동된 SNS 계정의 정보를 목록으로 조회할 수 있습니다.
      * 연동 된 SNS명과 연동 날짜 등을 조회할 수 있습니다.
-     *
+     * 
      * 해당 API는 특정 클라이언트만 사용할 수 있는 API입니다. 사용하시려면 카페24 개발자센터로 문의해주세요.
      *
      * @see https://developers.cafe24.com/docs/api/admin/#retrieve-a-customer-s-social-account
@@ -101,7 +110,7 @@ declare module 'cafe24api-client' {
      */
     retrieveACustomerSSocialAccount(
       input: RetrieveACustomerSSocialAccountInput,
-      options?: RequestOptions<RetrieveACustomerSSocialAccountOutput['social']>,
+      options?: AdminRequestOptions<RetrieveACustomerSSocialAccountOutput['social']>,
     ): Promise<AxiosResponse<RetrieveACustomerSSocialAccountOutput>>;
   }
 }

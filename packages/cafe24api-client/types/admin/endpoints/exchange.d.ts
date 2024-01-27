@@ -1,10 +1,19 @@
 import { AxiosResponse } from 'axios';
-import { Endpoint, RequestOptions, Cafe24Datetime } from 'cafe24api-client';
+import { 
+  Endpoint, 
+  AdminRequestOptions, 
+  Cafe24Datetime,
+  Cafe24Boolean,
+  Cafe24Date,
+  Cafe24Datetime,
+  Cafe24Enum,
+} from 'cafe24api-client';
 
 declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   /**
    * @description
    * 교환(Exchange)은 주문의 교환 접수 상태를 변경하는 리소스입니다.
@@ -12,1042 +21,1042 @@ declare module 'cafe24api-client' {
    */
   export interface Exchange {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 
+      */ 
     shop_no: any;
     /**
-     * @description
-     * 주문번호
-     *
-     *
-     */
+      * @description
+      * 주문번호
+      * 
+      * 
+      */ 
     order_id: any;
     /**
-     * @description
-     * 반품번호
-     *
-     *
-     */
+      * @description
+      * 반품번호
+      * 
+      * 
+      */ 
     claim_code: any;
     /**
-     * @description
-     * 구분
-     *
-     * A:고객변심
-     * B:배송지연
-     * J:배송오류
-     * C:배송불가지역
-     * L:수출/통관 불가
-     * D:포장불량
-     * E:상품 불만족
-     * F:상품정보상이
-     * K:상품불량
-     * G:서비스불만족
-     * H:품절
-     * I:기타
-     *
-     *
-     */
+      * @description
+      * 구분
+      * 
+      * A:고객변심
+      * B:배송지연
+      * J:배송오류
+      * C:배송불가지역
+      * L:수출/통관 불가
+      * D:포장불량
+      * E:상품 불만족
+      * F:상품정보상이
+      * K:상품불량
+      * G:서비스불만족
+      * H:품절
+      * I:기타
+      * 
+      * 
+      */ 
     claim_reason_type: any;
     /**
-     * @description
-     * 사유
-     *
-     *
-     */
+      * @description
+      * 사유
+      * 
+      * 
+      */ 
     claim_reason: any;
     /**
-     * @description
-     * 교환처리 예정일
-     *
-     *
-     */
+      * @description
+      * 교환처리 예정일
+      * 
+      * 
+      */ 
     claim_due_date: any;
     /**
-     * @description
-     * 수령자
-     *
-     *
-     */
+      * @description
+      * 수령자
+      * 
+      * 
+      */ 
     receiver: any;
     /**
-     * @description
-     * 교환 재발송 정보
-     *
-     *
-     */
+      * @description
+      * 교환 재발송 정보
+      * 
+      * 
+      */ 
     reshipping_detail: any;
     /**
-     * @description
-     * 수거지 - 주소
-     *
-     *
-     */
+      * @description
+      * 수거지 - 주소
+      * 
+      * 
+      */ 
     pickup: any;
     /**
-     * @description
-     * 추가결제
-     *
-     *
-     */
+      * @description
+      * 추가결제
+      * 
+      * 
+      */ 
     additional_payment: any;
     /**
-     * @description
-     * 반품 송장 번호
-     *
-     * 최대글자수 : [40자]
-     */
+      * @description
+      * 반품 송장 번호
+      * 
+      * 최대글자수 : [40자]
+      */ 
     return_invoice_no: any;
     /**
-     * @description
-     * 반품 배송업체명
-     *
-     *
-     */
+      * @description
+      * 반품 배송업체명
+      * 
+      * 
+      */ 
     return_shipping_company_name: any;
     /**
-     * @description
-     * 환불 방식
-     *
-     *
-     */
+      * @description
+      * 환불 방식
+      * 
+      * 
+      */ 
     refund_methods: any;
     /**
-     * @description
-     * 비고
-     *
-     *
-     */
+      * @description
+      * 비고
+      * 
+      * 
+      */ 
     refund_reason: any;
     /**
-     * @description
-     * 상품구매금액
-     *
-     *
-     */
+      * @description
+      * 상품구매금액
+      * 
+      * 
+      */ 
     order_price_amount: any;
     /**
-     * @description
-     * 환불금액
-     *
-     *
-     */
+      * @description
+      * 환불금액
+      * 
+      * 
+      */ 
     refund_amounts: any;
     /**
-     * @description
-     * 배송비
-     *
-     *
-     */
+      * @description
+      * 배송비
+      * 
+      * 
+      */ 
     shipping_fee: any;
     /**
-     * @description
-     * 반품배송비 적용구분
-     *
-     *
-     */
+      * @description
+      * 반품배송비 적용구분
+      * 
+      * 
+      */ 
     return_ship_type: any;
     /**
-     * @description
-     * 후불 결제 수수료
-     *
-     *
-     */
+      * @description
+      * 후불 결제 수수료
+      * 
+      * 
+      */ 
     defer_commission: any;
     /**
-     * @description
-     * 제휴할인 취소액
-     *
-     *
-     */
+      * @description
+      * 제휴할인 취소액
+      * 
+      * 
+      */ 
     partner_discount_amount: any;
     /**
-     * @description
-     * 상품별추가할인 취소액
-     *
-     *
-     */
+      * @description
+      * 상품별추가할인 취소액
+      * 
+      * 
+      */ 
     add_discount_amount: any;
     /**
-     * @description
-     * 회원등급할인 취소액
-     *
-     *
-     */
+      * @description
+      * 회원등급할인 취소액
+      * 
+      * 
+      */ 
     member_grade_discount_amount: any;
     /**
-     * @description
-     * 배송비할인 취소액
-     *
-     *
-     */
+      * @description
+      * 배송비할인 취소액
+      * 
+      * 
+      */ 
     shipping_discount_amount: any;
     /**
-     * @description
-     * 쿠폰할인 취소액
-     *
-     *
-     */
+      * @description
+      * 쿠폰할인 취소액
+      * 
+      * 
+      */ 
     coupon_discount_amount: any;
     /**
-     * @description
-     * 사용된 적립금 반환액
-     *
-     *
-     */
+      * @description
+      * 사용된 적립금 반환액
+      * 
+      * 
+      */ 
     point_used: any;
     /**
-     * @description
-     * 사용된 예치금 반환액
-     *
-     *
-     */
+      * @description
+      * 사용된 예치금 반환액
+      * 
+      * 
+      */ 
     credit_used: any;
     /**
-     * @description
-     * 철회 여부
-     *
-     * T : 철회함
-     * F : 철회안함
-     *
-     *
-     */
+      * @description
+      * 철회 여부
+      * 
+      * T : 철회함
+      * F : 철회안함
+      * 
+      * 
+      */ 
     undone: any;
     /**
-     * @description
-     * 철회 사유 구분
-     *
-     * A:고객변심
-     * B:배송지연
-     * J:배송오류
-     * C:배송불가지역
-     * L:수출/통관 불가
-     * D:포장불량
-     * E:상품 불만족
-     * F:상품정보상이
-     * K:상품불량
-     * G:서비스불만족
-     * H:품절
-     * I:기타
-     *
-     *
-     */
+      * @description
+      * 철회 사유 구분
+      * 
+      * A:고객변심
+      * B:배송지연
+      * J:배송오류
+      * C:배송불가지역
+      * L:수출/통관 불가
+      * D:포장불량
+      * E:상품 불만족
+      * F:상품정보상이
+      * K:상품불량
+      * G:서비스불만족
+      * H:품절
+      * I:기타
+      * 
+      * 
+      */ 
     undone_reason_type: any;
     /**
-     * @description
-     * 철회 사유
-     *
-     *
-     */
+      * @description
+      * 철회 사유
+      * 
+      * 
+      */ 
     undone_reason: any;
     /**
-     * @description
-     * 주문상세내역 노출 여부
-     *
-     * T : 노출함
-     * F : 노출안함
-     *
-     *
-     */
+      * @description
+      * 주문상세내역 노출 여부
+      * 
+      * T : 노출함
+      * F : 노출안함
+      * 
+      * 
+      */ 
     expose_order_detail: any;
     /**
-     * @description
-     * 주문상세내역 노출 철회 사유
-     *
-     *
-     */
+      * @description
+      * 주문상세내역 노출 철회 사유
+      * 
+      * 
+      */ 
     exposed_undone_reason: any;
     /**
-     * @description
-     * 품주코드
-     *
-     *
-     */
+      * @description
+      * 품주코드
+      * 
+      * 
+      */ 
     items: any;
     /**
-     * @description
-     * 교환상품
-     *
-     *
-     */
+      * @description
+      * 교환상품
+      * 
+      * 
+      */ 
     exchanged_items: any;
     /**
-     * @description
-     * 가격에 세금 포함
-     *
-     * T: 세금포함
-     * F: 세금제외
-     *
-     *
-     */
+      * @description
+      * 가격에 세금 포함
+      * 
+      * T: 세금포함
+      * F: 세금제외
+      * 
+      * 
+      */ 
     include_tax: any;
     /**
-     * @description
-     * 세금 정보
-     *
-     * 세금 관리자 앱을 사용 안 할 경우 null로 반환
-     *
-     *
-     */
+      * @description
+      * 세금 정보
+      * 
+      * 세금 관리자 앱을 사용 안 할 경우 null로 반환
+      * 
+      * 
+      */ 
     tax: any;
     /**
-     * @description
-     * 배송사 아이디
-     *
-     *
-     */
+      * @description
+      * 배송사 아이디
+      * 
+      * 
+      */ 
     carrier_id: any;
     /**
-     * @description
-     * 반송장 처리 성공 여부
-     *
-     * T : 성공
-     * F : 실패
-     * N : 미집하
-     *
-     *
-     */
+      * @description
+      * 반송장 처리 성공 여부
+      * 
+      * T : 성공
+      * F : 실패
+      * N : 미집하
+      * 
+      * 
+      */ 
     return_invoice_success: any;
     /**
-     * @description
-     * 반송장 처리 실패 사유
-     *
-     * 최대글자수 : [100자]
-     */
+      * @description
+      * 반송장 처리 실패 사유
+      * 
+      * 최대글자수 : [100자]
+      */ 
     return_invoice_fail_reason: any;
     /**
-     * @description
-     * 주문상태
-     *
-     * accept : 접수
-     * collected : 수거완료
-     * exchanged : 교환완료
-     *
-     *
-     */
+      * @description
+      * 주문상태
+      * 
+      * accept : 접수
+      * collected : 수거완료
+      * exchanged : 교환완료
+      * 
+      * 
+      */ 
     status: any;
     /**
-     * @description
-     * 재고복구
-     *
-     * T : 복구함
-     * F : 복구안함
-     *
-     *
-     */
+      * @description
+      * 재고복구
+      * 
+      * T : 복구함
+      * F : 복구안함
+      * 
+      * 
+      */ 
     recover_inventory: any;
     /**
-     * @description
-     * 수거완료시 교환완료 여부
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 수거완료시 교환완료 여부
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     exchanged_after_collected: any;
     /**
-     * @description
-     * 관리자 메모에도 추가
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 관리자 메모에도 추가
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     add_memo_too: any;
     /**
-     * @description
-     * 수거완료 여부
-     *
-     * T : 수거완료
-     * F : 수거전
-     *
-     *
-     */
+      * @description
+      * 수거완료 여부
+      * 
+      * T : 수거완료
+      * F : 수거전
+      * 
+      * 
+      */ 
     pickup_completed: any;
   }
 
   export interface RetrieveAnExchangeInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shop_no?: any;
     /**
-     * @description
-     * 교환번호
-     *
-     * @required
-     */
+      * @description
+      * 교환번호
+      * 
+      * @required
+      */ 
     claim_code: any;
   }
 
   export interface RetrieveAnExchangeOutput {
-    exchange: {
-      shop_no: number;
-      order_id: string;
-      claim_code: string;
-      claim_reason_type: Cafe24Enum;
-      claim_reason: string;
-      claim_due_date: Cafe24Date;
-      receiver: {
-        name: string;
-        phone: string;
-        cellphone: string;
-        zipcode: Cafe24Datetime;
-        address: string;
-        shipping_message: string;
-      };
-      reshipping_detail: {
-        name: string;
-        phone: string;
-        cellphone: string;
-        zipcode: Cafe24Datetime;
-        address: string;
-        shipping_message: string;
-      };
-      pickup: {
-        use_pickup: Cafe24Enum;
-        same_address: Cafe24Enum;
-        name: string;
-        phone: string;
-        cellphone: string;
-        zipcode: Cafe24Datetime;
-        address: string;
-      };
-      additional_payment: {
-        payment_amount: Cafe24Datetime;
-        payment_method: string;
-        billing_name: string;
-        bank_name: string;
-        bank_accout_no: Cafe24Datetime;
-        bank_account_owner_name: string;
-        order_price_amount: Cafe24Datetime;
-        shipping_fee: string;
-        additional_shipping_fee: string;
-        postpay_commission: string;
-        commission: string;
-        credit_spent_amount: string;
-        point_spent_amount: string;
-        tax: {
-          name: string;
-          amount: Cafe24Datetime;
-        }[];
-      };
-      return_invoice_no: any;
-      return_shipping_company_name: any;
-      refund_methods: string[];
-      refund_reason: string;
-      order_price_amount: Cafe24Datetime;
-      refund_amounts: {
-        payment_method: string;
-        amount: string;
-      }[];
-      shipping_fee: string;
-      return_ship_type: string;
-      defer_commission: string;
-      partner_discount_amount: string;
-      add_discount_amount: string;
-      member_grade_discount_amount: string;
-      shipping_discount_amount: string;
-      coupon_discount_amount: string;
-      point_used: string;
-      credit_used: string;
-      undone: Cafe24Enum;
-      undone_reason_type: any;
-      undone_reason: any;
-      expose_order_detail: any;
-      exposed_undone_reason: any;
-      items: {
-        shop_no: number;
-        item_no: number;
-        order_item_code: string;
-        variant_code: string;
-        product_no: number;
-        product_code: string;
-        custom_product_code: string;
-        custom_variant_code: string;
-        eng_product_name: any;
-        option_id: string;
-        option_value: string;
-        option_value_default: string;
-        additional_option_value: string;
-        additional_option_values: {
-          key: string;
-          type: string;
-          name: string;
-          value: string;
-        }[];
-        product_name: string;
-        product_name_default: string;
-        product_price: Cafe24Datetime;
-        option_price: string;
-        additional_discount_price: string;
-        coupon_discount_price: Cafe24Datetime;
-        app_item_discount_amount: string;
-        quantity: number;
-        supplier_product_name: string;
-        supplier_transaction_type: Cafe24Enum;
-        supplier_id: string;
-        supplier_name: string;
-        tracking_no: Cafe24Datetime;
-        shipping_code: string;
-        claim_code: string;
-        claim_reason_type: Cafe24Enum;
-        claim_reason: string;
-        refund_bank_name: string;
-        refund_bank_account_no: Cafe24Datetime;
-        refund_bank_account_holder: string;
-        post_express_flag: any;
-        order_status: string;
-        order_status_additional_info: any;
-        claim_quantity: number;
-        status_code: string;
-        status_text: string;
-        open_market_status: string;
-        bundled_shipping_type: Cafe24Enum;
-        shipping_company_id: Cafe24Datetime;
-        shipping_company_name: string;
-        shipping_company_code: Cafe24Datetime;
-        product_bundle: Cafe24Enum;
-        product_bundle_no: Cafe24Datetime;
-        product_bundle_name: any;
-        product_bundle_name_default: any;
-        product_bundle_type: Cafe24Enum;
-        was_product_bundle: any;
-        original_bundle_item_no: any;
-        naver_pay_order_id: any;
-        naver_pay_claim_status: string;
-        individual_shipping_fee: string;
-        shipping_fee_type: Cafe24Enum;
-        shipping_fee_type_text: string;
-        shipping_payment_option: Cafe24Enum;
-        payment_info_id: Cafe24Datetime;
-        original_item_no: number[];
-        store_pickup: Cafe24Enum;
-        ordered_date: Cafe24Datetime;
-        shipped_date: Cafe24Datetime;
-        delivered_date: Cafe24Datetime;
-        cancel_date: any;
-        return_request_date: any;
-        return_confirmed_date: any;
-        return_collected_date: any;
-        cancel_request_date: any;
-        refund_date: any;
-        exchange_request_date: any;
-        exchange_date: any;
-        product_material: any;
-        product_material_eng: any;
-        cloth_fabric: any;
-        product_weight: string;
-        volume_size: any;
-        volume_size_weight: any;
-        clearance_category: any;
-        clearance_category_info: any;
-        clearance_category_code: any;
-        hs_code: string;
-        one_plus_n_event: any;
-        origin_place: Cafe24Enum;
-        gift: Cafe24Enum;
-        item_granting_gift: any;
-        product_bundle_list: {
-          product_no: number;
-          product_code: string;
-          variant_code: string;
-          product_name: Cafe24Datetime;
-          product_name_default: Cafe24Datetime;
-          option_id: string;
-          option_value: string;
-          option_value_default: string;
-          additional_option_value: string;
-          additional_option_values: {
-            key: string;
-            type: string;
-            name: string;
-            value: string;
-          }[];
-          quantity: number;
-          supplier_id: string;
-          eng_product_name: any;
-          hs_code: Cafe24Datetime;
-          option_price: string;
-        }[];
-        market_cancel_request: any;
-        market_cancel_request_quantity: any;
-        market_fail_reason: any;
-        market_fail_reason_guide: any;
-        market_item_sequence: any;
-        market_item_no: any;
-        market_custom_variant_code: any;
-        option_type: Cafe24Enum;
-        options: {
-          option_code: string;
-          option_name: any;
-          option_value: {
-            option_text: any;
-            value_no: number;
-          };
-        }[];
-        market_discount_amount: string;
-        labels: any;
-        order_status_before_cs: string;
-        supply_price: Cafe24Datetime;
-      }[];
-      exchanged_items: {
-        shop_no: number;
-        item_no: number;
-        order_item_code: string;
-        variant_code: string;
-        product_no: number;
-        product_code: string;
-        custom_product_code: string;
-        custom_variant_code: string;
-        eng_product_name: any;
-        option_id: string;
-        option_value: string;
-        option_value_default: string;
-        additional_option_value: string;
-        additional_option_values: {
-          key: string;
-          type: string;
-          name: string;
-          value: string;
-        }[];
-        product_name: string;
-        product_name_default: string;
-        product_price: Cafe24Datetime;
-        option_price: string;
-        additional_discount_price: string;
-        coupon_discount_price: Cafe24Datetime;
-        app_item_discount_amount: string;
-        quantity: number;
-        supplier_product_name: string;
-        supplier_transaction_type: Cafe24Enum;
-        supplier_id: string;
-        supplier_name: string;
-        tracking_no: Cafe24Datetime;
-        shipping_code: string;
-        claim_code: string;
-        claim_reason_type: Cafe24Enum;
-        claim_reason: string;
-        refund_bank_name: string;
-        refund_bank_account_no: Cafe24Datetime;
-        refund_bank_account_holder: string;
-        post_express_flag: any;
-        order_status: string;
-        order_status_additional_info: any;
-        claim_quantity: number;
-        status_code: string;
-        status_text: string;
-        open_market_status: string;
-        bundled_shipping_type: Cafe24Enum;
-        shipping_company_id: Cafe24Datetime;
-        shipping_company_name: string;
-        shipping_company_code: Cafe24Datetime;
-        product_bundle: Cafe24Enum;
-        product_bundle_no: Cafe24Datetime;
-        product_bundle_name: any;
-        product_bundle_name_default: any;
-        product_bundle_type: Cafe24Enum;
-        was_product_bundle: any;
-        original_bundle_item_no: any;
-        naver_pay_order_id: any;
-        naver_pay_claim_status: string;
-        individual_shipping_fee: string;
-        shipping_fee_type: Cafe24Enum;
-        shipping_fee_type_text: string;
-        shipping_payment_option: Cafe24Enum;
-        payment_info_id: Cafe24Datetime;
-        original_item_no: number[];
-        store_pickup: Cafe24Enum;
-        ordered_date: Cafe24Datetime;
-        shipped_date: Cafe24Datetime;
-        delivered_date: Cafe24Datetime;
-        cancel_date: any;
-        return_request_date: any;
-        return_confirmed_date: any;
-        return_collected_date: any;
-        cancel_request_date: any;
-        refund_date: any;
-        exchange_request_date: any;
-        exchange_date: any;
-        product_material: any;
-        product_material_eng: any;
-        cloth_fabric: any;
-        product_weight: string;
-        volume_size: any;
-        volume_size_weight: any;
-        clearance_category: any;
-        clearance_category_info: any;
-        clearance_category_code: any;
-        hs_code: string;
-        one_plus_n_event: any;
-        origin_place: Cafe24Enum;
-        gift: Cafe24Enum;
-        item_granting_gift: any;
-        product_bundle_list: {
-          product_no: number;
-          product_code: string;
-          variant_code: string;
-          product_name: Cafe24Datetime;
-          product_name_default: Cafe24Datetime;
-          option_id: string;
-          option_value: string;
-          option_value_default: string;
-          additional_option_value: string;
-          additional_option_values: {
-            key: string;
-            type: string;
-            name: string;
-            value: string;
-          }[];
-          quantity: number;
-          supplier_id: string;
-          eng_product_name: any;
-          hs_code: Cafe24Datetime;
-          option_price: string;
-        }[];
-        market_cancel_request: any;
-        market_cancel_request_quantity: any;
-        market_fail_reason: any;
-        market_fail_reason_guide: any;
-        market_item_sequence: any;
-        market_item_no: any;
-        market_custom_variant_code: any;
-        option_type: Cafe24Enum;
-        options: {
-          option_code: string;
-          option_name: any;
-          option_value: {
-            option_text: any;
-            value_no: number;
-          };
-        }[];
-        market_discount_amount: string;
-        labels: any;
-        order_status_before_cs: string;
-        supply_price: Cafe24Datetime;
-      }[];
-      include_tax: Cafe24Enum;
-      tax: any;
-      carrier_id: any;
-      return_invoice_success: any;
-      return_invoice_fail_reason: any;
+    exchange: { 
+    shop_no: number;
+    order_id: string;
+    claim_code: string;
+    claim_reason_type: Cafe24Enum;
+    claim_reason: string;
+    claim_due_date: Cafe24Date;
+    receiver: { 
+    name: string;
+    phone: string;
+    cellphone: string;
+    zipcode: Cafe24Datetime;
+    address: string;
+    shipping_message: string;
+    };
+    reshipping_detail: { 
+    name: string;
+    phone: string;
+    cellphone: string;
+    zipcode: Cafe24Datetime;
+    address: string;
+    shipping_message: string;
+    };
+    pickup: { 
+    use_pickup: Cafe24Enum;
+    same_address: Cafe24Enum;
+    name: string;
+    phone: string;
+    cellphone: string;
+    zipcode: Cafe24Datetime;
+    address: string;
+    };
+    additional_payment: { 
+    payment_amount: Cafe24Datetime;
+    payment_method: string;
+    billing_name: string;
+    bank_name: string;
+    bank_accout_no: Cafe24Datetime;
+    bank_account_owner_name: string;
+    order_price_amount: Cafe24Datetime;
+    shipping_fee: string;
+    additional_shipping_fee: string;
+    postpay_commission: string;
+    commission: string;
+    credit_spent_amount: string;
+    point_spent_amount: string;
+    tax: { 
+    name: string;
+    amount: Cafe24Datetime;
+    }[];
+    };
+    return_invoice_no: any;
+    return_shipping_company_name: any;
+    refund_methods: string[];
+    refund_reason: string;
+    order_price_amount: Cafe24Datetime;
+    refund_amounts: { 
+    payment_method: string;
+    amount: string;
+    }[];
+    shipping_fee: string;
+    return_ship_type: string;
+    defer_commission: string;
+    partner_discount_amount: string;
+    add_discount_amount: string;
+    member_grade_discount_amount: string;
+    shipping_discount_amount: string;
+    coupon_discount_amount: string;
+    point_used: string;
+    credit_used: string;
+    undone: Cafe24Enum;
+    undone_reason_type: any;
+    undone_reason: any;
+    expose_order_detail: any;
+    exposed_undone_reason: any;
+    items: { 
+    shop_no: number;
+    item_no: number;
+    order_item_code: string;
+    variant_code: string;
+    product_no: number;
+    product_code: string;
+    custom_product_code: string;
+    custom_variant_code: string;
+    eng_product_name: any;
+    option_id: string;
+    option_value: string;
+    option_value_default: string;
+    additional_option_value: string;
+    additional_option_values: { 
+    key: string;
+    type: string;
+    name: string;
+    value: string;
+    }[];
+    product_name: string;
+    product_name_default: string;
+    product_price: Cafe24Datetime;
+    option_price: string;
+    additional_discount_price: string;
+    coupon_discount_price: Cafe24Datetime;
+    app_item_discount_amount: string;
+    quantity: number;
+    supplier_product_name: string;
+    supplier_transaction_type: Cafe24Enum;
+    supplier_id: string;
+    supplier_name: string;
+    tracking_no: Cafe24Datetime;
+    shipping_code: string;
+    claim_code: string;
+    claim_reason_type: Cafe24Enum;
+    claim_reason: string;
+    refund_bank_name: string;
+    refund_bank_account_no: Cafe24Datetime;
+    refund_bank_account_holder: string;
+    post_express_flag: any;
+    order_status: string;
+    order_status_additional_info: any;
+    claim_quantity: number;
+    status_code: string;
+    status_text: string;
+    open_market_status: string;
+    bundled_shipping_type: Cafe24Enum;
+    shipping_company_id: Cafe24Datetime;
+    shipping_company_name: string;
+    shipping_company_code: Cafe24Datetime;
+    product_bundle: Cafe24Enum;
+    product_bundle_no: Cafe24Datetime;
+    product_bundle_name: any;
+    product_bundle_name_default: any;
+    product_bundle_type: Cafe24Enum;
+    was_product_bundle: any;
+    original_bundle_item_no: any;
+    naver_pay_order_id: any;
+    naver_pay_claim_status: string;
+    individual_shipping_fee: string;
+    shipping_fee_type: Cafe24Enum;
+    shipping_fee_type_text: string;
+    shipping_payment_option: Cafe24Enum;
+    payment_info_id: Cafe24Datetime;
+    original_item_no: number[];
+    store_pickup: Cafe24Enum;
+    ordered_date: Cafe24Datetime;
+    shipped_date: Cafe24Datetime;
+    delivered_date: Cafe24Datetime;
+    cancel_date: any;
+    return_request_date: any;
+    return_confirmed_date: any;
+    return_collected_date: any;
+    cancel_request_date: any;
+    refund_date: any;
+    exchange_request_date: any;
+    exchange_date: any;
+    product_material: any;
+    product_material_eng: any;
+    cloth_fabric: any;
+    product_weight: string;
+    volume_size: any;
+    volume_size_weight: any;
+    clearance_category: any;
+    clearance_category_info: any;
+    clearance_category_code: any;
+    hs_code: string;
+    one_plus_n_event: any;
+    origin_place: Cafe24Enum;
+    gift: Cafe24Enum;
+    item_granting_gift: any;
+    product_bundle_list: { 
+    product_no: number;
+    product_code: string;
+    variant_code: string;
+    product_name: Cafe24Datetime;
+    product_name_default: Cafe24Datetime;
+    option_id: string;
+    option_value: string;
+    option_value_default: string;
+    additional_option_value: string;
+    additional_option_values: { 
+    key: string;
+    type: string;
+    name: string;
+    value: string;
+    }[];
+    quantity: number;
+    supplier_id: string;
+    eng_product_name: any;
+    hs_code: Cafe24Datetime;
+    option_price: string;
+    }[];
+    market_cancel_request: any;
+    market_cancel_request_quantity: any;
+    market_fail_reason: any;
+    market_fail_reason_guide: any;
+    market_item_sequence: any;
+    market_item_no: any;
+    market_custom_variant_code: any;
+    option_type: Cafe24Enum;
+    options: { 
+    option_code: string;
+    option_name: any;
+    option_value: { 
+    option_text: any;
+    value_no: number;
+    };
+    }[];
+    market_discount_amount: string;
+    labels: any;
+    order_status_before_cs: string;
+    supply_price: Cafe24Datetime;
+    }[];
+    exchanged_items: { 
+    shop_no: number;
+    item_no: number;
+    order_item_code: string;
+    variant_code: string;
+    product_no: number;
+    product_code: string;
+    custom_product_code: string;
+    custom_variant_code: string;
+    eng_product_name: any;
+    option_id: string;
+    option_value: string;
+    option_value_default: string;
+    additional_option_value: string;
+    additional_option_values: { 
+    key: string;
+    type: string;
+    name: string;
+    value: string;
+    }[];
+    product_name: string;
+    product_name_default: string;
+    product_price: Cafe24Datetime;
+    option_price: string;
+    additional_discount_price: string;
+    coupon_discount_price: Cafe24Datetime;
+    app_item_discount_amount: string;
+    quantity: number;
+    supplier_product_name: string;
+    supplier_transaction_type: Cafe24Enum;
+    supplier_id: string;
+    supplier_name: string;
+    tracking_no: Cafe24Datetime;
+    shipping_code: string;
+    claim_code: string;
+    claim_reason_type: Cafe24Enum;
+    claim_reason: string;
+    refund_bank_name: string;
+    refund_bank_account_no: Cafe24Datetime;
+    refund_bank_account_holder: string;
+    post_express_flag: any;
+    order_status: string;
+    order_status_additional_info: any;
+    claim_quantity: number;
+    status_code: string;
+    status_text: string;
+    open_market_status: string;
+    bundled_shipping_type: Cafe24Enum;
+    shipping_company_id: Cafe24Datetime;
+    shipping_company_name: string;
+    shipping_company_code: Cafe24Datetime;
+    product_bundle: Cafe24Enum;
+    product_bundle_no: Cafe24Datetime;
+    product_bundle_name: any;
+    product_bundle_name_default: any;
+    product_bundle_type: Cafe24Enum;
+    was_product_bundle: any;
+    original_bundle_item_no: any;
+    naver_pay_order_id: any;
+    naver_pay_claim_status: string;
+    individual_shipping_fee: string;
+    shipping_fee_type: Cafe24Enum;
+    shipping_fee_type_text: string;
+    shipping_payment_option: Cafe24Enum;
+    payment_info_id: Cafe24Datetime;
+    original_item_no: number[];
+    store_pickup: Cafe24Enum;
+    ordered_date: Cafe24Datetime;
+    shipped_date: Cafe24Datetime;
+    delivered_date: Cafe24Datetime;
+    cancel_date: any;
+    return_request_date: any;
+    return_confirmed_date: any;
+    return_collected_date: any;
+    cancel_request_date: any;
+    refund_date: any;
+    exchange_request_date: any;
+    exchange_date: any;
+    product_material: any;
+    product_material_eng: any;
+    cloth_fabric: any;
+    product_weight: string;
+    volume_size: any;
+    volume_size_weight: any;
+    clearance_category: any;
+    clearance_category_info: any;
+    clearance_category_code: any;
+    hs_code: string;
+    one_plus_n_event: any;
+    origin_place: Cafe24Enum;
+    gift: Cafe24Enum;
+    item_granting_gift: any;
+    product_bundle_list: { 
+    product_no: number;
+    product_code: string;
+    variant_code: string;
+    product_name: Cafe24Datetime;
+    product_name_default: Cafe24Datetime;
+    option_id: string;
+    option_value: string;
+    option_value_default: string;
+    additional_option_value: string;
+    additional_option_values: { 
+    key: string;
+    type: string;
+    name: string;
+    value: string;
+    }[];
+    quantity: number;
+    supplier_id: string;
+    eng_product_name: any;
+    hs_code: Cafe24Datetime;
+    option_price: string;
+    }[];
+    market_cancel_request: any;
+    market_cancel_request_quantity: any;
+    market_fail_reason: any;
+    market_fail_reason_guide: any;
+    market_item_sequence: any;
+    market_item_no: any;
+    market_custom_variant_code: any;
+    option_type: Cafe24Enum;
+    options: { 
+    option_code: string;
+    option_name: any;
+    option_value: { 
+    option_text: any;
+    value_no: number;
+    };
+    }[];
+    market_discount_amount: string;
+    labels: any;
+    order_status_before_cs: string;
+    supply_price: Cafe24Datetime;
+    }[];
+    include_tax: Cafe24Enum;
+    tax: any;
+    carrier_id: any;
+    return_invoice_success: any;
+    return_invoice_fail_reason: any;
     };
   }
   export interface CreateMultipleExchangesInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     * 최소값: [1]
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 최소값: [1]
+      */ 
     shop_no?: any;
     /**
-     * @description
-     * 주문번호
-     *
-     * @required
-     */
+      * @description
+      * 주문번호
+      * 
+      * @required
+      */ 
     order_id: any;
     /**
-     * @description
-     * 주문상태
-     *
-     * accepted : 교환접수
-     * exchanged : 교환완료
-     *
-     * @required
-     */
+      * @description
+      * 주문상태
+      * 
+      * accepted : 교환접수
+      * exchanged : 교환완료
+      * 
+      * @required
+      */ 
     status: any;
     /**
-     * @description
-     * 재고복구
-     *
-     * T : 복구함
-     * F : 복구안함
-     *
-     * @default F
-     *
-     *
-     */
+      * @description
+      * 재고복구
+      * 
+      * T : 복구함
+      * F : 복구안함
+      * 
+      * @default F
+      * 
+      * 
+      */ 
     recover_inventory?: any;
     /**
-     * @description
-     * 관리자 메모에도 추가
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     * @default F
-     *
-     *
-     */
+      * @description
+      * 관리자 메모에도 추가
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * @default F
+      * 
+      * 
+      */ 
     add_memo_too?: any;
     /**
-     * @description
-     * 품주코드
-     *
-     *
-     */
-    items?: {
-      /**
-       * @description
-       * 품주코드
-       *
-       *
-       */
-      order_item_code: any;
-      /**
-       * @description
-       * 수량
-       *
-       *
-       */
-      quantity: any;
-      /**
-       * @description
-       * (동일상품 다른 옵션 교환시) 교환 상품 품목 코드
-       *
-       *
-       */
-      exchange_variant_code?: any;
+      * @description
+      * 품주코드
+      * 
+      * 
+      */ 
+    items?: { 
+    /**
+      * @description
+      * 품주코드
+      * 
+      * 
+      */ 
+    order_item_code: any;
+    /**
+      * @description
+      * 수량
+      * 
+      * 
+      */ 
+    quantity: any;
+    /**
+      * @description
+      * (동일상품 다른 옵션 교환시) 교환 상품 품목 코드
+      * 
+      * 
+      */ 
+    exchange_variant_code?: any;
     };
     /**
-     * @description
-     * 동일상품교환 여부
-     *
-     * T : 동일상품교환
-     * F : 다른상품교환
-     *
-     * @required
-     */
+      * @description
+      * 동일상품교환 여부
+      * 
+      * T : 동일상품교환
+      * F : 다른상품교환
+      * 
+      * @required
+      */ 
     same_product: any;
   }
 
   export interface CreateMultipleExchangesOutput {
-    exchange: {
-      shop_no: number;
-      order_id: string;
-      status: string;
-      claim_code: string;
-      items: {
-        order_item_code: string;
-        quantity: number;
-        exchange_variant_code: any;
-      }[];
-      exchanged_items: {
-        order_item_code: string;
-      }[];
+    exchange: { 
+    shop_no: number;
+    order_id: string;
+    status: string;
+    claim_code: string;
+    items: { 
+    order_item_code: string;
+    quantity: number;
+    exchange_variant_code: any;
+    }[];
+    exchanged_items: { 
+    order_item_code: string;
+    }[];
     }[];
   }
   export interface UpdateMultipleOrderExchangesInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shop_no?: any;
     /**
-     * @description
-     * 주문번호
-     *
-     * @required
-     */
+      * @description
+      * 주문번호
+      * 
+      * @required
+      */ 
     order_id: any;
     /**
-     * @description
-     * 교환번호
-     *
-     * @required
-     */
+      * @description
+      * 교환번호
+      * 
+      * @required
+      */ 
     claim_code: any;
     /**
-     * @description
-     * 주문상태
-     *
-     * exchanged : 교환완료
-     *
-     *
-     */
+      * @description
+      * 주문상태
+      * 
+      * exchanged : 교환완료
+      * 
+      * 
+      */ 
     status?: any;
     /**
-     * @description
-     * 수거완료 여부
-     *
-     * T : 수거완료
-     * F : 수거전
-     *
-     *
-     */
+      * @description
+      * 수거완료 여부
+      * 
+      * T : 수거완료
+      * F : 수거전
+      * 
+      * 
+      */ 
     pickup_completed?: any;
     /**
-     * @description
-     * 재고복구
-     *
-     * T : 복구함
-     * F : 복구안함
-     *
-     *
-     */
+      * @description
+      * 재고복구
+      * 
+      * T : 복구함
+      * F : 복구안함
+      * 
+      * 
+      */ 
     recover_inventory?: any;
     /**
-     * @description
-     * 수거완료시 교환완료 여부
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 수거완료시 교환완료 여부
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     exchanged_after_collected?: any;
     /**
-     * @description
-     * 품주코드
-     *
-     *
-     */
-    items?: {
-      /**
-       * @description
-       * 품주코드
-       *
-       *
-       */
-      order_item_code?: any;
+      * @description
+      * 품주코드
+      * 
+      * 
+      */ 
+    items?: { 
+    /**
+      * @description
+      * 품주코드
+      * 
+      * 
+      */ 
+    order_item_code?: any;
     };
     /**
-     * @description
-     * 철회 여부
-     *
-     * T : 철회함
-     *
-     *
-     */
+      * @description
+      * 철회 여부
+      * 
+      * T : 철회함
+      * 
+      * 
+      */ 
     undone?: any;
     /**
-     * @description
-     * 관리자 메모에도 추가
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 관리자 메모에도 추가
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     add_memo_too?: any;
     /**
-     * @description
-     * 철회 사유 구분
-     *
-     * A:고객변심
-     * B:배송지연
-     * J:배송오류
-     * C:배송불가지역
-     * L:수출/통관 불가
-     * D:포장불량
-     * E:상품 불만족
-     * F:상품정보상이
-     * K:상품불량
-     * G:서비스불만족
-     * H:품절
-     * I:기타
-     *
-     *
-     */
+      * @description
+      * 철회 사유 구분
+      * 
+      * A:고객변심
+      * B:배송지연
+      * J:배송오류
+      * C:배송불가지역
+      * L:수출/통관 불가
+      * D:포장불량
+      * E:상품 불만족
+      * F:상품정보상이
+      * K:상품불량
+      * G:서비스불만족
+      * H:품절
+      * I:기타
+      * 
+      * 
+      */ 
     undone_reason_type?: any;
     /**
-     * @description
-     * 철회 사유
-     *
-     * 최대글자수 : [2000자]
-     */
+      * @description
+      * 철회 사유
+      * 
+      * 최대글자수 : [2000자]
+      */ 
     undone_reason?: any;
     /**
-     * @description
-     * 주문상세내역 노출 여부
-     *
-     * T : 노출함
-     * F : 노출안함
-     *
-     *
-     */
+      * @description
+      * 주문상세내역 노출 여부
+      * 
+      * T : 노출함
+      * F : 노출안함
+      * 
+      * 
+      */ 
     expose_order_detail?: any;
     /**
-     * @description
-     * 주문상세내역 노출 철회 사유
-     *
-     * 최대글자수 : [2000자]
-     */
+      * @description
+      * 주문상세내역 노출 철회 사유
+      * 
+      * 최대글자수 : [2000자]
+      */ 
     exposed_undone_reason?: any;
     /**
-     * @description
-     * 반품 송장 번호
-     *
-     * 최대글자수 : [40자]
-     */
+      * @description
+      * 반품 송장 번호
+      * 
+      * 최대글자수 : [40자]
+      */ 
     return_invoice_no?: any;
     /**
-     * @description
-     * 배송사 아이디
-     *
-     *
-     */
+      * @description
+      * 배송사 아이디
+      * 
+      * 
+      */ 
     carrier_id?: any;
     /**
-     * @description
-     * 반송장 처리 성공 여부
-     *
-     * T : 성공
-     * F : 실패
-     * N : 미집하
-     *
-     *
-     */
+      * @description
+      * 반송장 처리 성공 여부
+      * 
+      * T : 성공
+      * F : 실패
+      * N : 미집하
+      * 
+      * 
+      */ 
     return_invoice_success?: any;
     /**
-     * @description
-     * 반송장 처리 실패 사유
-     *
-     * 최대글자수 : [100자]
-     */
+      * @description
+      * 반송장 처리 실패 사유
+      * 
+      * 최대글자수 : [100자]
+      */ 
     return_invoice_fail_reason?: any;
   }
 
   export interface UpdateMultipleOrderExchangesOutput {
-    exchange: {
-      shop_no: number;
-      order_id: string;
-      claim_code: string;
-      items: {
-        order_item_code: string;
-      }[];
-      status: string;
-      pickup_completed: Cafe24Enum;
-      carrier_id: any;
-      return_invoice_no: any;
-      return_invoice_success: any;
-      return_invoice_fail_reason: any;
-      recover_inventory: Cafe24Enum;
-      exchanged_after_collected: any;
-      undone: any;
-      add_memo_too: any;
-      undone_reason_type: any;
-      undone_reason: any;
-      expose_order_detail: any;
-      exposed_undone_reason: any;
+    exchange: { 
+    shop_no: number;
+    order_id: string;
+    claim_code: string;
+    items: { 
+    order_item_code: string;
+    }[];
+    status: string;
+    pickup_completed: Cafe24Enum;
+    carrier_id: any;
+    return_invoice_no: any;
+    return_invoice_success: any;
+    return_invoice_fail_reason: any;
+    recover_inventory: Cafe24Enum;
+    exchanged_after_collected: any;
+    undone: any;
+    add_memo_too: any;
+    undone_reason_type: any;
+    undone_reason: any;
+    expose_order_detail: any;
+    exposed_undone_reason: any;
     }[];
   }
 
@@ -1558,7 +1567,7 @@ declare module 'cafe24api-client' {
      */
     retrieveAnExchange(
       input: RetrieveAnExchangeInput,
-      options?: RequestOptions<RetrieveAnExchangeOutput['exchange']>,
+      options?: AdminRequestOptions<RetrieveAnExchangeOutput['exchange']>,
     ): Promise<AxiosResponse<RetrieveAnExchangeOutput>>;
     /**
      * @description
@@ -1628,9 +1637,7 @@ declare module 'cafe24api-client' {
      */
     createMultipleExchanges(
       input: CreateMultipleExchangesInput,
-      options?: RequestOptions<
-        CreateMultipleExchangesOutput['exchange'][number]
-      >,
+      options?: AdminRequestOptions<CreateMultipleExchangesOutput['exchange'][number]>,
     ): Promise<AxiosResponse<CreateMultipleExchangesOutput>>;
     /**
      * @description
@@ -1704,9 +1711,7 @@ declare module 'cafe24api-client' {
      */
     updateMultipleOrderExchanges(
       input: UpdateMultipleOrderExchangesInput,
-      options?: RequestOptions<
-        UpdateMultipleOrderExchangesOutput['exchange'][number]
-      >,
+      options?: AdminRequestOptions<UpdateMultipleOrderExchangesOutput['exchange'][number]>,
     ): Promise<AxiosResponse<UpdateMultipleOrderExchangesOutput>>;
   }
 }

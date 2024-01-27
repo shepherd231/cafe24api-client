@@ -8,16 +8,19 @@ import {
 export default (cls) => {
   register(cls);
 
-  const createAShoppingCart = cls.prototype.createAShoppingCart;
-  cls.prototype.createAShoppingCart = async function (input, options) {
-    const response = await createAShoppingCart.call(
-      this,
-      convertToSnakeCase(input),
-      optionsToSnakeCase(options),
-    );
-    return {
-      ...response,
-      data: convertToCamelCase(response.data),
+  
+    const createAShoppingCart = cls.prototype.createAShoppingCart;
+    cls.prototype.createAShoppingCart = async function (input, options) {
+      const response = await createAShoppingCart.call(
+        this,
+        convertToSnakeCase(input),
+        optionsToSnakeCase(options),
+      );
+      return {
+        ...response,
+        data: convertToCamelCase(response.data),
+      };
     };
-  };
+
+ 
 };

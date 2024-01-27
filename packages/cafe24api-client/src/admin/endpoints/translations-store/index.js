@@ -1,8 +1,6 @@
+
 export default (cls) => {
-  cls.prototype.retrieveAListOfStoreTranslations = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.retrieveAListOfStoreTranslations = async function (input, options) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/translations/store`,
@@ -14,10 +12,7 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.updateTheTranslationsOfAStore = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.updateTheTranslationsOfAStore = async function (input, options) {
     return this.createRequest(
       'PUT',
       `/api/v2/admin/translations/store`,
@@ -28,4 +23,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

@@ -1,8 +1,6 @@
+
 export default (cls) => {
-  cls.prototype.createACancellationRequestForMultipleItems = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.createACancellationRequestForMultipleItems = async function (input, options) {
     return this.createRequest(
       'POST',
       `/api/v2/admin/cancellationrequests`,
@@ -21,10 +19,7 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.rejectACancellationRequestForMultipleItems = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.rejectACancellationRequestForMultipleItems = async function (input, options) {
     return this.createRequest(
       'PUT',
       `/api/v2/admin/cancellationrequests`,
@@ -41,4 +36,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

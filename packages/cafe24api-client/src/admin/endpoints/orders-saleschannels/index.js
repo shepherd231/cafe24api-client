@@ -1,3 +1,4 @@
+
 export default (cls) => {
   cls.prototype.retrieveAListOfSalesChannels = async function (input, options) {
     return this.createRequest(
@@ -47,4 +48,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

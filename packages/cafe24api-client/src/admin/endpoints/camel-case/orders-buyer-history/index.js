@@ -8,20 +8,19 @@ import {
 export default (cls) => {
   register(cls);
 
-  const retrieveAListOfCustomerHistoryOfAnOrder =
-    cls.prototype.retrieveAListOfCustomerHistoryOfAnOrder;
-  cls.prototype.retrieveAListOfCustomerHistoryOfAnOrder = async function (
-    input,
-    options,
-  ) {
-    const response = await retrieveAListOfCustomerHistoryOfAnOrder.call(
-      this,
-      convertToSnakeCase(input),
-      optionsToSnakeCase(options),
-    );
-    return {
-      ...response,
-      data: convertToCamelCase(response.data),
+  
+    const retrieveAListOfCustomerHistoryOfAnOrder = cls.prototype.retrieveAListOfCustomerHistoryOfAnOrder;
+    cls.prototype.retrieveAListOfCustomerHistoryOfAnOrder = async function (input, options) {
+      const response = await retrieveAListOfCustomerHistoryOfAnOrder.call(
+        this,
+        convertToSnakeCase(input),
+        optionsToSnakeCase(options),
+      );
+      return {
+        ...response,
+        data: convertToCamelCase(response.data),
+      };
     };
-  };
+
+ 
 };

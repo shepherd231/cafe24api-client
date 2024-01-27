@@ -1,8 +1,6 @@
+
 export default (cls) => {
-  cls.prototype.retrieveSEOSettingsByCategory = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.retrieveSEOSettingsByCategory = async function (input, options) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/categories/${input['category_no']}/seo`,
@@ -30,4 +28,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

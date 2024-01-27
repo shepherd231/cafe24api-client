@@ -1,8 +1,6 @@
+
 export default (cls) => {
-  cls.prototype.retrieveSettingsForKakaoPayOrders = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.retrieveSettingsForKakaoPayOrders = async function (input, options) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/kakaopay/setting`,
@@ -13,10 +11,7 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.updateSettingsForKakaoPayOrders = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.updateSettingsForKakaoPayOrders = async function (input, options) {
     return this.createRequest(
       'PUT',
       `/api/v2/admin/kakaopay/setting`,
@@ -35,4 +30,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

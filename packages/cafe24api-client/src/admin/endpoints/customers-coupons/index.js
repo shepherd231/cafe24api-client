@@ -1,8 +1,6 @@
+
 export default (cls) => {
-  cls.prototype.retrieveAListOfCustomerCoupons = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.retrieveAListOfCustomerCoupons = async function (input, options) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/customers/${input['member_id']}/coupons`,
@@ -16,10 +14,7 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.retrieveACountOfCustomerCoupons = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.retrieveACountOfCustomerCoupons = async function (input, options) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/customers/${input['member_id']}/coupons/count`,
@@ -44,4 +39,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

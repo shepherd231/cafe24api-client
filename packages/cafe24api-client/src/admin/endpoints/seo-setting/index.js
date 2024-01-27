@@ -1,3 +1,4 @@
+
 export default (cls) => {
   cls.prototype.retrieveSEOSettings = async function (input, options) {
     return this.createRequest(
@@ -29,10 +30,8 @@ export default (cls) => {
         mobile_robots_text: input['mobile_robots_text'],
         use_missing_page_redirect: input['use_missing_page_redirect'],
         missing_page_redirect_url: input['missing_page_redirect_url'],
-        mobile_use_missing_page_redirect:
-          input['mobile_use_missing_page_redirect'],
-        mobile_missing_page_redirect_url:
-          input['mobile_missing_page_redirect_url'],
+        mobile_use_missing_page_redirect: input['mobile_use_missing_page_redirect'],
+        mobile_missing_page_redirect_url: input['mobile_missing_page_redirect_url'],
         use_sitemap_auto_update: input['use_sitemap_auto_update'],
         use_rss: input['use_rss'],
         display_group: input['display_group'],
@@ -44,4 +43,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

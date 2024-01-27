@@ -1,10 +1,19 @@
 import { AxiosResponse } from 'axios';
-import { Endpoint, RequestOptions, Cafe24Datetime } from 'cafe24api-client';
+import { 
+  Endpoint, 
+  AdminRequestOptions, 
+  Cafe24Datetime,
+  Cafe24Boolean,
+  Cafe24Date,
+  Cafe24Datetime,
+  Cafe24Enum,
+} from 'cafe24api-client';
 
 declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   /**
    * @description
    * 일별 매출(Financials dailysales)은 PG사별, 일별 매출 정보를 제공합니다.
@@ -12,93 +21,93 @@ declare module 'cafe24api-client' {
    */
   export interface FinancialsDailysales {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 
+      */ 
     shop_no: any;
     /**
-     * @description
-     * 날짜
-     *
-     *
-     */
+      * @description
+      * 날짜
+      * 
+      * 
+      */ 
     date: any;
     /**
-     * @description
-     * 결제 금액
-     *
-     *
-     */
+      * @description
+      * 결제 금액
+      * 
+      * 
+      */ 
     payment_amount: any;
     /**
-     * @description
-     * 환불 금액
-     *
-     *
-     */
+      * @description
+      * 환불 금액
+      * 
+      * 
+      */ 
     refund_amount: any;
     /**
-     * @description
-     * 판매건수
-     *
-     *
-     */
+      * @description
+      * 판매건수
+      * 
+      * 
+      */ 
     sales_count: any;
   }
 
   export interface RetrieveAListOfDailySalesInput {
     /**
-     * @description
-     * 검색 시작일
-     *
-     * @required
-     */
+      * @description
+      * 검색 시작일
+      * 
+      * @required
+      */ 
     start_date: any;
     /**
-     * @description
-     * 검색 종료일
-     *
-     * @required
-     */
+      * @description
+      * 검색 종료일
+      * 
+      * @required
+      */ 
     end_date: any;
     /**
-     * @description
-     * PG 이름
-     *
-     *
-     */
+      * @description
+      * PG 이름
+      * 
+      * 
+      */ 
     payment_gateway_name?: any;
     /**
-     * @description
-     * PG사 발급 가맹점 ID
-     *
-     *
-     */
+      * @description
+      * PG사 발급 가맹점 ID
+      * 
+      * 
+      */ 
     partner_id?: any;
     /**
-     * @description
-     * 결제수단 코드
-     *
-     * card : 신용카드
-     * tcash : 계좌이체
-     * icash : 가상계좌
-     * point : 선불금
-     * cell : 휴대폰
-     *
-     *
-     */
+      * @description
+      * 결제수단 코드
+      * 
+      * card : 신용카드
+      * tcash : 계좌이체
+      * icash : 가상계좌
+      * point : 선불금
+      * cell : 휴대폰
+      * 
+      * 
+      */ 
     payment_method?: any;
   }
 
   export interface RetrieveAListOfDailySalesOutput {
-    dailysales: {
-      shop_no: number;
-      date: Cafe24Date;
-      payment_amount: Cafe24Datetime;
-      refund_amount: Cafe24Datetime;
-      sales_count: number;
+    dailysales: { 
+    shop_no: number;
+    date: Cafe24Date;
+    payment_amount: Cafe24Datetime;
+    refund_amount: Cafe24Datetime;
+    sales_count: number;
     }[];
   }
 
@@ -107,7 +116,7 @@ declare module 'cafe24api-client' {
      * @description
      * 검색 시작일과 종료일, PG사 정보를 이용하여 매출 정보를 조회합니다.
      * 결제 금액, 환불 금액 등을 확인할 수 있습니다.
-     *
+     * 
      * 해당 API는 특정 클라이언트만 사용할 수 있는 API입니다. 사용하시려면 카페24 개발자센터로 문의해주세요.
      *
      * @see https://developers.cafe24.com/docs/api/admin/#retrieve-a-list-of-daily-sales
@@ -136,9 +145,7 @@ declare module 'cafe24api-client' {
      */
     retrieveAListOfDailySales(
       input: RetrieveAListOfDailySalesInput,
-      options?: RequestOptions<
-        RetrieveAListOfDailySalesOutput['dailysales'][number]
-      >,
+      options?: AdminRequestOptions<RetrieveAListOfDailySalesOutput['dailysales'][number]>,
     ): Promise<AxiosResponse<RetrieveAListOfDailySalesOutput>>;
   }
 }

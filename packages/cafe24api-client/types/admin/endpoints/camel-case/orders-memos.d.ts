@@ -1,526 +1,535 @@
 import { AxiosResponse } from 'axios';
-import { Endpoint, RequestOptions, Cafe24Datetime } from 'cafe24api-client';
+import { 
+  Endpoint, 
+  AdminRequestOptions, 
+  Cafe24Datetime,
+  Cafe24Boolean,
+  Cafe24Date,
+  Cafe24Datetime,
+  Cafe24Enum,
+} from 'cafe24api-client';
 
 declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   /**
    * @description
-   *
-   *
+   * 
+   * 
    * 주문 메모(Orders memos)는 특정 주문의 메모에 대한 주문의 하위 리소스 입니다.
    * 주문에 대하여 관리자 메모의 조회, 등록, 수정, 삭제를 할 수 있습니다.
    */
   export interface OrdersMemos {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 
+      */ 
     shopNo: any;
     /**
-     * @description
-     * 메모 번호
-     *
-     *
-     */
+      * @description
+      * 메모 번호
+      * 
+      * 
+      */ 
     memoNo: any;
     /**
-     * @description
-     * 주문번호
-     *
-     *
-     */
+      * @description
+      * 주문번호
+      * 
+      * 
+      */ 
     orderId: any;
     /**
-     * @description
-     * 메모 등록일
-     *
-     *
-     */
+      * @description
+      * 메모 등록일
+      * 
+      * 
+      */ 
     createdDate: any;
     /**
-     * @description
-     * 작성자 아이디
-     *
-     *
-     */
+      * @description
+      * 작성자 아이디
+      * 
+      * 
+      */ 
     authorId: any;
     /**
-     * @description
-     * 작성자 아이피
-     *
-     *
-     */
+      * @description
+      * 작성자 아이피
+      * 
+      * 
+      */ 
     ip: any;
     /**
-     * @description
-     * 고객상담 동시등록 여부
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 고객상담 동시등록 여부
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     useCustomerInquiry: any;
     /**
-     * @description
-     * 등록기준
-     *
-     * O : 주문별
-     * P : 품목별
-     *
-     *
-     */
+      * @description
+      * 등록기준
+      * 
+      * O : 주문별
+      * P : 품목별
+      * 
+      * 
+      */ 
     attachType: any;
     /**
-     * @description
-     * 메모 내용
-     *
-     *
-     */
+      * @description
+      * 메모 내용
+      * 
+      * 
+      */ 
     content: any;
     /**
-     * @description
-     * 중요 메모 여부
-     *
-     * T : 중요 메모
-     * F : 일반 메모
-     *
-     *
-     */
+      * @description
+      * 중요 메모 여부
+      * 
+      * T : 중요 메모
+      * F : 일반 메모
+      * 
+      * 
+      */ 
     starredMemo: any;
     /**
-     * @description
-     * 상단고정 여부
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 상단고정 여부
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     fixed: any;
     /**
-     * @description
-     * 상품 목록
-     *
-     *
-     */
+      * @description
+      * 상품 목록
+      * 
+      * 
+      */ 
     productList: any;
     /**
-     * @description
-     * 상담분류
-     *
-     * cs_01 : 배송문의
-     * cs_02 : 상품문의
-     * cs_03 : 결제문의
-     * cs_04 : 주문취소
-     * cs_05 : 상품변경
-     *
-     *
-     */
+      * @description
+      * 상담분류
+      * 
+      * cs_01 : 배송문의
+      * cs_02 : 상품문의
+      * cs_03 : 결제문의
+      * cs_04 : 주문취소
+      * cs_05 : 상품변경
+      * 
+      * 
+      */ 
     topicType: any;
     /**
-     * @description
-     * 상담결과
-     *
-     * F : 처리중
-     * T : 처리완료
-     *
-     *
-     */
+      * @description
+      * 상담결과
+      * 
+      * F : 처리중
+      * T : 처리완료
+      * 
+      * 
+      */ 
     status: any;
   }
 
   export interface RetrieveAListOfAdminMemosForAnOrderInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     * 최소값: [1]
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 최소값: [1]
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 주문번호
-     *
-     * ,(콤마)로 여러 건을 검색할 수 있다.
-     *
-     * @required
-     *
-     * 주문번호
-     */
+      * @description
+      * 주문번호
+      * 
+      * ,(콤마)로 여러 건을 검색할 수 있다.
+      * 
+      * @required
+      * 
+      * 주문번호
+      */ 
     orderId: any;
     /**
-     * @description
-     * 조회결과 최대건수
-     *
-     * @default 10
-     *
-     * 최소: [1]~최대: [500]
-     */
+      * @description
+      * 조회결과 최대건수
+      * 
+      * @default 10
+      * 
+      * 최소: [1]~최대: [500]
+      */ 
     limit?: any;
     /**
-     * @description
-     * 조회결과 시작위치
-     *
-     * @default 0
-     *
-     * 최대값: [8000]
-     */
+      * @description
+      * 조회결과 시작위치
+      * 
+      * @default 0
+      * 
+      * 최대값: [8000]
+      */ 
     offset?: any;
   }
 
   export interface RetrieveAListOfAdminMemosForAnOrderOutput {
-    memos: {
-      shopNo: number;
-      memoNo: number;
-      orderId: string;
-      createdDate: Cafe24Datetime;
-      authorId: string;
-      ip: string;
-      useCustomerInquiry: Cafe24Enum;
-      attachType: Cafe24Enum;
-      content: string;
-      starredMemo: Cafe24Enum;
-      fixed: Cafe24Enum;
-      productList: {
-        productNo: number;
-        optionCode: string;
-      }[];
+    memos: { 
+    shopNo: number;
+    memoNo: number;
+    orderId: string;
+    createdDate: Cafe24Datetime;
+    authorId: string;
+    ip: string;
+    useCustomerInquiry: Cafe24Enum;
+    attachType: Cafe24Enum;
+    content: string;
+    starredMemo: Cafe24Enum;
+    fixed: Cafe24Enum;
+    productList: { 
+    productNo: number;
+    optionCode: string;
+    }[];
     }[];
   }
   export interface RetrieveAListOfOrderMemosInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 주문번호
-     *
-     * @required
-     *
-     * 주문번호
-     */
+      * @description
+      * 주문번호
+      * 
+      * @required
+      * 
+      * 주문번호
+      */ 
     orderId: any;
   }
 
   export interface RetrieveAListOfOrderMemosOutput {
-    memos: {
-      shopNo: number;
-      memoNo: number;
-      createdDate: Cafe24Datetime;
-      authorId: string;
-      ip: string;
-      useCustomerInquiry: Cafe24Enum;
-      attachType: Cafe24Enum;
-      content: string;
-      starredMemo: Cafe24Enum;
-      fixed: Cafe24Enum;
-      productList: {
-        productNo: number;
-        optionCode: string;
-      }[];
+    memos: { 
+    shopNo: number;
+    memoNo: number;
+    createdDate: Cafe24Datetime;
+    authorId: string;
+    ip: string;
+    useCustomerInquiry: Cafe24Enum;
+    attachType: Cafe24Enum;
+    content: string;
+    starredMemo: Cafe24Enum;
+    fixed: Cafe24Enum;
+    productList: { 
+    productNo: number;
+    optionCode: string;
+    }[];
     }[];
   }
   export interface CreateAnOrderMemoInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 주문번호
-     *
-     * @required
-     *
-     * 주문번호
-     */
+      * @description
+      * 주문번호
+      * 
+      * @required
+      * 
+      * 주문번호
+      */ 
     orderId: any;
     /**
-     * @description
-     * 메모 내용
-     *
-     * @required
-     *
-     * 최대글자수 : [1000자]
-     */
+      * @description
+      * 메모 내용
+      * 
+      * @required
+      * 
+      * 최대글자수 : [1000자]
+      */ 
     content: any;
     /**
-     * @description
-     * 고객상담 동시등록 여부
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     * @default F
-     *
-     *
-     */
+      * @description
+      * 고객상담 동시등록 여부
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * @default F
+      * 
+      * 
+      */ 
     useCustomerInquiry?: any;
     /**
-     * @description
-     * 상담분류
-     *
-     * cs_01 : 배송문의
-     * cs_02 : 상품문의
-     * cs_03 : 결제문의
-     * cs_04 : 주문취소
-     * cs_05 : 상품변경
-     *
-     *
-     */
+      * @description
+      * 상담분류
+      * 
+      * cs_01 : 배송문의
+      * cs_02 : 상품문의
+      * cs_03 : 결제문의
+      * cs_04 : 주문취소
+      * cs_05 : 상품변경
+      * 
+      * 
+      */ 
     topicType?: any;
     /**
-     * @description
-     * 상담결과
-     *
-     * F : 처리중
-     * T : 처리완료
-     *
-     *
-     */
+      * @description
+      * 상담결과
+      * 
+      * F : 처리중
+      * T : 처리완료
+      * 
+      * 
+      */ 
     status?: any;
     /**
-     * @description
-     * 등록기준
-     *
-     * O : 주문별
-     * P : 품목별
-     *
-     * @default O
-     *
-     *
-     */
+      * @description
+      * 등록기준
+      * 
+      * O : 주문별
+      * P : 품목별
+      * 
+      * @default O
+      * 
+      * 
+      */ 
     attachType?: any;
     /**
-     * @description
-     * 중요 메모 여부
-     *
-     * T : 중요 메모
-     * F : 일반 메모
-     *
-     * @default F
-     *
-     *
-     */
+      * @description
+      * 중요 메모 여부
+      * 
+      * T : 중요 메모
+      * F : 일반 메모
+      * 
+      * @default F
+      * 
+      * 
+      */ 
     starredMemo?: any;
     /**
-     * @description
-     * 상단고정 여부
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     * @default F
-     *
-     *
-     */
+      * @description
+      * 상단고정 여부
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * @default F
+      * 
+      * 
+      */ 
     fixed?: any;
     /**
-     * @description
-     * 상품 목록
-     *
-     *
-     */
+      * @description
+      * 상품 목록
+      * 
+      * 
+      */ 
     productList?: any;
   }
 
   export interface CreateAnOrderMemoOutput {
-    memo: {
-      shopNo: number;
-      memoNo: number;
-      authorId: string;
-      useCustomerInquiry: Cafe24Enum;
-      topicType: any;
-      status: any;
-      attachType: Cafe24Enum;
-      content: string;
-      starredMemo: Cafe24Enum;
-      fixed: Cafe24Enum;
-      productList: {
-        productNo: number;
-        optionCode: string;
-      }[];
+    memo: { 
+    shopNo: number;
+    memoNo: number;
+    authorId: string;
+    useCustomerInquiry: Cafe24Enum;
+    topicType: any;
+    status: any;
+    attachType: Cafe24Enum;
+    content: string;
+    starredMemo: Cafe24Enum;
+    fixed: Cafe24Enum;
+    productList: { 
+    productNo: number;
+    optionCode: string;
+    }[];
     };
   }
   export interface UpdateAnOrderMemoInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 주문번호
-     *
-     * @required
-     *
-     * 주문번호
-     */
+      * @description
+      * 주문번호
+      * 
+      * @required
+      * 
+      * 주문번호
+      */ 
     orderId: any;
     /**
-     * @description
-     * 메모 번호
-     *
-     * @required
-     */
+      * @description
+      * 메모 번호
+      * 
+      * @required
+      */ 
     memoNo: any;
     /**
-     * @description
-     * 메모 내용
-     *
-     * 최대글자수 : [1000자]
-     */
+      * @description
+      * 메모 내용
+      * 
+      * 최대글자수 : [1000자]
+      */ 
     content?: any;
     /**
-     * @description
-     * 고객상담 동시등록 여부
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     * @default F
-     *
-     *
-     */
+      * @description
+      * 고객상담 동시등록 여부
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * @default F
+      * 
+      * 
+      */ 
     useCustomerInquiry?: any;
     /**
-     * @description
-     * 상담분류
-     *
-     * cs_01 : 배송문의
-     * cs_02 : 상품문의
-     * cs_03 : 결제문의
-     * cs_04 : 주문취소
-     * cs_05 : 상품변경
-     *
-     *
-     */
+      * @description
+      * 상담분류
+      * 
+      * cs_01 : 배송문의
+      * cs_02 : 상품문의
+      * cs_03 : 결제문의
+      * cs_04 : 주문취소
+      * cs_05 : 상품변경
+      * 
+      * 
+      */ 
     topicType?: any;
     /**
-     * @description
-     * 상담결과
-     *
-     * F : 처리중
-     * T : 처리완료
-     *
-     *
-     */
+      * @description
+      * 상담결과
+      * 
+      * F : 처리중
+      * T : 처리완료
+      * 
+      * 
+      */ 
     status?: any;
     /**
-     * @description
-     * 등록기준
-     *
-     * O : 주문별
-     * P : 품목별
-     *
-     * @default O
-     *
-     *
-     */
+      * @description
+      * 등록기준
+      * 
+      * O : 주문별
+      * P : 품목별
+      * 
+      * @default O
+      * 
+      * 
+      */ 
     attachType?: any;
     /**
-     * @description
-     * 중요 메모 여부
-     *
-     * T : 중요 메모
-     * F : 일반 메모
-     *
-     * @default F
-     *
-     *
-     */
+      * @description
+      * 중요 메모 여부
+      * 
+      * T : 중요 메모
+      * F : 일반 메모
+      * 
+      * @default F
+      * 
+      * 
+      */ 
     starredMemo?: any;
     /**
-     * @description
-     * 상단고정 여부
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     * @default F
-     *
-     *
-     */
+      * @description
+      * 상단고정 여부
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * @default F
+      * 
+      * 
+      */ 
     fixed?: any;
     /**
-     * @description
-     * 상품 목록
-     *
-     *
-     */
+      * @description
+      * 상품 목록
+      * 
+      * 
+      */ 
     productList?: any;
   }
 
   export interface UpdateAnOrderMemoOutput {
-    memo: {
-      shopNo: number;
-      memoNo: number;
-      useCustomerInquiry: Cafe24Enum;
-      topicType: any;
-      status: any;
-      attachType: Cafe24Enum;
-      content: string;
-      starredMemo: Cafe24Enum;
-      fixed: Cafe24Enum;
-      productList: {
-        productNo: number;
-        optionCode: string;
-      }[];
+    memo: { 
+    shopNo: number;
+    memoNo: number;
+    useCustomerInquiry: Cafe24Enum;
+    topicType: any;
+    status: any;
+    attachType: Cafe24Enum;
+    content: string;
+    starredMemo: Cafe24Enum;
+    fixed: Cafe24Enum;
+    productList: { 
+    productNo: number;
+    optionCode: string;
+    }[];
     };
   }
   export interface DeleteAnOrderMemoInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 주문번호
-     *
-     * @required
-     *
-     * 주문번호
-     */
+      * @description
+      * 주문번호
+      * 
+      * @required
+      * 
+      * 주문번호
+      */ 
     orderId: any;
     /**
-     * @description
-     * 메모 번호
-     *
-     * @required
-     */
+      * @description
+      * 메모 번호
+      * 
+      * @required
+      */ 
     memoNo: any;
   }
 
   export interface DeleteAnOrderMemoOutput {
-    memo: {
-      shopNo: number;
-      memoNo: number;
+    memo: { 
+    shopNo: number;
+    memoNo: number;
     };
   }
 
@@ -587,9 +596,7 @@ declare module 'cafe24api-client' {
      */
     retrieveAListOfAdminMemosForAnOrder(
       input: RetrieveAListOfAdminMemosForAnOrderInput,
-      options?: RequestOptions<
-        RetrieveAListOfAdminMemosForAnOrderOutput['memos'][number]
-      >,
+      options?: AdminRequestOptions<RetrieveAListOfAdminMemosForAnOrderOutput['memos'][number]>,
     ): Promise<AxiosResponse<RetrieveAListOfAdminMemosForAnOrderOutput>>;
     /**
      * @see https://developers.cafe24.com/docs/api/admin/#retrieve-a-list-of-order-memos
@@ -648,9 +655,7 @@ declare module 'cafe24api-client' {
      */
     retrieveAListOfOrderMemos(
       input: RetrieveAListOfOrderMemosInput,
-      options?: RequestOptions<
-        RetrieveAListOfOrderMemosOutput['memos'][number]
-      >,
+      options?: AdminRequestOptions<RetrieveAListOfOrderMemosOutput['memos'][number]>,
     ): Promise<AxiosResponse<RetrieveAListOfOrderMemosOutput>>;
     /**
      * @description
@@ -689,7 +694,7 @@ declare module 'cafe24api-client' {
      */
     createAnOrderMemo(
       input: CreateAnOrderMemoInput,
-      options?: RequestOptions<CreateAnOrderMemoOutput['memo']>,
+      options?: AdminRequestOptions<CreateAnOrderMemoOutput['memo']>,
     ): Promise<AxiosResponse<CreateAnOrderMemoOutput>>;
     /**
      * @description
@@ -727,7 +732,7 @@ declare module 'cafe24api-client' {
      */
     updateAnOrderMemo(
       input: UpdateAnOrderMemoInput,
-      options?: RequestOptions<UpdateAnOrderMemoOutput['memo']>,
+      options?: AdminRequestOptions<UpdateAnOrderMemoOutput['memo']>,
     ): Promise<AxiosResponse<UpdateAnOrderMemoOutput>>;
     /**
      * @description
@@ -747,7 +752,7 @@ declare module 'cafe24api-client' {
      */
     deleteAnOrderMemo(
       input: DeleteAnOrderMemoInput,
-      options?: RequestOptions<DeleteAnOrderMemoOutput['memo']>,
+      options?: AdminRequestOptions<DeleteAnOrderMemoOutput['memo']>,
     ): Promise<AxiosResponse<DeleteAnOrderMemoOutput>>;
   }
 }

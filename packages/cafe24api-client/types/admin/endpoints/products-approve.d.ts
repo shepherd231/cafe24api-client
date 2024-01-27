@@ -1,171 +1,180 @@
 import { AxiosResponse } from 'axios';
-import { Endpoint, RequestOptions, Cafe24Datetime } from 'cafe24api-client';
+import { 
+  Endpoint, 
+  AdminRequestOptions, 
+  Cafe24Datetime,
+  Cafe24Boolean,
+  Cafe24Date,
+  Cafe24Datetime,
+  Cafe24Enum,
+} from 'cafe24api-client';
 
 declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   /**
    * @description
-   *
-   *
+   * 
+   * 
    * 상품 승인(Products approve)은 공급사가 업로드한 상품을 검토 후 승인하는 기능입니다.
    * 해당 기능은 일부 쇼핑몰에만 적용된 상태로, 공급사 상품 승인 기능을 사용중인 몰에서만 사용할 수 있습니다.
    */
   export interface ProductsApprove {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
+      * 
+      * 
+      */ 
     shop_no: any;
     /**
-     * @description
-     * 상태
-     *
-     * 공급사가 승인 요청한 해당 상품의 승인 상태
-     *
-     * N : 승인요청 (신규상품) 상태값
-     * E : 승인요청 (상품수정) 상태값
-     * C : 승인완료 상태값
-     * R : 승인거절 상태값
-     * I : 검수진행중 상태값
-     * Empty Value : 요청된적 없음
-     *
-     * @required
-     */
+      * @description
+      * 상태
+      * 
+      * 공급사가 승인 요청한 해당 상품의 승인 상태
+      * 
+      * N : 승인요청 (신규상품) 상태값
+      * E : 승인요청 (상품수정) 상태값
+      * C : 승인완료 상태값
+      * R : 승인거절 상태값
+      * I : 검수진행중 상태값
+      * Empty Value : 요청된적 없음
+      * 
+      * @required
+      */ 
     status: any;
     /**
-     * @description
-     * 상품번호
-     *
-     * 시스템에서 부여한 상품의 번호. 상품 번호는 쇼핑몰 내에서 중복되지 않는다.
-     *
-     * @required
-     */
+      * @description
+      * 상품번호
+      * 
+      * 시스템에서 부여한 상품의 번호. 상품 번호는 쇼핑몰 내에서 중복되지 않는다.
+      * 
+      * @required
+      */ 
     product_no: any;
   }
 
   export interface RetrieveAProductApprovalStatusInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shop_no?: any;
     /**
-     * @description
-     * 상품번호
-     *
-     * 상품의 고유한 일련 번호. 해당 쇼핑몰 내에서 상품 번호는 중복되지 않음.
-     *
-     * @required
-     */
+      * @description
+      * 상품번호
+      * 
+      * 상품의 고유한 일련 번호. 해당 쇼핑몰 내에서 상품 번호는 중복되지 않음.
+      * 
+      * @required
+      */ 
     product_no: any;
   }
 
   export interface RetrieveAProductApprovalStatusOutput {
-    approve: {
-      shop_no: number;
-      status: Cafe24Enum;
-      product_no: number;
+    approve: { 
+    shop_no: number;
+    status: Cafe24Enum;
+    product_no: number;
     };
   }
   export interface CreateAProductApprovalRequestInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shop_no?: any;
     /**
-     * @description
-     * 상품번호
-     *
-     * 시스템에서 부여한 상품의 번호. 상품 번호는 쇼핑몰 내에서 중복되지 않는다.
-     *
-     * @required
-     */
+      * @description
+      * 상품번호
+      * 
+      * 시스템에서 부여한 상품의 번호. 상품 번호는 쇼핑몰 내에서 중복되지 않는다.
+      * 
+      * @required
+      */ 
     product_no: any;
     /**
-     * @description
-     * 공급사 운영자 아이디
-     *
-     * 승인 요청한 공급사의 아이디
-     *
-     * @required
-     */
+      * @description
+      * 공급사 운영자 아이디
+      * 
+      * 승인 요청한 공급사의 아이디
+      * 
+      * @required
+      */ 
     user_id: any;
   }
 
   export interface CreateAProductApprovalRequestOutput {
-    approve: {
-      shop_no: number;
-      status: Cafe24Enum;
-      product_no: number;
+    approve: { 
+    shop_no: number;
+    status: Cafe24Enum;
+    product_no: number;
     };
   }
   export interface UpdateAProductApprovalStatusInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shop_no?: any;
     /**
-     * @description
-     * 상품번호
-     *
-     * 시스템에서 부여한 상품의 번호. 상품 번호는 쇼핑몰 내에서 중복되지 않는다.
-     *
-     * @required
-     */
+      * @description
+      * 상품번호
+      * 
+      * 시스템에서 부여한 상품의 번호. 상품 번호는 쇼핑몰 내에서 중복되지 않는다.
+      * 
+      * @required
+      */ 
     product_no: any;
     /**
-     * @description
-     * 공급사 운영자 아이디
-     *
-     * 승인 요청한 공급사의 아이디
-     *
-     * @required
-     */
+      * @description
+      * 공급사 운영자 아이디
+      * 
+      * 승인 요청한 공급사의 아이디
+      * 
+      * @required
+      */ 
     user_id: any;
     /**
-     * @description
-     * 상태
-     *
-     * 공급사가 승인 요청한 해당 상품의 승인 상태
-     *
-     * C : 승인완료 상태값
-     * R : 승인거절 상태값
-     * I : 검수진행중 상태값
-     *
-     * @required
-     */
+      * @description
+      * 상태
+      * 
+      * 공급사가 승인 요청한 해당 상품의 승인 상태
+      * 
+      * C : 승인완료 상태값
+      * R : 승인거절 상태값
+      * I : 검수진행중 상태값
+      * 
+      * @required
+      */ 
     status: any;
   }
 
   export interface UpdateAProductApprovalStatusOutput {
-    approve: {
-      shop_no: number;
-      status: Cafe24Enum;
-      product_no: number;
+    approve: { 
+    shop_no: number;
+    status: Cafe24Enum;
+    product_no: number;
     };
   }
 
@@ -189,7 +198,7 @@ declare module 'cafe24api-client' {
      */
     retrieveAProductApprovalStatus(
       input: RetrieveAProductApprovalStatusInput,
-      options?: RequestOptions<RetrieveAProductApprovalStatusOutput['approve']>,
+      options?: AdminRequestOptions<RetrieveAProductApprovalStatusOutput['approve']>,
     ): Promise<AxiosResponse<RetrieveAProductApprovalStatusOutput>>;
     /**
      * @description
@@ -211,7 +220,7 @@ declare module 'cafe24api-client' {
      */
     createAProductApprovalRequest(
       input: CreateAProductApprovalRequestInput,
-      options?: RequestOptions<CreateAProductApprovalRequestOutput['approve']>,
+      options?: AdminRequestOptions<CreateAProductApprovalRequestOutput['approve']>,
     ): Promise<AxiosResponse<CreateAProductApprovalRequestOutput>>;
     /**
      * @description
@@ -233,7 +242,7 @@ declare module 'cafe24api-client' {
      */
     updateAProductApprovalStatus(
       input: UpdateAProductApprovalStatusInput,
-      options?: RequestOptions<UpdateAProductApprovalStatusOutput['approve']>,
+      options?: AdminRequestOptions<UpdateAProductApprovalStatusOutput['approve']>,
     ): Promise<AxiosResponse<UpdateAProductApprovalStatusOutput>>;
   }
 }

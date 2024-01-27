@@ -1,255 +1,264 @@
 import { AxiosResponse } from 'axios';
-import { Endpoint, RequestOptions, Cafe24Datetime } from 'cafe24api-client';
+import { 
+  Endpoint, 
+  AdminRequestOptions, 
+  Cafe24Datetime,
+  Cafe24Boolean,
+  Cafe24Date,
+  Cafe24Datetime,
+  Cafe24Enum,
+} from 'cafe24api-client';
 
 declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   /**
    * @description
-   *
-   *
+   * 
+   * 
    * 회원등급(CustomerGroups)은 쇼핑몰 회원을 등급별로 검색하여 관리할 수 있습니다.
    * 각 회원 등급 전체에게 메일, 적립금 지급, 선택한 회원의 등급 해제 및 변경을 할 수 있습니다.
    */
   export interface Customergroups {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 
+      */ 
     shopNo: any;
     /**
-     * @description
-     * 회원등급번호
-     *
-     *
-     */
+      * @description
+      * 회원등급번호
+      * 
+      * 
+      */ 
     groupNo: any;
     /**
-     * @description
-     * 회원등급명
-     *
-     *
-     */
+      * @description
+      * 회원등급명
+      * 
+      * 
+      */ 
     groupName: any;
     /**
-     * @description
-     * 회원 등급설명
-     *
-     *
-     */
+      * @description
+      * 회원 등급설명
+      * 
+      * 
+      */ 
     groupDescription: any;
     /**
-     * @description
-     * 회원등급 아이콘
-     *
-     *
-     */
+      * @description
+      * 회원등급 아이콘
+      * 
+      * 
+      */ 
     groupIcon: any;
     /**
-     * @description
-     * 혜택 결제조건
-     *
-     * A : 모든 결제
-     * B : 현금 결제(무통장)
-     * C : 현금 결제 외 모든 결제
-     *
-     *
-     */
+      * @description
+      * 혜택 결제조건
+      * 
+      * A : 모든 결제
+      * B : 현금 결제(무통장)
+      * C : 현금 결제 외 모든 결제
+      * 
+      * 
+      */ 
     benefitsPaymethod: any;
     /**
-     * @description
-     * 구매시 할인/적립 혜택
-     *
-     * F : 혜택없음
-     * D : 구매금액 할인
-     * M : 적립금 지급
-     * P : 할인/적립 동시 적용
-     *
-     *
-     */
+      * @description
+      * 구매시 할인/적립 혜택
+      * 
+      * F : 혜택없음
+      * D : 구매금액 할인
+      * M : 적립금 지급
+      * P : 할인/적립 동시 적용
+      * 
+      * 
+      */ 
     buyBenefits: any;
     /**
-     * @description
-     * 배송비 혜택
-     *
-     * T : 배송비무료설정
-     * F : 배송비무료설정안함
-     *
-     *
-     */
+      * @description
+      * 배송비 혜택
+      * 
+      * T : 배송비무료설정
+      * F : 배송비무료설정안함
+      * 
+      * 
+      */ 
     shipBenefits: any;
     /**
-     * @description
-     * 상품별 할인 중복설정
-     *
-     * P : 상품별 가격할인만 적용
-     * M : 회원등급별 가격할인만 적용
-     * A : 둘다적용
-     *
-     *
-     */
+      * @description
+      * 상품별 할인 중복설정
+      * 
+      * P : 상품별 가격할인만 적용
+      * M : 회원등급별 가격할인만 적용
+      * A : 둘다적용
+      * 
+      * 
+      */ 
     productAvailability: any;
     /**
-     * @description
-     * 구매금액 할인설정
-     *
-     *
-     */
+      * @description
+      * 구매금액 할인설정
+      * 
+      * 
+      */ 
     discountInformation: any;
     /**
-     * @description
-     * 적립금 지급설정
-     *
-     *
-     */
+      * @description
+      * 적립금 지급설정
+      * 
+      * 
+      */ 
     pointsInformation: any;
     /**
-     * @description
-     * 모바일 추가 할인설정
-     *
-     *
-     */
+      * @description
+      * 모바일 추가 할인설정
+      * 
+      * 
+      */ 
     mobileDiscountInformation: any;
     /**
-     * @description
-     * 모바일 추가 적립금설정
-     *
-     *
-     */
+      * @description
+      * 모바일 추가 적립금설정
+      * 
+      * 
+      */ 
     mobilePointsInformation: any;
     /**
-     * @description
-     * 할인 제한설정
-     *
-     * 멀티쇼핑몰에서 등급별 할인 혜택 제한 사용 시 등급 별로 적용되는 할인 혜택 제한 설정 및 최대 할인 한도 정보.
-     *
-     * 멀티쇼핑몰에서 등급별 할인 혜택 제한을 사용하지 않거나,
-     * buy_benefits(구매 시 할인/적립 혜택)이 F(혜택없음) 또는 M(적립금 지급)일 경우 null로 반환
-     *
-     * discount_limit_type(할인 혜택 제한 설정)
-     * - A : 제한없음
-     * - B : 할인금액 제한
-     * - C : 할인횟수 제한
-     * discount_amount_limit(최대 할인금액 한도) : discount_limit_type이 B가 아닐 경우 null
-     * number_of_discount_limit(최대 할인횟수 한도) : discount_limit_type이 C가 아닐 경우 null로 반환.
-     *
-     *
-     */
+      * @description
+      * 할인 제한설정
+      * 
+      * 멀티쇼핑몰에서 등급별 할인 혜택 제한 사용 시 등급 별로 적용되는 할인 혜택 제한 설정 및 최대 할인 한도 정보.
+      * 
+      * 멀티쇼핑몰에서 등급별 할인 혜택 제한을 사용하지 않거나,
+      * buy_benefits(구매 시 할인/적립 혜택)이 F(혜택없음) 또는 M(적립금 지급)일 경우 null로 반환
+      * 
+      * discount_limit_type(할인 혜택 제한 설정)
+      * - A : 제한없음
+      * - B : 할인금액 제한
+      * - C : 할인횟수 제한
+      * discount_amount_limit(최대 할인금액 한도) : discount_limit_type이 B가 아닐 경우 null
+      * number_of_discount_limit(최대 할인횟수 한도) : discount_limit_type이 C가 아닐 경우 null로 반환.
+      * 
+      * 
+      */ 
     discountLimitInformation: any;
   }
 
   export interface RetrieveAListOfCustomerTiersInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 회원등급번호
-     *
-     * ,(콤마)로 여러 건을 검색할 수 있다.
-     *
-     *
-     */
+      * @description
+      * 회원등급번호
+      * 
+      * ,(콤마)로 여러 건을 검색할 수 있다.
+      * 
+      * 
+      */ 
     groupNo?: any;
     /**
-     * @description
-     * 회원등급명
-     *
-     * ,(콤마)로 여러 건을 검색할 수 있다.
-     *
-     * 최대글자수 : [20자]
-     */
+      * @description
+      * 회원등급명
+      * 
+      * ,(콤마)로 여러 건을 검색할 수 있다.
+      * 
+      * 최대글자수 : [20자]
+      */ 
     groupName?: any;
   }
 
   export interface RetrieveAListOfCustomerTiersOutput {
-    customergroups: {
-      shopNo: number;
-      groupNo: number;
-      groupName: string;
-      groupDescription: string;
-      groupIcon: string;
-      benefitsPaymethod: Cafe24Enum;
-      buyBenefits: Cafe24Enum;
-      shipBenefits: Cafe24Enum;
-      productAvailability: Cafe24Enum;
-      discountInformation: {
-        amountProduct: Cafe24Datetime;
-        amountDiscount: string;
-        discountUnit: Cafe24Enum;
-        truncationUnit: Cafe24Datetime;
-        maxDiscount: string;
-      };
-      pointsInformation: {
-        amountProduct: Cafe24Datetime;
-        amountDiscount: string;
-        discountUnit: Cafe24Enum;
-        truncationUnit: Cafe24Datetime;
-        maxDiscount: string;
-      };
-      mobileDiscountInformation: {
-        amountProduct: Cafe24Datetime;
-        amountDiscount: string;
-        discountUnit: Cafe24Enum;
-        truncationUnit: Cafe24Datetime;
-        maxDiscount: string;
-      };
-      mobilePointsInformation: {
-        amountProduct: Cafe24Datetime;
-        amountDiscount: string;
-        discountUnit: Cafe24Enum;
-        truncationUnit: Cafe24Datetime;
-        maxDiscount: string;
-      };
-      discountLimitInformation: {
-        discountLimitType: Cafe24Enum;
-        discountAmountLimit: Cafe24Datetime;
-        numberOfDiscountLimit: any;
-      };
+    customergroups: { 
+    shopNo: number;
+    groupNo: number;
+    groupName: string;
+    groupDescription: string;
+    groupIcon: string;
+    benefitsPaymethod: Cafe24Enum;
+    buyBenefits: Cafe24Enum;
+    shipBenefits: Cafe24Enum;
+    productAvailability: Cafe24Enum;
+    discountInformation: { 
+    amountProduct: Cafe24Datetime;
+    amountDiscount: string;
+    discountUnit: Cafe24Enum;
+    truncationUnit: Cafe24Datetime;
+    maxDiscount: string;
+    };
+    pointsInformation: { 
+    amountProduct: Cafe24Datetime;
+    amountDiscount: string;
+    discountUnit: Cafe24Enum;
+    truncationUnit: Cafe24Datetime;
+    maxDiscount: string;
+    };
+    mobileDiscountInformation: { 
+    amountProduct: Cafe24Datetime;
+    amountDiscount: string;
+    discountUnit: Cafe24Enum;
+    truncationUnit: Cafe24Datetime;
+    maxDiscount: string;
+    };
+    mobilePointsInformation: { 
+    amountProduct: Cafe24Datetime;
+    amountDiscount: string;
+    discountUnit: Cafe24Enum;
+    truncationUnit: Cafe24Datetime;
+    maxDiscount: string;
+    };
+    discountLimitInformation: { 
+    discountLimitType: Cafe24Enum;
+    discountAmountLimit: Cafe24Datetime;
+    numberOfDiscountLimit: any;
+    };
     }[];
   }
   export interface RetrieveACountOfCustomerTiersInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 회원등급번호
-     *
-     * 시스템이 회원등급에 부여한 번호.
-     *
-     * ,(콤마)로 여러 건을 검색할 수 있다.
-     *
-     *
-     */
+      * @description
+      * 회원등급번호
+      * 
+      * 시스템이 회원등급에 부여한 번호.
+      * 
+      * ,(콤마)로 여러 건을 검색할 수 있다.
+      * 
+      * 
+      */ 
     groupNo?: any;
     /**
-     * @description
-     * 회원등급명
-     *
-     * 회원등급을 만들 당시 지정한 회원등급의 이름.
-     *
-     * ,(콤마)로 여러 건을 검색할 수 있다.
-     *
-     * 최대글자수 : [20자]
-     */
+      * @description
+      * 회원등급명
+      * 
+      * 회원등급을 만들 당시 지정한 회원등급의 이름.
+      * 
+      * ,(콤마)로 여러 건을 검색할 수 있다.
+      * 
+      * 최대글자수 : [20자]
+      */ 
     groupName?: any;
   }
 
@@ -258,71 +267,71 @@ declare module 'cafe24api-client' {
   }
   export interface RetrieveACustomerTierInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 회원등급번호
-     *
-     * 시스템이 회원등급에 부여한 번호.
-     *
-     * @required
-     */
+      * @description
+      * 회원등급번호
+      * 
+      * 시스템이 회원등급에 부여한 번호.
+      * 
+      * @required
+      */ 
     groupNo: any;
   }
 
   export interface RetrieveACustomerTierOutput {
-    customergroup: {
-      shopNo: number;
-      groupNo: number;
-      groupName: string;
-      groupDescription: string;
-      groupIcon: string;
-      benefitsPaymethod: Cafe24Enum;
-      buyBenefits: Cafe24Enum;
-      shipBenefits: Cafe24Enum;
-      productAvailability: Cafe24Enum;
-      discountInformation: {
-        amountProduct: Cafe24Datetime;
-        amountDiscount: string;
-        discountUnit: Cafe24Enum;
-        truncationUnit: Cafe24Datetime;
-        maxDiscount: string;
-      };
-      pointsInformation: {
-        amountProduct: Cafe24Datetime;
-        amountDiscount: string;
-        discountUnit: Cafe24Enum;
-        truncationUnit: Cafe24Datetime;
-        maxDiscount: string;
-      };
-      mobileDiscountInformation: {
-        amountProduct: Cafe24Datetime;
-        amountDiscount: string;
-        discountUnit: Cafe24Enum;
-        truncationUnit: Cafe24Datetime;
-        maxDiscount: string;
-      };
-      mobilePointsInformation: {
-        amountProduct: Cafe24Datetime;
-        amountDiscount: string;
-        discountUnit: Cafe24Enum;
-        truncationUnit: Cafe24Datetime;
-        maxDiscount: string;
-      };
-      discountLimitInformation: {
-        discountLimitType: Cafe24Enum;
-        discountAmountLimit: Cafe24Datetime;
-        numberOfDiscountLimit: any;
-      };
+    customergroup: { 
+    shopNo: number;
+    groupNo: number;
+    groupName: string;
+    groupDescription: string;
+    groupIcon: string;
+    benefitsPaymethod: Cafe24Enum;
+    buyBenefits: Cafe24Enum;
+    shipBenefits: Cafe24Enum;
+    productAvailability: Cafe24Enum;
+    discountInformation: { 
+    amountProduct: Cafe24Datetime;
+    amountDiscount: string;
+    discountUnit: Cafe24Enum;
+    truncationUnit: Cafe24Datetime;
+    maxDiscount: string;
+    };
+    pointsInformation: { 
+    amountProduct: Cafe24Datetime;
+    amountDiscount: string;
+    discountUnit: Cafe24Enum;
+    truncationUnit: Cafe24Datetime;
+    maxDiscount: string;
+    };
+    mobileDiscountInformation: { 
+    amountProduct: Cafe24Datetime;
+    amountDiscount: string;
+    discountUnit: Cafe24Enum;
+    truncationUnit: Cafe24Datetime;
+    maxDiscount: string;
+    };
+    mobilePointsInformation: { 
+    amountProduct: Cafe24Datetime;
+    amountDiscount: string;
+    discountUnit: Cafe24Enum;
+    truncationUnit: Cafe24Datetime;
+    maxDiscount: string;
+    };
+    discountLimitInformation: { 
+    discountLimitType: Cafe24Enum;
+    discountAmountLimit: Cafe24Datetime;
+    numberOfDiscountLimit: any;
+    };
     };
   }
 
@@ -388,9 +397,7 @@ declare module 'cafe24api-client' {
      */
     retrieveAListOfCustomerTiers(
       input: RetrieveAListOfCustomerTiersInput,
-      options?: RequestOptions<
-        RetrieveAListOfCustomerTiersOutput['customergroups'][number]
-      >,
+      options?: AdminRequestOptions<RetrieveAListOfCustomerTiersOutput['customergroups'][number]>,
     ): Promise<AxiosResponse<RetrieveAListOfCustomerTiersOutput>>;
     /**
      * @description
@@ -407,7 +414,7 @@ declare module 'cafe24api-client' {
      */
     retrieveACountOfCustomerTiers(
       input: RetrieveACountOfCustomerTiersInput,
-      options?: RequestOptions<RetrieveACountOfCustomerTiersOutput['count']>,
+      options?: AdminRequestOptions<RetrieveACountOfCustomerTiersOutput['count']>,
     ): Promise<AxiosResponse<RetrieveACountOfCustomerTiersOutput>>;
     /**
      * @description
@@ -468,7 +475,7 @@ declare module 'cafe24api-client' {
      */
     retrieveACustomerTier(
       input: RetrieveACustomerTierInput,
-      options?: RequestOptions<RetrieveACustomerTierOutput['customergroup']>,
+      options?: AdminRequestOptions<RetrieveACustomerTierOutput['customergroup']>,
     ): Promise<AxiosResponse<RetrieveACustomerTierOutput>>;
   }
 }

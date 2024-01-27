@@ -1,8 +1,6 @@
+
 export default (cls) => {
-  cls.prototype.createAnAdditionalProductImage = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.createAnAdditionalProductImage = async function (input, options) {
     return this.createRequest(
       'POST',
       `/api/v2/admin/products/${input['product_no']}/additionalimages`,
@@ -15,10 +13,7 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.updateAnAdditionalProductImage = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.updateAnAdditionalProductImage = async function (input, options) {
     return this.createRequest(
       'PUT',
       `/api/v2/admin/products/${input['product_no']}/additionalimages`,
@@ -31,10 +26,7 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.deleteAnAdditionalProductImage = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.deleteAnAdditionalProductImage = async function (input, options) {
     return this.createRequest(
       'DELETE',
       `/api/v2/admin/products/${input['product_no']}/additionalimages`,
@@ -45,4 +37,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

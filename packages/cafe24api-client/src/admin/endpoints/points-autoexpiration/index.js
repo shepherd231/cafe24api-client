@@ -1,8 +1,6 @@
+
 export default (cls) => {
-  cls.prototype.retrieveAnAutomaticPointsExpiration = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.retrieveAnAutomaticPointsExpiration = async function (input, options) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/points/autoexpiration`,
@@ -13,10 +11,7 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.createAnAutomaticPointsExpiration = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.createAnAutomaticPointsExpiration = async function (input, options) {
     return this.createRequest(
       'POST',
       `/api/v2/admin/points/autoexpiration`,
@@ -35,10 +30,7 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.deleteAnAutomaticPointsExpiration = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.deleteAnAutomaticPointsExpiration = async function (input, options) {
     return this.createRequest(
       'DELETE',
       `/api/v2/admin/points/autoexpiration`,
@@ -48,4 +40,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

@@ -1,3 +1,4 @@
+
 export default (cls) => {
   cls.prototype.retrieveAListOfSupplierUsers = async function (input, options) {
     return this.createRequest(
@@ -13,10 +14,7 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.retrieveACountOfSupplierUsers = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.retrieveACountOfSupplierUsers = async function (input, options) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/suppliers/users/count`,
@@ -107,4 +105,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

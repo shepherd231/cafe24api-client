@@ -1,8 +1,6 @@
+
 export default (cls) => {
-  cls.prototype.retrieveACustomersListOfPaymentMethods = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.retrieveACustomersListOfPaymentMethods = async function (input, options) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/customers/${input['member_id']}/paymentinformation`,
@@ -14,10 +12,7 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.deleteCustomersPaymentInformation = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.deleteCustomersPaymentInformation = async function (input, options) {
     return this.createRequest(
       'DELETE',
       `/api/v2/admin/customers/${input['member_id']}/paymentinformation`,
@@ -28,4 +23,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

@@ -1,8 +1,6 @@
+
 export default (cls) => {
-  cls.prototype.retrieveTheAutomatedMessageSettings = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.retrieveTheAutomatedMessageSettings = async function (input, options) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/automessages/setting`,
@@ -25,4 +23,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

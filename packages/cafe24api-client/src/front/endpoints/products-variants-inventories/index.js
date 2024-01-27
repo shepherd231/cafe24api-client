@@ -1,8 +1,6 @@
+
 export default (cls) => {
-  cls.prototype.retrieveInventoryDetailsOfAProductVariant = async function (
-    input,
-    options,
-  ) {
+  cls.prototype.retrieveInventoryDetailsOfAProductVariant = async function (input, options) {
     return this.createRequest(
       'GET',
       `/api/v2/products/${input['product_no']}/variants/{variant_code}/inventories`,
@@ -14,4 +12,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

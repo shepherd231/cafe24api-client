@@ -1,10 +1,19 @@
 import { AxiosResponse } from 'axios';
-import { Endpoint, RequestOptions, Cafe24Datetime } from 'cafe24api-client';
+import { 
+  Endpoint, 
+  AdminRequestOptions, 
+  Cafe24Datetime,
+  Cafe24Boolean,
+  Cafe24Date,
+  Cafe24Datetime,
+  Cafe24Enum,
+} from 'cafe24api-client';
 
 declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   /**
    * @description
    * 디자인 아이콘은 상품, 게시판, 이벤트, 카드, 결제수단 로고로 사용 중인 작은 이미지입니다.
@@ -12,100 +21,100 @@ declare module 'cafe24api-client' {
    */
   export interface Icons {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 
+      */ 
     shop_no: any;
     /**
-     * @description
-     * 아이콘 아이디
-     *
-     *
-     */
+      * @description
+      * 아이콘 아이디
+      * 
+      * 
+      */ 
     id: any;
     /**
-     * @description
-     * 디자인 타입
-     *
-     * pc : PC
-     * mobile : 모바일
-     *
-     *
-     */
+      * @description
+      * 디자인 타입
+      * 
+      * pc : PC
+      * mobile : 모바일
+      * 
+      * 
+      */ 
     type: any;
     /**
-     * @description
-     * 그룹 코드
-     *
-     * A : 상품 아이콘
-     * B : 게시판 아이콘
-     * C : 카드 아이콘
-     * E : 이벤트 아이콘
-     *
-     *
-     */
+      * @description
+      * 그룹 코드
+      * 
+      * A : 상품 아이콘
+      * B : 게시판 아이콘
+      * C : 카드 아이콘
+      * E : 이벤트 아이콘
+      * 
+      * 
+      */ 
     group_code: any;
     /**
-     * @description
-     * 아이콘 URL
-     *
-     *
-     */
+      * @description
+      * 아이콘 URL
+      * 
+      * 
+      */ 
     path: any;
     /**
-     * @description
-     * 아이콘 노출여부
-     *
-     * T : 노출함
-     * F : 노출안함
-     *
-     *
-     */
+      * @description
+      * 아이콘 노출여부
+      * 
+      * T : 노출함
+      * F : 노출안함
+      * 
+      * 
+      */ 
     display: any;
     /**
-     * @description
-     * 아이콘 설명
-     *
-     *
-     */
+      * @description
+      * 아이콘 설명
+      * 
+      * 
+      */ 
     description: any;
   }
 
   export interface RetrieveAListOfDesginIconsInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     * 최소값: [1]
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 최소값: [1]
+      */ 
     shop_no?: any;
     /**
-     * @description
-     * 디자인 타입
-     *
-     * pc : PC
-     * mobile : 모바일
-     *
-     * @default pc
-     *
-     *
-     */
+      * @description
+      * 디자인 타입
+      * 
+      * pc : PC
+      * mobile : 모바일
+      * 
+      * @default pc
+      * 
+      * 
+      */ 
     type?: any;
   }
 
   export interface RetrieveAListOfDesginIconsOutput {
-    icons: {
-      shop_no: number;
-      id: number;
-      type: string;
-      group_code: Cafe24Enum;
-      path: string;
-      display: Cafe24Enum;
-      description: string;
+    icons: { 
+    shop_no: number;
+    id: number;
+    type: string;
+    group_code: Cafe24Enum;
+    path: string;
+    display: Cafe24Enum;
+    description: string;
     }[];
   }
 
@@ -144,9 +153,7 @@ declare module 'cafe24api-client' {
      */
     retrieveAListOfDesginIcons(
       input: RetrieveAListOfDesginIconsInput,
-      options?: RequestOptions<
-        RetrieveAListOfDesginIconsOutput['icons'][number]
-      >,
+      options?: AdminRequestOptions<RetrieveAListOfDesginIconsOutput['icons'][number]>,
     ): Promise<AxiosResponse<RetrieveAListOfDesginIconsOutput>>;
   }
 }

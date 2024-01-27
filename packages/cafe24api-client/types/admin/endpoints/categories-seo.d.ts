@@ -1,169 +1,178 @@
 import { AxiosResponse } from 'axios';
-import { Endpoint, RequestOptions, Cafe24Datetime } from 'cafe24api-client';
+import { 
+  Endpoint, 
+  AdminRequestOptions, 
+  Cafe24Datetime,
+  Cafe24Boolean,
+  Cafe24Date,
+  Cafe24Datetime,
+  Cafe24Enum,
+} from 'cafe24api-client';
 
 declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   /**
    * @description
-   *
-   *
+   * 
+   * 
    * 카테고리 SEO(Categories seo)는 특정 카테고리의 SEO 에 대한 설정과 설정값의 조회가 가능한 기능입니다.
    * SEO는 검색엔진 최적화(Search Engine Optimization)의 약자로서 본 기능을 활용하여 검색엔진에 카테고리나 쇼핑몰이 더 잘 검색될 수 있도록 할 수 있습니다.
    * 카테고리 SEO는 카테고리의의 하위 리소스로서 특정 카테고리의 검색엔진 최적화 설정을 할 수 있습니다.
    */
   export interface CategoriesSeo {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 
+      */ 
     shop_no: any;
     /**
-     * @description
-     * 분류 번호
-     *
-     *
-     */
+      * @description
+      * 분류 번호
+      * 
+      * 
+      */ 
     category_no: any;
     /**
-     * @description
-     * 검색 엔진 노출 설정
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 검색 엔진 노출 설정
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     search_engine_exposure: any;
     /**
-     * @description
-     * 브라우저 타이틀
-     *
-     *
-     */
+      * @description
+      * 브라우저 타이틀
+      * 
+      * 
+      */ 
     meta_title: any;
     /**
-     * @description
-     * 메타태그1 : Author
-     *
-     *
-     */
+      * @description
+      * 메타태그1 : Author
+      * 
+      * 
+      */ 
     meta_author: any;
     /**
-     * @description
-     * 메타태그2 : Description
-     *
-     *
-     */
+      * @description
+      * 메타태그2 : Description
+      * 
+      * 
+      */ 
     meta_description: any;
     /**
-     * @description
-     * 메타태그3 : Keywords
-     *
-     *
-     */
+      * @description
+      * 메타태그3 : Keywords
+      * 
+      * 
+      */ 
     meta_keywords: any;
   }
 
   export interface RetrieveSeoSettingsByCategoryInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shop_no?: any;
     /**
-     * @description
-     * 분류 번호
-     *
-     * @required
-     */
+      * @description
+      * 분류 번호
+      * 
+      * @required
+      */ 
     category_no: any;
   }
 
   export interface RetrieveSeoSettingsByCategoryOutput {
-    seo: {
-      shop_no: number;
-      category_no: number;
-      search_engine_exposure: Cafe24Enum;
-      meta_title: string;
-      meta_author: string;
-      meta_description: string;
-      meta_keywords: string;
+    seo: { 
+    shop_no: number;
+    category_no: number;
+    search_engine_exposure: Cafe24Enum;
+    meta_title: string;
+    meta_author: string;
+    meta_description: string;
+    meta_keywords: string;
     };
   }
   export interface UpdateAProductCategorySeoInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shop_no?: any;
     /**
-     * @description
-     * 분류 번호
-     *
-     * @required
-     */
+      * @description
+      * 분류 번호
+      * 
+      * @required
+      */ 
     category_no: any;
     /**
-     * @description
-     * 검색 엔진 노출 설정
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 검색 엔진 노출 설정
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     search_engine_exposure?: any;
     /**
-     * @description
-     * 브라우저 타이틀
-     *
-     *
-     */
+      * @description
+      * 브라우저 타이틀
+      * 
+      * 
+      */ 
     meta_title?: any;
     /**
-     * @description
-     * 메타태그1 : Author
-     *
-     *
-     */
+      * @description
+      * 메타태그1 : Author
+      * 
+      * 
+      */ 
     meta_author?: any;
     /**
-     * @description
-     * 메타태그2 : Description
-     *
-     *
-     */
+      * @description
+      * 메타태그2 : Description
+      * 
+      * 
+      */ 
     meta_description?: any;
     /**
-     * @description
-     * 메타태그3 : Keywords
-     *
-     *
-     */
+      * @description
+      * 메타태그3 : Keywords
+      * 
+      * 
+      */ 
     meta_keywords?: any;
   }
 
   export interface UpdateAProductCategorySeoOutput {
-    seo: {
-      shop_no: number;
-      category_no: number;
-      search_engine_exposure: Cafe24Enum;
-      meta_title: string;
-      meta_author: string;
-      meta_description: string;
-      meta_keywords: string;
+    seo: { 
+    shop_no: number;
+    category_no: number;
+    search_engine_exposure: Cafe24Enum;
+    meta_title: string;
+    meta_author: string;
+    meta_description: string;
+    meta_keywords: string;
     };
   }
 
@@ -192,7 +201,7 @@ declare module 'cafe24api-client' {
      */
     retrieveSeoSettingsByCategory(
       input: RetrieveSeoSettingsByCategoryInput,
-      options?: RequestOptions<RetrieveSeoSettingsByCategoryOutput['seo']>,
+      options?: AdminRequestOptions<RetrieveSeoSettingsByCategoryOutput['seo']>,
     ): Promise<AxiosResponse<RetrieveSeoSettingsByCategoryOutput>>;
     /**
      * @description
@@ -218,7 +227,7 @@ declare module 'cafe24api-client' {
      */
     updateAProductCategorySeo(
       input: UpdateAProductCategorySeoInput,
-      options?: RequestOptions<UpdateAProductCategorySeoOutput['seo']>,
+      options?: AdminRequestOptions<UpdateAProductCategorySeoOutput['seo']>,
     ): Promise<AxiosResponse<UpdateAProductCategorySeoOutput>>;
   }
 }

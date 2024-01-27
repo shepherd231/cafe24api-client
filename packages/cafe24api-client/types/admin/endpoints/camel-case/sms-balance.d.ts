@@ -1,41 +1,51 @@
 import { AxiosResponse } from 'axios';
-import { Endpoint, RequestOptions, Cafe24Datetime } from 'cafe24api-client';
+import { 
+  Endpoint, 
+  AdminRequestOptions, 
+  Cafe24Datetime,
+  Cafe24Boolean,
+  Cafe24Date,
+  Cafe24Datetime,
+  Cafe24Enum,
+} from 'cafe24api-client';
 
 declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   export interface SmsBalance {
     /**
-     * @description
-     * SMS 잔여 건수
-     *
-     *
-     */
+      * @description
+      * SMS 잔여 건수
+      * 
+      * 
+      */ 
     balance: any;
     /**
-     * @description
-     * 단문(SMS) 발송 가능 건수
-     *
-     *
-     */
+      * @description
+      * 단문(SMS) 발송 가능 건수
+      * 
+      * 
+      */ 
     smsCount: any;
     /**
-     * @description
-     * 장문(LMS) 발송 가능 건수
-     *
-     *
-     */
+      * @description
+      * 장문(LMS) 발송 가능 건수
+      * 
+      * 
+      */ 
     lmsCount: any;
   }
 
-  export interface RetrieveTheSmsBalanceInput {}
+  export interface RetrieveTheSmsBalanceInput {
+  }
 
   export interface RetrieveTheSmsBalanceOutput {
-    sms: {
-      balance: Cafe24Datetime;
-      smsCount: number;
-      lmsCount: number;
+    sms: { 
+    balance: Cafe24Datetime;
+    smsCount: number;
+    lmsCount: number;
     };
   }
 
@@ -56,7 +66,7 @@ declare module 'cafe24api-client' {
      */
     retrieveTheSmsBalance(
       input?: RetrieveTheSmsBalanceInput,
-      options?: RequestOptions<RetrieveTheSmsBalanceOutput['sms']>,
+      options?: AdminRequestOptions<RetrieveTheSmsBalanceOutput['sms']>,
     ): Promise<AxiosResponse<RetrieveTheSmsBalanceOutput>>;
   }
 }

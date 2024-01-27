@@ -1,171 +1,180 @@
 import { AxiosResponse } from 'axios';
-import { Endpoint, RequestOptions, Cafe24Datetime } from 'cafe24api-client';
+import { 
+  Endpoint, 
+  AdminRequestOptions, 
+  Cafe24Datetime,
+  Cafe24Boolean,
+  Cafe24Date,
+  Cafe24Datetime,
+  Cafe24Enum,
+} from 'cafe24api-client';
 
 declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   /**
    * @description
-   *
-   *
+   * 
+   * 
    * 카테고리 상품(Categories products)은 카테고리의 상품의 표시 순서, 고정 여부, 진열 영역 등을 조회, 수정할 수 있는 관계형 리소스입니다.
    */
   export interface CategoriesProducts {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 
+      */ 
     shopNo: any;
     /**
-     * @description
-     * 상품번호
-     *
-     * 상품의 고유한 일련 번호. 해당 쇼핑몰 내에서 상품 번호는 중복되지 않음.
-     *
-     *
-     */
+      * @description
+      * 상품번호
+      * 
+      * 상품의 고유한 일련 번호. 해당 쇼핑몰 내에서 상품 번호는 중복되지 않음.
+      * 
+      * 
+      */ 
     productNo: any;
     /**
-     * @description
-     * 표시 순서
-     *
-     *
-     */
+      * @description
+      * 표시 순서
+      * 
+      * 
+      */ 
     sequenceNo: any;
     /**
-     * @description
-     * 자동 정렬 여부
-     *
-     *
-     */
+      * @description
+      * 자동 정렬 여부
+      * 
+      * 
+      */ 
     autoSort: any;
     /**
-     * @description
-     * 품절여부
-     *
-     *
-     */
+      * @description
+      * 품절여부
+      * 
+      * 
+      */ 
     soldOut: any;
     /**
-     * @description
-     * 고정 여부
-     *
-     *
-     */
+      * @description
+      * 고정 여부
+      * 
+      * 
+      */ 
     fixedSort: any;
     /**
-     * @description
-     * 판매안함 여부
-     *
-     *
-     */
+      * @description
+      * 판매안함 여부
+      * 
+      * 
+      */ 
     notForSale: any;
     /**
-     * @description
-     * 상세 상품분류
-     *
-     * 1 : 일반상품
-     * 2 : 추천상품
-     * 3 : 신상품
-     *
-     * @default 1
-     *
-     * 최소: [1]~최대: [3]
-     */
+      * @description
+      * 상세 상품분류
+      * 
+      * 1 : 일반상품
+      * 2 : 추천상품
+      * 3 : 신상품
+      * 
+      * @default 1
+      * 
+      * 최소: [1]~최대: [3]
+      */ 
     displayGroup: any;
     /**
-     * @description
-     * 진열 순서
-     *
-     * 최소: [1]~최대: [999998]
-     */
+      * @description
+      * 진열 순서
+      * 
+      * 최소: [1]~최대: [999998]
+      */ 
     sequence: any;
   }
 
   export interface RetrieveAListOfProductsByCategoryInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 분류 번호
-     *
-     * @required
-     */
+      * @description
+      * 분류 번호
+      * 
+      * @required
+      */ 
     categoryNo: any;
     /**
-     * @description
-     * 상세 상품분류
-     *
-     * 1 : 일반상품
-     * 2 : 추천상품
-     * 3 : 신상품
-     *
-     * @required
-     *
-     * 최소: [1]~최대: [3]
-     */
+      * @description
+      * 상세 상품분류
+      * 
+      * 1 : 일반상품
+      * 2 : 추천상품
+      * 3 : 신상품
+      * 
+      * @required
+      * 
+      * 최소: [1]~최대: [3]
+      */ 
     displayGroup: any;
     /**
-     * @description
-     * 조회결과 최대건수
-     *
-     * @default 50000
-     *
-     * 최소: [1]~최대: [50000]
-     */
+      * @description
+      * 조회결과 최대건수
+      * 
+      * @default 50000
+      * 
+      * 최소: [1]~최대: [50000]
+      */ 
     limit?: any;
   }
 
   export interface RetrieveAListOfProductsByCategoryOutput {
-    products: {
-      shopNo: number;
-      productNo: number;
-      sequenceNo: number;
-      autoSort: boolean;
-      soldOut: boolean;
-      fixedSort: boolean;
-      notForSale: boolean;
+    products: { 
+    shopNo: number;
+    productNo: number;
+    sequenceNo: number;
+    autoSort: boolean;
+    soldOut: boolean;
+    fixedSort: boolean;
+    notForSale: boolean;
     }[];
   }
   export interface RetrieveACountOfProductsByCategoryInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 분류 번호
-     *
-     * @required
-     */
+      * @description
+      * 분류 번호
+      * 
+      * @required
+      */ 
     categoryNo: any;
     /**
-     * @description
-     * 상세 상품분류
-     *
-     * 1 : 일반상품
-     * 2 : 추천상품
-     * 3 : 신상품
-     *
-     * @required
-     *
-     * 최소: [1]~최대: [3]
-     */
+      * @description
+      * 상세 상품분류
+      * 
+      * 1 : 일반상품
+      * 2 : 추천상품
+      * 3 : 신상품
+      * 
+      * @required
+      * 
+      * 최소: [1]~최대: [3]
+      */ 
     displayGroup: any;
   }
 
@@ -174,151 +183,151 @@ declare module 'cafe24api-client' {
   }
   export interface AddProductsToACategoryInput {
     /**
-     * @description
-     * 분류 번호
-     *
-     * @required
-     */
+      * @description
+      * 분류 번호
+      * 
+      * @required
+      */ 
     categoryNo: any;
     /**
-     * @description
-     * 상세 상품분류
-     *
-     * 1 : 일반상품
-     * 2 : 추천상품
-     * 3 : 신상품
-     *
-     * @default 1
-     *
-     * 최소: [1]~최대: [3]
-     */
+      * @description
+      * 상세 상품분류
+      * 
+      * 1 : 일반상품
+      * 2 : 추천상품
+      * 3 : 신상품
+      * 
+      * @default 1
+      * 
+      * 최소: [1]~최대: [3]
+      */ 
     displayGroup?: any;
     /**
-     * @description
-     * 상품번호
-     *
-     * @required
-     */
+      * @description
+      * 상품번호
+      * 
+      * @required
+      */ 
     productNo: any;
   }
 
   export interface AddProductsToACategoryOutput {
-    product: {
-      displayGroup: number;
-      productNo: number[];
+    product: { 
+    displayGroup: number;
+    productNo: number[];
     };
   }
   export interface UpdateAProductInProductCategoryInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 분류 번호
-     *
-     * @required
-     */
+      * @description
+      * 분류 번호
+      * 
+      * @required
+      */ 
     categoryNo: any;
     /**
-     * @description
-     * 상세 상품분류
-     *
-     * 1 : 일반상품
-     * 2 : 추천상품
-     * 3 : 신상품
-     *
-     * @required
-     *
-     * 최소: [1]~최대: [3]
-     */
+      * @description
+      * 상세 상품분류
+      * 
+      * 1 : 일반상품
+      * 2 : 추천상품
+      * 3 : 신상품
+      * 
+      * @required
+      * 
+      * 최소: [1]~최대: [3]
+      */ 
     displayGroup: any;
     /**
-     * @description
-     * 상품번호
-     *
-     * @required
-     */
+      * @description
+      * 상품번호
+      * 
+      * @required
+      */ 
     productNo: any;
     /**
-     * @description
-     * 진열 순서
-     *
-     * 최소: [1]~최대: [999999]
-     */
+      * @description
+      * 진열 순서
+      * 
+      * 최소: [1]~최대: [999999]
+      */ 
     sequence?: any;
     /**
-     * @description
-     * 자동 정렬 여부
-     *
-     * T : 자동 정렬 사용함
-     * F : 자동 정렬 사용안함
-     *
-     *
-     */
+      * @description
+      * 자동 정렬 여부
+      * 
+      * T : 자동 정렬 사용함
+      * F : 자동 정렬 사용안함
+      * 
+      * 
+      */ 
     autoSort?: any;
     /**
-     * @description
-     * 고정 여부
-     *
-     * T : 진열순위 고정 사용함
-     * F : 진열순위 고정 사용안함
-     *
-     *
-     */
+      * @description
+      * 고정 여부
+      * 
+      * T : 진열순위 고정 사용함
+      * F : 진열순위 고정 사용안함
+      * 
+      * 
+      */ 
     fixedSort?: any;
   }
 
   export interface UpdateAProductInProductCategoryOutput {
-    product: {
-      shopNo: number;
-      productNo: number;
-      sequence: number;
-      autoSort: Cafe24Enum;
-      fixedSort: Cafe24Enum;
+    product: { 
+    shopNo: number;
+    productNo: number;
+    sequence: number;
+    autoSort: Cafe24Enum;
+    fixedSort: Cafe24Enum;
     };
   }
   export interface DeleteAProductByCategoryInput {
     /**
-     * @description
-     * 분류 번호
-     *
-     * @required
-     */
+      * @description
+      * 분류 번호
+      * 
+      * @required
+      */ 
     categoryNo: any;
     /**
-     * @description
-     * 상품번호
-     *
-     * @required
-     */
+      * @description
+      * 상품번호
+      * 
+      * @required
+      */ 
     productNo: any;
     /**
-     * @description
-     * 상세 상품분류
-     *
-     * 일반상품 영역에서 진열안함 처리 시, 추천상품/신상품 영역에서도 동시에 진열안함 처리된다.
-     *
-     * 1 : 일반상품
-     * 2 : 추천상품
-     * 3 : 신상품
-     *
-     * @default 1
-     *
-     * 최소: [1]~최대: [3]
-     */
+      * @description
+      * 상세 상품분류
+      * 
+      * 일반상품 영역에서 진열안함 처리 시, 추천상품/신상품 영역에서도 동시에 진열안함 처리된다.
+      * 
+      * 1 : 일반상품
+      * 2 : 추천상품
+      * 3 : 신상품
+      * 
+      * @default 1
+      * 
+      * 최소: [1]~최대: [3]
+      */ 
     displayGroup?: any;
   }
 
   export interface DeleteAProductByCategoryOutput {
-    product: {
-      displayGroup: number;
-      productNo: number;
+    product: { 
+    displayGroup: number;
+    productNo: number;
     };
   }
 
@@ -368,9 +377,7 @@ declare module 'cafe24api-client' {
      */
     retrieveAListOfProductsByCategory(
       input: RetrieveAListOfProductsByCategoryInput,
-      options?: RequestOptions<
-        RetrieveAListOfProductsByCategoryOutput['products'][number]
-      >,
+      options?: AdminRequestOptions<RetrieveAListOfProductsByCategoryOutput['products'][number]>,
     ): Promise<AxiosResponse<RetrieveAListOfProductsByCategoryOutput>>;
     /**
      * @description
@@ -387,9 +394,7 @@ declare module 'cafe24api-client' {
      */
     retrieveACountOfProductsByCategory(
       input: RetrieveACountOfProductsByCategoryInput,
-      options?: RequestOptions<
-        RetrieveACountOfProductsByCategoryOutput['count']
-      >,
+      options?: AdminRequestOptions<RetrieveACountOfProductsByCategoryOutput['count']>,
     ): Promise<AxiosResponse<RetrieveACountOfProductsByCategoryOutput>>;
     /**
      * @description
@@ -414,7 +419,7 @@ declare module 'cafe24api-client' {
      */
     addProductsToACategory(
       input: AddProductsToACategoryInput,
-      options?: RequestOptions<AddProductsToACategoryOutput['product']>,
+      options?: AdminRequestOptions<AddProductsToACategoryOutput['product']>,
     ): Promise<AxiosResponse<AddProductsToACategoryOutput>>;
     /**
      * @description
@@ -438,9 +443,7 @@ declare module 'cafe24api-client' {
      */
     updateAProductInProductCategory(
       input: UpdateAProductInProductCategoryInput,
-      options?: RequestOptions<
-        UpdateAProductInProductCategoryOutput['product']
-      >,
+      options?: AdminRequestOptions<UpdateAProductInProductCategoryOutput['product']>,
     ): Promise<AxiosResponse<UpdateAProductInProductCategoryOutput>>;
     /**
      * @description
@@ -461,7 +464,7 @@ declare module 'cafe24api-client' {
      */
     deleteAProductByCategory(
       input: DeleteAProductByCategoryInput,
-      options?: RequestOptions<DeleteAProductByCategoryOutput['product']>,
+      options?: AdminRequestOptions<DeleteAProductByCategoryOutput['product']>,
     ): Promise<AxiosResponse<DeleteAProductByCategoryOutput>>;
   }
 }

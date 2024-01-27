@@ -1,65 +1,74 @@
 import { AxiosResponse } from 'axios';
-import { Endpoint, RequestOptions, Cafe24Datetime } from 'cafe24api-client';
+import { 
+  Endpoint, 
+  AdminRequestOptions, 
+  Cafe24Datetime,
+  Cafe24Boolean,
+  Cafe24Date,
+  Cafe24Datetime,
+  Cafe24Enum,
+} from 'cafe24api-client';
 
 declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   /**
    * @description
-   *
-   *
+   * 
+   * 
    * 상품 할인가(Discountprice)는 상품의 할인가격을 표시하는 리소스입니다. 혜택(Benefits)이 적용된 상품의 경우 상품의 할인가를 조회할 수 있습니다.
    * 상품 할인가는 하위 리소스로서 상품(Products) 하위에서만 사용가능하며, 상품 목록 조회시 Embed 파라메터로 호출가능합니다.
    */
   export interface ProductsDiscountprice {
     /**
-     * @description
-     * PC 할인 판매가
-     *
-     *
-     */
+      * @description
+      * PC 할인 판매가
+      * 
+      * 
+      */ 
     pc_discount_price: any;
     /**
-     * @description
-     * 모바일 할인 판매가
-     *
-     *
-     */
+      * @description
+      * 모바일 할인 판매가
+      * 
+      * 
+      */ 
     mobile_discount_price: any;
     /**
-     * @description
-     * 앱 할인 판매가
-     *
-     *
-     */
+      * @description
+      * 앱 할인 판매가
+      * 
+      * 
+      */ 
     app_discount_price: any;
   }
 
   export interface RetrieveAProductDiscountedPriceInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shop_no?: any;
     /**
-     * @description
-     * 상품번호
-     *
-     * @required
-     */
+      * @description
+      * 상품번호
+      * 
+      * @required
+      */ 
     product_no: any;
   }
 
   export interface RetrieveAProductDiscountedPriceOutput {
-    discountprice: {
-      pc_discount_price: Cafe24Datetime;
-      mobile_discount_price: Cafe24Datetime;
-      app_discount_price: Cafe24Datetime;
+    discountprice: { 
+    pc_discount_price: Cafe24Datetime;
+    mobile_discount_price: Cafe24Datetime;
+    app_discount_price: Cafe24Datetime;
     };
   }
 
@@ -84,9 +93,7 @@ declare module 'cafe24api-client' {
      */
     retrieveAProductDiscountedPrice(
       input: RetrieveAProductDiscountedPriceInput,
-      options?: RequestOptions<
-        RetrieveAProductDiscountedPriceOutput['discountprice']
-      >,
+      options?: AdminRequestOptions<RetrieveAProductDiscountedPriceOutput['discountprice']>,
     ): Promise<AxiosResponse<RetrieveAProductDiscountedPriceOutput>>;
   }
 }

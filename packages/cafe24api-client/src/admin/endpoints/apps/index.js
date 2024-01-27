@@ -1,6 +1,13 @@
+
 export default (cls) => {
   cls.prototype.retrieveAnAppInformation = async function (input, options) {
-    return this.createRequest('GET', `/api/v2/admin/apps`, {}, options);
+    return this.createRequest(
+      'GET',
+      `/api/v2/admin/apps`,
+      {
+      },
+      options,
+    );
   };
 
   cls.prototype.updateAnAppInformation = async function (input, options) {
@@ -14,4 +21,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

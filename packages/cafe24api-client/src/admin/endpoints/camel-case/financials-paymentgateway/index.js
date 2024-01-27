@@ -8,20 +8,19 @@ import {
 export default (cls) => {
   register(cls);
 
-  const retrieveAListOfPaymentGatewayContractDetails =
-    cls.prototype.retrieveAListOfPaymentGatewayContractDetails;
-  cls.prototype.retrieveAListOfPaymentGatewayContractDetails = async function (
-    input,
-    options,
-  ) {
-    const response = await retrieveAListOfPaymentGatewayContractDetails.call(
-      this,
-      convertToSnakeCase(input),
-      optionsToSnakeCase(options),
-    );
-    return {
-      ...response,
-      data: convertToCamelCase(response.data),
+  
+    const retrieveAListOfPaymentGatewayContractDetails = cls.prototype.retrieveAListOfPaymentGatewayContractDetails;
+    cls.prototype.retrieveAListOfPaymentGatewayContractDetails = async function (input, options) {
+      const response = await retrieveAListOfPaymentGatewayContractDetails.call(
+        this,
+        convertToSnakeCase(input),
+        optionsToSnakeCase(options),
+      );
+      return {
+        ...response,
+        data: convertToCamelCase(response.data),
+      };
     };
-  };
+
+ 
 };

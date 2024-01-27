@@ -1,147 +1,156 @@
 import { AxiosResponse } from 'axios';
-import { Endpoint, RequestOptions, Cafe24Datetime } from 'cafe24api-client';
+import { 
+  Endpoint, 
+  AdminRequestOptions, 
+  Cafe24Datetime,
+  Cafe24Boolean,
+  Cafe24Date,
+  Cafe24Datetime,
+  Cafe24Enum,
+} from 'cafe24api-client';
 
 declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   /**
    * @description
    * 교환 처리를 요청한 주문의 교환접수를 거부할 수 있습니다.
    */
   export interface OrdersExchangerequests {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 
+      */ 
     shop_no: any;
     /**
-     * @description
-     * 주문번호
-     *
-     *
-     */
+      * @description
+      * 주문번호
+      * 
+      * 
+      */ 
     order_id: any;
     /**
-     * @description
-     * 접수거부 여부
-     *
-     *
-     */
+      * @description
+      * 접수거부 여부
+      * 
+      * 
+      */ 
     undone: any;
     /**
-     * @description
-     * 품주코드
-     *
-     *
-     */
+      * @description
+      * 품주코드
+      * 
+      * 
+      */ 
     order_item_code: any;
     /**
-     * @description
-     * 추가 PG 취소
-     *
-     *
-     */
+      * @description
+      * 추가 PG 취소
+      * 
+      * 
+      */ 
     additional_payment_gateway_cancel: any;
   }
 
   export interface RejectAnExchangeRequestInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     * 최소값: [1]
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 최소값: [1]
+      */ 
     shop_no?: any;
     /**
-     * @description
-     * 주문번호
-     *
-     * @required
-     *
-     * 주문번호
-     */
+      * @description
+      * 주문번호
+      * 
+      * @required
+      * 
+      * 주문번호
+      */ 
     order_id: any;
     /**
-     * @description
-     * 품주코드
-     *
-     * @required
-     */
+      * @description
+      * 품주코드
+      * 
+      * @required
+      */ 
     order_item_code: any;
     /**
-     * @description
-     * 접수거부 여부
-     *
-     * T : 접수거부함
-     *
-     * @required
-     */
+      * @description
+      * 접수거부 여부
+      * 
+      * T : 접수거부함
+      * 
+      * @required
+      */ 
     undone: any;
     /**
-     * @description
-     * 사유 구분
-     *
-     * A:고객변심
-     * B:배송지연
-     * J:배송오류
-     * C:배송불가지역
-     * L:수출/통관 불가
-     * D:포장불량
-     * E:상품 불만족
-     * F:상품정보상이
-     * K:상품불량
-     * G:서비스불만족
-     * H:품절
-     * I:기타
-     *
-     *
-     */
+      * @description
+      * 사유 구분
+      * 
+      * A:고객변심
+      * B:배송지연
+      * J:배송오류
+      * C:배송불가지역
+      * L:수출/통관 불가
+      * D:포장불량
+      * E:상품 불만족
+      * F:상품정보상이
+      * K:상품불량
+      * G:서비스불만족
+      * H:품절
+      * I:기타
+      * 
+      * 
+      */ 
     reason_type?: any;
     /**
-     * @description
-     * 사유
-     *
-     * 최대글자수 : [2000자]
-     */
+      * @description
+      * 사유
+      * 
+      * 최대글자수 : [2000자]
+      */ 
     reason?: any;
     /**
-     * @description
-     * 주문상세내역 노출설정
-     *
-     * T : 노출함
-     * F : 노출안함
-     *
-     * @default F
-     *
-     *
-     */
+      * @description
+      * 주문상세내역 노출설정
+      * 
+      * T : 노출함
+      * F : 노출안함
+      * 
+      * @default F
+      * 
+      * 
+      */ 
     display_reject_reason?: any;
     /**
-     * @description
-     * 거부 사유
-     *
-     * 고객에게 노출되는 접수 거부 사유
-     *
-     * 최대글자수 : [2000자]
-     */
+      * @description
+      * 거부 사유
+      * 
+      * 고객에게 노출되는 접수 거부 사유
+      * 
+      * 최대글자수 : [2000자]
+      */ 
     reject_reason?: any;
   }
 
   export interface RejectAnExchangeRequestOutput {
-    exchangerequests: {
-      shop_no: number;
-      order_id: string;
-      order_item_code: string[];
-      undone: Cafe24Enum;
-      additional_payment_gateway_cancel: {
-        success: string[];
-        fail: any;
-      };
+    exchangerequests: { 
+    shop_no: number;
+    order_id: string;
+    order_item_code: string[];
+    undone: Cafe24Enum;
+    additional_payment_gateway_cancel: { 
+    success: string[];
+    fail: any;
+    };
     };
   }
 
@@ -177,9 +186,7 @@ declare module 'cafe24api-client' {
      */
     rejectAnExchangeRequest(
       input: RejectAnExchangeRequestInput,
-      options?: RequestOptions<
-        RejectAnExchangeRequestOutput['exchangerequests']
-      >,
+      options?: AdminRequestOptions<RejectAnExchangeRequestOutput['exchangerequests']>,
     ): Promise<AxiosResponse<RejectAnExchangeRequestOutput>>;
   }
 }

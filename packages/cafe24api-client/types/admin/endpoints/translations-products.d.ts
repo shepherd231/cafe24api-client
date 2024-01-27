@@ -1,290 +1,299 @@
 import { AxiosResponse } from 'axios';
-import { Endpoint, RequestOptions, Cafe24Datetime } from 'cafe24api-client';
+import { 
+  Endpoint, 
+  AdminRequestOptions, 
+  Cafe24Datetime,
+  Cafe24Boolean,
+  Cafe24Date,
+  Cafe24Datetime,
+  Cafe24Enum,
+} from 'cafe24api-client';
 
 declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   /**
    * @description
    * 상품 번역 정보(Translations products)는, 상품의 번역 정보를 조회하거나 수정할 수 있는 기능입니다.
    */
   export interface TranslationsProducts {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 
+      */ 
     shop_no: any;
     /**
-     * @description
-     * 상품번호
-     *
-     *
-     */
+      * @description
+      * 상품번호
+      * 
+      * 
+      */ 
     product_no: any;
     /**
-     * @description
-     * 상품명
-     *
-     * 최대글자수 : [250자]
-     */
+      * @description
+      * 상품명
+      * 
+      * 최대글자수 : [250자]
+      */ 
     product_name: any;
     /**
-     * @description
-     * 번역 정보
-     *
-     *
-     */
+      * @description
+      * 번역 정보
+      * 
+      * 
+      */ 
     translations: any;
   }
 
   export interface RetrieveAListOfProductTranslationsInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     * 최소값: [1]
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 최소값: [1]
+      */ 
     shop_no?: any;
     /**
-     * @description
-     * 상품번호
-     *
-     * ,(콤마)로 여러 건을 검색할 수 있다.
-     *
-     *
-     */
+      * @description
+      * 상품번호
+      * 
+      * ,(콤마)로 여러 건을 검색할 수 있다.
+      * 
+      * 
+      */ 
     product_no?: any;
     /**
-     * @description
-     * 상품명
-     *
-     * 상품의 상품명에 해당되는 번역 정보를 검색
-     *
-     * ,(콤마)로 여러 건을 검색할 수 있다.
-     *
-     *
-     */
+      * @description
+      * 상품명
+      * 
+      * 상품의 상품명에 해당되는 번역 정보를 검색
+      * 
+      * ,(콤마)로 여러 건을 검색할 수 있다.
+      * 
+      * 
+      */ 
     product_name?: any;
     /**
-     * @description
-     * 언어 코드
-     *
-     * 번역 정보의 언어 코드에 해당되는 번역 정보를 검색
-     * 언어별로 번역된 정보에서 검색하고자 하는 언어를 선택하면, 해당 언어에 대한 번역 내용을 확인할 수 있습니다.
-     *
-     * ,(콤마)로 여러 건을 검색할 수 있다.
-     *
-     *
-     */
+      * @description
+      * 언어 코드
+      * 
+      * 번역 정보의 언어 코드에 해당되는 번역 정보를 검색
+      * 언어별로 번역된 정보에서 검색하고자 하는 언어를 선택하면, 해당 언어에 대한 번역 내용을 확인할 수 있습니다.
+      * 
+      * ,(콤마)로 여러 건을 검색할 수 있다.
+      * 
+      * 
+      */ 
     language_code?: any;
     /**
-     * @description
-     * 조회결과 시작위치
-     *
-     * @default 0
-     *
-     * 최대값: [8000]
-     */
+      * @description
+      * 조회결과 시작위치
+      * 
+      * @default 0
+      * 
+      * 최대값: [8000]
+      */ 
     offset?: any;
     /**
-     * @description
-     * 조회결과 최대건수
-     *
-     * @default 10
-     *
-     * 최소: [1]~최대: [100]
-     */
+      * @description
+      * 조회결과 최대건수
+      * 
+      * @default 10
+      * 
+      * 최소: [1]~최대: [100]
+      */ 
     limit?: any;
   }
 
   export interface RetrieveAListOfProductTranslationsOutput {
-    products: {
-      shop_no: number;
-      product_no: number;
-      product_name: string;
-      translations: {
-        translated: Cafe24Enum;
-        language_code: string;
-        product_name: string;
-        product_tag: string;
-        description: string;
-        mobile_description: string;
-        simple_description: string;
-        summary_description: string;
-        payment_info: string;
-        shipping_info: string;
-        exchange_info: string;
-        service_info: string;
-        product_material: string;
-        seo: {
-          meta_title: string;
-          meta_author: string;
-          meta_description: string;
-          meta_keywords: string;
-          meta_alt: string;
-        };
-        options: {
-          name: string;
-          value: string[];
-        }[];
-        updated_date: Cafe24Datetime;
-      }[];
+    products: { 
+    shop_no: number;
+    product_no: number;
+    product_name: string;
+    translations: { 
+    translated: Cafe24Enum;
+    language_code: string;
+    product_name: string;
+    product_tag: string;
+    description: string;
+    mobile_description: string;
+    simple_description: string;
+    summary_description: string;
+    payment_info: string;
+    shipping_info: string;
+    exchange_info: string;
+    service_info: string;
+    product_material: string;
+    seo: { 
+    meta_title: string;
+    meta_author: string;
+    meta_description: string;
+    meta_keywords: string;
+    meta_alt: string;
+    };
+    options: { 
+    name: string;
+    value: string[];
     }[];
-    links: {
-      rel: string;
-      href: string;
+    updated_date: Cafe24Datetime;
+    }[];
+    }[];
+    links: { 
+    rel: string;
+    href: string;
     }[];
   }
   export interface UpdateProductTranslationInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     * 최소값: [1]
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 최소값: [1]
+      */ 
     shop_no?: any;
     /**
-     * @description
-     * 상품번호
-     *
-     * @required
-     */
+      * @description
+      * 상품번호
+      * 
+      * @required
+      */ 
     product_no: any;
     /**
-     * @description
-     * 번역 정보
-     *
-     *
-     */
-    translations?: {
-      /**
-       * @description
-       * 언어 코드
-       *
-       *
-       */
-      language_code: any;
-      /**
-       * @description
-       * 상품명
-       *
-       *
-       */
-      product_name?: any;
-      /**
-       * @description
-       * 상품 검색어
-       *
-       *
-       */
-      product_tag?: any;
-      /**
-       * @description
-       * 상품결제안내
-       *
-       *
-       */
-      payment_info?: any;
-      /**
-       * @description
-       * 상품배송안내
-       *
-       *
-       */
-      shipping_info?: any;
-      /**
-       * @description
-       * 교환/반품안내
-       *
-       *
-       */
-      exchange_info?: any;
-      /**
-       * @description
-       * 서비스문의/안내
-       *
-       *
-       */
-      service_info?: any;
-      /**
-       * @description
-       * 상품요약설명
-       *
-       *
-       */
-      summary_description?: any;
-      /**
-       * @description
-       * 상품 간략 설명
-       *
-       *
-       */
-      simple_description?: any;
-      /**
-       * @description
-       * 상품상세설명
-       *
-       *
-       */
-      description?: any;
-      /**
-       * @description
-       * 모바일 상품 상세설명
-       *
-       *
-       */
-      mobile_description?: any;
-      /**
-       * @description
-       * 상품소재
-       *
-       *
-       */
-      product_material?: any;
-      seo?: any[];
-      options?: any[];
+      * @description
+      * 번역 정보
+      * 
+      * 
+      */ 
+    translations?: { 
+    /**
+      * @description
+      * 언어 코드
+      * 
+      * 
+      */ 
+    language_code: any;
+    /**
+      * @description
+      * 상품명
+      * 
+      * 
+      */ 
+    product_name?: any;
+    /**
+      * @description
+      * 상품 검색어
+      * 
+      * 
+      */ 
+    product_tag?: any;
+    /**
+      * @description
+      * 상품결제안내
+      * 
+      * 
+      */ 
+    payment_info?: any;
+    /**
+      * @description
+      * 상품배송안내
+      * 
+      * 
+      */ 
+    shipping_info?: any;
+    /**
+      * @description
+      * 교환/반품안내
+      * 
+      * 
+      */ 
+    exchange_info?: any;
+    /**
+      * @description
+      * 서비스문의/안내
+      * 
+      * 
+      */ 
+    service_info?: any;
+    /**
+      * @description
+      * 상품요약설명
+      * 
+      * 
+      */ 
+    summary_description?: any;
+    /**
+      * @description
+      * 상품 간략 설명
+      * 
+      * 
+      */ 
+    simple_description?: any;
+    /**
+      * @description
+      * 상품상세설명
+      * 
+      * 
+      */ 
+    description?: any;
+    /**
+      * @description
+      * 모바일 상품 상세설명
+      * 
+      * 
+      */ 
+    mobile_description?: any;
+    /**
+      * @description
+      * 상품소재
+      * 
+      * 
+      */ 
+    product_material?: any;
+    seo?: any[];
+    options?: any[];
     };
   }
 
   export interface UpdateProductTranslationOutput {
-    product: {
-      shop_no: number;
-      product_no: number;
-      product_name: string;
-      translations: {
-        translated: Cafe24Enum;
-        language_code: string;
-        product_name: string;
-        product_tag: string;
-        description: string;
-        mobile_description: string;
-        simple_description: string;
-        summary_description: string;
-        payment_info: string;
-        shipping_info: string;
-        exchange_info: string;
-        service_info: string;
-        product_material: string;
-        seo: {
-          meta_title: string;
-          meta_author: string;
-          meta_description: string;
-          meta_keywords: string;
-          meta_alt: string;
-        };
-        options: {
-          name: string;
-          value: string[];
-        }[];
-        updated_date: Cafe24Datetime;
-      }[];
+    product: { 
+    shop_no: number;
+    product_no: number;
+    product_name: string;
+    translations: { 
+    translated: Cafe24Enum;
+    language_code: string;
+    product_name: string;
+    product_tag: string;
+    description: string;
+    mobile_description: string;
+    simple_description: string;
+    summary_description: string;
+    payment_info: string;
+    shipping_info: string;
+    exchange_info: string;
+    service_info: string;
+    product_material: string;
+    seo: { 
+    meta_title: string;
+    meta_author: string;
+    meta_description: string;
+    meta_keywords: string;
+    meta_alt: string;
+    };
+    options: { 
+    name: string;
+    value: string[];
+    }[];
+    updated_date: Cafe24Datetime;
+    }[];
     };
   }
 
@@ -485,9 +494,7 @@ declare module 'cafe24api-client' {
      */
     retrieveAListOfProductTranslations(
       input: RetrieveAListOfProductTranslationsInput,
-      options?: RequestOptions<
-        RetrieveAListOfProductTranslationsOutput['products'][number]
-      >,
+      options?: AdminRequestOptions<RetrieveAListOfProductTranslationsOutput['products'][number]>,
     ): Promise<AxiosResponse<RetrieveAListOfProductTranslationsOutput>>;
     /**
      * @description
@@ -591,7 +598,7 @@ declare module 'cafe24api-client' {
      */
     updateProductTranslation(
       input: UpdateProductTranslationInput,
-      options?: RequestOptions<UpdateProductTranslationOutput['product']>,
+      options?: AdminRequestOptions<UpdateProductTranslationOutput['product']>,
     ): Promise<AxiosResponse<UpdateProductTranslationOutput>>;
   }
 }

@@ -1,3 +1,4 @@
+
 export default (cls) => {
   cls.prototype.retrieveAReturn = async function (input, options) {
     return this.createRequest(
@@ -78,4 +79,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

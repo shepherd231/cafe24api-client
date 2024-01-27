@@ -1,3 +1,4 @@
+
 export default (cls) => {
   cls.prototype.retrieveAnUrgentInquiryPost = async function (input, options) {
     return this.createRequest(
@@ -13,4 +14,5 @@ export default (cls) => {
       options,
     );
   };
+
 };

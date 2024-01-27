@@ -1,294 +1,303 @@
 import { AxiosResponse } from 'axios';
-import { Endpoint, RequestOptions, Cafe24Datetime } from 'cafe24api-client';
+import { 
+  Endpoint, 
+  AdminRequestOptions, 
+  Cafe24Datetime,
+  Cafe24Boolean,
+  Cafe24Date,
+  Cafe24Datetime,
+  Cafe24Enum,
+} from 'cafe24api-client';
 
 declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   /**
    * @description
-   *
-   *
+   * 
+   * 
    * 긴급문의 게시물의 답변글을 조회, 등록, 수정할 수 있습니다.
    */
   export interface UrgentinquiryReply {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 
+      */ 
     shopNo: any;
     /**
-     * @description
-     * 게시물 번호
-     *
-     *
-     */
+      * @description
+      * 게시물 번호
+      * 
+      * 
+      */ 
     articleNo: any;
     /**
-     * @description
-     * 답변 등록일
-     *
-     * 날짜
-     */
+      * @description
+      * 답변 등록일
+      * 
+      * 날짜
+      */ 
     createdDate: any;
     /**
-     * @description
-     * 답변 처리 상태
-     *
-     * F: 미처리
-     * I: 처리중
-     * T: 처리완료
-     *
-     *
-     */
+      * @description
+      * 답변 처리 상태
+      * 
+      * F: 미처리
+      * I: 처리중
+      * T: 처리완료
+      * 
+      * 
+      */ 
     status: any;
     /**
-     * @description
-     * 답변 내용
-     *
-     *
-     */
+      * @description
+      * 답변 내용
+      * 
+      * 
+      */ 
     content: any;
     /**
-     * @description
-     * 답변 방법
-     *
-     * E:이메일
-     * S:SMS
-     * A:전부
-     *
-     *
-     */
+      * @description
+      * 답변 방법
+      * 
+      * E:이메일
+      * S:SMS
+      * A:전부
+      * 
+      * 
+      */ 
     method: any;
     /**
-     * @description
-     * 답변 처리 횟수
-     *
-     *
-     */
+      * @description
+      * 답변 처리 횟수
+      * 
+      * 
+      */ 
     count: any;
     /**
-     * @description
-     * 처리중 또는 답변완료 한 운영자 아이디
-     *
-     *
-     */
+      * @description
+      * 처리중 또는 답변완료 한 운영자 아이디
+      * 
+      * 
+      */ 
     userId: any;
     /**
-     * @description
-     * 첨부 파일 상세
-     *
-     *
-     */
+      * @description
+      * 첨부 파일 상세
+      * 
+      * 
+      */ 
     attachedFileDetail: any;
   }
 
   export interface RetrieveAReplyForUrgentInquiryPostInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     * 최소값: [1]
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 최소값: [1]
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 게시물 번호
-     *
-     * @required
-     */
+      * @description
+      * 게시물 번호
+      * 
+      * @required
+      */ 
     articleNo: any;
   }
 
   export interface RetrieveAReplyForUrgentInquiryPostOutput {
-    reply: {
-      shopNo: number;
-      articleNo: number;
-      createdDate: Cafe24Datetime;
-      status: Cafe24Enum;
-      content: string;
-      method: Cafe24Enum;
-      count: number;
-      userId: string;
-      attachedFileDetail: {
-        no: number;
-        source: string;
-        name: string;
-      }[];
+    reply: { 
+    shopNo: number;
+    articleNo: number;
+    createdDate: Cafe24Datetime;
+    status: Cafe24Enum;
+    content: string;
+    method: Cafe24Enum;
+    count: number;
+    userId: string;
+    attachedFileDetail: { 
+    no: number;
+    source: string;
+    name: string;
+    }[];
     };
   }
   export interface CreateAReplyForUrgentInquiryPostInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     * 최소값: [1]
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 최소값: [1]
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 게시물 번호
-     *
-     * @required
-     */
+      * @description
+      * 게시물 번호
+      * 
+      * @required
+      */ 
     articleNo: any;
     /**
-     * @description
-     * 답변 내용
-     *
-     * @required
-     */
+      * @description
+      * 답변 내용
+      * 
+      * @required
+      */ 
     content: any;
     /**
-     * @description
-     * 답변 처리 상태
-     *
-     * F: 미처리
-     * I: 처리중
-     * T: 처리완료
-     *
-     * @default F
-     *
-     *
-     */
+      * @description
+      * 답변 처리 상태
+      * 
+      * F: 미처리
+      * I: 처리중
+      * T: 처리완료
+      * 
+      * @default F
+      * 
+      * 
+      */ 
     status?: any;
     /**
-     * @description
-     * 처리중 또는 답변완료 한 운영자 아이디
-     *
-     * @required
-     *
-     * 최대글자수 : [20자]
-     */
+      * @description
+      * 처리중 또는 답변완료 한 운영자 아이디
+      * 
+      * @required
+      * 
+      * 최대글자수 : [20자]
+      */ 
     userId: any;
     /**
-     * @description
-     * 첨부 파일 상세
-     *
-     *
-     */
-    attachFileUrls?: {
-      /**
-       * @description
-       * 파일명
-       *
-       *
-       */
-      name: any;
-      /**
-       * @description
-       * 파일 URL
-       *
-       *
-       */
-      url: any;
+      * @description
+      * 첨부 파일 상세
+      * 
+      * 
+      */ 
+    attachFileUrls?: { 
+    /**
+      * @description
+      * 파일명
+      * 
+      * 
+      */ 
+    name: any;
+    /**
+      * @description
+      * 파일 URL
+      * 
+      * 
+      */ 
+    url: any;
     };
   }
 
   export interface CreateAReplyForUrgentInquiryPostOutput {
-    reply: {
-      shopNo: number;
-      articleNo: number;
-      createdDate: Cafe24Datetime;
-      status: Cafe24Enum;
-      content: string;
-      method: Cafe24Enum;
-      count: number;
-      userId: string;
-      attachedFileDetail: {
-        no: number;
-        source: string;
-        name: string;
-      }[];
+    reply: { 
+    shopNo: number;
+    articleNo: number;
+    createdDate: Cafe24Datetime;
+    status: Cafe24Enum;
+    content: string;
+    method: Cafe24Enum;
+    count: number;
+    userId: string;
+    attachedFileDetail: { 
+    no: number;
+    source: string;
+    name: string;
+    }[];
     };
   }
   export interface UpdateAReplyForUrgentInquiryPostInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     * 최소값: [1]
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 최소값: [1]
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 게시물 번호
-     *
-     * @required
-     */
+      * @description
+      * 게시물 번호
+      * 
+      * @required
+      */ 
     articleNo: any;
     /**
-     * @description
-     * 답변 내용
-     *
-     * @required
-     */
+      * @description
+      * 답변 내용
+      * 
+      * @required
+      */ 
     content: any;
     /**
-     * @description
-     * 답변 처리 상태
-     *
-     * F: 미처리
-     * I: 처리중
-     * T: 처리완료
-     *
-     *
-     */
+      * @description
+      * 답변 처리 상태
+      * 
+      * F: 미처리
+      * I: 처리중
+      * T: 처리완료
+      * 
+      * 
+      */ 
     status?: any;
     /**
-     * @description
-     * 처리중 또는 답변완료 한 운영자 아이디
-     *
-     * 최대글자수 : [20자]
-     */
+      * @description
+      * 처리중 또는 답변완료 한 운영자 아이디
+      * 
+      * 최대글자수 : [20자]
+      */ 
     userId?: any;
     /**
-     * @description
-     * 첨부 파일 상세
-     *
-     *
-     */
-    attachFileUrls?: {
-      /**
-       * @description
-       * 파일명
-       *
-       *
-       */
-      name: any;
-      /**
-       * @description
-       * 파일 URL
-       *
-       *
-       */
-      url: any;
+      * @description
+      * 첨부 파일 상세
+      * 
+      * 
+      */ 
+    attachFileUrls?: { 
+    /**
+      * @description
+      * 파일명
+      * 
+      * 
+      */ 
+    name: any;
+    /**
+      * @description
+      * 파일 URL
+      * 
+      * 
+      */ 
+    url: any;
     };
   }
 
   export interface UpdateAReplyForUrgentInquiryPostOutput {
-    reply: {
-      shopNo: number;
-      articleNo: number;
-      createdDate: Cafe24Datetime;
-      status: Cafe24Enum;
-      content: string;
-      method: Cafe24Enum;
-      count: number;
-      userId: string;
-      attachedFileDetail: {
-        no: number;
-        source: string;
-        name: string;
-      }[];
+    reply: { 
+    shopNo: number;
+    articleNo: number;
+    createdDate: Cafe24Datetime;
+    status: Cafe24Enum;
+    content: string;
+    method: Cafe24Enum;
+    count: number;
+    userId: string;
+    attachedFileDetail: { 
+    no: number;
+    source: string;
+    name: string;
+    }[];
     };
   }
 
@@ -330,9 +339,7 @@ declare module 'cafe24api-client' {
      */
     retrieveAReplyForUrgentInquiryPost(
       input: RetrieveAReplyForUrgentInquiryPostInput,
-      options?: RequestOptions<
-        RetrieveAReplyForUrgentInquiryPostOutput['reply']
-      >,
+      options?: AdminRequestOptions<RetrieveAReplyForUrgentInquiryPostOutput['reply']>,
     ): Promise<AxiosResponse<RetrieveAReplyForUrgentInquiryPostOutput>>;
     /**
      * @description
@@ -370,7 +377,7 @@ declare module 'cafe24api-client' {
      */
     createAReplyForUrgentInquiryPost(
       input: CreateAReplyForUrgentInquiryPostInput,
-      options?: RequestOptions<CreateAReplyForUrgentInquiryPostOutput['reply']>,
+      options?: AdminRequestOptions<CreateAReplyForUrgentInquiryPostOutput['reply']>,
     ): Promise<AxiosResponse<CreateAReplyForUrgentInquiryPostOutput>>;
     /**
      * @description
@@ -408,7 +415,7 @@ declare module 'cafe24api-client' {
      */
     updateAReplyForUrgentInquiryPost(
       input: UpdateAReplyForUrgentInquiryPostInput,
-      options?: RequestOptions<UpdateAReplyForUrgentInquiryPostOutput['reply']>,
+      options?: AdminRequestOptions<UpdateAReplyForUrgentInquiryPostOutput['reply']>,
     ): Promise<AxiosResponse<UpdateAReplyForUrgentInquiryPostOutput>>;
   }
 }

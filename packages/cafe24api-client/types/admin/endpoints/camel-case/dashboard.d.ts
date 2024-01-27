@@ -1,153 +1,162 @@
 import { AxiosResponse } from 'axios';
-import { Endpoint, RequestOptions, Cafe24Datetime } from 'cafe24api-client';
+import { 
+  Endpoint, 
+  AdminRequestOptions, 
+  Cafe24Datetime,
+  Cafe24Boolean,
+  Cafe24Date,
+  Cafe24Datetime,
+  Cafe24Enum,
+} from 'cafe24api-client';
 
 declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   /**
    * @description
    * 대시보드(Dashboard)는 쇼핑몰의 주문 현황과 매출 현황 등 쇼핑몰 운영에 필요한 정보를 간략하게 요약해놓은 정보입니다.
    */
   export interface Dashboard {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
+      * 
+      * 
+      */ 
     shopNo: any;
     /**
-     * @description
-     * 일일 현황 정보
-     *
-     * 일 단위의 매출 현황 정보
-     *
-     *
-     */
+      * @description
+      * 일일 현황 정보
+      * 
+      * 일 단위의 매출 현황 정보
+      * 
+      * 
+      */ 
     dailySalesStats: any;
     /**
-     * @description
-     * 주간 매출 현황
-     *
-     * 주간 단위의 매출 현황 정보
-     *
-     *
-     */
+      * @description
+      * 주간 매출 현황
+      * 
+      * 주간 단위의 매출 현황 정보
+      * 
+      * 
+      */ 
     weeklySalesStats: any;
     /**
-     * @description
-     * 월간 매출 현황
-     *
-     * 월간 단위의 매출 현황 정보
-     *
-     *
-     */
+      * @description
+      * 월간 매출 현황
+      * 
+      * 월간 단위의 매출 현황 정보
+      * 
+      * 
+      */ 
     monthlySalesStats: any;
     /**
-     * @description
-     * 품절된 상품 수
-     *
-     * 품절된 상품의 수. 재고관리기능과 품절기능이 활성화 되어있을 경우 집계에 포함됨.
-     *
-     *
-     */
+      * @description
+      * 품절된 상품 수
+      * 
+      * 품절된 상품의 수. 재고관리기능과 품절기능이 활성화 되어있을 경우 집계에 포함됨.
+      * 
+      * 
+      */ 
     soldOutProductsCount: any;
     /**
-     * @description
-     * 신규회원 수
-     *
-     * 신규가입한 회원의 숫자
-     *
-     *
-     */
+      * @description
+      * 신규회원 수
+      * 
+      * 신규가입한 회원의 숫자
+      * 
+      * 
+      */ 
     newMembersCount: any;
     /**
-     * @description
-     * 게시판 목록
-     *
-     * 해당 몰의 게시판의 리스트
-     *
-     *
-     */
+      * @description
+      * 게시판 목록
+      * 
+      * 해당 몰의 게시판의 리스트
+      * 
+      * 
+      */ 
     boardList: any;
   }
 
   export interface RetrieveADashboardInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shopNo?: any;
   }
 
   export interface RetrieveADashboardOutput {
-    dashboard: {
-      shopNo: number;
-      dailySalesStats: {
-        title: Cafe24Datetime;
-        date: Cafe24Date;
-        orderPrice: string;
-        paidPrice: string;
-        refundPrice: string;
-        orderCount: number;
-        payedCount: number;
-        refundCount: number;
-        prepareproductCount: number;
-        prepareCount: number;
-        standbyCount: number;
-        shippingCount: number;
-        shippedCount: number;
-        canceledCount: number;
-        returnedCount: number;
-        exchangedCount: number;
-        orderedTotalCount: number;
-      }[];
-      weeklySalesStats: {
-        orderedTotalPrice: string;
-        payedTotalPrice: string;
-        refundedTotalPrice: string;
-        orderedCount: number;
-        payedCount: number;
-        refundedCount: number;
-        orderedAverageTotalPrice: string;
-        payedAverageTotalPrice: string;
-        refundedAverageTotalPrice: string;
-        orderedAverageCount: number;
-        payedAverageCount: number;
-        refundedAverageCount: number;
-      };
-      monthlySalesStats: {
-        orderedTotalPrice: string;
-        payedTotalPrice: string;
-        refundedTotalPrice: string;
-        orderedCount: number;
-        payedCount: number;
-        refundedCount: number;
-        orderedAverageTotalPrice: string;
-        payedAverageTotalPrice: string;
-        refundedAverageTotalPrice: string;
-        orderedAverageCount: number;
-        payedAverageCount: number;
-        refundedAverageCount: number;
-      };
-      soldOutProductsCount: number;
-      newMembersCount: number;
-      boardList: {
-        type: Cafe24Enum;
-        boardNo: number;
-        boardName: string;
-        newRegisteredCount: number;
-        pageUrl: Cafe24Datetime;
-      }[];
+    dashboard: { 
+    shopNo: number;
+    dailySalesStats: { 
+    title: Cafe24Datetime;
+    date: Cafe24Date;
+    orderPrice: string;
+    paidPrice: string;
+    refundPrice: string;
+    orderCount: number;
+    payedCount: number;
+    refundCount: number;
+    prepareproductCount: number;
+    prepareCount: number;
+    standbyCount: number;
+    shippingCount: number;
+    shippedCount: number;
+    canceledCount: number;
+    returnedCount: number;
+    exchangedCount: number;
+    orderedTotalCount: number;
+    }[];
+    weeklySalesStats: { 
+    orderedTotalPrice: string;
+    payedTotalPrice: string;
+    refundedTotalPrice: string;
+    orderedCount: number;
+    payedCount: number;
+    refundedCount: number;
+    orderedAverageTotalPrice: string;
+    payedAverageTotalPrice: string;
+    refundedAverageTotalPrice: string;
+    orderedAverageCount: number;
+    payedAverageCount: number;
+    refundedAverageCount: number;
+    };
+    monthlySalesStats: { 
+    orderedTotalPrice: string;
+    payedTotalPrice: string;
+    refundedTotalPrice: string;
+    orderedCount: number;
+    payedCount: number;
+    refundedCount: number;
+    orderedAverageTotalPrice: string;
+    payedAverageTotalPrice: string;
+    refundedAverageTotalPrice: string;
+    orderedAverageCount: number;
+    payedAverageCount: number;
+    refundedAverageCount: number;
+    };
+    soldOutProductsCount: number;
+    newMembersCount: number;
+    boardList: { 
+    type: Cafe24Enum;
+    boardNo: number;
+    boardName: string;
+    newRegisteredCount: number;
+    pageUrl: Cafe24Datetime;
+    }[];
     }[];
   }
 
@@ -258,7 +267,7 @@ declare module 'cafe24api-client' {
      */
     retrieveADashboard(
       input: RetrieveADashboardInput,
-      options?: RequestOptions<RetrieveADashboardOutput['dashboard'][number]>,
+      options?: AdminRequestOptions<RetrieveADashboardOutput['dashboard'][number]>,
     ): Promise<AxiosResponse<RetrieveADashboardOutput>>;
   }
 }

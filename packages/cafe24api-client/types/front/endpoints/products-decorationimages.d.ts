@@ -1,100 +1,109 @@
 import { AxiosResponse } from 'axios';
-import { Endpoint, RequestOptions, Cafe24Datetime } from 'cafe24api-client';
+import { 
+  Endpoint, 
+  RequestOptions, 
+  Cafe24Datetime,
+  Cafe24Boolean,
+  Cafe24Date,
+  Cafe24Datetime,
+  Cafe24Enum,
+} from 'cafe24api-client';
 
 declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   /**
    * @description
-   *
-   *
+   * 
+   * 
    * 꾸미기 이미지(Decorationimages)는 쇼핑몰에 진열된 상품에 등록되어있는 꾸미기 이미지를 조회할 수 있습니다.
    * 꾸미기 이미지는 하위 리소스로서 상품(Products) 하위에서만 사용할 수 있습니다.
    */
   export interface ProductsDecorationimages {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 
+      */ 
     shop_no: any;
     /**
-     * @description
-     * 표시기간 사용 여부
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 표시기간 사용 여부
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     use_show_date: any;
     /**
-     * @description
-     * 표시기간 시작 일자
-     *
-     *
-     */
+      * @description
+      * 표시기간 시작 일자
+      * 
+      * 
+      */ 
     show_start_date: any;
     /**
-     * @description
-     * 표시기간 종료 일자
-     *
-     *
-     */
+      * @description
+      * 표시기간 종료 일자
+      * 
+      * 
+      */ 
     show_end_date: any;
     /**
-     * @description
-     * 꾸미기 이미지 리스트
-     *
-     * 수평위치(image_horizontal_position)
-     * L : 왼쪽
-     * C : 가운데
-     * R : 오른쪽
-     *
-     * 수직위치(image_vertical_position)
-     * T : 상단
-     * C : 중단
-     * B : 하단
-     *
-     *
-     */
+      * @description
+      * 꾸미기 이미지 리스트
+      * 
+      * 수평위치(image_horizontal_position)
+      * L : 왼쪽
+      * C : 가운데
+      * R : 오른쪽
+      * 
+      * 수직위치(image_vertical_position)
+      * T : 상단
+      * C : 중단
+      * B : 하단
+      * 
+      * 
+      */ 
     image_list: any;
   }
 
   export interface RetrieveAListOfProductDecorationImagesInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shop_no?: any;
     /**
-     * @description
-     * 상품번호
-     *
-     * 상품의 고유한 일련 번호. 해당 쇼핑몰 내에서 상품 번호는 중복되지 않음.
-     *
-     * @required
-     */
+      * @description
+      * 상품번호
+      * 
+      * 상품의 고유한 일련 번호. 해당 쇼핑몰 내에서 상품 번호는 중복되지 않음.
+      * 
+      * @required
+      */ 
     product_no: any;
   }
 
   export interface RetrieveAListOfProductDecorationImagesOutput {
-    decorationimage: {
-      use_show_date: Cafe24Enum;
-      show_start_date: Cafe24Datetime;
-      show_end_date: Cafe24Datetime;
-      image_list: {
-        code: string;
-        path: string;
-        image_vertical_position: Cafe24Enum;
-        image_horizontal_position: Cafe24Enum;
-      }[];
+    decorationimage: { 
+    use_show_date: Cafe24Enum;
+    show_start_date: Cafe24Datetime;
+    show_end_date: Cafe24Datetime;
+    image_list: { 
+    code: string;
+    path: string;
+    image_vertical_position: Cafe24Enum;
+    image_horizontal_position: Cafe24Enum;
+    }[];
     };
   }
 
@@ -132,9 +141,7 @@ declare module 'cafe24api-client' {
      */
     retrieveAListOfProductDecorationImages(
       input: RetrieveAListOfProductDecorationImagesInput,
-      options?: RequestOptions<
-        RetrieveAListOfProductDecorationImagesOutput['decorationimage']
-      >,
+      options?: RequestOptions<RetrieveAListOfProductDecorationImagesOutput['decorationimage']>,
     ): Promise<AxiosResponse<RetrieveAListOfProductDecorationImagesOutput>>;
   }
 }

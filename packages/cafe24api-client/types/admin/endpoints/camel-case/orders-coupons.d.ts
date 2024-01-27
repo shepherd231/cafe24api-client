@@ -1,127 +1,136 @@
 import { AxiosResponse } from 'axios';
-import { Endpoint, RequestOptions, Cafe24Datetime } from 'cafe24api-client';
+import { 
+  Endpoint, 
+  AdminRequestOptions, 
+  Cafe24Datetime,
+  Cafe24Boolean,
+  Cafe24Date,
+  Cafe24Datetime,
+  Cafe24Enum,
+} from 'cafe24api-client';
 
 declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   /**
    * @description
-   *
-   *
+   * 
+   * 
    * 주문 쿠폰(Orders coupons)은 주문에 적용된 쿠폰에 관한 기능입니다.
    * 특정 주문에 대해 적용된 쿠폰의 정보를 조회할 수 있습니다.
    */
   export interface OrdersCoupons {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 
+      */ 
     shopNo: any;
     /**
-     * @description
-     * 주문번호
-     *
-     *
-     */
+      * @description
+      * 주문번호
+      * 
+      * 
+      */ 
     orderId: any;
     /**
-     * @description
-     * 품주코드
-     *
-     *
-     */
+      * @description
+      * 품주코드
+      * 
+      * 
+      */ 
     orderItemCode: any;
     /**
-     * @description
-     * 쿠폰명
-     *
-     *
-     */
+      * @description
+      * 쿠폰명
+      * 
+      * 
+      */ 
     couponName: any;
     /**
-     * @description
-     * 쿠폰번호
-     *
-     *
-     */
+      * @description
+      * 쿠폰번호
+      * 
+      * 
+      */ 
     couponCode: any;
     /**
-     * @description
-     * 쿠폰 비율
-     *
-     *
-     */
+      * @description
+      * 쿠폰 비율
+      * 
+      * 
+      */ 
     couponPercent: any;
     /**
-     * @description
-     * 쿠폰 금액
-     *
-     *
-     */
+      * @description
+      * 쿠폰 금액
+      * 
+      * 
+      */ 
     couponValue: any;
     /**
-     * @description
-     * 최종 쿠폰 금액
-     *
-     *
-     */
+      * @description
+      * 최종 쿠폰 금액
+      * 
+      * 
+      */ 
     couponValueFinal: any;
   }
 
   export interface RetrieveAListOfCouponsAppliedToAnOrderInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     * 최소값: [1]
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 최소값: [1]
+      */ 
     shopNo?: any;
     /**
-     * @description
-     * 주문번호
-     *
-     * ,(콤마)로 여러 건을 검색할 수 있다.
-     *
-     * @required
-     *
-     * 주문번호
-     */
+      * @description
+      * 주문번호
+      * 
+      * ,(콤마)로 여러 건을 검색할 수 있다.
+      * 
+      * @required
+      * 
+      * 주문번호
+      */ 
     orderId: any;
     /**
-     * @description
-     * 조회결과 최대건수
-     *
-     * @default 10
-     *
-     * 최소: [1]~최대: [500]
-     */
+      * @description
+      * 조회결과 최대건수
+      * 
+      * @default 10
+      * 
+      * 최소: [1]~최대: [500]
+      */ 
     limit?: any;
     /**
-     * @description
-     * 조회결과 시작위치
-     *
-     * @default 0
-     *
-     * 최대값: [8000]
-     */
+      * @description
+      * 조회결과 시작위치
+      * 
+      * @default 0
+      * 
+      * 최대값: [8000]
+      */ 
     offset?: any;
   }
 
   export interface RetrieveAListOfCouponsAppliedToAnOrderOutput {
-    coupons: {
-      shopNo: number;
-      orderId: string;
-      orderItemCode: string;
-      couponName: string;
-      couponCode: number;
-      couponPercent: Cafe24Datetime;
-      couponValue: string;
-      couponValueFinal: string;
+    coupons: { 
+    shopNo: number;
+    orderId: string;
+    orderItemCode: string;
+    couponName: string;
+    couponCode: number;
+    couponPercent: Cafe24Datetime;
+    couponValue: string;
+    couponValueFinal: string;
     }[];
   }
 
@@ -163,9 +172,7 @@ declare module 'cafe24api-client' {
      */
     retrieveAListOfCouponsAppliedToAnOrder(
       input: RetrieveAListOfCouponsAppliedToAnOrderInput,
-      options?: RequestOptions<
-        RetrieveAListOfCouponsAppliedToAnOrderOutput['coupons'][number]
-      >,
+      options?: AdminRequestOptions<RetrieveAListOfCouponsAppliedToAnOrderOutput['coupons'][number]>,
     ): Promise<AxiosResponse<RetrieveAListOfCouponsAppliedToAnOrderOutput>>;
   }
 }

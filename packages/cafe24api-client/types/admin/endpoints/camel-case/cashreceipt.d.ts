@@ -1,10 +1,19 @@
 import { AxiosResponse } from 'axios';
-import { Endpoint, RequestOptions, Cafe24Datetime } from 'cafe24api-client';
+import { 
+  Endpoint, 
+  AdminRequestOptions, 
+  Cafe24Datetime,
+  Cafe24Boolean,
+  Cafe24Date,
+  Cafe24Datetime,
+  Cafe24Enum,
+} from 'cafe24api-client';
 
 declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   /**
    * @description
    * 현금영수증(Cashreceipts)은 현금으로 구매 후 구매자가 발급 받을 수 있는 결제 증빙입니다.
@@ -13,376 +22,376 @@ declare module 'cafe24api-client' {
    */
   export interface Cashreceipt {
     /**
-     * @description
-     * 현금영수증 번호
-     *
-     *
-     */
+      * @description
+      * 현금영수증 번호
+      * 
+      * 
+      */ 
     cashreceiptNo: any;
     /**
-     * @description
-     * 승인번호
-     *
-     *
-     */
+      * @description
+      * 승인번호
+      * 
+      * 
+      */ 
     approvalNo: any;
     /**
-     * @description
-     * 신청일자
-     *
-     *
-     */
+      * @description
+      * 신청일자
+      * 
+      * 
+      */ 
     requestDate: any;
     /**
-     * @description
-     * 주문번호
-     *
-     *
-     */
+      * @description
+      * 주문번호
+      * 
+      * 
+      */ 
     orderId: any;
     /**
-     * @description
-     * 회원아이디
-     *
-     *
-     */
+      * @description
+      * 회원아이디
+      * 
+      * 
+      */ 
     memberId: any;
     /**
-     * @description
-     * 요청자 이름
-     *
-     *
-     */
+      * @description
+      * 요청자 이름
+      * 
+      * 
+      */ 
     name: any;
     /**
-     * @description
-     * 상품구매금액
-     *
-     *
-     */
+      * @description
+      * 상품구매금액
+      * 
+      * 
+      */ 
     orderPriceAmount: any;
     /**
-     * @description
-     * 부가세
-     *
-     *
-     */
+      * @description
+      * 부가세
+      * 
+      * 
+      */ 
     vat: any;
     /**
-     * @description
-     * 총 신청금액
-     *
-     *
-     */
+      * @description
+      * 총 신청금액
+      * 
+      * 
+      */ 
     subtotal: any;
     /**
-     * @description
-     * 주문상태
-     *
-     * 입금전: unpaid
-     * 미배송: unshipped
-     * 배송중: shipping
-     * 배송대기: standby
-     * 배송완료: shipped
-     * 부분취소: partially_canceled
-     * 전체취소: canceled
-     *
-     *
-     */
+      * @description
+      * 주문상태
+      * 
+      * 입금전: unpaid
+      * 미배송: unshipped
+      * 배송중: shipping
+      * 배송대기: standby
+      * 배송완료: shipped
+      * 부분취소: partially_canceled
+      * 전체취소: canceled
+      * 
+      * 
+      */ 
     orderStatus: any;
     /**
-     * @description
-     * 처리상태
-     *
-     * 신청: request
-     * 발행대기: await_issuance
-     * 발행: issued
-     * 발행거부: issuance_rejected
-     * 신청취소: canceled_request
-     * 발행취소: canceled_issuance
-     * 발행실패: failed_issuance
-     *
-     *
-     */
+      * @description
+      * 처리상태
+      * 
+      * 신청: request
+      * 발행대기: await_issuance
+      * 발행: issued
+      * 발행거부: issuance_rejected
+      * 신청취소: canceled_request
+      * 발행취소: canceled_issuance
+      * 발행실패: failed_issuance
+      * 
+      * 
+      */ 
     status: any;
     /**
-     * @description
-     * 신청결제사
-     *
-     *
-     */
+      * @description
+      * 신청결제사
+      * 
+      * 
+      */ 
     pgName: any;
     /**
-     * @description
-     * 현금영수증 일련 번호
-     *
-     *
-     */
+      * @description
+      * 현금영수증 일련 번호
+      * 
+      * 
+      */ 
     cashBillNo: any;
     /**
-     * @description
-     * 발행 타입
-     *
-     * 개인: personal
-     * 사업자: business
-     *
-     *
-     */
+      * @description
+      * 발행 타입
+      * 
+      * 개인: personal
+      * 사업자: business
+      * 
+      * 
+      */ 
     type: any;
     /**
-     * @description
-     * 사업자등록번호
-     *
-     *
-     */
+      * @description
+      * 사업자등록번호
+      * 
+      * 
+      */ 
     companyRegistrationNo: any;
     /**
-     * @description
-     * 휴대전화
-     *
-     *
-     */
+      * @description
+      * 휴대전화
+      * 
+      * 
+      */ 
     cellphone: any;
     /**
-     * @description
-     * 과세금액
-     *
-     *
-     */
+      * @description
+      * 과세금액
+      * 
+      * 
+      */ 
     taxAmount: any;
     /**
-     * @description
-     * 면세금액
-     *
-     *
-     */
+      * @description
+      * 면세금액
+      * 
+      * 
+      */ 
     taxFreeAmount: any;
     /**
-     * @description
-     * 공급가액
-     *
-     *
-     */
+      * @description
+      * 공급가액
+      * 
+      * 
+      */ 
     supplyPrice: any;
   }
 
   export interface RetrieveAListOfCashReceiptsInput {
     /**
-     * @description
-     * 검색 시작일
-     *
-     * @required
-     *
-     * 날짜
-     */
+      * @description
+      * 검색 시작일
+      * 
+      * @required
+      * 
+      * 날짜
+      */ 
     startDate: any;
     /**
-     * @description
-     * 검색 종료일
-     *
-     * @required
-     *
-     * 날짜
-     */
+      * @description
+      * 검색 종료일
+      * 
+      * @required
+      * 
+      * 날짜
+      */ 
     endDate: any;
     /**
-     * @description
-     * 주문번호
-     *
-     * ,(콤마)로 여러 건을 검색할 수 있다.
-     *
-     * 주문번호
-     */
+      * @description
+      * 주문번호
+      * 
+      * ,(콤마)로 여러 건을 검색할 수 있다.
+      * 
+      * 주문번호
+      */ 
     orderId?: any;
     /**
-     * @description
-     * 승인번호
-     *
-     * 최대글자수 : [9자]
-     */
+      * @description
+      * 승인번호
+      * 
+      * 최대글자수 : [9자]
+      */ 
     approvalNo?: any;
     /**
-     * @description
-     * 요청자 이름
-     *
-     * 최대글자수 : [20자]
-     */
+      * @description
+      * 요청자 이름
+      * 
+      * 최대글자수 : [20자]
+      */ 
     name?: any;
     /**
-     * @description
-     * 회원아이디
-     *
-     * 최대글자수 : [20자]
-     */
+      * @description
+      * 회원아이디
+      * 
+      * 최대글자수 : [20자]
+      */ 
     memberId?: any;
     /**
-     * @description
-     * 처리상태
-     *
-     * 전체: all
-     * 신청: request
-     * 발행: issued
-     * 신청취소: canceled_request
-     * 발행취소: canceled_issuance
-     * 발행실패: failed_issuance
-     *
-     * @default all
-     *
-     *
-     */
+      * @description
+      * 처리상태
+      * 
+      * 전체: all
+      * 신청: request
+      * 발행: issued
+      * 신청취소: canceled_request
+      * 발행취소: canceled_issuance
+      * 발행실패: failed_issuance
+      * 
+      * @default all
+      * 
+      * 
+      */ 
     status?: any;
     /**
-     * @description
-     * 조회결과 최대건수
-     *
-     * @default 10
-     *
-     * 최소: [1]~최대: [500]
-     */
+      * @description
+      * 조회결과 최대건수
+      * 
+      * @default 10
+      * 
+      * 최소: [1]~최대: [500]
+      */ 
     limit?: any;
     /**
-     * @description
-     * 조회결과 시작위치
-     *
-     * @default 0
-     *
-     * 최대값: [8000]
-     */
+      * @description
+      * 조회결과 시작위치
+      * 
+      * @default 0
+      * 
+      * 최대값: [8000]
+      */ 
     offset?: any;
   }
 
   export interface RetrieveAListOfCashReceiptsOutput {
-    cashreceipt: {
-      cashreceiptNo: number;
-      approvalNo: Cafe24Datetime;
-      requestDate: Cafe24Date;
-      orderId: string;
-      memberId: string;
-      name: string;
-      orderPriceAmount: Cafe24Datetime;
-      vat: Cafe24Datetime;
-      subtotal: Cafe24Datetime;
-      orderStatus: string;
-      status: string;
-      pgName: string;
-      cashBillNo: Cafe24Datetime;
+    cashreceipt: { 
+    cashreceiptNo: number;
+    approvalNo: Cafe24Datetime;
+    requestDate: Cafe24Date;
+    orderId: string;
+    memberId: string;
+    name: string;
+    orderPriceAmount: Cafe24Datetime;
+    vat: Cafe24Datetime;
+    subtotal: Cafe24Datetime;
+    orderStatus: string;
+    status: string;
+    pgName: string;
+    cashBillNo: Cafe24Datetime;
     }[];
-    links: {
-      rel: string;
-      href: string;
+    links: { 
+    rel: string;
+    href: string;
     }[];
   }
   export interface CreateACashReceiptInput {
     /**
-     * @description
-     * 주문번호
-     *
-     * @required
-     *
-     * 주문번호
-     */
+      * @description
+      * 주문번호
+      * 
+      * @required
+      * 
+      * 주문번호
+      */ 
     orderId: any;
     /**
-     * @description
-     * 발행 타입
-     *
-     * 개인: personal
-     * 사업자: business
-     *
-     * @required
-     */
+      * @description
+      * 발행 타입
+      * 
+      * 개인: personal
+      * 사업자: business
+      * 
+      * @required
+      */ 
     type: any;
     /**
-     * @description
-     * 사업자등록번호
-     *
-     * 사업자번호
-     * 최대글자수 : [10자]
-     */
+      * @description
+      * 사업자등록번호
+      * 
+      * 사업자번호
+      * 최대글자수 : [10자]
+      */ 
     companyRegistrationNo?: any;
     /**
-     * @description
-     * 휴대전화
-     *
-     * 모바일
-     * 최대글자수 : [11자]
-     */
+      * @description
+      * 휴대전화
+      * 
+      * 모바일
+      * 최대글자수 : [11자]
+      */ 
     cellphone?: any;
   }
 
   export interface CreateACashReceiptOutput {
-    cashreceipt: {
-      cashreceiptNo: number;
-      approvalNo: Cafe24Datetime;
-      orderId: string;
-      type: string;
-      companyRegistrationNo: any;
-      cellphone: Cafe24Datetime;
-      taxAmount: Cafe24Datetime;
-      taxFreeAmount: string;
-      supplyPrice: Cafe24Datetime;
-      vat: Cafe24Datetime;
+    cashreceipt: { 
+    cashreceiptNo: number;
+    approvalNo: Cafe24Datetime;
+    orderId: string;
+    type: string;
+    companyRegistrationNo: any;
+    cellphone: Cafe24Datetime;
+    taxAmount: Cafe24Datetime;
+    taxFreeAmount: string;
+    supplyPrice: Cafe24Datetime;
+    vat: Cafe24Datetime;
     };
   }
   export interface UpdateACashReceiptInput {
     /**
-     * @description
-     * 현금영수증 번호
-     *
-     * @required
-     *
-     * 최소값: [1]
-     */
+      * @description
+      * 현금영수증 번호
+      * 
+      * @required
+      * 
+      * 최소값: [1]
+      */ 
     cashreceiptNo: any;
     /**
-     * @description
-     * 주문번호
-     *
-     * @required
-     *
-     * 주문번호
-     */
+      * @description
+      * 주문번호
+      * 
+      * @required
+      * 
+      * 주문번호
+      */ 
     orderId: any;
     /**
-     * @description
-     * 발행 타입
-     *
-     * 개인: personal
-     * 사업자: business
-     *
-     *
-     */
+      * @description
+      * 발행 타입
+      * 
+      * 개인: personal
+      * 사업자: business
+      * 
+      * 
+      */ 
     type?: any;
     /**
-     * @description
-     * 사업자등록번호
-     *
-     * 사업자번호
-     * 최대글자수 : [10자]
-     */
+      * @description
+      * 사업자등록번호
+      * 
+      * 사업자번호
+      * 최대글자수 : [10자]
+      */ 
     companyRegistrationNo?: any;
     /**
-     * @description
-     * 휴대전화
-     *
-     * 모바일
-     * 최대글자수 : [11자]
-     */
+      * @description
+      * 휴대전화
+      * 
+      * 모바일
+      * 최대글자수 : [11자]
+      */ 
     cellphone?: any;
   }
 
   export interface UpdateACashReceiptOutput {
-    cashreceipt: {
-      cashreceiptNo: number;
-      approvalNo: Cafe24Datetime;
-      orderId: string;
-      type: string;
-      companyRegistrationNo: any;
-      cellphone: Cafe24Datetime;
-      taxAmount: Cafe24Datetime;
-      taxFreeAmount: string;
-      supplyPrice: Cafe24Datetime;
-      vat: Cafe24Datetime;
+    cashreceipt: { 
+    cashreceiptNo: number;
+    approvalNo: Cafe24Datetime;
+    orderId: string;
+    type: string;
+    companyRegistrationNo: any;
+    cellphone: Cafe24Datetime;
+    taxAmount: Cafe24Datetime;
+    taxFreeAmount: string;
+    supplyPrice: Cafe24Datetime;
+    vat: Cafe24Datetime;
     };
   }
 
@@ -440,9 +449,7 @@ declare module 'cafe24api-client' {
      */
     retrieveAListOfCashReceipts(
       input: RetrieveAListOfCashReceiptsInput,
-      options?: RequestOptions<
-        RetrieveAListOfCashReceiptsOutput['cashreceipt'][number]
-      >,
+      options?: AdminRequestOptions<RetrieveAListOfCashReceiptsOutput['cashreceipt'][number]>,
     ): Promise<AxiosResponse<RetrieveAListOfCashReceiptsOutput>>;
     /**
      * @description
@@ -471,7 +478,7 @@ declare module 'cafe24api-client' {
      */
     createACashReceipt(
       input: CreateACashReceiptInput,
-      options?: RequestOptions<CreateACashReceiptOutput['cashreceipt']>,
+      options?: AdminRequestOptions<CreateACashReceiptOutput['cashreceipt']>,
     ): Promise<AxiosResponse<CreateACashReceiptOutput>>;
     /**
      * @description
@@ -500,7 +507,7 @@ declare module 'cafe24api-client' {
      */
     updateACashReceipt(
       input: UpdateACashReceiptInput,
-      options?: RequestOptions<UpdateACashReceiptOutput['cashreceipt']>,
+      options?: AdminRequestOptions<UpdateACashReceiptOutput['cashreceipt']>,
     ): Promise<AxiosResponse<UpdateACashReceiptOutput>>;
   }
 }

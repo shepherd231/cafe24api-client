@@ -1,118 +1,127 @@
 import { AxiosResponse } from 'axios';
-import { Endpoint, RequestOptions, Cafe24Datetime } from 'cafe24api-client';
+import { 
+  Endpoint, 
+  AdminRequestOptions, 
+  Cafe24Datetime,
+  Cafe24Boolean,
+  Cafe24Date,
+  Cafe24Datetime,
+  Cafe24Enum,
+} from 'cafe24api-client';
 
 declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   /**
    * @description
    * 테마 페이지(Themes pages)는 쇼핑몰의 디자인 테마의 페이지에 대한 조회, 설정, 수정, 삭제를 하는 기능입니다.
    * 테마 페이지는 하위 리소스로 테마(Themes) 하위에서만 사용할 수 있습니다.
-   *
-   *
+   * 
+   * 
    */
   export interface ThemesPages {
     /**
-     * @description
-     * 디자인 번호
-     *
-     *
-     */
+      * @description
+      * 디자인 번호
+      * 
+      * 
+      */ 
     skinNo: any;
     /**
-     * @description
-     * 디자인 코드
-     *
-     *
-     */
+      * @description
+      * 디자인 코드
+      * 
+      * 
+      */ 
     skinCode: any;
     /**
-     * @description
-     * 파일 경로
-     *
-     *
-     */
+      * @description
+      * 파일 경로
+      * 
+      * 
+      */ 
     path: any;
     /**
-     * @description
-     * 소스 코드
-     *
-     *
-     */
+      * @description
+      * 소스 코드
+      * 
+      * 
+      */ 
     source: any;
     /**
-     * @description
-     * 화면 분류
-     *
-     *
-     */
+      * @description
+      * 화면 분류
+      * 
+      * 
+      */ 
     displayLocation: any;
   }
 
   export interface RetrieveAThemePageInput {
     /**
-     * @description
-     * 디자인 번호
-     *
-     * @required
-     */
+      * @description
+      * 디자인 번호
+      * 
+      * @required
+      */ 
     skinNo: any;
     /**
-     * @description
-     * 파일 경로
-     *
-     * @required
-     */
+      * @description
+      * 파일 경로
+      * 
+      * @required
+      */ 
     path: any;
   }
 
   export interface RetrieveAThemePageOutput {
-    page: {
-      skinNo: Cafe24Datetime;
-      skinCode: string;
-      path: string;
-      source: string;
+    page: { 
+    skinNo: Cafe24Datetime;
+    skinCode: string;
+    path: string;
+    source: string;
     };
   }
   export interface CreateAThemePageInput {
     /**
-     * @description
-     * 디자인 번호
-     *
-     * @required
-     */
+      * @description
+      * 디자인 번호
+      * 
+      * @required
+      */ 
     skinNo: any;
     /**
-     * @description
-     * 파일/디렉토리 경로
-     *
-     * @required
-     */
+      * @description
+      * 파일/디렉토리 경로
+      * 
+      * @required
+      */ 
     path: any;
     /**
-     * @description
-     * 소스 코드
-     *
-     *
-     */
+      * @description
+      * 소스 코드
+      * 
+      * 
+      */ 
     source?: any;
     /**
-     * @description
-     * 화면 분류
-     *
-     *
-     */
+      * @description
+      * 화면 분류
+      * 
+      * 
+      */ 
     displayLocation?: any;
   }
 
   export interface CreateAThemePageOutput {
-    page: {
-      skinNo: Cafe24Datetime;
-      skinCode: string;
-      path: string;
-      source: string;
-      displayLocation: string;
+    page: { 
+    skinNo: Cafe24Datetime;
+    skinCode: string;
+    path: string;
+    source: string;
+    displayLocation: string;
     };
   }
 
@@ -137,13 +146,13 @@ declare module 'cafe24api-client' {
      */
     retrieveAThemePage(
       input: RetrieveAThemePageInput,
-      options?: RequestOptions<RetrieveAThemePageOutput['page']>,
+      options?: AdminRequestOptions<RetrieveAThemePageOutput['page']>,
     ): Promise<AxiosResponse<RetrieveAThemePageOutput>>;
     /**
      * @description
      * 테마 페이지를 설정합니다.
      * 디자인 테마를 특정 경로에 설정할 수 있습니다.
-     *
+     * 
      * 해당 API는 특정 클라이언트만 사용할 수 있는 API입니다. 사용하시려면 카페24 개발자센터로 문의해주세요.
      *
      * @see https://developers.cafe24.com/docs/api/admin/#create-a-theme-page
@@ -163,7 +172,7 @@ declare module 'cafe24api-client' {
      */
     createAThemePage(
       input: CreateAThemePageInput,
-      options?: RequestOptions<CreateAThemePageOutput['page']>,
+      options?: AdminRequestOptions<CreateAThemePageOutput['page']>,
     ): Promise<AxiosResponse<CreateAThemePageOutput>>;
   }
 }

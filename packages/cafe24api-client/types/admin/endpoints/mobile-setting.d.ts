@@ -1,10 +1,19 @@
 import { AxiosResponse } from 'axios';
-import { Endpoint, RequestOptions, Cafe24Datetime } from 'cafe24api-client';
+import { 
+  Endpoint, 
+  AdminRequestOptions, 
+  Cafe24Datetime,
+  Cafe24Boolean,
+  Cafe24Date,
+  Cafe24Datetime,
+  Cafe24Enum,
+} from 'cafe24api-client';
 
 declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   /**
    * @description
    * 모바일 설정(Mobile setting)은 쇼핑몰의 모바일 쇼핑몰 설정에 관한 리소스입니다.
@@ -12,51 +21,51 @@ declare module 'cafe24api-client' {
    */
   export interface MobileSetting {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 
+      */ 
     shop_no: any;
     /**
-     * @description
-     * 모바일 쇼핑몰 사용설정
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 모바일 쇼핑몰 사용설정
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     use_mobile_page: any;
     /**
-     * @description
-     * 모바일 접속 주소 자동연결 설정
-     *
-     * T : 사용함
-     * F : 사용안함
-     *
-     *
-     */
+      * @description
+      * 모바일 접속 주소 자동연결 설정
+      * 
+      * T : 사용함
+      * F : 사용안함
+      * 
+      * 
+      */ 
     use_mobile_domain_redirection: any;
   }
 
   export interface RetrieveMobileSettingsInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shop_no?: any;
   }
 
   export interface RetrieveMobileSettingsOutput {
-    mobile: {
-      shop_no: number;
-      use_mobile_page: Cafe24Enum;
-      use_mobile_domain_redirection: Cafe24Enum;
+    mobile: { 
+    shop_no: number;
+    use_mobile_page: Cafe24Enum;
+    use_mobile_domain_redirection: Cafe24Enum;
     };
   }
 
@@ -80,7 +89,7 @@ declare module 'cafe24api-client' {
      */
     retrieveMobileSettings(
       input: RetrieveMobileSettingsInput,
-      options?: RequestOptions<RetrieveMobileSettingsOutput['mobile']>,
+      options?: AdminRequestOptions<RetrieveMobileSettingsOutput['mobile']>,
     ): Promise<AxiosResponse<RetrieveMobileSettingsOutput>>;
   }
 }

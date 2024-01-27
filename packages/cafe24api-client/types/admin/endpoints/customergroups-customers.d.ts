@@ -1,103 +1,112 @@
 import { AxiosResponse } from 'axios';
-import { Endpoint, RequestOptions, Cafe24Datetime } from 'cafe24api-client';
+import { 
+  Endpoint, 
+  AdminRequestOptions, 
+  Cafe24Datetime,
+  Cafe24Boolean,
+  Cafe24Date,
+  Cafe24Datetime,
+  Cafe24Enum,
+} from 'cafe24api-client';
 
 declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
+
   /**
    * @description
-   *
-   *
+   * 
+   * 
    * 회원등급의 회원(Customergroups customers)은 특정 회원등급의 회원과 관련된 기능입니다.
    * 특정 회원을 특정 등급으로 변경할 수 있습니다.
    */
   export interface CustomergroupsCustomers {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * 
+      */ 
     shop_no: any;
     /**
-     * @description
-     * 회원등급번호
-     *
-     *
-     */
+      * @description
+      * 회원등급번호
+      * 
+      * 
+      */ 
     group_no: any;
     /**
-     * @description
-     * 회원아이디
-     *
-     *
-     */
+      * @description
+      * 회원아이디
+      * 
+      * 
+      */ 
     member_id: any;
     /**
-     * @description
-     * 회원등급 고정 여부
-     *
-     * 특정 회원이 회원자동등급변경에 적용되지 않기 위한 등급 고정 여부.
-     * 회원자동등급변경 기능을 사용하는 몰에서만 사용 가능하다.
-     *
-     * T : 고정함
-     * F : 고정안함
-     *
-     *
-     */
+      * @description
+      * 회원등급 고정 여부
+      * 
+      * 특정 회원이 회원자동등급변경에 적용되지 않기 위한 등급 고정 여부.
+      * 회원자동등급변경 기능을 사용하는 몰에서만 사용 가능하다.
+      * 
+      * T : 고정함
+      * F : 고정안함
+      * 
+      * 
+      */ 
     fixed_group: any;
   }
 
   export interface UpdateACustomerSCustomerTierInput {
     /**
-     * @description
-     * 멀티쇼핑몰 번호
-     *
-     * @default 1
-     *
-     *
-     */
+      * @description
+      * 멀티쇼핑몰 번호
+      * 
+      * @default 1
+      * 
+      * 
+      */ 
     shop_no?: any;
     /**
-     * @description
-     * 회원등급번호
-     *
-     * @required
-     */
+      * @description
+      * 회원등급번호
+      * 
+      * @required
+      */ 
     group_no: any;
     /**
-     * @description
-     * 회원아이디
-     *
-     * @required
-     *
-     * 최대글자수 : [20자]
-     */
+      * @description
+      * 회원아이디
+      * 
+      * @required
+      * 
+      * 최대글자수 : [20자]
+      */ 
     member_id: any;
     /**
-     * @description
-     * 회원등급 고정 여부
-     *
-     * 특정 회원이 회원자동등급변경에 적용되지 않기 위한 등급 고정 여부
-     * 회원자동등급변경 기능을 사용하는 몰에서만 사용 가능하다.
-     *
-     * T : 고정함
-     * F : 고정안함
-     *
-     * @default F
-     *
-     *
-     */
+      * @description
+      * 회원등급 고정 여부
+      * 
+      * 특정 회원이 회원자동등급변경에 적용되지 않기 위한 등급 고정 여부
+      * 회원자동등급변경 기능을 사용하는 몰에서만 사용 가능하다.
+      * 
+      * T : 고정함
+      * F : 고정안함
+      * 
+      * @default F
+      * 
+      * 
+      */ 
     fixed_group?: any;
   }
 
   export interface UpdateACustomerSCustomerTierOutput {
-    customers: {
-      shop_no: number;
-      group_no: number;
-      member_id: string;
-      fixed_group: Cafe24Enum;
+    customers: { 
+    shop_no: number;
+    group_no: number;
+    member_id: string;
+    fixed_group: Cafe24Enum;
     }[];
   }
 
@@ -131,9 +140,7 @@ declare module 'cafe24api-client' {
      */
     updateACustomerSCustomerTier(
       input: UpdateACustomerSCustomerTierInput,
-      options?: RequestOptions<
-        UpdateACustomerSCustomerTierOutput['customers'][number]
-      >,
+      options?: AdminRequestOptions<UpdateACustomerSCustomerTierOutput['customers'][number]>,
     ): Promise<AxiosResponse<UpdateACustomerSCustomerTierOutput>>;
   }
 }
