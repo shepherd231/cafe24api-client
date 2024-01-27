@@ -177,14 +177,5 @@ export enum Cafe24DisplayCode {
   LINK_LIVELINKON = 'LINK_LIVELINKON',
 }
 
-const displayCodeLookup = new Set<string>(Object.values(Cafe24DisplayCode));
-
-export const parseCafe24DisplayCode = (
-  code: string,
-): Cafe24DisplayCode | null => {
-  code = code.toUpperCase();
-  return displayCodeLookup.has(code) ? (code as Cafe24DisplayCode) : null;
-};
-
-export const isCafe24DisplayCode = (code: string): code is Cafe24DisplayCode =>
-  !!parseCafe24DisplayCode(code);
+export const isCafe24DisplayCode = (code: unknown): code is Cafe24DisplayCode =>
+  Object.values(Cafe24DisplayCode).includes(code as Cafe24DisplayCode);
