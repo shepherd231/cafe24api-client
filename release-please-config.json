@@ -12,9 +12,7 @@
   ],
   "packages": {
     "packages/cafe24api-client": {},
-    "packages/cafe24api-testing-library": {},
     "packages/cafe24-webhook-utils": {},
-    "packages/cafe24-webhook-testing-library": {},
     "packages/cafe24api-schema-scraper": {},
     "packages/cafe24-webhook-schema-generator": {}
   },

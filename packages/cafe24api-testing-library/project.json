@@ -1,7 +1,0 @@
-{
-  "name": "cafe24api-testing-library",
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "projectType": "library",
-  "sourceRoot": "packages/cafe24api-testing-library/src",
-  "targets": {}
-}
