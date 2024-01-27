@@ -1,5 +1,11 @@
-import { RawAxiosRequestHeaders } from 'axios';
-import { Cafe24APIClient, Cafe24APIClientOptions, Endpoint } from './client';
+import { AxiosResponse, RawAxiosRequestHeaders } from 'axios';
+import {
+  AdminRequestOptions,
+  Cafe24APIClient,
+  Cafe24APIClientOptions,
+  Endpoint,
+  HTTPVerb,
+} from './client';
 
 export interface Cafe24AdminAPIClientOptions extends Cafe24APIClientOptions {
   accessToken?: string;
@@ -25,6 +31,23 @@ export class Cafe24AdminAPIClient extends Cafe24APIClient {
       Authorization: `Bearer ${this.accessToken}`,
       ...headers,
     };
+  }
+
+  protected createRequest<T extends Record<string, any>>(
+    method: HTTPVerb,
+    path: string,
+    payload: Record<string, any>,
+    adminOptions: AdminRequestOptions<T>,
+  ): Promise<AxiosResponse<T, any>> {
+    const { accessToken, headers, fields } = adminOptions;
+    const options = {
+      headers: this.createHeaders({
+        ...headers,
+        Authorization: `Bearer ${accessToken}`,
+      }),
+      fields,
+    };
+    return super.createRequest(method, path, payload, options);
   }
 
   static use(endpoint: Endpoint) {

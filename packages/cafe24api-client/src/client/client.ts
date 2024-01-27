@@ -202,3 +202,8 @@ export interface RequestOptions<Input extends Record<string, any>> {
   fields?: (keyof Input)[];
   headers?: RawAxiosRequestHeaders;
 }
+
+export interface AdminRequestOptions<Input extends Record<string, any>>
+  extends RequestOptions<Input> {
+  accessToken?: string;
+}
