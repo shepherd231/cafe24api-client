@@ -1,4 +1,3 @@
-
 export default (cls) => {
   cls.prototype.retrieveCommentsInBulk = async function (input, options) {
     return this.createRequest(
@@ -13,5 +12,4 @@ export default (cls) => {
       options,
     );
   };
-
 };

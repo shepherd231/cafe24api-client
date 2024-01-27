@@ -1,7 +1,7 @@
 import { AxiosResponse } from 'axios';
-import { 
-  Endpoint, 
-  AdminRequestOptions, 
+import {
+  Endpoint,
+  AdminRequestOptions,
   Cafe24Datetime,
   Cafe24Boolean,
   Cafe24Date,
@@ -13,77 +13,76 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
-
   /**
    * @description
    * 카카오알림톡 서비스(Kakaoalimtalk setting) 사용 여부를 조회하고 설정을 변경하는 리소스입니다.
    */
   export interface KakaoalimtalkSetting {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     *
+     */
     shop_no: any;
     /**
-      * @description
-      * 카카오알림톡 사용 여부
-      * 
-      * T: 사용함
-      * F: 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 카카오알림톡 사용 여부
+     *
+     * T: 사용함
+     * F: 사용안함
+     *
+     *
+     */
     use_kakaoalimtalk: any;
   }
 
   export interface RetrieveTheKakaoInfoTalkSettingsInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 최소값: [1]
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     * 최소값: [1]
+     */
     shop_no?: any;
   }
 
   export interface RetrieveTheKakaoInfoTalkSettingsOutput {
-    kakaoalimtalk: { 
-    shop_no: number;
-    use_kakaoalimtalk: Cafe24Enum;
+    kakaoalimtalk: {
+      shop_no: number;
+      use_kakaoalimtalk: Cafe24Enum;
     };
   }
   export interface UpdateTheKakaoInfoTalkSettingsInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 최소값: [1]
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     * 최소값: [1]
+     */
     shop_no?: any;
     /**
-      * @description
-      * 카카오알림톡 사용 여부
-      * 
-      * T: 사용함
-      * F: 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 카카오알림톡 사용 여부
+     *
+     * T: 사용함
+     * F: 사용안함
+     *
+     *
+     */
     use_kakaoalimtalk?: any;
   }
 
   export interface UpdateTheKakaoInfoTalkSettingsOutput {
-    kakaoalimtalk: { 
-    shop_no: number;
-    use_kakaoalimtalk: Cafe24Enum;
+    kakaoalimtalk: {
+      shop_no: number;
+      use_kakaoalimtalk: Cafe24Enum;
     };
   }
 
@@ -106,7 +105,9 @@ declare module 'cafe24api-client' {
      */
     retrieveTheKakaoInfoTalkSettings(
       input: RetrieveTheKakaoInfoTalkSettingsInput,
-      options?: AdminRequestOptions<RetrieveTheKakaoInfoTalkSettingsOutput['kakaoalimtalk']>,
+      options?: AdminRequestOptions<
+        RetrieveTheKakaoInfoTalkSettingsOutput['kakaoalimtalk']
+      >,
     ): Promise<AxiosResponse<RetrieveTheKakaoInfoTalkSettingsOutput>>;
     /**
      * @description
@@ -126,7 +127,9 @@ declare module 'cafe24api-client' {
      */
     updateTheKakaoInfoTalkSettings(
       input: UpdateTheKakaoInfoTalkSettingsInput,
-      options?: AdminRequestOptions<UpdateTheKakaoInfoTalkSettingsOutput['kakaoalimtalk']>,
+      options?: AdminRequestOptions<
+        UpdateTheKakaoInfoTalkSettingsOutput['kakaoalimtalk']
+      >,
     ): Promise<AxiosResponse<UpdateTheKakaoInfoTalkSettingsOutput>>;
   }
 }

@@ -1,6 +1,8 @@
-
 export default (cls) => {
-  cls.prototype.retrieveAListOfPostsForABoard = async function (input, options) {
+  cls.prototype.retrieveAListOfPostsForABoard = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/boards/${input['board_no']}/articles`,
@@ -108,5 +110,4 @@ export default (cls) => {
       options,
     );
   };
-
 };

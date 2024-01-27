@@ -1,6 +1,8 @@
-
 export default (cls) => {
-  cls.prototype.retrieveAReplyForUrgentInquiryPost = async function (input, options) {
+  cls.prototype.retrieveAReplyForUrgentInquiryPost = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/urgentinquiry/${input['article_no']}/reply`,
@@ -12,7 +14,10 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.createAReplyForUrgentInquiryPost = async function (input, options) {
+  cls.prototype.createAReplyForUrgentInquiryPost = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'POST',
       `/api/v2/admin/urgentinquiry/${input['article_no']}/reply`,
@@ -28,7 +33,10 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.updateAReplyForUrgentInquiryPost = async function (input, options) {
+  cls.prototype.updateAReplyForUrgentInquiryPost = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'PUT',
       `/api/v2/admin/urgentinquiry/${input['article_no']}/reply`,
@@ -43,5 +51,4 @@ export default (cls) => {
       options,
     );
   };
-
 };

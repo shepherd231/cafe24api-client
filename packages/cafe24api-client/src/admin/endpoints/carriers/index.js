@@ -1,6 +1,8 @@
-
 export default (cls) => {
-  cls.prototype.retrieveAListOfShippingCarriers = async function (input, options) {
+  cls.prototype.retrieveAListOfShippingCarriers = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/carriers`,
@@ -69,5 +71,4 @@ export default (cls) => {
       options,
     );
   };
-
 };

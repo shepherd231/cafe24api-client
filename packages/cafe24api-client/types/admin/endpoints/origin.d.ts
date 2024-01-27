@@ -1,7 +1,7 @@
 import { AxiosResponse } from 'axios';
-import { 
-  Endpoint, 
-  AdminRequestOptions, 
+import {
+  Endpoint,
+  AdminRequestOptions,
   Cafe24Datetime,
   Cafe24Boolean,
   Cafe24Date,
@@ -13,7 +13,6 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
-
   /**
    * @description
    * 원산지(Origin)는 상품정보에 포함되는 데이터로 상품이 생산된 지역을 의미합니다.
@@ -22,86 +21,86 @@ declare module 'cafe24api-client' {
    */
   export interface Origin {
     /**
-      * @description
-      * 원산지 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 원산지 번호
+     *
+     *
+     */
     origin_place_no: any;
     /**
-      * @description
-      * 원산지 이름
-      * 
-      * 
-      */ 
+     * @description
+     * 원산지 이름
+     *
+     *
+     */
     origin_place_name: any;
     /**
-      * @description
-      * 해외 여부
-      * 
-      * 
-      */ 
+     * @description
+     * 해외 여부
+     *
+     *
+     */
     foreign: any;
     /**
-      * @description
-      * 원산지 국가코드
-      * 
-      * 
-      */ 
+     * @description
+     * 원산지 국가코드
+     *
+     *
+     */
     made_in_code: any;
   }
 
   export interface RetrieveAListOfOriginsInput {
     /**
-      * @description
-      * 원산지 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 원산지 번호
+     *
+     *
+     */
     origin_place_no?: any;
     /**
-      * @description
-      * 원산지 이름
-      * 
-      * 최대글자수 : [50자]
-      */ 
+     * @description
+     * 원산지 이름
+     *
+     * 최대글자수 : [50자]
+     */
     origin_place_name?: any;
     /**
-      * @description
-      * 해외 여부
-      * 
-      * 
-      */ 
+     * @description
+     * 해외 여부
+     *
+     *
+     */
     foreign?: any;
     /**
-      * @description
-      * 조회결과 시작위치
-      * 
-      * @default 0
-      * 
-      * 최대값: [8000]
-      */ 
+     * @description
+     * 조회결과 시작위치
+     *
+     * @default 0
+     *
+     * 최대값: [8000]
+     */
     offset?: any;
     /**
-      * @description
-      * 조회결과 최대건수
-      * 
-      * 조회하고자 하는 최대 건수를 지정할 수 있음.
-      * 예) 10 입력시 10건만 표시함.
-      * 
-      * @default 10
-      * 
-      * 최소: [1]~최대: [100]
-      */ 
+     * @description
+     * 조회결과 최대건수
+     *
+     * 조회하고자 하는 최대 건수를 지정할 수 있음.
+     * 예) 10 입력시 10건만 표시함.
+     *
+     * @default 10
+     *
+     * 최소: [1]~최대: [100]
+     */
     limit?: any;
   }
 
   export interface RetrieveAListOfOriginsOutput {
-    origin: { 
-    origin_place_no: Cafe24Datetime;
-    origin_place_name: string[];
-    foreign: Cafe24Enum;
-    made_in_code: string;
+    origin: {
+      origin_place_no: Cafe24Datetime;
+      origin_place_name: string[];
+      foreign: Cafe24Enum;
+      made_in_code: string;
     }[];
   }
 
@@ -141,7 +140,9 @@ declare module 'cafe24api-client' {
      */
     retrieveAListOfOrigins(
       input: RetrieveAListOfOriginsInput,
-      options?: AdminRequestOptions<RetrieveAListOfOriginsOutput['origin'][number]>,
+      options?: AdminRequestOptions<
+        RetrieveAListOfOriginsOutput['origin'][number]
+      >,
     ): Promise<AxiosResponse<RetrieveAListOfOriginsOutput>>;
   }
 }

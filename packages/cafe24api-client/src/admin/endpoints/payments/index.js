@@ -1,6 +1,8 @@
-
 export default (cls) => {
-  cls.prototype.updatePaymentStatusForMultipleOrders = async function (input, options) {
+  cls.prototype.updatePaymentStatusForMultipleOrders = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'PUT',
       `/api/v2/admin/payments`,
@@ -15,5 +17,4 @@ export default (cls) => {
       options,
     );
   };
-
 };

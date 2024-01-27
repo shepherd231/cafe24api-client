@@ -1,5 +1,13 @@
 import { AxiosResponse } from 'axios';
-import { Endpoint, RequestOptions, Cafe24Datetime } from 'cafe24api-client';
+import {
+  Endpoint,
+  AdminRequestOptions,
+  Cafe24Datetime,
+  Cafe24Boolean,
+  Cafe24Date,
+  Cafe24Datetime,
+  Cafe24Enum,
+} from 'cafe24api-client';
 
 declare const endpoint: Endpoint;
 export = endpoint;
@@ -101,7 +109,7 @@ declare module 'cafe24api-client' {
      */
     getAuthenticationCode(
       input: GetAuthenticationCodeInput,
-      options?: RequestOptions<GetAuthenticationCodeInput>,
+      options?: AdminRequestOptions<GetAuthenticationCodeInput>,
     ): Promise<AxiosResponse>;
 
     /**
@@ -133,7 +141,7 @@ declare module 'cafe24api-client' {
      */
     getAccessToken(
       input: GetAccessTokenInput,
-      options?: RequestOptions<GetAccessTokenInput>,
+      options?: AdminRequestOptions<GetAccessTokenInput>,
     ): Promise<AxiosResponse<GetAccessTokenOutput>>;
 
     /**
@@ -173,7 +181,7 @@ declare module 'cafe24api-client' {
      */
     getAccessTokenUsingRefreshToken(
       input: GetAccessTokenUsingRefreshTokenInput,
-      options?: RequestOptions<GetAccessTokenUsingRefreshTokenInput>,
+      options?: AdminRequestOptions<GetAccessTokenUsingRefreshTokenInput>,
     ): Promise<AxiosResponse<GetAccessTokenUsingRefreshTokenOutput>>;
   }
 }

@@ -1,6 +1,8 @@
-
 export default (cls) => {
-  cls.prototype.retrieveCustomerDetailsOfAnOrder = async function (input, options) {
+  cls.prototype.retrieveCustomerDetailsOfAnOrder = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/orders/${input['order_id']}/buyer`,
@@ -12,7 +14,10 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.updateCustomerInformationOfAnOrder = async function (input, options) {
+  cls.prototype.updateCustomerInformationOfAnOrder = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'PUT',
       `/api/v2/admin/orders/${input['order_id']}/buyer`,
@@ -28,5 +33,4 @@ export default (cls) => {
       options,
     );
   };
-
 };

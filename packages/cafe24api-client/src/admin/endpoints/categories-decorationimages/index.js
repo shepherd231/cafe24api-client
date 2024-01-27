@@ -1,6 +1,8 @@
-
 export default (cls) => {
-  cls.prototype.retrieveDecorationImageSettingsByCategory = async function (input, options) {
+  cls.prototype.retrieveDecorationImageSettingsByCategory = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/categories/${input['category_no']}/decorationimages`,
@@ -12,7 +14,10 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.updateDecorationImagesOfAProductCategory = async function (input, options) {
+  cls.prototype.updateDecorationImagesOfAProductCategory = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'PUT',
       `/api/v2/admin/categories/${input['category_no']}/decorationimages`,
@@ -36,5 +41,4 @@ export default (cls) => {
       options,
     );
   };
-
 };

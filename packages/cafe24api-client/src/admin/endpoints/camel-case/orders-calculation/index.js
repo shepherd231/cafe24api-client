@@ -8,19 +8,16 @@ import {
 export default (cls) => {
   register(cls);
 
-  
-    const calculateTotalDue = cls.prototype.calculateTotalDue;
-    cls.prototype.calculateTotalDue = async function (input, options) {
-      const response = await calculateTotalDue.call(
-        this,
-        convertToSnakeCase(input),
-        optionsToSnakeCase(options),
-      );
-      return {
-        ...response,
-        data: convertToCamelCase(response.data),
-      };
+  const calculateTotalDue = cls.prototype.calculateTotalDue;
+  cls.prototype.calculateTotalDue = async function (input, options) {
+    const response = await calculateTotalDue.call(
+      this,
+      convertToSnakeCase(input),
+      optionsToSnakeCase(options),
+    );
+    return {
+      ...response,
+      data: convertToCamelCase(response.data),
     };
-
- 
+  };
 };

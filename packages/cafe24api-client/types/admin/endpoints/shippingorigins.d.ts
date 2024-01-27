@@ -1,7 +1,7 @@
 import { AxiosResponse } from 'axios';
-import { 
-  Endpoint, 
-  AdminRequestOptions, 
+import {
+  Endpoint,
+  AdminRequestOptions,
   Cafe24Datetime,
   Cafe24Boolean,
   Cafe24Date,
@@ -13,355 +13,354 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
-
   /**
    * @description
    * 출고지 관리(Shipping origins)는 출고지에 대한 정보를 관리하는 기능입니다.
    */
   export interface Shippingorigins {
     /**
-      * @description
-      * 출고지 코드
-      * 
-      * @required
-      * 
-      * 형식 : [A-Z0-9]
-      * 글자수 최소: [8자]~최대: [8자]
-      */ 
+     * @description
+     * 출고지 코드
+     *
+     * @required
+     *
+     * 형식 : [A-Z0-9]
+     * 글자수 최소: [8자]~최대: [8자]
+     */
     origin_code: any;
     /**
-      * @description
-      * 출고지 명
-      * 
-      * 최대글자수 : [50자]
-      */ 
+     * @description
+     * 출고지 명
+     *
+     * 최대글자수 : [50자]
+     */
     origin_name: any;
     /**
-      * @description
-      * 출고지 기본설정 여부
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 출고지 기본설정 여부
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     default: any;
     /**
-      * @description
-      * 국가코드
-      * 
-      * 최대글자수 : [2자]
-      */ 
+     * @description
+     * 국가코드
+     *
+     * 최대글자수 : [2자]
+     */
     country_code: any;
     /**
-      * @description
-      * 우편번호
-      * 
-      * 최소글자수 : [2자]
-      * 최대글자수 : [14자]
-      */ 
+     * @description
+     * 우편번호
+     *
+     * 최소글자수 : [2자]
+     * 최대글자수 : [14자]
+     */
     zipcode: any;
     /**
-      * @description
-      * 기본 주소
-      * 
-      * 최대글자수 : [255자]
-      */ 
+     * @description
+     * 기본 주소
+     *
+     * 최대글자수 : [255자]
+     */
     address1: any;
     /**
-      * @description
-      * 상세 주소
-      * 
-      * 최대글자수 : [255자]
-      */ 
+     * @description
+     * 상세 주소
+     *
+     * 최대글자수 : [255자]
+     */
     address2: any;
     /**
-      * @description
-      * 대표 연락처
-      * 
-      * 
-      */ 
+     * @description
+     * 대표 연락처
+     *
+     *
+     */
     contact: any;
     /**
-      * @description
-      * 보조 연락처
-      * 
-      * 
-      */ 
+     * @description
+     * 보조 연락처
+     *
+     *
+     */
     secondary_contact: any;
     /**
-      * @description
-      * 출고지 품목 정보
-      * 
-      * 
-      */ 
+     * @description
+     * 출고지 품목 정보
+     *
+     *
+     */
     variants: any;
   }
 
   export interface RetrieveAListOfShippingOriginsInput {
     /**
-      * @description
-      * 조회결과 시작위치
-      * 
-      * @default 0
-      * 
-      * 최대값: [8000]
-      */ 
+     * @description
+     * 조회결과 시작위치
+     *
+     * @default 0
+     *
+     * 최대값: [8000]
+     */
     offset?: any;
     /**
-      * @description
-      * 조회결과 최대건수
-      * 
-      * @default 10
-      * 
-      * 최소: [1]~최대: [100]
-      */ 
+     * @description
+     * 조회결과 최대건수
+     *
+     * @default 10
+     *
+     * 최소: [1]~최대: [100]
+     */
     limit?: any;
   }
 
   export interface RetrieveAListOfShippingOriginsOutput {
-    shippingorigins: { 
-    origin_code: string;
-    origin_name: string;
-    default: Cafe24Enum;
-    contact: string;
-    secondary_contact: string;
-    zipcode: Cafe24Datetime;
-    country_code: string;
-    address1: string;
-    address2: string;
-    variants: string[];
+    shippingorigins: {
+      origin_code: string;
+      origin_name: string;
+      default: Cafe24Enum;
+      contact: string;
+      secondary_contact: string;
+      zipcode: Cafe24Datetime;
+      country_code: string;
+      address1: string;
+      address2: string;
+      variants: string[];
     }[];
-    links: { 
-    rel: string;
-    href: string;
+    links: {
+      rel: string;
+      href: string;
     }[];
   }
   export interface RetrieveAShippingOriginInput {
     /**
-      * @description
-      * 출고지 코드
-      * 
-      * @required
-      * 
-      * 형식 : [A-Z0-9]
-      * 글자수 최소: [8자]~최대: [8자]
-      */ 
+     * @description
+     * 출고지 코드
+     *
+     * @required
+     *
+     * 형식 : [A-Z0-9]
+     * 글자수 최소: [8자]~최대: [8자]
+     */
     origin_code: any;
   }
 
   export interface RetrieveAShippingOriginOutput {
-    shippingorigin: { 
-    origin_code: string;
-    origin_name: string;
-    default: Cafe24Enum;
-    contact: string;
-    secondary_contact: string;
-    zipcode: Cafe24Datetime;
-    country_code: string;
-    address1: string;
-    address2: string;
-    variants: string[];
+    shippingorigin: {
+      origin_code: string;
+      origin_name: string;
+      default: Cafe24Enum;
+      contact: string;
+      secondary_contact: string;
+      zipcode: Cafe24Datetime;
+      country_code: string;
+      address1: string;
+      address2: string;
+      variants: string[];
     };
-    links: { 
-    rel: string;
-    href: string;
+    links: {
+      rel: string;
+      href: string;
     }[];
   }
   export interface CreateAShippingOriginInput {
     /**
-      * @description
-      * 출고지 명
-      * 
-      * @required
-      * 
-      * 최대글자수 : [50자]
-      */ 
+     * @description
+     * 출고지 명
+     *
+     * @required
+     *
+     * 최대글자수 : [50자]
+     */
     origin_name: any;
     /**
-      * @description
-      * 기본 주소
-      * 
-      * @required
-      * 
-      * 최대글자수 : [255자]
-      */ 
+     * @description
+     * 기본 주소
+     *
+     * @required
+     *
+     * 최대글자수 : [255자]
+     */
     address1: any;
     /**
-      * @description
-      * 상세 주소
-      * 
-      * @required
-      * 
-      * 최대글자수 : [255자]
-      */ 
+     * @description
+     * 상세 주소
+     *
+     * @required
+     *
+     * 최대글자수 : [255자]
+     */
     address2: any;
     /**
-      * @description
-      * 국가코드
-      * 
-      * @required
-      * 
-      * 최대글자수 : [2자]
-      */ 
+     * @description
+     * 국가코드
+     *
+     * @required
+     *
+     * 최대글자수 : [2자]
+     */
     country_code: any;
     /**
-      * @description
-      * 출고지 기본설정 여부
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * @default F
-      * 
-      * 
-      */ 
+     * @description
+     * 출고지 기본설정 여부
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     * @default F
+     *
+     *
+     */
     default?: any;
     /**
-      * @description
-      * 우편번호
-      * 
-      * 최소글자수 : [2자]
-      * 최대글자수 : [14자]
-      */ 
+     * @description
+     * 우편번호
+     *
+     * 최소글자수 : [2자]
+     * 최대글자수 : [14자]
+     */
     zipcode?: any;
     /**
-      * @description
-      * 대표 연락처
-      * 
-      * 전화번호
-      * 최대글자수 : [20자]
-      */ 
+     * @description
+     * 대표 연락처
+     *
+     * 전화번호
+     * 최대글자수 : [20자]
+     */
     contact?: any;
     /**
-      * @description
-      * 보조 연락처
-      * 
-      * 전화번호
-      * 최대글자수 : [20자]
-      */ 
+     * @description
+     * 보조 연락처
+     *
+     * 전화번호
+     * 최대글자수 : [20자]
+     */
     secondary_contact?: any;
   }
 
   export interface CreateAShippingOriginOutput {
-    shippingorigin: { 
-    origin_code: string;
-    origin_name: string;
-    default: Cafe24Enum;
-    contact: string;
-    secondary_contact: string;
-    zipcode: Cafe24Datetime;
-    country_code: string;
-    address1: string;
-    address2: string;
-    variants: any;
+    shippingorigin: {
+      origin_code: string;
+      origin_name: string;
+      default: Cafe24Enum;
+      contact: string;
+      secondary_contact: string;
+      zipcode: Cafe24Datetime;
+      country_code: string;
+      address1: string;
+      address2: string;
+      variants: any;
     };
   }
   export interface UpdateAShippingOriginInput {
     /**
-      * @description
-      * 출고지 코드
-      * 
-      * @required
-      * 
-      * 형식 : [A-Z0-9]
-      * 글자수 최소: [8자]~최대: [8자]
-      */ 
+     * @description
+     * 출고지 코드
+     *
+     * @required
+     *
+     * 형식 : [A-Z0-9]
+     * 글자수 최소: [8자]~최대: [8자]
+     */
     origin_code: any;
     /**
-      * @description
-      * 출고지 명
-      * 
-      * 최대글자수 : [50자]
-      */ 
+     * @description
+     * 출고지 명
+     *
+     * 최대글자수 : [50자]
+     */
     origin_name?: any;
     /**
-      * @description
-      * 국가코드
-      * 
-      * 최대글자수 : [2자]
-      */ 
+     * @description
+     * 국가코드
+     *
+     * 최대글자수 : [2자]
+     */
     country_code?: any;
     /**
-      * @description
-      * 출고지 기본설정 여부
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 출고지 기본설정 여부
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     default?: any;
     /**
-      * @description
-      * 대표 연락처
-      * 
-      * 전화번호
-      * 최대글자수 : [20자]
-      */ 
+     * @description
+     * 대표 연락처
+     *
+     * 전화번호
+     * 최대글자수 : [20자]
+     */
     contact?: any;
     /**
-      * @description
-      * 보조 연락처
-      * 
-      * 전화번호
-      * 최대글자수 : [20자]
-      */ 
+     * @description
+     * 보조 연락처
+     *
+     * 전화번호
+     * 최대글자수 : [20자]
+     */
     secondary_contact?: any;
     /**
-      * @description
-      * 우편번호
-      * 
-      * 최소글자수 : [2자]
-      * 최대글자수 : [14자]
-      */ 
+     * @description
+     * 우편번호
+     *
+     * 최소글자수 : [2자]
+     * 최대글자수 : [14자]
+     */
     zipcode?: any;
     /**
-      * @description
-      * 기본 주소
-      * 
-      * 최대글자수 : [255자]
-      */ 
+     * @description
+     * 기본 주소
+     *
+     * 최대글자수 : [255자]
+     */
     address1?: any;
     /**
-      * @description
-      * 상세 주소
-      * 
-      * 최대글자수 : [255자]
-      */ 
+     * @description
+     * 상세 주소
+     *
+     * 최대글자수 : [255자]
+     */
     address2?: any;
   }
 
   export interface UpdateAShippingOriginOutput {
-    shippingorigin: { 
-    origin_code: string;
-    origin_name: string;
-    default: Cafe24Enum;
-    contact: string;
-    secondary_contact: string;
-    zipcode: Cafe24Datetime;
-    country_code: string;
-    address1: string;
-    address2: string;
-    variants: any;
+    shippingorigin: {
+      origin_code: string;
+      origin_name: string;
+      default: Cafe24Enum;
+      contact: string;
+      secondary_contact: string;
+      zipcode: Cafe24Datetime;
+      country_code: string;
+      address1: string;
+      address2: string;
+      variants: any;
     };
   }
   export interface DeleteAShippingOriginInput {
     /**
-      * @description
-      * 출고지 코드
-      * 
-      * @required
-      * 
-      * 형식 : [A-Z0-9]
-      * 글자수 최소: [8자]~최대: [8자]
-      */ 
+     * @description
+     * 출고지 코드
+     *
+     * @required
+     *
+     * 형식 : [A-Z0-9]
+     * 글자수 최소: [8자]~최대: [8자]
+     */
     origin_code: any;
   }
 
   export interface DeleteAShippingOriginOutput {
-    shippingorigin: { 
-    origin_code: string;
+    shippingorigin: {
+      origin_code: string;
     };
   }
 
@@ -423,7 +422,9 @@ declare module 'cafe24api-client' {
      */
     retrieveAListOfShippingOrigins(
       input: RetrieveAListOfShippingOriginsInput,
-      options?: AdminRequestOptions<RetrieveAListOfShippingOriginsOutput['shippingorigins'][number]>,
+      options?: AdminRequestOptions<
+        RetrieveAListOfShippingOriginsOutput['shippingorigins'][number]
+      >,
     ): Promise<AxiosResponse<RetrieveAListOfShippingOriginsOutput>>;
     /**
      * @description
@@ -461,7 +462,9 @@ declare module 'cafe24api-client' {
      */
     retrieveAShippingOrigin(
       input: RetrieveAShippingOriginInput,
-      options?: AdminRequestOptions<RetrieveAShippingOriginOutput['shippingorigin']>,
+      options?: AdminRequestOptions<
+        RetrieveAShippingOriginOutput['shippingorigin']
+      >,
     ): Promise<AxiosResponse<RetrieveAShippingOriginOutput>>;
     /**
      * @description
@@ -489,7 +492,9 @@ declare module 'cafe24api-client' {
      */
     createAShippingOrigin(
       input: CreateAShippingOriginInput,
-      options?: AdminRequestOptions<CreateAShippingOriginOutput['shippingorigin']>,
+      options?: AdminRequestOptions<
+        CreateAShippingOriginOutput['shippingorigin']
+      >,
     ): Promise<AxiosResponse<CreateAShippingOriginOutput>>;
     /**
      * @description
@@ -518,7 +523,9 @@ declare module 'cafe24api-client' {
      */
     updateAShippingOrigin(
       input: UpdateAShippingOriginInput,
-      options?: AdminRequestOptions<UpdateAShippingOriginOutput['shippingorigin']>,
+      options?: AdminRequestOptions<
+        UpdateAShippingOriginOutput['shippingorigin']
+      >,
     ): Promise<AxiosResponse<UpdateAShippingOriginOutput>>;
     /**
      * @description
@@ -538,7 +545,9 @@ declare module 'cafe24api-client' {
      */
     deleteAShippingOrigin(
       input: DeleteAShippingOriginInput,
-      options?: AdminRequestOptions<DeleteAShippingOriginOutput['shippingorigin']>,
+      options?: AdminRequestOptions<
+        DeleteAShippingOriginOutput['shippingorigin']
+      >,
     ): Promise<AxiosResponse<DeleteAShippingOriginOutput>>;
   }
 }

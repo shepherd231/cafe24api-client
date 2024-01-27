@@ -1,7 +1,7 @@
 import { AxiosResponse } from 'axios';
-import { 
-  Endpoint, 
-  AdminRequestOptions, 
+import {
+  Endpoint,
+  AdminRequestOptions,
   Cafe24Datetime,
   Cafe24Boolean,
   Cafe24Date,
@@ -13,206 +13,205 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
-
   export interface OrdersItemsLabels {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     *
+     */
     shop_no: any;
     /**
-      * @description
-      * 주문 라벨명
-      * 
-      * 
-      */ 
+     * @description
+     * 주문 라벨명
+     *
+     *
+     */
     names: any;
     /**
-      * @description
-      * 주문번호
-      * 
-      * 
-      */ 
+     * @description
+     * 주문번호
+     *
+     *
+     */
     order_id: any;
     /**
-      * @description
-      * 품주코드
-      * 
-      * 
-      */ 
+     * @description
+     * 품주코드
+     *
+     *
+     */
     order_item_code: any;
     /**
-      * @description
-      * 주문 라벨명
-      * 
-      * 
-      */ 
+     * @description
+     * 주문 라벨명
+     *
+     *
+     */
     name: any;
   }
 
   export interface RetrieveAnOrderLabelInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 최소값: [1]
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     * 최소값: [1]
+     */
     shop_no?: any;
     /**
-      * @description
-      * 주문번호
-      * 
-      * @required
-      * 
-      * 주문번호
-      */ 
+     * @description
+     * 주문번호
+     *
+     * @required
+     *
+     * 주문번호
+     */
     order_id: any;
     /**
-      * @description
-      * 품주코드
-      * 
-      * @required
-      */ 
+     * @description
+     * 품주코드
+     *
+     * @required
+     */
     order_item_code: any;
   }
 
   export interface RetrieveAnOrderLabelOutput {
-    labels: { 
-    shop_no: number;
-    names: string[];
+    labels: {
+      shop_no: number;
+      names: string[];
     };
   }
   export interface CreateAnOrderLabelInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 최소값: [1]
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     * 최소값: [1]
+     */
     shop_no?: any;
     /**
-      * @description
-      * 주문번호
-      * 
-      * @required
-      * 
-      * 주문번호
-      */ 
+     * @description
+     * 주문번호
+     *
+     * @required
+     *
+     * 주문번호
+     */
     order_id: any;
     /**
-      * @description
-      * 품주코드
-      * 
-      * @required
-      */ 
+     * @description
+     * 품주코드
+     *
+     * @required
+     */
     order_item_code: any;
     /**
-      * @description
-      * 주문 라벨명
-      * 
-      * @required
-      */ 
+     * @description
+     * 주문 라벨명
+     *
+     * @required
+     */
     names: any;
   }
 
   export interface CreateAnOrderLabelOutput {
-    label: { 
-    shop_no: number;
-    order_id: string;
-    order_item_code: string;
-    names: string[];
+    label: {
+      shop_no: number;
+      order_id: string;
+      order_item_code: string;
+      names: string[];
     };
   }
   export interface UpdateAnOrderLabelInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 최소값: [1]
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     * 최소값: [1]
+     */
     shop_no?: any;
     /**
-      * @description
-      * 주문번호
-      * 
-      * @required
-      * 
-      * 주문번호
-      */ 
+     * @description
+     * 주문번호
+     *
+     * @required
+     *
+     * 주문번호
+     */
     order_id: any;
     /**
-      * @description
-      * 품주코드
-      * 
-      * @required
-      */ 
+     * @description
+     * 품주코드
+     *
+     * @required
+     */
     order_item_code: any;
     /**
-      * @description
-      * 주문 라벨명
-      * 
-      * @required
-      */ 
+     * @description
+     * 주문 라벨명
+     *
+     * @required
+     */
     names: any;
   }
 
   export interface UpdateAnOrderLabelOutput {
-    label: { 
-    shop_no: number;
-    names: string[];
+    label: {
+      shop_no: number;
+      names: string[];
     };
   }
   export interface DeleteAnOrderLabelInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 최소값: [1]
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     * 최소값: [1]
+     */
     shop_no?: any;
     /**
-      * @description
-      * 주문번호
-      * 
-      * @required
-      * 
-      * 주문번호
-      */ 
+     * @description
+     * 주문번호
+     *
+     * @required
+     *
+     * 주문번호
+     */
     order_id: any;
     /**
-      * @description
-      * 품주코드
-      * 
-      * @required
-      */ 
+     * @description
+     * 품주코드
+     *
+     * @required
+     */
     order_item_code: any;
     /**
-      * @description
-      * 주문 라벨명
-      * 
-      * @required
-      */ 
+     * @description
+     * 주문 라벨명
+     *
+     * @required
+     */
     name: any;
   }
 
   export interface DeleteAnOrderLabelOutput {
-    label: { 
-    shop_no: number;
-    order_id: string;
-    order_item_code: string;
-    name: string;
+    label: {
+      shop_no: number;
+      order_id: string;
+      order_item_code: string;
+      name: string;
     };
   }
 

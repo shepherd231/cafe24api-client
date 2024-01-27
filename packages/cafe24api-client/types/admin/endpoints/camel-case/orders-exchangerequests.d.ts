@@ -1,7 +1,7 @@
 import { AxiosResponse } from 'axios';
-import { 
-  Endpoint, 
-  AdminRequestOptions, 
+import {
+  Endpoint,
+  AdminRequestOptions,
   Cafe24Datetime,
   Cafe24Boolean,
   Cafe24Date,
@@ -13,144 +13,143 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
-
   /**
    * @description
    * 교환 처리를 요청한 주문의 교환접수를 거부할 수 있습니다.
    */
   export interface OrdersExchangerequests {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     *
+     */
     shopNo: any;
     /**
-      * @description
-      * 주문번호
-      * 
-      * 
-      */ 
+     * @description
+     * 주문번호
+     *
+     *
+     */
     orderId: any;
     /**
-      * @description
-      * 접수거부 여부
-      * 
-      * 
-      */ 
+     * @description
+     * 접수거부 여부
+     *
+     *
+     */
     undone: any;
     /**
-      * @description
-      * 품주코드
-      * 
-      * 
-      */ 
+     * @description
+     * 품주코드
+     *
+     *
+     */
     orderItemCode: any;
     /**
-      * @description
-      * 추가 PG 취소
-      * 
-      * 
-      */ 
+     * @description
+     * 추가 PG 취소
+     *
+     *
+     */
     additionalPaymentGatewayCancel: any;
   }
 
   export interface RejectAnExchangeRequestInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 최소값: [1]
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     * 최소값: [1]
+     */
     shopNo?: any;
     /**
-      * @description
-      * 주문번호
-      * 
-      * @required
-      * 
-      * 주문번호
-      */ 
+     * @description
+     * 주문번호
+     *
+     * @required
+     *
+     * 주문번호
+     */
     orderId: any;
     /**
-      * @description
-      * 품주코드
-      * 
-      * @required
-      */ 
+     * @description
+     * 품주코드
+     *
+     * @required
+     */
     orderItemCode: any;
     /**
-      * @description
-      * 접수거부 여부
-      * 
-      * T : 접수거부함
-      * 
-      * @required
-      */ 
+     * @description
+     * 접수거부 여부
+     *
+     * T : 접수거부함
+     *
+     * @required
+     */
     undone: any;
     /**
-      * @description
-      * 사유 구분
-      * 
-      * A:고객변심
-      * B:배송지연
-      * J:배송오류
-      * C:배송불가지역
-      * L:수출/통관 불가
-      * D:포장불량
-      * E:상품 불만족
-      * F:상품정보상이
-      * K:상품불량
-      * G:서비스불만족
-      * H:품절
-      * I:기타
-      * 
-      * 
-      */ 
+     * @description
+     * 사유 구분
+     *
+     * A:고객변심
+     * B:배송지연
+     * J:배송오류
+     * C:배송불가지역
+     * L:수출/통관 불가
+     * D:포장불량
+     * E:상품 불만족
+     * F:상품정보상이
+     * K:상품불량
+     * G:서비스불만족
+     * H:품절
+     * I:기타
+     *
+     *
+     */
     reasonType?: any;
     /**
-      * @description
-      * 사유
-      * 
-      * 최대글자수 : [2000자]
-      */ 
+     * @description
+     * 사유
+     *
+     * 최대글자수 : [2000자]
+     */
     reason?: any;
     /**
-      * @description
-      * 주문상세내역 노출설정
-      * 
-      * T : 노출함
-      * F : 노출안함
-      * 
-      * @default F
-      * 
-      * 
-      */ 
+     * @description
+     * 주문상세내역 노출설정
+     *
+     * T : 노출함
+     * F : 노출안함
+     *
+     * @default F
+     *
+     *
+     */
     displayRejectReason?: any;
     /**
-      * @description
-      * 거부 사유
-      * 
-      * 고객에게 노출되는 접수 거부 사유
-      * 
-      * 최대글자수 : [2000자]
-      */ 
+     * @description
+     * 거부 사유
+     *
+     * 고객에게 노출되는 접수 거부 사유
+     *
+     * 최대글자수 : [2000자]
+     */
     rejectReason?: any;
   }
 
   export interface RejectAnExchangeRequestOutput {
-    exchangerequests: { 
-    shopNo: number;
-    orderId: string;
-    orderItemCode: string[];
-    undone: Cafe24Enum;
-    additionalPaymentGatewayCancel: { 
-    success: string[];
-    fail: any;
-    };
+    exchangerequests: {
+      shopNo: number;
+      orderId: string;
+      orderItemCode: string[];
+      undone: Cafe24Enum;
+      additionalPaymentGatewayCancel: {
+        success: string[];
+        fail: any;
+      };
     };
   }
 
@@ -186,7 +185,9 @@ declare module 'cafe24api-client' {
      */
     rejectAnExchangeRequest(
       input: RejectAnExchangeRequestInput,
-      options?: AdminRequestOptions<RejectAnExchangeRequestOutput['exchangerequests']>,
+      options?: AdminRequestOptions<
+        RejectAnExchangeRequestOutput['exchangerequests']
+      >,
     ): Promise<AxiosResponse<RejectAnExchangeRequestOutput>>;
   }
 }

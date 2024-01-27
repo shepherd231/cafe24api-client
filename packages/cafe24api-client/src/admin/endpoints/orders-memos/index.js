@@ -1,6 +1,8 @@
-
 export default (cls) => {
-  cls.prototype.retrieveAListOfAdminMemosForAnOrder = async function (input, options) {
+  cls.prototype.retrieveAListOfAdminMemosForAnOrder = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/orders/memos`,
@@ -79,5 +81,4 @@ export default (cls) => {
       options,
     );
   };
-
 };

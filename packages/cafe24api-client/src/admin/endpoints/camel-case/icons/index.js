@@ -8,19 +8,16 @@ import {
 export default (cls) => {
   register(cls);
 
-  
-    const retrieveAListOfDesginIcons = cls.prototype.retrieveAListOfDesginIcons;
-    cls.prototype.retrieveAListOfDesginIcons = async function (input, options) {
-      const response = await retrieveAListOfDesginIcons.call(
-        this,
-        convertToSnakeCase(input),
-        optionsToSnakeCase(options),
-      );
-      return {
-        ...response,
-        data: convertToCamelCase(response.data),
-      };
+  const retrieveAListOfDesginIcons = cls.prototype.retrieveAListOfDesginIcons;
+  cls.prototype.retrieveAListOfDesginIcons = async function (input, options) {
+    const response = await retrieveAListOfDesginIcons.call(
+      this,
+      convertToSnakeCase(input),
+      optionsToSnakeCase(options),
+    );
+    return {
+      ...response,
+      data: convertToCamelCase(response.data),
     };
-
- 
+  };
 };

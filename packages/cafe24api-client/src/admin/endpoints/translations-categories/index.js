@@ -1,6 +1,8 @@
-
 export default (cls) => {
-  cls.prototype.retrieveAListOfProductCategoryTranslations = async function (input, options) {
+  cls.prototype.retrieveAListOfProductCategoryTranslations = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/translations/categories`,
@@ -15,7 +17,10 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.updateProductCategoryTranslation = async function (input, options) {
+  cls.prototype.updateProductCategoryTranslation = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'PUT',
       `/api/v2/admin/translations/categories/${input['category_no']}`,
@@ -27,5 +32,4 @@ export default (cls) => {
       options,
     );
   };
-
 };

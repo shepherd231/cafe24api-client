@@ -1,6 +1,8 @@
-
 export default (cls) => {
-  cls.prototype.retrieveAListOfProductVariants = async function (input, options) {
+  cls.prototype.retrieveAListOfProductVariants = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/products/${input['product_no']}/variants`,
@@ -50,7 +52,10 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.updateMultipleProductVariants = async function (input, options) {
+  cls.prototype.updateMultipleProductVariants = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'PUT',
       `/api/v2/admin/products/${input['product_no']}/variants`,
@@ -84,5 +89,4 @@ export default (cls) => {
       options,
     );
   };
-
 };

@@ -1,6 +1,8 @@
-
 export default (cls) => {
-  cls.prototype.sendAnInvitationToActivateAccount = async function (input, options) {
+  cls.prototype.sendAnInvitationToActivateAccount = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'POST',
       `/api/v2/admin/customers/${input['member_id']}/invitation`,
@@ -12,5 +14,4 @@ export default (cls) => {
       options,
     );
   };
-
 };

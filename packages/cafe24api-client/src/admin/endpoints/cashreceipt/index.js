@@ -1,4 +1,3 @@
-
 export default (cls) => {
   cls.prototype.retrieveAListOfCashReceipts = async function (input, options) {
     return this.createRequest(
@@ -47,5 +46,4 @@ export default (cls) => {
       options,
     );
   };
-
 };

@@ -1,6 +1,8 @@
-
 export default (cls) => {
-  cls.prototype.createAReturnRequestForMultipleItems = async function (input, options) {
+  cls.prototype.createAReturnRequestForMultipleItems = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'POST',
       `/api/v2/admin/returnrequests`,
@@ -23,7 +25,10 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.rejectAReturnRequestForMultipleItems = async function (input, options) {
+  cls.prototype.rejectAReturnRequestForMultipleItems = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'PUT',
       `/api/v2/admin/returnrequests`,
@@ -40,5 +45,4 @@ export default (cls) => {
       options,
     );
   };
-
 };

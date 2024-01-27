@@ -1,4 +1,3 @@
-
 export default (cls) => {
   cls.prototype.bulkExchangeRequestAPI = async function (input, options) {
     return this.createRequest(
@@ -24,7 +23,10 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.rejectAnExchangeRequestForMultipleItems = async function (input, options) {
+  cls.prototype.rejectAnExchangeRequestForMultipleItems = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'PUT',
       `/api/v2/admin/exchangerequests`,
@@ -41,5 +43,4 @@ export default (cls) => {
       options,
     );
   };
-
 };

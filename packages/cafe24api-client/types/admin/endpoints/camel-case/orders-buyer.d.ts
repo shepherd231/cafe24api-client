@@ -1,7 +1,7 @@
 import { AxiosResponse } from 'axios';
-import { 
-  Endpoint, 
-  AdminRequestOptions, 
+import {
+  Endpoint,
+  AdminRequestOptions,
   Cafe24Datetime,
   Cafe24Boolean,
   Cafe24Date,
@@ -13,266 +13,265 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
-
   /**
    * @description
-   * 
-   * 
+   *
+   *
    * 주문자(Buyer)는 쇼핑몰의 상품을 주문한 사람을 나타냅니다.
    * 주문자 리소스를 통해 특정 주문의 주문자의 이름, 주소, 전화번호, 이메일 등의 정보를 조회하거나 수정할 수 있습니다.
    */
   export interface OrdersBuyer {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
+     *
+     *
+     */
     shopNo: any;
     /**
-      * @description
-      * 회원아이디
-      * 
-      * 
-      */ 
+     * @description
+     * 회원아이디
+     *
+     *
+     */
     memberId: any;
     /**
-      * @description
-      * 주문당시 주문자 회원 등급 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 주문당시 주문자 회원 등급 번호
+     *
+     *
+     */
     memberGroupNo: any;
     /**
-      * @description
-      * 주문자명
-      * 
-      * 
-      */ 
+     * @description
+     * 주문자명
+     *
+     *
+     */
     name: any;
     /**
-      * @description
-      * 주문자 이름 후리가나
-      * 
-      * 
-      */ 
+     * @description
+     * 주문자 이름 후리가나
+     *
+     *
+     */
     namesFurigana: any;
     /**
-      * @description
-      * 주문자 이메일
-      * 
-      * 해당 회원의 이메일
-      * 
-      * 
-      */ 
+     * @description
+     * 주문자 이메일
+     *
+     * 해당 회원의 이메일
+     *
+     *
+     */
     email: any;
     /**
-      * @description
-      * 주문자 일반 전화
-      * 
-      * 
-      */ 
+     * @description
+     * 주문자 일반 전화
+     *
+     *
+     */
     phone: any;
     /**
-      * @description
-      * 주문자 휴대 전화
-      * 
-      * 
-      */ 
+     * @description
+     * 주문자 휴대 전화
+     *
+     *
+     */
     cellphone: any;
     /**
-      * @description
-      * 고객 알림
-      * 
-      * 고객에게 알릴 문구
-      * 
-      * 
-      */ 
+     * @description
+     * 고객 알림
+     *
+     * 고객에게 알릴 문구
+     *
+     *
+     */
     customerNotification: any;
     /**
-      * @description
-      * 수정일
-      * 
-      * 
-      */ 
+     * @description
+     * 수정일
+     *
+     *
+     */
     updatedDate: any;
     /**
-      * @description
-      * 주문자 수정자 ID
-      * 
-      * 주문자정보를 수정한 사람의 ID
-      * 
-      * 
-      */ 
+     * @description
+     * 주문자 수정자 ID
+     *
+     * 주문자정보를 수정한 사람의 ID
+     *
+     *
+     */
     userId: any;
     /**
-      * @description
-      * 주문자 수정자 명
-      * 
-      * 주문자정보를 수정한 사람의 이름
-      * 
-      * 
-      */ 
+     * @description
+     * 주문자 수정자 명
+     *
+     * 주문자정보를 수정한 사람의 이름
+     *
+     *
+     */
     userName: any;
     /**
-      * @description
-      * 상호명
-      * 
-      * 
-      */ 
+     * @description
+     * 상호명
+     *
+     *
+     */
     companyName: any;
     /**
-      * @description
-      * 사업자등록번호
-      * 
-      * 
-      */ 
+     * @description
+     * 사업자등록번호
+     *
+     *
+     */
     companyRegistrationNo: any;
     /**
-      * @description
-      * 주문자 우편번호
-      * 
-      * 
-      */ 
+     * @description
+     * 주문자 우편번호
+     *
+     *
+     */
     buyerZipcode: any;
     /**
-      * @description
-      * 주문자 기본주소
-      * 
-      * 
-      */ 
+     * @description
+     * 주문자 기본주소
+     *
+     *
+     */
     buyerAddress1: any;
     /**
-      * @description
-      * 주문자 상세주소
-      * 
-      * 
-      */ 
+     * @description
+     * 주문자 상세주소
+     *
+     *
+     */
     buyerAddress2: any;
     /**
-      * @description
-      * 주문번호
-      * 
-      * 주문번호
-      */ 
+     * @description
+     * 주문번호
+     *
+     * 주문번호
+     */
     orderId: any;
   }
 
   export interface RetrieveCustomerDetailsOfAnOrderInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     *
+     */
     shopNo?: any;
     /**
-      * @description
-      * 주문번호
-      * 
-      * @required
-      * 
-      * 주문번호
-      */ 
+     * @description
+     * 주문번호
+     *
+     * @required
+     *
+     * 주문번호
+     */
     orderId: any;
   }
 
   export interface RetrieveCustomerDetailsOfAnOrderOutput {
-    buyer: { 
-    shopNo: number;
-    memberId: string;
-    memberGroupNo: number;
-    name: string;
-    namesFurigana: string;
-    email: string;
-    phone: string;
-    cellphone: string;
-    customerNotification: string;
-    updatedDate: Cafe24Datetime;
-    userId: string;
-    userName: string;
-    companyName: string;
-    companyRegistrationNo: string;
-    buyerZipcode: Cafe24Datetime;
-    buyerAddress1: string;
-    buyerAddress2: Cafe24Datetime;
+    buyer: {
+      shopNo: number;
+      memberId: string;
+      memberGroupNo: number;
+      name: string;
+      namesFurigana: string;
+      email: string;
+      phone: string;
+      cellphone: string;
+      customerNotification: string;
+      updatedDate: Cafe24Datetime;
+      userId: string;
+      userName: string;
+      companyName: string;
+      companyRegistrationNo: string;
+      buyerZipcode: Cafe24Datetime;
+      buyerAddress1: string;
+      buyerAddress2: Cafe24Datetime;
     };
   }
   export interface UpdateCustomerInformationOfAnOrderInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
-      * 
-      * @default 1
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
+     *
+     * @default 1
+     *
+     *
+     */
     shopNo?: any;
     /**
-      * @description
-      * 주문번호
-      * 
-      * @required
-      * 
-      * 주문번호
-      */ 
+     * @description
+     * 주문번호
+     *
+     * @required
+     *
+     * 주문번호
+     */
     orderId: any;
     /**
-      * @description
-      * 주문자명
-      * 
-      * 
-      */ 
+     * @description
+     * 주문자명
+     *
+     *
+     */
     name?: any;
     /**
-      * @description
-      * 주문자 이메일
-      * 
-      * 해당 회원의 이메일
-      * 
-      * 이메일
-      */ 
+     * @description
+     * 주문자 이메일
+     *
+     * 해당 회원의 이메일
+     *
+     * 이메일
+     */
     email?: any;
     /**
-      * @description
-      * 주문자 일반 전화
-      * 
-      * 
-      */ 
+     * @description
+     * 주문자 일반 전화
+     *
+     *
+     */
     phone?: any;
     /**
-      * @description
-      * 주문자 휴대 전화
-      * 
-      * 
-      */ 
+     * @description
+     * 주문자 휴대 전화
+     *
+     *
+     */
     cellphone?: any;
     /**
-      * @description
-      * 고객 알림
-      * 
-      * 고객에게 알릴 문구
-      * 
-      * 
-      */ 
+     * @description
+     * 고객 알림
+     *
+     * 고객에게 알릴 문구
+     *
+     *
+     */
     customerNotification?: any;
   }
 
   export interface UpdateCustomerInformationOfAnOrderOutput {
-    buyer: { 
-    shopNo: number;
-    orderId: string;
-    name: string;
-    email: string;
-    phone: string;
-    cellphone: string;
-    customerNotification: string;
+    buyer: {
+      shopNo: number;
+      orderId: string;
+      name: string;
+      email: string;
+      phone: string;
+      cellphone: string;
+      customerNotification: string;
     };
   }
 
@@ -310,7 +309,9 @@ declare module 'cafe24api-client' {
      */
     retrieveCustomerDetailsOfAnOrder(
       input: RetrieveCustomerDetailsOfAnOrderInput,
-      options?: AdminRequestOptions<RetrieveCustomerDetailsOfAnOrderOutput['buyer']>,
+      options?: AdminRequestOptions<
+        RetrieveCustomerDetailsOfAnOrderOutput['buyer']
+      >,
     ): Promise<AxiosResponse<RetrieveCustomerDetailsOfAnOrderOutput>>;
     /**
      * @description
@@ -336,7 +337,9 @@ declare module 'cafe24api-client' {
      */
     updateCustomerInformationOfAnOrder(
       input: UpdateCustomerInformationOfAnOrderInput,
-      options?: AdminRequestOptions<UpdateCustomerInformationOfAnOrderOutput['buyer']>,
+      options?: AdminRequestOptions<
+        UpdateCustomerInformationOfAnOrderOutput['buyer']
+      >,
     ): Promise<AxiosResponse<UpdateCustomerInformationOfAnOrderOutput>>;
   }
 }

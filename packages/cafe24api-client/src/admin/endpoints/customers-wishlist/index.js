@@ -1,6 +1,8 @@
-
 export default (cls) => {
-  cls.prototype.retrieveACountOfProductsInCustomerWishlist = async function (input, options) {
+  cls.prototype.retrieveACountOfProductsInCustomerWishlist = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/customers/${input['member_id']}/wishlist/count`,
@@ -12,7 +14,10 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.retrieveAListOfProductsInCustomerWishlist = async function (input, options) {
+  cls.prototype.retrieveAListOfProductsInCustomerWishlist = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/customers/${input['member_id']}/wishlist`,
@@ -23,5 +28,4 @@ export default (cls) => {
       options,
     );
   };
-
 };

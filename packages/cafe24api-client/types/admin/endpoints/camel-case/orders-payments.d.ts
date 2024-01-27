@@ -1,7 +1,7 @@
 import { AxiosResponse } from 'axios';
-import { 
-  Endpoint, 
-  AdminRequestOptions, 
+import {
+  Endpoint,
+  AdminRequestOptions,
   Cafe24Datetime,
   Cafe24Boolean,
   Cafe24Date,
@@ -13,208 +13,207 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
-
   /**
    * @description
-   * 
-   * 
+   *
+   *
    * 주문의 결제상태(Orders payments)는 특정 주문의 결제상태에 대한 기능입니다.
    */
   export interface OrdersPayments {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     *
+     */
     shopNo: any;
     /**
-      * @description
-      * 주문번호
-      * 
-      * 
-      */ 
+     * @description
+     * 주문번호
+     *
+     *
+     */
     orderId: any;
     /**
-      * @description
-      * 결제금액 변경 여부
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 결제금액 변경 여부
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     changePaymentAmount: any;
     /**
-      * @description
-      * 결제수단 변경 여부
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 결제수단 변경 여부
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     changePaymentMethod: any;
     /**
-      * @description
-      * 결제수단
-      * 
-      * 
-      */ 
+     * @description
+     * 결제수단
+     *
+     *
+     */
     paymentMethod: any;
     /**
-      * @description
-      * PG 결제 취소 실패 메시지
-      * 
-      * 
-      */ 
+     * @description
+     * PG 결제 취소 실패 메시지
+     *
+     *
+     */
     paymentGatewayFailureMessage: any;
     /**
-      * @description
-      * 관리자 입력 금액
-      * 
-      * 
-      */ 
+     * @description
+     * 관리자 입력 금액
+     *
+     *
+     */
     adminAdditionalAmount: any;
     /**
-      * @description
-      * 결제 수수료
-      * 
-      * 
-      */ 
+     * @description
+     * 결제 수수료
+     *
+     *
+     */
     commission: any;
     /**
-      * @description
-      * 최초 결제 예정 금액
-      * 
-      * 
-      */ 
+     * @description
+     * 최초 결제 예정 금액
+     *
+     *
+     */
     initialEstimatedPaymentAmount: any;
     /**
-      * @description
-      * 결제금액 변경 사유
-      * 
-      * 
-      */ 
+     * @description
+     * 결제금액 변경 사유
+     *
+     *
+     */
     changePaymentAmountReason: any;
   }
 
   export interface UpdateAnOrderPaymentStatusInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     *
+     */
     shopNo?: any;
     /**
-      * @description
-      * 주문번호
-      * 
-      * @required
-      */ 
+     * @description
+     * 주문번호
+     *
+     * @required
+     */
     orderId: any;
     /**
-      * @description
-      * 결제금액 변경 여부
-      * 
-      * 입금전 상태에서만 결제금액 변경 가능
-      * 
-      * 단, CS주문상태 또는 CS처리이력이 존재하는 경우에는 결제금액 변경 불가능함
-      * 
-      * ※ 결제수단별 입금전 주문상태
-      * - 무통장입금 : 입금전
-      * - 다이비키 : 상품준비중 ~ 배송완료 [다이비키 입금전]
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * @required
-      */ 
+     * @description
+     * 결제금액 변경 여부
+     *
+     * 입금전 상태에서만 결제금액 변경 가능
+     *
+     * 단, CS주문상태 또는 CS처리이력이 존재하는 경우에는 결제금액 변경 불가능함
+     *
+     * ※ 결제수단별 입금전 주문상태
+     * - 무통장입금 : 입금전
+     * - 다이비키 : 상품준비중 ~ 배송완료 [다이비키 입금전]
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     * @required
+     */
     changePaymentAmount: any;
     /**
-      * @description
-      * 결제수단 변경 여부
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * @required
-      */ 
+     * @description
+     * 결제수단 변경 여부
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     * @required
+     */
     changePaymentMethod: any;
     /**
-      * @description
-      * 결제수단
-      * 
-      * cash: 무통장 입금
-      * daibiki : 다이비키
-      * 
-      * 
-      */ 
+     * @description
+     * 결제수단
+     *
+     * cash: 무통장 입금
+     * daibiki : 다이비키
+     *
+     *
+     */
     paymentMethod?: any;
     /**
-      * @description
-      * 입금자명
-      * 
-      * 결제수단을 무통장입금으로 변경할 경우(&#34;change_payment_method:&#34;T&#34;이고 &#34;payment_method&#34;:&#34;cash&#34;일 경우) 사용 가능
-      * 
-      * 최대글자수 : [40자]
-      */ 
+     * @description
+     * 입금자명
+     *
+     * 결제수단을 무통장입금으로 변경할 경우(&#34;change_payment_method:&#34;T&#34;이고 &#34;payment_method&#34;:&#34;cash&#34;일 경우) 사용 가능
+     *
+     * 최대글자수 : [40자]
+     */
     billingName?: any;
     /**
-      * @description
-      * 무통장 입금 은행 ID
-      * 
-      * 결제수단을 무통장입금으로 변경할 경우(&#34;change_payment_method:&#34;T&#34;이고 &#34;payment_method&#34;:&#34;cash&#34;일 경우) 사용 가능
-      * 
-      * 
-      */ 
+     * @description
+     * 무통장 입금 은행 ID
+     *
+     * 결제수단을 무통장입금으로 변경할 경우(&#34;change_payment_method:&#34;T&#34;이고 &#34;payment_method&#34;:&#34;cash&#34;일 경우) 사용 가능
+     *
+     *
+     */
     bankAccountId?: any;
     /**
-      * @description
-      * 관리자 입력 금액
-      * 
-      * 결제금액을 변경할 경우(&#34;change_payment_amount&#34;:&#34;T&#34;일 경우) 사용 가능
-      * 
-      * 최소값: [0]
-      * 최대값: [10000000]
-      */ 
+     * @description
+     * 관리자 입력 금액
+     *
+     * 결제금액을 변경할 경우(&#34;change_payment_amount&#34;:&#34;T&#34;일 경우) 사용 가능
+     *
+     * 최소값: [0]
+     * 최대값: [10000000]
+     */
     adminAdditionalAmount?: any;
     /**
-      * @description
-      * 결제 수수료
-      * 
-      * 결제수단을 다이비키로 변경할 경우(&#34;change_payment_amount:&#34;T&#34;이고 &#34;payment_method&#34;:&#34;daibiki&#34;일 경우) 사용 가능
-      * 
-      * 최소값: [0]
-      * 최대값: [10000000]
-      */ 
+     * @description
+     * 결제 수수료
+     *
+     * 결제수단을 다이비키로 변경할 경우(&#34;change_payment_amount:&#34;T&#34;이고 &#34;payment_method&#34;:&#34;daibiki&#34;일 경우) 사용 가능
+     *
+     * 최소값: [0]
+     * 최대값: [10000000]
+     */
     commission?: any;
     /**
-      * @description
-      * 결제금액 변경 사유
-      * 
-      * 결제금액을 변경할 경우(&#34;change_payment_amount&#34;:&#34;T&#34;일 경우) 사용 가능
-      * 
-      * 최대글자수 : [255자]
-      */ 
+     * @description
+     * 결제금액 변경 사유
+     *
+     * 결제금액을 변경할 경우(&#34;change_payment_amount&#34;:&#34;T&#34;일 경우) 사용 가능
+     *
+     * 최대글자수 : [255자]
+     */
     changePaymentAmountReason?: any;
   }
 
   export interface UpdateAnOrderPaymentStatusOutput {
-    payment: { 
-    shopNo: number;
-    orderId: string;
-    changePaymentAmount: Cafe24Enum;
-    changePaymentMethod: Cafe24Enum;
-    paymentMethod: string;
-    paymentGatewayFailureMessage: any;
-    adminAdditionalAmount: Cafe24Datetime;
-    commission: any;
-    initialEstimatedPaymentAmount: Cafe24Datetime;
-    changePaymentAmountReason: string;
+    payment: {
+      shopNo: number;
+      orderId: string;
+      changePaymentAmount: Cafe24Enum;
+      changePaymentMethod: Cafe24Enum;
+      paymentMethod: string;
+      paymentGatewayFailureMessage: any;
+      adminAdditionalAmount: Cafe24Datetime;
+      commission: any;
+      initialEstimatedPaymentAmount: Cafe24Datetime;
+      changePaymentAmountReason: string;
     };
   }
 
@@ -246,7 +245,9 @@ declare module 'cafe24api-client' {
      */
     updateAnOrderPaymentStatus(
       input: UpdateAnOrderPaymentStatusInput,
-      options?: AdminRequestOptions<UpdateAnOrderPaymentStatusOutput['payment']>,
+      options?: AdminRequestOptions<
+        UpdateAnOrderPaymentStatusOutput['payment']
+      >,
     ): Promise<AxiosResponse<UpdateAnOrderPaymentStatusOutput>>;
   }
 }

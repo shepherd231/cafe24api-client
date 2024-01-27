@@ -1,6 +1,8 @@
-
 export default (cls) => {
-  cls.prototype.retrieveAListOfProductsByCategory = async function (input, options) {
+  cls.prototype.retrieveAListOfProductsByCategory = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'GET',
       `/api/v2/categories/${input['category_no']}/products`,
@@ -16,7 +18,10 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.retrieveACountOfProductsByCategory = async function (input, options) {
+  cls.prototype.retrieveACountOfProductsByCategory = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'GET',
       `/api/v2/categories/${input['category_no']}/products/count`,
@@ -28,5 +33,4 @@ export default (cls) => {
       options,
     );
   };
-
 };

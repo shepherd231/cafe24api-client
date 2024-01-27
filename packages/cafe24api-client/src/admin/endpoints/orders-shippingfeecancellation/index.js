@@ -1,18 +1,21 @@
-
 export default (cls) => {
-  cls.prototype.retrieveShippingFeeCancellationDetailsOfAnOrder = async function (input, options) {
-    return this.createRequest(
-      'GET',
-      `/api/v2/admin/orders/${input['order_id']}/shippingfeecancellation`,
-      {
-        shop_no: input['shop_no'],
-        order_id: input['order_id'],
-      },
-      options,
-    );
-  };
+  cls.prototype.retrieveShippingFeeCancellationDetailsOfAnOrder =
+    async function (input, options) {
+      return this.createRequest(
+        'GET',
+        `/api/v2/admin/orders/${input['order_id']}/shippingfeecancellation`,
+        {
+          shop_no: input['shop_no'],
+          order_id: input['order_id'],
+        },
+        options,
+      );
+    };
 
-  cls.prototype.createAnOrderShippingFeeCancellation = async function (input, options) {
+  cls.prototype.createAnOrderShippingFeeCancellation = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'POST',
       `/api/v2/admin/orders/${input['order_id']}/shippingfeecancellation`,
@@ -32,5 +35,4 @@ export default (cls) => {
       options,
     );
   };
-
 };

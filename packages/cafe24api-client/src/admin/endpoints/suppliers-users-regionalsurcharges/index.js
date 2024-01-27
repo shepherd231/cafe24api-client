@@ -1,20 +1,23 @@
-
 export default (cls) => {
-  cls.prototype.retrieveASupplierUsersListOfRegionalShippingFees = async function (input, options) {
-    return this.createRequest(
-      'GET',
-      `/api/v2/admin/suppliers/users/${input['supplier_id']}/regionalsurcharges`,
-      {
-        shop_no: input['shop_no'],
-        supplier_id: input['supplier_id'],
-        offset: input['offset'],
-        limit: input['limit'],
-      },
-      options,
-    );
-  };
+  cls.prototype.retrieveASupplierUsersListOfRegionalShippingFees =
+    async function (input, options) {
+      return this.createRequest(
+        'GET',
+        `/api/v2/admin/suppliers/users/${input['supplier_id']}/regionalsurcharges`,
+        {
+          shop_no: input['shop_no'],
+          supplier_id: input['supplier_id'],
+          offset: input['offset'],
+          limit: input['limit'],
+        },
+        options,
+      );
+    };
 
-  cls.prototype.createRegionalShippingFeeForASupplierUser = async function (input, options) {
+  cls.prototype.createRegionalShippingFeeForASupplierUser = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'POST',
       `/api/v2/admin/suppliers/users/${input['supplier_id']}/regionalsurcharges`,
@@ -33,17 +36,17 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.deleteSupplierUsersRegionalShippingFeeSettings = async function (input, options) {
-    return this.createRequest(
-      'DELETE',
-      `/api/v2/admin/suppliers/users/${input['supplier_id']}/regionalsurcharges/{regional_surcharge_no}`,
-      {
-        shop_no: input['shop_no'],
-        supplier_id: input['supplier_id'],
-        regional_surcharge_no: input['regional_surcharge_no'],
-      },
-      options,
-    );
-  };
-
+  cls.prototype.deleteSupplierUsersRegionalShippingFeeSettings =
+    async function (input, options) {
+      return this.createRequest(
+        'DELETE',
+        `/api/v2/admin/suppliers/users/${input['supplier_id']}/regionalsurcharges/{regional_surcharge_no}`,
+        {
+          shop_no: input['shop_no'],
+          supplier_id: input['supplier_id'],
+          regional_surcharge_no: input['regional_surcharge_no'],
+        },
+        options,
+      );
+    };
 };

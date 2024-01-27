@@ -1,7 +1,7 @@
 import { AxiosResponse } from 'axios';
-import { 
-  Endpoint, 
-  AdminRequestOptions, 
+import {
+  Endpoint,
+  AdminRequestOptions,
   Cafe24Datetime,
   Cafe24Boolean,
   Cafe24Date,
@@ -13,71 +13,70 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
-
   export interface CustomersPlusapp {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * 최소값: [1]
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * 최소값: [1]
+     */
     shopNo: any;
     /**
-      * @description
-      * OS 타입
-      * 
-      * 
-      */ 
+     * @description
+     * OS 타입
+     *
+     *
+     */
     osType: any;
     /**
-      * @description
-      * 설치일
-      * 
-      * 
-      */ 
+     * @description
+     * 설치일
+     *
+     *
+     */
     installDate: any;
     /**
-      * @description
-      * 자동로그인 설정 여부
-      * 
-      * 
-      */ 
+     * @description
+     * 자동로그인 설정 여부
+     *
+     *
+     */
     autoLoginFlag: any;
     /**
-      * @description
-      * 알림 수신 여부
-      * 
-      * 
-      */ 
+     * @description
+     * 알림 수신 여부
+     *
+     *
+     */
     usePushFlag: any;
   }
 
   export interface RetrieveAppInstallationInformationInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 최소값: [1]
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     * 최소값: [1]
+     */
     shopNo?: any;
     /**
-      * @description
-      * 회원아이디
-      * 
-      * @required
-      */ 
+     * @description
+     * 회원아이디
+     *
+     * @required
+     */
     memberId: any;
   }
 
   export interface RetrieveAppInstallationInformationOutput {
-    plusapp: { 
-    shopNo: number;
-    osType: string;
-    installDate: Cafe24Datetime;
-    autoLoginFlag: Cafe24Enum;
-    usePushFlag: Cafe24Enum;
+    plusapp: {
+      shopNo: number;
+      osType: string;
+      installDate: Cafe24Datetime;
+      autoLoginFlag: Cafe24Enum;
+      usePushFlag: Cafe24Enum;
     }[];
   }
 
@@ -109,7 +108,9 @@ declare module 'cafe24api-client' {
      */
     retrieveAppInstallationInformation(
       input: RetrieveAppInstallationInformationInput,
-      options?: AdminRequestOptions<RetrieveAppInstallationInformationOutput['plusapp'][number]>,
+      options?: AdminRequestOptions<
+        RetrieveAppInstallationInformationOutput['plusapp'][number]
+      >,
     ): Promise<AxiosResponse<RetrieveAppInstallationInformationOutput>>;
   }
 }

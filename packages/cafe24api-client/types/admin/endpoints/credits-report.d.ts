@@ -1,7 +1,7 @@
 import { AxiosResponse } from 'axios';
-import { 
-  Endpoint, 
-  AdminRequestOptions, 
+import {
+  Endpoint,
+  AdminRequestOptions,
   Cafe24Datetime,
   Cafe24Boolean,
   Cafe24Date,
@@ -13,128 +13,127 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
-
   /**
    * @description
-   * 
-   * 
+   *
+   *
    * 예치금 통계(Credit report)는 지정한 기간동안의 예치금 통계를 조회할 수 있는 리소스입니다.
    */
   export interface CreditsReport {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     *
+     */
     shop_no: any;
     /**
-      * @description
-      * 지급 금액
-      * 
-      * 
-      */ 
+     * @description
+     * 지급 금액
+     *
+     *
+     */
     increase_amount: any;
     /**
-      * @description
-      * 차감 금액
-      * 
-      * 
-      */ 
+     * @description
+     * 차감 금액
+     *
+     *
+     */
     decrease_amount: any;
     /**
-      * @description
-      * 예치금 합계
-      * 
-      * 
-      */ 
+     * @description
+     * 예치금 합계
+     *
+     *
+     */
     credits_total: any;
   }
 
   export interface RetrieveACreditReportByDateRangeInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     *
+     */
     shop_no?: any;
     /**
-      * @description
-      * 검색 시작일
-      * 
-      * @required
-      * 
-      * 날짜
-      */ 
+     * @description
+     * 검색 시작일
+     *
+     * @required
+     *
+     * 날짜
+     */
     start_date: any;
     /**
-      * @description
-      * 검색 종료일
-      * 
-      * @required
-      * 
-      * 날짜
-      */ 
+     * @description
+     * 검색 종료일
+     *
+     * @required
+     *
+     * 날짜
+     */
     end_date: any;
     /**
-      * @description
-      * 예치금 증가/차감 여부
-      * 
-      * I : 지급내역
-      * D : 차감내역
-      * 
-      * 
-      */ 
+     * @description
+     * 예치금 증가/차감 여부
+     *
+     * I : 지급내역
+     * D : 차감내역
+     *
+     *
+     */
     type?: any;
     /**
-      * @description
-      * 예치금 유형
-      * 
-      * A : 주문취소
-      * B : 예치금환불
-      * C : 상품구매
-      * D : 임의조정
-      * E : 현금환불
-      * G : 충전
-      * 
-      * 
-      */ 
+     * @description
+     * 예치금 유형
+     *
+     * A : 주문취소
+     * B : 예치금환불
+     * C : 상품구매
+     * D : 임의조정
+     * E : 현금환불
+     * G : 충전
+     *
+     *
+     */
     case?: any;
     /**
-      * @description
-      * 관리자 아이디
-      * 
-      * 
-      */ 
+     * @description
+     * 관리자 아이디
+     *
+     *
+     */
     admin_id?: any;
     /**
-      * @description
-      * 검색필드
-      * 
-      * id : 아이디
-      * reason : 처리사유
-      * 
-      * 
-      */ 
+     * @description
+     * 검색필드
+     *
+     * id : 아이디
+     * reason : 처리사유
+     *
+     *
+     */
     search_field?: any;
     /**
-      * @description
-      * 검색어
-      * 
-      * 
-      */ 
+     * @description
+     * 검색어
+     *
+     *
+     */
     keyword?: any;
   }
 
   export interface RetrieveACreditReportByDateRangeOutput {
-    report: { 
-    shop_no: number;
-    increase_amount: Cafe24Datetime;
-    decrease_amount: string;
-    credits_total: Cafe24Datetime;
+    report: {
+      shop_no: number;
+      increase_amount: Cafe24Datetime;
+      decrease_amount: string;
+      credits_total: Cafe24Datetime;
     };
   }
 
@@ -160,7 +159,9 @@ declare module 'cafe24api-client' {
      */
     retrieveACreditReportByDateRange(
       input: RetrieveACreditReportByDateRangeInput,
-      options?: AdminRequestOptions<RetrieveACreditReportByDateRangeOutput['report']>,
+      options?: AdminRequestOptions<
+        RetrieveACreditReportByDateRangeOutput['report']
+      >,
     ): Promise<AxiosResponse<RetrieveACreditReportByDateRangeOutput>>;
   }
 }

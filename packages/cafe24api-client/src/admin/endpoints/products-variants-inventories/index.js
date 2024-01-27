@@ -1,6 +1,8 @@
-
 export default (cls) => {
-  cls.prototype.retrieveInventoryDetailsOfAProductVariant = async function (input, options) {
+  cls.prototype.retrieveInventoryDetailsOfAProductVariant = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/products/${input['product_no']}/variants/{variant_code}/inventories`,
@@ -13,7 +15,10 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.updateAProductVariantInventory = async function (input, options) {
+  cls.prototype.updateAProductVariantInventory = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'PUT',
       `/api/v2/admin/products/${input['product_no']}/variants/{variant_code}/inventories`,
@@ -32,5 +37,4 @@ export default (cls) => {
       options,
     );
   };
-
 };

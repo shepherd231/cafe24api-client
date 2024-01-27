@@ -1,7 +1,7 @@
 import { AxiosResponse } from 'axios';
-import { 
-  Endpoint, 
-  AdminRequestOptions, 
+import {
+  Endpoint,
+  AdminRequestOptions,
   Cafe24Datetime,
   Cafe24Boolean,
   Cafe24Date,
@@ -13,140 +13,139 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
-
   /**
    * @description
-   * 
-   * 
+   *
+   *
    * 상품 추가 이미지(Products additionalimages)는 상품의 추가이미지를 나타내는 하위 리소스로, 상품(Products)리소스의 하위에서만 사용할 수 있습니다.
    */
   export interface ProductsAdditionalimages {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     *
+     */
     shopNo: any;
     /**
-      * @description
-      * 추가이미지
-      * 
-      * 
-      */ 
+     * @description
+     * 추가이미지
+     *
+     *
+     */
     additionalImage: any;
     /**
-      * @description
-      * 상품번호
-      * 
-      * 
-      */ 
+     * @description
+     * 상품번호
+     *
+     *
+     */
     productNo: any;
   }
 
   export interface CreateAnAdditionalProductImageInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     *
+     */
     shopNo?: any;
     /**
-      * @description
-      * 상품번호
-      * 
-      * @required
-      */ 
+     * @description
+     * 상품번호
+     *
+     * @required
+     */
     productNo: any;
     /**
-      * @description
-      * 추가이미지
-      * 
-      * ● 최대요청건수 : 20개
-      * ● 이미지 파일 용량 제한 : 5MB
-      * ● 한 호출당 이미지 전체 용량 제한 : 30MB
-      * 
-      * @required
-      */ 
+     * @description
+     * 추가이미지
+     *
+     * ● 최대요청건수 : 20개
+     * ● 이미지 파일 용량 제한 : 5MB
+     * ● 한 호출당 이미지 전체 용량 제한 : 30MB
+     *
+     * @required
+     */
     additionalImage: any;
   }
 
   export interface CreateAnAdditionalProductImageOutput {
-    additionalimage: { 
-    shopNo: number;
-    additionalImage: { 
-    big: string;
-    medium: string;
-    small: string;
-    }[];
+    additionalimage: {
+      shopNo: number;
+      additionalImage: {
+        big: string;
+        medium: string;
+        small: string;
+      }[];
     };
   }
   export interface UpdateAnAdditionalProductImageInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     *
+     */
     shopNo?: any;
     /**
-      * @description
-      * 상품번호
-      * 
-      * @required
-      */ 
+     * @description
+     * 상품번호
+     *
+     * @required
+     */
     productNo: any;
     /**
-      * @description
-      * 추가이미지
-      * 
-      * ● 최대요청건수 : 20개
-      * ● 이미지 파일 용량 제한 : 5MB
-      * ● 한 호출당 이미지 전체 용량 제한 : 30MB
-      * 
-      * @required
-      */ 
+     * @description
+     * 추가이미지
+     *
+     * ● 최대요청건수 : 20개
+     * ● 이미지 파일 용량 제한 : 5MB
+     * ● 한 호출당 이미지 전체 용량 제한 : 30MB
+     *
+     * @required
+     */
     additionalImage: any;
   }
 
   export interface UpdateAnAdditionalProductImageOutput {
-    additionalimage: { 
-    shopNo: number;
-    additionalImage: { 
-    big: string;
-    medium: string;
-    small: string;
-    }[];
+    additionalimage: {
+      shopNo: number;
+      additionalImage: {
+        big: string;
+        medium: string;
+        small: string;
+      }[];
     };
   }
   export interface DeleteAnAdditionalProductImageInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 최소값: [1]
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     * 최소값: [1]
+     */
     shopNo?: any;
     /**
-      * @description
-      * 상품번호
-      * 
-      * @required
-      */ 
+     * @description
+     * 상품번호
+     *
+     * @required
+     */
     productNo: any;
   }
 
   export interface DeleteAnAdditionalProductImageOutput {
-    additionalimage: { 
-    shopNo: number;
-    productNo: number;
+    additionalimage: {
+      shopNo: number;
+      productNo: number;
     };
   }
 
@@ -186,7 +185,9 @@ declare module 'cafe24api-client' {
      */
     createAnAdditionalProductImage(
       input: CreateAnAdditionalProductImageInput,
-      options?: AdminRequestOptions<CreateAnAdditionalProductImageOutput['additionalimage']>,
+      options?: AdminRequestOptions<
+        CreateAnAdditionalProductImageOutput['additionalimage']
+      >,
     ): Promise<AxiosResponse<CreateAnAdditionalProductImageOutput>>;
     /**
      * @description
@@ -223,7 +224,9 @@ declare module 'cafe24api-client' {
      */
     updateAnAdditionalProductImage(
       input: UpdateAnAdditionalProductImageInput,
-      options?: AdminRequestOptions<UpdateAnAdditionalProductImageOutput['additionalimage']>,
+      options?: AdminRequestOptions<
+        UpdateAnAdditionalProductImageOutput['additionalimage']
+      >,
     ): Promise<AxiosResponse<UpdateAnAdditionalProductImageOutput>>;
     /**
      * @see https://developers.cafe24.com/docs/api/admin/#delete-an-additional-product-image
@@ -240,7 +243,9 @@ declare module 'cafe24api-client' {
      */
     deleteAnAdditionalProductImage(
       input: DeleteAnAdditionalProductImageInput,
-      options?: AdminRequestOptions<DeleteAnAdditionalProductImageOutput['additionalimage']>,
+      options?: AdminRequestOptions<
+        DeleteAnAdditionalProductImageOutput['additionalimage']
+      >,
     ): Promise<AxiosResponse<DeleteAnAdditionalProductImageOutput>>;
   }
 }

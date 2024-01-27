@@ -1,6 +1,8 @@
-
 export default (cls) => {
-  cls.prototype.retrieveAProductDiscountedPrice = async function (input, options) {
+  cls.prototype.retrieveAProductDiscountedPrice = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'GET',
       `/api/v2/products/${input['product_no']}/discountprice`,
@@ -11,5 +13,4 @@ export default (cls) => {
       options,
     );
   };
-
 };

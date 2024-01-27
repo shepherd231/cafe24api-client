@@ -1,7 +1,7 @@
 import { AxiosResponse } from 'axios';
-import { 
-  Endpoint, 
-  AdminRequestOptions, 
+import {
+  Endpoint,
+  AdminRequestOptions,
   Cafe24Datetime,
   Cafe24Boolean,
   Cafe24Date,
@@ -13,323 +13,322 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
-
   /**
    * @description
-   * 
-   * 
+   *
+   *
    * 카테고리 꾸미기 이미지(Categories decorationimages)는 특정 카테고리의 꾸미기 이미지에 관한 기능입니다.
    * 특정 카테고리에 설정된 꾸미기 이미지를 조회하거나 수정할 수 있습니다.
    */
   export interface CategoriesDecorationimages {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     *
+     */
     shop_no: any;
     /**
-      * @description
-      * 분류 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 분류 번호
+     *
+     *
+     */
     category_no: any;
     /**
-      * @description
-      * 분류 PC 메뉴 이미지 사용여부
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 분류 PC 메뉴 이미지 사용여부
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     use_menu_image_pc: any;
     /**
-      * @description
-      * 분류 PC 메뉴 기본 이미지
-      * 
-      * 
-      */ 
+     * @description
+     * 분류 PC 메뉴 기본 이미지
+     *
+     *
+     */
     menu_image_pc: any;
     /**
-      * @description
-      * 분류 PC 메뉴 오버 이미지
-      * 
-      * 
-      */ 
+     * @description
+     * 분류 PC 메뉴 오버 이미지
+     *
+     *
+     */
     menu_over_image_pc: any;
     /**
-      * @description
-      * 분류 PC 상단 이미지 사용여부
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 분류 PC 상단 이미지 사용여부
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     use_top_image_pc: any;
     /**
-      * @description
-      * 분류 PC 상단 이미지
-      * 
-      * 
-      */ 
+     * @description
+     * 분류 PC 상단 이미지
+     *
+     *
+     */
     top_images_pc: any;
     /**
-      * @description
-      * 분류 PC 타이틀 이미지 사용여부
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 분류 PC 타이틀 이미지 사용여부
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     use_title_image_pc: any;
     /**
-      * @description
-      * 분류 PC 타이틀 이미지
-      * 
-      * 
-      */ 
+     * @description
+     * 분류 PC 타이틀 이미지
+     *
+     *
+     */
     title_image_pc: any;
     /**
-      * @description
-      * 분류 모바일 메뉴 이미지 사용여부
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 분류 모바일 메뉴 이미지 사용여부
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     use_menu_image_mobile: any;
     /**
-      * @description
-      * 분류 모바일 메뉴 기본 이미지
-      * 
-      * 
-      */ 
+     * @description
+     * 분류 모바일 메뉴 기본 이미지
+     *
+     *
+     */
     menu_image_mobile: any;
     /**
-      * @description
-      * 분류 모바일 상단 이미지 사용여부
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 분류 모바일 상단 이미지 사용여부
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     use_top_image_mobile: any;
     /**
-      * @description
-      * 분류 모바일 상단 이미지
-      * 
-      * 배열 최대사이즈: [3]
-      */ 
+     * @description
+     * 분류 모바일 상단 이미지
+     *
+     * 배열 최대사이즈: [3]
+     */
     top_images_mobile: any;
     /**
-      * @description
-      * 분류 모바일 타이틀 이미지 사용여부
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 분류 모바일 타이틀 이미지 사용여부
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     use_title_image_mobile: any;
     /**
-      * @description
-      * 분류 모바일 타이틀 이미지
-      * 
-      * 
-      */ 
+     * @description
+     * 분류 모바일 타이틀 이미지
+     *
+     *
+     */
     title_image_mobile: any;
   }
 
   export interface RetrieveDecorationImageSettingsByCategoryInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     *
+     */
     shop_no?: any;
     /**
-      * @description
-      * 분류 번호
-      * 
-      * @required
-      */ 
+     * @description
+     * 분류 번호
+     *
+     * @required
+     */
     category_no: any;
   }
 
   export interface RetrieveDecorationImageSettingsByCategoryOutput {
-    decorationimage: { 
-    shop_no: number;
-    category_no: number;
-    use_menu_image_pc: Cafe24Enum;
-    menu_image_pc: string;
-    menu_over_image_pc: string;
-    use_top_image_pc: Cafe24Enum;
-    top_images_pc: string[];
-    use_title_image_pc: Cafe24Enum;
-    title_image_pc: string;
-    use_menu_image_mobile: Cafe24Enum;
-    menu_image_mobile: any;
-    use_top_image_mobile: Cafe24Enum;
-    top_images_mobile: any;
-    use_title_image_mobile: Cafe24Enum;
-    title_image_mobile: any;
+    decorationimage: {
+      shop_no: number;
+      category_no: number;
+      use_menu_image_pc: Cafe24Enum;
+      menu_image_pc: string;
+      menu_over_image_pc: string;
+      use_top_image_pc: Cafe24Enum;
+      top_images_pc: string[];
+      use_title_image_pc: Cafe24Enum;
+      title_image_pc: string;
+      use_menu_image_mobile: Cafe24Enum;
+      menu_image_mobile: any;
+      use_top_image_mobile: Cafe24Enum;
+      top_images_mobile: any;
+      use_title_image_mobile: Cafe24Enum;
+      title_image_mobile: any;
     };
   }
   export interface UpdateDecorationImagesOfAProductCategoryInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     *
+     */
     shop_no?: any;
     /**
-      * @description
-      * 분류 번호
-      * 
-      * @required
-      */ 
+     * @description
+     * 분류 번호
+     *
+     * @required
+     */
     category_no: any;
     /**
-      * @description
-      * 분류 PC 메뉴 이미지 사용여부
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 분류 PC 메뉴 이미지 사용여부
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     use_menu_image_pc?: any;
     /**
-      * @description
-      * 분류 PC 메뉴 기본 이미지
-      * 
-      * 
-      */ 
+     * @description
+     * 분류 PC 메뉴 기본 이미지
+     *
+     *
+     */
     menu_image_pc?: any;
     /**
-      * @description
-      * 분류 PC 메뉴 오버 이미지
-      * 
-      * 
-      */ 
+     * @description
+     * 분류 PC 메뉴 오버 이미지
+     *
+     *
+     */
     menu_over_image_pc?: any;
     /**
-      * @description
-      * 분류 PC 상단 이미지 사용여부
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 분류 PC 상단 이미지 사용여부
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     use_top_image_pc?: any;
     /**
-      * @description
-      * 분류 PC 상단 이미지
-      * 
-      * 배열 최대사이즈: [3]
-      */ 
+     * @description
+     * 분류 PC 상단 이미지
+     *
+     * 배열 최대사이즈: [3]
+     */
     top_images_pc?: any;
     /**
-      * @description
-      * 분류 PC 타이틀 이미지 사용여부
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 분류 PC 타이틀 이미지 사용여부
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     use_title_image_pc?: any;
     /**
-      * @description
-      * 분류 PC 타이틀 이미지
-      * 
-      * 
-      */ 
+     * @description
+     * 분류 PC 타이틀 이미지
+     *
+     *
+     */
     title_image_pc?: any;
     /**
-      * @description
-      * 분류 모바일 메뉴 이미지 사용여부
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 분류 모바일 메뉴 이미지 사용여부
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     use_menu_image_mobile?: any;
     /**
-      * @description
-      * 분류 모바일 메뉴 기본 이미지
-      * 
-      * 
-      */ 
+     * @description
+     * 분류 모바일 메뉴 기본 이미지
+     *
+     *
+     */
     menu_image_mobile?: any;
     /**
-      * @description
-      * 분류 모바일 상단 이미지 사용여부
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 분류 모바일 상단 이미지 사용여부
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     use_top_image_mobile?: any;
     /**
-      * @description
-      * 분류 모바일 상단 이미지
-      * 
-      * 배열 최대사이즈: [3]
-      */ 
+     * @description
+     * 분류 모바일 상단 이미지
+     *
+     * 배열 최대사이즈: [3]
+     */
     top_images_mobile?: any;
     /**
-      * @description
-      * 분류 모바일 타이틀 이미지 사용여부
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 분류 모바일 타이틀 이미지 사용여부
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     use_title_image_mobile?: any;
     /**
-      * @description
-      * 분류 모바일 타이틀 이미지
-      * 
-      * 
-      */ 
+     * @description
+     * 분류 모바일 타이틀 이미지
+     *
+     *
+     */
     title_image_mobile?: any;
   }
 
   export interface UpdateDecorationImagesOfAProductCategoryOutput {
-    decorationimage: { 
-    shop_no: number;
-    category_no: number;
-    use_menu_image_pc: Cafe24Enum;
-    menu_image_pc: string;
-    menu_over_image_pc: string;
-    use_top_image_pc: Cafe24Enum;
-    top_images_pc: string[];
-    use_title_image_pc: Cafe24Enum;
-    title_image_pc: string;
-    use_menu_image_mobile: Cafe24Enum;
-    menu_image_mobile: any;
-    use_top_image_mobile: Cafe24Enum;
-    top_images_mobile: any;
-    use_title_image_mobile: Cafe24Enum;
-    title_image_mobile: any;
+    decorationimage: {
+      shop_no: number;
+      category_no: number;
+      use_menu_image_pc: Cafe24Enum;
+      menu_image_pc: string;
+      menu_over_image_pc: string;
+      use_top_image_pc: Cafe24Enum;
+      top_images_pc: string[];
+      use_title_image_pc: Cafe24Enum;
+      title_image_pc: string;
+      use_menu_image_mobile: Cafe24Enum;
+      menu_image_mobile: any;
+      use_top_image_mobile: Cafe24Enum;
+      top_images_mobile: any;
+      use_title_image_mobile: Cafe24Enum;
+      title_image_mobile: any;
     };
   }
 
@@ -368,7 +367,9 @@ declare module 'cafe24api-client' {
      */
     retrieveDecorationImageSettingsByCategory(
       input: RetrieveDecorationImageSettingsByCategoryInput,
-      options?: AdminRequestOptions<RetrieveDecorationImageSettingsByCategoryOutput['decorationimage']>,
+      options?: AdminRequestOptions<
+        RetrieveDecorationImageSettingsByCategoryOutput['decorationimage']
+      >,
     ): Promise<AxiosResponse<RetrieveDecorationImageSettingsByCategoryOutput>>;
     /**
      * @description
@@ -405,7 +406,9 @@ declare module 'cafe24api-client' {
      */
     updateDecorationImagesOfAProductCategory(
       input: UpdateDecorationImagesOfAProductCategoryInput,
-      options?: AdminRequestOptions<UpdateDecorationImagesOfAProductCategoryOutput['decorationimage']>,
+      options?: AdminRequestOptions<
+        UpdateDecorationImagesOfAProductCategoryOutput['decorationimage']
+      >,
     ): Promise<AxiosResponse<UpdateDecorationImagesOfAProductCategoryOutput>>;
   }
 }

@@ -1,7 +1,7 @@
 import { AxiosResponse } from 'axios';
-import { 
-  Endpoint, 
-  AdminRequestOptions, 
+import {
+  Endpoint,
+  AdminRequestOptions,
   Cafe24Datetime,
   Cafe24Boolean,
   Cafe24Date,
@@ -13,7 +13,6 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
-
   /**
    * @description
    * 운영자(Users)는 쇼핑몰의 대표관리자와 더불어 쇼핑몰을 운영할 수 있는 운영자와 관련된 기능입니다.
@@ -22,360 +21,360 @@ declare module 'cafe24api-client' {
    */
   export interface Users {
     /**
-      * @description
-      * 운영자 아이디
-      * 
-      * 운영자 혹은 부운영자의 아이디
-      * 
-      * 
-      */ 
+     * @description
+     * 운영자 아이디
+     *
+     * 운영자 혹은 부운영자의 아이디
+     *
+     *
+     */
     userId: any;
     /**
-      * @description
-      * 운영자 명
-      * 
-      * 운영자 혹은 부운영자의 이름
-      * 
-      * 
-      */ 
+     * @description
+     * 운영자 명
+     *
+     * 운영자 혹은 부운영자의 이름
+     *
+     *
+     */
     userName: any;
     /**
-      * @description
-      * 전화번호
-      * 
-      * 운영자 혹은 부운영자의 전화번호
-      * 
-      * 전화번호
-      */ 
+     * @description
+     * 전화번호
+     *
+     * 운영자 혹은 부운영자의 전화번호
+     *
+     * 전화번호
+     */
     phone: any;
     /**
-      * @description
-      * 이메일
-      * 
-      * 운영자 혹은 부운영자의 이메일 주소
-      * 
-      * 이메일
-      */ 
+     * @description
+     * 이메일
+     *
+     * 운영자 혹은 부운영자의 이메일 주소
+     *
+     * 이메일
+     */
     email: any;
     /**
-      * @description
-      * IP 접근제한
-      * 
-      * IP 접근제한의 사용여부
-      * 
-      * A : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * IP 접근제한
+     *
+     * IP 접근제한의 사용여부
+     *
+     * A : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     ipRestrictionType: any;
     /**
-      * @description
-      * 운영자 구분
-      * 
-      * 대표운영자인지 부운영자인지의 구분
-      * 
-      * P : 대표운영자
-      * A : 부운영자
-      * 
-      * 
-      */ 
+     * @description
+     * 운영자 구분
+     *
+     * 대표운영자인지 부운영자인지의 구분
+     *
+     * P : 대표운영자
+     * A : 부운영자
+     *
+     *
+     */
     adminType: any;
     /**
-      * @description
-      * 최근 접속일시
-      * 
-      * 
-      */ 
+     * @description
+     * 최근 접속일시
+     *
+     *
+     */
     lastLoginDate: any;
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * 최소값: [1]
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * 최소값: [1]
+     */
     shopNo: any;
     /**
-      * @description
-      * 운영자 별명
-      * 
-      * 운영자의 별명
-      * 
-      * 
-      */ 
+     * @description
+     * 운영자 별명
+     *
+     * 운영자의 별명
+     *
+     *
+     */
     nickName: any;
     /**
-      * @description
-      * 별명 아이콘 타입
-      * 
-      * 별명 아이콘 등록. 직접 등록이나 샘플 등록이 가능함.
-      * 
-      * D : 직접 아이콘 등록
-      * S : 샘플 아이콘 등록
-      * 
-      * 
-      */ 
+     * @description
+     * 별명 아이콘 타입
+     *
+     * 별명 아이콘 등록. 직접 등록이나 샘플 등록이 가능함.
+     *
+     * D : 직접 아이콘 등록
+     * S : 샘플 아이콘 등록
+     *
+     *
+     */
     nickNameIconType: any;
     /**
-      * @description
-      * 별명 아이콘 URL
-      * 
-      * 
-      */ 
+     * @description
+     * 별명 아이콘 URL
+     *
+     *
+     */
     nickNameIconUrl: any;
     /**
-      * @description
-      * 게시판 노출 설정
-      * 
-      * 
-      */ 
+     * @description
+     * 게시판 노출 설정
+     *
+     *
+     */
     boardExposureSetting: any;
     /**
-      * @description
-      * 메모
-      * 
-      * 
-      */ 
+     * @description
+     * 메모
+     *
+     *
+     */
     memo: any;
     /**
-      * @description
-      * 사용여부
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 사용여부
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     available: any;
     /**
-      * @description
-      * 멀티쇼핑몰 접근 권한
-      * 
-      * T : 허용함
-      * F : 허용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 접근 권한
+     *
+     * T : 허용함
+     * F : 허용안함
+     *
+     *
+     */
     multishopAccessAuthority: any;
     /**
-      * @description
-      * 메뉴 접근 권한
-      * 
-      * 
-      */ 
+     * @description
+     * 메뉴 접근 권한
+     *
+     *
+     */
     menuAccessAuthority: any;
     /**
-      * @description
-      * 상세 권한 설정
-      * 
-      * 
-      */ 
+     * @description
+     * 상세 권한 설정
+     *
+     *
+     */
     detailAuthoritySetting: any;
     /**
-      * @description
-      * IP 접근 제한
-      * 
-      * 
-      */ 
+     * @description
+     * IP 접근 제한
+     *
+     *
+     */
     ipAccessRestriction: any;
     /**
-      * @description
-      * 접속 허용 권한
-      * 
-      * T : 접속 허용시간 설정과 상관없이 항상 관리자 페이지 접속을 허용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 접속 허용 권한
+     *
+     * T : 접속 허용시간 설정과 상관없이 항상 관리자 페이지 접속을 허용함
+     * F : 사용안함
+     *
+     *
+     */
     accessPermission: any;
   }
 
   export interface RetrieveAListOfAdminUsersInput {
     /**
-      * @description
-      * 검색 타입
-      * 
-      * member_Id : 회원 아이디
-      * name : 이름
-      * 
-      * 
-      */ 
+     * @description
+     * 검색 타입
+     *
+     * member_Id : 회원 아이디
+     * name : 이름
+     *
+     *
+     */
     searchType?: any;
     /**
-      * @description
-      * 검색어
-      * 
-      * 
-      */ 
+     * @description
+     * 검색어
+     *
+     *
+     */
     keyword?: any;
     /**
-      * @description
-      * 운영자 구분
-      * 
-      * P : 대표운영자
-      * A : 부운영자
-      * 
-      * 
-      */ 
+     * @description
+     * 운영자 구분
+     *
+     * P : 대표운영자
+     * A : 부운영자
+     *
+     *
+     */
     adminType?: any;
   }
 
   export interface RetrieveAListOfAdminUsersOutput {
-    users: { 
-    userId: string;
-    userName: string;
-    phone: string;
-    email: string;
-    ipRestrictionType: Cafe24Enum;
-    adminType: Cafe24Enum;
-    lastLoginDate: Cafe24Datetime;
+    users: {
+      userId: string;
+      userName: string;
+      phone: string;
+      email: string;
+      ipRestrictionType: Cafe24Enum;
+      adminType: Cafe24Enum;
+      lastLoginDate: Cafe24Datetime;
     }[];
   }
   export interface RetrieveAdminUserDetailsInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 최소값: [1]
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     * 최소값: [1]
+     */
     shopNo?: any;
     /**
-      * @description
-      * 운영자 아이디
-      * 
-      * 운영자 혹은 부운영자의 아이디
-      * 
-      * 
-      */ 
+     * @description
+     * 운영자 아이디
+     *
+     * 운영자 혹은 부운영자의 아이디
+     *
+     *
+     */
     userId?: any;
   }
 
   export interface RetrieveAdminUserDetailsOutput {
-    user: { 
-    shopNo: number;
-    adminType: Cafe24Enum;
-    userName: string;
-    nickName: string;
-    nickNameIconType: Cafe24Enum;
-    nickNameIconUrl: string;
-    boardExposureSetting: { 
-    adminGradeIcon: Cafe24Enum;
-    nickNameIcon: Cafe24Enum;
-    writerNameIcon: Cafe24Enum;
-    };
-    phone: string;
-    email: string;
-    memo: string;
-    available: Cafe24Enum;
-    multishopAccessAuthority: Cafe24Enum;
-    menuAccessAuthority: { 
-    order: { 
-    authority: boolean;
-    detailSetting: { 
-    71: { 
-    key: Cafe24Datetime;
-    name: string;
-    authority: boolean;
-    };
-    72: { 
-    key: Cafe24Datetime;
-    name: string;
-    authority: boolean;
-    };
-    74: { 
-    key: Cafe24Datetime;
-    name: string;
-    authority: boolean;
-    };
-    };
-    };
-    product: { 
-    authority: boolean;
-    detailSetting: { 
-    2031: { 
-    key: Cafe24Datetime;
-    name: string;
-    authority: boolean;
-    children: { 
-    2032: { 
-    key: Cafe24Datetime;
-    name: string;
-    authority: boolean;
-    };
-    2033: { 
-    key: Cafe24Datetime;
-    name: string;
-    authority: boolean;
-    };
-    2135: { 
-    key: Cafe24Datetime;
-    name: string;
-    authority: boolean;
-    };
-    2138: { 
-    key: Cafe24Datetime;
-    name: string;
-    authority: boolean;
-    };
-    };
-    };
-    2037: { 
-    key: Cafe24Datetime;
-    name: string;
-    authority: boolean;
-    };
-    };
-    };
-    };
-    detailAuthoritySetting: { 
-    product: { 
-    editProductCategory: Cafe24Enum;
-    modifyProductInfo: any;
-    removeProductInfo: Cafe24Enum;
-    changeProductSaleStatus: Cafe24Enum;
-    changeProductDisplayStatus: Cafe24Enum;
-    editProductDisplayReservation: Cafe24Enum;
-    downloadProductExcelDataInMenu: Cafe24Enum;
-    showProductSupplyBusiness: Cafe24Enum;
-    editProductSupplyBusiness: Cafe24Enum;
-    editProductSupplyProductionCost: Cafe24Enum;
-    showSupplierProductName: Cafe24Enum;
-    editProductManufacturerInfo: Cafe24Enum;
-    showProductDeliveryCount: Cafe24Enum;
-    showProductSalesCount: Cafe24Enum;
-    };
-    order: { 
-    restrictSearchingOrderInfo: Cafe24Enum;
-    restrictSearchingPersonalInfo: Cafe24Enum;
-    restrictPrintingInMenu: Cafe24Enum;
-    checkPayment: Cafe24Enum;
-    cancelCreditPayment: Cafe24Enum;
-    cancelPaycoPointPayment: Cafe24Enum;
-    cancelAffiliatedGiftCertificatePayment: Cafe24Enum;
-    cancelAffiliationPointPayment: Cafe24Enum;
-    cancelOrder: Cafe24Enum;
-    returnProduct: Cafe24Enum;
-    exchangeProduct: Cafe24Enum;
-    acceptRefundingProduct: Cafe24Enum;
-    handleRefundingProduct: Cafe24Enum;
-    editOrderMemo: Cafe24Enum;
-    downloadOrderDataInMenu: Cafe24Enum;
-    showDashboardOrderInfo: Cafe24Enum;
-    showTotalOrderedAmount: Cafe24Enum;
-    showIntegrationBalance: Cafe24Enum;
-    cancelWithdrawal: Cafe24Enum;
-    exchangeWithdrawal: Cafe24Enum;
-    returnWithdrawal: Cafe24Enum;
-    refundWithdrawal: Cafe24Enum;
-    };
-    };
-    ipAccessRestriction: { 
-    usage: Cafe24Enum;
-    registeredIpList: string[];
-    };
-    accessPermission: Cafe24Enum;
+    user: {
+      shopNo: number;
+      adminType: Cafe24Enum;
+      userName: string;
+      nickName: string;
+      nickNameIconType: Cafe24Enum;
+      nickNameIconUrl: string;
+      boardExposureSetting: {
+        adminGradeIcon: Cafe24Enum;
+        nickNameIcon: Cafe24Enum;
+        writerNameIcon: Cafe24Enum;
+      };
+      phone: string;
+      email: string;
+      memo: string;
+      available: Cafe24Enum;
+      multishopAccessAuthority: Cafe24Enum;
+      menuAccessAuthority: {
+        order: {
+          authority: boolean;
+          detailSetting: {
+            71: {
+              key: Cafe24Datetime;
+              name: string;
+              authority: boolean;
+            };
+            72: {
+              key: Cafe24Datetime;
+              name: string;
+              authority: boolean;
+            };
+            74: {
+              key: Cafe24Datetime;
+              name: string;
+              authority: boolean;
+            };
+          };
+        };
+        product: {
+          authority: boolean;
+          detailSetting: {
+            2031: {
+              key: Cafe24Datetime;
+              name: string;
+              authority: boolean;
+              children: {
+                2032: {
+                  key: Cafe24Datetime;
+                  name: string;
+                  authority: boolean;
+                };
+                2033: {
+                  key: Cafe24Datetime;
+                  name: string;
+                  authority: boolean;
+                };
+                2135: {
+                  key: Cafe24Datetime;
+                  name: string;
+                  authority: boolean;
+                };
+                2138: {
+                  key: Cafe24Datetime;
+                  name: string;
+                  authority: boolean;
+                };
+              };
+            };
+            2037: {
+              key: Cafe24Datetime;
+              name: string;
+              authority: boolean;
+            };
+          };
+        };
+      };
+      detailAuthoritySetting: {
+        product: {
+          editProductCategory: Cafe24Enum;
+          modifyProductInfo: any;
+          removeProductInfo: Cafe24Enum;
+          changeProductSaleStatus: Cafe24Enum;
+          changeProductDisplayStatus: Cafe24Enum;
+          editProductDisplayReservation: Cafe24Enum;
+          downloadProductExcelDataInMenu: Cafe24Enum;
+          showProductSupplyBusiness: Cafe24Enum;
+          editProductSupplyBusiness: Cafe24Enum;
+          editProductSupplyProductionCost: Cafe24Enum;
+          showSupplierProductName: Cafe24Enum;
+          editProductManufacturerInfo: Cafe24Enum;
+          showProductDeliveryCount: Cafe24Enum;
+          showProductSalesCount: Cafe24Enum;
+        };
+        order: {
+          restrictSearchingOrderInfo: Cafe24Enum;
+          restrictSearchingPersonalInfo: Cafe24Enum;
+          restrictPrintingInMenu: Cafe24Enum;
+          checkPayment: Cafe24Enum;
+          cancelCreditPayment: Cafe24Enum;
+          cancelPaycoPointPayment: Cafe24Enum;
+          cancelAffiliatedGiftCertificatePayment: Cafe24Enum;
+          cancelAffiliationPointPayment: Cafe24Enum;
+          cancelOrder: Cafe24Enum;
+          returnProduct: Cafe24Enum;
+          exchangeProduct: Cafe24Enum;
+          acceptRefundingProduct: Cafe24Enum;
+          handleRefundingProduct: Cafe24Enum;
+          editOrderMemo: Cafe24Enum;
+          downloadOrderDataInMenu: Cafe24Enum;
+          showDashboardOrderInfo: Cafe24Enum;
+          showTotalOrderedAmount: Cafe24Enum;
+          showIntegrationBalance: Cafe24Enum;
+          cancelWithdrawal: Cafe24Enum;
+          exchangeWithdrawal: Cafe24Enum;
+          returnWithdrawal: Cafe24Enum;
+          refundWithdrawal: Cafe24Enum;
+        };
+      };
+      ipAccessRestriction: {
+        usage: Cafe24Enum;
+        registeredIpList: string[];
+      };
+      accessPermission: Cafe24Enum;
     };
   }
 
@@ -415,7 +414,9 @@ declare module 'cafe24api-client' {
      */
     retrieveAListOfAdminUsers(
       input: RetrieveAListOfAdminUsersInput,
-      options?: AdminRequestOptions<RetrieveAListOfAdminUsersOutput['users'][number]>,
+      options?: AdminRequestOptions<
+        RetrieveAListOfAdminUsersOutput['users'][number]
+      >,
     ): Promise<AxiosResponse<RetrieveAListOfAdminUsersOutput>>;
     /**
      * @description

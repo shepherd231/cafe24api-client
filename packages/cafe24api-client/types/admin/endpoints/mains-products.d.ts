@@ -1,7 +1,7 @@
 import { AxiosResponse } from 'axios';
-import { 
-  Endpoint, 
-  AdminRequestOptions, 
+import {
+  Endpoint,
+  AdminRequestOptions,
   Cafe24Datetime,
   Cafe24Boolean,
   Cafe24Date,
@@ -13,89 +13,88 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
-
   /**
    * @description
-   * 
-   * 
+   *
+   *
    * 메인분류 상품(Mains products)은 상품 메인진열의 순서에 관한 메인분류의 관계형 리소스입니다.
    */
   export interface MainsProducts {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
+     *
+     *
+     */
     shop_no: any;
     /**
-      * @description
-      * 상품번호
-      * 
-      * 
-      */ 
+     * @description
+     * 상품번호
+     *
+     *
+     */
     product_no: any;
     /**
-      * @description
-      * 상품명
-      * 
-      * 
-      */ 
+     * @description
+     * 상품명
+     *
+     *
+     */
     product_name: any;
     /**
-      * @description
-      * 고정 여부
-      * 
-      * 
-      */ 
+     * @description
+     * 고정 여부
+     *
+     *
+     */
     fixed_sort: any;
   }
 
   export interface RetrieveAListOfProductsInMainCategoryInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     *
+     */
     shop_no?: any;
     /**
-      * @description
-      * 메인분류 번호
-      * 
-      * @required
-      */ 
+     * @description
+     * 메인분류 번호
+     *
+     * @required
+     */
     display_group: any;
   }
 
   export interface RetrieveAListOfProductsInMainCategoryOutput {
-    products: { 
-    shop_no: number;
-    product_no: number;
-    product_name: string;
-    fixed_sort: boolean;
+    products: {
+      shop_no: number;
+      product_no: number;
+      product_name: string;
+      fixed_sort: boolean;
     }[];
   }
   export interface RetrieveACountOfProductsInMainCategoryInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     *
+     */
     shop_no?: any;
     /**
-      * @description
-      * 메인분류 번호
-      * 
-      * @required
-      */ 
+     * @description
+     * 메인분류 번호
+     *
+     * @required
+     */
     display_group: any;
   }
 
@@ -104,109 +103,109 @@ declare module 'cafe24api-client' {
   }
   export interface SetMainCategoryProductsInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     *
+     */
     shop_no?: any;
     /**
-      * @description
-      * 메인분류 번호
-      * 
-      * @required
-      */ 
+     * @description
+     * 메인분류 번호
+     *
+     * @required
+     */
     display_group: any;
     /**
-      * @description
-      * 상품번호
-      * 
-      * @required
-      */ 
+     * @description
+     * 상품번호
+     *
+     * @required
+     */
     product_no: any;
   }
 
   export interface SetMainCategoryProductsOutput {
-    product: { 
-    shop_no: number;
-    product_no: number[];
+    product: {
+      shop_no: number;
+      product_no: number[];
     };
   }
   export interface UpdateFixedSortingOfProductsInMainCategoryInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     *
+     */
     shop_no?: any;
     /**
-      * @description
-      * 메인분류 번호
-      * 
-      * @required
-      */ 
+     * @description
+     * 메인분류 번호
+     *
+     * @required
+     */
     display_group: any;
     /**
-      * @description
-      * 상품번호
-      * 
-      * 요청한 상품번호의 순서 대로 진열순위가 지정
-      * 
-      * @required
-      */ 
+     * @description
+     * 상품번호
+     *
+     * 요청한 상품번호의 순서 대로 진열순위가 지정
+     *
+     * @required
+     */
     product_no: any;
     /**
-      * @description
-      * 진열순위 고정 상품번호
-      * 
-      * 진열순위를 고정하고자 하는 상품번호를 지정
-      * 
-      * 
-      */ 
+     * @description
+     * 진열순위 고정 상품번호
+     *
+     * 진열순위를 고정하고자 하는 상품번호를 지정
+     *
+     *
+     */
     fix_product_no?: any;
   }
 
   export interface UpdateFixedSortingOfProductsInMainCategoryOutput {
-    product: { 
-    shop_no: number;
-    product_no: number[];
+    product: {
+      shop_no: number;
+      product_no: number[];
     };
   }
   export interface DeleteAProductInMainCategoryInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     *
+     */
     shop_no?: any;
     /**
-      * @description
-      * 메인분류 번호
-      * 
-      * @required
-      */ 
+     * @description
+     * 메인분류 번호
+     *
+     * @required
+     */
     display_group: any;
     /**
-      * @description
-      * 상품번호
-      * 
-      * @required
-      */ 
+     * @description
+     * 상품번호
+     *
+     * @required
+     */
     product_no: any;
   }
 
   export interface DeleteAProductInMainCategoryOutput {
-    product: { 
-    shop_no: number;
-    product_no: number;
+    product: {
+      shop_no: number;
+      product_no: number;
     };
   }
 
@@ -241,7 +240,9 @@ declare module 'cafe24api-client' {
      */
     retrieveAListOfProductsInMainCategory(
       input: RetrieveAListOfProductsInMainCategoryInput,
-      options?: AdminRequestOptions<RetrieveAListOfProductsInMainCategoryOutput['products'][number]>,
+      options?: AdminRequestOptions<
+        RetrieveAListOfProductsInMainCategoryOutput['products'][number]
+      >,
     ): Promise<AxiosResponse<RetrieveAListOfProductsInMainCategoryOutput>>;
     /**
      * @description
@@ -258,7 +259,9 @@ declare module 'cafe24api-client' {
      */
     retrieveACountOfProductsInMainCategory(
       input: RetrieveACountOfProductsInMainCategoryInput,
-      options?: AdminRequestOptions<RetrieveACountOfProductsInMainCategoryOutput['count']>,
+      options?: AdminRequestOptions<
+        RetrieveACountOfProductsInMainCategoryOutput['count']
+      >,
     ): Promise<AxiosResponse<RetrieveACountOfProductsInMainCategoryOutput>>;
     /**
      * @description
@@ -308,7 +311,9 @@ declare module 'cafe24api-client' {
      */
     updateFixedSortingOfProductsInMainCategory(
       input: UpdateFixedSortingOfProductsInMainCategoryInput,
-      options?: AdminRequestOptions<UpdateFixedSortingOfProductsInMainCategoryOutput['product']>,
+      options?: AdminRequestOptions<
+        UpdateFixedSortingOfProductsInMainCategoryOutput['product']
+      >,
     ): Promise<AxiosResponse<UpdateFixedSortingOfProductsInMainCategoryOutput>>;
     /**
      * @description
@@ -329,7 +334,9 @@ declare module 'cafe24api-client' {
      */
     deleteAProductInMainCategory(
       input: DeleteAProductInMainCategoryInput,
-      options?: AdminRequestOptions<DeleteAProductInMainCategoryOutput['product']>,
+      options?: AdminRequestOptions<
+        DeleteAProductInMainCategoryOutput['product']
+      >,
     ): Promise<AxiosResponse<DeleteAProductInMainCategoryOutput>>;
   }
 }

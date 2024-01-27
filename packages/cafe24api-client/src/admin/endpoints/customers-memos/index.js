@@ -1,6 +1,8 @@
-
 export default (cls) => {
-  cls.prototype.retrieveACountOfCustomerMemos = async function (input, options) {
+  cls.prototype.retrieveACountOfCustomerMemos = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/customers/${input['member_id']}/memos/count`,
@@ -86,5 +88,4 @@ export default (cls) => {
       options,
     );
   };
-
 };

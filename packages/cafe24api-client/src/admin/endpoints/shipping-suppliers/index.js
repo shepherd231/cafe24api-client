@@ -1,6 +1,8 @@
-
 export default (cls) => {
-  cls.prototype.retrieveASuppliersShippingSettings = async function (input, options) {
+  cls.prototype.retrieveASuppliersShippingSettings = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/shipping/suppliers/${input['supplier_id']}`,
@@ -12,7 +14,10 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.updateASuppliersShippingSettings = async function (input, options) {
+  cls.prototype.updateASuppliersShippingSettings = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'PUT',
       `/api/v2/admin/shipping/suppliers/${input['supplier_id']}`,
@@ -39,5 +44,4 @@ export default (cls) => {
       options,
     );
   };
-
 };

@@ -1,7 +1,7 @@
 import { AxiosResponse } from 'axios';
-import { 
-  Endpoint, 
-  AdminRequestOptions, 
+import {
+  Endpoint,
+  AdminRequestOptions,
   Cafe24Datetime,
   Cafe24Boolean,
   Cafe24Date,
@@ -13,382 +13,381 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
-
   /**
    * @description
-   * 
-   * 
+   *
+   *
    * 댓글(Comments)은 게시물에 쇼핑몰 고객이나 관리자가 추가한 의견입니다.
    * 해당 리소스를 통해 특정 게시물에 달린 댓글을 추가/삭제하거나 조회할 수 있습니다
    */
   export interface BoardsArticlesComments {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     *
+     */
     shop_no: any;
     /**
-      * @description
-      * 게시판 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 게시판 번호
+     *
+     *
+     */
     board_no: any;
     /**
-      * @description
-      * 게시물 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 게시물 번호
+     *
+     *
+     */
     article_no: any;
     /**
-      * @description
-      * 댓글 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 댓글 번호
+     *
+     *
+     */
     comment_no: any;
     /**
-      * @description
-      * 댓글 내용
-      * 
-      * 
-      */ 
+     * @description
+     * 댓글 내용
+     *
+     *
+     */
     content: any;
     /**
-      * @description
-      * 작성자명
-      * 
-      * 최대글자수 : [100자]
-      */ 
+     * @description
+     * 작성자명
+     *
+     * 최대글자수 : [100자]
+     */
     writer: any;
     /**
-      * @description
-      * 회원아이디
-      * 
-      * 최대글자수 : [20자]
-      */ 
+     * @description
+     * 회원아이디
+     *
+     * 최대글자수 : [20자]
+     */
     member_id: any;
     /**
-      * @description
-      * 생성일
-      * 
-      * 날짜
-      */ 
+     * @description
+     * 생성일
+     *
+     * 날짜
+     */
     created_date: any;
     /**
-      * @description
-      * 작성자 IP
-      * 
-      * IP
-      */ 
+     * @description
+     * 작성자 IP
+     *
+     * IP
+     */
     client_ip: any;
     /**
-      * @description
-      * 댓글 평점
-      * 
-      * 최소: [1]~최대: [5]
-      */ 
+     * @description
+     * 댓글 평점
+     *
+     * 최소: [1]~최대: [5]
+     */
     rating: any;
     /**
-      * @description
-      * 비밀글 여부
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 비밀글 여부
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     secret: any;
     /**
-      * @description
-      * 부모 댓글 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 부모 댓글 번호
+     *
+     *
+     */
     parent_comment_no: any;
     /**
-      * @description
-      * 쇼핑몰 구분
-      * 
-      * P : PC
-      * M : 모바일
-      * 
-      * 
-      */ 
+     * @description
+     * 쇼핑몰 구분
+     *
+     * P : PC
+     * M : 모바일
+     *
+     *
+     */
     input_channel: any;
     /**
-      * @description
-      * 첨부 파일 상세
-      * 
-      * 
-      */ 
+     * @description
+     * 첨부 파일 상세
+     *
+     *
+     */
     attach_file_urls: any;
   }
 
   export interface RetrieveAListOfCommentsForABoardPostInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 최소값: [1]
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     * 최소값: [1]
+     */
     shop_no?: any;
     /**
-      * @description
-      * 게시판 번호
-      * 
-      * @required
-      */ 
+     * @description
+     * 게시판 번호
+     *
+     * @required
+     */
     board_no: any;
     /**
-      * @description
-      * 게시물 번호
-      * 
-      * @required
-      */ 
+     * @description
+     * 게시물 번호
+     *
+     * @required
+     */
     article_no: any;
     /**
-      * @description
-      * 댓글 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 댓글 번호
+     *
+     *
+     */
     comment_no?: any;
     /**
-      * @description
-      * 조회결과 시작위치
-      * 
-      * @default 0
-      * 
-      * 최대값: [8000]
-      */ 
+     * @description
+     * 조회결과 시작위치
+     *
+     * @default 0
+     *
+     * 최대값: [8000]
+     */
     offset?: any;
     /**
-      * @description
-      * 조회결과 최대건수
-      * 
-      * @default 10
-      * 
-      * 최소: [1]~최대: [100]
-      */ 
+     * @description
+     * 조회결과 최대건수
+     *
+     * @default 10
+     *
+     * 최소: [1]~최대: [100]
+     */
     limit?: any;
   }
 
   export interface RetrieveAListOfCommentsForABoardPostOutput {
-    comments: { 
-    shop_no: number;
-    board_no: number;
-    article_no: number;
-    comment_no: number;
-    content: string;
-    writer: string;
-    member_id: string;
-    created_date: Cafe24Datetime;
-    client_ip: string;
-    rating: number;
-    secret: Cafe24Enum;
-    parent_comment_no: any;
-    input_channel: Cafe24Enum;
-    attach_file_urls: { 
-    no: number;
-    name: string;
-    url: string;
-    }[];
+    comments: {
+      shop_no: number;
+      board_no: number;
+      article_no: number;
+      comment_no: number;
+      content: string;
+      writer: string;
+      member_id: string;
+      created_date: Cafe24Datetime;
+      client_ip: string;
+      rating: number;
+      secret: Cafe24Enum;
+      parent_comment_no: any;
+      input_channel: Cafe24Enum;
+      attach_file_urls: {
+        no: number;
+        name: string;
+        url: string;
+      }[];
     }[];
   }
   export interface CreateACommentForABoardPostInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     *
+     */
     shop_no?: any;
     /**
-      * @description
-      * 게시판 번호
-      * 
-      * @required
-      */ 
+     * @description
+     * 게시판 번호
+     *
+     * @required
+     */
     board_no: any;
     /**
-      * @description
-      * 게시물 번호
-      * 
-      * @required
-      */ 
+     * @description
+     * 게시물 번호
+     *
+     * @required
+     */
     article_no: any;
     /**
-      * @description
-      * 댓글 내용
-      * 
-      * @required
-      */ 
+     * @description
+     * 댓글 내용
+     *
+     * @required
+     */
     content: any;
     /**
-      * @description
-      * 작성자명
-      * 
-      * @required
-      * 
-      * 최대글자수 : [100자]
-      */ 
+     * @description
+     * 작성자명
+     *
+     * @required
+     *
+     * 최대글자수 : [100자]
+     */
     writer: any;
     /**
-      * @description
-      * 댓글 비밀번호
-      * 
-      * @required
-      * 
-      * 글자수 최소: [1자]~최대: [20자]
-      */ 
+     * @description
+     * 댓글 비밀번호
+     *
+     * @required
+     *
+     * 글자수 최소: [1자]~최대: [20자]
+     */
     password: any;
     /**
-      * @description
-      * 회원아이디
-      * 
-      * 최대글자수 : [20자]
-      */ 
+     * @description
+     * 회원아이디
+     *
+     * 최대글자수 : [20자]
+     */
     member_id?: any;
     /**
-      * @description
-      * 댓글 평점
-      * 
-      * @default 0
-      * 
-      * 최소: [1]~최대: [5]
-      */ 
+     * @description
+     * 댓글 평점
+     *
+     * @default 0
+     *
+     * 최소: [1]~최대: [5]
+     */
     rating?: any;
     /**
-      * @description
-      * 비밀글 여부
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * @default F
-      * 
-      * 
-      */ 
+     * @description
+     * 비밀글 여부
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     * @default F
+     *
+     *
+     */
     secret?: any;
     /**
-      * @description
-      * 부모 댓글 번호
-      * 
-      * 최소값: [1]
-      */ 
+     * @description
+     * 부모 댓글 번호
+     *
+     * 최소값: [1]
+     */
     parent_comment_no?: any;
     /**
-      * @description
-      * 쇼핑몰 구분
-      * 
-      * P : PC
-      * M : 모바일
-      * 
-      * @default P
-      * 
-      * 
-      */ 
+     * @description
+     * 쇼핑몰 구분
+     *
+     * P : PC
+     * M : 모바일
+     *
+     * @default P
+     *
+     *
+     */
     input_channel?: any;
     /**
-      * @description
-      * 생성일
-      * 
-      * 날짜
-      */ 
+     * @description
+     * 생성일
+     *
+     * 날짜
+     */
     created_date?: any;
     /**
-      * @description
-      * 첨부 파일 상세
-      * 
-      * 
-      */ 
-    attach_file_urls?: { 
-    /**
-      * @description
-      * 파일명
-      * 
-      * 
-      */ 
-    name?: any;
-    /**
-      * @description
-      * 파일 URL
-      * 
-      * 
-      */ 
-    url?: any;
+     * @description
+     * 첨부 파일 상세
+     *
+     *
+     */
+    attach_file_urls?: {
+      /**
+       * @description
+       * 파일명
+       *
+       *
+       */
+      name?: any;
+      /**
+       * @description
+       * 파일 URL
+       *
+       *
+       */
+      url?: any;
     };
   }
 
   export interface CreateACommentForABoardPostOutput {
-    comment: { 
-    shop_no: number;
-    board_no: number;
-    article_no: number;
-    comment_no: number;
-    content: string;
-    writer: string;
-    member_id: string;
-    rating: number;
-    secret: Cafe24Enum;
-    parent_comment_no: number;
-    input_channel: Cafe24Enum;
-    created_date: Cafe24Datetime;
-    client_ip: string;
-    attach_file_urls: { 
-    no: number;
-    name: string;
-    url: string;
-    }[];
+    comment: {
+      shop_no: number;
+      board_no: number;
+      article_no: number;
+      comment_no: number;
+      content: string;
+      writer: string;
+      member_id: string;
+      rating: number;
+      secret: Cafe24Enum;
+      parent_comment_no: number;
+      input_channel: Cafe24Enum;
+      created_date: Cafe24Datetime;
+      client_ip: string;
+      attach_file_urls: {
+        no: number;
+        name: string;
+        url: string;
+      }[];
     };
   }
   export interface DeleteACommentForABoardPostInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     *
+     */
     shop_no?: any;
     /**
-      * @description
-      * 게시판 번호
-      * 
-      * @required
-      */ 
+     * @description
+     * 게시판 번호
+     *
+     * @required
+     */
     board_no: any;
     /**
-      * @description
-      * 게시물 번호
-      * 
-      * @required
-      */ 
+     * @description
+     * 게시물 번호
+     *
+     * @required
+     */
     article_no: any;
     /**
-      * @description
-      * 댓글 번호
-      * 
-      * @required
-      */ 
+     * @description
+     * 댓글 번호
+     *
+     * @required
+     */
     comment_no: any;
   }
 
   export interface DeleteACommentForABoardPostOutput {
-    comment: { 
-    shop_no: number;
-    board_no: number;
-    article_no: number;
-    comment_no: number;
+    comment: {
+      shop_no: number;
+      board_no: number;
+      article_no: number;
+      comment_no: number;
     };
   }
 
@@ -491,7 +490,9 @@ declare module 'cafe24api-client' {
      */
     retrieveAListOfCommentsForABoardPost(
       input: RetrieveAListOfCommentsForABoardPostInput,
-      options?: AdminRequestOptions<RetrieveAListOfCommentsForABoardPostOutput['comments'][number]>,
+      options?: AdminRequestOptions<
+        RetrieveAListOfCommentsForABoardPostOutput['comments'][number]
+      >,
     ): Promise<AxiosResponse<RetrieveAListOfCommentsForABoardPostOutput>>;
     /**
      * @description
@@ -535,7 +536,9 @@ declare module 'cafe24api-client' {
      */
     createACommentForABoardPost(
       input: CreateACommentForABoardPostInput,
-      options?: AdminRequestOptions<CreateACommentForABoardPostOutput['comment']>,
+      options?: AdminRequestOptions<
+        CreateACommentForABoardPostOutput['comment']
+      >,
     ): Promise<AxiosResponse<CreateACommentForABoardPostOutput>>;
     /**
      * @description
@@ -557,7 +560,9 @@ declare module 'cafe24api-client' {
      */
     deleteACommentForABoardPost(
       input: DeleteACommentForABoardPostInput,
-      options?: AdminRequestOptions<DeleteACommentForABoardPostOutput['comment']>,
+      options?: AdminRequestOptions<
+        DeleteACommentForABoardPostOutput['comment']
+      >,
     ): Promise<AxiosResponse<DeleteACommentForABoardPostOutput>>;
   }
 }

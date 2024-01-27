@@ -1,7 +1,7 @@
 import { AxiosResponse } from 'axios';
-import { 
-  Endpoint, 
-  AdminRequestOptions, 
+import {
+  Endpoint,
+  AdminRequestOptions,
   Cafe24Datetime,
   Cafe24Boolean,
   Cafe24Date,
@@ -13,198 +13,197 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
-
   /**
    * @description
    * 디자인(Themes)은 쇼핑몰에 사용하기 위해 구매하거나 혹은 직접 만든 디자인과 관련된 기능입니다.
    * PC 쇼핑몰과 모바일 쇼핑몰의 디자인을 모두 확인할 수 있습니다.
    * 디자인 목록에 있는 디자인 중 대표 디자인을 지정하면 쇼핑몰의 디자인이 해당 디자인으로 변경됩니다.
-   * 
-   * 
+   *
+   *
    */
   export interface Themes {
     /**
-      * @description
-      * 디자인 번호
-      * 
-      * 최소값: [1]
-      */ 
+     * @description
+     * 디자인 번호
+     *
+     * 최소값: [1]
+     */
     skin_no: any;
     /**
-      * @description
-      * 디자인 코드
-      * 
-      * 
-      */ 
+     * @description
+     * 디자인 코드
+     *
+     *
+     */
     skin_code: any;
     /**
-      * @description
-      * 디자인명
-      * 
-      * 최대글자수 : [100자]
-      */ 
+     * @description
+     * 디자인명
+     *
+     * 최대글자수 : [100자]
+     */
     skin_name: any;
     /**
-      * @description
-      * 디자인 썸네일 이미지 URL
-      * 
-      * 최대글자수 : [255자]
-      */ 
+     * @description
+     * 디자인 썸네일 이미지 URL
+     *
+     * 최대글자수 : [255자]
+     */
     skin_thumbnail_url: any;
     /**
-      * @description
-      * 디자인 용도 구분
-      * 
-      * S : PC 기본스킨
-      * C : PC 복사된 스킨
-      * I : PC 상속된 스킨
-      * M : 모바일 기본스킨/상속된 스킨
-      * N : 모바일 복사된 스킨
-      * 
-      * 
-      */ 
+     * @description
+     * 디자인 용도 구분
+     *
+     * S : PC 기본스킨
+     * C : PC 복사된 스킨
+     * I : PC 상속된 스킨
+     * M : 모바일 기본스킨/상속된 스킨
+     * N : 모바일 복사된 스킨
+     *
+     *
+     */
     usage_type: any;
     /**
-      * @description
-      * 에디터 타입
-      * 
-      * H : 스마트 디자인 (HTML)
-      * D : 에디봇 디자인 (Drag &amp; Drop)
-      * W : 심플 디자인 (WYSIWYG)
-      * E : 스마트디자인Easy
-      * 
-      * 
-      */ 
+     * @description
+     * 에디터 타입
+     *
+     * H : 스마트 디자인 (HTML)
+     * D : 에디봇 디자인 (Drag &amp; Drop)
+     * W : 심플 디자인 (WYSIWYG)
+     * E : 스마트디자인Easy
+     *
+     *
+     */
     editor_type: any;
     /**
-      * @description
-      * 부모 디자인 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 부모 디자인 번호
+     *
+     *
+     */
     parent_skin_no: any;
     /**
-      * @description
-      * 판매자 디자인센터 아이디
-      * 
-      * 
-      */ 
+     * @description
+     * 판매자 디자인센터 아이디
+     *
+     *
+     */
     seller_id: any;
     /**
-      * @description
-      * 판매자 디자인 코드
-      * 
-      * 
-      */ 
+     * @description
+     * 판매자 디자인 코드
+     *
+     *
+     */
     seller_skin_code: any;
     /**
-      * @description
-      * 디자인 구매 번호
-      * 
-      * 최소값: [0]
-      */ 
+     * @description
+     * 디자인 구매 번호
+     *
+     * 최소값: [0]
+     */
     design_purchase_no: any;
     /**
-      * @description
-      * 디자인센터 상품 코드
-      * 
-      * 
-      */ 
+     * @description
+     * 디자인센터 상품 코드
+     *
+     *
+     */
     design_product_code: any;
     /**
-      * @description
-      * 언어 코드
-      * 
-      * ko_KR : 국문
-      * en_US : 영문
-      * zh_CN : 중문(간체)
-      * zh_TW : 중문(번체)
-      * ja_JP : 일문
-      * pt_PT : 포르투갈어
-      * es_ES : 스페인어
-      * vi_VN : 베트남어
-      * 
-      * 최소글자수 : [5자]
-      * 최대글자수 : [5자]
-      */ 
+     * @description
+     * 언어 코드
+     *
+     * ko_KR : 국문
+     * en_US : 영문
+     * zh_CN : 중문(간체)
+     * zh_TW : 중문(번체)
+     * ja_JP : 일문
+     * pt_PT : 포르투갈어
+     * es_ES : 스페인어
+     * vi_VN : 베트남어
+     *
+     * 최소글자수 : [5자]
+     * 최대글자수 : [5자]
+     */
     language_code: any;
     /**
-      * @description
-      * 대표디자인 설정 멀티쇼핑몰 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 대표디자인 설정 멀티쇼핑몰 번호
+     *
+     *
+     */
     published_in: any;
     /**
-      * @description
-      * 생성일
-      * 
-      * 날짜
-      */ 
+     * @description
+     * 생성일
+     *
+     * 날짜
+     */
     created_date: any;
     /**
-      * @description
-      * 수정일
-      * 
-      * 날짜
-      */ 
+     * @description
+     * 수정일
+     *
+     * 날짜
+     */
     updated_date: any;
     /**
-      * @description
-      * 도메인 조회
-      * 
-      * 
-      */ 
+     * @description
+     * 도메인 조회
+     *
+     *
+     */
     preview_domain: any;
   }
 
   export interface RetrieveAListOfThemesInput {
     /**
-      * @description
-      * 디자인 타입
-      * 
-      * pc : PC
-      * mobile : 모바일
-      * 
-      * @default pc
-      * 
-      * @required
-      */ 
+     * @description
+     * 디자인 타입
+     *
+     * pc : PC
+     * mobile : 모바일
+     *
+     * @default pc
+     *
+     * @required
+     */
     type: any;
   }
 
   export interface RetrieveAListOfThemesOutput {
-    themes: { 
-    skin_no: number;
-    skin_code: string;
-    skin_name: string;
-    skin_thumbnail_url: string;
-    usage_type: Cafe24Enum;
-    editor_type: Cafe24Enum;
-    parent_skin_no: number;
-    seller_id: any;
-    seller_skin_code: any;
-    design_purchase_no: number;
-    design_product_code: any;
-    language_code: string;
-    published_in: string;
-    created_date: Cafe24Datetime;
-    updated_date: Cafe24Datetime;
-    preview_domain: string[];
+    themes: {
+      skin_no: number;
+      skin_code: string;
+      skin_name: string;
+      skin_thumbnail_url: string;
+      usage_type: Cafe24Enum;
+      editor_type: Cafe24Enum;
+      parent_skin_no: number;
+      seller_id: any;
+      seller_skin_code: any;
+      design_purchase_no: number;
+      design_product_code: any;
+      language_code: string;
+      published_in: string;
+      created_date: Cafe24Datetime;
+      updated_date: Cafe24Datetime;
+      preview_domain: string[];
     }[];
   }
   export interface RetrieveACountOfThemesInput {
     /**
-      * @description
-      * 디자인 타입
-      * 
-      * pc : PC
-      * mobile : 모바일
-      * 
-      * @default pc
-      * 
-      * 
-      */ 
+     * @description
+     * 디자인 타입
+     *
+     * pc : PC
+     * mobile : 모바일
+     *
+     * @default pc
+     *
+     *
+     */
     type?: any;
   }
 
@@ -213,32 +212,32 @@ declare module 'cafe24api-client' {
   }
   export interface RetrieveAThemeInput {
     /**
-      * @description
-      * 디자인 번호
-      * 
-      * 최소값: [1]
-      */ 
+     * @description
+     * 디자인 번호
+     *
+     * 최소값: [1]
+     */
     skin_no?: any;
   }
 
   export interface RetrieveAThemeOutput {
-    theme: { 
-    skin_no: number;
-    skin_code: string;
-    skin_name: string;
-    skin_thumbnail_url: string;
-    usage_type: Cafe24Enum;
-    editor_type: Cafe24Enum;
-    parent_skin_no: any;
-    seller_id: any;
-    seller_skin_code: any;
-    design_purchase_no: number;
-    design_product_code: any;
-    language_code: string;
-    published_in: Cafe24Datetime;
-    created_date: Cafe24Datetime;
-    updated_date: any;
-    preview_domain: string[];
+    theme: {
+      skin_no: number;
+      skin_code: string;
+      skin_name: string;
+      skin_thumbnail_url: string;
+      usage_type: Cafe24Enum;
+      editor_type: Cafe24Enum;
+      parent_skin_no: any;
+      seller_id: any;
+      seller_skin_code: any;
+      design_purchase_no: number;
+      design_product_code: any;
+      language_code: string;
+      published_in: Cafe24Datetime;
+      created_date: Cafe24Datetime;
+      updated_date: any;
+      preview_domain: string[];
     };
   }
 
@@ -302,7 +301,9 @@ declare module 'cafe24api-client' {
      */
     retrieveAListOfThemes(
       input: RetrieveAListOfThemesInput,
-      options?: AdminRequestOptions<RetrieveAListOfThemesOutput['themes'][number]>,
+      options?: AdminRequestOptions<
+        RetrieveAListOfThemesOutput['themes'][number]
+      >,
     ): Promise<AxiosResponse<RetrieveAListOfThemesOutput>>;
     /**
      * @description

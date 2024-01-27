@@ -8,19 +8,20 @@ import {
 export default (cls) => {
   register(cls);
 
-  
-    const updateProductVariantsInSubscription = cls.prototype.updateProductVariantsInSubscription;
-    cls.prototype.updateProductVariantsInSubscription = async function (input, options) {
-      const response = await updateProductVariantsInSubscription.call(
-        this,
-        convertToSnakeCase(input),
-        optionsToSnakeCase(options),
-      );
-      return {
-        ...response,
-        data: convertToCamelCase(response.data),
-      };
+  const updateProductVariantsInSubscription =
+    cls.prototype.updateProductVariantsInSubscription;
+  cls.prototype.updateProductVariantsInSubscription = async function (
+    input,
+    options,
+  ) {
+    const response = await updateProductVariantsInSubscription.call(
+      this,
+      convertToSnakeCase(input),
+      optionsToSnakeCase(options),
+    );
+    return {
+      ...response,
+      data: convertToCamelCase(response.data),
     };
-
- 
+  };
 };

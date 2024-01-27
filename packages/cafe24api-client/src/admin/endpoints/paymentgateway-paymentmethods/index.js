@@ -1,6 +1,8 @@
-
 export default (cls) => {
-  cls.prototype.retrieveAListOfPaymentGatewayMethods = async function (input, options) {
+  cls.prototype.retrieveAListOfPaymentGatewayMethods = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/paymentgateway/${input['client_id']}/paymentmethods`,
@@ -27,7 +29,10 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.updateAPaymentMethodOfAPaymentGateway = async function (input, options) {
+  cls.prototype.updateAPaymentMethodOfAPaymentGateway = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'PUT',
       `/api/v2/admin/paymentgateway/${input['client_id']}/paymentmethods/{payment_method_code}`,
@@ -43,7 +48,10 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.deleteAPaymentMethodOfAPaymentGateway = async function (input, options) {
+  cls.prototype.deleteAPaymentMethodOfAPaymentGateway = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'DELETE',
       `/api/v2/admin/paymentgateway/${input['client_id']}/paymentmethods/{payment_method_code}`,
@@ -54,5 +62,4 @@ export default (cls) => {
       options,
     );
   };
-
 };

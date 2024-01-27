@@ -1,7 +1,7 @@
 import { AxiosResponse } from 'axios';
-import { 
-  Endpoint, 
-  AdminRequestOptions, 
+import {
+  Endpoint,
+  AdminRequestOptions,
   Cafe24Datetime,
   Cafe24Boolean,
   Cafe24Date,
@@ -13,7 +13,6 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
-
   /**
    * @description
    * 레시피(Recipes)와 관련된 기능으로,
@@ -21,80 +20,79 @@ declare module 'cafe24api-client' {
    */
   export interface Recipes {
     /**
-      * @description
-      * 레시피 코드
-      * 
-      * 
-      */ 
+     * @description
+     * 레시피 코드
+     *
+     *
+     */
     recipe_code: any;
     /**
-      * @description
-      * 레시피 이름
-      * 
-      * 최대글자수 : [200자]
-      */ 
+     * @description
+     * 레시피 이름
+     *
+     * 최대글자수 : [200자]
+     */
     recipe_name: any;
     /**
-      * @description
-      * 활성화 여부
-      * 
-      * T : 활성화
-      * F : 비활성화
-      * 
-      * 
-      */ 
+     * @description
+     * 활성화 여부
+     *
+     * T : 활성화
+     * F : 비활성화
+     *
+     *
+     */
     active: any;
   }
 
-  export interface RetrieveAListOfRecipesInput {
-  }
+  export interface RetrieveAListOfRecipesInput {}
 
   export interface RetrieveAListOfRecipesOutput {
-    recipes: { 
-    recipe_code: Cafe24Datetime;
-    recipe_name: string;
-    active: Cafe24Enum;
+    recipes: {
+      recipe_code: Cafe24Datetime;
+      recipe_name: string;
+      active: Cafe24Enum;
     }[];
   }
   export interface CreateARecipeInput {
     /**
-      * @description
-      * 레시피 코드
-      * 
-      * @required
-      */ 
+     * @description
+     * 레시피 코드
+     *
+     * @required
+     */
     recipe_code: any;
     /**
-      * @description
-      * 트리거 설정
-      * 
-      * 
-      */ 
-    trigger_settings?: { 
-    required_filters?: any[];
-    optional_filters?: any[];
+     * @description
+     * 트리거 설정
+     *
+     *
+     */
+    trigger_settings?: {
+      required_filters?: any[];
+      optional_filters?: any[];
     };
   }
 
   export interface CreateARecipeOutput {
-    recipes: { 
-    recipe_code: Cafe24Datetime;
-    active: Cafe24Enum;
+    recipes: {
+      recipe_code: Cafe24Datetime;
+      active: Cafe24Enum;
     }[];
   }
   export interface DeleteARecipeInput {
     /**
-      * @description
-      * 레시피 코드
-      * 
-      * @required
-      */ 
+     * @description
+     * 레시피 코드
+     *
+     * @required
+     */
     recipe_code: any;
   }
 
   export interface DeleteARecipeOutput {
-    recipe: { 
-    recipe_code: Cafe24Datetime;
+    recipe: {
+      recipe_code: Cafe24Datetime;
     };
   }
 
@@ -126,7 +124,9 @@ declare module 'cafe24api-client' {
      */
     retrieveAListOfRecipes(
       input?: RetrieveAListOfRecipesInput,
-      options?: AdminRequestOptions<RetrieveAListOfRecipesOutput['recipes'][number]>,
+      options?: AdminRequestOptions<
+        RetrieveAListOfRecipesOutput['recipes'][number]
+      >,
     ): Promise<AxiosResponse<RetrieveAListOfRecipesOutput>>;
     /**
      * @description

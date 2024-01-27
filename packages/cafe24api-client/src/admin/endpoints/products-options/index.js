@@ -1,6 +1,8 @@
-
 export default (cls) => {
-  cls.prototype.retrieveAListOfProductOptions = async function (input, options) {
+  cls.prototype.retrieveAListOfProductOptions = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/products/${input['product_no']}/options`,
@@ -67,5 +69,4 @@ export default (cls) => {
       options,
     );
   };
-
 };

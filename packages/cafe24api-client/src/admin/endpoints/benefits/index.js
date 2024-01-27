@@ -1,6 +1,8 @@
-
 export default (cls) => {
-  cls.prototype.retrieveAListOfCustomerBenefits = async function (input, options) {
+  cls.prototype.retrieveAListOfCustomerBenefits = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/benefits`,
@@ -20,7 +22,10 @@ export default (cls) => {
     );
   };
 
-  cls.prototype.retrieveACountOfCustomerBenefits = async function (input, options) {
+  cls.prototype.retrieveACountOfCustomerBenefits = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'GET',
       `/api/v2/admin/benefits/count`,
@@ -120,5 +125,4 @@ export default (cls) => {
       options,
     );
   };
-
 };

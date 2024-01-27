@@ -1,7 +1,7 @@
 import { AxiosResponse } from 'axios';
-import { 
-  Endpoint, 
-  AdminRequestOptions, 
+import {
+  Endpoint,
+  AdminRequestOptions,
   Cafe24Datetime,
   Cafe24Boolean,
   Cafe24Date,
@@ -13,193 +13,192 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
-
   /**
    * @description
    * 특정 URL로 접속 했을때, 설정한 URL로 리다이렉트할 수 있는 리소스입니다.
    */
   export interface Redirects {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * 최소값: [1]
-      * 최대값: [2147483647]
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * 최소값: [1]
+     * 최대값: [2147483647]
+     */
     shopNo: any;
     /**
-      * @description
-      * 리다이렉트 아이디
-      * 
-      * 최대값: [2147483647]
-      */ 
+     * @description
+     * 리다이렉트 아이디
+     *
+     * 최대값: [2147483647]
+     */
     id: any;
     /**
-      * @description
-      * 리다이렉트 경로
-      * 
-      * 
-      */ 
+     * @description
+     * 리다이렉트 경로
+     *
+     *
+     */
     path: any;
     /**
-      * @description
-      * 대상 위치
-      * 
-      * 
-      */ 
+     * @description
+     * 대상 위치
+     *
+     *
+     */
     target: any;
   }
 
   export interface RetrieveAListOfRedirectsInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 최소값: [1]
-      * 최대값: [2147483647]
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     * 최소값: [1]
+     * 최대값: [2147483647]
+     */
     shopNo?: any;
     /**
-      * @description
-      * 리다이렉트 아이디
-      * 
-      * 최소값: [1]
-      * 최대값: [2147483647]
-      */ 
+     * @description
+     * 리다이렉트 아이디
+     *
+     * 최소값: [1]
+     * 최대값: [2147483647]
+     */
     id?: any;
     /**
-      * @description
-      * 리다이렉트 경로
-      * 
-      * 
-      */ 
+     * @description
+     * 리다이렉트 경로
+     *
+     *
+     */
     path?: any;
     /**
-      * @description
-      * 대상 위치
-      * 
-      * 
-      */ 
+     * @description
+     * 대상 위치
+     *
+     *
+     */
     target?: any;
   }
 
   export interface RetrieveAListOfRedirectsOutput {
-    redirects: { 
-    shopNo: number;
-    id: number;
-    path: string;
-    target: string;
+    redirects: {
+      shopNo: number;
+      id: number;
+      path: string;
+      target: string;
     }[];
   }
   export interface CreateARedirectInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 최소값: [1]
-      * 최대값: [2147483647]
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     * 최소값: [1]
+     * 최대값: [2147483647]
+     */
     shopNo?: any;
     /**
-      * @description
-      * 리다이렉트 경로
-      * 
-      * @required
-      */ 
+     * @description
+     * 리다이렉트 경로
+     *
+     * @required
+     */
     path: any;
     /**
-      * @description
-      * 대상 위치
-      * 
-      * @required
-      */ 
+     * @description
+     * 대상 위치
+     *
+     * @required
+     */
     target: any;
   }
 
   export interface CreateARedirectOutput {
-    redirects: { 
-    shopNo: number;
-    id: number;
-    path: string;
-    target: string;
+    redirects: {
+      shopNo: number;
+      id: number;
+      path: string;
+      target: string;
     };
   }
   export interface UpdateARedirectInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 최소값: [1]
-      * 최대값: [2147483647]
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     * 최소값: [1]
+     * 최대값: [2147483647]
+     */
     shopNo?: any;
     /**
-      * @description
-      * 리다이렉트 아이디
-      * 
-      * @required
-      * 
-      * 최소값: [1]
-      * 최대값: [2147483647]
-      */ 
+     * @description
+     * 리다이렉트 아이디
+     *
+     * @required
+     *
+     * 최소값: [1]
+     * 최대값: [2147483647]
+     */
     id: any;
     /**
-      * @description
-      * 리다이렉트 경로
-      * 
-      * 
-      */ 
+     * @description
+     * 리다이렉트 경로
+     *
+     *
+     */
     path?: any;
     /**
-      * @description
-      * 대상 위치
-      * 
-      * 
-      */ 
+     * @description
+     * 대상 위치
+     *
+     *
+     */
     target?: any;
   }
 
   export interface UpdateARedirectOutput {
-    redirects: { 
-    shopNo: number;
-    id: number;
-    path: string;
-    target: string;
+    redirects: {
+      shopNo: number;
+      id: number;
+      path: string;
+      target: string;
     };
   }
   export interface DeleteARedirectInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 최소값: [1]
-      * 최대값: [2147483647]
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     * 최소값: [1]
+     * 최대값: [2147483647]
+     */
     shopNo?: any;
     /**
-      * @description
-      * 리다이렉트 아이디
-      * 
-      * @required
-      * 
-      * 최소값: [1]
-      * 최대값: [2147483647]
-      */ 
+     * @description
+     * 리다이렉트 아이디
+     *
+     * @required
+     *
+     * 최소값: [1]
+     * 최대값: [2147483647]
+     */
     id: any;
   }
 
   export interface DeleteARedirectOutput {
-    redirects: { 
-    shopNo: number;
-    id: number;
+    redirects: {
+      shopNo: number;
+      id: number;
     };
   }
 
@@ -207,7 +206,7 @@ declare module 'cafe24api-client' {
     /**
      * @description
      * 등록된 Redirect URL을 조회할 수 있습니다.
-     * 
+     *
      * 해당 API는 특정 클라이언트만 사용할 수 있는 API입니다. 사용하시려면 카페24 개발자센터로 문의해주세요.
      *
      * @see https://developers.cafe24.com/docs/api/admin/#retrieve-a-list-of-redirects
@@ -234,13 +233,15 @@ declare module 'cafe24api-client' {
      */
     retrieveAListOfRedirects(
       input: RetrieveAListOfRedirectsInput,
-      options?: AdminRequestOptions<RetrieveAListOfRedirectsOutput['redirects'][number]>,
+      options?: AdminRequestOptions<
+        RetrieveAListOfRedirectsOutput['redirects'][number]
+      >,
     ): Promise<AxiosResponse<RetrieveAListOfRedirectsOutput>>;
     /**
      * @description
      * Redirect URL을 등록할 수 있습니다.
      * 샵별 최대 1000개 등록이 가능합니다.
-     * 
+     *
      * 해당 API는 특정 클라이언트만 사용할 수 있는 API입니다. 사용하시려면 카페24 개발자센터로 문의해주세요.
      *
      * @see https://developers.cafe24.com/docs/api/admin/#create-a-redirect

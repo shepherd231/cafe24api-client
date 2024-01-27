@@ -1,7 +1,7 @@
 import { AxiosResponse } from 'axios';
-import { 
-  Endpoint, 
-  AdminRequestOptions, 
+import {
+  Endpoint,
+  AdminRequestOptions,
   Cafe24Datetime,
   Cafe24Boolean,
   Cafe24Date,
@@ -13,7 +13,6 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
-
   /**
    * @description
    * 애플아이디 로그인(Socials apple)은 쇼핑몰 이용 고객의 애플아이디 로그인에 관한 기능입니다.
@@ -21,171 +20,171 @@ declare module 'cafe24api-client' {
    */
   export interface SocialsApple {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     *
+     */
     shop_no: any;
     /**
-      * @description
-      * 애플 로그인 사용
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 애플 로그인 사용
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     use_apple_login: any;
     /**
-      * @description
-      * client id
-      * 
-      * 
-      */ 
+     * @description
+     * client id
+     *
+     *
+     */
     client_id: any;
     /**
-      * @description
-      * Team ID
-      * 
-      * 
-      */ 
+     * @description
+     * Team ID
+     *
+     *
+     */
     team_id: any;
     /**
-      * @description
-      * Key ID
-      * 
-      * 
-      */ 
+     * @description
+     * Key ID
+     *
+     *
+     */
     key_id: any;
     /**
-      * @description
-      * Auth Key 파일명
-      * 
-      * 
-      */ 
+     * @description
+     * Auth Key 파일명
+     *
+     *
+     */
     auth_key_file_name: any;
     /**
-      * @description
-      * 애플 로그인 본인인증
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 애플 로그인 본인인증
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     use_certification: any;
   }
 
   export interface AppleLoginSyncDetailsInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 최소값: [1]
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     * 최소값: [1]
+     */
     shop_no?: any;
   }
 
   export interface AppleLoginSyncDetailsOutput {
-    apple: { 
-    shop_no: number;
-    use_apple_login: Cafe24Enum;
-    client_id: string;
-    team_id: string;
-    key_id: string;
-    auth_key_file_name: string;
-    use_certification: Cafe24Enum;
+    apple: {
+      shop_no: number;
+      use_apple_login: Cafe24Enum;
+      client_id: string;
+      team_id: string;
+      key_id: string;
+      auth_key_file_name: string;
+      use_certification: Cafe24Enum;
     };
   }
   export interface AppleLoginSyncSettingsInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 최소값: [1]
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     * 최소값: [1]
+     */
     shop_no?: any;
     /**
-      * @description
-      * 애플 로그인 사용
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 애플 로그인 사용
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     use_apple_login?: any;
     /**
-      * @description
-      * Client ID
-      * 
-      * 애플 개발자 센터의 Service ID 생성 시 설정한 Identifier
-      * 
-      * 최대글자수 : [300자]
-      */ 
+     * @description
+     * Client ID
+     *
+     * 애플 개발자 센터의 Service ID 생성 시 설정한 Identifier
+     *
+     * 최대글자수 : [300자]
+     */
     client_id?: any;
     /**
-      * @description
-      * Team ID
-      * 
-      * 애플 개발자 센터의 App ID Prefix
-      * 
-      * 최대글자수 : [300자]
-      */ 
+     * @description
+     * Team ID
+     *
+     * 애플 개발자 센터의 App ID Prefix
+     *
+     * 최대글자수 : [300자]
+     */
     team_id?: any;
     /**
-      * @description
-      * Key ID
-      * 
-      * 애플 개발자 센터의 Key ID
-      * 
-      * 최대글자수 : [300자]
-      */ 
+     * @description
+     * Key ID
+     *
+     * 애플 개발자 센터의 Key ID
+     *
+     * 최대글자수 : [300자]
+     */
     key_id?: any;
     /**
-      * @description
-      * Auth Key 파일명
-      * 
-      * App ID의 Key파일로 .p8파일만 가능
-      * 
-      * 최대글자수 : [30자]
-      */ 
+     * @description
+     * Auth Key 파일명
+     *
+     * App ID의 Key파일로 .p8파일만 가능
+     *
+     * 최대글자수 : [30자]
+     */
     auth_key_file_name?: any;
     /**
-      * @description
-      * Auth Key 파일 내용
-      * 
-      * .p8파일을 텍스트 파일로 열어 줄바꿈 없이 값을 작성
-      * 
-      * 최대글자수 : [300자]
-      */ 
+     * @description
+     * Auth Key 파일 내용
+     *
+     * .p8파일을 텍스트 파일로 열어 줄바꿈 없이 값을 작성
+     *
+     * 최대글자수 : [300자]
+     */
     auth_key_file_contents?: any;
     /**
-      * @description
-      * 애플 로그인 본인인증
-      * 
-      * T : 사용함
-      * F : 사용안함
-      * 
-      * 
-      */ 
+     * @description
+     * 애플 로그인 본인인증
+     *
+     * T : 사용함
+     * F : 사용안함
+     *
+     *
+     */
     use_certification?: any;
   }
 
   export interface AppleLoginSyncSettingsOutput {
-    apple: { 
-    shop_no: number;
-    use_apple_login: Cafe24Enum;
-    client_id: string;
-    team_id: string;
-    key_id: string;
-    auth_key_file_name: string;
-    use_certification: Cafe24Enum;
+    apple: {
+      shop_no: number;
+      use_apple_login: Cafe24Enum;
+      client_id: string;
+      team_id: string;
+      key_id: string;
+      auth_key_file_name: string;
+      use_certification: Cafe24Enum;
     };
   }
 

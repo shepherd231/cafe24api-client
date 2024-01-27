@@ -1,6 +1,8 @@
-
 export default (cls) => {
-  cls.prototype.createAnOrderCancellationOnStockShortage = async function (input, options) {
+  cls.prototype.createAnOrderCancellationOnStockShortage = async function (
+    input,
+    options,
+  ) {
     return this.createRequest(
       'POST',
       `/api/v2/admin/orders/${input['order_id']}/shortagecancellation`,
@@ -29,5 +31,4 @@ export default (cls) => {
       options,
     );
   };
-
 };

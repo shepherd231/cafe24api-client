@@ -1,7 +1,7 @@
 import { AxiosResponse } from 'axios';
-import { 
-  Endpoint, 
-  AdminRequestOptions, 
+import {
+  Endpoint,
+  AdminRequestOptions,
   Cafe24Datetime,
   Cafe24Boolean,
   Cafe24Date,
@@ -13,70 +13,68 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
-
   /**
    * @description
    * 메인분류(Mains)는 쇼핑몰의 상품을 메인화면에 진열할 수 있는 기능입니다.
    */
   export interface Mains {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * 멀티쇼핑몰 구분을 위해 사용하는 멀티쇼핑몰 번호.
+     *
+     *
+     */
     shop_no: any;
     /**
-      * @description
-      * 모듈 코드
-      * 
-      * 각 메인분류에 지정된 모듈 코드
-      * 
-      * 
-      */ 
+     * @description
+     * 모듈 코드
+     *
+     * 각 메인분류에 지정된 모듈 코드
+     *
+     *
+     */
     module_code: any;
     /**
-      * @description
-      * 메인분류 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 메인분류 번호
+     *
+     *
+     */
     display_group: any;
     /**
-      * @description
-      * 메인분류 명
-      * 
-      * 메인분류 생성 당시 지정한 분류명
-      * 
-      * 
-      */ 
+     * @description
+     * 메인분류 명
+     *
+     * 메인분류 생성 당시 지정한 분류명
+     *
+     *
+     */
     group_name: any;
     /**
-      * @description
-      * 품절상품진열
-      * 
-      * 품절상품을 진열할 위치
-      * 
-      * B : 품절상품 맨 뒤로
-      * N : 품절상품 상관없음
-      * 
-      * 
-      */ 
+     * @description
+     * 품절상품진열
+     *
+     * 품절상품을 진열할 위치
+     *
+     * B : 품절상품 맨 뒤로
+     * N : 품절상품 상관없음
+     *
+     *
+     */
     soldout_sort_type: any;
   }
 
-  export interface RetrieveAListOfMainCategoriesInput {
-  }
+  export interface RetrieveAListOfMainCategoriesInput {}
 
   export interface RetrieveAListOfMainCategoriesOutput {
-    mains: { 
-    shop_no: number;
-    module_code: string;
-    display_group: number;
-    group_name: string;
-    soldout_sort_type: Cafe24Enum;
+    mains: {
+      shop_no: number;
+      module_code: string;
+      display_group: number;
+      group_name: string;
+      soldout_sort_type: Cafe24Enum;
     }[];
   }
 
@@ -112,7 +110,9 @@ declare module 'cafe24api-client' {
      */
     retrieveAListOfMainCategories(
       input?: RetrieveAListOfMainCategoriesInput,
-      options?: AdminRequestOptions<RetrieveAListOfMainCategoriesOutput['mains'][number]>,
+      options?: AdminRequestOptions<
+        RetrieveAListOfMainCategoriesOutput['mains'][number]
+      >,
     ): Promise<AxiosResponse<RetrieveAListOfMainCategoriesOutput>>;
   }
 }

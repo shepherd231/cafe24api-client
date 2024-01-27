@@ -1,7 +1,7 @@
 import { AxiosResponse } from 'axios';
-import { 
-  Endpoint, 
-  AdminRequestOptions, 
+import {
+  Endpoint,
+  AdminRequestOptions,
   Cafe24Datetime,
   Cafe24Boolean,
   Cafe24Date,
@@ -13,100 +13,99 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
-
   export interface Labels {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     *
+     */
     shopNo: any;
     /**
-      * @description
-      * 주문 라벨명
-      * 
-      * 
-      */ 
+     * @description
+     * 주문 라벨명
+     *
+     *
+     */
     names: any;
     /**
-      * @description
-      * 주문 라벨명
-      * 
-      * 
-      */ 
+     * @description
+     * 주문 라벨명
+     *
+     *
+     */
     name: any;
     /**
-      * @description
-      * 품주코드
-      * 
-      * 
-      */ 
+     * @description
+     * 품주코드
+     *
+     *
+     */
     orderItemCode: any;
   }
 
   export interface RetrieveOrderLabelsInput {
     /**
-      * @description
-      * 조회결과 최대건수
-      * 
-      * @default 100
-      * 
-      * 최소: [1]~최대: [1000]
-      */ 
+     * @description
+     * 조회결과 최대건수
+     *
+     * @default 100
+     *
+     * 최소: [1]~최대: [1000]
+     */
     limit?: any;
     /**
-      * @description
-      * 조회결과 시작위치
-      * 
-      * @default 0
-      * 
-      * 최대값: [15000]
-      */ 
+     * @description
+     * 조회결과 시작위치
+     *
+     * @default 0
+     *
+     * 최대값: [15000]
+     */
     offset?: any;
   }
 
   export interface RetrieveOrderLabelsOutput {
-    labels: { 
-    shopNo: number;
-    names: string[];
+    labels: {
+      shopNo: number;
+      names: string[];
     };
-    links: { 
-    rel: string;
-    href: string;
+    links: {
+      rel: string;
+      href: string;
     }[];
   }
   export interface CreateMultipleOrderLabelsInput {
     /**
-      * @description
-      * 멀티쇼핑몰 번호
-      * 
-      * @default 1
-      * 
-      * 최소값: [1]
-      */ 
+     * @description
+     * 멀티쇼핑몰 번호
+     *
+     * @default 1
+     *
+     * 최소값: [1]
+     */
     shopNo?: any;
     /**
-      * @description
-      * 주문 라벨명
-      * 
-      * @required
-      */ 
+     * @description
+     * 주문 라벨명
+     *
+     * @required
+     */
     name: any;
     /**
-      * @description
-      * 품주코드
-      * 
-      * @required
-      */ 
+     * @description
+     * 품주코드
+     *
+     * @required
+     */
     orderItemCode: any;
   }
 
   export interface CreateMultipleOrderLabelsOutput {
-    labels: { 
-    shopNo: number;
-    name: string;
-    orderItemCode: string[];
+    labels: {
+      shopNo: number;
+      name: string;
+      orderItemCode: string[];
     }[];
   }
 
@@ -166,7 +165,9 @@ declare module 'cafe24api-client' {
      */
     createMultipleOrderLabels(
       input: CreateMultipleOrderLabelsInput,
-      options?: AdminRequestOptions<CreateMultipleOrderLabelsOutput['labels'][number]>,
+      options?: AdminRequestOptions<
+        CreateMultipleOrderLabelsOutput['labels'][number]
+      >,
     ): Promise<AxiosResponse<CreateMultipleOrderLabelsOutput>>;
   }
 }

@@ -1,7 +1,7 @@
 import { AxiosResponse } from 'axios';
-import { 
-  Endpoint, 
-  AdminRequestOptions, 
+import {
+  Endpoint,
+  AdminRequestOptions,
   Cafe24Datetime,
   Cafe24Boolean,
   Cafe24Date,
@@ -13,74 +13,73 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
-
   /**
    * @description
    * 현금영수증 취소(Cashreceipt cancellation)는 발행된 현금영수증에 대해 신청취소 혹은 발행취소를 할 수 있는 기능입니다.
    */
   export interface CashreceiptCancellation {
     /**
-      * @description
-      * 현금영수증 번호
-      * 
-      * 
-      */ 
+     * @description
+     * 현금영수증 번호
+     *
+     *
+     */
     cashreceipt_no: any;
     /**
-      * @description
-      * 주문번호
-      * 
-      * 
-      */ 
+     * @description
+     * 주문번호
+     *
+     *
+     */
     order_id: any;
     /**
-      * @description
-      * 처리상태
-      * 
-      * 신청취소: canceled_request
-      * 발행취소: canceled_issuance
-      * 
-      * 
-      */ 
+     * @description
+     * 처리상태
+     *
+     * 신청취소: canceled_request
+     * 발행취소: canceled_issuance
+     *
+     *
+     */
     status: any;
   }
 
   export interface UpdateACashReceiptCancellationInput {
     /**
-      * @description
-      * 현금영수증 번호
-      * 
-      * @required
-      * 
-      * 최소값: [1]
-      */ 
+     * @description
+     * 현금영수증 번호
+     *
+     * @required
+     *
+     * 최소값: [1]
+     */
     cashreceipt_no: any;
     /**
-      * @description
-      * 주문번호
-      * 
-      * @required
-      * 
-      * 주문번호
-      */ 
+     * @description
+     * 주문번호
+     *
+     * @required
+     *
+     * 주문번호
+     */
     order_id: any;
     /**
-      * @description
-      * 취소 타입
-      * 
-      * 신청취소: request
-      * 발행취소: issue
-      * 
-      * @required
-      */ 
+     * @description
+     * 취소 타입
+     *
+     * 신청취소: request
+     * 발행취소: issue
+     *
+     * @required
+     */
     type: any;
   }
 
   export interface UpdateACashReceiptCancellationOutput {
-    cancellation: { 
-    cashreceipt_no: number;
-    order_id: string;
-    status: string;
+    cancellation: {
+      cashreceipt_no: number;
+      order_id: string;
+      status: string;
     };
   }
 
@@ -104,7 +103,9 @@ declare module 'cafe24api-client' {
      */
     updateACashReceiptCancellation(
       input: UpdateACashReceiptCancellationInput,
-      options?: AdminRequestOptions<UpdateACashReceiptCancellationOutput['cancellation']>,
+      options?: AdminRequestOptions<
+        UpdateACashReceiptCancellationOutput['cancellation']
+      >,
     ): Promise<AxiosResponse<UpdateACashReceiptCancellationOutput>>;
   }
 }

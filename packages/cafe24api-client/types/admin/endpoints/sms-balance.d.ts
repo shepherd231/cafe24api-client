@@ -1,7 +1,7 @@
 import { AxiosResponse } from 'axios';
-import { 
-  Endpoint, 
-  AdminRequestOptions, 
+import {
+  Endpoint,
+  AdminRequestOptions,
   Cafe24Datetime,
   Cafe24Boolean,
   Cafe24Date,
@@ -13,39 +13,37 @@ declare const endpoint: Endpoint;
 export = endpoint;
 
 declare module 'cafe24api-client' {
-
   export interface SmsBalance {
     /**
-      * @description
-      * SMS 잔여 건수
-      * 
-      * 
-      */ 
+     * @description
+     * SMS 잔여 건수
+     *
+     *
+     */
     balance: any;
     /**
-      * @description
-      * 단문(SMS) 발송 가능 건수
-      * 
-      * 
-      */ 
+     * @description
+     * 단문(SMS) 발송 가능 건수
+     *
+     *
+     */
     sms_count: any;
     /**
-      * @description
-      * 장문(LMS) 발송 가능 건수
-      * 
-      * 
-      */ 
+     * @description
+     * 장문(LMS) 발송 가능 건수
+     *
+     *
+     */
     lms_count: any;
   }
 
-  export interface RetrieveTheSmsBalanceInput {
-  }
+  export interface RetrieveTheSmsBalanceInput {}
 
   export interface RetrieveTheSmsBalanceOutput {
-    sms: { 
-    balance: Cafe24Datetime;
-    sms_count: number;
-    lms_count: number;
+    sms: {
+      balance: Cafe24Datetime;
+      sms_count: number;
+      lms_count: number;
     };
   }
 

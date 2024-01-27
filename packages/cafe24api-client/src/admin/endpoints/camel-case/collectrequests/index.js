@@ -8,19 +8,16 @@ import {
 export default (cls) => {
   register(cls);
 
-  
-    const updateACollectionRequest = cls.prototype.updateACollectionRequest;
-    cls.prototype.updateACollectionRequest = async function (input, options) {
-      const response = await updateACollectionRequest.call(
-        this,
-        convertToSnakeCase(input),
-        optionsToSnakeCase(options),
-      );
-      return {
-        ...response,
-        data: convertToCamelCase(response.data),
-      };
+  const updateACollectionRequest = cls.prototype.updateACollectionRequest;
+  cls.prototype.updateACollectionRequest = async function (input, options) {
+    const response = await updateACollectionRequest.call(
+      this,
+      convertToSnakeCase(input),
+      optionsToSnakeCase(options),
+    );
+    return {
+      ...response,
+      data: convertToCamelCase(response.data),
     };
-
- 
+  };
 };

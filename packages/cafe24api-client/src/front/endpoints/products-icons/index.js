@@ -1,4 +1,3 @@
-
 export default (cls) => {
   cls.prototype.retrieveAListOfProductIcons = async function (input, options) {
     return this.createRequest(
@@ -11,5 +10,4 @@ export default (cls) => {
       options,
     );
   };
-
 };
