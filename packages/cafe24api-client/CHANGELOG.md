@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.0](https://github.com/shepherd231/cafe24api-client/compare/cafe24api-client-v0.3.1...cafe24api-client-v0.4.0) (2024-01-27)
+
+
+### Features
+
+* adapt types ([9e6a663](https://github.com/shepherd231/cafe24api-client/commit/9e6a66328791bcf3bde5e1a3f5f10adb606821de))
+* add immediate option ([51d1a6b](https://github.com/shepherd231/cafe24api-client/commit/51d1a6b068ee198cb7e0688c7149a91ff7ffc54f))
+* can pass access token to the client ([ea2fac9](https://github.com/shepherd231/cafe24api-client/commit/ea2fac9b6d78465bde766752c277ae94b0fad696))
+
 ## [0.3.1](https://github.com/shepherd231/cafe24api-client/compare/cafe24api-client-v0.3.0...cafe24api-client-v0.3.1) (2024-01-25)
 
 
