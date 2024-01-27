@@ -1,0 +1,14 @@
+{
+  "name": "cafe24api-testing-library",
+  "version": "0.0.1",
+  "description": "",
+  "license": "ISC",
+  "main": "dist/index.js",
+  "module": "src/index.ts",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*",
+    "README.md",
+    "package.json"
+  ]
+}
