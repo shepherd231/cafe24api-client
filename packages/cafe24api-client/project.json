@@ -7,7 +7,7 @@
     "clean": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "pnpm rimraf dist ../../dist",
+        "command": "pnpm rimraf dist ../../dist .rollup.cache",
         "cwd": "packages/cafe24api-client"
       }
     },
