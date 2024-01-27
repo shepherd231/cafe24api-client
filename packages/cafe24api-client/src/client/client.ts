@@ -101,8 +101,10 @@ export abstract class Cafe24APIClient {
     // Get the fetcher for the given method
     const fetcher = this.createFetcher(method);
 
-    // If the task queue is not enabled, just fetch
-    if (!this.taskQueueEnabled) {
+    // If the task queue is not enabled,
+    // or the immediate option is set to true,
+    // execute the request immediately
+    if (!this.taskQueueEnabled || options?.immediate) {
       return fetcher({
         url: this.url + path,
         payload,
@@ -199,8 +201,22 @@ export type Endpoint = ((cls: Function) => void) & {
 };
 
 export interface RequestOptions<Input extends Record<string, any>> {
+  /**
+   * @description
+   * List of fields to include in the response.
+   */
   fields?: (keyof Input)[];
+  /**
+   * @description
+   * Additional headers to be included in the request.
+   */
   headers?: RawAxiosRequestHeaders;
+  /**
+   * @description
+   * If set to true, the request will be executed immediately.
+   * This option has no effect if the task queue is not enabled.
+   */
+  immediate?: boolean;
 }
 
 export interface AdminRequestOptions<Input extends Record<string, any>>
