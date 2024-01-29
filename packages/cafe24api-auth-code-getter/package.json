@@ -1,7 +1,7 @@
 {
   "name": "cafe24api-auth-code-getter",
   "version": "0.1.0",
-  "description": "",
+  "description": "Provides utilities to get cafe24 api auth code",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "src/index.ts",
@@ -10,6 +10,7 @@
     "cafe24api-auth-code-getter": "./bin/index.js"
   },
   "files": [
+    "bin/**/*",
     "dist/**/*",
     "README.md",
     "package.json"
