@@ -1,0 +1,18 @@
+{
+  "extends": "../../tsconfig.json",
+  "include": [
+    "./rollup.config.js",
+    "./bin/**/*",
+    "./scripts/**/*",
+    "./src/**/*",
+    "./tests/**/*",
+  ],
+  "compilerOptions": {
+    "checkJs": false,
+    "lib": [
+      "ESNext",
+      "DOM",
+      "DOM.Iterable"
+    ],
+  }
+}

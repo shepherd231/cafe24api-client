@@ -44,11 +44,23 @@ jobs:
         if: ${{ steps.release.outputs.releases_created == 'true' }}
 
       # Build package
-      - run: pnpm nx run-many -t build:production -p cafe24api-client cafe24-webhook-utils
+      - run: |
+          pnpm nx run-many \
+            -t build:production \
+            -p cafe24api-client \
+            -p cafe24-webhook-utils \
+            -p cafe24api-auth-code-getter \
+            --parallel
         if: ${{ steps.release.outputs.releases_created == 'true' }}
 
       # Publish package
-      - run: pnpm nx run-many -t publish -p cafe24api-client cafe24-webhook-utils
+      - run: |
+          pnpm nx run-many \
+            -t publish \
+            -p cafe24api-client \
+            -p cafe24-webhook-utils \
+            -p cafe24api-auth-code-getter \
+            --parallel
         if: ${{ steps.release.outputs.releases_created == 'true' }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

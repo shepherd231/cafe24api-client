@@ -1,0 +1,28 @@
+{
+  "name": "cafe24api-auth-code-getter",
+  "version": "0.0.1",
+  "description": "",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "src/index.ts",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "cafe24api-auth-code-getter": "./bin/index.js"
+  },
+  "files": [
+    "dist/**/*",
+    "README.md",
+    "package.json"
+  ],
+  "devDependencies": {
+    "puppeteer": "^21.5.1"
+  },
+  "dependencies": {
+    "commander": "^11.1.0",
+    "fp-ts": "^2.16.1",
+    "joi": "^17.12.1"
+  },
+  "peerDependencies": {
+    "puppeteer": "^21.5.1"
+  }
+}

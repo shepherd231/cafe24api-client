@@ -14,7 +14,8 @@
     "packages/cafe24api-client": {},
     "packages/cafe24-webhook-utils": {},
     "packages/cafe24api-schema-scraper": {},
-    "packages/cafe24-webhook-schema-generator": {}
+    "packages/cafe24-webhook-schema-generator": {},
+    "packages/cafe24api-auth-code-getter": {}
   },
   "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json"
 }

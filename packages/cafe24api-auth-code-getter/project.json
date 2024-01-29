@@ -1,0 +1,50 @@
+{
+  "name": "cafe24api-auth-code-getter",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/cafe24api-auth-code-getter/src",
+  "targets": {
+    "clean": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "pnpm rimraf dist .rollup.cache .tsbuildinfo ../../dist",
+        "cwd": "packages/cafe24api-auth-code-getter"
+      }
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "pnpm tsc",
+        "cwd": "packages/cafe24api-auth-code-getter"
+      }
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "pnpm tsc --project tsconfig.build.json",
+        "cwd": "packages/cafe24api-auth-code-getter"
+      }
+    },
+    "build:production": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "nx run cafe24api-auth-code-getter:build",
+        "cwd": "packages/cafe24api-auth-code-getter"
+      }
+    },
+    "publish": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "pnpm publish --access public --no-git-checks || echo 'Already published: cafe24api-auth-code-getter'",
+        "cwd": "packages/cafe24api-auth-code-getter"
+      }
+    },
+    "start": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node ./bin/index.js run",
+        "cwd": "packages/cafe24api-auth-code-getter"
+      }
+    }
+  }
+}
