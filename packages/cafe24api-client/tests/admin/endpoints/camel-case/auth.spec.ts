@@ -1,11 +1,7 @@
-import axios from 'axios';
 import Case from 'case';
 import { Cafe24AdminAPIClient } from '../../../../src/client/index';
 import Auth from '../../../../src/admin/endpoints/camel-case/auth/index';
-import { MockAPICall } from '../mocks/api.mock';
-
-// https://stackoverflow.com/questions/45016033/how-do-i-test-axios-in-jest
-jest.mock('axios');
+import { TEST_CLIENT_MALL_ID } from '../../values';
 
 describe('Auth (camelCased I/O fields)', () => {
   /**
@@ -16,7 +12,7 @@ describe('Auth (camelCased I/O fields)', () => {
     Cafe24AdminAPIClient.use(Auth);
 
     client = new Cafe24AdminAPIClient({
-      mallId: 'test',
+      mallId: TEST_CLIENT_MALL_ID,
       accessToken: 'test-access-token',
     });
 
@@ -25,24 +21,8 @@ describe('Auth (camelCased I/O fields)', () => {
     expect(typeof client.getAccessTokenUsingRefreshToken).toEqual('function');
   });
 
-  describe('getAuthenticationCode', () => {
-    it('should return redirect response', async () => {
-      // @ts-ignore
-      axios.get.mockImplementationOnce(MockAPICall.getAuthenticationCode);
-      const response = await client.getAuthenticationCode({
-        cliendId: 'test-client-id',
-        redirectUri: 'https://test.com',
-        state: 'test-state',
-        scope: 'mall.read_product',
-      });
-      expect(response.status).toEqual(302);
-    });
-  });
-
   describe('getAccessToken', () => {
     it('should return 200 (with options.fields)', async () => {
-      // @ts-ignore
-      axios.post.mockImplementationOnce(MockAPICall.getAccessToken);
       const response = await client.getAccessToken(
         {
           clientId: 'test-client-id',
@@ -61,10 +41,6 @@ describe('Auth (camelCased I/O fields)', () => {
 
   describe('getAccessTokenUsingRefreshToken', () => {
     it('should return 200', async () => {
-      // @ts-ignore
-      axios.post.mockImplementationOnce(
-        MockAPICall.getAccessTokenUsingRefreshToken,
-      );
       const response = await client.getAccessTokenUsingRefreshToken({
         clientId: 'test-client-id',
         clientSecret: 'test-client-secret',

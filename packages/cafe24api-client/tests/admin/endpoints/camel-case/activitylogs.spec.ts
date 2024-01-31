@@ -1,13 +1,9 @@
-import axios from 'axios';
-import { MockAPICall } from '../mocks/api.mock';
 import { Cafe24AdminAPIClient } from '../../../../src/client/index';
 import Auth from '../../../../src/admin/endpoints/auth/index';
 import ActivityLogs from '../../../../src/admin/endpoints/activitylogs/index';
+import { TEST_CLIENT_MALL_ID } from '../../values';
 
-// https://stackoverflow.com/questions/45016033/how-do-i-test-axios-in-jest
-jest.mock('axios');
-
-describe('ActivityLogs', () => {
+describe('ActivityLogs (camelCased I/O fields)', () => {
   /**
    * @type {Cafe24AdminAPIClient}
    */
@@ -17,7 +13,7 @@ describe('ActivityLogs', () => {
     Cafe24AdminAPIClient.use(ActivityLogs);
 
     client = new Cafe24AdminAPIClient({
-      mallId: 'test',
+      mallId: TEST_CLIENT_MALL_ID,
       accessToken: 'test-access-token',
     });
 
@@ -27,8 +23,6 @@ describe('ActivityLogs', () => {
 
   describe('retrieveAListOfActionLogs', () => {
     it('should return 200', async () => {
-      // @ts-ignore
-      axios.get.mockImplementationOnce(MockAPICall.retrieveAListOfActionLogs);
       const response = await client.retrieveAListOfActionLogs(
         {
           startDate: '2020-01-01T00:00:00+09:00',
@@ -42,8 +36,6 @@ describe('ActivityLogs', () => {
 
   describe('retrieveAnActionLog', () => {
     it('should return 200', async () => {
-      // @ts-ignore
-      axios.get.mockImplementationOnce(MockAPICall.retrieveAnActionLog);
       const response = await client.retrieveAnActionLog(
         {
           processNo: 130,

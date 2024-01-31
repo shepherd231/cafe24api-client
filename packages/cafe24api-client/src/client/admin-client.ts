@@ -42,8 +42,8 @@ export class Cafe24AdminAPIClient extends Cafe24APIClient {
     const { accessToken, headers, ...opts } = adminOptions;
     const options = {
       headers: this.createHeaders({
-        ...headers,
         Authorization: `Bearer ${accessToken}`,
+        ...headers,
       }),
       ...opts,
     };
