@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable @typescript-eslint/no-var-requires */
 // jest.polyfills.js
 /**
  * @note The block below contains polyfills for Node.js globals
@@ -7,6 +9,9 @@
  *
  * Consider migrating to a more modern test runner if
  * you don't want to deal with this.
+ *
+ * @see https://mswjs.io/docs/migrations/1.x-to-2.x#requestresponsetextencoder-is-not-defined-jest
+ * @see https://github.com/mswjs/msw/discussions/1934
  */
 
 const { TextDecoder, TextEncoder } = require('node:util');
