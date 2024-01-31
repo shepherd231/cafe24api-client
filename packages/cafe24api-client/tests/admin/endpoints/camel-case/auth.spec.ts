@@ -33,6 +33,12 @@ describe('Auth (camelCased I/O fields)', () => {
         { fields: ['mallId', 'accessToken', 'refreshToken'] },
       );
       expect(response.status).toEqual(200);
+      expect(response.config.headers['Content-Type']).toEqual(
+        'application/x-www-form-urlencoded',
+      );
+      expect(
+        response.config.headers['Authorization'].toString().split(' ').shift(),
+      ).toEqual('Basic');
       Object.keys(response.data).forEach((key) => {
         expect(key).toEqual(Case.camel(key));
       });
@@ -47,6 +53,12 @@ describe('Auth (camelCased I/O fields)', () => {
         refreshToken: 'test-refresh-token',
       });
       expect(response.status).toEqual(200);
+      expect(response.config.headers['Content-Type']).toEqual(
+        'application/x-www-form-urlencoded',
+      );
+      expect(
+        response.config.headers['Authorization'].toString().split(' ').shift(),
+      ).toEqual('Basic');
       Object.keys(response.data).forEach((key) => {
         expect(key).toEqual(Case.camel(key));
       });
