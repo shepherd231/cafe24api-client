@@ -101,28 +101,28 @@ export abstract class Cafe24APIClient {
     // Get the fetcher for the given method
     const fetcher = this.createFetcher(method);
 
-    // If the task queue is not enabled,
-    // or the immediate option is set to true,
-    // execute the request immediately
-    if (!this.taskQueueEnabled || options?.immediate) {
-      return fetcher({
-        url: this.url + path,
-        payload,
-        fields: options?.fields?.join(','),
-        headers: options?.headers ?? this.createHeaders(),
-      });
+    if (this.taskQueueEnabled && options?.queue) {
+      // If the task queue is enabled, add the task to the queue
+      // and wait for the task to be executed
+      return this.taskQueue.enqueue(() =>
+        fetcher({
+          url: this.url + path,
+          payload,
+          fields: options?.fields?.join(','),
+          headers: options?.headers ?? this.createHeaders(),
+          options: options?.fetchOptions,
+        }),
+      );
     }
 
-    // If the task queue is enabled, add the task to the queue
-    // and wait for the task to be executed
-    return this.taskQueue.enqueue(() =>
-      fetcher({
-        url: this.url + path,
-        payload,
-        fields: options?.fields?.join(','),
-        headers: options?.headers ?? this.createHeaders(),
-      }),
-    );
+    // Else, execute the task immediately
+    return fetcher({
+      url: this.url + path,
+      payload,
+      fields: options?.fields?.join(','),
+      headers: options?.headers ?? this.createHeaders(),
+      options: options?.fetchOptions,
+    });
   }
 
   protected createFetcher(method: HTTPVerb): Fetcher {
@@ -213,10 +213,17 @@ export interface RequestOptions<Input extends Record<string, any>> {
   headers?: RawAxiosRequestHeaders;
   /**
    * @description
-   * If set to true, the request will be executed immediately.
-   * This option has no effect if the task queue is not enabled.
+   * If true, the request will be queued to {@link TaskQueue}.
+   *
+   * You should provide {@link Cafe24APIClientOptions.taskQueue} option
+   * when creating a client to use this option.
    */
-  immediate?: boolean;
+  queue?: boolean;
+  /**
+   * @description
+   * Additional options to be included in the request.
+   */
+  fetchOptions?: AxiosRequestConfig<Input>;
 }
 
 export interface AdminRequestOptions<Input extends Record<string, any>>
