@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.2](https://github.com/shepherd231/cafe24api-client/compare/cafe24api-client-v0.7.1...cafe24api-client-v0.7.2) (2024-01-31)
+
+
+### Bug Fixes
+
+* merge headers at auth ([8934a4e](https://github.com/shepherd231/cafe24api-client/commit/8934a4e5535cbc9c48cde6dc5a8245a1e344817c))
+
 ## [0.7.1](https://github.com/shepherd231/cafe24api-client/compare/cafe24api-client-v0.7.0...cafe24api-client-v0.7.1) (2024-01-31)
 
 
