@@ -26,8 +26,8 @@ export default (cls) => {
     // Need authorization header for this request.
     const password = btoa(`${input['client_id']}:${input['client_secret']}`);
     options.headers ??= this.createHeaders({
-      contentType: 'application/x-www-form-urlencoded',
-      authorization: `Basic ${password}`,
+      'Content-Type': 'application/x-www-form-urlencoded',
+      Authorization: `Basic ${password}`,
     });
 
     // Create a request to get the access token.
@@ -50,8 +50,8 @@ export default (cls) => {
     // Need authorization header for this request.
     const password = btoa(`${input['client_id']}:${input['client_secret']}`);
     options.headers ??= this.createHeaders({
-      contentType: 'application/x-www-form-urlencoded',
-      authorization: `Basic ${password}`,
+      'Content-Type': 'application/x-www-form-urlencoded',
+      Authorization: `Basic ${password}`,
     });
 
     // Create a request to get the access token.
