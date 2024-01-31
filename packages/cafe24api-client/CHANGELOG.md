@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.1](https://github.com/shepherd231/cafe24api-client/compare/cafe24api-client-v0.6.0...cafe24api-client-v0.6.1) (2024-01-31)
+
+
+### Bug Fixes
+
+* feed rest of options to parent class at admin client ([5b3050b](https://github.com/shepherd231/cafe24api-client/commit/5b3050b0ee2689c732ccc6c4b85d94b227d86ccb))
+
 ## [0.6.0](https://github.com/shepherd231/cafe24api-client/compare/cafe24api-client-v0.5.0...cafe24api-client-v0.6.0) (2024-01-31)
 
 
