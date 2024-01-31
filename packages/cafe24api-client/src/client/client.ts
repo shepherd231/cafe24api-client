@@ -6,20 +6,51 @@ import axios, {
 import { merge } from 'merge';
 import { TaskQueue, TaskQueueOptions } from '../task-queue';
 
+/**
+ * @description
+ * Error policy for API requests.
+ *
+ * - `none`: If error occurs, throw an error.
+ * - `all`: If error occurs, return the error response.
+ *          Note that this option returns the error response
+ *          only if the error is an AxiosError.
+ *          Otherwise, it throws an error.
+ */
+export type ErrorPolicy = 'none' | 'all';
+
+/**
+ * @description
+ * Fetch policy for API requests.
+ *
+ * - `none`: Execute the request immediately.
+ * - `queue`: The request will be queued to {@link TaskQueue}.
+ *            You should provide {@link Cafe24APIClientOptions.taskQueue} option
+ *            when creating a client to use this option.
+ */
+export type FetchPolicy = 'none' | 'queue';
+
 export interface Cafe24APIClientOptions {
   mallId: string;
   taskQueue?: TaskQueueOptions;
+  /** @default 'none' */
+  errorPolicy?: ErrorPolicy;
+  /** @default 'none' */
+  fetchPolicy?: FetchPolicy;
 }
 
 export abstract class Cafe24APIClient {
   public readonly mallId: string;
   public readonly url: string;
   private readonly taskQueue?: TaskQueue;
+  private readonly errorPolicy?: ErrorPolicy;
+  private readonly fetchPolicy?: FetchPolicy;
   private isDisposed: boolean;
 
   constructor(options: Cafe24APIClientOptions) {
     this.mallId = options.mallId;
     this.url = `https://${this.mallId}.cafe24api.com`;
+    this.errorPolicy = options?.errorPolicy ?? 'none';
+    this.fetchPolicy = options?.fetchPolicy ?? 'none';
 
     const taskQueueOptions = options?.taskQueue;
     this.taskQueue = taskQueueOptions && new TaskQueue(taskQueueOptions);
@@ -101,28 +132,41 @@ export abstract class Cafe24APIClient {
     // Get the fetcher for the given method
     const fetcher = this.createFetcher(method);
 
-    if (this.taskQueueEnabled && options?.queue) {
-      // If the task queue is enabled, add the task to the queue
-      // and wait for the task to be executed
-      return this.taskQueue.enqueue(() =>
-        fetcher({
-          url: this.url + path,
-          payload,
-          fields: options?.fields?.join(','),
-          headers: options?.headers ?? this.createHeaders(),
-          options: options?.fetchOptions,
-        }),
-      );
-    }
-
-    // Else, execute the task immediately
-    return fetcher({
+    // Construct the fetch options
+    const fetchOptions = {
       url: this.url + path,
       payload,
       fields: options?.fields?.join(','),
       headers: options?.headers ?? this.createHeaders(),
-      options: options?.fetchOptions,
-    });
+      options: options?.requestConfig,
+    };
+
+    // Construct the task according to the error policy
+    const task: () => Promise<AxiosResponse<T>> =
+      (options?.errorPolicy ?? this.errorPolicy) === 'all'
+        ? async () => {
+            try {
+              return await fetcher(fetchOptions);
+            } catch (error: any) {
+              if (axios.isAxiosError(error)) {
+                return error.response;
+              }
+              throw error;
+            }
+          }
+        : () => fetcher(fetchOptions);
+
+    if (
+      this.taskQueueEnabled &&
+      (options?.fetchPolicy ?? this.fetchPolicy) === 'queue'
+    ) {
+      // If the task queue is enabled, add the task to the queue
+      // and wait for the task to be executed
+      return this.taskQueue.enqueue(task);
+    }
+
+    // Else, execute the task immediately
+    return task();
   }
 
   protected createFetcher(method: HTTPVerb): Fetcher {
@@ -213,17 +257,11 @@ export interface RequestOptions<Input extends Record<string, any>> {
   headers?: RawAxiosRequestHeaders;
   /**
    * @description
-   * If true, the request will be queued to {@link TaskQueue}.
-   *
-   * You should provide {@link Cafe24APIClientOptions.taskQueue} option
-   * when creating a client to use this option.
+   * Additional request configurations.
    */
-  queue?: boolean;
-  /**
-   * @description
-   * Additional options to be included in the request.
-   */
-  fetchOptions?: AxiosRequestConfig<Input>;
+  requestConfig?: AxiosRequestConfig<Input>;
+  fetchPolicy?: FetchPolicy;
+  errorPolicy?: ErrorPolicy;
 }
 
 export interface AdminRequestOptions<Input extends Record<string, any>>
