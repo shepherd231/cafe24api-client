@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.0](https://github.com/shepherd231/cafe24api-client/compare/cafe24api-client-v0.6.1...cafe24api-client-v0.7.0) (2024-01-31)
+
+
+### Features
+
+* add error policy and fetch policy options ([9f137a5](https://github.com/shepherd231/cafe24api-client/commit/9f137a58b7d605c2254e240f088ca52b8a93cdb6))
+
 ## [0.6.1](https://github.com/shepherd231/cafe24api-client/compare/cafe24api-client-v0.6.0...cafe24api-client-v0.6.1) (2024-01-31)
 
 
