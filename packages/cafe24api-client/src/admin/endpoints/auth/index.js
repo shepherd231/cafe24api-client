@@ -7,6 +7,7 @@ export default (cls) => {
       'Content-Type': 'application/json',
       ...options.headers,
     };
+    options.useRawPayload = true;
 
     // Create a request to get the authentication code.
     return this.createRequest(
@@ -31,6 +32,7 @@ export default (cls) => {
       Authorization: `Basic ${password}`,
       ...options.headers,
     });
+    options.useRawPayload = true;
 
     // Create a request to get the access token.
     return this.createRequest(
@@ -56,6 +58,7 @@ export default (cls) => {
       Authorization: `Basic ${password}`,
       ...options.headers,
     });
+    options.useRawPayload = true;
 
     // Create a request to get the access token.
     return this.createRequest(

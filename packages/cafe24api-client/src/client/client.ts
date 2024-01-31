@@ -136,6 +136,7 @@ export abstract class Cafe24APIClient {
     const fetchOptions = {
       url: this.url + path,
       payload,
+      useRawPayload: options?.useRawPayload,
       fields: options?.fields?.join(','),
       headers: options?.headers ?? this.createHeaders(),
       options: options?.requestConfig,
@@ -173,48 +174,58 @@ export abstract class Cafe24APIClient {
     let fetcher: Fetcher;
     switch (method) {
       case 'GET':
-        fetcher = ({ url, payload, fields, headers, options }) =>
+        fetcher = ({ url, payload, fields, headers, options, useRawPayload }) =>
           axios.get(
             url,
             merge(
               true,
-              { params: this.createParams(payload, fields), headers },
+              {
+                params: useRawPayload
+                  ? payload
+                  : this.createParams(payload, fields),
+                headers,
+              },
               options,
             ),
           );
         break;
       case 'DELETE':
-        fetcher = ({ url, payload, fields, headers, options }) =>
+        fetcher = ({ url, payload, fields, headers, options, useRawPayload }) =>
           axios.delete(
             url,
             merge(
               true,
-              { params: this.createParams(payload, fields), headers },
+              {
+                params: useRawPayload
+                  ? payload
+                  : this.createParams(payload, fields),
+                headers,
+              },
               options,
             ),
           );
         break;
       case 'POST':
-        fetcher = ({ url, payload, fields, headers, options }) =>
+        fetcher = ({ url, payload, fields, headers, options, useRawPayload }) =>
           axios.post(
             url,
-            this.createBody(payload, fields),
+            useRawPayload ? payload : this.createBody(payload, fields),
             merge(true, { headers }, options),
           );
         break;
       case 'PUT':
-        fetcher = ({ url, payload, fields, headers, options }) =>
+        fetcher = ({ url, payload, fields, headers, options, useRawPayload }) =>
           axios.put(
             url,
-            this.createBody(payload, fields),
+            useRawPayload ? payload : this.createBody(payload, fields),
             merge(true, { headers }, options),
           );
         break;
       case 'PATCH':
-        fetcher = ({ url, payload, fields, headers, options }) =>
+        fetcher = ({ url, payload, fields, headers, options, useRawPayload }) =>
           axios.patch(
             url,
-            this.createBody(payload, fields),
+            useRawPayload ? payload : this.createBody(payload, fields),
             merge(true, { headers }, options),
           );
         break;
@@ -232,6 +243,7 @@ interface FetchOptions<D = any> {
   payload: D;
   fields: string;
   headers: RawAxiosRequestHeaders;
+  useRawPayload?: boolean;
   options?: AxiosRequestConfig<D>;
 }
 
@@ -262,6 +274,13 @@ export interface RequestOptions<Input extends Record<string, any>> {
   requestConfig?: AxiosRequestConfig<Input>;
   fetchPolicy?: FetchPolicy;
   errorPolicy?: ErrorPolicy;
+  /**
+   * @description
+   * If true, the payload will be sent as is.
+   *
+   * INTERNAL USE ONLY
+   */
+  useRawPayload?: boolean;
 }
 
 export interface AdminRequestOptions<Input extends Record<string, any>>
