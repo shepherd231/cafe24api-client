@@ -3,8 +3,9 @@ import { btoa } from 'abab';
 export default (cls) => {
   cls.prototype.getAuthenticationCode = async function (input, options = {}) {
     // We don't need any authorization header for this request.
-    options.headers ??= {
+    options.headers = {
       'Content-Type': 'application/json',
+      ...options.headers,
     };
 
     // Create a request to get the authentication code.
@@ -25,9 +26,10 @@ export default (cls) => {
   cls.prototype.getAccessToken = async function (input, options = {}) {
     // Need authorization header for this request.
     const password = btoa(`${input['client_id']}:${input['client_secret']}`);
-    options.headers ??= this.createHeaders({
+    options.headers = this.createHeaders({
       'Content-Type': 'application/x-www-form-urlencoded',
       Authorization: `Basic ${password}`,
+      ...options.headers,
     });
 
     // Create a request to get the access token.
@@ -49,9 +51,10 @@ export default (cls) => {
   ) {
     // Need authorization header for this request.
     const password = btoa(`${input['client_id']}:${input['client_secret']}`);
-    options.headers ??= this.createHeaders({
+    options.headers = this.createHeaders({
       'Content-Type': 'application/x-www-form-urlencoded',
       Authorization: `Basic ${password}`,
+      ...options.headers,
     });
 
     // Create a request to get the access token.
