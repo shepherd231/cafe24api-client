@@ -39,13 +39,13 @@ export class Cafe24AdminAPIClient extends Cafe24APIClient {
     payload: Record<string, any>,
     adminOptions: AdminRequestOptions<T>,
   ): Promise<AxiosResponse<T, any>> {
-    const { accessToken, headers, fields } = adminOptions;
+    const { accessToken, headers, ...opts } = adminOptions;
     const options = {
       headers: this.createHeaders({
         ...headers,
         Authorization: `Bearer ${accessToken}`,
       }),
-      fields,
+      ...opts,
     };
     return super.createRequest(method, path, payload, options);
   }
