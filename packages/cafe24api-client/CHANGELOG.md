@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.5](https://github.com/shepherd231/cafe24api-client/compare/cafe24api-client-v0.7.4...cafe24api-client-v0.7.5) (2024-02-01)
+
+
+### Bug Fixes
+
+* field selection for camel cased endpoints ([40a23f1](https://github.com/shepherd231/cafe24api-client/commit/40a23f174b7849f25f8afed1d001edcc0ce506e6))
+
 ## [0.7.4](https://github.com/shepherd231/cafe24api-client/compare/cafe24api-client-v0.7.3...cafe24api-client-v0.7.4) (2024-01-31)
 
 
