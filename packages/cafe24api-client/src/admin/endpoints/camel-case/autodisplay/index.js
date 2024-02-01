@@ -2,7 +2,7 @@ import register from '../../autodisplay/index';
 import {
   convertToCamelCase,
   convertToSnakeCase,
-  optionsToSnakeCase,
+  formatCamelCasedOptions,
 } from '../../../../utils/index';
 
 export default (cls) => {
@@ -13,7 +13,7 @@ export default (cls) => {
     const response = await retrieveAListOfAutoLayouts.call(
       this,
       convertToSnakeCase(input),
-      optionsToSnakeCase(options),
+      formatCamelCasedOptions(options),
     );
     return {
       ...response,
@@ -30,7 +30,7 @@ export default (cls) => {
     const response = await createAutoLayoutForSelectedProductCategory.call(
       this,
       convertToSnakeCase(input),
-      optionsToSnakeCase(options),
+      formatCamelCasedOptions(options),
     );
     return {
       ...response,
@@ -47,7 +47,7 @@ export default (cls) => {
     const response = await updateAutoLayoutForSelectedProductCategory.call(
       this,
       convertToSnakeCase(input),
-      optionsToSnakeCase(options),
+      formatCamelCasedOptions(options),
     );
     return {
       ...response,
@@ -64,7 +64,7 @@ export default (cls) => {
     const response = await deleteAutoLayoutForSelectedProductCategory.call(
       this,
       convertToSnakeCase(input),
-      optionsToSnakeCase(options),
+      formatCamelCasedOptions(options),
     );
     return {
       ...response,

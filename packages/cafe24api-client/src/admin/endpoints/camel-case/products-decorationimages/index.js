@@ -2,7 +2,7 @@ import register from '../../products-decorationimages/index';
 import {
   convertToCamelCase,
   convertToSnakeCase,
-  optionsToSnakeCase,
+  formatCamelCasedOptions,
 } from '../../../../utils/index';
 
 export default (cls) => {
@@ -17,7 +17,7 @@ export default (cls) => {
     const response = await retrieveAListOfDecorationImages.call(
       this,
       convertToSnakeCase(input),
-      optionsToSnakeCase(options),
+      formatCamelCasedOptions(options),
     );
     return {
       ...response,
@@ -34,7 +34,7 @@ export default (cls) => {
     const response = await retrieveAListOfProductDecorationImages.call(
       this,
       convertToSnakeCase(input),
-      optionsToSnakeCase(options),
+      formatCamelCasedOptions(options),
     );
     return {
       ...response,
@@ -51,7 +51,7 @@ export default (cls) => {
     const response = await setDecorationImagesForAProduct.call(
       this,
       convertToSnakeCase(input),
-      optionsToSnakeCase(options),
+      formatCamelCasedOptions(options),
     );
     return {
       ...response,
@@ -68,7 +68,7 @@ export default (cls) => {
     const response = await updateProductDecorationImages.call(
       this,
       convertToSnakeCase(input),
-      optionsToSnakeCase(options),
+      formatCamelCasedOptions(options),
     );
     return {
       ...response,
@@ -85,7 +85,7 @@ export default (cls) => {
     const response = await removeAProductDecorationImage.call(
       this,
       convertToSnakeCase(input),
-      optionsToSnakeCase(options),
+      formatCamelCasedOptions(options),
     );
     return {
       ...response,

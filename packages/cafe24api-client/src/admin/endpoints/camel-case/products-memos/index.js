@@ -2,7 +2,7 @@ import register from '../../products-memos/index';
 import {
   convertToCamelCase,
   convertToSnakeCase,
-  optionsToSnakeCase,
+  formatCamelCasedOptions,
 } from '../../../../utils/index';
 
 export default (cls) => {
@@ -13,7 +13,7 @@ export default (cls) => {
     const response = await retrieveAListOfProductMemos.call(
       this,
       convertToSnakeCase(input),
-      optionsToSnakeCase(options),
+      formatCamelCasedOptions(options),
     );
     return {
       ...response,
@@ -26,7 +26,7 @@ export default (cls) => {
     const response = await retrieveAProductMemo.call(
       this,
       convertToSnakeCase(input),
-      optionsToSnakeCase(options),
+      formatCamelCasedOptions(options),
     );
     return {
       ...response,
@@ -39,7 +39,7 @@ export default (cls) => {
     const response = await createAProductMemo.call(
       this,
       convertToSnakeCase(input),
-      optionsToSnakeCase(options),
+      formatCamelCasedOptions(options),
     );
     return {
       ...response,
@@ -52,7 +52,7 @@ export default (cls) => {
     const response = await updateAProductMemo.call(
       this,
       convertToSnakeCase(input),
-      optionsToSnakeCase(options),
+      formatCamelCasedOptions(options),
     );
     return {
       ...response,
@@ -65,7 +65,7 @@ export default (cls) => {
     const response = await deleteAProductMemo.call(
       this,
       convertToSnakeCase(input),
-      optionsToSnakeCase(options),
+      formatCamelCasedOptions(options),
     );
     return {
       ...response,

@@ -5,6 +5,7 @@ import axios, {
 } from 'axios';
 import { merge } from 'merge';
 import { TaskQueue, TaskQueueOptions } from '../task-queue';
+import { filterUndefined } from '../utils';
 
 /**
  * @description
@@ -85,11 +86,11 @@ export abstract class Cafe24APIClient {
     fields?: string,
   ): Record<string, any> {
     const { shop_no = 1, ...rest } = data ?? {};
-    return {
+    return filterUndefined({
       shop_no,
       fields,
-      request: rest ?? {},
-    };
+      request: filterUndefined(rest ?? {}),
+    });
   }
 
   /**
@@ -104,19 +105,24 @@ export abstract class Cafe24APIClient {
     data: Record<string, any>,
     fields?: string,
   ): Record<string, any> {
-    return {
+    return filterUndefined({
       ...data,
       fields,
-    };
+    });
   }
 
   /**
    * @description
    * Create a request headers for API requests.
    */
-  protected abstract createHeaders(
+  protected createHeaders(
     headers?: RawAxiosRequestHeaders,
-  ): RawAxiosRequestHeaders;
+  ): RawAxiosRequestHeaders {
+    return {
+      'Content-Type': 'application/json',
+      ...headers,
+    };
+  }
 
   protected async createRequest<T extends Record<string, any>>(
     method: HTTPVerb,
@@ -138,7 +144,7 @@ export abstract class Cafe24APIClient {
       payload,
       useRawPayload: options?.useRawPayload,
       fields: options?.fields?.join(','),
-      headers: options?.headers ?? this.createHeaders(),
+      headers: this.createHeaders(options?.headers),
       options: options?.requestConfig,
     };
 
@@ -236,7 +242,14 @@ export abstract class Cafe24APIClient {
   }
 }
 
-export type HTTPVerb = 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH';
+export type HTTPVerb =
+  | 'GET'
+  | 'POST'
+  | 'PUT'
+  | 'DELETE'
+  | 'PATCH'
+  | 'HEAD'
+  | 'OPTIONS';
 
 interface FetchOptions<D = any> {
   url: string;

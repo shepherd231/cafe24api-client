@@ -2,7 +2,7 @@ import register from '../../customers-autoupdate/index';
 import {
   convertToCamelCase,
   convertToSnakeCase,
-  optionsToSnakeCase,
+  formatCamelCasedOptions,
 } from '../../../../utils/index';
 
 export default (cls) => {
@@ -17,7 +17,7 @@ export default (cls) => {
     const response = await retrieveCustomerTierAutoUpdateDetails.call(
       this,
       convertToSnakeCase(input),
-      optionsToSnakeCase(options),
+      formatCamelCasedOptions(options),
     );
     return {
       ...response,

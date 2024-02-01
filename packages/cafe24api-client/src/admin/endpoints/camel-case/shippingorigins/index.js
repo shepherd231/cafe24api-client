@@ -2,7 +2,7 @@ import register from '../../shippingorigins/index';
 import {
   convertToCamelCase,
   convertToSnakeCase,
-  optionsToSnakeCase,
+  formatCamelCasedOptions,
 } from '../../../../utils/index';
 
 export default (cls) => {
@@ -17,7 +17,7 @@ export default (cls) => {
     const response = await retrieveAListOfShippingOrigins.call(
       this,
       convertToSnakeCase(input),
-      optionsToSnakeCase(options),
+      formatCamelCasedOptions(options),
     );
     return {
       ...response,
@@ -30,7 +30,7 @@ export default (cls) => {
     const response = await retrieveAShippingOrigin.call(
       this,
       convertToSnakeCase(input),
-      optionsToSnakeCase(options),
+      formatCamelCasedOptions(options),
     );
     return {
       ...response,
@@ -43,7 +43,7 @@ export default (cls) => {
     const response = await createAShippingOrigin.call(
       this,
       convertToSnakeCase(input),
-      optionsToSnakeCase(options),
+      formatCamelCasedOptions(options),
     );
     return {
       ...response,
@@ -56,7 +56,7 @@ export default (cls) => {
     const response = await updateAShippingOrigin.call(
       this,
       convertToSnakeCase(input),
-      optionsToSnakeCase(options),
+      formatCamelCasedOptions(options),
     );
     return {
       ...response,
@@ -69,7 +69,7 @@ export default (cls) => {
     const response = await deleteAShippingOrigin.call(
       this,
       convertToSnakeCase(input),
-      optionsToSnakeCase(options),
+      formatCamelCasedOptions(options),
     );
     return {
       ...response,

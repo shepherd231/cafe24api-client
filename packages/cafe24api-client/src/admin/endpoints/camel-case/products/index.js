@@ -2,7 +2,7 @@ import register from '../../products/index';
 import {
   convertToCamelCase,
   convertToSnakeCase,
-  optionsToSnakeCase,
+  formatCamelCasedOptions,
 } from '../../../../utils/index';
 
 export default (cls) => {
@@ -13,7 +13,7 @@ export default (cls) => {
     const response = await retrieveAListOfProducts.call(
       this,
       convertToSnakeCase(input),
-      optionsToSnakeCase(options),
+      formatCamelCasedOptions(options),
     );
     return {
       ...response,
@@ -26,7 +26,7 @@ export default (cls) => {
     const response = await retrieveACountOfProducts.call(
       this,
       convertToSnakeCase(input),
-      optionsToSnakeCase(options),
+      formatCamelCasedOptions(options),
     );
     return {
       ...response,
@@ -39,7 +39,7 @@ export default (cls) => {
     const response = await retrieveAProductResource.call(
       this,
       convertToSnakeCase(input),
-      optionsToSnakeCase(options),
+      formatCamelCasedOptions(options),
     );
     return {
       ...response,
@@ -52,7 +52,7 @@ export default (cls) => {
     const response = await createAProduct.call(
       this,
       convertToSnakeCase(input),
-      optionsToSnakeCase(options),
+      formatCamelCasedOptions(options),
     );
     return {
       ...response,
@@ -65,7 +65,7 @@ export default (cls) => {
     const response = await updateAProduct.call(
       this,
       convertToSnakeCase(input),
-      optionsToSnakeCase(options),
+      formatCamelCasedOptions(options),
     );
     return {
       ...response,
@@ -78,7 +78,7 @@ export default (cls) => {
     const response = await deleteAProduct.call(
       this,
       convertToSnakeCase(input),
-      optionsToSnakeCase(options),
+      formatCamelCasedOptions(options),
     );
     return {
       ...response,

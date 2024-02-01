@@ -2,7 +2,7 @@ import register from '../../coupons/index';
 import {
   convertToCamelCase,
   convertToSnakeCase,
-  optionsToSnakeCase,
+  formatCamelCasedOptions,
 } from '../../../../utils/index';
 
 export default (cls) => {
@@ -13,7 +13,7 @@ export default (cls) => {
     const response = await retrieveACountOfCoupons.call(
       this,
       convertToSnakeCase(input),
-      optionsToSnakeCase(options),
+      formatCamelCasedOptions(options),
     );
     return {
       ...response,
@@ -26,7 +26,7 @@ export default (cls) => {
     const response = await retrieveAListOfCoupons.call(
       this,
       convertToSnakeCase(input),
-      optionsToSnakeCase(options),
+      formatCamelCasedOptions(options),
     );
     return {
       ...response,
@@ -39,7 +39,7 @@ export default (cls) => {
     const response = await createACoupon.call(
       this,
       convertToSnakeCase(input),
-      optionsToSnakeCase(options),
+      formatCamelCasedOptions(options),
     );
     return {
       ...response,

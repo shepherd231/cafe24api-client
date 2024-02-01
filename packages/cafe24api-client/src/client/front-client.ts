@@ -20,11 +20,10 @@ export class Cafe24FrontAPIClient extends Cafe24APIClient {
   protected createHeaders(
     headers?: RawAxiosRequestHeaders,
   ): RawAxiosRequestHeaders {
-    return {
-      'Content-Type': 'application/json',
+    return super.createHeaders({
       'X-Cafe24-Client-Id': this.clientId,
       ...headers,
-    };
+    });
   }
 
   static use(endpoint: Endpoint) {

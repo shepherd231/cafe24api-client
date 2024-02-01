@@ -2,7 +2,7 @@ import register from '../../boards-articles/index';
 import {
   convertToCamelCase,
   convertToSnakeCase,
-  optionsToSnakeCase,
+  formatCamelCasedOptions,
 } from '../../../../utils/index';
 
 export default (cls) => {
@@ -17,7 +17,7 @@ export default (cls) => {
     const response = await retrieveAListOfPostsForABoard.call(
       this,
       convertToSnakeCase(input),
-      optionsToSnakeCase(options),
+      formatCamelCasedOptions(options),
     );
     return {
       ...response,
@@ -30,7 +30,7 @@ export default (cls) => {
     const response = await createABoardPost.call(
       this,
       convertToSnakeCase(input),
-      optionsToSnakeCase(options),
+      formatCamelCasedOptions(options),
     );
     return {
       ...response,
@@ -43,7 +43,7 @@ export default (cls) => {
     const response = await updateABoardPost.call(
       this,
       convertToSnakeCase(input),
-      optionsToSnakeCase(options),
+      formatCamelCasedOptions(options),
     );
     return {
       ...response,
@@ -56,7 +56,7 @@ export default (cls) => {
     const response = await deleteABoardPost.call(
       this,
       convertToSnakeCase(input),
-      optionsToSnakeCase(options),
+      formatCamelCasedOptions(options),
     );
     return {
       ...response,

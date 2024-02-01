@@ -2,7 +2,7 @@ import register from '../../suppliers-users/index';
 import {
   convertToCamelCase,
   convertToSnakeCase,
-  optionsToSnakeCase,
+  formatCamelCasedOptions,
 } from '../../../../utils/index';
 
 export default (cls) => {
@@ -14,7 +14,7 @@ export default (cls) => {
     const response = await retrieveAListOfSupplierUsers.call(
       this,
       convertToSnakeCase(input),
-      optionsToSnakeCase(options),
+      formatCamelCasedOptions(options),
     );
     return {
       ...response,
@@ -31,7 +31,7 @@ export default (cls) => {
     const response = await retrieveACountOfSupplierUsers.call(
       this,
       convertToSnakeCase(input),
-      optionsToSnakeCase(options),
+      formatCamelCasedOptions(options),
     );
     return {
       ...response,
@@ -44,7 +44,7 @@ export default (cls) => {
     const response = await retrieveSupplierUserDetails.call(
       this,
       convertToSnakeCase(input),
-      optionsToSnakeCase(options),
+      formatCamelCasedOptions(options),
     );
     return {
       ...response,
@@ -57,7 +57,7 @@ export default (cls) => {
     const response = await createASupplierUser.call(
       this,
       convertToSnakeCase(input),
-      optionsToSnakeCase(options),
+      formatCamelCasedOptions(options),
     );
     return {
       ...response,
@@ -70,7 +70,7 @@ export default (cls) => {
     const response = await updateASupplierUser.call(
       this,
       convertToSnakeCase(input),
-      optionsToSnakeCase(options),
+      formatCamelCasedOptions(options),
     );
     return {
       ...response,
@@ -83,7 +83,7 @@ export default (cls) => {
     const response = await deleteASupplierUser.call(
       this,
       convertToSnakeCase(input),
-      optionsToSnakeCase(options),
+      formatCamelCasedOptions(options),
     );
     return {
       ...response,

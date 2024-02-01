@@ -2,7 +2,7 @@ import register from '../../brands/index';
 import {
   convertToCamelCase,
   convertToSnakeCase,
-  optionsToSnakeCase,
+  formatCamelCasedOptions,
 } from '../../../../utils/index';
 
 export default (cls) => {
@@ -13,7 +13,7 @@ export default (cls) => {
     const response = await retrieveAListOfBrands.call(
       this,
       convertToSnakeCase(input),
-      optionsToSnakeCase(options),
+      formatCamelCasedOptions(options),
     );
     return {
       ...response,
@@ -26,7 +26,7 @@ export default (cls) => {
     const response = await retrieveACountOfBrands.call(
       this,
       convertToSnakeCase(input),
-      optionsToSnakeCase(options),
+      formatCamelCasedOptions(options),
     );
     return {
       ...response,
@@ -39,7 +39,7 @@ export default (cls) => {
     const response = await createABrand.call(
       this,
       convertToSnakeCase(input),
-      optionsToSnakeCase(options),
+      formatCamelCasedOptions(options),
     );
     return {
       ...response,
@@ -52,7 +52,7 @@ export default (cls) => {
     const response = await updateABrand.call(
       this,
       convertToSnakeCase(input),
-      optionsToSnakeCase(options),
+      formatCamelCasedOptions(options),
     );
     return {
       ...response,
@@ -65,7 +65,7 @@ export default (cls) => {
     const response = await deleteABrand.call(
       this,
       convertToSnakeCase(input),
-      optionsToSnakeCase(options),
+      formatCamelCasedOptions(options),
     );
     return {
       ...response,

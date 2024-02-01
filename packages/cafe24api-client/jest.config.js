@@ -17,4 +17,5 @@ module.exports = {
     '^.+\\.[tj]s$': ['ts-jest', { tsconfig: './tsconfig.spec.json' }],
   },
   coverageDirectory: '../../coverage/packages/cafe24api-client',
+  testEnvironment: 'node',
 };

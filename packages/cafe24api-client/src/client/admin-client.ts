@@ -26,11 +26,10 @@ export class Cafe24AdminAPIClient extends Cafe24APIClient {
   protected createHeaders(
     headers?: RawAxiosRequestHeaders,
   ): RawAxiosRequestHeaders {
-    return {
-      'Content-Type': 'application/json',
+    return super.createHeaders({
       Authorization: `Bearer ${this.accessToken}`,
       ...headers,
-    };
+    });
   }
 
   protected createRequest<T extends Record<string, any>>(
@@ -41,10 +40,10 @@ export class Cafe24AdminAPIClient extends Cafe24APIClient {
   ): Promise<AxiosResponse<T, any>> {
     const { accessToken, headers, ...opts } = adminOptions;
     const options = {
-      headers: this.createHeaders({
+      headers: {
         Authorization: `Bearer ${accessToken}`,
         ...headers,
-      }),
+      },
       ...opts,
     };
     return super.createRequest(method, path, payload, options);

@@ -2,7 +2,7 @@ import register from '../../suppliers-users-regionalsurcharges-setting/index';
 import {
   convertToCamelCase,
   convertToSnakeCase,
-  optionsToSnakeCase,
+  formatCamelCasedOptions,
 } from '../../../../utils/index';
 
 export default (cls) => {
@@ -16,7 +16,7 @@ export default (cls) => {
         await retrieveASupplierUserSRegionalShippingFeeSettings.call(
           this,
           convertToSnakeCase(input),
-          optionsToSnakeCase(options),
+          formatCamelCasedOptions(options),
         );
       return {
         ...response,
@@ -32,7 +32,7 @@ export default (cls) => {
         await updateASupplierUserSRegionalShippingFeeSettings.call(
           this,
           convertToSnakeCase(input),
-          optionsToSnakeCase(options),
+          formatCamelCasedOptions(options),
         );
       return {
         ...response,

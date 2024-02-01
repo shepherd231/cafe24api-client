@@ -2,7 +2,7 @@ import register from '../../customergroups-customers/index';
 import {
   convertToCamelCase,
   convertToSnakeCase,
-  optionsToSnakeCase,
+  formatCamelCasedOptions,
 } from '../../../../utils/index';
 
 export default (cls) => {
@@ -14,7 +14,7 @@ export default (cls) => {
     const response = await updateACustomerSCustomerTier.call(
       this,
       convertToSnakeCase(input),
-      optionsToSnakeCase(options),
+      formatCamelCasedOptions(options),
     );
     return {
       ...response,

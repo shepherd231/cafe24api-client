@@ -1,6 +1,9 @@
-import { convertToSnakeCase } from './case';
+import Case from 'case';
 
-export const optionsToSnakeCase = (options) => ({
-  ...options,
-  fields: convertToSnakeCase(options?.fields),
-});
+export const formatCamelCasedOptions = (options) => {
+  if (!options?.fields) return options;
+  return {
+    ...options,
+    fields: options?.fields?.map(Case.snake),
+  };
+};

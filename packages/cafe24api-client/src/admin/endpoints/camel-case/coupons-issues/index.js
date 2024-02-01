@@ -2,7 +2,7 @@ import register from '../../coupons-issues/index';
 import {
   convertToCamelCase,
   convertToSnakeCase,
-  optionsToSnakeCase,
+  formatCamelCasedOptions,
 } from '../../../../utils/index';
 
 export default (cls) => {
@@ -14,7 +14,7 @@ export default (cls) => {
     const response = await retrieveAListOfIssuedCoupons.call(
       this,
       convertToSnakeCase(input),
-      optionsToSnakeCase(options),
+      formatCamelCasedOptions(options),
     );
     return {
       ...response,
@@ -27,7 +27,7 @@ export default (cls) => {
     const response = await createCouponIssuanceHistory.call(
       this,
       convertToSnakeCase(input),
-      optionsToSnakeCase(options),
+      formatCamelCasedOptions(options),
     );
     return {
       ...response,
