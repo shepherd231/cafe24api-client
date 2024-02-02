@@ -13,6 +13,7 @@ import {
   GRANT_PERMISSIONS_BUTTON_SELECTOR,
   GRANT_PERMISSIONS_PAGE_URI,
   MALL_ID_INPUT_SELECTOR,
+  PAGE_NAVIGATION_TIMEOUT,
   PASSWORD_INPUT_SELECTOR,
 } from './values';
 
@@ -68,8 +69,23 @@ export const getAuthCode = async (
     // Click button
     await page.click(BUTTON_SELECTOR);
 
+    const waitForNextPage = async () => {
+      const previousUrl = page.url();
+      try {
+        await page.waitForNavigation({ timeout: PAGE_NAVIGATION_TIMEOUT });
+      } catch (error) {
+        const currentUrl = page.url();
+        if (previousUrl !== currentUrl) {
+          // If page has navigated to another page,
+          // we should not consider this as an error
+          return;
+        }
+        throw error;
+      }
+    };
+
     // Wait for next page to load
-    await page.waitForNavigation();
+    await waitForNextPage();
 
     if (page.url().match(CHANGE_PASSWORD_PAGE_URI)) {
       // If next page is Password Change page,
@@ -77,7 +93,7 @@ export const getAuthCode = async (
       await page.click(CHANGE_PASSWORD_NEXT_TIME_BUTTON_SELECTOR);
 
       // Wait for next page to load
-      await page.waitForNavigation();
+      await waitForNextPage();
     }
 
     if (page.url().match(GRANT_PERMISSIONS_PAGE_URI)) {
@@ -86,13 +102,13 @@ export const getAuthCode = async (
       await page.click(GRANT_PERMISSIONS_BUTTON_SELECTOR);
 
       // Wait for next page to load
-      await page.waitForNavigation();
+      await waitForNextPage();
     }
 
     if (page.url().match(APP_INSTALLED_PAGE_URI)) {
       // If next page is App Installed page,
       // we need to wait for next page to load
-      await page.waitForNavigation();
+      await waitForNextPage();
     }
 
     // Get search params from current page url
