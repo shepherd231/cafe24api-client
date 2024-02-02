@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.2](https://github.com/shepherd231/cafe24api-client/compare/cafe24api-auth-code-getter-v0.1.1...cafe24api-auth-code-getter-v0.1.2) (2024-02-02)
+
+
+### Bug Fixes
+
+* issue that program cannot recognize the page navigation ([dee0241](https://github.com/shepherd231/cafe24api-client/commit/dee0241b2f41558e11d582b5ff3bb1c3ee41c508))
+
 ## [0.1.1](https://github.com/shepherd231/cafe24api-client/compare/cafe24api-auth-code-getter-v0.1.0...cafe24api-auth-code-getter-v0.1.1) (2024-01-29)
 
 
