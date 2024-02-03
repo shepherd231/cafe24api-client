@@ -163,8 +163,9 @@ This repository also contains set of tools to help you develop a service with Ca
 Check out the list below for other available packages.
 
 - [cafe24-webhook-utils](./packages/cafe24-webhook-utils/README.md)
-- [cafe24api-schema-scraper (not published)](./packages/cafe24api-schema-scraper/README.md)
-- [cafe24-webhook-schema-generator (not published)](./packages/cafe24-webhook-schema-generator/README.md)
+- [cafe24api-auth-code-getter](./packages/cafe24api-auth-code-getter/README.md)
+- [cafe24api-schema-scraper (internal purpose)](./packages/cafe24api-schema-scraper/README.md)
+- [cafe24-webhook-schema-generator (internal purpose)](./packages/cafe24-webhook-schema-generator/README.md)
 
 ## Contributing
 
