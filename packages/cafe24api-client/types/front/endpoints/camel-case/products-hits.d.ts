@@ -50,7 +50,7 @@ declare module 'cafe24api-client' {
     count: number;
   }
 
-  interface Cafe24AdminAPIClient {
+  interface Cafe24FrontAPIClient {
     /**
      * @description
      * 상품번호를 이용하여 해당 상품의 조회수를 조회합니다.

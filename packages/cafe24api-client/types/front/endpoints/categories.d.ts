@@ -335,7 +335,7 @@ declare module 'cafe24api-client' {
     };
   }
 
-  interface Cafe24AdminAPIClient {
+  interface Cafe24FrontAPIClient {
     /**
      * @description
      * 쇼핑몰에 등록된 분류를 목록으로 조회합니다.

@@ -29,6 +29,7 @@ const targets = [
       formatExampleString: (example) => formatExampleString(example),
       formatPropName: (name) => name,
       requestOptionType: 'AdminRequestOptions',
+      clientClassName: 'Cafe24AdminAPIClient',
     },
   },
   {
@@ -44,6 +45,7 @@ const targets = [
         formatExampleString(example, { useCamelCase: true }),
       formatPropName: Case.camel,
       requestOptionType: 'AdminRequestOptions',
+      clientClassName: 'Cafe24AdminAPIClient',
     },
   },
   {
@@ -58,6 +60,7 @@ const targets = [
       formatExampleString: (example) => formatExampleString(example),
       formatPropName: (name) => name,
       requestOptionType: 'RequestOptions',
+      clientClassName: 'Cafe24FrontAPIClient',
     },
   },
   {
@@ -73,6 +76,7 @@ const targets = [
         formatExampleString(example, { useCamelCase: true }),
       formatPropName: Case.camel,
       requestOptionType: 'RequestOptions',
+      clientClassName: 'Cafe24FrontAPIClient',
     },
   },
 ];

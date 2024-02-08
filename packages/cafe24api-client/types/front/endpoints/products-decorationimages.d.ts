@@ -106,7 +106,7 @@ declare module 'cafe24api-client' {
     };
   }
 
-  interface Cafe24AdminAPIClient {
+  interface Cafe24FrontAPIClient {
     /**
      * @description
      * 특정 상품에 등록되어 있는 꾸미기 이미지를 목록으로 조회합니다.

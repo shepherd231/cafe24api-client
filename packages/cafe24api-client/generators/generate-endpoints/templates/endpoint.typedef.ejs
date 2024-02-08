@@ -51,7 +51,7 @@ declare module 'cafe24api-client' {
   }
 <% } -%>
 
-  interface Cafe24AdminAPIClient {
+  interface <%= clientClassName %> {
 <% for(const method of endpoint.methods) { -%>
     /**
 <% if (method.description) { -%>

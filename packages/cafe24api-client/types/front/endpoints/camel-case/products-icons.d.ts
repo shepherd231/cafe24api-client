@@ -93,7 +93,7 @@ declare module 'cafe24api-client' {
     };
   }
 
-  interface Cafe24AdminAPIClient {
+  interface Cafe24FrontAPIClient {
     /**
      * @see https://developers.cafe24.com/docs/api/front/#retrieve-a-list-of-product-icons
      *

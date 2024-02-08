@@ -526,7 +526,7 @@ declare module 'cafe24api-client' {
     };
   }
 
-  interface Cafe24AdminAPIClient {
+  interface Cafe24FrontAPIClient {
     /**
      * @description
      * 상품의 상세페이지에 노출되는 항목과 그 값을 조회할 수 있습니다.

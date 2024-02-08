@@ -49,7 +49,7 @@ declare module 'cafe24api-client' {
     count: number;
   }
 
-  interface Cafe24AdminAPIClient {
+  interface Cafe24FrontAPIClient {
     /**
      * @description
      * 특정 상품을 장바구니에 담은 회원의 수를 확인할 수 있습니다.

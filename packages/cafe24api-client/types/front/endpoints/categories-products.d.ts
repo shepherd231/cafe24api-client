@@ -440,7 +440,7 @@ declare module 'cafe24api-client' {
     count: number;
   }
 
-  interface Cafe24AdminAPIClient {
+  interface Cafe24FrontAPIClient {
     /**
      * @description
      * 특정 카테고리에 배정된 상품을 목록으로 조회할 수 있습니다.

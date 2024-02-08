@@ -201,7 +201,7 @@ declare module 'cafe24api-client' {
     };
   }
 
-  interface Cafe24AdminAPIClient {
+  interface Cafe24FrontAPIClient {
     /**
      * @description
      * 상품의 옵션을 목록으로 조회할 수 있습니다.
