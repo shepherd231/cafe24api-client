@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.6](https://github.com/shepherd231/cafe24api-client/compare/cafe24api-client-v0.7.5...cafe24api-client-v0.7.6) (2024-02-08)
+
+
+### Bug Fixes
+
+* no complex wait for next page logic & up puppeteer version ([e57fad2](https://github.com/shepherd231/cafe24api-client/commit/e57fad27250d2c09672b0e89b39b764486d425e5))
+
 ## [0.7.5](https://github.com/shepherd231/cafe24api-client/compare/cafe24api-client-v0.7.4...cafe24api-client-v0.7.5) (2024-02-01)
 
 

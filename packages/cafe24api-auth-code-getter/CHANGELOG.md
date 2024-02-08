@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.3](https://github.com/shepherd231/cafe24api-client/compare/cafe24api-auth-code-getter-v0.1.2...cafe24api-auth-code-getter-v0.1.3) (2024-02-08)
+
+
+### Bug Fixes
+
+* no complex wait for next page logic & up puppeteer version ([e57fad2](https://github.com/shepherd231/cafe24api-client/commit/e57fad27250d2c09672b0e89b39b764486d425e5))
+
 ## [0.1.2](https://github.com/shepherd231/cafe24api-client/compare/cafe24api-auth-code-getter-v0.1.1...cafe24api-auth-code-getter-v0.1.2) (2024-02-02)
 
 
