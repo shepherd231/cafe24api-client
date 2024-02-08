@@ -1,7 +1,7 @@
 {
-  "packages/cafe24api-client": "0.7.5",
+  "packages/cafe24api-client": "0.7.6",
   "packages/cafe24-webhook-utils": "0.3.0",
   "packages/cafe24api-schema-scraper": "0.3.0",
   "packages/cafe24-webhook-schema-generator": "0.2.0",
-  "packages/cafe24api-auth-code-getter": "0.1.2"
+  "packages/cafe24api-auth-code-getter": "0.1.3"
 }
