@@ -177,8 +177,8 @@ importers:
         version: 17.12.1
     devDependencies:
       puppeteer:
-        specifier: ^21.5.1
-        version: 21.5.1(typescript@5.2.2)
+        specifier: ^22.0.0
+        version: 22.0.0(typescript@5.2.2)
 
   packages/cafe24api-client:
     dependencies:
@@ -2564,6 +2564,23 @@ packages:
       yargs: 17.7.2
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  /@puppeteer/browsers@2.0.0:
+    resolution: {integrity: sha512-3PS82/5+tnpEaUWonjAFFvlf35QHF15xqyGd34GBa5oP5EPVfFXRsbSxIGYf1M+vZlqBZ3oxT1kRg9OYhtt8ng==}
+    engines: {node: '>=18'}
+    hasBin: true
+    dependencies:
+      debug: 4.3.4
+      extract-zip: 2.0.1
+      progress: 2.0.3
+      proxy-agent: 6.3.1
+      tar-fs: 3.0.4
+      unbzip2-stream: 1.4.3
+      yargs: 17.7.2
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
 
   /@rollup/plugin-babel@6.0.4(@babel/core@7.23.3)(rollup@4.4.0):
     resolution: {integrity: sha512-YF7Y52kFdFT/xVSuVdjkV5ZdX/3YtmX0QulG+x0taQOtJdHYzVU61aSSkAgVJ7NOv6qPkIYiJSgSWWN/DM5sGw==}
@@ -3923,6 +3940,17 @@ packages:
       devtools-protocol: 0.0.1203626
       mitt: 3.0.1
       urlpattern-polyfill: 9.0.0
+    dev: false
+
+  /chromium-bidi@0.5.8(devtools-protocol@0.0.1232444):
+    resolution: {integrity: sha512-blqh+1cEQbHBKmok3rVJkBlBxt9beKBgOsxbFgs7UJcoVbbeZ+K7+6liAsjgpc8l1Xd55cQUy14fXZdGSb4zIw==}
+    peerDependencies:
+      devtools-protocol: '*'
+    dependencies:
+      devtools-protocol: 0.0.1232444
+      mitt: 3.0.1
+      urlpattern-polyfill: 10.0.0
+    dev: true
 
   /ci-info@3.9.0:
     resolution: {integrity: sha512-NIxF55hv4nSqQswkAeiOi1r83xy8JldOFDTWiug55KBu9Jnblncd2U6ViHmYgHf01TPZS77NJBhBMKdWj9HQMQ==}
@@ -4121,6 +4149,22 @@ packages:
       parse-json: 5.2.0
       path-type: 4.0.0
       typescript: 5.2.2
+
+  /cosmiconfig@9.0.0(typescript@5.2.2):
+    resolution: {integrity: sha512-itvL5h8RETACmOTFc4UfIyB2RfEHi71Ax6E/PivVxq9NseKbOWpeyHEOIbmAw1rs8Ak0VursQNww7lf7YtUwzg==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      typescript: '>=4.9.5'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      env-paths: 2.2.1
+      import-fresh: 3.3.0
+      js-yaml: 4.1.0
+      parse-json: 5.2.0
+      typescript: 5.2.2
+    dev: true
 
   /create-jest@29.7.0(@types/node@20.9.0)(ts-node@10.9.1):
     resolution: {integrity: sha512-Adz2bdH0Vq3F53KEMJOoftQFutWCukm6J24wbPWRO4k1kMY7gS7ds/uoJkNuV8wDCtWWnuwGcJwpWcih+zEW1Q==}
@@ -4321,6 +4365,11 @@ packages:
 
   /devtools-protocol@0.0.1203626:
     resolution: {integrity: sha512-nEzHZteIUZfGCZtTiS1fRpC8UZmsfD1SiyPvaUNvS13dvKf666OAm8YTi0+Ca3n1nLEyu49Cy4+dPWpaHFJk9g==}
+    dev: false
+
+  /devtools-protocol@0.0.1232444:
+    resolution: {integrity: sha512-pM27vqEfxSxRkTMnF+XCmxSEb6duO5R+t8A9DEEJgy4Wz2RVanje2mmj99B6A3zv2r/qGfYlOvYznUhuokizmg==}
+    dev: true
 
   /diff-sequences@29.6.3:
     resolution: {integrity: sha512-EjePK1srD3P08o2j4f0ExnylqRs5B9tJjcp9t1krH2qRi8CCdsYfwe9JgSLurFBWwq4uOlipzfk5fHNvwFKr8Q==}
@@ -4442,6 +4491,11 @@ packages:
   /entities@4.5.0:
     resolution: {integrity: sha512-V0hjH4dGPh9Ao5p0MoRY6BVqtwCjhz6vI5LT8AJ55H+4g9/4vbHx1I54fS0XuclLhDHArPQCiMjDxjaL8fPxhw==}
     engines: {node: '>=0.12'}
+    dev: true
+
+  /env-paths@2.2.1:
+    resolution: {integrity: sha512-+h1lkLKhZMTYjog1VEpJNG7NZJWcuc2DDk/qsqSTRRCOXiLjeQ1d1/udrUGhqMxUgAlwKNZ0cf2uqan5GLuS2A==}
+    engines: {node: '>=6'}
     dev: true
 
   /error-ex@1.3.2:
@@ -6872,6 +6926,24 @@ packages:
       - encoding
       - supports-color
       - utf-8-validate
+    dev: false
+
+  /puppeteer-core@22.0.0:
+    resolution: {integrity: sha512-S3s91rLde0A86PWVeNY82h+P0fdS7CTiNWAicCVH/bIspRP4nS2PnO5j+VTFqCah0ZJizGzpVPAmxVYbLxTc9w==}
+    engines: {node: '>=18'}
+    dependencies:
+      '@puppeteer/browsers': 2.0.0
+      chromium-bidi: 0.5.8(devtools-protocol@0.0.1232444)
+      cross-fetch: 4.0.0
+      debug: 4.3.4
+      devtools-protocol: 0.0.1232444
+      ws: 8.16.0
+    transitivePeerDependencies:
+      - bufferutil
+      - encoding
+      - supports-color
+      - utf-8-validate
+    dev: true
 
   /puppeteer@21.5.1(typescript@5.2.2):
     resolution: {integrity: sha512-NkI06BXckVZeZUkODK+BbgGelQSu7uYEp9PaJDozxpwNRFDYoVfHQvd2G4dERoLdP6+qx4EBPwEhk4dEkQc2Kg==}
@@ -6887,6 +6959,24 @@ packages:
       - supports-color
       - typescript
       - utf-8-validate
+    dev: false
+
+  /puppeteer@22.0.0(typescript@5.2.2):
+    resolution: {integrity: sha512-zYVnjwJngnSB4dbkWp7DHFSIc3nqHvZzrdHyo9+ugV1nq1Lm8obOMcmCFaGfR3PJs0EmYNz+/skBeO45yvASCQ==}
+    engines: {node: '>=18'}
+    hasBin: true
+    requiresBuild: true
+    dependencies:
+      '@puppeteer/browsers': 2.0.0
+      cosmiconfig: 9.0.0(typescript@5.2.2)
+      puppeteer-core: 22.0.0
+    transitivePeerDependencies:
+      - bufferutil
+      - encoding
+      - supports-color
+      - typescript
+      - utf-8-validate
+    dev: true
 
   /pure-rand@6.0.4:
     resolution: {integrity: sha512-LA0Y9kxMYv47GIPJy6MI84fqTd2HmYZI83W/kM/SkKfDlajnZYfmXFTxkbY+xSBPkLJxltMa9hIkmdc29eguMA==}
@@ -7896,8 +7986,13 @@ packages:
       requires-port: 1.0.0
     dev: true
 
+  /urlpattern-polyfill@10.0.0:
+    resolution: {integrity: sha512-H/A06tKD7sS1O1X2SshBVeA5FLycRpjqiBeqGKmBwBDBy28EnRjORxTNe269KSSr5un5qyWi1iL61wLxpd+ZOg==}
+    dev: true
+
   /urlpattern-polyfill@9.0.0:
     resolution: {integrity: sha512-WHN8KDQblxd32odxeIgo83rdVDE2bvdkb86it7bMhYZwWKJz0+O0RK/eZiHYnM+zgt/U7hAHOlCQGfjjvSkw2g==}
+    dev: false
 
   /util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
@@ -8043,6 +8138,19 @@ packages:
         optional: true
       utf-8-validate:
         optional: true
+
+  /ws@8.16.0:
+    resolution: {integrity: sha512-HS0c//TP7Ina87TfiPUz1rQzMhHrl/SG2guqRcTOIUYD2q8uhUdNHZYJUaQ8aTGPzCh+c6oawMKW35nFl1dxyQ==}
+    engines: {node: '>=10.0.0'}
+    peerDependencies:
+      bufferutil: ^4.0.1
+      utf-8-validate: '>=5.0.2'
+    peerDependenciesMeta:
+      bufferutil:
+        optional: true
+      utf-8-validate:
+        optional: true
+    dev: true
 
   /xml-name-validator@4.0.0:
     resolution: {integrity: sha512-ICP2e+jsHvAj2E2lIHxa5tjXRlKDJo4IdvPvCXbXQGdzSfmSpNVyIKMvoZHjDY9DP0zV17iI85o90vRFXNccRw==}

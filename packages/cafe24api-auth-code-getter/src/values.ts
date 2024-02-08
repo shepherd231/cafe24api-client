@@ -13,4 +13,4 @@ export const GRANT_PERMISSIONS_PAGE_URI =
 export const APP_INSTALLED_PAGE_URI =
   /https:\/\/[a-zA-Z0-9]+\.cafe24\.com\/disp\/admin\/myapps\/installed/;
 
-export const PAGE_NAVIGATION_TIMEOUT = 3000; // 3 seconds
+export const PAGE_NAVIGATION_TIMEOUT = 30000; // 30 seconds

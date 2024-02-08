@@ -39,7 +39,7 @@ export const getAuthCode = async (
   // Launch browser
   const isDev = !!process.env.CAFE24API_AUTH_CODE_GETTER_DEBUG;
   const browser = await puppeteer.launch({
-    headless: isDev ? false : 'new',
+    headless: !isDev,
     devtools: isDev,
   });
 
@@ -70,18 +70,7 @@ export const getAuthCode = async (
     await page.click(BUTTON_SELECTOR);
 
     const waitForNextPage = async () => {
-      const previousUrl = page.url();
-      try {
-        await page.waitForNavigation({ timeout: PAGE_NAVIGATION_TIMEOUT });
-      } catch (error) {
-        const currentUrl = page.url();
-        if (previousUrl !== currentUrl) {
-          // If page has navigated to another page,
-          // we should not consider this as an error
-          return;
-        }
-        throw error;
-      }
+      await page.waitForNavigation({ timeout: PAGE_NAVIGATION_TIMEOUT });
     };
 
     // Wait for next page to load

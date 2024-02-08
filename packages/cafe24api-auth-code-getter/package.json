@@ -16,7 +16,7 @@
     "package.json"
   ],
   "devDependencies": {
-    "puppeteer": "^21.5.1"
+    "puppeteer": "^22.0.0"
   },
   "dependencies": {
     "commander": "^11.1.0",
@@ -24,6 +24,6 @@
     "joi": "^17.12.1"
   },
   "peerDependencies": {
-    "puppeteer": "^21.5.1"
+    "puppeteer": "^22.0.0"
   }
 }
