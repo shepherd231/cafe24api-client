@@ -169,12 +169,18 @@ importers:
       commander:
         specifier: ^11.1.0
         version: 11.1.0
+      dotenv:
+        specifier: ^16.3.1
+        version: 16.3.1
       fp-ts:
         specifier: ^2.16.1
         version: 2.16.1
       joi:
         specifier: ^17.12.1
         version: 17.12.1
+      merge:
+        specifier: ^2.1.1
+        version: 2.1.1
     devDependencies:
       puppeteer:
         specifier: ^22.0.0
