@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.4](https://github.com/shepherd231/cafe24api-client/compare/cafe24api-auth-code-getter-v0.1.3...cafe24api-auth-code-getter-v0.1.4) (2024-04-23)
+
+
+### Bug Fixes
+
+* deps ([cc7f088](https://github.com/shepherd231/cafe24api-client/commit/cc7f088ca44e28397c84686b8578fbcde6665296))
+
 ## [0.1.3](https://github.com/shepherd231/cafe24api-client/compare/cafe24api-auth-code-getter-v0.1.2...cafe24api-auth-code-getter-v0.1.3) (2024-02-08)
 
 
