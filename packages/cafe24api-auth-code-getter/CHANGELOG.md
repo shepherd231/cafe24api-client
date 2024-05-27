@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.3.0](https://github.com/shepherd231/cafe24api-client/compare/cafe24api-auth-code-getter-v0.2.0...cafe24api-auth-code-getter-v0.3.0) (2024-05-27)
+
+
+### Features
+
+* returns error if exists ([5fad5cd](https://github.com/shepherd231/cafe24api-client/commit/5fad5cd6b76dc71a47a78d9c5d926b39b5d39782))
+
+
+### Bug Fixes
+
+* remove unneeded env var ([0fa90ca](https://github.com/shepherd231/cafe24api-client/commit/0fa90caf6c051b88c456bfd20f452beb9af466c5))
+
 ## [0.2.0](https://github.com/shepherd231/cafe24api-client/compare/cafe24api-auth-code-getter-v0.1.4...cafe24api-auth-code-getter-v0.2.0) (2024-05-27)
 
 
