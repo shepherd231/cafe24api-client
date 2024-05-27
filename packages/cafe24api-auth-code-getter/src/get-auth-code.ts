@@ -39,6 +39,7 @@ export const getAuthCode = async (
   // Launch browser
   const isDev = !!process.env.CAFE24API_AUTH_CODE_GETTER_DEBUG;
   const browser = await puppeteer.launch({
+    executablePath: process.env.CAFE24API_AUTH_CODE_GETTER_CHROME_PATH,
     headless: !isDev,
     devtools: isDev,
   });
