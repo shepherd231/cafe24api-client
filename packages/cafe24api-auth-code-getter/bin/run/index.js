@@ -28,10 +28,15 @@ const register = (program) => {
 
       // Get auth code
       console.info('Getting auth code...');
-      const { code, state } = await getAuthCode(options);
-
-      console.info('Successfully got auth code!');
-      console.info(`Auth code: ${code} (state: ${state})`);
+      const getAuthCodeResult = await getAuthCode(options);
+      if (getAuthCodeResult.success) {
+        const { code, state } = getAuthCodeResult;
+        console.info('Successfully got auth code!');
+        console.info(`Auth code: ${code} (state: ${state})`);
+      } else {
+        const { error } = getAuthCodeResult;
+        console.error(`Failed to get auth code: ${JSON.stringify(error)}`);
+      }
     });
 };
 

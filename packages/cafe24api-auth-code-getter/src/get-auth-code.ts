@@ -104,9 +104,13 @@ export const getAuthCode = async (
     const { searchParams } = new URL(page.url());
 
     // Set entries of search params to result
-    result = Object.fromEntries(
-      searchParams.entries(),
-    ) as any as GetAuthCodeResult;
+    result = {
+      ...Object.fromEntries(searchParams.entries()),
+      success: true,
+    } as any as GetAuthCodeResult;
+  } catch (error) {
+    // Set error to result
+    result = { success: false, error };
   } finally {
     // Close browser
     await browser.close();
