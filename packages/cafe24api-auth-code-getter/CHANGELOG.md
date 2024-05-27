@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://github.com/shepherd231/cafe24api-client/compare/cafe24api-auth-code-getter-v0.1.4...cafe24api-auth-code-getter-v0.2.0) (2024-05-27)
+
+
+### Features
+
+* can set executable path with env var ([f8b32d0](https://github.com/shepherd231/cafe24api-client/commit/f8b32d0a13044754fbb8b51ec05cde597768a127))
+
 ## [0.1.4](https://github.com/shepherd231/cafe24api-client/compare/cafe24api-auth-code-getter-v0.1.3...cafe24api-auth-code-getter-v0.1.4) (2024-04-23)
 
 
