@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.8](https://github.com/shepherd231/cafe24api-client/compare/cafe24api-client-v0.7.7...cafe24api-client-v0.7.8) (2024-06-18)
+
+
+### Bug Fixes
+
+* **cafe24api-client:** include all display code to the enum ([8fbebee](https://github.com/shepherd231/cafe24api-client/commit/8fbebeea0c92736645226635fd28bb158fe70c91))
+
 ## [0.7.7](https://github.com/shepherd231/cafe24api-client/compare/cafe24api-client-v0.7.6...cafe24api-client-v0.7.7) (2024-02-08)
 
 
