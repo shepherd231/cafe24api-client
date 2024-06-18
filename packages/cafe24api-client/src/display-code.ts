@@ -1,6 +1,6 @@
 export enum Cafe24DisplayCode {
-  /** @description 페이지유형 */
-  CODE = 'CODE',
+  /** @description 전체 페이지 */
+  ALL = 'all',
   /** @description 상품 분류 */
   PRODUCT_LIST = 'PRODUCT_LIST',
   /** @description 상품 상세 */
